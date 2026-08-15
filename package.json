@@ -1,0 +1,11 @@
+{
+  "name": "aryanstreams",
+  "private": true,
+  "scripts": {
+    "proxy": "node local-proxy.js",
+    "deploy": "wrangler pages deploy . --project-name=aryanstreams --commit-dirty=true"
+  },
+  "devDependencies": {
+    "wrangler": "^4.123.0"
+  }
+}

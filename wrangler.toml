@@ -1,0 +1,8 @@
+name = "aryanstreams"
+compatibility_date = "2024-08-01"
+pages_build_output_dir = "."
+
+# Cloudflare Pages (Git or CLI deploy)
+# Build command: (leave empty)
+# Build output directory: .
+# The _worker.js file runs /proxy and /fancode/proxy on the same domain.

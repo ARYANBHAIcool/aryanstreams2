@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="referrer" content="no-referrer">
+    <title>Player</title>
+    <!-- Shaka Player -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shaka-player@5.2.4/dist/controls.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; height: 100%; background: #000; overflow: hidden; }
+        #player-container {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #000;
+        }
+        /* Hide Shaka's built-in spinner */
+        .shaka-spinner-container, .shaka-spinner, .shaka-spinner-svg { display: none !important; }
+        /* Custom spinner */
+        #loading {
+            position: fixed; inset: 0;
+            display: flex; align-items: center; justify-content: center;
+            background: #000; z-index: 100;
+            transition: opacity 0.3s;
+        }
+        #loading.hidden { opacity: 0; pointer-events: none; }
+        .spinner {
+            width: 44px; height: 44px;
+            border: 3px solid rgba(255,255,255,0.1);
+            border-top-color: #3b82f6;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        #error-msg {
+            position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+            background: rgba(239,68,68,0.9); color: #fff;
+            padding: 8px 18px; border-radius: 8px; font-size: 13px;
+            font-family: sans-serif; display: none; z-index: 200;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loading"><div class="spinner"></div></div>
+    <div id="player-container">
+        <video id="video" playsinline webkit-playsinline autoplay></video>
+    </div>
+    <div id="error-msg"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/shaka-player@5.2.4/dist/shaka-player.ui.min.js"></script>
+    <script>
+    (function() {
+        "use strict";
+
+        // ── Configuration ──────────────────────────────────────────────
+        // You can pass parameters via URL:
+        //   ?mpd=<MPD_URL>&kid=<KEY_ID>&key=<KEY>&referer=<REFERER>
+        //
+        // Or use the hash format (for iframe embedding):
+        //   #mpd=<MPD_URL>&kid=<KEY_ID>&key=<KEY>
+        //
+        // Example:
+        //   shaka_player.html?mpd=https://...cenc.mpd&kid=1d0c...&key=ad27...
+        // ────────────────────────────────────────────────────────────────
+
+        var params = new URLSearchParams(location.search || location.hash.replace('#',''));
+
+        var MPD_URL  = params.get('mpd')  || '';
+        var KEY_ID   = params.get('kid')  || '';
+        var KEY      = params.get('key')  || '';
+        var REFERER  = params.get('referer') || 'https://www.amazon.com/gp/';
+
+        var $video   = document.getElementById('video');
+        var $loading = document.getElementById('loading');
+        var $error   = document.getElementById('error-msg');
+
+        function showError(msg) {
+            $error.textContent = msg;
+            $error.style.display = 'block';
+            setTimeout(function() { $error.style.display = 'none'; }, 6000);
+        }
+
+        function hideLoading() {
+            $loading.classList.add('hidden');
+            setTimeout(function() { $loading.style.display = 'none'; }, 350);
+        }
+
+        if (!MPD_URL) {
+            hideLoading();
+            showError('No MPD URL provided. Use ?mpd=<URL>&kid=<KEY_ID>&key=<KEY>');
+            return;
+        }
+
+        // ── Init Shaka ─────────────────────────────────────────────────
+        shaka.polyfill.installAll();
+
+        if (!shaka.Player.isBrowserSupported()) {
+            hideLoading();
+            showError('Browser not supported for DASH playback.');
+            return;
+        }
+
+        var player = new shaka.Player();
+
+        player.attach($video).then(function() {
+            // Add Shaka UI controls (play, volume, fullscreen, quality etc.)
+            var ui = new shaka.ui.Overlay(player, document.getElementById('player-container'), $video);
+            ui.configure({
+                controlPanelElements: [
+                    'play_pause', 'mute', 'volume', 'spacer',
+                    'time_and_duration', 'spacer',
+                    'quality', 'picture_in_picture', 'fullscreen'
+                ],
+                seekBarColors: {
+                    base: '#555',
+                    buffered: '#888',
+                    played: '#3b82f6'
+                }
+            });
+
+            // ── Inject Referer header (required for Amazon CDN) ────────
+            player.getNetworkingEngine().registerRequestFilter(function(type, req) {
+                req.headers['Referer']    = REFERER;
+                req.headers['User-Agent'] = navigator.userAgent;
+            });
+
+            // ── Build player config ────────────────────────────────────
+            var config = {
+                manifest: {
+                    defaultPresentationDelay: 4,
+                    dash: { autoCorrectDrift: true, ignoreMinBufferTime: true },
+                    retryParameters: { baseDelay: 100 }
+                },
+                streaming: {
+                    bufferingGoal: 8,
+                    rebufferingGoal: 1.5,
+                    bufferBehind: 20,
+                    retryParameters: { baseDelay: 100, maxAttempts: 5 }
+                },
+                abr: {
+                    enabled: true,
+                    defaultBandwidthEstimate: 1500000,
+                    restrictions: { maxHeight: 1080 }
+                }
+            };
+
+            // Add DRM clear-keys if provided
+            if (KEY_ID && KEY) {
+                config.drm = {
+                    clearKeys: {}
+                };
+                config.drm.clearKeys[KEY_ID] = KEY;
+            }
+
+            player.configure(config);
+
+            // ── Load and play ──────────────────────────────────────────
+            player.load(MPD_URL).then(function() {
+                $video.muted = true;  // muted autoplay (browsers require this)
+                $video.play().catch(function() {});
+            }).catch(function(e) {
+                console.error('Load error:', e);
+                showError('Stream load failed – retrying...');
+                setTimeout(function() { location.reload(); }, 5000);
+            });
+
+            // ── Events ─────────────────────────────────────────────────
+            $video.addEventListener('playing', function() {
+                hideLoading();
+            });
+
+            $video.addEventListener('canplay', function() {
+                hideLoading();
+            });
+
+            player.addEventListener('error', function(ev) {
+                var err = ev.detail;
+                if (err && err.severity === shaka.util.Error.Severity.RECOVERABLE) return;
+                console.error('Shaka error:', err && err.code, err && err.message);
+                showError('Playback error – retrying...');
+                setTimeout(function() { player.load(MPD_URL).catch(function(){}); }, 5000);
+            });
+
+            // Unmute on first user interaction
+            document.addEventListener('click', function unmute() {
+                $video.muted = false;
+                document.removeEventListener('click', unmute);
+            }, { once: true });
+
+        }).catch(function(e) {
+            hideLoading();
+            showError('Player init failed: ' + e.message);
+        });
+
+    })();
+    </script>
+</body>
+</html>

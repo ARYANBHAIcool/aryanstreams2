@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Opening Player...</title>
+    <script>
+        location.replace("/fancode/player" + location.search + location.hash);
+    </script>
+</head>
+<body>
+    <a id="fallback" href="/fancode/player">Open player</a>
+    <script>
+        document.getElementById("fallback").href = "/fancode/player" + location.search + location.hash;
+    </script>
+</body>
+</html>

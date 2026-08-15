@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stream Player | Professional</title>
+
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- 1. Load hls.js globally (Modern Version) -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/hls.js@latest/dist/hls.min.js" crossorigin="anonymous"></script>
+
+    <!-- 2. Load Plyr Player -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css" />
+    <script src="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.polyfilled.min.js"></script>
+
+    <!-- Adcash Library -->
+    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+
+    <style>
+        :root {
+            --bg-color: #09090b;
+            --card-bg: rgba(20, 20, 23, 0.7);
+            --border-color: rgba(39, 39, 42, 0.7);
+            --accent-blue: #3b82f6;
+            --accent-blue-hover: #2563eb;
+            --accent-green: #22c55e;
+            --accent-green-hover: #16a34a;
+            --text-main: #f4f4f5;
+            --text-secondary: #a1a1aa;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center;
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at top center, rgba(59, 130, 246, 0.08) 0%, transparent 60%);
+        }
+
+        /* Overlay */
+        .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; z-index: 9999; backdrop-filter: blur(8px); }
+        .overlay.hidden { display: none !important; }
+        .overlay-box {
+            background: rgba(15, 15, 18, 0.85);
+            padding: 2.5rem 2rem;
+            border-radius: 1.25rem;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            max-width: 380px;
+            margin: 1rem;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 20px rgba(59, 130, 246, 0.1);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            transform: scale(1);
+            transition: transform 0.3s ease;
+        }
+        .overlay-icon { font-size: 3.5rem; margin-bottom: 1.25rem; filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.4)); animation: pulse-icon 2s infinite ease-in-out; }
+        @keyframes pulse-icon {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+        }
+        .overlay-title { font-size: 1.65rem; font-weight: 700; margin-bottom: 0.75rem; letter-spacing: -0.02em; }
+        .overlay-text { color: var(--text-secondary); margin-bottom: 1.75rem; font-size: 0.95rem; line-height: 1.5; }
+        
+        .overlay-btn { 
+            display: block; 
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8); 
+            color: white; 
+            padding: 0.85rem 1.5rem; 
+            border-radius: 0.75rem; 
+            font-weight: 600; 
+            text-decoration: none; 
+            cursor: pointer; 
+            border: none; 
+            width: 100%; 
+            font-size: 1rem; 
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            transition: all 0.2s ease; 
+        }
+        .overlay-btn:hover { 
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.45);
+            background: linear-gradient(135deg, #4f46e5, #2563eb); 
+        }
+        .overlay-btn-secondary { 
+            display: block; 
+            background: rgba(39, 39, 42, 0.6); 
+            color: #e4e4e7; 
+            padding: 0.85rem 1.5rem; 
+            border-radius: 0.75rem; 
+            font-weight: 600; 
+            text-decoration: none; 
+            cursor: pointer; 
+            border: 1px solid rgba(63, 63, 70, 0.5); 
+            width: 100%; 
+            font-size: 1rem; 
+            margin-top: 0.75rem; 
+            transition: all 0.2s ease; 
+        }
+        .overlay-btn-secondary:hover { 
+            background: rgba(63, 63, 70, 0.85); 
+            color: white;
+        }
+
+        /* Header */
+        header { 
+            width: 100%; 
+            padding: 0.85rem 1.5rem; 
+            background: rgba(15, 15, 18, 0.8); 
+            border-bottom: 1px solid var(--border-color); 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 1rem; 
+            position: sticky; 
+            top: 0; 
+            z-index: 50; 
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .header-label { font-size: 0.85rem; font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
+        .btn-tg { 
+            background: linear-gradient(135deg, #0088cc, #0077b5); 
+            color: white; 
+            padding: 0.35rem 1.25rem; 
+            border-radius: 9999px; 
+            font-size: 0.8rem; 
+            font-weight: 600; 
+            text-decoration: none; 
+            box-shadow: 0 4px 10px rgba(0, 136, 204, 0.2);
+            transition: all 0.2s ease; 
+        }
+        .btn-tg:hover { 
+            transform: translateY(-1px);
+            box-shadow: 0 6px 14px rgba(0, 136, 204, 0.35);
+        }
+
+        /* Main */
+        main { width: 100%; max-width: 960px; padding: 1.5rem 1rem; margin-top: 0.5rem; flex-grow: 1; }
+        .hidden { display: none !important; }
+
+        /* Stream view */
+        .channel-title-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.25rem;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        #channel-name { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.01em; color: white; display: flex; align-items: center; gap: 0.5rem; }
+        
+        /* Live Indicator Dot */
+        .live-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #ef4444;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #ef4444;
+            animation: pulse-dot 1.5s infinite ease-in-out;
+            margin-right: 0.25rem;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.4); opacity: 0.4; }
+        }
+
+        /* Video containers */
+        .player-wrap { 
+            position: relative; 
+            width: 100%; 
+            padding-bottom: 56.25%; 
+            background: #000; 
+            border-radius: 1rem; 
+            overflow: hidden; 
+            border: 1px solid var(--border-color); 
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7); 
+        }
+        .player-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        
+        /* Clappr target container */
+        #live-player-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Styling inside Clappr to match dark theme aesthetics */
+        .clappr-style {
+            background-color: #000 !important;
+        }
+
+        /* Loading spinner inside player */
+        .spinner { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: #000; z-index: 2; transition: opacity 0.5s; }
+        .spinner-ring { width: 48px; height: 48px; border: 4px solid rgba(255, 255, 255, 0.1); border-top-color: var(--accent-blue); border-radius: 50%; animation: spin 0.8s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* Customizing Plyr CSS Variables to fit design system */
+        :root {
+            --plyr-color-main: #3b82f6; /* Accent blue */
+            --plyr-video-background: #000000;
+            --plyr-font-family: 'Outfit', sans-serif;
+            --plyr-border-radius: 1rem;
+        }
+        .plyr {
+            border-radius: 1rem !important;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            width: 100% !important;
+            height: 100% !important;
+        }
+        .plyr--full-ui input[type=range] {
+            color: #3b82f6 !important;
+        }
+        .plyr__control--overlaid {
+            background: rgba(59, 130, 246, 0.9) !important;
+        }
+        .plyr__control--overlaid:hover {
+            background: #2563eb !important;
+        }
+        .plyr__control[aria-expanded=true] {
+            background: #3b82f6 !important;
+            color: white !important;
+        }
+
+        /* Error view */
+        #error-view { 
+            text-align: center; 
+            padding: 5rem 2rem; 
+            border: 1px solid var(--border-color); 
+            border-radius: 1rem; 
+            background: var(--card-bg); 
+            backdrop-filter: blur(8px);
+            max-width: 500px;
+            margin: 2rem auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        #error-view .err-icon { font-size: 4.5rem; margin-bottom: 1.5rem; filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.2)); }
+        #error-view h2 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.75rem; letter-spacing: -0.02em; }
+        #error-view p { color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.5; font-size: 0.95rem; }
+        #error-view a { 
+            display: inline-block; 
+            background: linear-gradient(135deg, #ef4444, #dc2626); 
+            color: white; 
+            padding: 0.85rem 2.25rem; 
+            border-radius: 0.75rem; 
+            font-weight: 600; 
+            text-decoration: none; 
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+            transition: all 0.2s ease; 
+        }
+        #error-view a:hover { 
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(239, 68, 68, 0.45);
+        }
+
+        /* Floating Telegram Button */
+        #float-tg {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #0088cc, #0077b5);
+            color: white;
+            text-decoration: none;
+            padding: 0.6rem 1.1rem 0.6rem 0.8rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            box-shadow: 0 4px 18px rgba(0, 136, 204, 0.45);
+            animation: tg-pulse 2.5s ease-in-out infinite;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        #float-tg:hover {
+            transform: translateY(-3px) scale(1.04);
+            box-shadow: 0 8px 24px rgba(0, 136, 204, 0.6);
+            animation: none;
+        }
+        #float-tg svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+        @keyframes tg-pulse {
+            0%, 100% { transform: translateY(0) scale(1); box-shadow: 0 4px 18px rgba(0,136,204,0.45); }
+            50%       { transform: translateY(-4px) scale(1.03); box-shadow: 0 10px 28px rgba(0,136,204,0.65); }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="telegram-overlay" class="overlay">
+        <div class="overlay-box">
+            <div class="overlay-icon">📢</div>
+            <h2 class="overlay-title">Join Our Telegram</h2>
+            <p class="overlay-text">Stay updated with the latest match links and avoid missing out on live games!</p>
+            <a href="https://t.me/Sports_Fan_Group" target="_blank" class="overlay-btn">Join Telegram</a>
+            <button class="overlay-btn-secondary" onclick="handleJoin()">Ok</button>
+        </div>
+    </div>
+
+    <header>
+        <span class="header-label">Official Channels:</span>
+        <a href="https://t.me/Sports_Fan_Group" target="_blank" class="btn-tg">📣 Telegram</a>
+    </header>
+
+    <!-- Floating Telegram Button -->
+    <a href="https://t.me/AURASTREAMS" target="_blank" id="float-tg" title="Join our Telegram">
+        <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M9.993 15.674l-.398 5.604c.57 0 .817-.245 1.113-.54l2.67-2.557 5.53 4.047c1.014.558 1.734.264 1.987-.939l3.6-16.86c.3-1.4-.506-1.95-1.496-1.58L1.27 9.64c-1.37.53-1.35 1.29-.233 1.64l5.68 1.77 13.337-8.418c.59-.39 1.13-.175.69.215"/></svg>
+        <span>Join</span>
+    </a>
+
+    <main>
+        <div id="stream-view" class="hidden">
+            <div class="channel-title-bar">
+                <h1 id="channel-name">
+                    <span class="live-dot"></span> Loading...
+                </h1>
+            </div>
+
+            <!-- Iframe player -->
+            <div id="iframe-container-div" class="hidden">
+                <div class="player-wrap">
+                    <div class="spinner" id="iframe-spinner">
+                        <div class="spinner-ring"></div>
+                    </div>
+                    <iframe id="embed-frame" allowfullscreen allow="autoplay; encrypted-media; picture-in-picture; fullscreen" scrolling="no" onload="document.getElementById('iframe-spinner').style.opacity='0'; setTimeout(()=>document.getElementById('iframe-spinner').style.display='none',500)"></iframe>
+                </div>
+            </div>
+
+            <!-- Plyr video player -->
+            <div id="video-container-div" class="hidden">
+                <div class="player-wrap">
+                    <div class="spinner" id="video-spinner">
+                        <div class="spinner-ring"></div>
+                    </div>
+                    <div id="live-player-container">
+                        <video id="player" playsinline controls style="width:100%; height:100%; object-fit:cover;"></video>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="error-view" class="hidden">
+            <div class="err-icon">📺</div>
+            <h2>Stream Offline</h2>
+            <p>Please check the channel link or join our social channels for updates and fresh backup streams.</p>
+            <a href="https://t.me/aurastreams" target="_blank">Join Telegram</a>
+        </div>
+    </main>
+
+    <script>
+        function closeOverlay() {
+            document.getElementById('telegram-overlay').classList.add('hidden');
+        }
+
+        function handleJoin() {
+            closeOverlay();
+        }
+
+        // Adcash Ads Initialization
+        try {
+            aclib.runInPagePush({
+                zoneId: '11612834',
+                maxAds: 2,
+            });
+            aclib.runPop({
+                zoneId: '11612742',
+            });
+        } catch (e) {
+            console.warn('Adcash initialization error:', e);
+        }
+
+        // Direct Link Ad (triggers on first click on page)
+        document.addEventListener('click', function openDirectAd() {
+            window.open('https://buzzonclick.com/jump/next.php?r=11613198', '_blank');
+            document.removeEventListener('click', openDirectAd);
+        });
+
+        const channels = {
+            // ── Original / Custom Channels ──────────────────────────────────
+            "s1":              { type: "video",  name: "FANCODE",                        url: "https://in-mc-flive.fancode.com/mumbai/4248016_english_hls_d97e92363555615_1ta-di_h264/540p.m3u8?hdntl=Expires=1785685444~_GO=Generated~acl=/mumbai/4248016_english_hls_d97e92363555615_1ta-di_h264/*~Signature=Aej9sTUBaKe7iZ-BPxX3xOal9Ig-Uu7AUlAQ8t69x9D7Ih4qIbBr819E-hIClUkogAeH33tfI-g71so-PAAcW8yRzJQB" },
+            "s3eng":           { type: "video",  name: "Eng Extra",                      url: "https://vsd259.okcdn.ru/cmaf/19202299333375/sig/I7dYQ0_SLpY/expires/1786125818741/srcIp/152.58.189.0/urls/185.226.55.87/clientType/36/srcAg/CHROME/mid/16154868598783/get/hls_16154868598783.bxoBh0VMMWU.m3u8" },
+            "100OP":           { type: "iframe", name: "EX (SD)",                        url: "https://extrax.pages.dev/?Star_SD" },
+            "100OP1":          { type: "iframe", name: "EX (HD)",                        url: "https://extrax.pages.dev/?Star_HD" },
+            "indsrl":          { type: "video",  name: "Willow TV",                      url: "https://amg01269-amg01269c1-sportstribal-emea-5204.playouts.now.amagi.tv/playlist/amg01269-willowtvfast-willowplus-sportstribalemea/playlist.m3u8" },
+
+            // ── Willow & Live Sports Extra ──────────────────────────────────
+            "willowhd":        { type: "iframe", name: "Willow TV HD",                   url: "https://sonucdn-v1.pages.dev/channel/willow.html" },
+            "willow2":         { type: "iframe", name: "Willow 2 (LPL)",                 url: "https://sonuplayv1.pages.dev/J1/?url=https://amg01269-amg01269c1-sportstribal-emea-5204.playouts.now.amagi.tv/playlist/amg01269-willowtvfast-willowplus-sportstribalemea/playlist.m3u8" },
+            "willowsports":    { type: "iframe", name: "Willow Sports",                  url: "https://cricketstan.github.io/Willow-Sports/" },
+            "tnt":             { type: "iframe", name: "TNT Sports",                     url: "https://allrounder3-0.pages.dev/cricket/tnt" },
+            "tnt1":            { type: "iframe", name: "TNT Sports 1",                   url: "https://cricketstan.github.io/TNT-1/" },
+            "cricbuzz":        { type: "iframe", name: "Cricbuzz Player",                url: "https://allroundersd.pages.dev/cricbuzz1.html" },
+            "kayo":            { type: "iframe", name: "Kayo Sports 1",                  url: "https://allrounder-live12.pages.dev/channel/kayo" },
+            "kayo2":           { type: "iframe", name: "Kayo Sports 2",                  url: "https://allrounder-live12.pages.dev/channel/kayo-2" },
+            "skyuk":           { type: "iframe", name: "Sky Sports UK",                  url: "https://allroundersd.pages.dev/channel/sky-uk" },
+            "skynz":           { type: "iframe", name: "Sky Sports NZ",                  url: "https://crickettv.site/sky-nz/player?id=3" },
+            "fox501":          { type: "iframe", name: "Fox Cricket 501",                url: "https://allrounder-live12.pages.dev/channel/fox1" },
+            "foxcricket":      { type: "iframe", name: "Fox Cricket",                    url: "https://cricketstan.github.io/Fox-Cricket-/" },
+            "jiohotstar":      { type: "iframe", name: "Jio Hotstar",                    url: "https://allrounder-live7.pages.dev/channel/hotstar" },
+            "tsn":             { type: "iframe", name: "TSN Sports",                     url: "https://fifa-world-cup-live.pages.dev/tsn" },
+            "myco":            { type: "iframe", name: "Myco TV",                        url: "https://allrounder-rho.vercel.app/channel/myco.html" },
+            "wpl":             { type: "iframe", name: "Cric Life (WPL)",                url: "https://allrounderlive.pages.dev/cric-life" },
+            "asports":         { type: "iframe", name: "A Sports HD",                    url: "https://sonuplayv1.pages.dev/J1/?url=https://tvsen6.aynaott.com/zv68oqPDu7MZZwmHhRxt/index.m3u8" },
+            "foxhd":           { type: "iframe", name: "Fox HD",                         url: "https://sonuplayv1.pages.dev/J1/?url=https://rmtv.akamaized.net/hls/live/2043153/rmtv-es-web/master.m3u8" },
+            "cbs":             { type: "iframe", name: "CBS Sports",                     url: "https://sonucdn-v1.vercel.app/football/fox.html" },
+            "ptvsports":       { type: "iframe", name: "PTV Sports",                     url: "https://allrounder-live2.pages.dev/channel/ptv" },
+            "primehindi":      { type: "iframe", name: "Prime Video Hindi",              url: "https://allrounder-live.pages.dev/channel/prame-hin.html" },
+            "primeenglish":    { type: "iframe", name: "Prime Video English",            url: "https://allrounderlive.in/prime.html" },
+            "primenz":         { type: "iframe", name: "Prime Video NZ",                 url: "https://hff-cricketstan.wasmer.app/" },
+            "asiacup":         { type: "iframe", name: "Asia Cup Feed",                  url: "https://allrounderlive.pages.dev/player?url=https://d3ssd0juqbxbw.cloudfront.net/mtvsinstlive/master.m3u8" },
+            "dillzy":          { type: "iframe", name: "Dillzy Cricket",                 url: "https://allrounderlive.pages.dev/player?url=https://dillzy.cricketstream745.workers.dev/live.m3u8" },
+            "hotstar2":        { type: "iframe", name: "Hotstar Live Feed",              url: "https://allrounderlive.pages.dev/dilz?id=dillzy645" },
+            "channel7":        { type: "iframe", name: "Channel 7 Plus",                 url: "https://allrounderlive.pages.dev/player?url=https://hugh.cdn.rumble.cloud/live/gi29le7p/slot-139/bx1o-9vac_720p/chunklist.m3u8" },
+            "ten5":            { type: "iframe", name: "Sony Ten 5 SD",                  url: "https://cricketstan.github.io/Sony-ten-5/" },
+            "iosfootball":     { type: "iframe", name: "iOS User Football",              url: "https://sonuplayv1.pages.dev/J1/?url=https://fastly.live.brightcove.com/6374054671112/eu-west-1/6058004203001/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJob3N0IjoiYXplMnp5LmVncmVzcy55ODN1ZWIiLCJhY2NvdW50X2lkIjoiNjA1ODAwNDIwMzAwMSIsImVobiI6ImZhc3RseS5saXZlLmJyaWdodGNvdmUuY29tIiwiaXNzIjoiYmxpdmUtcGxheWJhY2stc291cmNlLWFwaSIsInN1YiI6InBhdGhtYXB0b2tlbiIsImF1ZCI6WyI2MDU4MDA0MjAzMDAxIl0sImp0aSI6IjYzNzQwNTQ2NzExMTIifQ.3FmuTna3DAmY7xlhK5fk6LMrosrtrR5VsU2QOgYO5y4/chunklist__3.m3u8" },
+            "fc2":             { type: "iframe", name: "Fancode Live Feed",              url: "https://sonuplayv1.pages.dev/J1/?url=https://hls.live123.fans/live/4565883.m3u8" },
+            "zeehindi":        { type: "iframe", name: "Zee Cinema Hindi",               url: "https://fifa-world-cup-live.pages.dev/hindi.html" },
+            "zeeeng":          { type: "iframe", name: "Zee Cinema English",             url: "https://fifa-world-cup-live.pages.dev/english" },
+            "zeeastro":        { type: "iframe", name: "Zee Cinema (Astro)",             url: "https://zee-seven.vercel.app/" },
+            "fifaworld":       { type: "iframe", name: "FIFA Channel",                   url: "https://fifa-world-cup-live.pages.dev/fifa1" },
+            "ausvsban":        { type: "iframe", name: "AUS vs BAN (Live Prime)",        url: "https://aamazon.pages.dev/?05&stream=1" },
+            "indvssrl":        { type: "iframe", name: "IND vs SL (Live Prime)",         url: "https://aamazon.pages.dev/?0583&stream=1" },
+            "ausvsjap":        { type: "iframe", name: "AUS vs JAP (Live Prime)",        url: "https://aamazon.pages.dev/?04&stream=1" },
+            "arnhem":          { type: "iframe", name: "PTT Arnhem (Live Prime)",        url: "https://aamazon.pages.dev/?092&stream=1" },
+            "saitama":         { type: "iframe", name: "PTT Saitama (Live Prime)",       url: "https://aamazon.pages.dev/?098&stream=1" },
+            "willowcricbuzz":  { type: "iframe", name: "Willow by Cricbuzz",             url: "shaka_player.html?mpd=https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/v1jwc7b2k7/out/v1/dd824b4819b047c58496a3cf34b518de/cenc.mpd&kid=1d0c252991eb5bc168a3fb4db1e9a850&key=ad27540c50636966576b34dda706405d" },
+            "astonvilla":      { type: "iframe", name: "Aston Villa vs Gladbach",        url: "https://aamazon.pages.dev/?072&stream=1" },
+            "laliga1":         { type: "iframe", name: "LaLiga: Alavés vs Getafe",       url: "shaka_player.html?mpd=https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/bcj3iscpd6/out/v1/fcd137b391214f7cb99dd4d7be90ca87/cenc.mpd&kid=1a5df53609ebc9857898c490f4724918&key=77f62980d582ec541280796acf8b2d19" },
+
+            // ── FTB Live Streams ──────────────────────────────────────────────
+            "mutv":            { type: "iframe", name: "MUTV Live",                      url: "https://ftb.pages.dev/ios?id=mutv" },
+            "iosfoot":         { type: "iframe", name: "iOS Football Live",              url: "https://ftb.pages.dev/ios?id=ios" },
+
+            // ── FanCode Live (Universal Player per Match) ────────────────────
+            "fc_ireafg":       { type: "video", name: "FanCode: IRE vs AFG",            url: "https://fancode-cdn.pages.dev/cnp-tv/4248051_eng.sonuxs.m3u8" },
+            "fc2":          { type: "video", name: "laliga",  url: "https://live05.meung.app/live/02456966.m3u8" },
+            "laliga2":        { type: "iframe", name: "LaLiga: Alavés vs Getafe",       url: "https://embedindia.st/embed/laliga/2026-08-15/ala-get" },
+            "laliga3":         { type: "iframe", name: "LaLiga: Alavés vs Getafe",       url: "https://proxy-play-hls.lovable.app/api/public/p?u=https%3A%2F%2Flive05.meung.app%2Flive%2F02456966.m3u8&r=" },
+
+            // ── Sony Sports ─────────────────────────────────────────────────
+            "s6hd":            { type: "iframe", name: "Sony Sports 1 HD",               url: "https://sonucdn-v1.pages.dev/star.html?id=STEN1HD" },
+            "s6":              { type: "iframe", name: "Sony Sports 1 SD",               url: "https://sonucdn-v1.pages.dev/star.html?id=STEN1" },
+            "s2hd":            { type: "iframe", name: "Sony Sports 2 HD",               url: "https://sonucdn-v1.pages.dev/star.html?id=STEN2HD" },
+            "s2":              { type: "iframe", name: "Sony Sports 2 SD",               url: "https://sonucdn-v1.pages.dev/star.html?id=STEN2" },
+            "s3hindihd":       { type: "iframe", name: "Sony Sports 3 HD (Hindi)",       url: "https://sonucdn-v1.pages.dev/star.html?id=STEN3HD" },
+            "s3hindi":         { type: "iframe", name: "Sony Sports 3 SD (Hindi)",       url: "https://sonucdn-v1.pages.dev/star.html?id=STEN3" },
+            "s4tamil":         { type: "iframe", name: "Sony Sports 4 (Tamil)",          url: "https://sonucdn-v1.pages.dev/star.html?id=STENT" },
+            "s4telugu":        { type: "iframe", name: "Sony Sports 4 (Telugu)",         url: "https://sonucdn-v1.pages.dev/star.html?id=STENTU" },
+            "s5hd":            { type: "iframe", name: "Sony Sports 5 HD (Hindi)",       url: "https://sonucdn-v1.pages.dev/star.html?id=STEN5HD" },
+            "s5":              { type: "iframe", name: "Sony Sports 5 SD (Hindi)",       url: "https://sonucdn-v1.pages.dev/star.html?id=STEN5" },
+
+            // ── Star Sports (English) ────────────────────────────────────────
+            "star1enghd":      { type: "iframe", name: "Star Sports 1 HD (English)",     url: "https://sonucdn-v1.pages.dev/star.html?id=E1HD" },
+            "star1eng":        { type: "iframe", name: "Star Sports 1 SD (English)",     url: "https://sonucdn-v1.pages.dev/star.html?id=E1SD" },
+            "star2enghd":      { type: "iframe", name: "Star Sports 2 HD (English)",     url: "https://sonucdn-v1.pages.dev/star.html?id=E2HD" },
+            "star2eng":        { type: "iframe", name: "Star Sports 2 SD (English)",     url: "https://sonucdn-v1.pages.dev/star.html?id=E2SD" },
+
+            // ── Star Sports (Hindi) ──────────────────────────────────────────
+            "star1hindihd":    { type: "iframe", name: "Star Sports 1 HD (Hindi)",       url: "https://sonucdn-v1.pages.dev/star.html?id=H1HD" },
+            "star1hindi":      { type: "iframe", name: "Star Sports 1 SD (Hindi)",       url: "https://sonucdn-v1.pages.dev/star.html?id=H1SD" },
+            "star2hindihd":    { type: "iframe", name: "Star Sports 2 HD (Hindi)",       url: "https://sonucdn-v1.pages.dev/star.html?id=H2HD" },
+            "star2hindi":      { type: "iframe", name: "Star Sports 2 SD (Hindi)",       url: "https://sonucdn-v1.pages.dev/star.html?id=H2SD" },
+
+            // ── Star Sports (Regional) ───────────────────────────────────────
+            "star3":           { type: "iframe", name: "Star Sports 3",                  url: "https://sonucdn-v1.pages.dev/star.html?id=SS3" },
+            "select1":         { type: "iframe", name: "Star Sports Select 1",           url: "https://sonucdn-v1.pages.dev/star.html?id=SE1HD" },
+            "select2":         { type: "iframe", name: "Star Sports Select 2",           url: "https://sonucdn-v1.pages.dev/star.html?id=SE2HD" },
+            "star1tamil":      { type: "iframe", name: "Star Sports 1 HD (Tamil)",       url: "https://sonucdn-v1.pages.dev/star.html?id=T1HD" },
+            "star1telugu":     { type: "iframe", name: "Star Sports 1 HD (Telugu)",      url: "https://sonucdn-v1.pages.dev/star.html?id=TE1HD" },
+            "star1kannada":    { type: "iframe", name: "Star Sports 1 SD (Kannada)",     url: "https://sonucdn-v1.pages.dev/star.html?id=KA1SD" },
+            "star2tamil":      { type: "iframe", name: "Star Sports 2 HD (Tamil)",       url: "https://sonucdn-v1.pages.dev/star.html?id=S2HD" },
+            "star2telugu":     { type: "iframe", name: "Star Sports 2 HD (Telugu)",      url: "https://sonucdn-v1.pages.dev/star.html?id=TE2HD" },
+            "star2kannada":    { type: "iframe", name: "Star Sports 2 SD (Kannada)",     url: "https://sonucdn-v1.pages.dev/star.html?id=KA2SD" },
+
+            // ── Kids ─────────────────────────────────────────────────────────
+            "disney":          { type: "iframe", name: "Disney Channel",                 url: "https://sonucdn-v1.pages.dev/star.html?id=DISNEY" },
+            "nick":            { type: "iframe", name: "Nick Hindi",                     url: "https://sonucdn-v1.pages.dev/star.html?id=NICK" },
+            "pogo":            { type: "iframe", name: "Pogo Hindi",                     url: "https://sonucdn-v1.pages.dev/star.html?id=POGO" },
+            "sonyyay":         { type: "iframe", name: "Sony Yay",                       url: "https://sonucdn-v1.pages.dev/star.html?id=YAY" },
+            "sonic":           { type: "iframe", name: "Sonic",                          url: "https://sonucdn-v1.pages.dev/star.html?id=SHIVA" },
+            "cartoon":         { type: "iframe", name: "Cartoon Network",                url: "https://sonucdn-v1.pages.dev/star.html?id=CN" },
+
+            // ── Documentary & Movies ─────────────────────────────────────────
+            "discovery":       { type: "iframe", name: "Discovery",                      url: "https://sonucdn-v1.pages.dev/star.html?id=DISRY" },
+            "discokids":       { type: "iframe", name: "Discovery Kids",                 url: "https://sonucdn-v1.pages.dev/star.html?id=DKIDS" },
+            "sonyaath":        { type: "iframe", name: "Sony Aath",                      url: "https://sonucdn-v1.pages.dev/star.html?id=SAATH" },
+            "colorsbng":       { type: "iframe", name: "Colors Bangla Cinema",           url: "https://sonucdn-v1.pages.dev/star.html?id=CBC" },
+            "zeebangla":       { type: "iframe", name: "Zee Bangla Cinema",              url: "https://sonucdn-v1.pages.dev/star.html?id=ZBS" },
+            "zeebanglahd":     { type: "iframe", name: "Zee Bangla HD",                 url: "https://sonucdn-v1.pages.dev/star.html?id=ZEEB" },
+            "jalshamov":       { type: "iframe", name: "Jalsha Movies",                  url: "https://sonucdn-v1.pages.dev/star.html?id=JMOVIES" }
+        };
+
+        var plyrPlayer = null;
+        var hlsInstance = null;
+
+        // Parse custom headers from the stream URL containing a pipe parameter
+        function parseStreamUrl(url) {
+            let baseUrl = url;
+            let headers = {};
+            
+            // Check for raw pipe symbol | or url-encoded %7C
+            let pipeIndex = url.indexOf('|');
+            if (pipeIndex === -1) {
+                pipeIndex = url.indexOf('%7C');
+            }
+            
+            if (pipeIndex !== -1) {
+                baseUrl = url.substring(0, pipeIndex);
+                const separatorLength = url.charAt(pipeIndex) === '|' ? 1 : 3;
+                let headerStr = url.substring(pipeIndex + separatorLength);
+                
+                try {
+                    headerStr = decodeURIComponent(headerStr);
+                } catch(e) {}
+                
+                const params = new URLSearchParams(headerStr);
+                for (const [key, value] of params.entries()) {
+                    headers[key] = value;
+                }
+            }
+            
+            return { baseUrl, headers };
+        }
+
+        function loadPlyr(src) {
+            // Destroy any previous instances
+            if (plyrPlayer) {
+                plyrPlayer.destroy();
+                plyrPlayer = null;
+            }
+            if (hlsInstance) {
+                hlsInstance.destroy();
+                hlsInstance = null;
+            }
+
+            const video = document.getElementById('player');
+            const spinner = document.getElementById('video-spinner');
+            if (spinner) {
+                spinner.style.display = 'flex';
+                spinner.style.opacity = '1';
+            }
+
+            const parsed = parseStreamUrl(src);
+            console.log("Loading source:", parsed.baseUrl);
+
+            if (Hls.isSupported()) {
+                const hls = new Hls({
+                    xhrSetup: function(xhr, url) {
+                        xhr.withCredentials = false;
+                        
+                        // Set the custom headers extracted from the stream URL
+                        if (parsed.headers) {
+                            for (const [k, v] of Object.entries(parsed.headers)) {
+                                try {
+                                    xhr.setRequestHeader(k, v);
+                                } catch(e) {
+                                    console.warn(`Could not set header ${k}:`, e.message);
+                                }
+                            }
+                        }
+                    }
+                });
+                hlsInstance = hls;
+                hls.loadSource(parsed.baseUrl);
+                hls.attachMedia(video);
+
+                hls.on(Hls.Events.MANIFEST_PARSED, function (event, data) {
+                    if (spinner) {
+                        spinner.style.opacity = '0';
+                        setTimeout(() => spinner.style.display = 'none', 500);
+                    }
+
+                    // Extract unique heights for resolution settings
+                    const uniqueQualities = [];
+                    hls.levels.forEach((l) => {
+                        if (l.height && !uniqueQualities.includes(l.height)) {
+                            uniqueQualities.push(l.height);
+                        }
+                    });
+                    uniqueQualities.sort((a, b) => b - a);
+
+                    let plyrOptions = {
+                        autoplay: true,
+                        muted: true,
+                        controls: [
+                            'play-large',
+                            'play',
+                            'progress',
+                            'current-time',
+                            'mute',
+                            'volume',
+                            'settings',
+                            'pip',
+                            'fullscreen'
+                        ],
+                        settings: ['speed']
+                    };
+
+                    // Only show resolution selection options if there are multiple quality levels
+                    if (uniqueQualities.length > 1) {
+                        plyrOptions.settings.unshift('quality');
+                        plyrOptions.quality = {
+                            default: 0,
+                            options: [0, ...uniqueQualities],
+                            forced: true,
+                            onChange: (newQuality) => {
+                                if (newQuality === 0) {
+                                    hls.currentLevel = -1; // -1 represents Auto in hls.js
+                                } else {
+                                    const idx = hls.levels.findIndex(l => l.height === newQuality);
+                                    if (idx !== -1) {
+                                        hls.currentLevel = idx;
+                                    }
+                                }
+                            }
+                        };
+                        plyrOptions.i18n = {
+                            qualityLabel: {
+                                0: 'Auto'
+                            }
+                        };
+                    }
+
+                    plyrPlayer = new Plyr(video, plyrOptions);
+                    
+                    // Force autoplay
+                    video.play().catch(err => {
+                        console.log("Autoplay prevented:", err);
+                    });
+                });
+
+                hls.on(Hls.Events.ERROR, function (event, data) {
+                    if (data.fatal) {
+                        switch (data.type) {
+                            case Hls.ErrorTypes.NETWORK_ERROR:
+                                console.error("Fatal network error encountered, trying to recover");
+                                hls.startLoad();
+                                break;
+                            case Hls.ErrorTypes.MEDIA_ERROR:
+                                console.error("Fatal media error encountered, trying to recover");
+                                hls.recoverMediaError();
+                                break;
+                            default:
+                                console.error("Fatal error, cannot recover");
+                                hls.destroy();
+                                break;
+                        }
+                    }
+                });
+
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                // Safari & native HLS iOS
+                video.src = parsed.baseUrl;
+                if (spinner) {
+                    spinner.style.opacity = '0';
+                    setTimeout(() => spinner.style.display = 'none', 500);
+                }
+
+                plyrPlayer = new Plyr(video, {
+                    autoplay: true,
+                    muted: true,
+                    controls: [
+                        'play-large',
+                        'play',
+                        'progress',
+                        'current-time',
+                        'mute',
+                        'volume',
+                        'settings',
+                        'pip',
+                        'fullscreen'
+                    ],
+                    settings: ['speed']
+                });
+
+                video.play().catch(err => {
+                    console.log("Autoplay prevented:", err);
+                });
+            } else {
+                console.error("HLS is not supported on this browser.");
+                if (spinner) {
+                    spinner.style.display = 'none';
+                }
+            }
+        }
+
+        window.onload = function () {
+            var urlParams = new URLSearchParams(window.location.search);
+            var streamKey = urlParams.get('stream');
+
+            if (streamKey && channels[streamKey]) {
+                var ch = channels[streamKey];
+                document.getElementById('stream-view').classList.remove('hidden');
+                document.getElementById('channel-name').innerHTML = '<span class="live-dot"></span> ' + ch.name;
+
+                if (ch.type === 'video') {
+                    document.getElementById('video-container-div').classList.remove('hidden');
+                    loadPlyr(ch.url);
+                } else {
+                    document.getElementById('iframe-container-div').classList.remove('hidden');
+                    document.getElementById('embed-frame').src = ch.url;
+                }
+            } else {
+                document.getElementById('error-view').classList.remove('hidden');
+            }
+        };
+    </script>
+
+</body>
+</html>

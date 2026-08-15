@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stream Player v2 | Premium</title>
+
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Load hls.js globally -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/hls.js@latest/dist/hls.min.js" crossorigin="anonymous"></script>
+
+    <!-- Load Plyr Player -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css" />
+    <script src="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.polyfilled.min.js"></script>
+
+    <!-- Adcash Library -->
+    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+
+    <style>
+        :root {
+            --bg-color: #09090b;
+            --card-bg: rgba(20, 20, 23, 0.7);
+            --border-color: rgba(39, 39, 42, 0.7);
+            --accent-blue: #3b82f6;
+            --accent-blue-hover: #2563eb;
+            --accent-green: #22c55e;
+            --accent-green-hover: #16a34a;
+            --text-main: #f4f4f5;
+            --text-secondary: #a1a1aa;
+            --warning-orange: #f59e0b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center;
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at top center, rgba(59, 130, 246, 0.08) 0%, transparent 60%);
+        }
+
+        /* Overlay & Modals */
+        .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; z-index: 9999; backdrop-filter: blur(8px); }
+        .overlay.hidden { display: none !important; }
+        .overlay-box {
+            background: rgba(15, 15, 18, 0.9);
+            padding: 2.25rem 2rem;
+            border-radius: 1.25rem;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            max-width: 420px;
+            width: 90%;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 20px rgba(59, 130, 246, 0.1);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            transition: all 0.3s ease;
+        }
+        .overlay-icon { font-size: 3.5rem; margin-bottom: 1.25rem; filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.4)); }
+        .overlay-title { font-size: 1.65rem; font-weight: 700; margin-bottom: 0.75rem; letter-spacing: -0.02em; }
+        .overlay-text { color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.5; text-align: left; }
+        
+        .overlay-btn { 
+            display: block; 
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8); 
+            color: white; 
+            padding: 0.85rem 1.5rem; 
+            border-radius: 0.75rem; 
+            font-weight: 600; 
+            text-decoration: none; 
+            cursor: pointer; 
+            border: none; 
+            width: 100%; 
+            font-size: 1rem; 
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            transition: all 0.2s ease; 
+        }
+        .overlay-btn:hover { 
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.45);
+            background: linear-gradient(135deg, #4f46e5, #2563eb); 
+        }
+        .overlay-btn-secondary { 
+            display: block; 
+            background: rgba(39, 39, 42, 0.6); 
+            color: #e4e4e7; 
+            padding: 0.85rem 1.5rem; 
+            border-radius: 0.75rem; 
+            font-weight: 600; 
+            text-decoration: none; 
+            cursor: pointer; 
+            border: 1px solid rgba(63, 63, 70, 0.5); 
+            width: 100%; 
+            font-size: 1rem; 
+            margin-top: 0.75rem; 
+            transition: all 0.2s ease; 
+        }
+        .overlay-btn-secondary:hover { 
+            background: rgba(63, 63, 70, 0.85); 
+            color: white;
+        }
+
+        /* Form Controls in Modal */
+        .form-group { text-align: left; margin-bottom: 1.25rem; }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; color: #e4e4e7; text-transform: uppercase; letter-spacing: 0.05em; }
+        .form-input { 
+            width: 100%; 
+            background: rgba(24, 24, 27, 0.8); 
+            border: 1px solid var(--border-color); 
+            padding: 0.75rem 1rem; 
+            border-radius: 0.5rem; 
+            color: white; 
+            font-family: inherit; 
+            font-size: 0.95rem; 
+            transition: border-color 0.2s;
+        }
+        .form-input:focus { border-color: var(--accent-blue); outline: none; }
+        
+        /* Toggle Switch */
+        .toggle-container { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; background: rgba(39, 39, 42, 0.3); padding: 0.75rem 1rem; border-radius: 0.5rem; border: 1px solid var(--border-color); }
+        .toggle-label { font-size: 0.95rem; font-weight: 500; }
+        .switch { position: relative; display: inline-block; width: 48px; height: 26px; }
+        .switch input { opacity: 0; width: 0; height: 0; }
+        .slider { position: absolute; cursor: pointer; inset: 0; background-color: #3f3f46; transition: .3s; border-radius: 34px; }
+        .slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 4px; bottom: 4px; background-color: white; transition: .3s; border-radius: 50%; }
+        input:checked + .slider { background-color: var(--accent-blue); }
+        input:checked + .slider:before { transform: translateX(22px); }
+
+        /* Header */
+        header { 
+            width: 100%; 
+            padding: 0.85rem 1.5rem; 
+            background: rgba(15, 15, 18, 0.8); 
+            border-bottom: 1px solid var(--border-color); 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 50; 
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .header-left { display: flex; align-items: center; gap: 1rem; }
+        .header-label { font-size: 0.85rem; font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
+        .btn-tg { 
+            background: linear-gradient(135deg, #0088cc, #0077b5); 
+            color: white; 
+            padding: 0.35rem 1.25rem; 
+            border-radius: 9999px; 
+            font-size: 0.8rem; 
+            font-weight: 600; 
+            text-decoration: none; 
+            box-shadow: 0 4px 10px rgba(0, 136, 204, 0.2);
+            transition: all 0.2s ease; 
+        }
+        .btn-tg:hover { 
+            transform: translateY(-1px);
+            box-shadow: 0 6px 14px rgba(0, 136, 204, 0.35);
+        }
+        .header-right { display: flex; align-items: center; gap: 0.75rem; }
+        .btn-settings {
+            background: rgba(39, 39, 42, 0.6);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+            transition: all 0.2s ease;
+        }
+        .btn-settings:hover {
+            background: rgba(63, 63, 70, 0.8);
+            border-color: var(--accent-blue);
+            transform: rotate(45deg);
+        }
+
+        /* Main Layout */
+        main { width: 100%; max-width: 960px; padding: 1.5rem 1rem; margin-top: 0.5rem; flex-grow: 1; }
+        .hidden { display: none !important; }
+
+        /* Stream View */
+        .channel-title-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.25rem;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        #channel-name { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.01em; color: white; display: flex; align-items: center; gap: 0.5rem; }
+        
+        .live-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #ef4444;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #ef4444;
+            animation: pulse-dot 1.5s infinite ease-in-out;
+            margin-right: 0.25rem;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.4); opacity: 0.4; }
+        }
+
+        /* Player wrappers */
+        .player-wrap { 
+            position: relative; 
+            width: 100%; 
+            padding-bottom: 56.25%; 
+            background: #000; 
+            border-radius: 1rem; 
+            overflow: hidden; 
+            border: 1px solid var(--border-color); 
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7); 
+        }
+        .player-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        #live-player-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+        /* Spinner */
+        .spinner { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: #000; z-index: 2; transition: opacity 0.5s; }
+        .spinner-ring { width: 48px; height: 48px; border: 4px solid rgba(255, 255, 255, 0.1); border-top-color: var(--accent-blue); border-radius: 50%; animation: spin 0.8s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* Plyr custom tokens */
+        :root {
+            --plyr-color-main: #3b82f6;
+            --plyr-video-background: #000000;
+            --plyr-font-family: 'Outfit', sans-serif;
+            --plyr-border-radius: 1rem;
+        }
+        .plyr {
+            border-radius: 1rem !important;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            width: 100% !important;
+            height: 100% !important;
+        }
+        .plyr--full-ui input[type=range] { color: #3b82f6 !important; }
+        .plyr__control--overlaid { background: rgba(59, 130, 246, 0.9) !important; }
+        .plyr__control--overlaid:hover { background: #2563eb !important; }
+
+        /* Action Center Panel */
+        .action-panel {
+            margin-top: 1.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.25rem 1.5rem;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .action-title { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+        .action-buttons { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem; }
+        
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(39, 39, 42, 0.8);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.65rem 1.15rem;
+            border-radius: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .btn-action:hover {
+            background: rgba(63, 63, 70, 0.9);
+            border-color: var(--accent-blue);
+            transform: translateY(-1px);
+        }
+        .btn-action-primary {
+            background: rgba(59, 130, 246, 0.15);
+            border-color: rgba(59, 130, 246, 0.4);
+            color: #93c5fd;
+        }
+        .btn-action-primary:hover {
+            background: rgba(59, 130, 246, 0.25);
+            border-color: var(--accent-blue);
+        }
+
+        /* Stream Header Alert */
+        .stream-alert {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 0.75rem;
+            padding: 0.85rem 1.25rem;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            line-height: 1.45;
+            color: #fcd34d;
+        }
+        .stream-alert-icon { font-size: 1.1rem; flex-shrink: 0; }
+        .stream-alert-text strong { color: white; }
+        .stream-alert-action { margin-top: 0.5rem; display: flex; gap: 0.75rem; }
+        .stream-alert-link { color: #f59e0b; text-decoration: underline; font-weight: 600; cursor: pointer; }
+        .stream-alert-link:hover { color: #fbbf24; }
+
+        /* Error View */
+        #error-view { 
+            text-align: center; 
+            padding: 5rem 2rem; 
+            border: 1px solid var(--border-color); 
+            border-radius: 1rem; 
+            background: var(--card-bg); 
+            backdrop-filter: blur(8px);
+            max-width: 500px;
+            margin: 2rem auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        #error-view .err-icon { font-size: 4.5rem; margin-bottom: 1.5rem; }
+        #error-view h2 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.75rem; letter-spacing: -0.02em; }
+        #error-view p { color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.5; font-size: 0.95rem; }
+        #error-view a { 
+            display: inline-block; 
+            background: linear-gradient(135deg, #ef4444, #dc2626); 
+            color: white; 
+            padding: 0.85rem 2.25rem; 
+            border-radius: 0.75rem; 
+            font-weight: 600; 
+            text-decoration: none; 
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+            transition: all 0.2s ease; 
+        }
+        #error-view a:hover { 
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(239, 68, 68, 0.45);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Telegram Modal -->
+    <div id="telegram-overlay" class="overlay">
+        <div class="overlay-box">
+            <div class="overlay-icon">📢</div>
+            <h2 class="overlay-title">Join Our Telegram</h2>
+            <p class="overlay-text">Stay updated with the latest match links and avoid missing out on live games!</p>
+            <a href="https://t.me/AuraStreams" target="_blank" class="overlay-btn">Join Telegram</a>
+            <button class="overlay-btn-secondary" onclick="closeTelegramOverlay()">Ok</button>
+        </div>
+    </div>
+
+    <!-- Proxy Settings Modal -->
+    <div id="settings-overlay" class="overlay hidden">
+        <div class="overlay-box" style="text-align: left;">
+            <h2 class="overlay-title" style="text-align: center; margin-bottom: 1.5rem;">⚙️ Proxy Settings</h2>
+            
+            <div class="toggle-container">
+                <span class="toggle-label">Enable CORS & Header Proxy</span>
+                <label class="switch">
+                    <input type="checkbox" id="setting-proxy-enable">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label for="setting-proxy-url">Proxy Server URL</label>
+                <input type="text" id="setting-proxy-url" class="form-input" placeholder="http://localhost:3000/proxy">
+                <p style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.4rem;">
+                    We recommend setting up our free Cloudflare Worker proxy or local Node server. See <code>README_PROXY.md</code>.
+                </p>
+            </div>
+
+            <div style="display: flex; gap: 0.75rem; margin-top: 1.75rem;">
+                <button class="overlay-btn" onclick="saveSettings()">Save Settings</button>
+                <button class="overlay-btn-secondary" style="margin-top:0;" onclick="closeSettingsOverlay()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-left">
+            <span class="header-label">Official Channels:</span>
+            <a href="https://t.me/FIFA_WORLDCUP_DISCUSSION" target="_blank" class="btn-tg">Telegram</a>
+        </div>
+        <div class="header-right">
+            <button class="btn-settings" onclick="openSettingsOverlay()" title="Proxy Settings">⚙️</button>
+        </div>
+    </header>
+
+    <main>
+        <div id="stream-view" class="hidden">
+            <div class="channel-title-bar">
+                <h1 id="channel-name">
+                    <span class="live-dot"></span> Loading...
+                </h1>
+            </div>
+
+            <!-- Iframe player -->
+            <div id="iframe-container-div" class="hidden">
+                <div class="player-wrap">
+                    <div class="spinner" id="iframe-spinner">
+                        <div class="spinner-ring"></div>
+                    </div>
+                    <iframe id="embed-frame" allowfullscreen allow="autoplay; encrypted-media; picture-in-picture; fullscreen" scrolling="no" onload="document.getElementById('iframe-spinner').style.opacity='0'; setTimeout(()=>document.getElementById('iframe-spinner').style.display='none',500)"></iframe>
+                </div>
+            </div>
+
+            <!-- Plyr video player -->
+            <div id="video-container-div" class="hidden">
+                <div class="player-wrap">
+                    <div class="spinner" id="video-spinner">
+                        <div class="spinner-ring"></div>
+                    </div>
+                    <div id="live-player-container">
+                        <video id="player" playsinline controls style="width:100%; height:100%; object-fit:cover;"></video>
+                    </div>
+                </div>
+
+                <!-- Warning/Setup Banner for Akamai Streams -->
+                <div id="proxy-alert-banner" class="stream-alert hidden">
+                    <div class="stream-alert-icon">⚠️</div>
+                    <div class="stream-alert-text">
+                        <p>
+                            <strong>Restricted Stream:</strong> This link requires specialized headers (like <em>NS Player</em> or <em>Auth IPTV</em>). 
+                            If it doesn't start, enable our <strong>CORS & Header Proxy</strong> in settings or download the VLC file.
+                        </p>
+                        <div class="stream-alert-action">
+                            <span class="stream-alert-link" onclick="openSettingsOverlay()">⚙️ Open Settings</span>
+                            <span style="color: rgba(255,255,255,0.2);">|</span>
+                            <span class="stream-alert-link" onclick="triggerM3uDownload()">📥 Download VLC Playlist</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stream Action Center -->
+                <div class="action-panel">
+                    <div class="action-title">📱 Stream Tools</div>
+                    <div class="action-buttons">
+                        <button class="btn-action" onclick="copyStreamUrl()">📋 Copy Stream URL</button>
+                        <button class="btn-action btn-action-primary" onclick="triggerM3uDownload()">📥 Download M3U for VLC</button>
+                        <button class="btn-action" onclick="openSettingsOverlay()">⚙️ Proxy Configuration</button>
+                    </div>
+                    <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.4;">
+                        Note: The downloaded <strong>M3U file</strong> includes built-in VLC header options. Opening it directly in VLC Player will bypass web browser CORS security.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="error-view" class="hidden">
+            <div class="err-icon">📺</div>
+            <h2>Stream Offline</h2>
+            <p>Please check the channel link or join our social channels for updates and fresh backup streams.</p>
+            <a href="https://t.me/aurastreams" target="_blank">Join Telegram</a>
+        </div>
+    </main>
+
+    <script>
+        function closeTelegramOverlay() {
+            document.getElementById('telegram-overlay').classList.add('hidden');
+        }
+
+        // Settings Modal Handling
+        function openSettingsOverlay() {
+            // Load current settings into UI
+            const proxyEnabled = localStorage.getItem('proxy_enabled') === 'true';
+            const proxyUrl = localStorage.getItem('proxy_url') || 'http://localhost:3000/proxy';
+            
+            document.getElementById('setting-proxy-enable').checked = proxyEnabled;
+            document.getElementById('setting-proxy-url').value = proxyUrl;
+
+            document.getElementById('settings-overlay').classList.remove('hidden');
+        }
+
+        function closeSettingsOverlay() {
+            document.getElementById('settings-overlay').classList.add('hidden');
+        }
+
+        function saveSettings() {
+            const enabled = document.getElementById('setting-proxy-enable').checked;
+            const url = document.getElementById('setting-proxy-url').value.trim();
+
+            localStorage.setItem('proxy_enabled', enabled ? 'true' : 'false');
+            localStorage.setItem('proxy_url', url);
+
+            closeSettingsOverlay();
+            
+            // Reload stream with new settings
+            location.reload();
+        }
+
+        // Adcash Ads Initialization
+        try {
+            aclib.runInPagePush({
+                zoneId: '11612834',
+                maxAds: 2,
+            });
+            aclib.runPop({
+                zoneId: '11612742',
+            });
+        } catch (e) {
+            console.warn('Adcash initialization error:', e);
+        }
+
+        // Direct Link Ad (triggers on first click on page)
+        document.addEventListener('click', function openDirectAd() {
+            window.open('https://buzzonclick.com/jump/next.php?r=11613198', '_blank');
+            document.removeEventListener('click', openDirectAd);
+        });
+
+        // Configured Channels
+        const channels = {
+            "s1":      { type: "video", name: "FANCODE",                  url: "https://in-mc-flive.fancode.com/mumbai/4248016_english_hls_d97e92363555615_1ta-di_h264/540p.m3u8?hdntl=Expires=1785685444~_GO=Generated~acl=/mumbai/4248016_english_hls_d97e92363555615_1ta-di_h264/*~Signature=Aej9sTUBaKe7iZ-BPxX3xOal9Ig-Uu7AUlAQ8t69x9D7Ih4qIbBr819E-hIClUkogAeH33tfI-g71so-PAAcW8yRzJQB" },
+            "s2":      { type: "video", name: " EX",                  url: "https://sonydaimenew.akamaized.net/hls/live/20000298/criclive0708/ENG/std_lrh-800300010.m3u8?hdnea=exp=1786123078~acl=/*~id=89933667131558260839238076750248~hmac=d9fd30e9c211a36e77e8e7265ac2935009cf9946fc0469f1bbd050eb45ca1cfa" },
+            "s3eng":      { type: "video", name: "eng Extra",                  url: "https://vsd259.okcdn.ru/cmaf/19202299333375/sig/I7dYQ0_SLpY/expires/1786125818741/srcIp/152.58.189.0/urls/185.226.55.87/clientType/36/srcAg/CHROME/mid/16154868598783/get/hls_16154868598783.bxoBh0VMMWU.m3u8" },
+            "100OP":      { type: "iframe", name: " EX",                  url: "https://extrax.pages.dev/?Star_SD" },
+            "100OP1":      { type: "iframe", name: " tv Extra",                  url: "https://extrax.pages.dev/?Star_HD" },
+            "s6":      { type: "video", name: "pak vs wi",                  url: "https://sonydaimenew.akamaized.net/hls/live/20000379/cricodi1508/ENG/std_lrh-800300010.m3u8?hdnea=exp=1786807765~acl=/*~id=58751610233779207942712244614493~hmac=40ab0540bbf3d5821ecc5e86919e5da89fe012f9631f73818787680500042765" },
+            "s5":      { type: "video", name: "view",                  url: "https://sonydaimenew.akamaized.net/hls/live/20000300/cricodi1508/HIN/std_lrh-800300010.m3u8?hdnea=exp=1786807765~acl=/*~id=58751610233779207942712244614493~hmac=40ab0540bbf3d5821ecc5e86919e5da89fe012f9631f73818787680500042765%7CUser-Agent=Mozilla/5.0https://www.sonyliv.com/&Origin=https://www.sonyliv.com" },
+            "indsrl":      { type: "video", name: "ind vs srl english",                  url: "https://amg01269-amg01269c1-sportstribal-emea-5204.playouts.now.amagi.tv/playlist/amg01269-willowtvfast-willowplus-sportstribalemea/playlist.m3u8" } 
+        };
+
+        let activeStreamUrl = '';
+        let activeChannelName = '';
+        var plyrPlayer = null;
+        var hlsInstance = null;
+
+        // Parse header metadata out of stream URLs with pipe parameters
+        function parseStreamUrl(url) {
+            let baseUrl = url;
+            let headers = {};
+            
+            // Check for raw pipe symbol | or url-encoded %7C
+            let pipeIndex = url.indexOf('|');
+            if (pipeIndex === -1) {
+                pipeIndex = url.indexOf('%7C');
+            }
+            
+            if (pipeIndex !== -1) {
+                baseUrl = url.substring(0, pipeIndex);
+                const separatorLength = url.charAt(pipeIndex) === '|' ? 1 : 3;
+                let headerStr = url.substring(pipeIndex + separatorLength);
+                
+                try {
+                    headerStr = decodeURIComponent(headerStr);
+                } catch(e) {}
+                
+                const params = new URLSearchParams(headerStr);
+                for (const [key, value] of params.entries()) {
+                    headers[key] = value;
+                }
+            }
+            
+            return { baseUrl, headers };
+        }
+
+        // Helper to format url with proxy configuration
+        function getPlayableUrl(url) {
+            const parsed = parseStreamUrl(url);
+            const proxyEnabled = localStorage.getItem('proxy_enabled') === 'true';
+            const proxyUrl = localStorage.getItem('proxy_url') || 'http://localhost:3000/proxy';
+
+            const hasHeaders = Object.keys(parsed.headers).length > 0;
+            const isAkamai = parsed.baseUrl.includes('akamaized.net');
+
+            // If proxy is enabled and the stream has headers OR is an Akamai domain
+            if (proxyEnabled && (hasHeaders || isAkamai)) {
+                const queryParams = new URLSearchParams();
+                queryParams.append('url', parsed.baseUrl);
+                for (const [k, v] of Object.entries(parsed.headers)) {
+                    queryParams.append(k, v);
+                }
+                return `${proxyUrl}?${queryParams.toString()}`;
+            }
+
+            return parsed.baseUrl;
+        }
+
+        function loadPlyr(src) {
+            // Destroy any previous instances
+            if (plyrPlayer) {
+                plyrPlayer.destroy();
+                plyrPlayer = null;
+            }
+            if (hlsInstance) {
+                hlsInstance.destroy();
+                hlsInstance = null;
+            }
+
+            const video = document.getElementById('player');
+            const spinner = document.getElementById('video-spinner');
+            if (spinner) {
+                spinner.style.display = 'flex';
+                spinner.style.opacity = '1';
+            }
+
+            // Obtain the proxied or direct URL
+            const playableUrl = getPlayableUrl(src);
+            console.log("Loading stream source:", playableUrl);
+
+            if (Hls.isSupported()) {
+                const hls = new Hls({
+                    xhrSetup: function(xhr, url) {
+                        xhr.withCredentials = false;
+                        
+                        // If proxy is disabled, we attempt to add headers via XHR 
+                        // (Note: browsers will block Origin/User-Agent, but some custom headers work)
+                        const parsed = parseStreamUrl(src);
+                        const proxyEnabled = localStorage.getItem('proxy_enabled') === 'true';
+                        if (!proxyEnabled && parsed.headers) {
+                            for (const [k, v] of Object.entries(parsed.headers)) {
+                                try {
+                                    xhr.setRequestHeader(k, v);
+                                } catch(e) {
+                                    console.warn(`Could not set header ${k}:`, e.message);
+                                }
+                            }
+                        }
+                    }
+                });
+                
+                hlsInstance = hls;
+                hls.loadSource(playableUrl);
+                hls.attachMedia(video);
+
+                hls.on(Hls.Events.MANIFEST_PARSED, function (event, data) {
+                    if (spinner) {
+                        spinner.style.opacity = '0';
+                        setTimeout(() => spinner.style.display = 'none', 500);
+                    }
+
+                    // Extract unique resolution heights
+                    const uniqueQualities = [];
+                    hls.levels.forEach((l) => {
+                        if (l.height && !uniqueQualities.includes(l.height)) {
+                            uniqueQualities.push(l.height);
+                        }
+                    });
+                    uniqueQualities.sort((a, b) => b - a);
+
+                    let plyrOptions = {
+                        autoplay: true,
+                        muted: true,
+                        controls: [
+                            'play-large',
+                            'play',
+                            'progress',
+                            'current-time',
+                            'mute',
+                            'volume',
+                            'settings',
+                            'pip',
+                            'fullscreen'
+                        ],
+                        settings: ['speed']
+                    };
+
+                    if (uniqueQualities.length > 1) {
+                        plyrOptions.settings.unshift('quality');
+                        plyrOptions.quality = {
+                            default: 0,
+                            options: [0, ...uniqueQualities],
+                            forced: true,
+                            onChange: (newQuality) => {
+                                if (newQuality === 0) {
+                                    hls.currentLevel = -1; // Auto
+                                } else {
+                                    const idx = hls.levels.findIndex(l => l.height === newQuality);
+                                    if (idx !== -1) {
+                                        hls.currentLevel = idx;
+                                    }
+                                }
+                            }
+                        };
+                        plyrOptions.i18n = {
+                            qualityLabel: {
+                                0: 'Auto'
+                            }
+                        };
+                    }
+
+                    plyrPlayer = new Plyr(video, plyrOptions);
+                    
+                    video.play().catch(err => {
+                        console.log("Autoplay prevented:", err);
+                    });
+                });
+
+                hls.on(Hls.Events.ERROR, function (event, data) {
+                    if (data.fatal) {
+                        switch (data.type) {
+                            case Hls.ErrorTypes.NETWORK_ERROR:
+                                console.error("Fatal network error, trying to recover");
+                                hls.startLoad();
+                                break;
+                            case Hls.ErrorTypes.MEDIA_ERROR:
+                                console.error("Fatal media error, trying to recover");
+                                hls.recoverMediaError();
+                                break;
+                            default:
+                                console.error("Fatal unrecoverable error");
+                                hls.destroy();
+                                break;
+                        }
+                    }
+                });
+
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                // Safari & Native HLS (iOS)
+                video.src = playableUrl;
+                if (spinner) {
+                    spinner.style.opacity = '0';
+                    setTimeout(() => spinner.style.display = 'none', 500);
+                }
+
+                plyrPlayer = new Plyr(video, {
+                    autoplay: true,
+                    muted: true,
+                    controls: [
+                        'play-large',
+                        'play',
+                        'progress',
+                        'current-time',
+                        'mute',
+                        'volume',
+                        'settings',
+                        'pip',
+                        'fullscreen'
+                    ],
+                    settings: ['speed']
+                });
+
+                video.play().catch(err => {
+                    console.log("Autoplay prevented:", err);
+                });
+            } else {
+                console.error("HLS is not supported on this browser.");
+                if (spinner) {
+                    spinner.style.display = 'none';
+                }
+            }
+        }
+
+        // Action Center Methods
+        function copyStreamUrl() {
+            navigator.clipboard.writeText(activeStreamUrl).then(() => {
+                alert('Stream URL copied to clipboard!');
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+
+        function triggerM3uDownload() {
+            const parsed = parseStreamUrl(activeStreamUrl);
+            let content = "#EXTM3U\n";
+            content += `#EXTINF:-1, ${activeChannelName}\n`;
+            
+            // Add VLC options
+            if (parsed.headers['User-Agent']) {
+                content += `#EXTVLCOPT:http-user-agent=${parsed.headers['User-Agent']}\n`;
+            } else {
+                content += `#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36\n`;
+            }
+
+            if (parsed.headers['Origin']) {
+                content += `#EXTVLCOPT:http-header=Origin: ${parsed.headers['Origin']}\n`;
+            } else if (parsed.baseUrl.includes('akamaized.net')) {
+                content += `#EXTVLCOPT:http-header=Origin: https://www.sonyliv.com\n`;
+            }
+
+            if (parsed.headers['Referer']) {
+                content += `#EXTVLCOPT:http-referrer=${parsed.headers['Referer']}\n`;
+            } else if (parsed.baseUrl.includes('akamaized.net')) {
+                content += `#EXTVLCOPT:http-referrer=https://www.sonyliv.com/\n`;
+            }
+
+            content += `${parsed.baseUrl}\n`;
+
+            const blob = new Blob([content], { type: 'application/x-mpegurl' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${activeChannelName.replace(/\s+/g, '_')}_stream.m3u`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        window.onload = function () {
+            var urlParams = new URLSearchParams(window.location.search);
+            var streamKey = urlParams.get('stream');
+
+            // Default proxy values
+            if (localStorage.getItem('proxy_enabled') === null) {
+                localStorage.setItem('proxy_enabled', 'false'); // disabled by default
+            }
+
+            if (streamKey && channels[streamKey]) {
+                var ch = channels[streamKey];
+                activeStreamUrl = ch.url;
+                activeChannelName = ch.name;
+
+                document.getElementById('stream-view').classList.remove('hidden');
+                document.getElementById('channel-name').innerHTML = '<span class="live-dot"></span> ' + ch.name;
+
+                if (ch.type === 'video') {
+                    document.getElementById('video-container-div').classList.remove('hidden');
+                    
+                    // Check if stream requires headers or is Akamai domain
+                    const parsed = parseStreamUrl(ch.url);
+                    const isAkamai = parsed.baseUrl.includes('akamaized.net');
+                    const hasHeaders = Object.keys(parsed.headers).length > 0;
+                    
+                    if (isAkamai || hasHeaders) {
+                        document.getElementById('proxy-alert-banner').classList.remove('hidden');
+                    }
+
+                    loadPlyr(ch.url);
+                } else {
+                    document.getElementById('iframe-container-div').classList.remove('hidden');
+                    document.getElementById('embed-frame').src = ch.url;
+                }
+            } else {
+                document.getElementById('error-view').classList.remove('hidden');
+            }
+        };
+    </script>
+
+</body>
+</html>

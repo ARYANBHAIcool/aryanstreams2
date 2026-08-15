@@ -1,0 +1,143 @@
+function corsHeaders() {
+  return {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
+    "Access-Control-Allow-Headers": "*",
+    "Access-Control-Max-Age": "86400",
+  };
+}
+
+function proxyUrl(proxyBase, targetUrl, headers) {
+  const params = new URLSearchParams();
+  params.set("url", targetUrl);
+  for (const [key, value] of headers.entries()) {
+    if (key.toLowerCase() !== "range") params.append(key, value);
+  }
+  return `${proxyBase}?${params.toString()}`;
+}
+
+function rewriteM3U8(text, finalUrl, proxyBase, headers) {
+  return text.split(/\r?\n/).map((line) => {
+    const trimmed = line.trim();
+    if (!trimmed) return line;
+
+    if (!trimmed.startsWith("#")) {
+      return proxyUrl(proxyBase, new URL(trimmed, finalUrl).toString(), headers);
+    }
+
+    if (trimmed.includes("URI=")) {
+      return line.replace(/URI="([^"]+)"/g, (_match, uri) => {
+        const absolute = new URL(uri, finalUrl).toString();
+        return `URI="${proxyUrl(proxyBase, absolute, headers)}"`;
+      });
+    }
+
+    return line;
+  }).join("\n");
+}
+
+export async function onRequest(context) {
+  const { request } = context;
+  const requestUrl = new URL(request.url);
+  const targetUrl = (requestUrl.searchParams.get("url") || "").trim().replace(/[,\s]+$/g, "");
+  const baseCorsHeaders = corsHeaders();
+
+  if (request.method === "OPTIONS") {
+    return new Response(null, { headers: baseCorsHeaders });
+  }
+
+  if (!targetUrl) {
+    return new Response("Missing url parameter", {
+      status: 400,
+      headers: baseCorsHeaders,
+    });
+  }
+
+  const targetHeaders = new Headers();
+  const range = request.headers.get("range");
+  if (range) targetHeaders.set("range", range);
+
+  for (const [key, value] of requestUrl.searchParams.entries()) {
+    if (key !== "url" && key !== "headers") targetHeaders.set(key, value);
+  }
+
+  const headersParam = requestUrl.searchParams.get("headers");
+  if (headersParam) {
+    try {
+      const parsed = JSON.parse(headersParam);
+      for (const [key, value] of Object.entries(parsed)) targetHeaders.set(key, value);
+    } catch (_err) {}
+  }
+
+  if (targetUrl.includes("akamaized.net") || targetUrl.includes("sonyliv.com")) {
+    if (!targetHeaders.has("User-Agent") && !targetHeaders.has("user-agent")) {
+      targetHeaders.set("User-Agent", request.headers.get("User-Agent") || "Mozilla/5.0");
+    }
+    if (!targetHeaders.has("Origin") && !targetHeaders.has("origin")) {
+      targetHeaders.set("Origin", "https://www.sonyliv.com");
+    }
+    if (!targetHeaders.has("Referer") && !targetHeaders.has("referer")) {
+      targetHeaders.set("Referer", "https://www.sonyliv.com/");
+    }
+  } else if (targetUrl.includes("fancode.com")) {
+    if (!targetHeaders.has("User-Agent") && !targetHeaders.has("user-agent")) {
+      targetHeaders.set("User-Agent", request.headers.get("User-Agent") || "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
+    }
+    if (!targetHeaders.has("Origin") && !targetHeaders.has("origin")) {
+      targetHeaders.set("Origin", "https://www.fancode.com");
+    }
+    if (!targetHeaders.has("Referer") && !targetHeaders.has("referer")) {
+      targetHeaders.set("Referer", "https://www.fancode.com/");
+    }
+  } else if (!targetHeaders.has("User-Agent") && !targetHeaders.has("user-agent")) {
+    targetHeaders.set("User-Agent", request.headers.get("User-Agent") || "Mozilla/5.0");
+  }
+
+  try {
+    const upstream = await fetch(targetUrl, {
+      method: "GET",
+      headers: targetHeaders,
+      redirect: "follow",
+    });
+
+    const contentType = upstream.headers.get("content-type") || "";
+    const finalUrl = upstream.url || targetUrl;
+    const isM3U8 = contentType.includes("mpegurl") ||
+      contentType.includes("x-mpegurl") ||
+      targetUrl.includes(".m3u8") ||
+      finalUrl.includes(".m3u8");
+
+    const responseHeaders = new Headers(upstream.headers);
+    responseHeaders.set("Access-Control-Allow-Origin", "*");
+    responseHeaders.set("Access-Control-Allow-Methods", "GET, HEAD, OPTIONS");
+    responseHeaders.set("Access-Control-Allow-Headers", "*");
+    responseHeaders.delete("x-frame-options");
+
+    if (isM3U8) {
+      responseHeaders.set("Content-Type", "application/vnd.apple.mpegurl");
+      responseHeaders.delete("content-length");
+
+      const proxyBase = `${requestUrl.origin}${requestUrl.pathname}`;
+      const rewritten = rewriteM3U8(await upstream.text(), finalUrl, proxyBase, targetHeaders);
+      return new Response(rewritten, {
+        status: upstream.status,
+        statusText: upstream.statusText,
+        headers: responseHeaders,
+      });
+    }
+
+    return new Response(upstream.body, {
+      status: upstream.status,
+      statusText: upstream.statusText,
+      headers: responseHeaders,
+    });
+  } catch (err) {
+    return new Response(`Proxy error: ${err.message}`, {
+      status: 502,
+      headers: {
+        ...baseCorsHeaders,
+        "Content-Type": "text/plain",
+      },
+    });
+  }
+}
