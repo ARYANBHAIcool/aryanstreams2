@@ -3,6 +3,7 @@ import json
 import urllib.request
 import urllib.parse
 import time
+import hashlib
 from datetime import datetime, timezone, timedelta
 
 # Path to files
@@ -18,6 +19,10 @@ config = {
     "site_base_url": "https://aryanstreams.pages.dev/fancode/",
     "admin_chat_id": None
 }
+
+# Global matches cache and hash map for callback data
+latest_matches = []
+event_hash_map = {}
 
 # Load config.json
 if os.path.exists(CONFIG_PATH):
@@ -112,6 +117,19 @@ def is_start_time_reached(raw_time_str):
         print(f"Error checking start time: {e}")
         return True
 
+def get_event_hash(event_name):
+    event_clean = event_name.lower().strip()
+    h = hashlib.md5(event_clean.encode('utf-8')).hexdigest()[:8]
+    event_hash_map[h] = event_clean
+    return h
+
+def populate_matches_cache(matches_list):
+    global latest_matches
+    latest_matches = matches_list
+    for m in matches_list:
+        event_name = m.get("event_name", "Fancode Event")
+        get_event_hash(event_name)
+
 def send_telegram_photo(photo_url, caption):
     bot_token = config.get("bot_token")
     chat_id = config.get("channel_chat_id")
@@ -201,16 +219,124 @@ def answer_callback_query(cb_id):
     except Exception:
         return False
 
-# Keyboards
+# Keyboards & Settings Menu Dashboard
 def get_reply_keyboard():
     return {
         "keyboard": [
-            [{"text": "📊 Status"}, {"text": "❓ Help"}],
-            [{"text": "🚫 Block Quick Sport"}, {"text": "❌ Clear All Filters"}]
+            [{"text": "⚙️ Bot Settings"}, {"text": "📊 Status"}],
+            [{"text": "❓ Help"}, {"text": "❌ Clear All Filters"}]
         ],
         "resize_keyboard": True,
         "one_time_keyboard": False
     }
+
+def show_settings_menu(chat_id, edit_message_id=None):
+    # Discover unique sports currently in latest_matches
+    sports = set()
+    for m in latest_matches:
+        sport = str(m.get("event_category", "")).strip()
+        if sport:
+            sports.add(sport)
+            
+    # Fallback default list if cache is empty
+    if not sports:
+        sports = {"Cricket", "Football", "Kabaddi", "Basketball"}
+        
+    sorted_sports = sorted(list(sports))
+    
+    text = (
+        "⚙️ <b>Bot Settings Panel</b>\n\n"
+        "Configure notification toggles for Fancode matches. "
+        "Select a sport below to view its formats and competitions:"
+    )
+    
+    disabled_sports = filters.get("disabled_sports", [])
+    
+    inline_keyboard = []
+    # Build list of sports with enabled/disabled indicators
+    for s in sorted_sports:
+        s_lower = s.lower().strip()
+        is_enabled = s_lower not in disabled_sports
+        status_icon = "🟢" if is_enabled else "🔴"
+        
+        sport_icons = {
+            "cricket": "🏏",
+            "football": "⚽",
+            "kabaddi": "🤼",
+            "basketball": "🏀"
+        }
+        icon = sport_icons.get(s_lower, "🏆")
+        
+        inline_keyboard.append([{
+            "text": f"{icon} {s} [{status_icon}]",
+            "callback_data": f"menu:sport:{s_lower}"
+        }])
+        
+    reply_markup = {"inline_keyboard": inline_keyboard} if inline_keyboard else None
+    
+    if edit_message_id:
+        edit_telegram_text(chat_id, edit_message_id, text, reply_markup)
+    else:
+        send_telegram_text(chat_id, text, reply_markup)
+
+def show_sport_events_menu(chat_id, sport, edit_message_id=None):
+    sport_lower = sport.lower().strip()
+    disabled_sports = filters.get("disabled_sports", [])
+    disabled_events = filters.get("disabled_events", [])
+    
+    # Check if the entire sport category is enabled
+    sport_is_enabled = sport_lower not in disabled_sports
+    sport_status_icon = "🟢 Enabled" if sport_is_enabled else "🔴 Disabled"
+    
+    # Find all events under this sport in cache
+    events = set()
+    for m in latest_matches:
+        m_sport = str(m.get("event_category", "")).lower().strip()
+        if m_sport == sport_lower:
+            e_name = str(m.get("event_name", "")).strip()
+            if e_name:
+                events.add(e_name)
+                
+    sorted_events = sorted(list(events))
+    
+    text = (
+        f"⚙️ <b>{sport.capitalize()} Settings</b>\n\n"
+        f"Overall Notifications: <b>{sport_status_icon}</b>\n\n"
+        "Click the toggles below to enable/disable specific events & tournaments:"
+    )
+    
+    inline_keyboard = []
+    
+    # 1. Sport level toggle button at the top
+    sport_toggle_text = "🔴 Mute All Notifications" if sport_is_enabled else "🟢 Unmute All Notifications"
+    inline_keyboard.append([{"text": sport_toggle_text, "callback_data": f"toggle:sport:{sport_lower}"}])
+    
+    # 2. Add individual events toggles
+    for e in sorted_events:
+        e_lower = e.lower().strip()
+        is_enabled = e_lower not in disabled_events
+        status_icon = "🟢" if is_enabled else "🔴"
+        
+        # Hash event name to ensure callback data is safely under Telegram's 64-byte limit
+        e_hash = get_event_hash(e)
+        
+        # Truncate event button labels if they are too long
+        display_name = e[:22] + "..." if len(e) > 25 else e
+        
+        inline_keyboard.append([{
+            "text": f"🏆 {display_name} [{status_icon}]",
+            "callback_data": f"toggle:event:{sport_lower}:{e_hash}"
+        }])
+        
+    # 3. Add Back to Sports button at bottom
+    inline_keyboard.append([{"text": "⬅️ Back to Sports Menu", "callback_data": "menu:main"}])
+    
+    reply_markup = {"inline_keyboard": inline_keyboard}
+    
+    if edit_message_id:
+        edit_telegram_text(chat_id, edit_message_id, text, reply_markup)
+    else:
+        send_telegram_text(chat_id, text, reply_markup)
 
 def show_status_inline(chat_id, edit_message_id=None):
     disabled_sports = filters.get("disabled_sports", [])
@@ -242,31 +368,13 @@ def show_status_inline(chat_id, edit_message_id=None):
     else:
         send_telegram_text(chat_id, text, reply_markup)
 
-def show_quick_block_sports(chat_id):
-    text = "🚫 <b>Quick Block Sports</b>\n\nTap a sport below to block notifications immediately:"
-    reply_markup = {
-        "inline_keyboard": [
-            [
-                {"text": "🏏 Cricket", "callback_data": "block:sport:cricket"},
-                {"text": "⚽ Football", "callback_data": "block:sport:football"}
-            ],
-            [
-                {"text": "🤼 Kabaddi", "callback_data": "block:sport:kabaddi"},
-                {"text": "🏀 Basketball", "callback_data": "block:sport:basketball"}
-            ]
-        ]
-    }
-    send_telegram_text(chat_id, text, reply_markup)
-
 def clear_all_filters(chat_id):
     filters["disabled_sports"] = []
     filters["disabled_events"] = []
     save_filters()
     send_telegram_text(chat_id, "✅ <b>All filters have been cleared!</b>\nNotifications are now enabled for all sports and events.")
 
-# Admin command handling
-last_update_id = 0
-
+# Command logic
 def handle_admin_command(admin_id, text):
     parts = text.split(maxsplit=2)
     cmd = parts[0].lower().strip() if parts else ""
@@ -274,8 +382,10 @@ def handle_admin_command(admin_id, text):
     disabled_sports = filters.get("disabled_sports", [])
     disabled_events = filters.get("disabled_events", [])
     
-    # Check text matched to button labels
-    if text == "📊 Status" or cmd == "/status":
+    if text == "⚙️ Bot Settings":
+        show_settings_menu(admin_id)
+        
+    elif text == "📊 Status" or cmd == "/status":
         show_status_inline(admin_id)
         
     elif text == "❓ Help" or cmd == "/help":
@@ -284,14 +394,11 @@ def handle_admin_command(admin_id, text):
             "▫️ Use the bottom menu panel buttons for quick actions.\n\n"
             "<b>Manual Commands:</b>\n"
             "▫️ `/block sport [name]` - Block a sport category.\n"
-            "▫️ `/block event [name]` - Block a league/event (e.g. <code>/block event LaLiga</code>).\n"
+            "▫️ `/block event [name]` - Block a league/event.\n"
             "▫️ `/unblock sport [name]` - Unblock a sport.\n"
             "▫️ `/unblock event [name]` - Unblock an event."
         )
         send_telegram_text(admin_id, help_msg)
-        
-    elif text == "🚫 Block Quick Sport":
-        show_quick_block_sports(admin_id)
         
     elif text == "❌ Clear All Filters":
         clear_all_filters(admin_id)
@@ -336,27 +443,58 @@ def handle_callback_query(cb):
     answer_callback_query(cb_id)
     
     parts = data.split(":")
-    if len(parts) < 3:
+    if not parts:
         return
         
     action = parts[0]
-    target_type = parts[1] # "sport" or "event"
-    target_name = parts[2].lower().strip()
     
-    disabled_list = filters["disabled_sports"] if target_type == "sport" else filters["disabled_events"]
-    
-    if action == "unblock":
+    if action == "menu":
+        menu_target = parts[1]
+        if menu_target == "main":
+            show_settings_menu(chat_id, edit_message_id=msg_id)
+        elif menu_target == "sport" and len(parts) >= 3:
+            sport_name = parts[2]
+            show_sport_events_menu(chat_id, sport_name, edit_message_id=msg_id)
+            
+    elif action == "toggle":
+        target_type = parts[1] # "sport" or "event"
+        
+        if target_type == "sport" and len(parts) >= 3:
+            sport_name = parts[2]
+            disabled_sports = filters["disabled_sports"]
+            
+            if sport_name in disabled_sports:
+                disabled_sports.remove(sport_name)
+            else:
+                disabled_sports.append(sport_name)
+            save_filters()
+            show_sport_events_menu(chat_id, sport_name, edit_message_id=msg_id)
+            
+        elif target_type == "event" and len(parts) >= 4:
+            sport_name = parts[2]
+            event_hash = parts[3]
+            
+            # Map hash back to real event name
+            real_event_name = event_hash_map.get(event_hash)
+            if real_event_name:
+                disabled_events = filters["disabled_events"]
+                if real_event_name in disabled_events:
+                    disabled_events.remove(real_event_name)
+                else:
+                    disabled_events.append(real_event_name)
+                save_filters()
+            show_sport_events_menu(chat_id, sport_name, edit_message_id=msg_id)
+            
+    elif action == "unblock":
+        target_type = parts[1]
+        target_name = parts[2].lower().strip()
+        disabled_list = filters["disabled_sports"] if target_type == "sport" else filters["disabled_events"]
+        
         if target_name in disabled_list:
             disabled_list.remove(target_name)
             save_filters()
         send_telegram_text(chat_id, f"✅ Unblocked {target_type}: <b>{target_name.capitalize()}</b>")
         show_status_inline(chat_id, edit_message_id=msg_id)
-        
-    elif action == "block":
-        if target_name not in disabled_list:
-            disabled_list.append(target_name)
-            save_filters()
-        send_telegram_text(chat_id, f"🚫 Blocked {target_type}: <b>{target_name.capitalize()}</b>")
 
 def check_admin_commands():
     global last_update_id
@@ -378,7 +516,7 @@ def check_admin_commands():
                 if update_id > last_update_id:
                     last_update_id = update_id
                     
-                # 1. Handle Inline Button clicks
+                # 1. Callback query updates
                 callback_query = u.get("callback_query")
                 if callback_query:
                     sender = callback_query.get("from", {})
@@ -388,7 +526,7 @@ def check_admin_commands():
                         handle_callback_query(callback_query)
                     continue
                     
-                # 2. Handle Text messages
+                # 2. Standard text message updates
                 message = u.get("message")
                 if not message:
                     continue
@@ -397,7 +535,7 @@ def check_admin_commands():
                 sender_id = sender.get("id")
                 text = str(message.get("text", "")).strip()
                 
-                # Register admin on start/setup
+                # Check for start/setup to register admin
                 if text.startswith("/start") or text.startswith("/setup"):
                     if not config.get("admin_chat_id"):
                         config["admin_chat_id"] = sender_id
@@ -407,7 +545,7 @@ def check_admin_commands():
                         send_telegram_text(sender_id, "You are already registered as the Admin.", get_reply_keyboard())
                     continue
                     
-                # Restrict command processing to the registered admin
+                # Restrict all commands to registered admin
                 admin_id = config.get("admin_chat_id")
                 if admin_id and sender_id == admin_id:
                     handle_admin_command(sender_id, text)
@@ -428,6 +566,9 @@ def check_and_post():
         
     matches = data.get("matches", [])
     new_posts = False
+    
+    # Update cache dynamically and register hashes
+    populate_matches_cache(matches)
     
     disabled_sports = filters.get("disabled_sports", [])
     disabled_events = filters.get("disabled_events", [])
@@ -537,6 +678,17 @@ def check_and_post():
     if new_posts:
         save_posted_matches()
 
+# Populate cache on start
+def run_initial_check():
+    feed_url = "https://raw.githubusercontent.com/drmlive/fancode-live-events/main/fancode.json"
+    try:
+        req = urllib.request.Request(feed_url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=10) as response:
+            data = json.loads(response.read().decode("utf-8"))
+            populate_matches_cache(data.get("matches", []))
+    except Exception as e:
+        print(f"Initial feed fetch failed: {e}")
+
 def main():
     print("Fancode Telegram Live Matches Bot Started...")
     print(f"Monitoring API: https://raw.githubusercontent.com/drmlive/fancode-live-events/main/fancode.json")
@@ -544,14 +696,17 @@ def main():
     print(f"Admin Registration: Send /setup to your bot in private chat.")
     print("Press Ctrl+C to stop.")
     
+    # Run initial check to pre-populate sports and formats in the settings menu
+    run_initial_check()
+    
     last_feed_check = 0
     
     while True:
         try:
-            # Poll for admin command messages and button clicks every 10 seconds
+            # Poll for admin commands and buttons interaction every 10 seconds
             check_admin_commands()
             
-            # Poll the Fancode API every 60 seconds
+            # Poll Fancode API every 60 seconds
             current_time = time.time()
             if current_time - last_feed_check >= 60:
                 check_and_post()
