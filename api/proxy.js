@@ -115,7 +115,7 @@ module.exports = async (req, res) => {
     }
 
     // Set defaults if not provided but target is Akamai/SonyLIV
-    if (targetUrl.includes('akamaized.net') || targetUrl.includes('sonyliv.com')) {
+    if (targetUrl.includes('akamaized.net') || targetUrl.includes('sonyliv.com') || targetUrl.includes('slivcdn.com')) {
         if (!targetHeaders['User-Agent'] && !targetHeaders['user-agent']) {
             targetHeaders['User-Agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
         }

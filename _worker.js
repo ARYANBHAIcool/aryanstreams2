@@ -37,7 +37,7 @@ function rewriteM3U8(text, finalUrl, proxyBase, headers) {
 }
 
 function applyDefaultHeaders(targetUrl, targetHeaders, request) {
-  if (targetUrl.includes("akamaized.net") || targetUrl.includes("sonyliv.com")) {
+  if (targetUrl.includes("akamaized.net") || targetUrl.includes("sonyliv.com") || targetUrl.includes("slivcdn.com")) {
     if (!targetHeaders.has("User-Agent") && !targetHeaders.has("user-agent")) {
       targetHeaders.set("User-Agent", request.headers.get("User-Agent") || "Mozilla/5.0");
     }

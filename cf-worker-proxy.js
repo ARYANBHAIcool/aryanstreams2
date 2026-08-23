@@ -63,7 +63,7 @@ export default {
     }
 
     // Auto-spoof Akamai/SonyLIV headers if they are not explicitly specified
-    if (targetUrl.includes("akamaized.net") || targetUrl.includes("sonyliv.com")) {
+    if (targetUrl.includes("akamaized.net") || targetUrl.includes("sonyliv.com") || targetUrl.includes("slivcdn.com")) {
       if (!targetHeaders.has("User-Agent") && !targetHeaders.has("user-agent")) {
         targetHeaders.set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
       }
