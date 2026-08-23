@@ -3,7 +3,7 @@ import json
 import urllib.request
 import urllib.parse
 import time
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 
 # Path to files
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -70,6 +70,20 @@ def format_start_time(raw_time_str):
     except Exception:
         return raw_time_str
 
+def is_start_time_reached(raw_time_str):
+    if not raw_time_str:
+        return True
+    try:
+        start_dt = datetime.strptime(raw_time_str.strip(), "%I:%M:%S %p %d-%m-%Y")
+        utc_now = datetime.now(timezone.utc)
+        ist_tz = timezone(timedelta(hours=5, minutes=30))
+        ist_now = utc_now.astimezone(ist_tz).replace(tzinfo=None)
+        return ist_now >= start_dt
+    except Exception as e:
+        print(f"Error checking start time: {e}")
+        return True
+
+
 def send_telegram_photo(photo_url, caption):
     bot_token = config.get("bot_token")
     chat_id = config.get("channel_chat_id")
@@ -119,9 +133,11 @@ def check_and_post():
         
         # Only process matches that are LIVE and not yet posted
         if status == "LIVE" and match_id and match_id not in posted_matches:
+            start_time_raw = m.get("startTime", "")
+            if not is_start_time_reached(start_time_raw):
+                continue
             title = m.get("title", "Live Match")
             event_name = m.get("event_name", "Fancode Event")
-            start_time_raw = m.get("startTime", "")
             start_time_ist = format_start_time(start_time_raw)
             image_url = m.get("src") or m.get("image") or "https://www.fancode.com/skillup-uploads/cms-media/Cricket_Fallback_Old_match-card.jpg"
             
@@ -132,48 +148,47 @@ def check_and_post():
             
             base_url = config.get("site_base_url").rstrip("/") + "/"
             
-            # Format stream links
+            # Format stream links in a single line
             links = []
             
-            # 1080p
-            if "1080p" in resolutions:
-                links.append(f"🖥 <b>1080p Quality:</b> <a href=\"{base_url}?id={match_id}&r=1080p\">Click to Watch</a>")
-            elif "1080" in resolutions:
-                links.append(f"🖥 <b>1080p Quality:</b> <a href=\"{base_url}?id={match_id}&r=1080\">Click to Watch</a>")
-                
-            # 720p
-            if "720p" in resolutions:
-                links.append(f"⚡ <b>720p Quality:</b> <a href=\"{base_url}?id={match_id}&r=720p\">Click to Watch</a>")
-            elif "720" in resolutions:
-                links.append(f"⚡ <b>720p Quality:</b> <a href=\"{base_url}?id={match_id}&r=720\">Click to Watch</a>")
-                
             # 540p
             if "540p" in resolutions:
-                links.append(f"📱 <b>540p Quality:</b> <a href=\"{base_url}?id={match_id}&r=540p\">Click to Watch</a>")
+                links.append(f"<a href=\"{base_url}?id={match_id}&r=540p\">540p</a>")
             elif "540" in resolutions:
-                links.append(f"📱 <b>540p Quality:</b> <a href=\"{base_url}?id={match_id}&r=540\">Click to Watch</a>")
-            
+                links.append(f"<a href=\"{base_url}?id={match_id}&r=540\">540p</a>")
+
+            # 720p
+            if "720p" in resolutions:
+                links.append(f"<a href=\"{base_url}?id={match_id}&r=720p\">720p</a>")
+            elif "720" in resolutions:
+                links.append(f"<a href=\"{base_url}?id={match_id}&r=720\">720p</a>")
+
+            # 1080p
+            if "1080p" in resolutions:
+                links.append(f"<a href=\"{base_url}?id={match_id}&r=1080p\">1080p</a>")
+            elif "1080" in resolutions:
+                links.append(f"<a href=\"{base_url}?id={match_id}&r=1080\">1080p</a>")
+
             # Fallbacks if none of the requested ones are found
             if not links:
-                # Try finding any standard ones
-                other_res = sorted(list(resolutions), key=lambda x: int(x.replace("p","")) if x.replace("p","").isdigit() else 0, reverse=True)
+                # Try finding any standard ones in ascending order
+                other_res = sorted(list(resolutions), key=lambda x: int(x.replace("p","")) if x.replace("p","").isdigit() else 0)
                 for r in other_res:
-                    links.append(f"📺 <b>{r} Quality:</b> <a href=\"{base_url}?id={match_id}&r={r}\">Click to Watch</a>")
+                    links.append(f"<a href=\"{base_url}?id={match_id}&r={r}\">{r}</a>")
             
             # Ultimate generic fallback link
             if not links:
-                links.append(f"▶️ <b>Watch Live (Auto):</b> <a href=\"{base_url}?id={match_id}\">Click to Watch</a>")
+                links.append(f"<a href=\"{base_url}?id={match_id}\">Auto</a>")
                 
-            links_str = "\n".join(links)
+            links_str = " | ".join(links)
             
             # Construct caption
             caption = (
                 f"<b>🔥 MATCH IS NOW LIVE! 🔥</b>\n\n"
-                f"🏆 <b>Event:</b> {event_name}\n"
-                f"🏏 <b>Match:</b> {title}\n"
-                f"⏰ <b>Start Time:</b> {start_time_ist}\n\n"
-                f"✨ <b>Watch Live Streams:</b>\n"
-                f"{links_str}\n\n"
+                f"🏆 <b>{event_name}</b>\n"
+                f"🏏 <b>{title}</b>\n"
+                f"⏰ <b>{start_time_ist}</b>\n\n"
+                f"📺 <b>Watch Live -</b> {links_str}\n\n"
                 f"📢 <i>Join @aurastreams for more links!</i>"
             )
             
