@@ -465,15 +465,19 @@
             const params = new URLSearchParams(location.search);
             const shareId = params.get("id");
             const shareRes = params.get("r");
+            console.log("Deep link check:", { shareId, shareRes, allMatchesCount: allMatches.length });
             if (shareId) {
-                const matchIndex = allMatches.findIndex(m => String(m.match_id) === shareId);
+                const matchIndex = allMatches.findIndex(m => String(m.match_id).toLowerCase() === shareId.toLowerCase());
+                console.log("Found match index:", matchIndex);
                 if (matchIndex !== -1) {
                     const m = allMatches[matchIndex];
                     const qualities = parseQualities(m);
+                    console.log("Qualities found:", qualities);
                     if (qualities.length > 0) {
                         currentMatch = m;
                         if (shareRes) {
                             const q = qualities.find(x => x.res.toLowerCase() === shareRes.toLowerCase() || x.res.replace("p","") === shareRes.replace("p",""));
+                            console.log("Matched quality:", q);
                             if (q) {
                                 currentQuality = q;
                                 selectedStreamUrl = proxyEndpoint + "?url=" + encodeURIComponent(q.url);
