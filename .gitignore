@@ -7,5 +7,6 @@ node_modules/
 *.log
 fancode_bot/config.json
 fancode_bot/posted_matches.json
+fancode_bot/filters.json
 fancode_bot/__pycache__/
 __pycache__/
