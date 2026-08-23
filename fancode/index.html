@@ -514,12 +514,13 @@
         function renderCard(m, globalIndex) {
             const isLive = (m.status||"").toUpperCase() === "LIVE";
             const img = m.src || m.image || (m.image_cdn && m.image_cdn.APP) || FALLBACK_IMG;
+            const displayTitle = m.match_name || m.title;
             const badge = isLive 
                 ? '<span class="inline-flex items-center gap-1.5 text-[10px] font-black text-white bg-red-600 px-2 py-0.5 rounded-full"><span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>LIVE</span>' 
                 : '<span class="inline-flex items-center text-[10px] font-bold text-slate-400 bg-slate-800/80 px-2 py-0.5 rounded-full border border-slate-700/40">UPCOMING</span>';
 
             const btn = isLive
-                ? `<button class="w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded-lg text-xs font-bold transition transform active:scale-95" onclick="openQuality(${globalIndex}, '${esc(m.title)}', '${esc(m.event_name)}')">▶ WATCH LIVE</button>`
+                ? `<button class="w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded-lg text-xs font-bold transition transform active:scale-95" onclick="openQuality(${globalIndex}, '${esc(displayTitle)}', '${esc(m.event_name)}')">▶ WATCH LIVE</button>`
                 : '<button class="w-full bg-slate-800/60 text-slate-500 py-2 rounded-lg text-xs font-bold cursor-not-allowed border border-slate-800" disabled>⏳ Not Live Yet</button>';
 
             return `
@@ -531,7 +532,7 @@
                                 ${badge}
                                 <span class="text-[10px] font-bold text-indigo-400 uppercase tracking-wider">${esc(m.event_category || 'Sports')}</span>
                             </div>
-                            <h3 class="text-sm font-bold text-white line-clamp-2 mb-1.5 leading-snug">${esc(m.title)}</h3>
+                            <h3 class="text-sm font-bold text-white line-clamp-2 mb-1.5 leading-snug">${esc(displayTitle)}</h3>
                             <p class="text-[11px] text-slate-400 truncate">${esc(m.event_name)}</p>
                         </div>
                         <div>
