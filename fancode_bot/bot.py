@@ -23,6 +23,7 @@ config = {
 # Global matches cache and hash map for callback data
 latest_matches = []
 event_hash_map = {}
+last_update_id = 0
 
 # Load config.json
 if os.path.exists(CONFIG_PATH):
