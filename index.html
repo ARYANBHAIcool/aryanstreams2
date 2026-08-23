@@ -395,7 +395,7 @@
 
         const channels = {
             // ── Original / Custom Channels ──────────────────────────────────
-            "s1":              { type: "video",  name: "FANCODE",                        url: "https://in-mc-flive.fancode.com/mumbai/4248016_english_hls_d97e92363555615_1ta-di_h264/540p.m3u8?hdntl=Expires=1785685444~_GO=Generated~acl=/mumbai/4248016_english_hls_d97e92363555615_1ta-di_h264/*~Signature=Aej9sTUBaKe7iZ-BPxX3xOal9Ig-Uu7AUlAQ8t69x9D7Ih4qIbBr819E-hIClUkogAeH33tfI-g71so-PAAcW8yRzJQB" },
+            "s1":              { type: "video",  name: "sound on",                        url: "https://dishmt.slivcdn.com/hls/live/2020434/TEN2HD/hdntl=exp=1787553014~acl=/*~id=08df7061-305d-455a-8753-ff53553a4fd4~data=hdntl~hmac=62c37a450b5abb20490a7dfa5751c8300390ec3a2449253be2e95f5d3ce5f29d/master_3500.m3u8" },
             "s3eng":           { type: "video",  name: "Eng Extra",                      url: "https://vsd259.okcdn.ru/cmaf/19202299333375/sig/I7dYQ0_SLpY/expires/1786125818741/srcIp/152.58.189.0/urls/185.226.55.87/clientType/36/srcAg/CHROME/mid/16154868598783/get/hls_16154868598783.bxoBh0VMMWU.m3u8" },
             "100OP":           { type: "iframe", name: "EX (SD)",                        url: "https://extrax.pages.dev/?Star_SD" },
             "100OP1":          { type: "iframe", name: "EX (HD)",                        url: "https://extrax.pages.dev/?Star_HD" },
@@ -540,6 +540,25 @@
             return { baseUrl, headers };
         }
 
+        // Helper to format url with proxy configuration
+        function getPlayableUrl(url) {
+            const parsed = parseStreamUrl(url);
+            const isAkamai = parsed.baseUrl.includes('akamaized.net') || parsed.baseUrl.includes('slivcdn.com');
+            const hasHeaders = Object.keys(parsed.headers).length > 0;
+
+            if (isAkamai || hasHeaders) {
+                // Determine proxy endpoint based on current page path
+                const proxyUrl = location.pathname.includes('/fancode/') ? '/fancode/proxy' : '/proxy';
+                const queryParams = new URLSearchParams();
+                queryParams.append('url', parsed.baseUrl);
+                for (const [k, v] of Object.entries(parsed.headers)) {
+                    queryParams.append(k, v);
+                }
+                return `${proxyUrl}?${queryParams.toString()}`;
+            }
+            return parsed.baseUrl;
+        }
+
         function loadPlyr(src) {
             // Destroy any previous instances
             if (plyrPlayer) {
@@ -559,14 +578,15 @@
             }
 
             const parsed = parseStreamUrl(src);
-            console.log("Loading source:", parsed.baseUrl);
+            const playableUrl = getPlayableUrl(src);
+            console.log("Loading source:", playableUrl);
 
             if (Hls.isSupported()) {
                 const hls = new Hls({
                     xhrSetup: function(xhr, url) {
                         xhr.withCredentials = false;
                         
-                        // Set the custom headers extracted from the stream URL
+                        // Set the custom headers extracted from the stream URL (for fallback direct play)
                         if (parsed.headers) {
                             for (const [k, v] of Object.entries(parsed.headers)) {
                                 try {
@@ -579,7 +599,7 @@
                     }
                 });
                 hlsInstance = hls;
-                hls.loadSource(parsed.baseUrl);
+                hls.loadSource(playableUrl);
                 hls.attachMedia(video);
 
                 hls.on(Hls.Events.MANIFEST_PARSED, function (event, data) {
@@ -668,7 +688,7 @@
 
             } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
                 // Safari & native HLS iOS
-                video.src = parsed.baseUrl;
+                video.src = playableUrl;
                 if (spinner) {
                     spinner.style.opacity = '0';
                     setTimeout(() => spinner.style.display = 'none', 500);

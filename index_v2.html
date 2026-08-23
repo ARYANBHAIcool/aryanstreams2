@@ -574,7 +574,7 @@
             const proxyUrl = localStorage.getItem('proxy_url') || 'http://localhost:3000/proxy';
 
             const hasHeaders = Object.keys(parsed.headers).length > 0;
-            const isAkamai = parsed.baseUrl.includes('akamaized.net');
+            const isAkamai = parsed.baseUrl.includes('akamaized.net') || parsed.baseUrl.includes('slivcdn.com');
 
             // If proxy is enabled and the stream has headers OR is an Akamai domain
             if (proxyEnabled && (hasHeaders || isAkamai)) {
