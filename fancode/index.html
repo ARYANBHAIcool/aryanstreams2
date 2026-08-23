@@ -514,7 +514,14 @@
         function renderCard(m, globalIndex) {
             const isLive = (m.status||"").toUpperCase() === "LIVE";
             const img = m.src || m.image || (m.image_cdn && m.image_cdn.APP) || FALLBACK_IMG;
-            const displayTitle = m.match_name || m.title;
+            
+            let displayTitle = m.title;
+            if (m.team_1 && m.team_2) {
+                displayTitle = `${m.team_1} vs ${m.team_2}`;
+            } else if (m.match_name) {
+                displayTitle = m.match_name;
+            }
+            
             const badge = isLive 
                 ? '<span class="inline-flex items-center gap-1.5 text-[10px] font-black text-white bg-red-600 px-2 py-0.5 rounded-full"><span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>LIVE</span>' 
                 : '<span class="inline-flex items-center text-[10px] font-bold text-slate-400 bg-slate-800/80 px-2 py-0.5 rounded-full border border-slate-700/40">UPCOMING</span>';

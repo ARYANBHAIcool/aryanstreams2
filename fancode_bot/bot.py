@@ -639,8 +639,13 @@ def check_and_post():
                     print(f"Skipping match (blocked event name): {m.get('title')}")
                     continue
                     
-                # Use match_name for actual team matchup titles to avoid duplicate league headers
-                title = m.get("match_name") or m.get("title", "Live Match")
+                # Use team names to build team vs team title, fallback to match_name or title
+                t1 = m.get("team_1")
+                t2 = m.get("team_2")
+                if t1 and t2:
+                    title = f"{t1} vs {t2}"
+                else:
+                    title = m.get("match_name") or m.get("title", "Live Match")
                 start_time_ist = format_start_time(start_time_raw)
                 image_url = m.get("src") or m.get("image") or "https://www.fancode.com/skillup-uploads/cms-media/Cricket_Fallback_Old_match-card.jpg"
                 
@@ -687,7 +692,6 @@ def check_and_post():
                 # Deduplicate if event name and match title are identical
                 if event_name.lower().strip() == title.lower().strip():
                     caption = (
-                        f"<b>🔥 MATCH IS NOW LIVE! 🔥</b>\n\n"
                         f"🏆 <b>{event_name}</b>\n"
                         f"⏰ <b>{start_time_ist}</b>\n\n"
                         f"📺 <b>Watch Live -</b> {links_str}\n\n"
@@ -695,7 +699,6 @@ def check_and_post():
                     )
                 else:
                     caption = (
-                        f"<b>🔥 MATCH IS NOW LIVE! 🔥</b>\n\n"
                         f"🏆 <b>{event_name}</b>\n"
                         f"🆚 <b>{title}</b>\n"
                         f"⏰ <b>{start_time_ist}</b>\n\n"
