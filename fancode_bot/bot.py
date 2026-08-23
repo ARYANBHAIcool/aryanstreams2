@@ -503,7 +503,7 @@ def check_admin_commands():
     if bot_token == "YOUR_TELEGRAM_BOT_TOKEN" or not bot_token:
         return
         
-    api_url = f"https://api.telegram.org/bot{bot_token}/getUpdates?offset={last_update_id + 1}&timeout=0"
+    api_url = f"https://api.telegram.org/bot{bot_token}/getUpdates?offset={last_update_id + 1}&timeout=5"
     try:
         req = urllib.request.Request(api_url)
         with urllib.request.urlopen(req, timeout=10) as response:
@@ -719,7 +719,7 @@ def main():
         except Exception as e:
             print(f"Unexpected error in main loop: {e}")
             
-        time.sleep(10)
+        time.sleep(1)
 
 if __name__ == "__main__":
     main()
