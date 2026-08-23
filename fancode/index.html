@@ -355,7 +355,8 @@
         };
 
         function handleQualitySelect(q) {
-            closeModal();
+            document.getElementById("quality-modal").classList.add("hidden");
+            document.getElementById("quality-modal").classList.remove("flex");
             currentQuality = q; // Track quality
 
             // Update URL parameters
