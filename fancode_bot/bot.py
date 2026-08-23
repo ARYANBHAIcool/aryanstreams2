@@ -139,7 +139,7 @@ def send_telegram_photo(photo_url, caption):
         print(f"Failed to send Telegram photo: {e}")
         return False
 
-def send_telegram_text(chat_id, text):
+def send_telegram_text(chat_id, text, reply_markup=None):
     bot_token = config.get("bot_token")
     if not bot_token:
         return False
@@ -149,6 +149,9 @@ def send_telegram_text(chat_id, text):
         "text": text,
         "parse_mode": "HTML"
     }
+    if reply_markup:
+        payload["reply_markup"] = json.dumps(reply_markup)
+        
     req_data = urllib.parse.urlencode(payload).encode("utf-8")
     req = urllib.request.Request(api_url, data=req_data, method="POST")
     req.add_header("Content-Type", "application/x-www-form-urlencoded")
@@ -159,36 +162,139 @@ def send_telegram_text(chat_id, text):
         print(f"Failed to send text message: {e}")
         return False
 
+def edit_telegram_text(chat_id, msg_id, text, reply_markup=None):
+    bot_token = config.get("bot_token")
+    if not bot_token:
+        return False
+    api_url = f"https://api.telegram.org/bot{bot_token}/editMessageText"
+    payload = {
+        "chat_id": chat_id,
+        "message_id": msg_id,
+        "text": text,
+        "parse_mode": "HTML"
+    }
+    if reply_markup:
+        payload["reply_markup"] = json.dumps(reply_markup)
+        
+    req_data = urllib.parse.urlencode(payload).encode("utf-8")
+    req = urllib.request.Request(api_url, data=req_data, method="POST")
+    req.add_header("Content-Type", "application/x-www-form-urlencoded")
+    try:
+        with urllib.request.urlopen(req, timeout=10) as response:
+            return True
+    except Exception as e:
+        print(f"Failed to edit message text: {e}")
+        return False
+
+def answer_callback_query(cb_id):
+    bot_token = config.get("bot_token")
+    if not bot_token:
+        return False
+    api_url = f"https://api.telegram.org/bot{bot_token}/answerCallbackQuery"
+    payload = {"callback_query_id": cb_id}
+    req_data = urllib.parse.urlencode(payload).encode("utf-8")
+    req = urllib.request.Request(api_url, data=req_data, method="POST")
+    req.add_header("Content-Type", "application/x-www-form-urlencoded")
+    try:
+        with urllib.request.urlopen(req, timeout=10) as response:
+            return True
+    except Exception:
+        return False
+
+# Keyboards
+def get_reply_keyboard():
+    return {
+        "keyboard": [
+            [{"text": "📊 Status"}, {"text": "❓ Help"}],
+            [{"text": "🚫 Block Quick Sport"}, {"text": "❌ Clear All Filters"}]
+        ],
+        "resize_keyboard": True,
+        "one_time_keyboard": False
+    }
+
+def show_status_inline(chat_id, edit_message_id=None):
+    disabled_sports = filters.get("disabled_sports", [])
+    disabled_events = filters.get("disabled_events", [])
+    
+    sports_str = ", ".join([s.capitalize() for s in disabled_sports]) or "None"
+    events_str = ", ".join([e.capitalize() for e in disabled_events]) or "None"
+    
+    text = (
+        "📊 <b>Bot Filter Status</b>\n\n"
+        f"🚫 <b>Blocked Sports:</b> {sports_str}\n"
+        f"🚫 <b>Blocked Events:</b> {events_str}\n\n"
+        "<i>Tap any button below to instantly unblock it:</i>"
+    )
+    
+    inline_keyboard = []
+    for s in disabled_sports:
+        inline_keyboard.append([{"text": f"🟢 Unblock Sport: {s.capitalize()}", "callback_data": f"unblock:sport:{s}"}])
+    for e in disabled_events:
+        inline_keyboard.append([{"text": f"🟢 Unblock Event: {e.capitalize()}", "callback_data": f"unblock:event:{e}"}])
+        
+    reply_markup = {"inline_keyboard": inline_keyboard} if inline_keyboard else None
+    
+    if not inline_keyboard:
+        text = "📊 <b>Bot Filter Status</b>\n\nNo filters are active! All live match notifications are currently enabled."
+        
+    if edit_message_id:
+        edit_telegram_text(chat_id, edit_message_id, text, reply_markup)
+    else:
+        send_telegram_text(chat_id, text, reply_markup)
+
+def show_quick_block_sports(chat_id):
+    text = "🚫 <b>Quick Block Sports</b>\n\nTap a sport below to block notifications immediately:"
+    reply_markup = {
+        "inline_keyboard": [
+            [
+                {"text": "🏏 Cricket", "callback_data": "block:sport:cricket"},
+                {"text": "⚽ Football", "callback_data": "block:sport:football"}
+            ],
+            [
+                {"text": "🤼 Kabaddi", "callback_data": "block:sport:kabaddi"},
+                {"text": "🏀 Basketball", "callback_data": "block:sport:basketball"}
+            ]
+        ]
+    }
+    send_telegram_text(chat_id, text, reply_markup)
+
+def clear_all_filters(chat_id):
+    filters["disabled_sports"] = []
+    filters["disabled_events"] = []
+    save_filters()
+    send_telegram_text(chat_id, "✅ <b>All filters have been cleared!</b>\nNotifications are now enabled for all sports and events.")
+
 # Admin command handling
 last_update_id = 0
 
 def handle_admin_command(admin_id, text):
     parts = text.split(maxsplit=2)
-    cmd = parts[0].lower() if parts else ""
+    cmd = parts[0].lower().strip() if parts else ""
     
     disabled_sports = filters.get("disabled_sports", [])
     disabled_events = filters.get("disabled_events", [])
     
-    if cmd == "/help":
+    # Check text matched to button labels
+    if text == "📊 Status" or cmd == "/status":
+        show_status_inline(admin_id)
+        
+    elif text == "❓ Help" or cmd == "/help":
         help_msg = (
             "⚙️ <b>Admin Command Menu</b>\n\n"
-            "▫️ `/status` - Show active filters and blocked items.\n"
-            "▫️ `/block sport [name]` - Block a sport (e.g., <code>/block sport Cricket</code>).\n"
+            "▫️ Use the bottom menu panel buttons for quick actions.\n\n"
+            "<b>Manual Commands:</b>\n"
+            "▫️ `/block sport [name]` - Block a sport category.\n"
+            "▫️ `/block event [name]` - Block a league/event (e.g. <code>/block event LaLiga</code>).\n"
             "▫️ `/unblock sport [name]` - Unblock a sport.\n"
-            "▫️ `/block event [name]` - Block an event/league (e.g., <code>/block event LaLiga</code>).\n"
-            "▫️ `/unblock event [name]` - Unblock an event/league.\n"
+            "▫️ `/unblock event [name]` - Unblock an event."
         )
         send_telegram_text(admin_id, help_msg)
         
-    elif cmd == "/status":
-        sports = ", ".join([s.capitalize() for s in disabled_sports]) or "None"
-        events = ", ".join([e.capitalize() for e in disabled_events]) or "None"
-        status_msg = (
-            "📊 <b>Bot Filter Status</b>\n\n"
-            f"🚫 <b>Blocked Sports:</b> {sports}\n"
-            f"🚫 <b>Blocked Events:</b> {events}\n"
-        )
-        send_telegram_text(admin_id, status_msg)
+    elif text == "🚫 Block Quick Sport":
+        show_quick_block_sports(admin_id)
+        
+    elif text == "❌ Clear All Filters":
+        clear_all_filters(admin_id)
         
     elif cmd == "/block" and len(parts) >= 3:
         target_type = parts[1].lower().strip()
@@ -203,9 +309,7 @@ def handle_admin_command(admin_id, text):
             if target_name not in disabled_events:
                 disabled_events.append(target_name)
                 save_filters()
-            send_telegram_text(admin_id, f"🚫 Blocked event: <b>{target_name.capitalize()}</b>")
-        else:
-            send_telegram_text(admin_id, "Use <code>/block sport [name]</code> or <code>/block event [name]</code>")
+            send_telegram_text(admin_id, f"🚫 Blocked event keyword: <b>{target_name.capitalize()}</b>")
             
     elif cmd == "/unblock" and len(parts) >= 3:
         target_type = parts[1].lower().strip()
@@ -220,11 +324,39 @@ def handle_admin_command(admin_id, text):
             if target_name in disabled_events:
                 disabled_events.remove(target_name)
                 save_filters()
-            send_telegram_text(admin_id, f"✅ Unblocked event: <b>{target_name.capitalize()}</b>")
-        else:
-            send_telegram_text(admin_id, "Use <code>/unblock sport [name]</code> or <code>/unblock event [name]</code>")
-    else:
-        send_telegram_text(admin_id, "Unknown command. Use /help to see available commands.")
+            send_telegram_text(admin_id, f"✅ Unblocked event keyword: <b>{target_name.capitalize()}</b>")
+
+def handle_callback_query(cb):
+    cb_id = cb.get("id")
+    data = str(cb.get("data", ""))
+    message = cb.get("message", {})
+    chat_id = message.get("chat", {}).get("id")
+    msg_id = message.get("message_id")
+    
+    answer_callback_query(cb_id)
+    
+    parts = data.split(":")
+    if len(parts) < 3:
+        return
+        
+    action = parts[0]
+    target_type = parts[1] # "sport" or "event"
+    target_name = parts[2].lower().strip()
+    
+    disabled_list = filters["disabled_sports"] if target_type == "sport" else filters["disabled_events"]
+    
+    if action == "unblock":
+        if target_name in disabled_list:
+            disabled_list.remove(target_name)
+            save_filters()
+        send_telegram_text(chat_id, f"✅ Unblocked {target_type}: <b>{target_name.capitalize()}</b>")
+        show_status_inline(chat_id, edit_message_id=msg_id)
+        
+    elif action == "block":
+        if target_name not in disabled_list:
+            disabled_list.append(target_name)
+            save_filters()
+        send_telegram_text(chat_id, f"🚫 Blocked {target_type}: <b>{target_name.capitalize()}</b>")
 
 def check_admin_commands():
     global last_update_id
@@ -246,6 +378,17 @@ def check_admin_commands():
                 if update_id > last_update_id:
                     last_update_id = update_id
                     
+                # 1. Handle Inline Button clicks
+                callback_query = u.get("callback_query")
+                if callback_query:
+                    sender = callback_query.get("from", {})
+                    sender_id = sender.get("id")
+                    admin_id = config.get("admin_chat_id")
+                    if admin_id and sender_id == admin_id:
+                        handle_callback_query(callback_query)
+                    continue
+                    
+                # 2. Handle Text messages
                 message = u.get("message")
                 if not message:
                     continue
@@ -254,17 +397,17 @@ def check_admin_commands():
                 sender_id = sender.get("id")
                 text = str(message.get("text", "")).strip()
                 
-                # Check for setup command to register admin
+                # Register admin on start/setup
                 if text.startswith("/start") or text.startswith("/setup"):
                     if not config.get("admin_chat_id"):
                         config["admin_chat_id"] = sender_id
                         save_config()
-                        send_telegram_text(sender_id, "👋 <b>Registration Successful!</b>\nYou are now registered as the Admin of this bot. Use /help to see commands.")
+                        send_telegram_text(sender_id, "👋 <b>Registration Successful!</b>\nYou are now registered as the Admin of this bot.", get_reply_keyboard())
                     else:
-                        send_telegram_text(sender_id, f"You are already registered as the Admin. Admin Chat ID: {config.get('admin_chat_id')}")
+                        send_telegram_text(sender_id, "You are already registered as the Admin.", get_reply_keyboard())
                     continue
                     
-                # Process other commands only if they come from the registered admin
+                # Restrict command processing to the registered admin
                 admin_id = config.get("admin_chat_id")
                 if admin_id and sender_id == admin_id:
                     handle_admin_command(sender_id, text)
@@ -405,7 +548,7 @@ def main():
     
     while True:
         try:
-            # Poll for admin command messages every 5-10 seconds
+            # Poll for admin command messages and button clicks every 10 seconds
             check_admin_commands()
             
             # Poll the Fancode API every 60 seconds
