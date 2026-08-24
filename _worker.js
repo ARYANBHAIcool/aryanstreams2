@@ -115,7 +115,24 @@ function applyDefaultHeaders(targetUrl, targetHeaders, request) {
 
 async function handleProxy(request) {
   const requestUrl = new URL(request.url);
-  const targetUrl = (requestUrl.searchParams.get("url") || "").trim().replace(/[,\s]+$/g, "");
+  let targetUrl = "";
+  if (requestUrl.pathname.startsWith("/proxy/")) {
+    targetUrl = request.url.substring(request.url.indexOf("/proxy/") + 7);
+  } else if (requestUrl.pathname.startsWith("/fancode/proxy/")) {
+    targetUrl = request.url.substring(request.url.indexOf("/fancode/proxy/") + 15);
+  } else if (requestUrl.pathname.startsWith("/api/proxy/")) {
+    targetUrl = request.url.substring(request.url.indexOf("/api/proxy/") + 11);
+  } else {
+    targetUrl = requestUrl.searchParams.get("url") || "";
+  }
+  
+  targetUrl = targetUrl.trim().replace(/[,\s]+$/g, "");
+  if (targetUrl.startsWith("https:/") && !targetUrl.startsWith("https://")) {
+    targetUrl = "https://" + targetUrl.substring(7);
+  } else if (targetUrl.startsWith("http:/") && !targetUrl.startsWith("http://")) {
+    targetUrl = "http://" + targetUrl.substring(6);
+  }
+  
   const baseCorsHeaders = corsHeaders(request);
 
   if (request.method === "OPTIONS") {
@@ -205,7 +222,8 @@ async function handleProxy(request) {
 
 function isProxyPath(pathname) {
   const path = pathname.replace(/\/+$/, "") || "/";
-  return path === "/proxy" || path === "/fancode/proxy" || path === "/api/proxy";
+  return path.startsWith("/proxy/") || path.startsWith("/fancode/proxy/") || path.startsWith("/api/proxy/") ||
+         path === "/proxy" || path === "/fancode/proxy" || path === "/api/proxy";
 }
 
 export default {

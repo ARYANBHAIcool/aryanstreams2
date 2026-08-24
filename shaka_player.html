@@ -131,7 +131,11 @@
 
             // ── Inject Referer header (required for Amazon CDN) ────────
             player.getNetworkingEngine().registerRequestFilter(function(type, req) {
-                req.headers['Referer']    = REFERER;
+                if (req.uris[0] && !req.uris[0].includes('/proxy')) {
+                    try {
+                        req.headers['Referer'] = REFERER;
+                    } catch(e) {}
+                }
                 req.headers['User-Agent'] = navigator.userAgent;
             });
 
