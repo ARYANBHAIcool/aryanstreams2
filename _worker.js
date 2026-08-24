@@ -1,7 +1,17 @@
 function corsHeaders(request) {
-  const origin = request ? request.headers.get("Origin") : null;
+  let origin = "*";
+  if (request) {
+    origin = request.headers.get("Origin");
+    if (!origin) {
+      try {
+        origin = new URL(request.url).origin;
+      } catch (e) {
+        origin = "*";
+      }
+    }
+  }
   return {
-    "Access-Control-Allow-Origin": origin || "*",
+    "Access-Control-Allow-Origin": origin,
     "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
     "Access-Control-Allow-Headers": "*",
     "Access-Control-Max-Age": "86400",
@@ -144,12 +154,8 @@ async function handleProxy(request) {
       finalUrl.includes(".m3u8");
 
     const responseHeaders = new Headers(upstream.headers);
-    const requestOrigin = request.headers.get("Origin");
-    if (requestOrigin) {
-      responseHeaders.set("Access-Control-Allow-Origin", requestOrigin);
-    } else {
-      responseHeaders.set("Access-Control-Allow-Origin", "*");
-    }
+    const requestOrigin = request.headers.get("Origin") || requestUrl.origin;
+    responseHeaders.set("Access-Control-Allow-Origin", requestOrigin);
     responseHeaders.set("Access-Control-Allow-Methods", "GET, HEAD, OPTIONS");
     responseHeaders.set("Access-Control-Allow-Headers", "*");
     responseHeaders.delete("x-frame-options");
