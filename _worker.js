@@ -99,6 +99,15 @@ function applyDefaultHeaders(targetUrl, targetHeaders, request) {
     return;
   }
 
+  if (targetUrl.includes("aiv-cdn.net") || targetUrl.includes("aiv-cdn.com") || targetUrl.includes("akamaihd.net")) {
+    if (!targetHeaders.has("User-Agent") && !targetHeaders.has("user-agent")) {
+      targetHeaders.set("User-Agent", request.headers.get("User-Agent") || "Mozilla/5.0");
+    }
+    targetHeaders.set("Origin", "https://live.api-live.workers.dev");
+    targetHeaders.set("Referer", "https://live.api-live.workers.dev/");
+    return;
+  }
+
   if (!targetHeaders.has("User-Agent") && !targetHeaders.has("user-agent")) {
     targetHeaders.set("User-Agent", request.headers.get("User-Agent") || "Mozilla/5.0");
   }
