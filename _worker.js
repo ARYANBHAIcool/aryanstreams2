@@ -16,26 +16,40 @@ function proxyUrl(proxyBase, targetUrl, headers) {
   return `${proxyBase}?${params.toString()}`;
 }
 
-function rewriteM3U8(text, finalUrl, proxyBase, headers) {
-  return text.split(/\r?\n/).map((line) => {
+function rewriteM3U8(text, finalUrl, proxyBase, headers, proxySegments) {
+  const lines = text.split(/\r?\n/);
+  let isMasterPlaylist = false;
+
+  for (const line of lines) {
+    if (line.includes("#EXT-X-STREAM-INF") || line.includes("#EXT-X-I-FRAME-STREAM-INF")) {
+      isMasterPlaylist = true;
+      break;
+    }
+  }
+
+  return lines.map((line) => {
     const trimmed = line.trim();
     if (!trimmed) return line;
 
     if (!trimmed.startsWith("#")) {
       const absolute = new URL(trimmed, finalUrl).toString();
-      if (absolute.includes(".m3u8") || absolute.includes(".key") || absolute.includes("/key") || absolute.includes("key=")) {
+      if (isMasterPlaylist) {
         return proxyUrl(proxyBase, absolute, headers);
+      } else {
+        if (proxySegments) {
+          return proxyUrl(proxyBase, absolute, headers);
+        }
+        if (absolute.includes(".m3u8") || absolute.includes(".key") || absolute.includes("/key") || absolute.includes("key=")) {
+          return proxyUrl(proxyBase, absolute, headers);
+        }
+        return absolute;
       }
-      return absolute;
     }
 
     if (trimmed.includes("URI=")) {
       return line.replace(/URI="([^"]+)"/g, (_match, uri) => {
         const absolute = new URL(uri, finalUrl).toString();
-        if (absolute.includes(".m3u8") || absolute.includes(".key") || absolute.includes("/key") || absolute.includes("key=") || trimmed.includes("KEY")) {
-          return `URI="${proxyUrl(proxyBase, absolute, headers)}"`;
-        }
-        return `URI="${absolute}"`;
+        return `URI="${proxyUrl(proxyBase, absolute, headers)}"`;
       });
     }
 
@@ -139,7 +153,12 @@ async function handleProxy(request) {
       responseHeaders.delete("content-length");
 
       const proxyBase = `${requestUrl.origin}${requestUrl.pathname}`;
-      const rewritten = rewriteM3U8(await upstream.text(), finalUrl, proxyBase, targetHeaders);
+      const proxySegments =
+        targetUrl.includes("fancode.com") ||
+        targetUrl.includes("sonyliv.com") ||
+        targetUrl.includes("slivcdn.com") ||
+        requestUrl.searchParams.get("proxySegments") === "true";
+      const rewritten = rewriteM3U8(await upstream.text(), finalUrl, proxyBase, targetHeaders, proxySegments);
       return new Response(rewritten, {
         status: upstream.status,
         statusText: upstream.statusText,
