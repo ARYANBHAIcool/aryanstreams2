@@ -22,13 +22,20 @@ function rewriteM3U8(text, finalUrl, proxyBase, headers) {
     if (!trimmed) return line;
 
     if (!trimmed.startsWith("#")) {
-      return proxyUrl(proxyBase, new URL(trimmed, finalUrl).toString(), headers);
+      const absolute = new URL(trimmed, finalUrl).toString();
+      if (absolute.includes(".m3u8") || absolute.includes(".key") || absolute.includes("/key") || absolute.includes("key=")) {
+        return proxyUrl(proxyBase, absolute, headers);
+      }
+      return absolute;
     }
 
     if (trimmed.includes("URI=")) {
       return line.replace(/URI="([^"]+)"/g, (_match, uri) => {
         const absolute = new URL(uri, finalUrl).toString();
-        return `URI="${proxyUrl(proxyBase, absolute, headers)}"`;
+        if (absolute.includes(".m3u8") || absolute.includes(".key") || absolute.includes("/key") || absolute.includes("key=") || trimmed.includes("KEY")) {
+          return `URI="${proxyUrl(proxyBase, absolute, headers)}"`;
+        }
+        return `URI="${absolute}"`;
       });
     }
 

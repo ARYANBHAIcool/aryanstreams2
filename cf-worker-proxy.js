@@ -130,15 +130,21 @@ export default {
           // Rewrite URLs (lines that don't start with '#')
           if (!trimmed.startsWith("#")) {
             const absolute = new URL(trimmed, finalUrl).toString();
-            return `${proxyBase}?url=${encodeURIComponent(absolute)}&${headerQuery}`;
+            if (absolute.includes(".m3u8") || absolute.includes(".key") || absolute.includes("/key") || absolute.includes("key=")) {
+              return `${proxyBase}?url=${encodeURIComponent(absolute)}&${headerQuery}`;
+            }
+            return absolute;
           }
 
           // Rewrite URIs in tags (like keys and audio media playlists)
           if (trimmed.includes("URI=")) {
             return trimmed.replace(/URI="([^"]+)"/g, (match, p1) => {
               const absolute = new URL(p1, finalUrl).toString();
-              const proxied = `${proxyBase}?url=${encodeURIComponent(absolute)}&${headerQuery}`;
-              return `URI="${proxied}"`;
+              if (absolute.includes(".m3u8") || absolute.includes(".key") || absolute.includes("/key") || absolute.includes("key=") || trimmed.includes("KEY")) {
+                const proxied = `${proxyBase}?url=${encodeURIComponent(absolute)}&${headerQuery}`;
+                return `URI="${proxied}"`;
+              }
+              return `URI="${absolute}"`;
             });
           }
 
