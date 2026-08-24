@@ -1,6 +1,7 @@
-function corsHeaders() {
+function corsHeaders(request) {
+  const origin = request ? request.headers.get("Origin") : null;
   return {
-    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Origin": origin || "*",
     "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
     "Access-Control-Allow-Headers": "*",
     "Access-Control-Max-Age": "86400",
@@ -96,7 +97,7 @@ function applyDefaultHeaders(targetUrl, targetHeaders, request) {
 async function handleProxy(request) {
   const requestUrl = new URL(request.url);
   const targetUrl = (requestUrl.searchParams.get("url") || "").trim().replace(/[,\s]+$/g, "");
-  const baseCorsHeaders = corsHeaders();
+  const baseCorsHeaders = corsHeaders(request);
 
   if (request.method === "OPTIONS") {
     return new Response(null, { headers: baseCorsHeaders });
@@ -143,7 +144,12 @@ async function handleProxy(request) {
       finalUrl.includes(".m3u8");
 
     const responseHeaders = new Headers(upstream.headers);
-    responseHeaders.set("Access-Control-Allow-Origin", "*");
+    const requestOrigin = request.headers.get("Origin");
+    if (requestOrigin) {
+      responseHeaders.set("Access-Control-Allow-Origin", requestOrigin);
+    } else {
+      responseHeaders.set("Access-Control-Allow-Origin", "*");
+    }
     responseHeaders.set("Access-Control-Allow-Methods", "GET, HEAD, OPTIONS");
     responseHeaders.set("Access-Control-Allow-Headers", "*");
     responseHeaders.delete("x-frame-options");
