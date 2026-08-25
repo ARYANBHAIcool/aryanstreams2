@@ -138,54 +138,92 @@ def populate_matches_cache(matches_list):
 
 def send_telegram_photo(photo_url, caption):
     bot_token = config.get("bot_token")
-    chat_id = config.get("channel_chat_id")
-    
+    chat_ids = config.get("channel_chat_id")
+    if not isinstance(chat_ids, list):
+        chat_ids = [chat_ids]
+        
     if bot_token == "YOUR_TELEGRAM_BOT_TOKEN" or not bot_token:
-        return False
-        
-    api_url = f"https://api.telegram.org/bot{bot_token}/sendPhoto"
-    payload = {
-        "chat_id": chat_id,
-        "photo": photo_url,
-        "caption": caption,
-        "parse_mode": "HTML"
-    }
-    
-    req_data = urllib.parse.urlencode(payload).encode("utf-8")
-    req = urllib.request.Request(api_url, data=req_data, method="POST")
-    req.add_header("Content-Type", "application/x-www-form-urlencoded")
-    
-    try:
-        with urllib.request.urlopen(req, timeout=15) as response:
-            res = json.loads(response.read().decode("utf-8"))
-            if res.get("ok", False):
-                return res.get("result", {}).get("message_id")
-            return None
-    except Exception as e:
-        print(f"Failed to send Telegram photo: {e}")
         return None
+        
+    posted = {}
+    for cid in chat_ids:
+        if not cid:
+            continue
+        api_url = f"https://api.telegram.org/bot{bot_token}/sendPhoto"
+        payload = {
+            "chat_id": cid,
+            "photo": photo_url,
+            "caption": caption,
+            "parse_mode": "HTML"
+        }
+        
+        req_data = urllib.parse.urlencode(payload).encode("utf-8")
+        req = urllib.request.Request(api_url, data=req_data, method="POST")
+        req.add_header("Content-Type", "application/x-www-form-urlencoded")
+        
+        try:
+            with urllib.request.urlopen(req, timeout=15) as response:
+                res = json.loads(response.read().decode("utf-8"))
+                if res.get("ok", False):
+                    msg_id = res.get("result", {}).get("message_id")
+                    posted[str(cid)] = msg_id
+        except Exception as e:
+            print(f"Failed to send Telegram photo to {cid}: {e}")
+            
+    return posted if posted else None
 
-def delete_telegram_message(message_id):
+def delete_telegram_message(msg_data):
     bot_token = config.get("bot_token")
-    chat_id = config.get("channel_chat_id")
-    if not bot_token or not chat_id or not message_id:
+    if not bot_token or not msg_data:
         return False
         
-    api_url = f"https://api.telegram.org/bot{bot_token}/deleteMessage"
-    payload = {
-        "chat_id": chat_id,
-        "message_id": message_id
-    }
-    req_data = urllib.parse.urlencode(payload).encode("utf-8")
-    req = urllib.request.Request(api_url, data=req_data, method="POST")
-    req.add_header("Content-Type", "application/x-www-form-urlencoded")
-    try:
-        with urllib.request.urlopen(req, timeout=10) as response:
-            res = json.loads(response.read().decode("utf-8"))
-            return res.get("ok", False)
-    except Exception as e:
-        print(f"Failed to delete Telegram message {message_id}: {e}")
-        return False
+    if isinstance(msg_data, dict):
+        success = True
+        for cid, msg_id in msg_data.items():
+            if not msg_id:
+                continue
+            api_url = f"https://api.telegram.org/bot{bot_token}/deleteMessage"
+            payload = {
+                "chat_id": cid,
+                "message_id": msg_id
+            }
+            req_data = urllib.parse.urlencode(payload).encode("utf-8")
+            req = urllib.request.Request(api_url, data=req_data, method="POST")
+            req.add_header("Content-Type", "application/x-www-form-urlencoded")
+            try:
+                with urllib.request.urlopen(req, timeout=10) as response:
+                    res = json.loads(response.read().decode("utf-8"))
+                    if not res.get("ok", False):
+                        success = False
+            except Exception as e:
+                print(f"Failed to delete Telegram message {msg_id} from {cid}: {e}")
+                success = False
+        return success
+    else:
+        chat_ids = config.get("channel_chat_id")
+        if not isinstance(chat_ids, list):
+            chat_ids = [chat_ids]
+        success = True
+        for cid in chat_ids:
+            if not cid:
+                continue
+            api_url = f"https://api.telegram.org/bot{bot_token}/deleteMessage"
+            payload = {
+                "chat_id": cid,
+                "message_id": msg_data
+            }
+            req_data = urllib.parse.urlencode(payload).encode("utf-8")
+            req = urllib.request.Request(api_url, data=req_data, method="POST")
+            req.add_header("Content-Type", "application/x-www-form-urlencoded")
+            try:
+                with urllib.request.urlopen(req, timeout=10) as response:
+                    res = json.loads(response.read().decode("utf-8"))
+                    if not res.get("ok", False):
+                        success = False
+            except Exception as e:
+                print(f"Failed to delete Telegram message {msg_data} from {cid}: {e}")
+                success = False
+        return success
 
 def send_telegram_text(chat_id, text, reply_markup=None):
     bot_token = config.get("bot_token")
