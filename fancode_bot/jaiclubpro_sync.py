@@ -1,109 +1,106 @@
 import json
 import time
 import urllib.request
-import urllib.parse
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
+import ssl
 
 # Configurations
 API_URL = "https://jaiclubpro.pages.dev/api/save_automated"
 PASSCODE = "aryan8384"
-STREAMCORNER_URL = "https://streamcorner.foo"
+PPV_API = "https://api.ppv.st/api/streams"
+FANCODE_API = "https://raw.githubusercontent.com/drmlive/fancode-live-events/main/fancode.json"
 
-print("Initializing Chrome in headless mode...")
-options = webdriver.ChromeOptions()
-options.add_argument("--headless")
-options.add_argument("--no-sandbox")
-options.add_argument("--disable-gpu")
-options.add_argument("--disable-dev-shm-usage")
-options.add_argument("--remote-debugging-port=9222")
-options.add_argument("--user-data-dir=/home/azureuseraryan/snap/chromium/common/chrome-user-data")
-options.set_capability("goog:loggingPrefs", {"performance": "ALL"})
+# Bypass SSL context verification to ensure requests succeed on any server environment
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
 
-early_hook = """
-window.__allEvents = [];
-const _origJSONParse = JSON.parse;
-JSON.parse = function(text, ...args) {
-    const result = _origJSONParse.call(this, text, ...args);
-    try {
-        if (Array.isArray(result) && result.length > 0 && result[0] && result[0].stream_id) {
-            window.__allEvents.push(...result);
-        }
-    } catch(e) {}
-    return result;
-};
-"""
+print("Starting JaiClubPro schedule synchronization...")
+automated_streams = []
 
-service = Service(executable_path='/snap/bin/chromium.chromedriver')
-driver = webdriver.Chrome(service=service, options=options)
-
+# 1. Fetch ppv.st dynamic upcoming events schedule
 try:
-    print(f"Injecting hook and loading {STREAMCORNER_URL}...")
-    driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {"source": early_hook})
-    driver.get(STREAMCORNER_URL)
-    
-    print("Waiting 15 seconds for page load and events to capture...")
-    time.sleep(15)
-    
-    # Scroll to load more events
-    driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
-    time.sleep(3)
-    
-    events = driver.execute_script("return window.__allEvents || []")
-    print(f"Total events captured: {len(events)}")
-    
-    jaiclub_streams = []
-    
-    for ev in events:
-        streams = ev.get('streams', [])
-        if not streams:
-            continue
-            
-        event_name = ev.get('event_name', 'Live Event')
-        category = ev.get('category', 'Sports')
-        league = ev.get('league', '')
-        stream_id = ev.get('stream_id', '')
+    print(f"Fetching ppv.st streams from: {PPV_API}")
+    req = urllib.request.Request(
+        PPV_API,
+        headers={
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            "Accept": "application/json",
+            "Referer": "https://ppv.st/"
+        }
+    )
+    with urllib.request.urlopen(req, context=ctx, timeout=15) as res:
+        content = res.read().decode("utf-8")
+        data = json.loads(content)
         
-        # Deduplicate streams under this event
-        for i, s in enumerate(streams):
-            src_name = s.get('source_name', 'Stream')
-            s_url = s.get('stream_url') or s.get('embed_url') or ''
-            keys = s.get('stream_keys', '')
-            
-            if not s_url:
+        if data.get("success"):
+            categories = data.get("streams", [])
+            print(f"Loaded {len(categories)} categories from ppv.st.")
+            for cat in categories:
+                category_name = cat.get("category") or "Live Events"
+                streams = cat.get("streams", [])
+                for stream in streams:
+                    # Clean and format ppv.st dynamic match object
+                    automated_streams.append({
+                        "id": f"ppv_{stream['id']}",
+                        "name": stream.get("name"),
+                        "category": category_name,
+                        "tag": stream.get("tag") or "Live",
+                        "source_tag": stream.get("source_tag") or "PPV.st",
+                        "poster": stream.get("poster") or "",
+                        "starts_at": stream.get("starts_at"),
+                        "ends_at": stream.get("ends_at"),
+                        "iframe": stream.get("iframe") or "",
+                        "type": "iframe",
+                        "status": "live"
+                    })
+            print(f"Successfully processed {len(automated_streams)} ppv.st streams.")
+        else:
+            print("ppv.st API returned success=false status.")
+except Exception as e:
+    print("Error fetching ppv.st API:", e)
+
+# 2. Fetch FanCode dynamic live events schedule
+try:
+    print(f"Fetching FanCode streams from: {FANCODE_API}")
+    req = urllib.request.Request(
+        FANCODE_API,
+        headers={
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+            "Accept": "application/json"
+        }
+    )
+    with urllib.request.urlopen(req, context=ctx, timeout=15) as res:
+        content = res.read().decode("utf-8")
+        events = json.loads(content)
+        print(f"Loaded {len(events)} events from FanCode feed.")
+        
+        for ev in events:
+            stream_url = ev.get("stream_url") or ev.get("url") or ""
+            if not stream_url:
                 continue
                 
-            kid, key = "", ""
-            if keys and ':' in keys:
-                kid, key = keys.split(':', 1)
-                
-            stream_type = "shaka" if (kid and key) else "video"
-            if "embed" in s_url or "iframe" in s_url:
-                stream_type = "iframe"
-                
-            stream_obj = {
-                "id": f"sc_{stream_id}_{i}",
-                "name": f"{event_name} ({src_name})",
-                "category": category,
-                "tag": league,
-                "source_tag": "StreamCorner",
-                "poster": ev.get('poster') or "",
-                "starts_at": ev.get('time_utc', int(time.time())) if isinstance(ev.get('time_utc'), int) else int(time.time()),
-                "ends_at": int(time.time()) + 7200, # 2 hours
-                "url": s_url,
-                "kid": kid,
-                "key": key,
-                "type": stream_type,
+            automated_streams.append({
+                "id": f"fc_{ev['id']}",
+                "name": ev.get("title") or ev.get("event") or "Cricket Match",
+                "category": "Cricket",
+                "tag": ev.get("league") or "FanCode",
+                "source_tag": "FanCode",
+                "poster": ev.get("image") or ev.get("src") or "",
+                "starts_at": int(time.time()),
+                "ends_at": int(time.time()) + 14400, # 4 hours duration
+                "url": stream_url,
+                "type": "video",
                 "status": "live"
-            }
-            jaiclub_streams.append(stream_obj)
-            
-    print(f"Processed {len(jaiclub_streams)} active live streams.")
-    
-    # Send request to jaiclubpro Pages API
+            })
+except Exception as e:
+    print("Error fetching FanCode API:", e)
+
+# 3. POST the combined dynamic events schedule back to jaiclubpro Worker API
+if automated_streams:
+    print(f"Posting {len(automated_streams)} automated streams to worker...")
     payload = {
         "passcode": PASSCODE,
-        "streams": jaiclub_streams
+        "streams": automated_streams
     }
     
     req_data = json.dumps(payload).encode("utf-8")
@@ -111,17 +108,15 @@ try:
     req.add_header("Content-Type", "application/json")
     
     try:
-        with urllib.request.urlopen(req, timeout=15) as res:
+        with urllib.request.urlopen(req, context=ctx, timeout=15) as res:
             res_data = json.loads(res.read().decode("utf-8"))
             if res_data.get("success"):
-                print("Successfully synced active StreamCorner streams to jaiclubpro.com KV database!")
+                print("Successfully updated schedule database on Cloudflare KV!")
             else:
-                print("Failed to sync to KV database:", res_data.get("error"))
+                print("Worker API returned error saving streams:", res_data.get("error"))
     except Exception as api_err:
-        print("API Sync Error:", api_err)
-        
-except Exception as e:
-    print("Scraping Error:", e)
-finally:
-    driver.quit()
-    print("Finished sync run.")
+        print("Worker API POST Sync Error:", api_err)
+else:
+    print("No automated streams were fetched/processed to sync.")
+
+print("Finished sync run.")

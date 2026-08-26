@@ -2547,10 +2547,11 @@ async function handleJaiClubStreams(request, env) {
       poster: ss.poster || "",
       starts_at: ss.starts_at || Math.floor(Date.now() / 1000),
       ends_at: ss.ends_at || (Math.floor(Date.now() / 1000) + 7200),
-      url: ss.url,
+      url: ss.url || "",
       kid: ss.kid || "",
       key: ss.key || "",
-      type: ss.type || "shaka",
+      iframe: ss.iframe || "",
+      type: ss.type || "iframe",
       status: ss.status || "live"
     });
   }
