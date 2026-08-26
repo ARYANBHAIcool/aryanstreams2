@@ -1898,6 +1898,32 @@ const staticChannels = [
     "always_live": true
   },
   {
+    "id": "static_toxic",
+    "name": "TOXIC",
+    "category": "Live Sports Channels",
+    "tag": "LIVE",
+    "source_tag": "Linear TV",
+    "poster": "",
+    "url": "https://rumble.com/hls-vod/Mbjq-O_XW20/playlist.m3u8?u=0&b=0",
+    "kid": "",
+    "key": "",
+    "type": "video",
+    "always_live": true
+  },
+  {
+    "id": "static_premier2",
+    "name": "Premier 2",
+    "category": "Live Sports Channels",
+    "tag": "LIVE",
+    "source_tag": "Linear TV",
+    "poster": "",
+    "url": "https://leaf.highfly.dev/m3u/1562519/live.m3u8",
+    "kid": "",
+    "key": "",
+    "type": "video",
+    "always_live": true
+  },
+  {
     "id": "static_astonvilla",
     "name": "Aston Villa vs Gladbach",
     "category": "Live Sports Channels",

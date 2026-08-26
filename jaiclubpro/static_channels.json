@@ -644,6 +644,16 @@
     "name": "Fancode (SC)",
     "url": "shaka_player.html?mpd=/proxy/https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/b3b3fkmrbl/out/v1/1084d5c9a97a4c5b9f9554c88f486646/cenc.mpd&kid=82dfca238e8c4b430a3269db71965db9&key=a00b28caf4ac628e77a553d440c0ddca"
   },
+  "toxic": {
+    "type": "video",
+    "name": "TOXIC",
+    "url": "https://rumble.com/hls-vod/Mbjq-O_XW20/playlist.m3u8?u=0&b=0"
+  },
+  "premier2": {
+    "type": "video",
+    "name": "Premier 2",
+    "url": "https://leaf.highfly.dev/m3u/1562519/live.m3u8"
+  },
   "astonvilla": {
     "type": "iframe",
     "name": "Aston Villa vs Gladbach",
