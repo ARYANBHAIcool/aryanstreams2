@@ -2551,6 +2551,7 @@ async function handleJaiClubStreams(request, env) {
       kid: ss.kid || "",
       key: ss.key || "",
       iframe: ss.iframe || "",
+      substreams: ss.substreams || [],
       type: ss.type || "iframe",
       status: ss.status || "live"
     });
