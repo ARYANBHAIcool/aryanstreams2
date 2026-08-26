@@ -221,12 +221,17 @@ async function handleProxy(request) {
 
 async function handleJaiClubStreams(request, env) {
   let customStreams = [];
+  let streamcornerStreams = [];
   
   if (env && env.JAICLUBPRO_KV) {
     try {
       const stored = await env.JAICLUBPRO_KV.get("custom_streams");
       if (stored) {
         customStreams = JSON.parse(stored);
+      }
+      const scStored = await env.JAICLUBPRO_KV.get("streamcorner_streams");
+      if (scStored) {
+        streamcornerStreams = JSON.parse(scStored);
       }
     } catch(e) {
       console.error("KV read error:", e);
@@ -290,6 +295,27 @@ async function handleJaiClubStreams(request, env) {
     });
   }
   
+  for (const ss of streamcornerStreams) {
+    const catName = ss.category || "StreamCorner Feed";
+    if (!consolidated[catName]) {
+      consolidated[catName] = [];
+    }
+    consolidated[catName].push({
+      id: ss.id,
+      name: ss.name,
+      tag: ss.tag || "SC",
+      source_tag: ss.source_tag || "StreamCorner",
+      poster: ss.poster || "",
+      starts_at: ss.starts_at || Math.floor(Date.now() / 1000),
+      ends_at: ss.ends_at || (Math.floor(Date.now() / 1000) + 7200),
+      url: ss.url,
+      kid: ss.kid || "",
+      key: ss.key || "",
+      type: ss.type || "shaka",
+      status: ss.status || "live"
+    });
+  }
+  
   const resultList = [];
   for (const [catName, streams] of Object.entries(consolidated)) {
     if (streams.length > 0) {
@@ -330,6 +356,38 @@ async function handleJaiClubAdmin(request, env) {
         status: 401,
         headers: { "Content-Type": "application/json", ...cors }
       });
+    } catch(e) {
+      return new Response(JSON.stringify({ success: false, error: String(e) }), {
+        status: 400,
+        headers: { "Content-Type": "application/json", ...cors }
+      });
+    }
+  }
+  
+  if (url.pathname === "/api/save_automated") {
+    try {
+      const body = await request.json();
+      const passcode = body.passcode;
+      const adminPass = (env && env.JAICLUBPRO_PASSCODE) || "aryan8384";
+      if (passcode !== adminPass) {
+        return new Response(JSON.stringify({ success: false, error: "Unauthorized" }), {
+          status: 401,
+          headers: { "Content-Type": "application/json", ...cors }
+        });
+      }
+      
+      const streams = body.streams || [];
+      if (env && env.JAICLUBPRO_KV) {
+        await env.JAICLUBPRO_KV.put("streamcorner_streams", JSON.stringify(streams));
+        return new Response(JSON.stringify({ success: true }), {
+          headers: { "Content-Type": "application/json", ...cors }
+        });
+      } else {
+        return new Response(JSON.stringify({ success: false, error: "KV namespace JAICLUBPRO_KV is not bound." }), {
+          status: 500,
+          headers: { "Content-Type": "application/json", ...cors }
+        });
+      }
     } catch(e) {
       return new Response(JSON.stringify({ success: false, error: String(e) }), {
         status: 400,
