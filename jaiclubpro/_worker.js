@@ -2637,7 +2637,20 @@ async function handleJaiClubAdmin(request, env) {
         });
       }
       
-      const streams = body.streams || [];
+      let streams = [];
+      if (body.payload) {
+        try {
+          streams = JSON.parse(atob(body.payload));
+        } catch(decodeErr) {
+          return new Response(JSON.stringify({ success: false, error: "Invalid base64 payload: " + String(decodeErr) }), {
+            status: 400,
+            headers: { "Content-Type": "application/json", ...cors }
+          });
+        }
+      } else {
+        streams = body.streams || [];
+      }
+      
       if (env && env.JAICLUBPRO_KV) {
         await env.JAICLUBPRO_KV.put("streamcorner_streams", JSON.stringify(streams));
         return new Response(JSON.stringify({ success: true }), {

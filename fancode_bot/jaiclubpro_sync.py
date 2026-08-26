@@ -71,21 +71,22 @@ try:
     )
     with urllib.request.urlopen(req, context=ctx, timeout=15) as res:
         content = res.read().decode("utf-8")
-        events = json.loads(content)
-        print(f"Loaded {len(events)} events from FanCode feed.")
+        data = json.loads(content)
+        matches = data.get("matches", [])
+        print(f"Loaded {len(matches)} events from FanCode feed.")
         
-        for ev in events:
-            stream_url = ev.get("stream_url") or ev.get("url") or ""
+        for ev in matches:
+            stream_url = ev.get("adfree_url") or ev.get("dai_url") or ev.get("url") or ""
             if not stream_url:
                 continue
                 
             automated_streams.append({
-                "id": f"fc_{ev['id']}",
-                "name": ev.get("title") or ev.get("event") or "Cricket Match",
-                "category": "Cricket",
-                "tag": ev.get("league") or "FanCode",
+                "id": f"fc_{ev['match_id']}",
+                "name": ev.get("match_name") or ev.get("title") or "Cricket Match",
+                "category": ev.get("event_category") or "Cricket",
+                "tag": ev.get("title") or "FanCode",
                 "source_tag": "FanCode",
-                "poster": ev.get("image") or ev.get("src") or "",
+                "poster": ev.get("src") or "",
                 "starts_at": int(time.time()),
                 "ends_at": int(time.time()) + 14400, # 4 hours duration
                 "url": stream_url,
@@ -97,10 +98,14 @@ except Exception as e:
 
 # 3. POST the combined dynamic events schedule back to jaiclubpro Worker API
 if automated_streams:
+    import base64
     print(f"Posting {len(automated_streams)} automated streams to worker...")
+    
+    # Base64 encode to bypass Cloudflare Turnstile/WAF payload blocks
+    encoded_payload = base64.b64encode(json.dumps(automated_streams).encode("utf-8")).decode("utf-8")
     payload = {
         "passcode": PASSCODE,
-        "streams": automated_streams
+        "payload": encoded_payload
     }
     
     req_data = json.dumps(payload).encode("utf-8")
