@@ -620,6 +620,26 @@ def check_admin_commands():
     except Exception as e:
         print(f"Error checking admin commands: {e}")
 
+def get_match_signature(m):
+    t1 = str(m.get("team_1") or "").strip().lower()
+    t2 = str(m.get("team_2") or "").strip().lower()
+    event_name = str(m.get("event_name") or "").strip().lower()
+    match_name = str(m.get("match_name") or "").strip().lower()
+    title = str(m.get("title") or "").strip().lower()
+    
+    if t1 and t2:
+        teams = "-".join(sorted([t1, t2]))
+    else:
+        name = match_name or title or "match"
+        name = name.replace(" vs ", " vs ").replace(" v ", " vs ").replace(" @ ", " vs ")
+        parts = [p.strip() for p in name.split(" vs ") if p.strip()]
+        if len(parts) == 2:
+            teams = "-".join(sorted(parts))
+        else:
+            teams = name
+            
+    return f"{event_name}|{teams}"
+
 def check_and_post():
     feed_url = "https://raw.githubusercontent.com/drmlive/fancode-live-events/main/fancode.json"
     print(f"[{datetime.now().strftime('%H:%M:%S')}] Checking Fancode matches...")
@@ -644,6 +664,15 @@ def check_and_post():
     # Track which match IDs are currently active and live
     current_live_ids = set()
     
+    # Track signatures seen in currently posted matches to avoid duplicate posts
+    posted_signatures = set()
+    for val in posted_matches.values():
+        if isinstance(val, dict) and "signature" in val:
+            posted_signatures.add(val["signature"])
+            
+    # Track signatures processed in this specific run
+    seen_in_current_feed = set()
+    
     for m in matches:
         match_id = str(m.get("match_id", ""))
         status = str(m.get("status", "")).upper()
@@ -655,10 +684,20 @@ def check_and_post():
             if not is_start_time_reached(start_time_raw):
                 continue
                 
+            sig = get_match_signature(m)
+            
+            # Skip if we already saw this match in this feed check
+            if sig in seen_in_current_feed:
+                print(f"Skipping duplicate match in current feed check: {m.get('title')} ({match_id})")
+                continue
+            seen_in_current_feed.add(sig)
+            
             current_live_ids.add(match_id)
             
-            # Post if not already posted
-            if match_id not in posted_matches:
+            # Check if match is already posted by ID or by signature
+            is_posted = (match_id in posted_matches) or (sig in posted_signatures)
+            
+            if not is_posted:
                 sport_category = str(m.get("event_category", "")).lower().strip()
                 event_name = m.get("event_name", "Fancode Event")
                 event_name_lower = event_name.lower().strip()
@@ -748,7 +787,11 @@ def check_and_post():
                 msg_id = send_telegram_photo(image_url, caption)
                 
                 if msg_id:
-                    posted_matches[match_id] = msg_id
+                    posted_matches[match_id] = {
+                        "msg_id": msg_id,
+                        "signature": sig
+                    }
+                    posted_signatures.add(sig)
                     new_posts = True
                     print(f"Successfully posted to Telegram. Message ID: {msg_id}")
                 else:
@@ -757,8 +800,24 @@ def check_and_post():
     # Auto-deletion logic: find posted matches that are no longer active/live in the feed
     ended_match_ids = []
     for posted_id in list(posted_matches.keys()):
-        if posted_id not in current_live_ids:
-            msg_id = posted_matches[posted_id]
+        val = posted_matches[posted_id]
+        sig = val.get("signature") if isinstance(val, dict) else None
+        
+        # Check if match is still live either by match_id or by signature matching a live feed match
+        is_still_live = False
+        if posted_id in current_live_ids:
+            is_still_live = True
+        elif sig:
+            for live_m in matches:
+                live_mid = str(live_m.get("match_id", ""))
+                live_status = str(live_m.get("status", "")).upper()
+                if live_status == "LIVE" and live_mid:
+                    if get_match_signature(live_m) == sig:
+                        is_still_live = True
+                        break
+                        
+        if not is_still_live:
+            msg_id = val.get("msg_id") if isinstance(val, dict) else val
             print(f"Match ended: {posted_id}. Deleting Telegram notification message {msg_id}...")
             if msg_id:
                 delete_telegram_message(msg_id)
