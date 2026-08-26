@@ -115,13 +115,14 @@ function applyDefaultHeaders(targetUrl, targetHeaders, request) {
 
 async function handleProxy(request) {
   const requestUrl = new URL(request.url);
-  let targetUrl = "";
-  if (requestUrl.pathname.startsWith("/proxy/")) {
-    targetUrl = request.url.substring(request.url.indexOf("/proxy/") + 7);
-  } else if (requestUrl.pathname.startsWith("/api/proxy/")) {
-    targetUrl = request.url.substring(request.url.indexOf("/api/proxy/") + 11);
-  } else {
-    targetUrl = requestUrl.searchParams.get("url") || "";
+  let targetUrl = requestUrl.searchParams.get("url") || "";
+  
+  if (!targetUrl) {
+    if (requestUrl.pathname.startsWith("/proxy/")) {
+      targetUrl = request.url.substring(request.url.indexOf("/proxy/") + 7);
+    } else if (requestUrl.pathname.startsWith("/api/proxy/")) {
+      targetUrl = request.url.substring(request.url.indexOf("/api/proxy/") + 11);
+    }
   }
   
   targetUrl = targetUrl.trim().replace(/[,\s]+$/g, "");
