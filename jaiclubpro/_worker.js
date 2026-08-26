@@ -419,16 +419,6 @@ export default {
       return handleJaiClubAdmin(request, env);
     }
 
-    // Static pages rewriting
-    if (url.pathname === "/play" || url.pathname === "/play/") {
-      url.pathname = "/play.html";
-      return env.ASSETS.fetch(new Request(url.toString(), request));
-    }
-    if (url.pathname === "/admin" || url.pathname === "/admin/") {
-      url.pathname = "/admin.html";
-      return env.ASSETS.fetch(new Request(url.toString(), request));
-    }
-
     return env.ASSETS.fetch(request);
   },
 };
