@@ -39,6 +39,17 @@ try:
                 category_name = cat.get("category") or "Live Events"
                 streams = cat.get("streams", [])
                 for stream in streams:
+                    # Parse substreams (additional channel options) for this event
+                    substreams_list = []
+                    for sub in stream.get("substreams") or []:
+                        substreams_list.append({
+                            "id": sub.get("id"),
+                            "name": sub.get("name"),
+                            "tag": sub.get("tag") or "Live",
+                            "source_tag": sub.get("source_tag") or "Stream",
+                            "iframe": sub.get("iframe") or ""
+                        })
+                        
                     # Clean and format ppv.st dynamic match object
                     automated_streams.append({
                         "id": f"ppv_{stream['id']}",
@@ -50,6 +61,7 @@ try:
                         "starts_at": stream.get("starts_at"),
                         "ends_at": stream.get("ends_at"),
                         "iframe": stream.get("iframe") or "",
+                        "substreams": substreams_list,
                         "type": "iframe",
                         "status": "live"
                     })
