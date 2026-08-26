@@ -2478,7 +2478,7 @@ async function handleJaiClubStreams(request, env) {
   }
   
   const channelsMap = {};
-  for (const cs of customStreams) {
+  for (const cs of staticChannels) {
     const csName = (cs.name || "").toLowerCase();
     const cleanUrl = cs.url || cs.iframe || "";
     if (!cleanUrl) continue;
