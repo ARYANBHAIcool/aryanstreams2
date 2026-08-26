@@ -801,7 +801,7 @@ def check_and_post():
     ended_match_ids = []
     for posted_id in list(posted_matches.keys()):
         val = posted_matches[posted_id]
-        sig = val.get("signature") if isinstance(val, dict) else None
+        sig = val.get("signature") if (isinstance(val, dict) and "signature" in val) else None
         
         # Check if match is still live either by match_id or by signature matching a live feed match
         is_still_live = False
@@ -817,7 +817,10 @@ def check_and_post():
                         break
                         
         if not is_still_live:
-            msg_id = val.get("msg_id") if isinstance(val, dict) else val
+            if isinstance(val, dict) and "msg_id" in val:
+                msg_id = val["msg_id"]
+            else:
+                msg_id = val
             print(f"Match ended: {posted_id}. Deleting Telegram notification message {msg_id}...")
             if msg_id:
                 delete_telegram_message(msg_id)
