@@ -5,11 +5,7 @@ pages_build_output_dir = "."
 # Cloudflare Pages Custom Domain Worker config
 # Run locally using: npx wrangler pages dev .
 
-# Bind the KV namespace for custom streams
-[[kv_namespaces]]
-binding = "JAICLUBPRO_KV"
-id = "your_kv_namespace_id_goes_here"
-
 # Default environment variables for the worker
+
 [vars]
 JAICLUBPRO_PASSCODE = "aryan8384"
