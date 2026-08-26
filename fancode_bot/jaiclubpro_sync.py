@@ -16,7 +16,8 @@ options.add_argument("--headless")
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-gpu")
 options.add_argument("--disable-dev-shm-usage")
-options.page_load_strategy = 'eager'
+options.add_argument("--remote-debugging-port=9222")
+options.add_argument("--user-data-dir=/home/azureuseraryan/snap/chromium/common/chrome-user-data")
 options.set_capability("goog:loggingPrefs", {"performance": "ALL"})
 
 early_hook = """
@@ -35,15 +36,11 @@ JSON.parse = function(text, ...args) {
 
 service = Service(executable_path='/snap/bin/chromium.chromedriver')
 driver = webdriver.Chrome(service=service, options=options)
-driver.set_page_load_timeout(10)
 
 try:
     print(f"Injecting hook and loading {STREAMCORNER_URL}...")
     driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {"source": early_hook})
-    try:
-        driver.get(STREAMCORNER_URL)
-    except Exception as timeout_err:
-        print("Page load timed out (continuing to scrape captured events):", timeout_err)
+    driver.get(STREAMCORNER_URL)
     
     print("Waiting 15 seconds for page load and events to capture...")
     time.sleep(15)
