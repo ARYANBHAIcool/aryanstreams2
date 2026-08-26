@@ -1846,6 +1846,58 @@ const staticChannels = [
     "always_live": true
   },
   {
+    "id": "static_sc_tsn",
+    "name": "TSN Sports (SC)",
+    "category": "Live Sports Channels",
+    "tag": "LIVE",
+    "source_tag": "Linear TV",
+    "poster": "",
+    "url": "/proxy/https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/cscevwljkq/out/v1/972185041b244140860b7d56398e9aaf/cenc.mpd",
+    "kid": "385ceb9714b75e0cef61254f80b31002",
+    "key": "18dce92a2891fee68d21ede5173230f8",
+    "type": "shaka",
+    "always_live": true
+  },
+  {
+    "id": "static_sc_premier",
+    "name": "Premier Sports (SC)",
+    "category": "Live Sports Channels",
+    "tag": "LIVE",
+    "source_tag": "Linear TV",
+    "poster": "",
+    "url": "/proxy/https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/m6sqanvm2m/out/v1/f6beb46c6e9a4132ad739f3ca27df6aa/cenc.mpd",
+    "kid": "1444f4235529f183f0a5a486befe9cdb",
+    "key": "e5e3fec67a1bb3472a2089c8a0a2557f",
+    "type": "shaka",
+    "always_live": true
+  },
+  {
+    "id": "static_sc_setanta",
+    "name": "Setanta Sports (SC)",
+    "category": "Live Sports Channels",
+    "tag": "LIVE",
+    "source_tag": "Linear TV",
+    "poster": "",
+    "url": "/proxy/https://tvcdn.tv.telia.lt/live/eds/Setanta_Sports_HD_H/DASH_5_CPIX_NPVR/Setanta_Sports_HD_H.mpd",
+    "kid": "b62e606e6b577a47c0e3bd7e8bb5f979",
+    "key": "0827a71f8cc3d9ee1074e6b9cd8ffdb0",
+    "type": "shaka",
+    "always_live": true
+  },
+  {
+    "id": "static_sc_fancode",
+    "name": "Fancode (SC)",
+    "category": "Live Sports Channels",
+    "tag": "LIVE",
+    "source_tag": "Linear TV",
+    "poster": "",
+    "url": "/proxy/https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/b3b3fkmrbl/out/v1/1084d5c9a97a4c5b9f9554c88f486646/cenc.mpd",
+    "kid": "82dfca238e8c4b430a3269db71965db9",
+    "key": "a00b28caf4ac628e77a553d440c0ddca",
+    "type": "shaka",
+    "always_live": true
+  },
+  {
     "id": "static_astonvilla",
     "name": "Aston Villa vs Gladbach",
     "category": "Live Sports Channels",
