@@ -4,7 +4,7 @@ import urllib.request
 import ssl
 
 # Configurations
-API_URL = "https://jaiclubpro.pages.dev/api/save_automated"
+API_URL = "https://jaiclubpro.com/api/save_automated"
 PASSCODE = "aryan8384"
 PPV_API = "https://api.ppv.st/api/streams"
 FANCODE_API = "https://raw.githubusercontent.com/drmlive/fancode-live-events/main/fancode.json"
