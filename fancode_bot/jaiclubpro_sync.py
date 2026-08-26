@@ -3,8 +3,6 @@ import time
 import urllib.request
 import urllib.parse
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
 
 # Configurations
 API_URL = "https://jaiclubpro.pages.dev/api/save_automated"
@@ -33,8 +31,7 @@ JSON.parse = function(text, ...args) {
 };
 """
 
-service = Service(ChromeDriverManager().install())
-driver = webdriver.Chrome(service=service, options=options)
+driver = webdriver.Chrome(options=options)
 
 try:
     print(f"Injecting hook and loading {STREAMCORNER_URL}...")
