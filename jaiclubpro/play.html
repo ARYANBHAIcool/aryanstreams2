@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watch Live Stream - JAI CLUB PRO</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Shaka Player for DASH / DRM -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.5/shaka-player.compiled.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.5/controls.css">
+
+  <!-- HLS.js & Plyr for HLS/M3U8 -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest/dist/hls.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.polyfilled.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css">
+
+  <style>
+    body {
+      background-color: #0b0f19;
+      color: #e2e8f0;
+    }
+    .player-container {
+      aspect-ratio: 16/9;
+      background-color: #000;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="border-b border-gray-800 bg-[#0f172a] py-4">
+    <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors">
+        <i class="fa-solid fa-arrow-left"></i> Back to Schedule
+      </a>
+      <div class="flex items-center gap-2">
+        <span class="text-blue-500 font-bold">JAI CLUB PRO</span>
+        <span class="text-xs bg-red-500/20 text-red-500 border border-red-500/30 px-2 py-0.5 rounded uppercase tracking-wider font-bold">Live Stream</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Grid Layout -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 py-6 grid grid-cols-1 lg:grid-cols-4 gap-6">
+    
+    <!-- Player side -->
+    <div class="lg:col-span-3 space-y-4">
+      <div id="player-wrapper" class="player-container rounded-xl overflow-hidden border border-gray-800 relative">
+        <!-- Spinner -->
+        <div id="player-spinner" class="absolute inset-0 z-10 flex flex-col items-center justify-center bg-black gap-3">
+          <div class="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+          <p class="text-xs text-gray-400">Loading stream environment...</p>
+        </div>
+
+        <!-- iframe element (for embed streams) -->
+        <iframe id="iframe-player" class="hidden" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+
+        <!-- shaka video element -->
+        <div id="shaka-container" class="w-full h-full hidden" data-shaka-player-container>
+          <video id="shaka-video" class="w-full h-full" poster="" autoplay playsinline></video>
+        </div>
+
+        <!-- standard hls/plyr video element -->
+        <div id="plyr-container" class="w-full h-full hidden">
+          <video id="plyr-video" class="w-full h-full" controls playsinline autoplay></video>
+        </div>
+      </div>
+
+      <!-- Match Details -->
+      <div class="bg-[#0f172a] border border-gray-800 p-5 rounded-xl space-y-3">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div class="space-y-1">
+            <span id="match-category" class="text-xs text-blue-500 font-bold uppercase tracking-wider">Loading Sport...</span>
+            <h2 id="match-title" class="text-lg font-bold text-white">Loading Event Title...</h2>
+          </div>
+          <div class="flex items-center gap-2">
+            <span id="match-tag" class="bg-gray-800 border border-gray-700 text-xs px-2.5 py-1 rounded-lg text-gray-300 font-bold uppercase hidden"></span>
+            <span id="match-source" class="bg-blue-600/20 text-blue-400 border border-blue-500/20 text-xs px-2.5 py-1 rounded-lg font-semibold"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar Info / Live Matches -->
+    <div class="space-y-4">
+      <h3 class="text-sm font-bold uppercase tracking-wider text-gray-400 border-b border-gray-800 pb-2">More Events</h3>
+      <div id="sidebar-matches" class="space-y-3 max-h-[500px] overflow-y-auto pr-1">
+        <!-- Loaded dynamically -->
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const streamId = urlParams.get('id');
+
+    async function initPlayer() {
+      if (!streamId) {
+        showError("Invalid Stream ID.");
+        return;
+      }
+
+      try {
+        const response = await fetch('/api/streams');
+        const data = await response.json();
+
+        if (!data.success) {
+          showError("Error loading stream data from API.");
+          return;
+        }
+
+        let foundStream = null;
+        let foundCategory = "";
+        let allStreams = [];
+
+        data.streams.forEach(cat => {
+          cat.streams.forEach(ev => {
+            allStreams.push({ ...ev, category: cat.category });
+            if (String(ev.id) === String(streamId)) {
+              foundStream = ev;
+              foundCategory = cat.category;
+            }
+          });
+        });
+
+        if (!foundStream) {
+          showError("The stream is offline or not found.");
+          return;
+        }
+
+        document.getElementById('match-title').innerText = foundStream.name;
+        document.getElementById('match-category').innerText = foundCategory;
+        document.getElementById('match-source').innerText = foundStream.source_tag || "Broadcaster";
+        if (foundStream.tag) {
+          const tagEl = document.getElementById('match-tag');
+          tagEl.innerText = foundStream.tag;
+          tagEl.classList.remove('hidden');
+        }
+
+        renderSidebar(allStreams);
+        loadStream(foundStream);
+
+      } catch (e) {
+        console.error(e);
+        showError("Network error setting up player.");
+      }
+    }
+
+    function showError(msg) {
+      document.getElementById('player-spinner').innerHTML = `
+        <div class="text-center text-red-500 space-y-2 p-6">
+          <i class="fa-solid fa-triangle-exclamation text-3xl"></i>
+          <p class="text-sm font-semibold">${msg}</p>
+          <a href="/" class="inline-block mt-4 px-4 py-1.5 bg-blue-600 hover:bg-blue-500 text-xs font-bold rounded-lg text-white">Back to Home</a>
+        </div>
+      `;
+    }
+
+    function renderSidebar(allStreams) {
+      const container = document.getElementById('sidebar-matches');
+      container.innerHTML = '';
+
+      const others = allStreams.filter(ev => String(ev.id) !== String(streamId)).slice(0, 6);
+
+      if (others.length === 0) {
+        container.innerHTML = `<p class="text-xs text-gray-500 italic">No other events currently live.</p>`;
+        return;
+      }
+
+      others.forEach(ev => {
+        container.innerHTML += `
+          <a href="/play?id=${ev.id}" class="block bg-[#0f172a] border border-gray-800 hover:border-blue-500/50 p-3 rounded-lg transition-all duration-200">
+            <span class="text-[9px] font-bold text-blue-500 uppercase tracking-wider block mb-1">${ev.tag || ev.category}</span>
+            <span class="text-xs text-gray-200 font-semibold line-clamp-2 hover:text-blue-400 transition-colors leading-snug">${ev.name}</span>
+          </a>
+        `;
+      });
+    }
+
+    function loadStream(stream) {
+      const spinner = document.getElementById('player-spinner');
+
+      if (stream.iframe) {
+        const iframe = document.getElementById('iframe-player');
+        iframe.src = stream.iframe;
+        iframe.classList.remove('hidden');
+        spinner.classList.add('hidden');
+        return;
+      }
+
+      const type = stream.type || "iframe";
+
+      if (type === "iframe") {
+        const iframe = document.getElementById('iframe-player');
+        iframe.src = stream.url;
+        iframe.classList.remove('hidden');
+        spinner.classList.add('hidden');
+      } 
+      else if (type === "video") {
+        document.getElementById('plyr-container').classList.remove('hidden');
+        const video = document.getElementById('plyr-video');
+        const proxiedUrl = `/proxy/${stream.url}`;
+
+        if (Hls.isSupported()) {
+          const hls = new Hls();
+          hls.loadSource(proxiedUrl);
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video.play().catch(e => console.log("Autoplay blocked: ", e));
+          });
+        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+          video.src = proxiedUrl;
+          video.addEventListener('canplay', function() {
+            video.play().catch(e => console.log("Autoplay blocked: ", e));
+          });
+        }
+        
+        const player = new Plyr(video, { controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'] });
+        spinner.classList.add('hidden');
+      } 
+      else if (type === "shaka") {
+        document.getElementById('shaka-container').classList.remove('hidden');
+        
+        const video = document.getElementById('shaka-video');
+        const container = document.getElementById('shaka-container');
+        const player = new shaka.Player(video);
+        const ui = new shaka.ui.Overlay(player, container, video);
+        
+        if (stream.kid && stream.key) {
+          player.configure({
+            drm: {
+              clearKeys: {
+                [stream.kid]: stream.key
+              }
+            }
+          });
+        }
+
+        const proxiedUrl = `/proxy/${stream.url}`;
+        
+        player.load(proxiedUrl).then(() => {
+          spinner.classList.add('hidden');
+          video.play().catch(e => console.log("Autoplay blocked:", e));
+        }).catch(err => {
+          console.error("Shaka error: ", err);
+          showError("Failed to initiate Shaka Player stream.");
+        });
+      }
+    }
+
+    initPlayer();
+  </script>
+</body>
+</html>

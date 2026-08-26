@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JAI CLUB PRO - Live Sports Streams</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      background-color: #0b0f19;
+      color: #e2e8f0;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    }
+    .custom-gradient {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    }
+    .accent-glow {
+      box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="border-b border-gray-800 bg-[#0f172a] sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="bg-blue-600 p-2.5 rounded-lg accent-glow text-white">
+          <i class="fa-solid fa-play-circle text-2xl animate-pulse"></i>
+        </div>
+        <div>
+          <h1 class="text-xl font-bold tracking-wider text-white">JAI CLUB <span class="text-blue-500">PRO</span></h1>
+          <p class="text-xs text-gray-400">Premium Live Sports Streams</p>
+        </div>
+      </div>
+      
+      <!-- Nav & Tools -->
+      <div class="flex items-center gap-4 w-full sm:w-auto">
+        <div class="relative flex-1 sm:flex-none">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
+            <i class="fa-solid fa-search"></i>
+          </span>
+          <input type="text" id="search-input" placeholder="Search matches or teams..." 
+                 class="w-full sm:w-64 bg-gray-900 border border-gray-800 text-sm text-gray-200 placeholder-gray-500 pl-10 pr-4 py-2 rounded-lg focus:outline-none focus:border-blue-500 transition-colors">
+        </div>
+        <a href="/admin" class="bg-gray-800 hover:bg-gray-700 text-xs px-3.5 py-2 rounded-lg border border-gray-700 flex items-center gap-1.5 transition-colors">
+          <i class="fa-solid fa-lock"></i> Admin
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Categories Grid Menu -->
+  <section class="max-w-7xl mx-auto px-4 py-6 w-full">
+    <div class="flex gap-2 overflow-x-auto pb-3 scrollbar-none" id="categories-tabs">
+      <button class="tab-btn px-4 py-2 rounded-full text-xs font-semibold bg-blue-600 text-white border border-blue-500 active transition-all whitespace-nowrap" onclick="filterCategory('All')">
+        All Sports
+      </button>
+      <!-- Categories loaded dynamically -->
+    </div>
+  </section>
+
+  <!-- Content Schedule -->
+  <main class="flex-1 max-w-7xl mx-auto px-4 py-2 w-full">
+    <div id="loading-spinner" class="py-20 flex flex-col items-center justify-center gap-4">
+      <div class="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+      <p class="text-sm text-gray-400">Loading sports schedule...</p>
+    </div>
+
+    <!-- Sports Sections container -->
+    <div id="schedule-container" class="space-y-10 hidden">
+      <!-- Generated dynamically -->
+    </div>
+    
+    <!-- No matches status -->
+    <div id="no-matches" class="hidden text-center py-20 bg-gray-900/50 rounded-2xl border border-gray-800/80 p-8">
+      <i class="fa-solid fa-calendar-times text-5xl text-gray-600 mb-4"></i>
+      <h3 class="text-lg font-semibold text-gray-300">No matches found</h3>
+      <p class="text-sm text-gray-500 mt-1">Please try searching something else or check back later.</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-800 bg-[#0b0f19] mt-12 py-8">
+    <div class="max-w-7xl mx-auto px-4 text-center text-xs text-gray-500 space-y-2">
+      <p>&copy; 2026 JAI CLUB PRO. All rights reserved.</p>
+      <p>All content is fetched from public and third-party sources. We do not host or distribute any media assets.</p>
+    </div>
+  </footer>
+
+  <script>
+    let sportsData = [];
+    let currentCategory = 'All';
+    let searchQuery = '';
+
+    async function loadSchedule() {
+      try {
+        const response = await fetch('/api/streams');
+        const data = await response.json();
+        
+        if (data.success) {
+          sportsData = data.streams || [];
+          renderTabs();
+          renderSchedule();
+        } else {
+          showError("Failed to fetch stream data from API.");
+        }
+      } catch (e) {
+        console.error(e);
+        showError("Network error fetching streams schedule.");
+      }
+    }
+
+    function showError(msg) {
+      document.getElementById('loading-spinner').innerHTML = `
+        <div class="text-red-500 text-center space-y-2">
+          <i class="fa-solid fa-exclamation-triangle text-4xl"></i>
+          <p class="text-sm font-semibold">${msg}</p>
+          <button onclick="loadSchedule()" class="mt-4 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-xs font-semibold rounded-lg text-white">Retry</button>
+        </div>
+      `;
+    }
+
+    function renderTabs() {
+      const container = document.getElementById('categories-tabs');
+      container.innerHTML = `
+        <button id="tab-All" class="tab-btn px-4 py-2 rounded-full text-xs font-semibold border transition-all whitespace-nowrap ${currentCategory === 'All' ? 'bg-blue-600 text-white border-blue-500 accent-glow' : 'bg-gray-900 border-gray-800 text-gray-400 hover:text-white'}" onclick="filterCategory('All')">
+          All Sports
+        </button>
+      `;
+
+      sportsData.forEach(cat => {
+        const catId = `tab-${cat.category.replace(/\s+/g, '-')}`;
+        container.innerHTML += `
+          <button id="${catId}" class="tab-btn px-4 py-2 rounded-full text-xs font-semibold border transition-all whitespace-nowrap ${currentCategory === cat.category ? 'bg-blue-600 text-white border-blue-500 accent-glow' : 'bg-gray-900 border-gray-800 text-gray-400 hover:text-white'}" onclick="filterCategory('${cat.category}')">
+            ${cat.category}
+          </button>
+        `;
+      });
+    }
+
+    // Tab filtering trigger
+    function filterCategory(catName) {
+      currentCategory = catName;
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.className = "tab-btn px-4 py-2 rounded-full text-xs font-semibold border transition-all whitespace-nowrap bg-gray-900 border-gray-800 text-gray-400 hover:text-white";
+      });
+      const selectedTab = document.getElementById(`tab-${catName.replace(/\s+/g, '-')}`);
+      if (selectedTab) {
+        selectedTab.className = "tab-btn px-4 py-2 rounded-full text-xs font-semibold border transition-all whitespace-nowrap bg-blue-600 text-white border-blue-500 accent-glow";
+      }
+      renderSchedule();
+    }
+
+    document.getElementById('search-input').addEventListener('input', (e) => {
+      searchQuery = e.target.value.toLowerCase().trim();
+      renderSchedule();
+    });
+
+    function formatISTTime(unixTimestamp) {
+      if (!unixTimestamp) return "LIVE";
+      const date = new Date(unixTimestamp * 1000);
+      return date.toLocaleString('en-IN', {
+        timeZone: 'Asia/Kolkata',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true,
+        day: 'numeric',
+        month: 'short'
+      }) + " IST";
+    }
+
+    function getMatchStatus(start, end) {
+      const now = Math.floor(Date.now() / 1000);
+      if (now >= start && (!end || now <= end)) {
+        return `<span class="bg-red-500/20 text-red-500 border border-red-500/30 text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider animate-pulse flex items-center gap-1"><i class="fa-solid fa-circle text-[6px]"></i> Live</span>`;
+      } else if (now > end) {
+        return `<span class="bg-gray-800 text-gray-500 border border-gray-700 text-[10px] px-2 py-0.5 rounded-full font-semibold uppercase">Ended</span>`;
+      } else {
+        return `<span class="bg-blue-500/10 text-blue-400 border border-blue-500/20 text-[10px] px-2 py-0.5 rounded-full font-semibold">Scheduled</span>`;
+      }
+    }
+
+    function renderSchedule() {
+      const container = document.getElementById('schedule-container');
+      const noMatches = document.getElementById('no-matches');
+      container.innerHTML = '';
+      
+      let totalEventsRendered = 0;
+
+      sportsData.forEach(cat => {
+        if (currentCategory !== 'All' && currentCategory !== cat.category) return;
+
+        const filteredEvents = cat.streams.filter(ev => {
+          if (!searchQuery) return true;
+          return ev.name.toLowerCase().includes(searchQuery) || 
+                 (ev.tag && ev.tag.toLowerCase().includes(searchQuery)) ||
+                 (ev.source_tag && ev.source_tag.toLowerCase().includes(searchQuery));
+        });
+
+        if (filteredEvents.length === 0) return;
+
+        totalEventsRendered += filteredEvents.length;
+
+        let sectionHtml = `
+          <div class="space-y-4">
+            <div class="flex items-center gap-2 border-b border-gray-800 pb-2">
+              <span class="text-blue-500 text-sm"><i class="fa-solid fa-hashtag"></i></span>
+              <h2 class="text-md font-bold uppercase tracking-wider text-gray-200">${cat.category}</h2>
+              <span class="bg-gray-900 border border-gray-800 text-xs px-2 py-0.5 rounded-full text-gray-400 font-semibold">${filteredEvents.length}</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        `;
+
+        filteredEvents.forEach(ev => {
+          const formattedTime = formatISTTime(ev.starts_at);
+          const statusBadge = getMatchStatus(ev.starts_at, ev.ends_at);
+          const isLive = getMatchStatus(ev.starts_at, ev.ends_at).includes("Live");
+
+          sectionHtml += `
+            <div class="custom-gradient border border-gray-800/80 rounded-xl hover:border-blue-500/50 p-4 flex gap-4 transition-all duration-200 hover:-translate-y-0.5 group">
+              <!-- Thumbnail -->
+              <div class="w-20 h-20 md:w-24 md:h-24 bg-gray-900 rounded-lg flex-shrink-0 overflow-hidden border border-gray-800 relative flex items-center justify-center">
+                ${ev.poster ? 
+                  `<img src="${ev.poster}" class="w-full h-full object-cover group-hover:scale-105 transition-transform" onerror="this.style.display='none'; document.getElementById('placeholder-${ev.id}').style.display='flex';">` : ''
+                }
+                <div id="placeholder-${ev.id}" class="absolute inset-0 flex items-center justify-center bg-gray-900/90 text-gray-600">
+                  <i class="fa-solid fa-gamepad text-3xl"></i>
+                </div>
+                ${ev.tag ? `<span class="absolute top-1 left-1 bg-black/60 text-white text-[9px] px-1.5 py-0.5 rounded font-bold uppercase">${ev.tag}</span>` : ''}
+              </div>
+
+              <!-- Details -->
+              <div class="flex-1 flex flex-col justify-between min-w-0">
+                <div class="space-y-1.5">
+                  <div class="flex items-center justify-between gap-2">
+                    <span class="text-[10px] text-gray-500 uppercase font-bold tracking-wider">${ev.source_tag || cat.category}</span>
+                    ${statusBadge}
+                  </div>
+                  <h3 class="text-sm font-semibold text-gray-100 group-hover:text-blue-400 transition-colors leading-tight line-clamp-2">${ev.name}</h3>
+                </div>
+                
+                <div class="flex items-center justify-between gap-2 pt-2 border-t border-gray-800/60 mt-2">
+                  <span class="text-xs text-gray-400 flex items-center gap-1.5"><i class="fa-regular fa-clock"></i> ${formattedTime}</span>
+                  <a href="/play?id=${ev.id}" class="px-3.5 py-1.5 text-xs font-bold rounded-lg transition-colors flex items-center gap-1 ${
+                    isLive ? 'bg-blue-600 hover:bg-blue-500 text-white accent-glow' : 'bg-gray-800 text-gray-400 group-hover:bg-blue-900/40 group-hover:text-blue-300'
+                  }">
+                    Watch <i class="fa-solid fa-angle-right text-[10px]"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+
+        sectionHtml += `
+            </div>
+          </div>
+        `;
+        
+        container.innerHTML += sectionHtml;
+      });
+
+      document.getElementById('loading-spinner').classList.add('hidden');
+      
+      if (totalEventsRendered === 0) {
+        container.classList.add('hidden');
+        noMatches.classList.remove('hidden');
+      } else {
+        container.classList.remove('hidden');
+        noMatches.classList.add('hidden');
+      }
+    }
+
+    loadSchedule();
+  </script>
+</body>
+</html>

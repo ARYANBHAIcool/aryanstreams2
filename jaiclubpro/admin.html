@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jai Club Pro - Admin Panel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      background-color: #0b0f19;
+      color: #e2e8f0;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="border-b border-gray-800 bg-[#0f172a] py-4">
+    <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <h1 class="text-md font-bold tracking-wider text-white">JAI CLUB <span class="text-blue-500 font-extrabold">PRO</span> ADMIN</h1>
+      </div>
+      <a href="/" class="text-xs text-gray-400 hover:text-white border border-gray-800 bg-gray-900 px-3 py-1.5 rounded-lg transition-all">
+        <i class="fa-solid fa-arrow-left"></i> Home
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 py-8">
+    <!-- Login Screen -->
+    <div id="login-card" class="max-w-md mx-auto bg-[#0f172a] border border-gray-800 rounded-xl p-6 shadow-xl space-y-4 my-20">
+      <div class="text-center space-y-1">
+        <i class="fa-solid fa-lock text-3xl text-blue-500 mb-2"></i>
+        <h2 class="text-lg font-bold text-white">Admin Authentication</h2>
+        <p class="text-xs text-gray-500">Enter passcode to manage stream feeds.</p>
+      </div>
+      <div class="space-y-3 pt-2">
+        <input type="password" id="passcode-input" placeholder="Enter Admin Passcode..." 
+               class="w-full bg-gray-900 border border-gray-800 text-sm text-gray-200 placeholder-gray-600 px-4 py-2.5 rounded-lg focus:outline-none focus:border-blue-500 transition-colors">
+        <button onclick="attemptLogin()" class="w-full bg-blue-600 hover:bg-blue-500 text-sm font-semibold py-2.5 rounded-lg transition-colors text-white">
+          Access Dashboard
+        </button>
+        <p id="login-error" class="text-xs text-red-500 text-center hidden"></p>
+      </div>
+    </div>
+
+    <!-- Admin Dashboard (Hidden by default) -->
+    <div id="admin-dashboard" class="space-y-6 hidden">
+      <!-- Title Actions -->
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-gray-800 pb-4">
+        <div>
+          <h2 class="text-xl font-bold text-white">Custom Stream Feeds</h2>
+          <p class="text-xs text-gray-400">Add, edit, or delete manual media streams and clearKey keys.</p>
+        </div>
+        <div class="flex gap-2">
+          <button onclick="openModal()" class="bg-blue-600 hover:bg-blue-500 text-xs font-bold px-4 py-2 rounded-lg text-white flex items-center gap-1.5 shadow-lg">
+            <i class="fa-solid fa-plus"></i> Add New Stream
+          </button>
+          <button onclick="logout()" class="bg-gray-800 hover:bg-gray-700 text-xs font-semibold px-4 py-2 rounded-lg text-gray-400 border border-gray-700 hover:text-white transition-colors">
+            Logout
+          </button>
+        </div>
+      </div>
+
+      <!-- Streams List Container -->
+      <div class="bg-[#0f172a] border border-gray-800 rounded-xl overflow-hidden shadow-xl">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-sm">
+            <thead>
+              <tr class="bg-gray-900/50 border-b border-gray-800 text-gray-400 font-semibold text-xs">
+                <th class="px-6 py-4">Event Info</th>
+                <th class="px-6 py-4">Type</th>
+                <th class="px-6 py-4">Keys (KID:KEY)</th>
+                <th class="px-6 py-4">Status</th>
+                <th class="px-6 py-4 text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="streams-table-body">
+              <!-- Rendered dynamically -->
+            </tbody>
+          </table>
+        </div>
+        
+        <div id="no-streams-msg" class="hidden text-center py-16 text-gray-500 italic">
+          No custom streams added yet. Click "Add New Stream" to get started.
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Add/Edit Stream Modal -->
+  <div id="stream-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 hidden p-4">
+    <div class="bg-[#0f172a] border border-gray-800 w-full max-w-lg rounded-xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+      <div class="px-6 py-4 bg-gray-900 border-b border-gray-800 flex justify-between items-center">
+        <h3 id="modal-title" class="font-bold text-white">Add New Custom Stream</h3>
+        <button onclick="closeModal()" class="text-gray-500 hover:text-white"><i class="fa-solid fa-times"></i></button>
+      </div>
+
+      <div class="p-6 space-y-4 overflow-y-auto flex-1">
+        <input type="hidden" id="edit-stream-id">
+
+        <!-- Name -->
+        <div class="space-y-1.5">
+          <label class="text-xs text-gray-400 font-bold uppercase">Event/Match Name</label>
+          <input type="text" id="input-name" placeholder="e.g. Manchester City vs Real Madrid" 
+                 class="w-full bg-gray-900 border border-gray-800 text-sm text-gray-200 px-3.5 py-2.5 rounded-lg focus:outline-none focus:border-blue-500">
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <!-- Category -->
+          <div class="space-y-1.5">
+            <label class="text-xs text-gray-400 font-bold uppercase">Category (Sport)</label>
+            <input type="text" id="input-category" placeholder="e.g. Football" 
+                   class="w-full bg-gray-900 border border-gray-800 text-sm text-gray-200 px-3.5 py-2.5 rounded-lg focus:outline-none focus:border-blue-500">
+          </div>
+          <!-- Tag -->
+          <div class="space-y-1.5">
+            <label class="text-xs text-gray-400 font-bold uppercase">League Tag</label>
+            <input type="text" id="input-tag" placeholder="e.g. UCL" 
+                   class="w-full bg-gray-900 border border-gray-800 text-sm text-gray-200 px-3.5 py-2.5 rounded-lg focus:outline-none focus:border-blue-500">
+          </div>
+        </div>
+
+        <!-- Type -->
+        <div class="space-y-1.5">
+          <label class="text-xs text-gray-400 font-bold uppercase">Player / Playback Type</label>
+          <select id="input-type" onchange="toggleDRMFields()" 
+                  class="w-full bg-gray-900 border border-gray-800 text-sm text-gray-200 px-3.5 py-2.5 rounded-lg focus:outline-none focus:border-blue-500">
+            <option value="iframe">Iframe Embed URL</option>
+            <option value="video">Standard HLS (.m3u8)</option>
+            <option value="shaka">Shaka Player DASH (.mpd)</option>
+          </select>
+        </div>
+
+        <!-- Stream URL -->
+        <div class="space-y-1.5">
+          <label id="url-label" class="text-xs text-gray-400 font-bold uppercase">Iframe Embed URL</label>
+          <input type="text" id="input-url" placeholder="https://..." 
+                 class="w-full bg-gray-900 border border-gray-800 text-sm text-gray-200 px-3.5 py-2.5 rounded-lg focus:outline-none focus:border-blue-500">
+        </div>
+
+        <!-- DRM Fields (Hidden by default, shown for Shaka DASH) -->
+        <div id="drm-fields" class="grid grid-cols-1 md:grid-cols-2 gap-4 hidden">
+          <div class="space-y-1.5">
+            <label class="text-xs text-gray-400 font-bold uppercase">DRM KID (Hex)</label>
+            <input type="text" id="input-kid" placeholder="32 character hex" 
+                   class="w-full bg-gray-900 border border-gray-800 text-sm text-gray-200 px-3.5 py-2.5 rounded-lg focus:outline-none focus:border-blue-500">
+          </div>
+          <div class="space-y-1.5">
+            <label class="text-xs text-gray-400 font-bold uppercase">DRM Key (Hex)</label>
+            <input type="text" id="input-key" placeholder="32 character hex" 
+                   class="w-full bg-gray-900 border border-gray-800 text-sm text-gray-200 px-3.5 py-2.5 rounded-lg focus:outline-none focus:border-blue-500">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <!-- Poster -->
+          <div class="space-y-1.5">
+            <label class="text-xs text-gray-400 font-bold uppercase">Poster/Thumbnail Image</label>
+            <input type="text" id="input-poster" placeholder="https://..." 
+                   class="w-full bg-gray-900 border border-gray-800 text-sm text-gray-200 px-3.5 py-2.5 rounded-lg focus:outline-none focus:border-blue-500">
+          </div>
+          <!-- Status -->
+          <div class="space-y-1.5">
+            <label class="text-xs text-gray-400 font-bold uppercase">Stream Status</label>
+            <select id="input-status" 
+                    class="w-full bg-gray-900 border border-gray-800 text-sm text-gray-200 px-3.5 py-2.5 rounded-lg focus:outline-none focus:border-blue-500">
+              <option value="live">Live / Streaming</option>
+              <option value="scheduled">Scheduled</option>
+              <option value="offline">Offline</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="px-6 py-4 bg-gray-900 border-t border-gray-800 flex justify-end gap-3">
+        <button onclick="closeModal()" class="px-4 py-2 border border-gray-700 bg-gray-800 hover:bg-gray-700 text-xs font-semibold text-gray-400 hover:text-white rounded-lg transition-colors">
+          Cancel
+        </button>
+        <button onclick="saveStreamForm()" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-xs font-bold text-white rounded-lg transition-colors shadow-lg">
+          Save Stream
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let customStreams = [];
+    let passcode = localStorage.getItem('jaiclubpro_passcode') || '';
+
+    if (passcode) {
+      verifySession();
+    }
+
+    async function verifySession() {
+      try {
+        const res = await fetch('/api/get', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ passcode })
+        });
+        const data = await res.json();
+        if (data.success) {
+          customStreams = data.streams || [];
+          showDashboard();
+        } else {
+          localStorage.removeItem('jaiclubpro_passcode');
+          showLogin("Session expired. Please log in again.");
+        }
+      } catch (e) {
+        showLogin("Error connecting to server. Try again.");
+      }
+    }
+
+    async function attemptLogin() {
+      const input = document.getElementById('passcode-input').value.trim();
+      const errorEl = document.getElementById('login-error');
+      errorEl.classList.add('hidden');
+      
+      if (!input) {
+        errorEl.innerText = "Please enter passcode.";
+        errorEl.classList.remove('hidden');
+        return;
+      }
+
+      try {
+        const res = await fetch('/api/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ passcode: input })
+        });
+        const data = await res.json();
+        if (data.success) {
+          passcode = input;
+          localStorage.setItem('jaiclubpro_passcode', passcode);
+          verifySession();
+        } else {
+          errorEl.innerText = data.error || "Incorrect passcode.";
+          errorEl.classList.remove('hidden');
+        }
+      } catch (e) {
+        errorEl.innerText = "Connection error.";
+        errorEl.classList.remove('hidden');
+      }
+    }
+
+    function showDashboard() {
+      document.getElementById('login-card').classList.add('hidden');
+      document.getElementById('admin-dashboard').classList.remove('hidden');
+      renderStreamsList();
+    }
+
+    function showLogin(msg = '') {
+      document.getElementById('login-card').classList.remove('hidden');
+      document.getElementById('admin-dashboard').classList.add('hidden');
+      if (msg) {
+        const errorEl = document.getElementById('login-error');
+        errorEl.innerText = msg;
+        errorEl.classList.remove('hidden');
+      }
+    }
+
+    function logout() {
+      localStorage.removeItem('jaiclubpro_passcode');
+      passcode = '';
+      showLogin();
+    }
+
+    function toggleDRMFields() {
+      const type = document.getElementById('input-type').value;
+      const drmFields = document.getElementById('drm-fields');
+      const urlLabel = document.getElementById('url-label');
+      
+      if (type === 'shaka') {
+        drmFields.classList.remove('hidden');
+        urlLabel.innerText = "DASH Manifest URL (.mpd)";
+      } else {
+        drmFields.classList.add('hidden');
+        urlLabel.innerText = type === 'video' ? "HLS Playback URL (.m3u8)" : "Iframe Embed URL";
+      }
+    }
+
+    // Stream list rendering
+    function renderStreamsList() {
+      const tbody = document.getElementById('streams-table-body');
+      const noStreams = document.getElementById('no-streams-msg');
+      tbody.innerHTML = '';
+
+      if (customStreams.length === 0) {
+        noStreams.classList.remove('hidden');
+        return;
+      }
+      noStreams.classList.add('hidden');
+
+      customStreams.forEach(stream => {
+        const keyDisplay = stream.kid && stream.key ? 
+          `<code class="bg-gray-900 border border-gray-800 px-2 py-0.5 rounded text-xs select-all text-blue-400 font-mono">${stream.kid.substring(0,6)}...:${stream.key.substring(0,6)}...</code>` :
+          `<span class="text-xs text-gray-600 italic">None</span>`;
+
+        let typeLabel = "Iframe Embed";
+        if (stream.type === 'video') typeLabel = "HLS Stream";
+        if (stream.type === 'shaka') typeLabel = "DASH DRM";
+
+        let statusClass = "bg-green-600/20 text-green-500 border-green-500/30";
+        if (stream.status === 'scheduled') statusClass = "bg-blue-600/20 text-blue-400 border-blue-500/30";
+        if (stream.status === 'offline') statusClass = "bg-gray-800 text-gray-500 border-gray-700";
+
+        tbody.innerHTML += `
+          <tr class="border-b border-gray-800 hover:bg-gray-900/30 transition-colors">
+            <td class="px-6 py-4">
+              <div class="font-bold text-gray-100">${stream.name}</div>
+              <div class="text-[10px] text-gray-500 uppercase font-semibold mt-0.5">${stream.category} ${stream.tag ? `• ${stream.tag}` : ''}</div>
+            </td>
+            <td class="px-6 py-4 text-xs font-semibold text-gray-300">${typeLabel}</td>
+            <td class="px-6 py-4">${keyDisplay}</td>
+            <td class="px-6 py-4">
+              <span class="border text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full ${statusClass}">${stream.status}</span>
+            </td>
+            <td class="px-6 py-4 text-right space-x-2">
+              <button onclick="editStream('${stream.id}')" class="text-blue-500 hover:text-blue-400 font-semibold text-xs"><i class="fa-solid fa-edit"></i> Edit</button>
+              <button onclick="deleteStream('${stream.id}')" class="text-red-500 hover:text-red-400 font-semibold text-xs"><i class="fa-solid fa-trash"></i> Delete</button>
+            </td>
+          </tr>
+        `;
+      });
+    }
+
+    function openModal(editId = '') {
+      document.getElementById('stream-modal').classList.remove('hidden');
+      if (editId) {
+        document.getElementById('modal-title').innerText = "Edit Custom Stream";
+        const stream = customStreams.find(s => String(s.id) === String(editId));
+        if (stream) {
+          document.getElementById('edit-stream-id').value = stream.id;
+          document.getElementById('input-name').value = stream.name;
+          document.getElementById('input-category').value = stream.category;
+          document.getElementById('input-tag').value = stream.tag || '';
+          document.getElementById('input-type').value = stream.type || 'iframe';
+          document.getElementById('input-url').value = stream.url;
+          document.getElementById('input-kid').value = stream.kid || '';
+          document.getElementById('input-key').value = stream.key || '';
+          document.getElementById('input-poster').value = stream.poster || '';
+          document.getElementById('input-status').value = stream.status || 'live';
+        }
+      } else {
+        document.getElementById('modal-title').innerText = "Add New Custom Stream";
+        document.getElementById('edit-stream-id').value = '';
+        document.getElementById('input-name').value = '';
+        document.getElementById('input-category').value = 'Football';
+        document.getElementById('input-tag').value = '';
+        document.getElementById('input-type').value = 'iframe';
+        document.getElementById('input-url').value = '';
+        document.getElementById('input-kid').value = '';
+        document.getElementById('input-key').value = '';
+        document.getElementById('input-poster').value = '';
+        document.getElementById('input-status').value = 'live';
+      }
+      toggleDRMFields();
+    }
+
+    function closeModal() {
+      document.getElementById('stream-modal').classList.add('hidden');
+    }
+
+    function editStream(id) {
+      openModal(id);
+    }
+
+    async function deleteStream(id) {
+      if (!confirm("Are you sure you want to delete this custom stream?")) return;
+      customStreams = customStreams.filter(s => String(s.id) !== String(id));
+      await saveStreamsToServer();
+    }
+
+    async function saveStreamForm() {
+      const name = document.getElementById('input-name').value.trim();
+      const category = document.getElementById('input-category').value.trim();
+      const tag = document.getElementById('input-tag').value.trim();
+      const type = document.getElementById('input-type').value;
+      const url = document.getElementById('input-url').value.trim();
+      const kid = document.getElementById('input-kid').value.trim();
+      const key = document.getElementById('input-key').value.trim();
+      const poster = document.getElementById('input-poster').value.trim();
+      const status = document.getElementById('input-status').value;
+      const editId = document.getElementById('edit-stream-id').value;
+
+      if (!name || !category || !url) {
+        alert("Please fill in Name, Category, and Stream URL.");
+        return;
+      }
+
+      const streamData = {
+        id: editId || 'stream_' + Date.now(),
+        name,
+        category,
+        tag,
+        type,
+        url,
+        kid: type === 'shaka' ? kid : '',
+        key: type === 'shaka' ? key : '',
+        poster,
+        status
+      };
+
+      if (editId) {
+        const index = customStreams.findIndex(s => String(s.id) === String(editId));
+        if (index > -1) customStreams[index] = streamData;
+      } else {
+        customStreams.push(streamData);
+      }
+
+      await saveStreamsToServer();
+      closeModal();
+    }
+
+    async function saveStreamsToServer() {
+      try {
+        const res = await fetch('/api/save', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ passcode, streams: customStreams })
+        });
+        const data = await res.json();
+        if (data.success) {
+          renderStreamsList();
+        } else {
+          alert("Error saving: " + (data.error || "Permission Denied."));
+        }
+      } catch (e) {
+        alert("Network error saving streams.");
+      }
+    }
+  </script>
+</body>
+</html>
