@@ -111,6 +111,7 @@ if automated_streams:
     req_data = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(API_URL, data=req_data, method="POST")
     req.add_header("Content-Type", "application/json")
+    req.add_header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36")
     
     try:
         with urllib.request.urlopen(req, context=ctx, timeout=15) as res:
