@@ -737,8 +737,8 @@ def check_and_post():
                     )
                 else:
                     caption = (
-                        f"🏆 <b>{event_name}</b>\n"
                         f"🆚 <b>{title}</b>\n"
+                        f"🏆 <b>{event_name}</b>\n"
                         f"⏰ <b>{start_time_ist}</b>\n\n"
                         f"📺 <b>Watch Live -</b> {links_str}\n\n"
                         f"📢 <i>Join @aurastreams for more links!</i>"
