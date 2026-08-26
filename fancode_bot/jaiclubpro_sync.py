@@ -4,7 +4,6 @@ import urllib.request
 import urllib.parse
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
 
 # Configurations
 API_URL = "https://jaiclubpro.pages.dev/api/save_automated"
@@ -35,7 +34,7 @@ JSON.parse = function(text, ...args) {
 };
 """
 
-service = Service(ChromeDriverManager().install())
+service = Service(executable_path='/snap/bin/chromium.chromedriver')
 driver = webdriver.Chrome(service=service, options=options)
 
 try:
