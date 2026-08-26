@@ -2556,7 +2556,7 @@ async function handleJaiClubStreams(request, env) {
     });
   }
 
-  for (const ch of staticChannels) {
+  for (const ch of []) {
     const catName = ch.category || "Sports Channels";
     if (!consolidated[catName]) {
       consolidated[catName] = [];
