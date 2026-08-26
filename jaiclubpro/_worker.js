@@ -2477,6 +2477,24 @@ async function handleJaiClubStreams(request, env) {
     }
   }
   
+  const channelsMap = {};
+  for (const cs of customStreams) {
+    const csName = (cs.name || "").toLowerCase();
+    const cleanUrl = cs.url || cs.iframe || "";
+    if (!cleanUrl) continue;
+    
+    if (csName.includes("tsn 1") || csName.includes("tsn1")) channelsMap["tsn1"] = { name: cs.name, url: cleanUrl };
+    else if (csName.includes("tsn 2") || csName.includes("tsn2")) channelsMap["tsn2"] = { name: cs.name, url: cleanUrl };
+    else if (csName.includes("tsn 3") || csName.includes("tsn3")) channelsMap["tsn3"] = { name: cs.name, url: cleanUrl };
+    else if (csName.includes("tsn 4") || csName.includes("tsn4")) channelsMap["tsn4"] = { name: cs.name, url: cleanUrl };
+    else if (csName.includes("tsn 5") || csName.includes("tsn5")) channelsMap["tsn5"] = { name: cs.name, url: cleanUrl };
+    else if (csName.includes("sky sports") || csName.includes("sky-sports")) channelsMap["sky"] = { name: cs.name, url: cleanUrl };
+    else if (csName.includes("premier")) channelsMap["premier"] = { name: cs.name, url: cleanUrl };
+    else if (csName.includes("setanta")) channelsMap["setanta"] = { name: cs.name, url: cleanUrl };
+    else if (csName.includes("willow")) channelsMap["willow"] = { name: cs.name, url: cleanUrl };
+    else if (csName.includes("bein")) channelsMap["bein"] = { name: cs.name, url: cleanUrl };
+  }
+  
   let ppvData = { streams: [] };
   try {
     const res = await fetch("https://api.ppv.st/api/streams", {
@@ -2499,6 +2517,19 @@ async function handleJaiClubStreams(request, env) {
     }
     const events = cat.streams || [];
     for (const ev of events) {
+      const substreams = ev.substreams || [];
+      const extraSubs = [];
+      const lowerName = (ev.name || "").toLowerCase();
+      
+      if (catName === "Football" || catName.includes("Soccer") || lowerName.includes("fc ") || lowerName.includes(" vs ")) {
+        if (channelsMap["tsn1"]) extraSubs.push({ id: "extra_tsn1", name: channelsMap["tsn1"].name, source_tag: "TSN 1", iframe: channelsMap["tsn1"].url });
+        if (channelsMap["sky"]) extraSubs.push({ id: "extra_sky", name: channelsMap["sky"].name, source_tag: "Sky Sports", iframe: channelsMap["sky"].url });
+        if (channelsMap["premier"]) extraSubs.push({ id: "extra_premier", name: channelsMap["premier"].name, source_tag: "Premier Sports", iframe: channelsMap["premier"].url });
+        if (channelsMap["setanta"]) extraSubs.push({ id: "extra_setanta", name: channelsMap["setanta"].name, source_tag: "Setanta Sports", iframe: channelsMap["setanta"].url });
+      } else if (catName === "Cricket" || lowerName.includes("cricket")) {
+        if (channelsMap["willow"]) extraSubs.push({ id: "extra_willow", name: channelsMap["willow"].name, source_tag: "Willow Sports", iframe: channelsMap["willow"].url });
+      }
+      
       consolidated[catName].push({
         id: "ppv_" + ev.id,
         name: ev.name,
@@ -2508,6 +2539,7 @@ async function handleJaiClubStreams(request, env) {
         starts_at: ev.starts_at,
         ends_at: ev.ends_at,
         iframe: ev.iframe,
+        substreams: [...substreams, ...extraSubs],
         type: "iframe"
       });
     }
@@ -2534,23 +2566,6 @@ async function handleJaiClubStreams(request, env) {
     });
   }
   
-  const channelsMap = {};
-  for (const cs of customStreams) {
-    const csName = (cs.name || "").toLowerCase();
-    const cleanUrl = cs.url || cs.iframe || "";
-    if (!cleanUrl) continue;
-    
-    if (csName.includes("tsn 1") || csName.includes("tsn1")) channelsMap["tsn1"] = { name: cs.name, url: cleanUrl };
-    else if (csName.includes("tsn 2") || csName.includes("tsn2")) channelsMap["tsn2"] = { name: cs.name, url: cleanUrl };
-    else if (csName.includes("tsn 3") || csName.includes("tsn3")) channelsMap["tsn3"] = { name: cs.name, url: cleanUrl };
-    else if (csName.includes("tsn 4") || csName.includes("tsn4")) channelsMap["tsn4"] = { name: cs.name, url: cleanUrl };
-    else if (csName.includes("tsn 5") || csName.includes("tsn5")) channelsMap["tsn5"] = { name: cs.name, url: cleanUrl };
-    else if (csName.includes("sky sports") || csName.includes("sky-sports")) channelsMap["sky"] = { name: cs.name, url: cleanUrl };
-    else if (csName.includes("premier")) channelsMap["premier"] = { name: cs.name, url: cleanUrl };
-    else if (csName.includes("setanta")) channelsMap["setanta"] = { name: cs.name, url: cleanUrl };
-    else if (csName.includes("willow")) channelsMap["willow"] = { name: cs.name, url: cleanUrl };
-    else if (csName.includes("bein")) channelsMap["bein"] = { name: cs.name, url: cleanUrl };
-  }
 
   for (const ss of streamcornerStreams) {
     const catName = ss.category || "StreamCorner Feed";
