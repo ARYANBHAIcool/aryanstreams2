@@ -16,7 +16,7 @@ FILTERS_PATH = os.path.join(BASE_DIR, "filters.json")
 config = {
     "bot_token": "YOUR_TELEGRAM_BOT_TOKEN",
     "channel_chat_id": "@YOUR_TELEGRAM_CHANNEL",
-    "site_base_url": "https://aryanstreams.pages.dev/fancode/",
+    "site_base_url": "https://aryanstreamss.pages.dev/",
     "admin_chat_id": None
 }
 
