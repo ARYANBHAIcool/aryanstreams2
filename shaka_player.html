@@ -133,7 +133,7 @@
             player.getNetworkingEngine().registerRequestFilter(function(type, req) {
                 var url = req.uris[0];
                 var RequestType = shaka.net.NetworkingEngine.RequestType;
-                // Only proxy manifest and license requests; do not proxy media segments
+                // Optimisation: Do not proxy media segments directly from Amazon CDN to save bandwidth/requests
                 if (type !== RequestType.SEGMENT) {
                     if (url && (url.includes('aiv-cdn.net') || url.includes('aiv-cdn.com') || url.includes('akamaihd.net')) && !url.includes('/proxy')) {
                         req.uris[0] = '/proxy/' + url;
