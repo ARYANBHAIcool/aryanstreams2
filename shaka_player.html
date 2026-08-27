@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -63,7 +63,7 @@
     (function() {
         "use strict";
 
-        // ── Configuration ──────────────────────────────────────────────
+        // ΓöÇΓöÇ Configuration ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
         // You can pass parameters via URL:
         //   ?mpd=<MPD_URL>&kid=<KEY_ID>&key=<KEY>&referer=<REFERER>
         //
@@ -72,7 +72,7 @@
         //
         // Example:
         //   shaka_player.html?mpd=https://...cenc.mpd&kid=1d0c...&key=ad27...
-        // ────────────────────────────────────────────────────────────────
+        // ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 
         var params = new URLSearchParams(location.search || location.hash.replace('#',''));
 
@@ -102,7 +102,7 @@
             return;
         }
 
-        // ── Init Shaka ─────────────────────────────────────────────────
+        // ΓöÇΓöÇ Init Shaka ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
         shaka.polyfill.installAll();
 
         if (!shaka.Player.isBrowserSupported()) {
@@ -129,15 +129,21 @@
                 }
             });
 
-            // ── Inject Referer header (required for Amazon CDN) ────────
+            // ΓöÇΓöÇ Inject Referer header (required for Amazon CDN) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
             player.getNetworkingEngine().registerRequestFilter(function(type, req) {
+                var url = req.uris[0];
+                if (url && (url.includes('aiv-cdn.net') || url.includes('aiv-cdn.com') || url.includes('akamaihd.net')) && !url.includes('/proxy')) {
+                    req.uris[0] = '/proxy/' + url;
+                }
                 if (req.uris[0] && !req.uris[0].includes('/proxy')) {
-                    try { req.headers['Referer'] = REFERER; } catch(e) {}
+                    try {
+                        req.headers['Referer'] = REFERER;
+                    } catch(e) {}
                 }
                 req.headers['User-Agent'] = navigator.userAgent;
             });
 
-            // ── Build player config ────────────────────────────────────
+            // ΓöÇΓöÇ Build player config ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
             var config = {
                 manifest: {
                     defaultPresentationDelay: 4,
@@ -167,17 +173,17 @@
 
             player.configure(config);
 
-            // ── Load and play ──────────────────────────────────────────
+            // ΓöÇΓöÇ Load and play ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
             player.load(MPD_URL).then(function() {
                 $video.muted = true;  // muted autoplay (browsers require this)
                 $video.play().catch(function() {});
             }).catch(function(e) {
                 console.error('Load error:', e);
-                showError('Stream load failed – retrying...');
+                showError('Stream load failed ΓÇô retrying...');
                 setTimeout(function() { location.reload(); }, 5000);
             });
 
-            // ── Events ─────────────────────────────────────────────────
+            // ΓöÇΓöÇ Events ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
             $video.addEventListener('playing', function() {
                 hideLoading();
             });
@@ -190,7 +196,7 @@
                 var err = ev.detail;
                 if (err && err.severity === shaka.util.Error.Severity.RECOVERABLE) return;
                 console.error('Shaka error:', err && err.code, err && err.message);
-                showError('Playback error – retrying...');
+                showError('Playback error ΓÇô retrying...');
                 setTimeout(function() { player.load(MPD_URL).catch(function(){}); }, 5000);
             });
 
