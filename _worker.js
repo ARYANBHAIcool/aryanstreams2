@@ -1,4 +1,4 @@
-﻿function corsHeaders(request) {
+function corsHeaders(request) {
   let origin = "*";
   if (request) {
     origin = request.headers.get("Origin");
@@ -118,8 +118,6 @@ async function handleProxy(request) {
   let targetUrl = "";
   if (requestUrl.pathname.startsWith("/proxy/")) {
     targetUrl = request.url.substring(request.url.indexOf("/proxy/") + 7);
-  } else if (requestUrl.pathname.startsWith("/fancode/proxy/")) {
-    targetUrl = request.url.substring(request.url.indexOf("/fancode/proxy/") + 15);
   } else if (requestUrl.pathname.startsWith("/api/proxy/")) {
     targetUrl = request.url.substring(request.url.indexOf("/api/proxy/") + 11);
   } else {
@@ -222,8 +220,8 @@ async function handleProxy(request) {
 
 function isProxyPath(pathname) {
   const path = pathname.replace(/\/+$/, "") || "/";
-  return path.startsWith("/proxy/") || path.startsWith("/fancode/proxy/") || path.startsWith("/api/proxy/") ||
-         path === "/proxy" || path === "/fancode/proxy" || path === "/api/proxy";
+  return path.startsWith("/proxy/") || path.startsWith("/api/proxy/") ||
+         path === "/proxy" || path === "/api/proxy";
 }
 
 export default {
