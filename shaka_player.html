@@ -133,12 +133,26 @@
             player.getNetworkingEngine().registerRequestFilter(function(type, req) {
                 var url = req.uris[0];
                 var RequestType = shaka.net.NetworkingEngine.RequestType;
-                // Optimisation: Do not proxy media segments directly from Amazon CDN to save bandwidth/requests
-                if (type !== RequestType.SEGMENT) {
+                
+                // If it is a segment request, make sure it is requested DIRECTLY from the CDN (saves bandwidth/requests)
+                if (type === RequestType.SEGMENT) {
+                    if (url && url.includes('/proxy/')) {
+                        var targetIndex = url.indexOf('/proxy/');
+                        var directUrl = url.substring(targetIndex + 7);
+                        if (directUrl.startsWith('http:/') && !directUrl.startsWith('http://')) {
+                            directUrl = 'http://' + directUrl.substring(6);
+                        } else if (directUrl.startsWith('https:/') && !directUrl.startsWith('https://')) {
+                            directUrl = 'https://' + directUrl.substring(7);
+                        }
+                        req.uris[0] = directUrl;
+                    }
+                } else {
+                    // For manifest/license, make sure it goes through /proxy/
                     if (url && (url.includes('aiv-cdn.net') || url.includes('aiv-cdn.com') || url.includes('akamaihd.net')) && !url.includes('/proxy')) {
                         req.uris[0] = '/proxy/' + url;
                     }
                 }
+                
                 if (req.uris[0] && !req.uris[0].includes('/proxy')) {
                     try {
                         req.headers['Referer'] = REFERER;
