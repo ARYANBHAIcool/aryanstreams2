@@ -68,6 +68,46 @@ function rewriteM3U8(text, finalUrl, proxyBase, headers, proxySegments) {
   }).join("\n");
 }
 
+/**
+ * Rewrites a DASH MPD manifest so that segment URLs are resolved as absolute
+ * CDN URLs (bypassing the proxy for media segments).
+ *
+ * Strategy:
+ *  - If the CDN natively supports CORS (e.g. Amazon aiv-cdn.net), inject an
+ *    absolute <BaseURL> at the top of the MPD so Shaka resolves all relative
+ *    template segments directly to the CDN — zero proxy requests per segment.
+ *  - For CDNs that do NOT support CORS we leave the MPD unchanged so existing
+ *    proxy-relative resolution keeps working.
+ */
+function rewriteMPD(text, finalUrl, proxyBase) {
+  const cdnBase = finalUrl.substring(0, finalUrl.lastIndexOf("/") + 1);
+
+  // CDNs that natively expose CORS headers — segments can bypass proxy
+  const isCorsCapableCdn =
+    finalUrl.includes("aiv-cdn.net") ||
+    finalUrl.includes("aiv-cdn.com") ||
+    finalUrl.includes("akamaihd.net");
+
+  if (!isCorsCapableCdn) {
+    // Leave MPD as-is; Shaka will resolve segments relative to the proxied URL
+    // so they still go through the proxy (needed for CORS-restricted CDNs)
+    return text;
+  }
+
+  // Inject/replace <BaseURL> so all relative template segments resolve directly
+  // to the CDN origin, completely bypassing the proxy.
+  const baseUrlTag = `<BaseURL>${cdnBase}</BaseURL>`;
+
+  // If there is already a top-level <BaseURL> element, replace it
+  if (/<BaseURL>/i.test(text)) {
+    return text.replace(/<BaseURL>[^<]*<\/BaseURL>/i, baseUrlTag);
+  }
+
+  // Otherwise inject right after the opening <MPD …> tag
+  return text.replace(/(<MPD[^>]*>)/, `$1\n  ${baseUrlTag}`);
+}
+
+
 function applyDefaultHeaders(targetUrl, targetHeaders, request) {
   if (targetUrl.includes("akamaized.net") || targetUrl.includes("sonyliv.com") || targetUrl.includes("slivcdn.com")) {
     if (!targetHeaders.has("User-Agent") && !targetHeaders.has("user-agent")) {
@@ -179,6 +219,12 @@ async function handleProxy(request) {
       targetUrl.includes(".m3u8") ||
       finalUrl.includes(".m3u8");
 
+    const isMPD =
+      contentType.includes("dash+xml") ||
+      contentType.includes("mpd") ||
+      targetUrl.includes(".mpd") ||
+      finalUrl.includes(".mpd");
+
     const responseHeaders = new Headers(upstream.headers);
     const requestOrigin = request.headers.get("Origin") || requestUrl.origin;
     responseHeaders.set("Access-Control-Allow-Origin", requestOrigin);
@@ -197,6 +243,19 @@ async function handleProxy(request) {
         targetUrl.includes("slivcdn.com") ||
         requestUrl.searchParams.get("proxySegments") === "true";
       const rewritten = rewriteM3U8(await upstream.text(), finalUrl, proxyBase, targetHeaders, proxySegments);
+      return new Response(rewritten, {
+        status: upstream.status,
+        statusText: upstream.statusText,
+        headers: responseHeaders,
+      });
+    }
+
+    if (isMPD) {
+      responseHeaders.set("Content-Type", "application/dash+xml");
+      responseHeaders.delete("content-length");
+
+      const proxyBase = `${requestUrl.origin}${requestUrl.pathname}`;
+      const rewritten = rewriteMPD(await upstream.text(), finalUrl, proxyBase);
       return new Response(rewritten, {
         status: upstream.status,
         statusText: upstream.statusText,

@@ -129,33 +129,8 @@
                 }
             });
 
-            // ── Request filter: optimise bandwidth while preserving CORS ──
+            // ── Inject Referer header (required for Amazon CDN) ────────
             player.getNetworkingEngine().registerRequestFilter(function(type, req) {
-                var url = req.uris[0] || '';
-                var RequestType = shaka.net.NetworkingEngine.RequestType;
-                
-                var isAmazonCdn = url.includes('aiv-cdn.net') || url.includes('aiv-cdn.com') || url.includes('akamaihd.net');
-                
-                if (type === RequestType.SEGMENT) {
-                    // Amazon CDN natively supports CORS — strip proxy so segments load directly
-                    if (isAmazonCdn && url.includes('/proxy/')) {
-                        var idx = url.indexOf('/proxy/');
-                        var direct = url.substring(idx + 7);
-                        // Fix protocol double-slash if needed
-                        direct = direct.replace(/^https?:\/([^/])/, function(m, c) { return m.slice(0, -1) + '/' + c; });
-                        req.uris[0] = direct;
-                        url = direct;
-                    }
-                    // All other CDN segments stay proxied (they need CORS proxy)
-                } else {
-                    // Manifest / license: route Amazon CDN through proxy
-                    if (isAmazonCdn && !url.includes('/proxy')) {
-                        req.uris[0] = '/proxy/' + url;
-                        url = req.uris[0];
-                    }
-                }
-                
-                // Inject Referer/UA for requests not going through proxy
                 if (req.uris[0] && !req.uris[0].includes('/proxy')) {
                     try { req.headers['Referer'] = REFERER; } catch(e) {}
                 }
