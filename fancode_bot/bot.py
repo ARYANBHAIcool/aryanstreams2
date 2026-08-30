@@ -17,6 +17,10 @@ config = {
     "bot_token": "YOUR_TELEGRAM_BOT_TOKEN",
     "channel_chat_id": "@YOUR_TELEGRAM_CHANNEL",
     "site_base_url": "https://aryanstreamss.pages.dev/",
+    "site_urls": [
+        "https://aryanstreamss.pages.dev/",
+        "https://aurastreams.pages.dev/"
+    ],
     "admin_chat_id": None
 }
 
@@ -292,7 +296,8 @@ def get_reply_keyboard():
     return {
         "keyboard": [
             [{"text": "⚙️ Bot Settings"}, {"text": "📊 Status"}],
-            [{"text": "❓ Help"}, {"text": "❌ Clear All Filters"}]
+            [{"text": "🌐 Change URL"}, {"text": "❌ Clear All Filters"}],
+            [{"text": "❓ Help"}]
         ],
         "resize_keyboard": True,
         "one_time_keyboard": False
@@ -311,9 +316,11 @@ def show_settings_menu(chat_id, edit_message_id=None):
         sports = {"Cricket", "Football", "Kabaddi", "Basketball"}
         
     sorted_sports = sorted(list(sports))
+    current_url = config.get("site_base_url", "").rstrip("/") + "/"
     
     text = (
         "⚙️ <b>Bot Settings Panel</b>\n\n"
+        f"🌐 Stream URL: <code>{current_url}</code>\n\n"
         "Configure notification toggles for Fancode matches. "
         "Select a sport below to view its formats and competitions:"
     )
@@ -321,6 +328,9 @@ def show_settings_menu(chat_id, edit_message_id=None):
     disabled_sports = filters.get("disabled_sports", [])
     
     inline_keyboard = []
+    # Change URL button at top
+    inline_keyboard.append([{"text": "🌐 Change Stream URL", "callback_data": "menu:url"}])
+
     # Build list of sports with enabled/disabled indicators
     for s in sorted_sports:
         s_lower = s.lower().strip()
@@ -443,6 +453,29 @@ def clear_all_filters(chat_id):
     send_telegram_text(chat_id, "✅ <b>All filters have been cleared!</b>\nNotifications are now enabled for all sports and events.")
 
 # Command logic
+def show_url_menu(admin_id, edit_message_id=None):
+    """Show inline keyboard to switch site_base_url."""
+    current_url = config.get("site_base_url", "").rstrip("/") + "/"
+    site_urls = config.get("site_urls", [current_url])
+
+    buttons = []
+    for u in site_urls:
+        label = ("✅ " if u.rstrip("/") + "/" == current_url else "🔗 ") + u.replace("https://", "").rstrip("/")
+        buttons.append([{"text": label, "callback_data": f"seturl:{u}"}])
+    buttons.append([{"text": "➕ Add Custom URL", "callback_data": "seturl:custom"}])
+    buttons.append([{"text": "🔙 Back", "callback_data": "menu:main"}])
+
+    text = (
+        f"🌐 <b>Stream Site URL</b>\n\n"
+        f"Current: <code>{current_url}</code>\n\n"
+        f"Select a site or add a custom URL:"
+    )
+    keyboard = {"inline_keyboard": buttons}
+    if edit_message_id:
+        edit_telegram_message(admin_id, edit_message_id, text, reply_markup=keyboard)
+    else:
+        send_telegram_text(admin_id, text, reply_markup=keyboard)
+
 def handle_admin_command(admin_id, text):
     parts = text.split(maxsplit=2)
     cmd = parts[0].lower().strip() if parts else ""
@@ -461,12 +494,29 @@ def handle_admin_command(admin_id, text):
             "⚙️ <b>Admin Command Menu</b>\n\n"
             "▫️ Use the bottom menu panel buttons for quick actions.\n\n"
             "<b>Manual Commands:</b>\n"
+            "▫️ `/seturl` - Change the stream site URL.\n"
+            "▫️ `/seturl https://yoursite.pages.dev/` - Set a specific URL.\n"
             "▫️ `/block sport [name]` - Block a sport category.\n"
             "▫️ `/block event [name]` - Block a league/event.\n"
             "▫️ `/unblock sport [name]` - Unblock a sport.\n"
             "▫️ `/unblock event [name]` - Unblock an event."
         )
         send_telegram_text(admin_id, help_msg)
+
+    elif text == "🌐 Change URL" or cmd == "/seturl":
+        if len(parts) >= 2 and parts[1].startswith("http"):
+            # Direct URL set: /seturl https://...
+            new_url = parts[1].rstrip("/") + "/"
+            config["site_base_url"] = new_url
+            # Add to site_urls list if not already there
+            site_urls = config.get("site_urls", [])
+            if new_url not in site_urls:
+                site_urls.append(new_url)
+                config["site_urls"] = site_urls
+            save_config()
+            send_telegram_text(admin_id, f"✅ Site URL updated to:\n<code>{new_url}</code>")
+        else:
+            show_url_menu(admin_id)
         
     elif text == "❌ Clear All Filters":
         clear_all_filters(admin_id)
@@ -520,6 +570,8 @@ def handle_callback_query(cb):
         menu_target = parts[1]
         if menu_target == "main":
             show_settings_menu(chat_id, edit_message_id=msg_id)
+        elif menu_target == "url":
+            show_url_menu(chat_id, edit_message_id=msg_id)
         elif menu_target == "sport" and len(parts) >= 3:
             sport_name = parts[2]
             show_sport_events_menu(chat_id, sport_name, edit_message_id=msg_id)
@@ -553,6 +605,23 @@ def handle_callback_query(cb):
                 save_filters()
             show_sport_events_menu(chat_id, sport_name, edit_message_id=msg_id)
             
+    elif action == "seturl":
+        new_url = ":".join(parts[1:])  # rejoin in case URL has colons
+        if new_url == "custom":
+            send_telegram_text(chat_id,
+                "✏️ Send the new site URL as a message:\n\nExample: <code>/seturl https://yoursite.pages.dev/</code>")
+            answer_callback_query(cb_id, text="Send /seturl <url> to set a custom URL")
+        else:
+            new_url = new_url.rstrip("/") + "/"
+            config["site_base_url"] = new_url
+            site_urls = config.get("site_urls", [])
+            if new_url not in site_urls:
+                site_urls.append(new_url)
+                config["site_urls"] = site_urls
+            save_config()
+            answer_callback_query(cb_id, text=f"Switched to {new_url}")
+            show_url_menu(chat_id, edit_message_id=msg_id)
+
     elif action == "unblock":
         target_type = parts[1]
         target_name = parts[2].lower().strip()
