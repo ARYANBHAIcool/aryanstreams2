@@ -1,9 +1,12 @@
 import os
+import sys
 import json
 import urllib.request
 import urllib.parse
 import time
 import hashlib
+import socket
+import re
 from datetime import datetime, timezone, timedelta
 
 # Path to files
@@ -149,10 +152,16 @@ def send_telegram_photo(photo_url, caption):
     if bot_token == "YOUR_TELEGRAM_BOT_TOKEN" or not bot_token:
         return None
         
-    posted = {}
+    # Deduplicate chat IDs to prevent posting multiple times to the same chat
+    unique_chat_ids = []
+    seen_cids = set()
     for cid in chat_ids:
-        if not cid:
-            continue
+        if cid and str(cid) not in seen_cids:
+            seen_cids.add(str(cid))
+            unique_chat_ids.append(cid)
+            
+    posted = {}
+    for cid in unique_chat_ids:
         api_url = f"https://api.telegram.org/bot{bot_token}/sendPhoto"
         payload = {
             "chat_id": cid,
@@ -689,12 +698,23 @@ def check_admin_commands():
     except Exception as e:
         print(f"Error checking admin commands: {e}")
 
+def clean_brackets(text):
+    if not text:
+        return ""
+    cleaned = re.sub(r'\[.*?\]|\(.*?\)', '', str(text))
+    return " ".join(cleaned.split()).strip()
+
+def get_base_match_id(match_id):
+    if not match_id:
+        return ""
+    return str(match_id).split("_")[0].strip()
+
 def get_match_signature(m):
-    t1 = str(m.get("team_1") or "").strip().lower()
-    t2 = str(m.get("team_2") or "").strip().lower()
-    event_name = str(m.get("event_name") or "").strip().lower()
-    match_name = str(m.get("match_name") or "").strip().lower()
-    title = str(m.get("title") or "").strip().lower()
+    t1 = clean_brackets(m.get("team_1") or "").lower()
+    t2 = clean_brackets(m.get("team_2") or "").lower()
+    event_name = clean_brackets(m.get("event_name") or "").lower()
+    match_name = clean_brackets(m.get("match_name") or "").lower()
+    title = clean_brackets(m.get("title") or "").lower()
     
     if t1 and t2:
         teams = "-".join(sorted([t1, t2]))
@@ -730,20 +750,30 @@ def check_and_post():
     disabled_sports = filters.get("disabled_sports", [])
     disabled_events = filters.get("disabled_events", [])
     
-    # Track which match IDs are currently active and live
+    # Track which match IDs, base IDs, and signatures are currently active and live
     current_live_ids = set()
+    current_live_base_ids = set()
+    current_live_sigs = set()
     
-    # Track signatures seen in currently posted matches to avoid duplicate posts
+    # Track signatures and base IDs seen in currently posted matches to avoid duplicate posts
     posted_signatures = set()
-    for val in posted_matches.values():
-        if isinstance(val, dict) and "signature" in val:
-            posted_signatures.add(val["signature"])
+    posted_base_ids = set()
+    for k, val in posted_matches.items():
+        k_base = get_base_match_id(k)
+        if k_base:
+            posted_base_ids.add(k_base)
+        if isinstance(val, dict):
+            if "signature" in val and val["signature"]:
+                posted_signatures.add(val["signature"])
+            if "base_id" in val and val["base_id"]:
+                posted_base_ids.add(str(val["base_id"]).strip())
             
-    # Track signatures processed in this specific run
-    seen_in_current_feed = set()
+    # Track signatures and base IDs processed in this specific run
+    seen_sigs_in_current_feed = set()
+    seen_base_ids_in_current_feed = set()
     
     for m in matches:
-        match_id = str(m.get("match_id", ""))
+        match_id = str(m.get("match_id", "")).strip()
         status = str(m.get("status", "")).upper()
         
         # Only process live matches
@@ -754,17 +784,30 @@ def check_and_post():
                 continue
                 
             sig = get_match_signature(m)
+            base_id = get_base_match_id(match_id)
             
-            # Skip if we already saw this match in this feed check
-            if sig in seen_in_current_feed:
-                print(f"Skipping duplicate match in current feed check: {m.get('title')} ({match_id})")
-                continue
-            seen_in_current_feed.add(sig)
-            
+            # Record that this match is live regardless of language variation
             current_live_ids.add(match_id)
+            if base_id:
+                current_live_base_ids.add(base_id)
+            if sig:
+                current_live_sigs.add(sig)
             
-            # Check if match is already posted by ID or by signature
-            is_posted = (match_id in posted_matches) or (sig in posted_signatures)
+            # Skip if we already saw this match/event stream in this feed check (e.g. multi-language feeds)
+            if (base_id and base_id in seen_base_ids_in_current_feed) or (sig and sig in seen_sigs_in_current_feed):
+                print(f"Skipping duplicate stream in current feed check: {m.get('title')} ({match_id})")
+                continue
+            if base_id:
+                seen_base_ids_in_current_feed.add(base_id)
+            if sig:
+                seen_sigs_in_current_feed.add(sig)
+            
+            # Check if match is already posted by ID, base ID, or signature
+            is_posted = (
+                (match_id in posted_matches)
+                or (base_id and base_id in posted_base_ids)
+                or (sig and sig in posted_signatures)
+            )
             
             if not is_posted:
                 sport_category = str(m.get("event_category", "")).lower().strip()
@@ -785,13 +828,16 @@ def check_and_post():
                     print(f"Skipping match (blocked event name): {m.get('title')}")
                     continue
                     
-                # Use team names to build team vs team title, fallback to match_name or title
-                t1 = m.get("team_1")
-                t2 = m.get("team_2")
+                # Clean team names / title / event_name for display
+                t1 = clean_brackets(m.get("team_1"))
+                t2 = clean_brackets(m.get("team_2"))
                 if t1 and t2:
-                    title = f"{t1} vs {t2}"
+                    display_title = f"{t1} vs {t2}"
                 else:
-                    title = m.get("match_name") or m.get("title", "Live Match")
+                    raw_title = m.get("match_name") or m.get("title", "Live Match")
+                    display_title = clean_brackets(raw_title)
+                    
+                display_event = clean_brackets(event_name) or event_name
                 start_time_ist = format_start_time(start_time_raw)
                 image_url = m.get("src") or m.get("image") or "https://www.fancode.com/skillup-uploads/cms-media/Cricket_Fallback_Old_match-card.jpg"
                 
@@ -836,31 +882,36 @@ def check_and_post():
                 links_str = " | ".join(links)
                 
                 # Deduplicate if event name and match title are identical
-                if event_name.lower().strip() == title.lower().strip():
+                if display_event.lower().strip() == display_title.lower().strip():
                     caption = (
-                        f"🏆 <b>{event_name}</b>\n"
+                        f"🏆 <b>{display_event}</b>\n"
                         f"⏰ <b>{start_time_ist}</b>\n\n"
                         f"📺 <b>Watch Live -</b> {links_str}\n\n"
-                        f"📢 <i>Join @aurastreams for more links!</i>"
+                        f"📢 <i>Join @aryanstreams for more links!</i>"
                     )
                 else:
                     caption = (
-                        f"🆚 <b>{title}</b>\n"
-                        f"🏆 <b>{event_name}</b>\n"
+                        f"🆚 <b>{display_title}</b>\n"
+                        f"🏆 <b>{display_event}</b>\n"
                         f"⏰ <b>{start_time_ist}</b>\n\n"
                         f"📺 <b>Watch Live -</b> {links_str}\n\n"
-                        f"📢 <i>Join @aurastreams for more links!</i>"
+                        f"📢 <i>Join @aryanstreams for more links!</i>"
                     )
                 
-                print(f"Posting live match: {title} ({match_id})")
+                print(f"Posting live match: {display_title} ({match_id})")
                 msg_id = send_telegram_photo(image_url, caption)
                 
                 if msg_id:
                     posted_matches[match_id] = {
                         "msg_id": msg_id,
-                        "signature": sig
+                        "signature": sig,
+                        "base_id": base_id,
+                        "missed_checks": 0
                     }
-                    posted_signatures.add(sig)
+                    if sig:
+                        posted_signatures.add(sig)
+                    if base_id:
+                        posted_base_ids.add(base_id)
                     new_posts = True
                     print(f"Successfully posted to Telegram. Message ID: {msg_id}")
                 else:
@@ -870,31 +921,35 @@ def check_and_post():
     ended_match_ids = []
     for posted_id in list(posted_matches.keys()):
         val = posted_matches[posted_id]
-        sig = val.get("signature") if (isinstance(val, dict) and "signature" in val) else None
+        if not isinstance(val, dict):
+            val = {"msg_id": val}
+            posted_matches[posted_id] = val
+            
+        posted_base_id = val.get("base_id") or get_base_match_id(posted_id)
+        posted_sig = val.get("signature")
         
-        # Check if match is still live either by match_id or by signature matching a live feed match
-        is_still_live = False
-        if posted_id in current_live_ids:
-            is_still_live = True
-        elif sig:
-            for live_m in matches:
-                live_mid = str(live_m.get("match_id", ""))
-                live_status = str(live_m.get("status", "")).upper()
-                if live_status == "LIVE" and live_mid:
-                    if get_match_signature(live_m) == sig:
-                        is_still_live = True
-                        break
+        # Check if match is still live either by match_id, base_id, or signature
+        is_still_live = (
+            (posted_id in current_live_ids)
+            or (posted_base_id and posted_base_id in current_live_base_ids)
+            or (posted_sig and posted_sig in current_live_sigs)
+        )
                         
-        if not is_still_live:
-            if isinstance(val, dict) and "msg_id" in val:
-                msg_id = val["msg_id"]
-            else:
-                msg_id = val
-            print(f"Match ended: {posted_id}. Deleting Telegram notification message {msg_id}...")
-            if msg_id:
-                delete_telegram_message(msg_id)
-            ended_match_ids.append(posted_id)
-            new_posts = True
+        if is_still_live:
+            val["missed_checks"] = 0
+        else:
+            missed = val.get("missed_checks", 0) + 1
+            val["missed_checks"] = missed
+            print(f"Match not found live: {posted_id} (consecutive missed checks: {missed}/3)")
+            
+            # Require 3 consecutive missed checks (~3 minutes) before declaring ended and deleting
+            if missed >= 3:
+                msg_id = val.get("msg_id")
+                print(f"Match definitively ended: {posted_id}. Deleting Telegram notification message {msg_id}...")
+                if msg_id:
+                    delete_telegram_message(msg_id)
+                ended_match_ids.append(posted_id)
+                new_posts = True
             
     # Clean up local cache file
     for ended_id in ended_match_ids:
@@ -915,7 +970,27 @@ def run_initial_check():
     except Exception as e:
         print(f"Initial feed fetch failed: {e}")
 
+_lock_socket = None
+
+def acquire_single_instance_lock(port=48281):
+    global _lock_socket
+    try:
+        _lock_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        _lock_socket.bind(("127.0.0.1", port))
+        _lock_socket.listen(1)
+        return True
+    except socket.error:
+        return False
+
 def main():
+    if not acquire_single_instance_lock():
+        print("\n" + "=" * 65)
+        print("⚠️  ANOTHER INSTANCE OF THE BOT IS ALREADY RUNNING!")
+        print("To prevent duplicate match posts, this second process will exit.")
+        print("Please check your open terminal / background processes.")
+        print("=" * 65 + "\n")
+        return
+
     print("Fancode Telegram Live Matches Bot Started...")
     print(f"Monitoring API: https://raw.githubusercontent.com/drmlive/fancode-live-events/main/fancode.json")
     print(f"Target Chat: {config.get('channel_chat_id')}")

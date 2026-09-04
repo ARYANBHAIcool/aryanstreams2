@@ -12,6 +12,6 @@ This is a standalone Telegram Bot workspace folder to automate posting live Fanc
 ### How to Configure and Run
 1. Open the `config.json` file and update it with:
    * `"bot_token"`: Your Telegram Bot token (from `@BotFather`).
-   * `"channel_chat_id"`: Your Telegram channel username (e.g., `@aurastreams`) or channel numeric ID (make sure your bot is added as an **Administrator** to the channel with posting permissions!).
+   * `"channel_chat_id"`: Your Telegram channel username (e.g., `@aryanstreams`) or channel numeric ID (make sure your bot is added as an **Administrator** to the channel with posting permissions!).
    * `"site_base_url"`: The URL of your Fancode page (e.g., `https://aryannew.pages.dev/fancode/`).
 2. Double-click the `run_bot.bat` file to run the script. It will run in a loop, checking for new live matches every 60 seconds.
