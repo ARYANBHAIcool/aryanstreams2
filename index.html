@@ -17,8 +17,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css" />
     <script src="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.polyfilled.min.js"></script>
 
-    <!-- Adcash Library -->
-    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
 
     <style>
         :root {
@@ -374,24 +372,6 @@
             closeOverlay();
         }
 
-        // Adcash Ads Initialization
-        try {
-            aclib.runInPagePush({
-                zoneId: '11612834',
-                maxAds: 2,
-            });
-            aclib.runPop({
-                zoneId: '11612742',
-            });
-        } catch (e) {
-            console.warn('Adcash initialization error:', e);
-        }
-
-        // Direct Link Ad (triggers on first click on page)
-        document.addEventListener('click', function openDirectAd() {
-            window.open('https://buzzonclick.com/jump/next.php?r=11613198', '_blank');
-            document.removeEventListener('click', openDirectAd);
-        });
 
         const channels = {
             // ── Scraped FTB Channels ────────────────────────────────────────
