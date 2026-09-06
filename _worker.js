@@ -183,9 +183,11 @@ async function handleProxy(request) {
     responseHeaders.set("Access-Control-Allow-Methods", "GET, HEAD, OPTIONS");
     responseHeaders.set("Access-Control-Allow-Headers", "*");
     responseHeaders.delete("x-frame-options");
+    responseHeaders.delete("set-cookie");
 
     if (isM3U8) {
       responseHeaders.set("Content-Type", "application/vnd.apple.mpegurl");
+      responseHeaders.set("Cache-Control", "no-cache, no-store, must-revalidate");
       responseHeaders.delete("content-length");
 
       const proxyBase = `${requestUrl.origin}${requestUrl.pathname}`;
@@ -202,6 +204,8 @@ async function handleProxy(request) {
       });
     }
 
+    // Media segments: cache on Cloudflare edge for 180s to collapse concurrent viewers into 1 request
+    responseHeaders.set("Cache-Control", "public, max-age=180, s-maxage=180");
     return new Response(upstream.body, {
       status: upstream.status,
       statusText: upstream.statusText,
