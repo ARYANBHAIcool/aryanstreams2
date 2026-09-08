@@ -224,8 +224,8 @@ async function handleProxy(request) {
 
 function isProxyPath(pathname) {
   const path = pathname.replace(/\/+$/, "") || "/";
-  return path.startsWith("/proxy/") || path.startsWith("/api/proxy/") ||
-         path === "/proxy" || path === "/api/proxy";
+  return path.startsWith("/proxy/") || path.startsWith("/api/proxy/") || path.startsWith("/fancode/proxy/") ||
+         path === "/proxy" || path === "/api/proxy" || path === "/fancode/proxy";
 }
 
 export default {
