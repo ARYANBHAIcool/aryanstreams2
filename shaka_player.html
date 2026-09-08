@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -132,7 +132,7 @@
             // ΓöÇΓöÇ Inject Referer header (required for Amazon CDN) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
             player.getNetworkingEngine().registerRequestFilter(function(type, req) {
                 var url = req.uris[0];
-                if (url && (url.includes('aiv-cdn.net') || url.includes('aiv-cdn.com') || url.includes('akamaihd.net')) && !url.includes('/proxy')) {
+                if (url && (url.includes('aiv-cdn.net') || url.includes('aiv-cdn.com') || url.includes('pv-cdn.net')) && !url.includes('/proxy')) {
                     req.uris[0] = '/proxy/' + url;
                 }
                 if (req.uris[0] && !req.uris[0].includes('/proxy')) {
