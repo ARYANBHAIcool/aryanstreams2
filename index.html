@@ -624,10 +624,9 @@
         // Helper to format url with proxy configuration
         function getPlayableUrl(url) {
             const parsed = parseStreamUrl(url);
-            const isAkamai = parsed.baseUrl.includes('akamaized.net') || parsed.baseUrl.includes('slivcdn.com');
             const hasHeaders = Object.keys(parsed.headers).length > 0;
 
-            if (isAkamai || hasHeaders) {
+            if (hasHeaders) {
                 // Determine proxy endpoint based on current page path
                 const proxyUrl = location.pathname.includes('/fancode/') ? '/fancode/proxy' : '/proxy';
                 const queryParams = new URLSearchParams();
