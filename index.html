@@ -200,38 +200,69 @@
             background-color: #000 !important;
         }
 
-        /* Loading spinner inside player */
+        /* Ultra-sleek Loading spinner inside player */
         .spinner {
             position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
-            background: rgba(0, 0, 0, 0.92); z-index: 2; transition: opacity 0.4s ease, visibility 0.4s ease;
+            background: radial-gradient(circle at center, rgba(15, 23, 42, 0.85) 0%, rgba(0, 0, 0, 0.96) 100%);
+            z-index: 2; transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s ease;
             text-align: center; color: #fff; padding: 20px;
         }
         .spinner-box {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(12px);
-            padding: 24px 32px; border-radius: 16px;
-            display: flex; flex-direction: column; align-items: center; gap: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            max-width: 340px; width: 90%;
+            background: rgba(15, 23, 42, 0.65);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            padding: 28px 36px; border-radius: 20px;
+            display: flex; flex-direction: column; align-items: center; gap: 14px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(59, 130, 246, 0.1);
+            max-width: 360px; width: 90%;
         }
-        .spinner-ring { width: 44px; height: 44px; border: 3px solid rgba(59, 130, 246, 0.2); border-top-color: var(--accent-blue); border-radius: 50%; animation: spin 0.8s linear infinite; }
+        .spinner-wrapper {
+            position: relative; width: 48px; height: 48px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .spinner-ring {
+            position: absolute; inset: 0;
+            border: 3px solid rgba(59, 130, 246, 0.15);
+            border-top-color: #3b82f6; border-right-color: #60a5fa;
+            border-radius: 50%; animation: spin 0.75s linear infinite;
+        }
         @keyframes spin { to { transform: rotate(360deg); } }
-        .spinner-title { font-size: 15px; font-weight: 600; color: #f3f4f6; letter-spacing: 0.3px; }
-        .spinner-subtext { font-size: 12px; color: #9ca3af; line-height: 1.4; }
+        .spinner-dot {
+            width: 8px; height: 8px; background: #3b82f6; border-radius: 50%;
+            box-shadow: 0 0 10px #3b82f6; animation: pulseDot 1.2s ease-in-out infinite alternate;
+        }
+        @keyframes pulseDot { 0% { transform: scale(0.8); opacity: 0.6; } 100% { transform: scale(1.2); opacity: 1; } }
 
-        /* Main Stream Toast */
+        .spinner-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 4px 12px; background: rgba(59, 130, 246, 0.12);
+            border: 1px solid rgba(59, 130, 246, 0.25); border-radius: 20px;
+            font-size: 11px; font-weight: 600; color: #60a5fa;
+            letter-spacing: 0.8px; text-transform: uppercase;
+        }
+        .spinner-badge .live-dot {
+            width: 6px; height: 6px; background: #60a5fa; border-radius: 50%;
+            box-shadow: 0 0 8px #60a5fa;
+        }
+
+        .spinner-title { font-size: 15px; font-weight: 600; color: #f8fafc; letter-spacing: -0.2px; }
+        .spinner-subtext { font-size: 12px; color: #94a3b8; line-height: 1.5; font-weight: 400; }
+
+        /* Professional Main Stream Toast */
         #main-toast {
-            position: fixed; top: 20px; left: 50%; transform: translateX(-50%) translateY(-20px);
+            position: fixed; top: 20px; left: 50%; transform: translateX(-50%) translateY(-25px);
             opacity: 0; pointer-events: none;
-            padding: 10px 22px; border-radius: 30px; font-size: 13.5px; font-weight: 500;
+            padding: 8px 18px; border-radius: 30px; font-size: 12.5px; font-weight: 500;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             display: flex; align-items: center; gap: 8px; z-index: 1000;
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+            letter-spacing: 0.2px;
         }
         #main-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); pointer-events: auto; }
-        #main-toast.success { background: rgba(16, 185, 129, 0.95); color: #fff; border: 1px solid rgba(255,255,255,0.2); }
-        #main-toast.error { background: rgba(239, 68, 68, 0.95); color: #fff; border: 1px solid rgba(255,255,255,0.2); }
+        #main-toast.success { background: rgba(6, 78, 59, 0.85); color: #6ee7b7; border: 1px solid rgba(52, 211, 153, 0.3); }
+        #main-toast.error { background: rgba(127, 29, 29, 0.85); color: #fca5a5; border: 1px solid rgba(248, 113, 113, 0.3); }
 
         /* Customizing Plyr CSS Variables to fit design system */
         :root {
@@ -368,9 +399,15 @@
                 <div class="player-wrap">
                     <div class="spinner" id="iframe-spinner">
                         <div class="spinner-box">
-                            <div class="spinner-ring"></div>
-                            <div class="spinner-title">⏳ Stream Loading...</div>
-                            <div class="spinner-subtext">Connecting to live stream. Please wait a moment.</div>
+                            <div class="spinner-wrapper">
+                                <div class="spinner-ring"></div>
+                                <div class="spinner-dot"></div>
+                            </div>
+                            <div class="spinner-badge">
+                                <span class="live-dot"></span> CONNECTING
+                            </div>
+                            <div class="spinner-title">Initializing Stream</div>
+                            <div class="spinner-subtext">Connecting to CDN server... Please wait a moment.</div>
                         </div>
                     </div>
                     <iframe id="embed-frame" allowfullscreen allow="autoplay; encrypted-media; picture-in-picture; fullscreen" scrolling="no" onload="onIframeLoaded()"></iframe>
@@ -382,9 +419,15 @@
                 <div class="player-wrap">
                     <div class="spinner" id="video-spinner">
                         <div class="spinner-box">
-                            <div class="spinner-ring"></div>
-                            <div class="spinner-title">⏳ Stream Loading...</div>
-                            <div class="spinner-subtext">Connecting to live stream. Please wait a moment.</div>
+                            <div class="spinner-wrapper">
+                                <div class="spinner-ring"></div>
+                                <div class="spinner-dot"></div>
+                            </div>
+                            <div class="spinner-badge">
+                                <span class="live-dot"></span> CONNECTING
+                            </div>
+                            <div class="spinner-title">Initializing Stream</div>
+                            <div class="spinner-subtext">Connecting to CDN server... Please wait a moment.</div>
                         </div>
                     </div>
                     <div id="live-player-container">
@@ -724,7 +767,7 @@
                 spinner.style.opacity = '0';
                 setTimeout(() => spinner.style.display = 'none', 400);
             }
-            showMainToast('✅ Stream Connected Successfully!', 'success');
+            showMainToast('● LIVE STREAM CONNECTED', 'success');
         }
 
         function loadPlyr(src) {
@@ -775,7 +818,7 @@
                         spinner.style.opacity = '0';
                         setTimeout(() => spinner.style.display = 'none', 500);
                     }
-                    showMainToast('✅ Stream Connected Successfully!', 'success');
+                    showMainToast('● LIVE STREAM CONNECTED', 'success');
 
                     // Extract unique heights for resolution settings
                     const uniqueQualities = [];
@@ -838,7 +881,7 @@
 
                 hls.on(Hls.Events.ERROR, function (event, data) {
                     if (data.fatal) {
-                        showMainToast('❌ Stream Connection Failed. Retrying...', 'error');
+                        showMainToast('● CONNECTION FAILED • Retrying...', 'error');
                         switch (data.type) {
                             case Hls.ErrorTypes.NETWORK_ERROR:
                                 console.error("Fatal network error encountered, trying to recover");
