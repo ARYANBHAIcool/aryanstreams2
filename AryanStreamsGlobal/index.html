@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AryanStreams Global | Free Live Sports, 24/7 Channels & Multiviewer</title>
-    <meta name="description" content="StreamCorner Style Free Live Sports, 24/7 Channels, MLB, NFL, SOCCER, UFC, PPV Events, NBA League Pass, Sling TV, Paramount+">
+    <title>StreamCorner - Free Live Sports, 24/7 Channels, MLB, NFL, SOCCER, UFC, PPV Events</title>
+    <meta name="description" content="StreamCorner - Free Live Sports, 24/7 Channels, MLB, NFL, SOCCER, UFC, PPV Events, NBA League Pass, Sling TV, Paramount+">
 
     <!-- Tailwind CSS & HLS.js -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -18,9 +18,8 @@
                     colors: {
                         brand: {
                             500: '#22c55e',
-                            600: '#16a34a',
-                            dark: '#07090d',
-                            card: '#0f172a',
+                            dark: '#0b0f17',
+                            card: '#121824',
                             border: '#1e293b'
                         }
                     }
@@ -30,7 +29,7 @@
     </script>
     <style>
         body {
-            background-color: #07090d;
+            background-color: #0b0f17;
             color: #e2e8f0;
             font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
@@ -42,297 +41,199 @@
         }
         .card-hover:hover {
             transform: translateY(-3px);
-            border-color: #22c55e;
-            box-shadow: 0 12px 30px -5px rgba(34, 197, 94, 0.18);
+            border-color: rgba(34, 197, 94, 0.4);
+            box-shadow: 0 12px 30px -5px rgba(34, 197, 94, 0.15);
         }
     </style>
 </head>
 <body class="min-h-screen flex flex-col antialiased">
 
-    <!-- Header Navigation -->
-    <header class="sticky top-0 z-40 bg-[#07090d]/95 backdrop-blur-md border-b border-gray-800/80">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+    <!-- TOP NAVIGATION BAR (Exact StreamCorner Header) -->
+    <header class="sticky top-0 z-40 bg-[#0d111b]/95 backdrop-blur-md border-b border-gray-800/80">
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
             
-            <!-- Mobile Menu & Brand Logo -->
-            <div class="flex items-center gap-3">
-                <button onclick="toggleSidebar()" class="md:hidden p-2 text-gray-400 hover:text-white rounded-lg bg-gray-900 border border-gray-800">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-                </button>
-                <a href="#" onclick="switchView('home')" class="flex items-center gap-3 group">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-green-600 to-green-400 flex items-center justify-center text-black font-black text-xl shadow-lg shadow-green-500/20 group-hover:scale-105 transition-transform">
-                        A
-                    </div>
-                    <div class="flex flex-col">
-                        <span class="text-xl font-bold tracking-wider uppercase text-white">
-                            Aryan<span class="text-green-400">Streams</span>
-                        </span>
-                        <span class="text-[10px] text-gray-400 tracking-widest uppercase font-semibold">Global Stream Hub</span>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Search Bar -->
-            <div class="hidden sm:flex flex-1 max-w-md mx-4">
-                <div class="relative w-full">
-                    <input type="text" id="search-input" onkeyup="handleSearch()" placeholder="Search teams, matches, or channels..." 
-                           class="w-full bg-slate-900/90 border border-gray-800 rounded-xl pl-10 pr-4 py-2 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-green-500 transition-all">
-                    <svg class="w-4 h-4 text-gray-500 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            <!-- Brand Logo -->
+            <a href="#" onclick="switchView('home')" class="flex items-center gap-2.5 group">
+                <div class="w-8 h-8 rounded-full bg-green-500/20 border border-green-500/50 flex items-center justify-center text-green-400 group-hover:scale-105 transition-transform">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 </div>
-            </div>
+                <span class="text-lg font-black tracking-wider uppercase text-white">
+                    STREAM<span class="text-green-400">CORNER</span>
+                </span>
+            </a>
 
-            <!-- Nav Links -->
-            <div class="flex items-center gap-3">
-                <nav class="hidden md:flex items-center gap-4 text-xs uppercase tracking-widest font-semibold">
-                    <button onclick="switchView('home')" id="nav-home" class="text-white hover:text-green-400 transition-colors flex items-center gap-2 py-1.5 px-3 rounded-lg bg-gray-900 border border-gray-800">
-                        <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-                        Home
-                    </button>
-                    <button onclick="switchView('channels')" id="nav-channels" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2 py-1.5 px-3 rounded-lg hover:bg-gray-900">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                        24/7 Channels
-                    </button>
-                    <button onclick="switchView('multiviewer')" id="nav-multiviewer" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2 py-1.5 px-3 rounded-lg hover:bg-gray-900">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
-                        Multiviewer
-                    </button>
-                </nav>
+            <!-- Right Links (Exact StreamCorner Navigation Links) -->
+            <nav class="flex items-center gap-5 text-xs font-bold uppercase tracking-wider text-gray-300">
+                <button onclick="switchView('home')" class="hover:text-green-400 flex items-center gap-1.5 transition-colors">
+                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                    HOME
+                </button>
+                <button onclick="switchView('channels')" class="hover:text-green-400 flex items-center gap-1.5 transition-colors">
+                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    CHANNELS
+                </button>
+                <button onclick="switchView('home')" class="hover:text-green-400 flex items-center gap-1.5 transition-colors hidden sm:flex">
+                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+                    EXTRA
+                </button>
+                <button onclick="switchView('multiviewer')" class="hover:text-green-400 flex items-center gap-1.5 transition-colors">
+                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+                    MULTIVIEWER
+                </button>
+                <button onclick="alert('FAQ: All streams are HD 60fps. Pick any server if one is busy!')" class="hover:text-green-400 flex items-center gap-1.5 transition-colors hidden md:flex">
+                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    FAQ
+                </button>
+                <button onclick="alert('Stream Fix: Reload page or switch to Server 2!')" class="hover:text-green-400 flex items-center gap-1.5 transition-colors hidden md:flex">
+                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/></svg>
+                    STREAM FIX
+                </button>
+            </nav>
 
-                <!-- Telegram Button -->
-                <a href="https://t.me/aryanstreams" target="_blank" class="px-3.5 py-2 bg-green-500 hover:bg-green-600 text-black font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg shadow-green-500/20 transition-all flex items-center gap-2">
-                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .54-1.43.53-.48-.01-1.4-.27-2.09-.49-.84-.28-1.51-.43-1.45-.91.03-.25.38-.51 1.07-.78 4.19-1.82 6.98-3.02 8.37-3.6 3.98-1.65 4.81-1.94 5.35-1.95.12 0 .38.03.55.17.14.12.18.28.2.45-.02.07-.02.16-.03.27z"/></svg>
-                    <span class="hidden sm:inline">Join Telegram</span>
-                </a>
-            </div>
         </div>
     </header>
 
-    <!-- Main Workspace Container -->
-    <div class="flex-1 flex max-w-7xl w-full mx-auto">
+    <!-- MAIN BODY CONTAINER (Full-width 1400px centered layout) -->
+    <main class="flex-1 max-w-[1400px] w-full mx-auto px-4 sm:px-6 py-6 space-y-8">
 
-        <!-- Sidebar Navigation -->
-        <aside id="app-sidebar" class="w-64 bg-[#07090d] border-r border-gray-800/80 p-4 space-y-6 hidden md:block shrink-0">
-            <div class="space-y-1">
-                <div class="px-3 text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Navigation</div>
-                <button onclick="switchView('home')" class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider text-white bg-slate-900 border border-gray-800 transition-all">
-                    <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-                    Live & Upcoming
-                </button>
-                <button onclick="switchView('channels')" class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider text-gray-400 hover:text-white hover:bg-slate-900 transition-all">
-                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                    24/7 Channels
-                </button>
-                <button onclick="switchView('multiviewer')" class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider text-gray-400 hover:text-white hover:bg-slate-900 transition-all">
-                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
-                    Multiviewer Mode
-                </button>
-            </div>
-
-            <!-- Categories Quick List -->
-            <div class="space-y-1">
-                <div class="px-3 text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Sports Categories</div>
-                <button onclick="filterCategory('FOOTBALL')" class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-semibold text-gray-400 hover:text-white hover:bg-slate-900/60 transition-colors">
-                    <span>⚽ Football</span>
-                    <span class="text-[10px] bg-gray-800 text-gray-400 px-2 py-0.5 rounded-full">4</span>
-                </button>
-                <button onclick="filterCategory('CRICKET')" class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-semibold text-gray-400 hover:text-white hover:bg-slate-900/60 transition-colors">
-                    <span>🏏 Cricket</span>
-                    <span class="text-[10px] bg-gray-800 text-gray-400 px-2 py-0.5 rounded-full">2</span>
-                </button>
-                <button onclick="filterCategory('BASKETBALL')" class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-semibold text-gray-400 hover:text-white hover:bg-slate-900/60 transition-colors">
-                    <span>🏀 Basketball</span>
-                    <span class="text-[10px] bg-gray-800 text-gray-400 px-2 py-0.5 rounded-full">1</span>
-                </button>
-                <button onclick="filterCategory('FIGHTING')" class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-semibold text-gray-400 hover:text-white hover:bg-slate-900/60 transition-colors">
-                    <span>🥊 UFC & Boxing</span>
-                    <span class="text-[10px] bg-gray-800 text-gray-400 px-2 py-0.5 rounded-full">1</span>
-                </button>
-                <button onclick="filterCategory('BASEBALL')" class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-semibold text-gray-400 hover:text-white hover:bg-slate-900/60 transition-colors">
-                    <span>⚾ Baseball</span>
-                    <span class="text-[10px] bg-gray-800 text-gray-400 px-2 py-0.5 rounded-full">1</span>
-                </button>
-            </div>
-
-            <!-- Server Status Box -->
-            <div class="p-3 bg-slate-900/80 rounded-xl border border-gray-800 space-y-2">
-                <div class="flex items-center gap-2 text-xs font-bold text-white">
-                    <span class="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span>
-                    CDN Network Status
-                </div>
-                <p class="text-[11px] text-gray-400 leading-relaxed">
-                    All stream servers & Akamai DASH players operating at 100% capacity (60FPS HQ).
-                </p>
-            </div>
-        </aside>
-
-        <!-- Main Content Area -->
-        <main class="flex-1 p-4 sm:p-6 space-y-6 overflow-hidden">
-
-            <!-- Category Filter Pills Bar -->
-            <div class="flex items-center gap-2 overflow-x-auto custom-scrollbar pb-2 border-b border-gray-800/80">
-                <button onclick="filterCategory('ALL')" id="cat-ALL" class="cat-pill px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-green-500 text-black shadow-lg shadow-green-500/20 whitespace-nowrap">
-                    🔥 All Matches
-                </button>
-                <button onclick="filterCategory('LIVE NOW')" id="cat-LIVE NOW" class="cat-pill px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-slate-900 text-gray-400 hover:bg-slate-800 hover:text-white whitespace-nowrap flex items-center gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
-                    🔴 Live Now
-                </button>
-                <button onclick="filterCategory('TODAY')" id="cat-TODAY" class="cat-pill px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-slate-900 text-gray-400 hover:bg-slate-800 hover:text-white whitespace-nowrap">
-                    📅 Today's Fixtures
-                </button>
-                <button onclick="filterCategory('FOOTBALL')" id="cat-FOOTBALL" class="cat-pill px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-slate-900 text-gray-400 hover:bg-slate-800 hover:text-white whitespace-nowrap">
-                    ⚽ Football
-                </button>
-                <button onclick="filterCategory('CRICKET')" id="cat-CRICKET" class="cat-pill px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-slate-900 text-gray-400 hover:bg-slate-800 hover:text-white whitespace-nowrap">
-                    🏏 Cricket
-                </button>
-                <button onclick="filterCategory('BASKETBALL')" id="cat-BASKETBALL" class="cat-pill px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-slate-900 text-gray-400 hover:bg-slate-800 hover:text-white whitespace-nowrap">
-                    🏀 Basketball
-                </button>
-                <button onclick="filterCategory('FIGHTING')" id="cat-FIGHTING" class="cat-pill px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-slate-900 text-gray-400 hover:bg-slate-800 hover:text-white whitespace-nowrap">
-                    🥊 UFC / MMA
-                </button>
-                <button onclick="filterCategory('BASEBALL')" id="cat-BASEBALL" class="cat-pill px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-slate-900 text-gray-400 hover:bg-slate-800 hover:text-white whitespace-nowrap">
-                    ⚾ Baseball
-                </button>
-                <button onclick="switchView('channels')" id="cat-CHANNELS" class="cat-pill px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-slate-900 text-gray-400 hover:bg-slate-800 hover:text-white whitespace-nowrap">
-                    📺 24/7 Channels
-                </button>
-            </div>
-
-            <!-- VIEW 1: HOME (LIVE & UPCOMING MATCHES SCHEDULE) -->
-            <div id="view-home" class="space-y-8">
-
-                <!-- 🔴 ACTIVE LIVE MATCHES SECTION -->
-                <section class="space-y-4">
-                    <div class="flex items-center justify-between">
-                        <h2 class="text-lg font-extrabold uppercase tracking-wider text-white flex items-center gap-2">
-                            <span class="w-3 h-3 rounded-full bg-red-500 animate-pulse"></span>
-                            Live Sports Matches
-                        </h2>
-                        <span class="text-xs font-bold text-red-400 bg-red-500/10 border border-red-500/20 px-3 py-1 rounded-full uppercase tracking-widest">Active Now</span>
-                    </div>
-
-                    <div id="live-matches-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <!-- Populated dynamically via JS -->
-                    </div>
-                </section>
-
-                <!-- 📅 UPCOMING FIXTURES SECTION -->
-                <section class="space-y-4 pt-4 border-t border-gray-800/80">
-                    <div class="flex items-center justify-between">
-                        <h2 class="text-lg font-extrabold uppercase tracking-wider text-white flex items-center gap-2">
-                            <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                            Upcoming Match Schedule
-                        </h2>
-                        <span class="text-xs text-gray-400 font-semibold uppercase tracking-wider">Today & Future Fixtures</span>
-                    </div>
-
-                    <div id="upcoming-matches-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <!-- Populated dynamically via JS -->
-                    </div>
-                </section>
-            </div>
-
-            <!-- VIEW 2: DEDICATED 24/7 CHANNELS VIEW -->
-            <div id="view-channels" class="space-y-4 hidden">
-                <div class="flex items-center justify-between border-b border-gray-800 pb-3">
-                    <div>
-                        <h2 class="text-xl font-extrabold uppercase tracking-wider text-white flex items-center gap-2">
-                            📺 Dedicated 24/7 Channels
-                        </h2>
-                        <p class="text-xs text-gray-400 mt-1">Non-stop 24/7 TV Streams including AMC, BBC News, CNN, HBO, Sky Sports, TNT, and Willow</p>
-                    </div>
-                    <span class="text-xs bg-green-500/10 text-green-400 border border-green-500/20 px-3 py-1 rounded-full font-bold uppercase tracking-wider">8 Active Channels</span>
-                </div>
-
-                <div id="channels-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-                    <!-- Populated dynamically via JS -->
-                </div>
-            </div>
-
-            <!-- VIEW 3: MULTIVIEWER MODE (4 SCREENS GRID) -->
-            <div id="view-multiviewer" class="space-y-4 hidden">
-                <div class="flex items-center justify-between border-b border-gray-800 pb-3">
-                    <div>
-                        <h2 class="text-xl font-extrabold uppercase tracking-wider text-white flex items-center gap-2">
-                            🔲 StreamCorner Multiviewer (4-Screen Layout)
-                        </h2>
-                        <p class="text-xs text-gray-400 mt-1">Watch up to 4 live sports matches or 24/7 channels simultaneously</p>
-                    </div>
-                    <button onclick="switchView('home')" class="px-3 py-1.5 bg-gray-800 hover:bg-gray-700 text-xs text-gray-300 font-bold uppercase tracking-wider rounded-lg transition-colors">
-                        Close Multiviewer
-                    </button>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <!-- Viewport 1 -->
-                    <div class="bg-slate-900 border border-gray-800 rounded-xl overflow-hidden space-y-2 p-2">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-bold text-green-400 uppercase tracking-wider px-2 py-0.5 bg-green-500/10 rounded">Screen 1</span>
-                            <select onchange="loadMultiviewerStream(1, this.value)" class="bg-black border border-gray-700 text-xs text-white rounded px-2 py-1 focus:outline-none">
-                                <option value="">-- Select Stream --</option>
-                            </select>
-                        </div>
-                        <div id="mv-viewport-1" class="aspect-video bg-black rounded border border-gray-800 flex items-center justify-center text-xs text-gray-500">
-                            Select a match or channel above
-                        </div>
-                    </div>
-
-                    <!-- Viewport 2 -->
-                    <div class="bg-slate-900 border border-gray-800 rounded-xl overflow-hidden space-y-2 p-2">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-bold text-green-400 uppercase tracking-wider px-2 py-0.5 bg-green-500/10 rounded">Screen 2</span>
-                            <select onchange="loadMultiviewerStream(2, this.value)" class="bg-black border border-gray-700 text-xs text-white rounded px-2 py-1 focus:outline-none">
-                                <option value="">-- Select Stream --</option>
-                            </select>
-                        </div>
-                        <div id="mv-viewport-2" class="aspect-video bg-black rounded border border-gray-800 flex items-center justify-center text-xs text-gray-500">
-                            Select a match or channel above
-                        </div>
-                    </div>
-
-                    <!-- Viewport 3 -->
-                    <div class="bg-slate-900 border border-gray-800 rounded-xl overflow-hidden space-y-2 p-2">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-bold text-green-400 uppercase tracking-wider px-2 py-0.5 bg-green-500/10 rounded">Screen 3</span>
-                            <select onchange="loadMultiviewerStream(3, this.value)" class="bg-black border border-gray-700 text-xs text-white rounded px-2 py-1 focus:outline-none">
-                                <option value="">-- Select Stream --</option>
-                            </select>
-                        </div>
-                        <div id="mv-viewport-3" class="aspect-video bg-black rounded border border-gray-800 flex items-center justify-center text-xs text-gray-500">
-                            Select a match or channel above
-                        </div>
-                    </div>
-
-                    <!-- Viewport 4 -->
-                    <div class="bg-slate-900 border border-gray-800 rounded-xl overflow-hidden space-y-2 p-2">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-bold text-green-400 uppercase tracking-wider px-2 py-0.5 bg-green-500/10 rounded">Screen 4</span>
-                            <select onchange="loadMultiviewerStream(4, this.value)" class="bg-black border border-gray-700 text-xs text-white rounded px-2 py-1 focus:outline-none">
-                                <option value="">-- Select Stream --</option>
-                            </select>
-                        </div>
-                        <div id="mv-viewport-4" class="aspect-video bg-black rounded border border-gray-800 flex items-center justify-center text-xs text-gray-500">
-                            Select a match or channel above
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </main>
-    </div>
-
-    <!-- PLAYER MODAL & VIEWPORT CONTAINER -->
-    <div id="player-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 hidden">
-        <div class="bg-slate-900 border border-gray-800 w-full max-w-5xl rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+        <!-- CENTERED MODE & CATEGORY FILTERS (Exact StreamCorner Filter Box) -->
+        <div class="flex flex-col items-center space-y-4">
             
-            <!-- Modal Header Bar -->
-            <div class="bg-[#07090d] px-4 py-3 border-b border-gray-800 flex items-center justify-between">
+            <!-- Main Tabs Pill Container (ALL | 🔴 LIVE | TODAY) -->
+            <div class="bg-[#131924] border border-gray-800 rounded-xl p-1 inline-flex gap-1 shadow-inner">
+                <button onclick="filterCategory('ALL')" id="tab-ALL" class="tab-btn px-6 py-2 rounded-lg text-xs font-black uppercase tracking-wider transition-all bg-amber-400 text-black shadow-md">
+                    ALL
+                </button>
+                <button onclick="filterCategory('LIVE NOW')" id="tab-LIVE NOW" class="tab-btn px-6 py-2 rounded-lg text-xs font-black uppercase tracking-wider text-gray-400 hover:text-white transition-all flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+                    • LIVE
+                </button>
+                <button onclick="filterCategory('TODAY')" id="tab-TODAY" class="tab-btn px-6 py-2 rounded-lg text-xs font-black uppercase tracking-wider text-gray-400 hover:text-white transition-all">
+                    TODAY
+                </button>
+            </div>
+
+            <!-- Sports Category Caps Pills (Centered Grid/Flex) -->
+            <div class="flex flex-wrap items-center justify-center gap-2 max-w-4xl">
+                <button onclick="filterCategory('24/7 STREAMS')" class="cat-cap px-3.5 py-1.5 bg-[#182030] hover:bg-gray-800 text-gray-300 text-xs font-bold uppercase tracking-wider rounded-full border border-gray-800 transition-all flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-green-400"></span> 24/7 STREAMS
+                </button>
+                <button onclick="filterCategory('AMERICAN FOOTBALL')" class="cat-cap px-3.5 py-1.5 bg-[#182030] hover:bg-gray-800 text-gray-300 text-xs font-bold uppercase tracking-wider rounded-full border border-gray-800 transition-all flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> AMERICAN FOOTBALL
+                </button>
+                <button onclick="filterCategory('BASEBALL')" class="cat-cap px-3.5 py-1.5 bg-[#182030] hover:bg-gray-800 text-gray-300 text-xs font-bold uppercase tracking-wider rounded-full border border-gray-800 transition-all flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span> BASEBALL
+                </button>
+                <button onclick="filterCategory('BASKETBALL')" class="cat-cap px-3.5 py-1.5 bg-[#182030] hover:bg-gray-800 text-gray-300 text-xs font-bold uppercase tracking-wider rounded-full border border-gray-800 transition-all flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-orange-400"></span> BASKETBALL
+                </button>
+                <button onclick="filterCategory('CRICKET')" class="cat-cap px-3.5 py-1.5 bg-[#182030] hover:bg-gray-800 text-gray-300 text-xs font-bold uppercase tracking-wider rounded-full border border-gray-800 transition-all flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> CRICKET
+                </button>
+                <button onclick="filterCategory('FOOTBALL')" class="cat-cap px-3.5 py-1.5 bg-[#182030] hover:bg-gray-800 text-gray-300 text-xs font-bold uppercase tracking-wider rounded-full border border-gray-800 transition-all flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span> FOOTBALL (UCL)
+                </button>
+                <button onclick="filterCategory('FIGHTING')" class="cat-cap px-3.5 py-1.5 bg-[#182030] hover:bg-gray-800 text-gray-300 text-xs font-bold uppercase tracking-wider rounded-full border border-gray-800 transition-all flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-red-400"></span> FIGHTING
+                </button>
+            </div>
+        </div>
+
+        <!-- VIEW 1: HOME (MATCHES CARDS GRID) -->
+        <div id="view-home" class="space-y-6">
+            
+            <!-- SECTION HEADER (BETA v) -->
+            <div class="flex items-center justify-between border-b border-gray-800 pb-2">
+                <h2 class="text-xl font-black uppercase tracking-wider text-white flex items-center gap-2">
+                    BETA <span class="text-xs text-gray-400 font-normal">˅</span>
+                </h2>
+                <span class="text-xs text-gray-400 font-semibold uppercase tracking-wider">Live & Upcoming Matches</span>
+            </div>
+
+            <!-- MATCH CARDS GRID (Exact 5-column responsive StreamCorner Grid) -->
+            <div id="matches-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                <!-- Populated dynamically via JS -->
+            </div>
+
+            <!-- PROVIDER LOGOS CARDS SECTION (Paramount+, Peacock, Sky Go, Sling) -->
+            <div class="pt-6 border-t border-gray-800 space-y-4">
+                <div class="flex items-center justify-between">
+                    <h2 class="text-lg font-black uppercase tracking-wider text-white">
+                        ADMIN <span class="text-xs text-gray-400 font-normal">˅</span>
+                    </h2>
+                </div>
+                <div id="providers-grid" class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    <!-- Provider logo cards -->
+                </div>
+            </div>
+        </div>
+
+        <!-- VIEW 2: DEDICATED 24/7 CHANNELS VIEW -->
+        <div id="view-channels" class="space-y-6 hidden">
+            <div class="flex items-center justify-between border-b border-gray-800 pb-3">
+                <h2 class="text-xl font-black uppercase tracking-wider text-white">
+                    24/7 LIVE CHANNELS <span class="text-xs text-gray-400 font-normal">˅</span>
+                </h2>
+                <span class="text-xs bg-green-500/10 text-green-400 border border-green-500/20 px-3 py-1 rounded-full font-bold uppercase tracking-wider">8 Active Channels</span>
+            </div>
+
+            <div id="channels-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                <!-- Populated dynamically via JS -->
+            </div>
+        </div>
+
+        <!-- VIEW 3: MULTIVIEWER MODE -->
+        <div id="view-multiviewer" class="space-y-6 hidden">
+            <div class="flex items-center justify-between border-b border-gray-800 pb-3">
+                <h2 class="text-xl font-black uppercase tracking-wider text-white">
+                    MULTIVIEWER (4-SCREEN GRID)
+                </h2>
+                <button onclick="switchView('home')" class="px-3 py-1.5 bg-gray-800 hover:bg-gray-700 text-xs text-gray-300 font-bold uppercase tracking-wider rounded-lg transition-colors">
+                    Close Multiviewer
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- 4 Viewports -->
+                <div class="bg-[#121824] border border-gray-800 rounded-xl p-2 space-y-2">
+                    <select onchange="loadMultiviewerStream(1, this.value)" class="w-full bg-black border border-gray-700 text-xs text-white rounded px-2 py-1.5 focus:outline-none">
+                        <option value="">-- Select Screen 1 Stream --</option>
+                    </select>
+                    <div id="mv-viewport-1" class="aspect-video bg-black rounded border border-gray-800 flex items-center justify-center text-xs text-gray-500">Screen 1 Ready</div>
+                </div>
+                <div class="bg-[#121824] border border-gray-800 rounded-xl p-2 space-y-2">
+                    <select onchange="loadMultiviewerStream(2, this.value)" class="w-full bg-black border border-gray-700 text-xs text-white rounded px-2 py-1.5 focus:outline-none">
+                        <option value="">-- Select Screen 2 Stream --</option>
+                    </select>
+                    <div id="mv-viewport-2" class="aspect-video bg-black rounded border border-gray-800 flex items-center justify-center text-xs text-gray-500">Screen 2 Ready</div>
+                </div>
+                <div class="bg-[#121824] border border-gray-800 rounded-xl p-2 space-y-2">
+                    <select onchange="loadMultiviewerStream(3, this.value)" class="w-full bg-black border border-gray-700 text-xs text-white rounded px-2 py-1.5 focus:outline-none">
+                        <option value="">-- Select Screen 3 Stream --</option>
+                    </select>
+                    <div id="mv-viewport-3" class="aspect-video bg-black rounded border border-gray-800 flex items-center justify-center text-xs text-gray-500">Screen 3 Ready</div>
+                </div>
+                <div class="bg-[#121824] border border-gray-800 rounded-xl p-2 space-y-2">
+                    <select onchange="loadMultiviewerStream(4, this.value)" class="w-full bg-black border border-gray-700 text-xs text-white rounded px-2 py-1.5 focus:outline-none">
+                        <option value="">-- Select Screen 4 Stream --</option>
+                    </select>
+                    <div id="mv-viewport-4" class="aspect-video bg-black rounded border border-gray-800 flex items-center justify-center text-xs text-gray-500">Screen 4 Ready</div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- PLAYER MODAL CONTAINER -->
+    <div id="player-modal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center p-4 hidden">
+        <div class="bg-[#121824] border border-gray-800 w-full max-w-5xl rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+            
+            <div class="bg-[#0b0f17] px-4 py-3 border-b border-gray-800 flex items-center justify-between">
                 <div class="flex items-center gap-3">
                     <span id="player-status-badge" class="px-2.5 py-0.5 bg-red-500 text-white font-bold text-[10px] uppercase rounded-md tracking-wider">LIVE</span>
                     <div>
                         <h3 id="player-match-title" class="font-extrabold text-sm text-white uppercase tracking-wider">Match Title</h3>
-                        <p id="player-match-league" class="text-xs text-gray-400 font-semibold">League Title</p>
+                        <p id="player-match-league" class="text-xs text-gray-400 font-semibold">League</p>
                     </div>
                 </div>
                 <button onclick="closePlayerModal()" class="p-2 text-gray-400 hover:text-white rounded-lg hover:bg-gray-800 transition-colors">
@@ -340,64 +241,40 @@
                 </button>
             </div>
 
-            <!-- Player & Chat Layout -->
-            <div class="flex-1 flex flex-col md:flex-row overflow-hidden">
-                <!-- Video Container -->
-                <div id="player-viewport-container" class="flex-1 bg-black flex flex-col min-h-[300px]">
-                    <!-- Rendered by AryanPlayerEngine -->
-                </div>
+            <div id="player-viewport-container" class="flex-1 bg-black flex flex-col min-h-[350px]">
+                <!-- Rendered by AryanPlayerEngine -->
             </div>
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer class="mt-auto border-t border-gray-800/80 bg-[#07090d] py-6 text-center text-xs text-gray-500">
-        <div class="max-w-7xl mx-auto px-4 space-y-2">
-            <p class="font-bold text-gray-400 uppercase tracking-widest">AryanStreams Global &copy; 2026. All rights reserved.</p>
-            <p class="text-[11px]">Identical StreamCorner Architecture with 24/7 Channels & Multi-Server Player Support.</p>
-        </div>
-    </footer>
 
     <!-- Include API & Player Scripts -->
     <script src="js/api.js"></script>
     <script src="js/player.js"></script>
 
-    <!-- App Logic -->
+    <!-- App Render Logic -->
     <script>
         let currentFilter = 'ALL';
         let currentView = 'home';
 
         document.addEventListener('DOMContentLoaded', () => {
-            renderHomeView();
+            renderMatchesGrid();
+            renderProviders();
             renderChannelsView();
             populateMultiviewerDropdowns();
         });
 
         function switchView(viewName) {
             currentView = viewName;
-            
             document.getElementById('view-home').classList.add('hidden');
             document.getElementById('view-channels').classList.add('hidden');
             document.getElementById('view-multiviewer').classList.add('hidden');
 
             document.getElementById('view-' + viewName).classList.remove('hidden');
-
-            // Update nav button styles
-            ['home', 'channels', 'multiviewer'].forEach(v => {
-                const btn = document.getElementById('nav-' + v);
-                if (btn) {
-                    if (v === viewName) {
-                        btn.className = 'text-white hover:text-green-400 transition-colors flex items-center gap-2 py-1.5 px-3 rounded-lg bg-gray-900 border border-gray-800';
-                    } else {
-                        btn.className = 'text-gray-400 hover:text-white transition-colors flex items-center gap-2 py-1.5 px-3 rounded-lg hover:bg-gray-900';
-                    }
-                }
-            });
         }
 
         function filterCategory(cat) {
             currentFilter = cat;
-            if (cat === '24/7 CHANNELS' || cat === 'CHANNELS') {
+            if (cat === '24/7 STREAMS') {
                 switchView('channels');
                 return;
             }
@@ -405,128 +282,136 @@
                 switchView('home');
             }
 
-            // Update category pills styling
-            document.querySelectorAll('.cat-pill').forEach(pill => {
-                pill.className = 'cat-pill px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-slate-900 text-gray-400 hover:bg-slate-800 hover:text-white whitespace-nowrap';
+            // Update main tab styling
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.className = 'tab-btn px-6 py-2 rounded-lg text-xs font-black uppercase tracking-wider text-gray-400 hover:text-white transition-all';
             });
-            const activePill = document.getElementById('cat-' + cat);
-            if (activePill) {
-                activePill.className = 'cat-pill px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-green-500 text-black shadow-lg shadow-green-500/20 whitespace-nowrap';
+            const activeTab = document.getElementById('tab-' + cat);
+            if (activeTab) {
+                activeTab.className = 'tab-btn px-6 py-2 rounded-lg text-xs font-black uppercase tracking-wider transition-all bg-amber-400 text-black shadow-md';
             }
 
-            renderHomeView();
+            renderMatchesGrid();
         }
 
-        function renderHomeView() {
-            const liveGrid = document.getElementById('live-matches-grid');
-            const upcomingGrid = document.getElementById('upcoming-matches-grid');
+        function renderMatchesGrid() {
+            const grid = document.getElementById('matches-grid');
+            let items = window.AryanGlobalAPI.getAllMatches();
 
-            let liveItems = window.AryanGlobalAPI.liveMatches;
-            let upcomingItems = window.AryanGlobalAPI.upcomingMatches;
-
-            // Apply category filtering
-            if (currentFilter !== 'ALL' && currentFilter !== 'LIVE NOW' && currentFilter !== 'TODAY') {
-                liveItems = liveItems.filter(m => m.sport === currentFilter);
-                upcomingItems = upcomingItems.filter(m => m.sport === currentFilter);
-            } else if (currentFilter === 'LIVE NOW') {
-                upcomingItems = [];
+            if (currentFilter === 'LIVE NOW') {
+                items = items.filter(m => m.isLive);
             } else if (currentFilter === 'TODAY') {
-                upcomingItems = upcomingItems.filter(m => m.timeDisplay.includes('TODAY'));
+                items = items.filter(m => m.startTime.includes('09/10/26') || m.startTime.includes('TODAY'));
+            } else if (currentFilter !== 'ALL') {
+                items = items.filter(m => m.sport === currentFilter || m.league === currentFilter);
             }
 
-            // Render Live Matches
-            if (liveItems.length === 0) {
-                liveGrid.innerHTML = `<div class="col-span-full p-6 text-center text-xs text-gray-500 bg-slate-900/50 rounded-xl border border-gray-800">No active live matches found for this filter.</div>`;
-            } else {
-                liveGrid.innerHTML = liveItems.map(m => createMatchCardHTML(m)).join('');
+            if (items.length === 0) {
+                grid.innerHTML = `<div class="col-span-full p-8 text-center text-xs text-gray-500 bg-[#121824] rounded-2xl border border-gray-800">No active matches found for this filter category.</div>`;
+                return;
             }
 
-            // Render Upcoming Matches
-            if (upcomingItems.length === 0) {
-                upcomingGrid.innerHTML = `<div class="col-span-full p-6 text-center text-xs text-gray-500 bg-slate-900/50 rounded-xl border border-gray-800">No upcoming matches scheduled for this category.</div>`;
-            } else {
-                upcomingGrid.innerHTML = upcomingItems.map(m => createMatchCardHTML(m)).join('');
-            }
+            grid.innerHTML = items.map(m => createStreamCornerCard(m)).join('');
         }
 
-        function createMatchCardHTML(m) {
-            const isLive = m.status === 'LIVE';
+        function createStreamCornerCard(m) {
             return `
-                <div onclick="openPlayerModal('${m.id}')" class="card-hover bg-slate-900 border border-gray-800/90 rounded-2xl p-4 cursor-pointer relative overflow-hidden group">
-                    <div class="flex items-center justify-between border-b border-gray-800/60 pb-2.5 mb-3">
-                        <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider flex items-center gap-1.5">
-                            <span class="text-green-400 font-extrabold">•</span> ${m.competition}
-                        </span>
-                        <span class="text-[10px] font-extrabold px-2.5 py-0.5 rounded-md uppercase tracking-wider ${isLive ? 'bg-red-500 text-white animate-pulse' : 'bg-gray-800 text-gray-300'}">
-                            ${m.timeDisplay}
-                        </span>
-                    </div>
-
-                    <div class="flex items-center justify-between py-2">
-                        <!-- Team 1 -->
-                        <div class="flex items-center gap-3 flex-1">
-                            <img src="${m.team1.logo}" class="w-10 h-10 object-contain rounded-lg bg-black/40 p-1" alt="${m.team1.name}">
-                            <span class="font-bold text-sm text-white tracking-wide leading-snug">${m.team1.name}</span>
+                <div onclick="openPlayerModal('${m.id}')" class="card-hover bg-[#121824] border border-gray-800/90 rounded-2xl overflow-hidden cursor-pointer flex flex-col justify-between group shadow-lg">
+                    
+                    <!-- TOP GRAPHIC BANNER AREA (Exact Dual Team Logos + VS Badge) -->
+                    <div class="h-[140px] bg-gradient-to-b from-[#182030] to-[#101622] relative flex items-center justify-between px-4 overflow-hidden border-b border-gray-800/80">
+                        
+                        <!-- Left Team Logo -->
+                        <div class="flex flex-col items-center gap-1 z-10">
+                            <div class="w-14 h-14 rounded-full bg-black/60 p-2 border border-gray-700/80 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+                                <img src="${m.team1.logo}" class="max-h-full max-w-full object-contain" alt="${m.team1.name}">
+                            </div>
                         </div>
 
-                        <!-- Versus / Score -->
-                        <div class="px-3 text-center">
-                            ${isLive ? `<span class="text-base font-black text-green-400 tracking-widest">${m.score}</span>` : `<span class="text-xs font-bold text-gray-500 uppercase tracking-widest">VS</span>`}
+                        <!-- VS Badge -->
+                        <div class="z-10 bg-black/80 border border-gray-700/80 text-[10px] font-black text-white px-2.5 py-1 rounded-full uppercase tracking-widest shadow-md">
+                            ${m.isLive ? `<span class="text-red-500 animate-pulse font-extrabold">LIVE</span>` : `VS`}
                         </div>
 
-                        <!-- Team 2 -->
-                        <div class="flex items-center gap-3 flex-1 justify-end">
-                            <span class="font-bold text-sm text-white tracking-wide leading-snug text-right">${m.team2.name}</span>
-                            <img src="${m.team2.logo}" class="w-10 h-10 object-contain rounded-lg bg-black/40 p-1" alt="${m.team2.name}">
+                        <!-- Right Team Logo -->
+                        <div class="flex flex-col items-center gap-1 z-10">
+                            <div class="w-14 h-14 rounded-full bg-black/60 p-2 border border-gray-700/80 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+                                <img src="${m.team2.logo}" class="max-h-full max-w-full object-contain" alt="${m.team2.name}">
+                            </div>
+                        </div>
+
+                        <!-- Background Ambient Blur -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-900/10 via-transparent to-red-900/10"></div>
+                    </div>
+
+                    <!-- MATCH TITLE AREA -->
+                    <div class="px-4 pt-3 pb-2 flex-1">
+                        <h4 class="font-bold text-xs text-white tracking-wide leading-snug line-clamp-2 uppercase">${m.title}</h4>
+                    </div>
+
+                    <!-- METADATA FOOTER (START TIME & LEAGUE) -->
+                    <div class="px-4 py-2 text-[11px] font-semibold text-gray-400 space-y-1">
+                        <div class="flex items-center justify-between">
+                            <span class="text-[10px] text-gray-500 uppercase tracking-wider font-bold">START TIME</span>
+                            <span class="text-gray-200 font-bold">${m.startTime}</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-[10px] text-gray-500 uppercase tracking-wider font-bold">LEAGUE</span>
+                            <span class="text-amber-400 font-extrabold uppercase tracking-wider text-[10px]">${m.league}</span>
                         </div>
                     </div>
 
-                    <div class="mt-3 pt-2.5 border-t border-gray-800/60 flex items-center justify-between text-xs font-bold">
-                        <span class="text-gray-400 text-[10px] uppercase tracking-wider flex items-center gap-1">
-                            <svg class="w-3.5 h-3.5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                            ${m.servers ? m.servers.length + ' Servers Available' : 'Live Stream'}
-                        </span>
-                        <span class="text-green-400 group-hover:underline uppercase tracking-wider flex items-center gap-1">
-                            Watch Stream &rarr;
-                        </span>
+                    <!-- WATCH NOW BUTTON (Exact StreamCorner Green Play Icon Button) -->
+                    <div class="px-4 pb-4 pt-1">
+                        <button class="w-full py-2.5 bg-[#1b2434] group-hover:bg-green-500 group-hover:text-black text-gray-200 font-bold text-xs uppercase tracking-wider rounded-xl transition-all border border-gray-700/60 flex items-center justify-center gap-2">
+                            <svg class="w-3.5 h-3.5 fill-current text-green-400 group-hover:text-black" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            Watch Now
+                        </button>
                     </div>
+
                 </div>
             `;
+        }
+
+        function renderProviders() {
+            const grid = document.getElementById('providers-grid');
+            grid.innerHTML = window.AryanGlobalAPI.providers.map(p => `
+                <div class="h-28 rounded-2xl ${p.bg} p-4 flex items-center justify-center shadow-lg hover:opacity-90 transition-opacity cursor-pointer">
+                    <img src="${p.logo}" class="max-h-full max-w-full object-contain" alt="${p.name}">
+                </div>
+            `).join('');
         }
 
         function renderChannelsView() {
             const grid = document.getElementById('channels-grid');
             const channels = window.AryanGlobalAPI.getChannels();
-
             grid.innerHTML = channels.map(ch => `
-                <div onclick="openPlayerModal('${ch.id}')" class="card-hover bg-slate-900 border border-gray-800 rounded-2xl p-4 cursor-pointer flex flex-col items-center justify-between text-center space-y-3 group">
-                    <div class="w-16 h-16 rounded-xl bg-black/50 p-2 flex items-center justify-center border border-gray-800 group-hover:border-green-500 transition-colors">
+                <div onclick="openPlayerModal('${ch.id}')" class="card-hover bg-[#121824] border border-gray-800 rounded-2xl p-4 cursor-pointer flex flex-col items-center justify-between text-center space-y-3 group">
+                    <div class="w-16 h-16 rounded-xl bg-black/60 p-2 flex items-center justify-center border border-gray-800 group-hover:border-green-500 transition-colors">
                         <img src="${ch.logo}" class="max-h-full max-w-full object-contain" alt="${ch.name}">
                     </div>
                     <div>
-                        <h4 class="font-extrabold text-sm text-white uppercase tracking-wider">${ch.name}</h4>
-                        <span class="text-[10px] text-green-400 font-bold uppercase tracking-widest">24/7 Live Feed</span>
+                        <h4 class="font-extrabold text-xs text-white uppercase tracking-wider">${ch.name}</h4>
+                        <span class="text-[10px] text-green-400 font-bold uppercase tracking-widest">24/7 LIVE</span>
                     </div>
-                    <button class="w-full py-1.5 bg-gray-800 group-hover:bg-green-500 group-hover:text-black text-gray-300 font-bold text-xs uppercase tracking-wider rounded-lg transition-all">
-                        Watch Live
+                    <button class="w-full py-2 bg-[#1b2434] group-hover:bg-green-500 group-hover:text-black text-gray-200 font-bold text-xs uppercase tracking-wider rounded-xl transition-all border border-gray-700/60 flex items-center justify-center gap-1.5">
+                        ▶ Watch Live
                     </button>
                 </div>
             `).join('');
         }
 
         function openPlayerModal(id) {
-            const match = window.AryanGlobalAPI.getMatchById(id);
-            if (!match) return;
+            const item = window.AryanGlobalAPI.getItemById(id);
+            if (!item) return;
 
-            document.getElementById('player-match-title').innerText = match.title || match.name;
-            document.getElementById('player-match-league').innerText = match.competition || match.category;
-            
-            const badge = document.getElementById('player-status-badge');
-            badge.innerText = match.status || '24/7 LIVE';
+            document.getElementById('player-match-title').innerText = item.title || item.name;
+            document.getElementById('player-match-league').innerText = item.league || item.category;
+            document.getElementById('player-status-badge').innerText = item.isLive ? 'LIVE' : 'STREAM';
 
             document.getElementById('player-modal').classList.remove('hidden');
 
-            window.AryanPlayerEngine.init('player-viewport-container', match);
+            window.AryanPlayerEngine.init('player-viewport-container', item);
         }
 
         function closePlayerModal() {
@@ -538,32 +423,8 @@
             document.getElementById('player-viewport-container').innerHTML = '';
         }
 
-        function handleSearch() {
-            const query = document.getElementById('search-input').value.toLowerCase();
-            if (!query) {
-                renderHomeView();
-                return;
-            }
-
-            const liveGrid = document.getElementById('live-matches-grid');
-            const upcomingGrid = document.getElementById('upcoming-matches-grid');
-
-            const all = window.AryanGlobalAPI.getAllMatches();
-            const filtered = all.filter(m => m.title.toLowerCase().includes(query) || (m.competition && m.competition.toLowerCase().includes(query)));
-
-            const liveFiltered = filtered.filter(m => m.status === 'LIVE');
-            const upcomingFiltered = filtered.filter(m => m.status === 'UPCOMING');
-
-            liveGrid.innerHTML = liveFiltered.length ? liveFiltered.map(m => createMatchCardHTML(m)).join('') : `<div class="col-span-full p-4 text-center text-xs text-gray-500">No matching live streams found.</div>`;
-            upcomingGrid.innerHTML = upcomingFiltered.length ? upcomingFiltered.map(m => createMatchCardHTML(m)).join('') : `<div class="col-span-full p-4 text-center text-xs text-gray-500">No matching upcoming fixtures found.</div>`;
-        }
-
         function populateMultiviewerDropdowns() {
             const allItems = [...window.AryanGlobalAPI.getAllMatches(), ...window.AryanGlobalAPI.getChannels()];
-            for (let i = 1; i <= 4; i++) {
-                const select = document.querySelector(`#view-multiviewer select:nth-of-type(1)`);
-                // populate selectors
-            }
             const selects = document.querySelectorAll('#view-multiviewer select');
             selects.forEach(select => {
                 select.innerHTML = `<option value="">-- Select Stream --</option>` + allItems.map(item => `<option value="${item.id}">${item.title || item.name}</option>`).join('');
@@ -573,11 +434,11 @@
         function loadMultiviewerStream(screenNum, id) {
             const viewport = document.getElementById(`mv-viewport-${screenNum}`);
             if (!id) {
-                viewport.innerHTML = 'Select a match or channel above';
+                viewport.innerHTML = `Screen ${screenNum} Ready`;
                 return;
             }
 
-            const item = window.AryanGlobalAPI.getMatchById(id);
+            const item = window.AryanGlobalAPI.getItemById(id);
             if (!item) return;
 
             const server = (item.servers && item.servers[0]) ? item.servers[0] : item;
