@@ -503,7 +503,7 @@
 
         // Configured Channels
         const channels = {
-            // ── New ADILX & Footsters Channels ──────────────────────────────
+            // ── New ADILX & Footsters Channels (Pages.dev Wrappers) ──────────
             "adilx_sky":        { type: "iframe", name: "Sky Sports UK (ADILX)",          url: "https://adilx.pages.dev/?SKY" },
             "adilx_t2":         { type: "iframe", name: "TNT Sports 2 (ADILX)",           url: "https://adilx.pages.dev/?T2" },
             "adilx_t3":         { type: "iframe", name: "TNT Sports 3 (ADILX)",           url: "https://adilx.pages.dev/?T3" },
@@ -514,6 +514,15 @@
             "t3_adilx":         { type: "iframe", name: "TNT Sports 3 (ADILX)",           url: "https://adilx.pages.dev/?T3" },
             "footsters1":       { type: "iframe", name: "Footsters Stream (50096)",       url: "https://footsters-tv.pages.dev/1?play=50096&stream=0" },
             "footsters2":       { type: "iframe", name: "Footsters Stream (10)",          url: "https://footsters-tv.pages.dev/?play=10&stream=0" },
+
+            // ── Direct Raw MPD & M3U8 Manifests ──────────────────────────────
+            "sky_mpd":          { type: "video",  name: "Sky Sports UK (M3U8 Direct)",    url: "https://leaf.highfly.dev/m3u/1562622/live.m3u8" },
+            "t2_mpd":           { type: "video",  name: "TNT Sports 2 (M3U8 Direct)",     url: "https://leaf.highfly.dev/m3u/588011/live.m3u8" },
+            "t3_mpd":           { type: "video",  name: "TNT Sports 3 (M3U8 Direct)",     url: "https://leaf.highfly.dev/m3u/1896471/live.m3u8" },
+            "footsters_50096_mpd": { type: "iframe", name: "Footsters 50096 (DASH MPD)",  url: "shaka_player.html?mpd=https://a96aivottlinear-a.akamaihd.net/OTTB/lhr-nitro/live/clients/dash/enc/q69cjonkxm/out/v1/43733cfc2d6f43d1a2a5eb34935987ae/cenc.mpd" },
+            "footsters_10_mpd":    { type: "iframe", name: "Paramount+ / Footsters 10 (DASH MPD)", url: "shaka_player.html?mpd=https://a96aivottlinear-a.akamaihd.net/OTTB/lhr-nitro/live/clients/dash/enc/dagal4p349/out/v1/9bee813b23794c0987f1b45663173b81/cenc.mpd&kid=b7c47c55bb2e36c4bdf8e62190551845&key=6bdc6b7181336205e8fbd70c1abcb630" },
+            "footsters_10_tnt":    { type: "iframe", name: "TNT Sports / Footsters 10 (DASH MPD)", url: "shaka_player.html?mpd=https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/puehlftk5j/out/v1/f7f0da1ee112481ca0024e6d4dd97f4a/cenc.mpd&kid=f3df7843080ae743bf865dc5fdf64c68&key=567c863bc12eb74788ea74888c042e1b" },
+
 
             "as_hindi": {"type": "iframe", "name": "Sony Sports 3 SD (ADILX)", "url": "https://sonucdn-v2.pages.dev/star.html?id=STEN3"},
 
