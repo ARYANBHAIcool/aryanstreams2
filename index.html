@@ -674,6 +674,9 @@
             "sc_universo":{ type: "iframe", name: "Universo ES - Premier League (SC)",    url: "https://embedindia.st/embed/pl/2026-08-24/ful-che/universo-es" },
             "sc_dazn":    { type: "iframe", name: "DAZN ES - Premier League (SC)",        url: "https://cdx-08192.website/play/daznca-1" },
             "psgvs":    { type: "iframe", name: "l1",        url: "https://ppv.st/live/ligue1/2026-08-28/lill-psg" },
+            "renvsmar": { type: "iframe", name: "Ligue 1: Rennes vs Marseille", url: "https://embedindia.st/embed/ligue1/2026-09-11/ren-olm" },
+            "ren_olm":  { type: "iframe", name: "Ligue 1: Rennes vs Marseille", url: "https://embedindia.st/embed/ligue1/2026-09-11/ren-olm" },
+            "ren-olm":  { type: "iframe", name: "Ligue 1: Rennes vs Marseille", url: "https://embedindia.st/embed/ligue1/2026-09-11/ren-olm" },
             "mancity":    { type: "iframe", name: "man",        url: "https://cdx-08192.website/play/skysport8-nz" },
             "psg2":    { type: "iframe", name: "DAZN ES - Premier League (SC)",        url: "https://cdx-08192.website/embed/beinsports-usa" },
 
@@ -994,8 +997,8 @@
             var urlParams = new URLSearchParams(window.location.search);
             var streamKey = urlParams.get('stream');
 
-            if (streamKey && channels[streamKey]) {
-                var ch = channels[streamKey];
+            if (streamKey && (channels[streamKey] || channels[streamKey.toLowerCase()])) {
+                var ch = channels[streamKey] || channels[streamKey.toLowerCase()];
                 document.getElementById('stream-view').classList.remove('hidden');
                 document.getElementById('channel-name').innerHTML = '<span class="live-dot"></span> ' + ch.name;
 
