@@ -223,11 +223,13 @@
                 }
             });
 
-            // Smart request filter: proxy only CDNs that restrict browser origins (aiv-cdn.net, aiv-cdn.com)
-            // Open CDNs (pv-cdn.net, zapitv, akamaihd, etc.) remain 100% direct with 0 worker requests
+            // Smart request filter:
+            // - On *.pages.dev: proxy restricted CDNs (aiv-cdn.net/com) to bypass origin blacklist.
+            // - On Custom Domains (.com, .net, etc.): all CDNs are 100% direct with 0 worker requests.
             player.getNetworkingEngine().registerRequestFilter(function(type, req) {
                 var url = req.uris[0];
-                if (url && (url.includes('aiv-cdn.net') || url.includes('aiv-cdn.com')) && !url.includes('/proxy/')) {
+                var isRestrictedHost = location.hostname.endsWith('.pages.dev') || location.hostname.endsWith('.vercel.app');
+                if (isRestrictedHost && url && (url.includes('aiv-cdn.net') || url.includes('aiv-cdn.com')) && !url.includes('/proxy/')) {
                     req.uris[0] = '/proxy/' + url;
                 }
             });
