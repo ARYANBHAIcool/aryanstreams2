@@ -223,17 +223,9 @@
                 }
             });
 
-            // ΓöÇΓöÇ Inject Referer header (required for Amazon CDN) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+            // Optional request filter - does not proxy direct CDN requests (0 worker requests)
             player.getNetworkingEngine().registerRequestFilter(function(type, req) {
-                var url = req.uris[0];
-                if (url && (url.includes('aiv-cdn.net') || url.includes('aiv-cdn.com') || url.includes('pv-cdn.net')) && !url.includes('/proxy')) {
-                    req.uris[0] = '/proxy/' + url;
-                }
-                if (req.uris[0] && !req.uris[0].includes('/proxy')) {
-                    try {
-                        req.headers['Referer'] = REFERER;
-                    } catch(e) {}
-                }
+                // If url is not already routed through /proxy, allow direct client-to-CDN loading
                 req.headers['User-Agent'] = navigator.userAgent;
             });
 
@@ -245,8 +237,10 @@
                     retryParameters: { baseDelay: 100 }
                 },
                 streaming: {
-                    bufferingGoal: 8,
-                    rebufferingGoal: 1.5,
+                    lowLatencyMode: true,
+                    bufferingGoal: 15,
+                    rebufferingGoal: 2,
+                    stallEnabled: true,
                     bufferBehind: 20,
                     retryParameters: { baseDelay: 100, maxAttempts: 5 }
                 },

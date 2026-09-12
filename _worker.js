@@ -99,7 +99,7 @@ function applyDefaultHeaders(targetUrl, targetHeaders, request) {
     return;
   }
 
-  if (targetUrl.includes("aiv-cdn.net") || targetUrl.includes("aiv-cdn.com") || targetUrl.includes("akamaihd.net")) {
+  if (targetUrl.includes("aiv-cdn.net") || targetUrl.includes("aiv-cdn.com") || targetUrl.includes("akamaihd.net") || targetUrl.includes("pv-cdn.net")) {
     if (!targetHeaders.has("User-Agent") && !targetHeaders.has("user-agent")) {
       targetHeaders.set("User-Agent", request.headers.get("User-Agent") || "Mozilla/5.0");
     }
