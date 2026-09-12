@@ -11,9 +11,10 @@ function corsHeaders(request) {
     }
   }
   return {
-    "Access-Control-Allow-Origin": origin,
+    "Access-Control-Allow-Origin": origin || "*",
     "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
     "Access-Control-Allow-Headers": "*",
+    "Access-Control-Expose-Headers": "Content-Length, Content-Range, Range, Accept-Ranges, Date, Server",
     "Access-Control-Max-Age": "86400",
   };
 }
@@ -99,9 +100,9 @@ function applyDefaultHeaders(targetUrl, targetHeaders, request) {
     return;
   }
 
-  if (targetUrl.includes("aiv-cdn.net") || targetUrl.includes("aiv-cdn.com") || targetUrl.includes("akamaihd.net") || targetUrl.includes("pv-cdn.net")) {
+  if (targetUrl.includes("aiv-cdn.net") || targetUrl.includes("aiv-cdn.com") || targetUrl.includes("pv-cdn.net")) {
     if (!targetHeaders.has("User-Agent") && !targetHeaders.has("user-agent")) {
-      targetHeaders.set("User-Agent", request.headers.get("User-Agent") || "Mozilla/5.0");
+      targetHeaders.set("User-Agent", request.headers.get("User-Agent") || "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
     }
     targetHeaders.set("Origin", "https://live.api-live.workers.dev");
     targetHeaders.set("Referer", "https://live.api-live.workers.dev/");
@@ -109,7 +110,7 @@ function applyDefaultHeaders(targetUrl, targetHeaders, request) {
   }
 
   if (!targetHeaders.has("User-Agent") && !targetHeaders.has("user-agent")) {
-    targetHeaders.set("User-Agent", request.headers.get("User-Agent") || "Mozilla/5.0");
+    targetHeaders.set("User-Agent", request.headers.get("User-Agent") || "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
   }
 }
 
@@ -120,6 +121,8 @@ async function handleProxy(request) {
     targetUrl = request.url.substring(request.url.indexOf("/proxy/") + 7);
   } else if (requestUrl.pathname.startsWith("/api/proxy/")) {
     targetUrl = request.url.substring(request.url.indexOf("/api/proxy/") + 11);
+  } else if (requestUrl.pathname.startsWith("/fancode/proxy/")) {
+    targetUrl = request.url.substring(request.url.indexOf("/fancode/proxy/") + 15);
   } else {
     targetUrl = requestUrl.searchParams.get("url") || "";
   }
@@ -177,17 +180,23 @@ async function handleProxy(request) {
       targetUrl.includes(".m3u8") ||
       finalUrl.includes(".m3u8");
 
+    const isMPD =
+      contentType.includes("dash+xml") ||
+      targetUrl.includes(".mpd") ||
+      finalUrl.includes(".mpd");
+
     const responseHeaders = new Headers(upstream.headers);
     const requestOrigin = request.headers.get("Origin") || requestUrl.origin;
-    responseHeaders.set("Access-Control-Allow-Origin", requestOrigin);
+    responseHeaders.set("Access-Control-Allow-Origin", requestOrigin || "*");
     responseHeaders.set("Access-Control-Allow-Methods", "GET, HEAD, OPTIONS");
     responseHeaders.set("Access-Control-Allow-Headers", "*");
+    responseHeaders.set("Access-Control-Expose-Headers", "Content-Length, Content-Range, Range, Accept-Ranges, Date, Server");
     responseHeaders.delete("x-frame-options");
     responseHeaders.delete("set-cookie");
 
     if (isM3U8) {
       responseHeaders.set("Content-Type", "application/vnd.apple.mpegurl");
-      responseHeaders.set("Cache-Control", "no-cache, no-store, must-revalidate");
+      responseHeaders.set("Cache-Control", "no-cache, no-store, must-revalidate, max-age=0");
       responseHeaders.delete("content-length");
 
       const proxyBase = `${requestUrl.origin}${requestUrl.pathname}`;
@@ -198,6 +207,16 @@ async function handleProxy(request) {
         requestUrl.searchParams.get("proxySegments") === "true";
       const rewritten = rewriteM3U8(await upstream.text(), finalUrl, proxyBase, targetHeaders, proxySegments);
       return new Response(rewritten, {
+        status: upstream.status,
+        statusText: upstream.statusText,
+        headers: responseHeaders,
+      });
+    }
+
+    if (isMPD) {
+      responseHeaders.set("Content-Type", "application/dash+xml");
+      responseHeaders.set("Cache-Control", "no-cache, no-store, must-revalidate, max-age=0");
+      return new Response(upstream.body, {
         status: upstream.status,
         statusText: upstream.statusText,
         headers: responseHeaders,
