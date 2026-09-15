@@ -16,6 +16,18 @@
     <!-- 2. Load Plyr Player -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css" />
     <script src="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.polyfilled.min.js"></script>
+    <script>
+        function onIframeLoaded() {
+            var sp = document.getElementById('iframe-spinner');
+            if (sp) {
+                sp.style.opacity = '0';
+                setTimeout(function() { sp.style.display = 'none'; }, 400);
+            }
+            if (typeof showMainToast === 'function') {
+                showMainToast('● LIVE STREAM CONNECTED', 'success');
+            }
+        }
+    </script>
 
 
     <style>
@@ -454,6 +466,17 @@
             closeOverlay();
         }
 
+        function onIframeLoaded() {
+            const spinner = document.getElementById('iframe-spinner');
+            if (spinner) {
+                spinner.style.opacity = '0';
+                setTimeout(() => spinner.style.display = 'none', 400);
+            }
+            if (typeof showMainToast === 'function') {
+                showMainToast('● LIVE STREAM CONNECTED', 'success');
+            }
+        }
+
 
         const channels = {
             // ── New ADILX & Footsters Channels (Pages.dev Wrappers) ──────────
@@ -876,14 +899,6 @@
             }, 3200);
         }
 
-        function onIframeLoaded() {
-            const spinner = document.getElementById('iframe-spinner');
-            if (spinner) {
-                spinner.style.opacity = '0';
-                setTimeout(() => spinner.style.display = 'none', 400);
-            }
-            showMainToast('● LIVE STREAM CONNECTED', 'success');
-        }
 
         function loadPlyr(src) {
             // Destroy any previous instances
@@ -1077,7 +1092,10 @@
                         loadPlyr(ch.url);
                     } else {
                         document.getElementById('iframe-container-div').classList.remove('hidden');
-                        document.getElementById('embed-frame').src = ch.url;
+                        var frame = document.getElementById('embed-frame');
+                        frame.onload = onIframeLoaded;
+                        frame.src = ch.url;
+                        setTimeout(onIframeLoaded, 3000);
                     }
                     return;
                 }

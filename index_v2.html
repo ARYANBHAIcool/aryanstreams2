@@ -1039,7 +1039,16 @@
                         loadPlyr(ch.url);
                     } else {
                         document.getElementById('iframe-container-div').classList.remove('hidden');
-                        document.getElementById('embed-frame').src = ch.url;
+                        var frame = document.getElementById('embed-frame');
+                        frame.onload = function() {
+                            var sp = document.getElementById('iframe-spinner');
+                            if (sp) { sp.style.opacity = '0'; setTimeout(() => sp.style.display = 'none', 400); }
+                        };
+                        frame.src = ch.url;
+                        setTimeout(function() {
+                            var sp = document.getElementById('iframe-spinner');
+                            if (sp) { sp.style.opacity = '0'; setTimeout(() => sp.style.display = 'none', 400); }
+                        }, 3000);
                     }
                     return;
                 }
