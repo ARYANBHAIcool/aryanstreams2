@@ -5,6 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stream Player | Professional</title>
 
+    <!-- Adcash Library -->
+    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+
+    <!-- Adcash Pop-Under | 12179858 -->
+    <script type="text/javascript">
+        aclib.runPop({
+            zoneId: '12179858',
+        });
+    </script>
+
+    <!-- Adcash In-Page Push | 12179854 -->
+    <script type="text/javascript">
+        aclib.runInPagePush({
+            zoneId: '12179854',
+            maxAds: 2,
+        });
+    </script>
+
+    <!-- Prevent overlay flicker when returning from ad redirect -->
+    <script>
+        try {
+            if (sessionStorage.getItem('overlay_closed') === 'true') {
+                document.documentElement.classList.add('overlay-dismissed');
+            }
+        } catch (e) {}
+    </script>
+
     <!-- Google Fonts: Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,6 +84,10 @@
         }
 
         /* Overlay */
+        html.overlay-dismissed #telegram-overlay,
+        body.overlay-dismissed #telegram-overlay {
+            display: none !important;
+        }
         .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; z-index: 9999; backdrop-filter: blur(8px); }
         .overlay.hidden { display: none !important; }
         .overlay-box {
@@ -458,13 +489,35 @@
     </main>
 
     <script>
+        const DIRECT_AD_URL = "https://buzzonclick.com/jump/next.php?r=12179846";
+
         function closeOverlay() {
-            document.getElementById('telegram-overlay').classList.add('hidden');
+            var ov = document.getElementById('telegram-overlay');
+            if (ov) ov.classList.add('hidden');
+            document.documentElement.classList.add('overlay-dismissed');
         }
 
         function handleJoin() {
+            try {
+                sessionStorage.setItem('overlay_closed', 'true');
+            } catch (e) {}
             closeOverlay();
+            window.location.href = DIRECT_AD_URL;
         }
+
+        window.addEventListener('pageshow', function (event) {
+            try {
+                if (sessionStorage.getItem('overlay_closed') === 'true') {
+                    closeOverlay();
+                }
+            } catch (e) {}
+            var video = document.getElementById('player');
+            if (video && video.paused) {
+                video.play().catch(function (err) {
+                    console.log("Autoplay resume prevented:", err);
+                });
+            }
+        });
 
         function onIframeLoaded() {
             const spinner = document.getElementById('iframe-spinner');
@@ -1068,6 +1121,12 @@
         }
 
         window.onload = function () {
+            try {
+                if (sessionStorage.getItem('overlay_closed') === 'true') {
+                    closeOverlay();
+                }
+            } catch (e) {}
+
             var searchStr = window.location.search;
             if (!searchStr && window.location.hash) {
                 searchStr = '?' + window.location.hash.replace(/^#/, '');
