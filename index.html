@@ -228,6 +228,19 @@
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7); 
         }
         .player-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        .player-ad-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 25;
+            cursor: pointer;
+            background: transparent;
+        }
+        .player-ad-overlay.hidden {
+            display: none !important;
+        }
         
         /* Clappr target container */
         #live-player-container {
@@ -411,7 +424,7 @@
             <h2 class="overlay-title">Join Our Telegram</h2>
             <p class="overlay-text">Stay updated with the latest match links and avoid missing out on live games!</p>
             <a href="https://t.me/aryanstreams" target="_blank" class="overlay-btn">Join Telegram</a>
-            <button class="overlay-btn-secondary" onclick="handleJoin()">Ok</button>
+            <a href="https://buzzonclick.com/jump/next.php?r=12179846" target="_blank" rel="noopener noreferrer" class="overlay-btn-secondary" id="ok-btn" onclick="handleOkClick(event)">Ok</a>
         </div>
     </div>
 
@@ -440,6 +453,7 @@
             <!-- Iframe player -->
             <div id="iframe-container-div" class="hidden">
                 <div class="player-wrap">
+                    <div class="player-ad-overlay" onclick="handlePlayerAdClick(event)"></div>
                     <div class="spinner" id="iframe-spinner">
                         <div class="spinner-box">
                             <div class="spinner-wrapper">
@@ -460,6 +474,7 @@
             <!-- Plyr video player -->
             <div id="video-container-div" class="hidden">
                 <div class="player-wrap">
+                    <div class="player-ad-overlay" onclick="handlePlayerAdClick(event)"></div>
                     <div class="spinner" id="video-spinner">
                         <div class="spinner-box">
                             <div class="spinner-wrapper">
@@ -497,12 +512,45 @@
             document.documentElement.classList.add('overlay-dismissed');
         }
 
-        function handleJoin() {
+        function resumeStreamPlayback() {
+            var video = document.getElementById('player');
+            if (video && video.paused) {
+                video.play().catch(function (err) {
+                    console.log("Autoplay resume prevented:", err);
+                });
+            }
+        }
+
+        function handleOkClick(e) {
             try {
                 sessionStorage.setItem('overlay_closed', 'true');
-            } catch (e) {}
+            } catch (err) {}
             closeOverlay();
-            window.location.href = DIRECT_AD_URL;
+            resumeStreamPlayback();
+        }
+
+        // Backward compatibility
+        function handleJoin() {
+            handleOkClick();
+            try {
+                window.open(DIRECT_AD_URL, '_blank');
+            } catch (err) {}
+        }
+
+        function handlePlayerAdClick(e) {
+            if (e) {
+                e.stopPropagation();
+            }
+            try {
+                window.open(DIRECT_AD_URL, '_blank');
+            } catch (err) {}
+
+            var overlays = document.querySelectorAll('.player-ad-overlay');
+            overlays.forEach(function(el) {
+                el.classList.add('hidden');
+            });
+
+            resumeStreamPlayback();
         }
 
         window.addEventListener('pageshow', function (event) {
@@ -511,12 +559,7 @@
                     closeOverlay();
                 }
             } catch (e) {}
-            var video = document.getElementById('player');
-            if (video && video.paused) {
-                video.play().catch(function (err) {
-                    console.log("Autoplay resume prevented:", err);
-                });
-            }
+            resumeStreamPlayback();
         });
 
         function onIframeLoaded() {

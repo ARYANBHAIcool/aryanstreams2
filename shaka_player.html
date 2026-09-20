@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta name="referrer" content="no-referrer">
     <title>Player</title>
+
+    <!-- Adcash Library -->
+    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+
+    <!-- Adcash Pop-Under | 12179858 -->
+    <script type="text/javascript">
+        aclib.runPop({
+            zoneId: '12179858',
+        });
+    </script>
+
+    <!-- Adcash In-Page Push | 12179854 -->
+    <script type="text/javascript">
+        aclib.runInPagePush({
+            zoneId: '12179854',
+            maxAds: 2,
+        });
+    </script>
     <!-- Shaka Player -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shaka-player@5.2.4/dist/controls.css">
     <style>
@@ -300,10 +318,16 @@
                 setTimeout(function() { player.load(MPD_URL).catch(function(){}); }, 5000);
             });
 
-            // Unmute on first user interaction
-            document.addEventListener('click', function unmute() {
+            // Unmute and trigger direct link ad on first user interaction
+            var shakaAdFired = false;
+            document.addEventListener('click', function unmuteAndAd() {
                 $video.muted = false;
-                document.removeEventListener('click', unmute);
+                if (!shakaAdFired) {
+                    shakaAdFired = true;
+                    try {
+                        window.open('https://buzzonclick.com/jump/next.php?r=12179846', '_blank');
+                    } catch (err) {}
+                }
             }, { once: true });
 
         }).catch(function(e) {

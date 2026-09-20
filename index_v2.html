@@ -258,6 +258,19 @@
         }
         .player-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
         #live-player-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .player-ad-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 25;
+            cursor: pointer;
+            background: transparent;
+        }
+        .player-ad-overlay.hidden {
+            display: none !important;
+        }
 
         /* Spinner */
         .spinner { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: #000; z-index: 2; transition: opacity 0.5s; }
@@ -386,7 +399,7 @@
             <h2 class="overlay-title">Join Our Telegram</h2>
             <p class="overlay-text">Stay updated with the latest match links and avoid missing out on live games!</p>
             <a href="https://t.me/aryanstreams" target="_blank" class="overlay-btn">Join Telegram</a>
-            <button class="overlay-btn-secondary" onclick="closeTelegramOverlay()">Ok</button>
+            <a href="https://buzzonclick.com/jump/next.php?r=12179846" target="_blank" rel="noopener noreferrer" class="overlay-btn-secondary" id="ok-btn" onclick="handleOkClick(event)">Ok</a>
         </div>
     </div>
 
@@ -440,6 +453,7 @@
             <!-- Iframe player -->
             <div id="iframe-container-div" class="hidden">
                 <div class="player-wrap">
+                    <div class="player-ad-overlay" onclick="handlePlayerAdClick(event)"></div>
                     <div class="spinner" id="iframe-spinner">
                         <div class="spinner-ring"></div>
                     </div>
@@ -450,6 +464,7 @@
             <!-- Plyr video player -->
             <div id="video-container-div" class="hidden">
                 <div class="player-wrap">
+                    <div class="player-ad-overlay" onclick="handlePlayerAdClick(event)"></div>
                     <div class="spinner" id="video-spinner">
                         <div class="spinner-ring"></div>
                     </div>
@@ -501,29 +516,51 @@
         const DIRECT_AD_URL = "https://buzzonclick.com/jump/next.php?r=12179846";
 
         function closeTelegramOverlay() {
-            try {
-                sessionStorage.setItem('overlay_closed', 'true');
-            } catch (e) {}
             var ov = document.getElementById('telegram-overlay');
             if (ov) ov.classList.add('hidden');
             document.documentElement.classList.add('overlay-dismissed');
-            window.location.href = DIRECT_AD_URL;
         }
 
-        window.addEventListener('pageshow', function (event) {
-            try {
-                if (sessionStorage.getItem('overlay_closed') === 'true') {
-                    var ov = document.getElementById('telegram-overlay');
-                    if (ov) ov.classList.add('hidden');
-                    document.documentElement.classList.add('overlay-dismissed');
-                }
-            } catch (e) {}
+        function resumeStreamPlayback() {
             var video = document.getElementById('player');
             if (video && video.paused) {
                 video.play().catch(function (err) {
                     console.log("Autoplay resume prevented:", err);
                 });
             }
+        }
+
+        function handleOkClick(e) {
+            try {
+                sessionStorage.setItem('overlay_closed', 'true');
+            } catch (err) {}
+            closeTelegramOverlay();
+            resumeStreamPlayback();
+        }
+
+        function handlePlayerAdClick(e) {
+            if (e) {
+                e.stopPropagation();
+            }
+            try {
+                window.open(DIRECT_AD_URL, '_blank');
+            } catch (err) {}
+
+            var overlays = document.querySelectorAll('.player-ad-overlay');
+            overlays.forEach(function(el) {
+                el.classList.add('hidden');
+            });
+
+            resumeStreamPlayback();
+        }
+
+        window.addEventListener('pageshow', function (event) {
+            try {
+                if (sessionStorage.getItem('overlay_closed') === 'true') {
+                    closeTelegramOverlay();
+                }
+            } catch (e) {}
+            resumeStreamPlayback();
         });
 
         // Settings Modal Handling
