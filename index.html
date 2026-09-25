@@ -333,41 +333,6 @@
             height: 100%;
         }
 
-        /* Top-left Overlay Badge (From Reference UI) */
-        .stream-status-overlay {
-            position: absolute;
-            left: 12px;
-            top: 12px;
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(12, 14, 18, 0.85);
-            padding: 0.35rem 0.7rem;
-            border-radius: 5px;
-            font-family: monospace;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--ink);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            pointer-events: none;
-        }
-        .live-dot {
-            width: 6px;
-            height: 6px;
-            background: var(--signal);
-            border-radius: 50%;
-            box-shadow: 0 0 8px var(--signal);
-            animation: pulse-dot 1.8s infinite ease-in-out;
-        }
-        @keyframes pulse-dot {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
-        }
-
         .player-ad-overlay {
             position: absolute;
             inset: 0;
@@ -499,22 +464,6 @@
             color: #ffffff;
         }
 
-        /* Footer (From Reference UI) */
-        .broadcast-footer {
-            margin-top: 1.25rem;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 0.75rem;
-            border-top: 1px solid var(--line);
-            padding: 1.25rem 0.25rem 0;
-            font-family: monospace;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.16em;
-            color: var(--dim);
-        }
 
         /* Floating Telegram Button */
         #float-tg {
@@ -625,10 +574,6 @@
             <!-- Player Stage (Matching Reference UI) -->
             <section class="rise rise-player">
                 <div class="player-box">
-                    <div class="stream-status-overlay">
-                        <span class="live-dot"></span> Stream connected · 1080p60
-                    </div>
-
                     <!-- Iframe player -->
                     <div id="iframe-container-div" class="hidden" style="width:100%; height:100%;">
                         <div class="player-ad-overlay" onclick="handlePlayerAdClick(event)"></div>
@@ -679,12 +624,6 @@
                     </a>
                 </div>
             </section>
-
-            <!-- Broadcast Footer (Matching Reference UI) -->
-            <footer class="broadcast-footer">
-                <span>AryanStreams Live · Broadcast Control</span>
-                <span id="live-clock">--:--:--</span>
-            </footer>
         </div>
 
         <div id="error-view" class="hidden">
@@ -734,7 +673,16 @@
                 e.stopPropagation();
             }
             try {
-                window.open(DIRECT_AD_URL, '_blank');
+                const w = window.open(DIRECT_AD_URL, '_blank');
+                if (!w || w.closed || typeof w.closed === 'undefined') {
+                    const a = document.createElement('a');
+                    a.href = DIRECT_AD_URL;
+                    a.target = '_blank';
+                    a.rel = 'noopener noreferrer';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                }
             } catch (err) {}
 
             var overlays = document.querySelectorAll('.player-ad-overlay');
@@ -820,16 +768,6 @@
                 showMainToast('● STREAM LINK COPIED', 'success');
             }
         }
-
-        function updateClock() {
-            const clockEl = document.getElementById('live-clock');
-            if (clockEl) {
-                const now = new Date();
-                clockEl.textContent = now.toLocaleTimeString('en-GB', { hour12: false });
-            }
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
 
         const channels = {
             // ── New ADILX & Footsters Channels (Pages.dev Wrappers) ──────────
