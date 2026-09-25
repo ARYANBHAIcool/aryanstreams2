@@ -668,10 +668,19 @@
             } catch (err) {}
         }
 
-        function handlePlayerAdClick(e) {
-            if (e) {
-                e.stopPropagation();
-            }
+        let adTriggerCount = 0;
+        const MAX_SESSION_ADS = 3;
+        let lastAdTime = 0;
+        const AD_COOLDOWN_MS = 60000; // 60 seconds cooldown between ad triggers
+
+        function triggerSmartlinkAd() {
+            const now = Date.now();
+            if (adTriggerCount >= MAX_SESSION_ADS) return false;
+            if (lastAdTime !== 0 && (now - lastAdTime < AD_COOLDOWN_MS)) return false;
+            
+            lastAdTime = now;
+            adTriggerCount++;
+            
             try {
                 const w = window.open(DIRECT_AD_URL, '_blank');
                 if (!w || w.closed || typeof w.closed === 'undefined') {
@@ -684,12 +693,34 @@
                     document.body.removeChild(a);
                 }
             } catch (err) {}
+            return true;
+        }
+
+        function scheduleOverlayRearm() {
+            if (adTriggerCount < MAX_SESSION_ADS) {
+                setTimeout(function() {
+                    if (adTriggerCount < MAX_SESSION_ADS) {
+                        var overlays = document.querySelectorAll('.player-ad-overlay');
+                        overlays.forEach(function(el) {
+                            el.classList.remove('hidden');
+                        });
+                    }
+                }, AD_COOLDOWN_MS);
+            }
+        }
+
+        function handlePlayerAdClick(e) {
+            if (e) {
+                e.stopPropagation();
+            }
+            triggerSmartlinkAd();
 
             var overlays = document.querySelectorAll('.player-ad-overlay');
             overlays.forEach(function(el) {
                 el.classList.add('hidden');
             });
 
+            scheduleOverlayRearm();
             resumeStreamPlayback();
         }
 
@@ -720,6 +751,9 @@
                 location.reload();
                 return;
             }
+            // Trigger smartlink ad if cooldown has passed without overloading
+            triggerSmartlinkAd();
+
             showMainToast('● RELOADING STREAM...', 'info');
             if (activeChannel.type === 'video') {
                 loadPlyr(activeChannel.url);

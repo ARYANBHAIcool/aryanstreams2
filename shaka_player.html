@@ -275,17 +275,27 @@
                 setTimeout(function() { player.load(MPD_URL).catch(function(){}); }, 5000);
             });
 
-            // Unmute and trigger direct link ad on first user interaction
-            var shakaAdFired = false;
+            // Unmute and trigger direct link ad with smart cooldown
+            var shakaAdFiredCount = 0;
+            var maxShakaAds = 3;
+            var lastShakaAdTime = 0;
+            var SHAKA_AD_COOLDOWN = 60000;
+
+            function triggerShakaAd() {
+                var now = Date.now();
+                if (shakaAdFiredCount >= maxShakaAds) return;
+                if (lastShakaAdTime !== 0 && (now - lastShakaAdTime < SHAKA_AD_COOLDOWN)) return;
+                lastShakaAdTime = now;
+                shakaAdFiredCount++;
+                try {
+                    window.open('https://www.profitableratecpmnetwork.com/t8e8e5yh?key=6da983d7e115700ad4dc612c0e107ec8', '_blank');
+                } catch (err) {}
+            }
+
             document.addEventListener('click', function unmuteAndAd() {
                 $video.muted = false;
-                if (!shakaAdFired) {
-                    shakaAdFired = true;
-                    try {
-                        window.open('https://www.profitableratecpmnetwork.com/t8e8e5yh?key=6da983d7e115700ad4dc612c0e107ec8', '_blank');
-                    } catch (err) {}
-                }
-            }, { once: true });
+                triggerShakaAd();
+            });
 
         }).catch(function(e) {
             hideLoading();
