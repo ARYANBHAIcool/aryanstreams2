@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "proxy": "node local-proxy.js",
+    "extractor": "node extractor/server.js",
     "deploy": "wrangler pages deploy . --project-name=aryanstreams --commit-dirty=true"
   },
   "devDependencies": {
