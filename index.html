@@ -434,19 +434,35 @@
             border-radius: 8px !important;
             background: #000000 !important;
         }
+        .plyr__video-wrapper {
+            width: 100% !important;
+            height: 100% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            background: #000000 !important;
+        }
         .plyr video,
-        .plyr__video-wrapper,
-        .plyr--fullscreen-active,
+        .plyr:fullscreen video,
         .plyr--fullscreen-active video,
+        .plyr--fullscreen-fallback video,
         :fullscreen video,
         :-webkit-full-screen video,
         :-moz-full-screen video,
-        :-ms-fullscreen video {
+        :-ms-fullscreen video,
+        video#player {
             width: 100% !important;
             height: 100% !important;
             max-width: 100vw !important;
             max-height: 100vh !important;
             object-fit: contain !important;
+            background: #000000 !important;
+            margin: auto !important;
+        }
+        .plyr:fullscreen,
+        .plyr--fullscreen-active,
+        .plyr--fullscreen-fallback {
+            border-radius: 0 !important;
             background: #000000 !important;
         }
 
@@ -747,17 +763,32 @@
         });
 
         function lockLandscape() {
-            try {
-                if (screen.orientation && screen.orientation.lock) {
-                    screen.orientation.lock('landscape').catch(function() {});
-                } else if (screen.lockOrientation) {
-                    screen.lockOrientation('landscape');
-                } else if (screen.mozLockOrientation) {
-                    screen.mozLockOrientation('landscape');
-                } else if (screen.msLockOrientation) {
-                    screen.msLockOrientation('landscape');
-                }
-            } catch (e) {}
+            function tryLock() {
+                try {
+                    if (screen.orientation && screen.orientation.lock) {
+                        var p = screen.orientation.lock('landscape');
+                        if (p && p.catch) {
+                            p.catch(function() {
+                                setTimeout(function() {
+                                    try {
+                                        var isFs = !!(document.fullscreenElement || document.webkitFullscreenElement || (typeof plyrPlayer !== 'undefined' && plyrPlayer && plyrPlayer.fullscreen && plyrPlayer.fullscreen.active));
+                                        if (isFs && screen.orientation && screen.orientation.lock) {
+                                            screen.orientation.lock('landscape').catch(function() {});
+                                        }
+                                    } catch(e) {}
+                                }, 150);
+                            });
+                        }
+                    } else if (screen.lockOrientation) {
+                        screen.lockOrientation('landscape');
+                    } else if (screen.mozLockOrientation) {
+                        screen.mozLockOrientation('landscape');
+                    } else if (screen.msLockOrientation) {
+                        screen.msLockOrientation('landscape');
+                    }
+                } catch (e) {}
+            }
+            tryLock();
         }
 
         function unlockOrientation() {
@@ -779,7 +810,8 @@
                 document.fullscreenElement ||
                 document.webkitFullscreenElement ||
                 document.mozFullScreenElement ||
-                document.msFullscreenElement
+                document.msFullscreenElement ||
+                (typeof plyrPlayer !== 'undefined' && plyrPlayer && plyrPlayer.fullscreen && plyrPlayer.fullscreen.active)
             );
             if (isFs) {
                 lockLandscape();
@@ -799,9 +831,14 @@
                 function onOrientationMqlChange(e) {
                     var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || (window.innerWidth <= 900 && 'ontouchstart' in window);
                     if (!isMobile) return;
-                    var isFs = !!(document.fullscreenElement || document.webkitFullscreenElement);
+                    var video = document.getElementById('player');
+                    var isFs = !!(
+                        document.fullscreenElement ||
+                        document.webkitFullscreenElement ||
+                        (video && video.webkitDisplayingFullscreen) ||
+                        (typeof plyrPlayer !== 'undefined' && plyrPlayer && plyrPlayer.fullscreen && plyrPlayer.fullscreen.active)
+                    );
                     if (e.matches && !isFs) {
-                        var video = document.getElementById('player');
                         if (video && !video.paused) {
                             if (typeof plyrPlayer !== 'undefined' && plyrPlayer && plyrPlayer.fullscreen) {
                                 try { plyrPlayer.fullscreen.enter(); } catch (err) {}
@@ -1413,6 +1450,12 @@
                     let plyrOptions = {
                         autoplay: true,
                         muted: true,
+                        ratio: '16:9',
+                        fullscreen: {
+                            enabled: true,
+                            fallback: true,
+                            iosNative: true
+                        },
                         controls: [
                             'play-large',
                             'play',
@@ -1455,6 +1498,20 @@
                     plyrPlayer = new Plyr(video, plyrOptions);
                     plyrPlayer.on('enterfullscreen', lockLandscape);
                     plyrPlayer.on('exitfullscreen', unlockOrientation);
+
+                    // Native iOS fullscreen events & double tap
+                    video.addEventListener('webkitbeginfullscreen', lockLandscape);
+                    video.addEventListener('webkitendfullscreen', unlockOrientation);
+                    let lastTap = 0;
+                    video.addEventListener('touchend', function() {
+                        const now = Date.now();
+                        if (now - lastTap < 300 && now - lastTap > 60) {
+                            if (plyrPlayer && plyrPlayer.fullscreen) {
+                                plyrPlayer.fullscreen.toggle();
+                            }
+                        }
+                        lastTap = now;
+                    });
                     
                     // Force autoplay
                     video.play().catch(err => {
@@ -1493,6 +1550,12 @@
                 plyrPlayer = new Plyr(video, {
                     autoplay: true,
                     muted: true,
+                    ratio: '16:9',
+                    fullscreen: {
+                        enabled: true,
+                        fallback: true,
+                        iosNative: true
+                    },
                     controls: [
                         'play-large',
                         'play',
@@ -1508,6 +1571,19 @@
                 });
                 plyrPlayer.on('enterfullscreen', lockLandscape);
                 plyrPlayer.on('exitfullscreen', unlockOrientation);
+
+                video.addEventListener('webkitbeginfullscreen', lockLandscape);
+                video.addEventListener('webkitendfullscreen', unlockOrientation);
+                let lastTapSafari = 0;
+                video.addEventListener('touchend', function() {
+                    const now = Date.now();
+                    if (now - lastTapSafari < 300 && now - lastTapSafari > 60) {
+                        if (plyrPlayer && plyrPlayer.fullscreen) {
+                            plyrPlayer.fullscreen.toggle();
+                        }
+                    }
+                    lastTapSafari = now;
+                });
 
                 video.play().catch(err => {
                     console.log("Autoplay prevented:", err);
