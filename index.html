@@ -421,7 +421,7 @@
             flex-wrap: wrap;
         }
 
-        /* Plyr CSS Overrides */
+        /* Plyr CSS Overrides & Responsive Fullscreen */
         :root {
             --plyr-color-main: var(--signal);
             --plyr-video-background: #000000;
@@ -432,6 +432,22 @@
             width: 100% !important;
             height: 100% !important;
             border-radius: 8px !important;
+            background: #000000 !important;
+        }
+        .plyr video,
+        .plyr__video-wrapper,
+        .plyr--fullscreen-active,
+        .plyr--fullscreen-active video,
+        :fullscreen video,
+        :-webkit-full-screen video,
+        :-moz-full-screen video,
+        :-ms-fullscreen video {
+            width: 100% !important;
+            height: 100% !important;
+            max-width: 100vw !important;
+            max-height: 100vh !important;
+            object-fit: contain !important;
+            background: #000000 !important;
         }
 
         /* Error View */
@@ -583,7 +599,7 @@
                                 <div class="cool-loader-core"></div>
                             </div>
                         </div>
-                        <iframe id="embed-frame" allowfullscreen allow="autoplay; encrypted-media; picture-in-picture; fullscreen" scrolling="no" onload="onIframeLoaded()"></iframe>
+                        <iframe id="embed-frame" allowfullscreen webkitallowfullscreen mozallowfullscreen allow="autoplay; encrypted-media; picture-in-picture; fullscreen; screen-wake-lock; orientation" scrolling="no" onload="onIframeLoaded()"></iframe>
                     </div>
 
                     <!-- Plyr video player -->
@@ -596,7 +612,7 @@
                             </div>
                         </div>
                         <div id="live-player-container">
-                            <video id="player" playsinline controls style="width:100%; height:100%; object-fit:cover;"></video>
+                            <video id="player" playsinline webkit-playsinline controls style="width:100%; height:100%; object-fit:contain; background:#000000;"></video>
                         </div>
                     </div>
                 </div>
@@ -730,15 +746,85 @@
             resumeStreamPlayback();
         });
 
-        function onIframeLoaded() {
-            const spinner = document.getElementById('iframe-spinner');
-            if (spinner) {
-                spinner.style.opacity = '0';
-                setTimeout(() => spinner.style.display = 'none', 400);
+        function lockLandscape() {
+            try {
+                if (screen.orientation && screen.orientation.lock) {
+                    screen.orientation.lock('landscape').catch(function() {});
+                } else if (screen.lockOrientation) {
+                    screen.lockOrientation('landscape');
+                } else if (screen.mozLockOrientation) {
+                    screen.mozLockOrientation('landscape');
+                } else if (screen.msLockOrientation) {
+                    screen.msLockOrientation('landscape');
+                }
+            } catch (e) {}
+        }
+
+        function unlockOrientation() {
+            try {
+                if (screen.orientation && screen.orientation.unlock) {
+                    screen.orientation.unlock();
+                } else if (screen.unlockOrientation) {
+                    screen.unlockOrientation();
+                } else if (screen.mozUnlockOrientation) {
+                    screen.mozUnlockOrientation();
+                } else if (screen.msUnlockOrientation) {
+                    screen.msUnlockOrientation();
+                }
+            } catch (e) {}
+        }
+
+        function handleGlobalFullscreenChange() {
+            var isFs = !!(
+                document.fullscreenElement ||
+                document.webkitFullscreenElement ||
+                document.mozFullScreenElement ||
+                document.msFullscreenElement
+            );
+            if (isFs) {
+                lockLandscape();
+            } else {
+                unlockOrientation();
             }
-            if (typeof showMainToast === 'function') {
-                showMainToast('● LIVE STREAM CONNECTED', 'success');
-            }
+        }
+        document.addEventListener('fullscreenchange', handleGlobalFullscreenChange);
+        document.addEventListener('webkitfullscreenchange', handleGlobalFullscreenChange);
+        document.addEventListener('mozfullscreenchange', handleGlobalFullscreenChange);
+        document.addEventListener('MSFullscreenChange', handleGlobalFullscreenChange);
+
+        // Auto-fullscreen on mobile landscape rotate
+        if (window.matchMedia) {
+            try {
+                var landscapeMql = window.matchMedia('(orientation: landscape)');
+                function onOrientationMqlChange(e) {
+                    var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || (window.innerWidth <= 900 && 'ontouchstart' in window);
+                    if (!isMobile) return;
+                    var isFs = !!(document.fullscreenElement || document.webkitFullscreenElement);
+                    if (e.matches && !isFs) {
+                        var video = document.getElementById('player');
+                        if (video && !video.paused) {
+                            if (typeof plyrPlayer !== 'undefined' && plyrPlayer && plyrPlayer.fullscreen) {
+                                try { plyrPlayer.fullscreen.enter(); } catch (err) {}
+                            } else if (video.requestFullscreen) {
+                                video.requestFullscreen().catch(function() {});
+                            } else if (video.webkitEnterFullscreen) {
+                                video.webkitEnterFullscreen();
+                            }
+                        }
+                    } else if (!e.matches && isFs) {
+                        if (typeof plyrPlayer !== 'undefined' && plyrPlayer && plyrPlayer.fullscreen) {
+                            try { plyrPlayer.fullscreen.exit(); } catch (err) {}
+                        } else if (document.exitFullscreen) {
+                            document.exitFullscreen().catch(function() {});
+                        }
+                    }
+                }
+                if (landscapeMql.addEventListener) {
+                    landscapeMql.addEventListener('change', onOrientationMqlChange);
+                } else if (landscapeMql.addListener) {
+                    landscapeMql.addListener(onOrientationMqlChange);
+                }
+            } catch (e) {}
         }
 
         let activeChannel = null;
@@ -1367,6 +1453,8 @@
                     }
 
                     plyrPlayer = new Plyr(video, plyrOptions);
+                    plyrPlayer.on('enterfullscreen', lockLandscape);
+                    plyrPlayer.on('exitfullscreen', unlockOrientation);
                     
                     // Force autoplay
                     video.play().catch(err => {
@@ -1418,6 +1506,8 @@
                     ],
                     settings: ['speed']
                 });
+                plyrPlayer.on('enterfullscreen', lockLandscape);
+                plyrPlayer.on('exitfullscreen', unlockOrientation);
 
                 video.play().catch(err => {
                     console.log("Autoplay prevented:", err);
