@@ -42,28 +42,32 @@
 
     <style>
         :root {
-            --bg-color: #09090b;
-            --card-bg: rgba(20, 20, 23, 0.7);
-            --border-color: rgba(39, 39, 42, 0.7);
-            --accent-blue: #3b82f6;
-            --accent-blue-hover: #2563eb;
-            --accent-green: #22c55e;
-            --accent-green-hover: #16a34a;
-            --text-main: #f4f4f5;
-            --text-secondary: #a1a1aa;
+            --carbon: #0c0e12;
+            --surface: #14171f;
+            --elevated: #1a1e27;
+            --line: rgba(255, 255, 255, 0.08);
+            --line-highlight: rgba(255, 255, 255, 0.15);
+            --signal: #3b82f6;
+            --signal-hover: #2563eb;
+            --ink: #f8fafc;
+            --dim: #94a3b8;
+            --text-secondary: #94a3b8;
+            --font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --radius: 8px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body { 
-            background-color: var(--bg-color); 
-            color: var(--text-main); 
-            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            background-color: var(--carbon); 
+            color: var(--ink); 
+            font-family: var(--font-family); 
             min-height: 100vh; 
             display: flex; 
             flex-direction: column; 
             align-items: center;
             overflow-x: hidden;
-            background-image: radial-gradient(circle at top center, rgba(59, 130, 246, 0.08) 0%, transparent 60%);
+            -webkit-font-smoothing: antialiased;
         }
 
         /* Overlay */
@@ -71,296 +75,451 @@
         body.overlay-dismissed #telegram-overlay {
             display: none !important;
         }
-        .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; z-index: 9999; backdrop-filter: blur(8px); }
+        .overlay { 
+            position: fixed; 
+            inset: 0; 
+            background: rgba(12, 14, 18, 0.85); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            z-index: 9999; 
+            backdrop-filter: blur(12px); 
+            -webkit-backdrop-filter: blur(12px);
+        }
         .overlay.hidden { display: none !important; }
         .overlay-box {
-            background: rgba(15, 15, 18, 0.85);
-            padding: 2.5rem 2rem;
-            border-radius: 1.25rem;
-            border: 1px solid var(--border-color);
+            background: var(--surface);
+            padding: 2.25rem 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--line);
             text-align: center;
-            max-width: 380px;
+            max-width: 400px;
+            width: 90%;
             margin: 1rem;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 20px rgba(59, 130, 246, 0.1);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            transform: scale(1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 30px rgba(59, 130, 246, 0.15);
         }
-        .overlay-icon { font-size: 3.5rem; margin-bottom: 1.25rem; filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.4)); animation: pulse-icon 2s infinite ease-in-out; }
+        .overlay-icon { font-size: 3rem; margin-bottom: 1rem; filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.4)); animation: pulse-icon 2s infinite ease-in-out; }
         @keyframes pulse-icon {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.08); }
         }
-        .overlay-title { font-size: 1.65rem; font-weight: 700; margin-bottom: 0.75rem; letter-spacing: -0.02em; }
-        .overlay-text { color: var(--text-secondary); margin-bottom: 1.75rem; font-size: 0.95rem; line-height: 1.5; }
+        .overlay-title { font-size: 1.55rem; font-weight: 700; margin-bottom: 0.6rem; letter-spacing: -0.01em; color: var(--ink); }
+        .overlay-text { color: var(--dim); margin-bottom: 1.6rem; font-size: 0.92rem; line-height: 1.55; }
         
         .overlay-btn { 
-            display: block; 
-            background: linear-gradient(135deg, #3b82f6, #1d4ed8); 
-            color: white; 
-            padding: 0.85rem 1.5rem; 
-            border-radius: 0.75rem; 
-            font-weight: 600; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: var(--signal); 
+            color: var(--carbon); 
+            padding: 0.8rem 1.5rem; 
+            border-radius: 6px; 
+            font-weight: 700; 
             text-decoration: none; 
             cursor: pointer; 
             border: none; 
             width: 100%; 
-            font-size: 1rem; 
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            font-size: 0.95rem; 
             transition: all 0.2s ease; 
         }
         .overlay-btn:hover { 
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.45);
-            background: linear-gradient(135deg, #4f46e5, #2563eb); 
+            background: var(--signal-hover);
+            color: #ffffff;
+            transform: translateY(-1px);
         }
         .overlay-btn-secondary { 
             display: block; 
-            background: rgba(39, 39, 42, 0.6); 
-            color: #e4e4e7; 
-            padding: 0.85rem 1.5rem; 
-            border-radius: 0.75rem; 
+            background: var(--elevated); 
+            color: var(--ink); 
+            padding: 0.75rem 1.5rem; 
+            border-radius: 6px; 
             font-weight: 600; 
             text-decoration: none; 
             cursor: pointer; 
-            border: 1px solid rgba(63, 63, 70, 0.5); 
+            border: 1px solid var(--line); 
             width: 100%; 
-            font-size: 1rem; 
+            font-size: 0.92rem; 
             margin-top: 0.75rem; 
             transition: all 0.2s ease; 
+            text-align: center;
         }
         .overlay-btn-secondary:hover { 
-            background: rgba(63, 63, 70, 0.85); 
-            color: white;
+            border-color: var(--signal);
+            color: var(--signal);
         }
 
-        /* Header */
+        /* Header (Matching Reference UI) */
         header { 
             width: 100%; 
-            padding: 0.85rem 1.5rem; 
-            background: rgba(15, 15, 18, 0.8); 
-            border-bottom: 1px solid var(--border-color); 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            gap: 1rem; 
+            border-bottom: 1px solid var(--line); 
+            background: rgba(12, 14, 18, 0.95); 
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             position: sticky; 
             top: 0; 
             z-index: 50; 
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
         }
-        .header-label { font-size: 0.85rem; font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
-        .btn-tg { 
-            background: linear-gradient(135deg, #0088cc, #0077b5); 
-            color: white; 
-            padding: 0.35rem 1.25rem; 
-            border-radius: 9999px; 
-            font-size: 0.8rem; 
-            font-weight: 600; 
-            text-decoration: none; 
-            box-shadow: 0 4px 10px rgba(0, 136, 204, 0.2);
-            transition: all 0.2s ease; 
-        }
-        .btn-tg:hover { 
-            transform: translateY(-1px);
-            box-shadow: 0 6px 14px rgba(0, 136, 204, 0.35);
-        }
-
-        /* Main */
-        main { width: 100%; max-width: 960px; padding: 1.5rem 1rem; margin-top: 0.5rem; flex-grow: 1; }
-        .hidden { display: none !important; }
-
-        /* Stream view */
-        .channel-title-bar {
+        .header-inner {
+            max-width: 1440px;
+            margin: 0 auto;
+            height: 56px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 1.25rem;
-            flex-wrap: wrap;
+            padding: 0 1.25rem;
+            gap: 1rem;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-decoration: none;
+            color: var(--ink);
+        }
+        .brand-badge {
+            width: 26px;
+            height: 26px;
+            border-radius: 4px;
+            background: var(--signal);
+            color: var(--carbon);
+            font-weight: 800;
+            font-size: 15px;
+            display: grid;
+            place-items: center;
+            line-height: 1;
+        }
+        .brand-name {
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .header-actions {
+            display: flex;
+            align-items: center;
             gap: 0.75rem;
         }
-        #channel-name { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.01em; color: white; display: flex; align-items: center; gap: 0.5rem; }
-        
-        /* Live Indicator Dot */
-        .live-dot {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background-color: #ef4444;
-            border-radius: 50%;
-            box-shadow: 0 0 8px #ef4444;
-            animation: pulse-dot 1.5s infinite ease-in-out;
-            margin-right: 0.25rem;
+
+        /* Terminal Button Style (From Reference UI) */
+        .btn-terminal {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.45rem;
+            background: var(--elevated);
+            color: var(--ink);
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            padding: 0.45rem 0.9rem;
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
         }
-        @keyframes pulse-dot {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.4); opacity: 0.4; }
+        .btn-terminal:hover {
+            border-color: var(--signal);
+            color: var(--signal);
+        }
+        .btn-terminal-highlight {
+            border-color: rgba(59, 130, 246, 0.4);
+            color: #93c5fd;
+        }
+        .btn-terminal-highlight:hover {
+            background: rgba(59, 130, 246, 0.15);
+            color: #ffffff;
+        }
+        .btn-terminal svg {
+            width: 14px;
+            height: 14px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
         }
 
-        /* Video containers */
-        .player-wrap { 
-            position: relative; 
+        /* Main Container */
+        main { 
             width: 100%; 
-            padding-bottom: 56.25%; 
-            background: #000; 
-            border-radius: 1rem; 
-            overflow: hidden; 
-            border: 1px solid var(--border-color); 
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7); 
+            max-width: 1440px; 
+            padding: 1.25rem 1rem 3rem; 
+            flex-grow: 1; 
         }
-        .player-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-        .player-ad-overlay {
+        .hidden { display: none !important; }
+
+        /* Title Section (Matching Reference UI) */
+        .rise { animation: fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
+        .rise-title { animation-delay: 60ms; }
+        .rise-player { animation-delay: 120ms; }
+        .rise-controls { animation-delay: 180ms; }
+        @keyframes fade-up {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .channel-header-section {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 0.75rem;
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+        .channel-title-wrap {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+        .badge-live {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            background: var(--signal);
+            color: var(--carbon);
+            padding: 0.35rem 0.75rem;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: 0.04em;
+        }
+        .live-dot-dark {
+            width: 6px;
+            height: 6px;
+            background: var(--carbon);
+            border-radius: 50%;
+            animation: pulse-dot-dark 1.8s infinite ease-in-out;
+        }
+        @keyframes pulse-dot-dark {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.85); }
+        }
+        .channel-title-heading {
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.01em;
+            text-transform: uppercase;
+            color: var(--ink);
+            line-height: 1.1;
+        }
+        @media (min-width: 640px) {
+            .channel-title-heading { font-size: 2.25rem; }
+        }
+
+        /* Player Container (Matching Reference UI) */
+        .player-box {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid var(--line);
+            background: var(--surface);
+            box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.8);
+        }
+        .player-box iframe {
             position: absolute;
-            top: 0;
-            left: 0;
+            inset: 0;
             width: 100%;
             height: 100%;
+            border: none;
+        }
+        #live-player-container {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Top-left Overlay Badge (From Reference UI) */
+        .stream-status-overlay {
+            position: absolute;
+            left: 12px;
+            top: 12px;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(12, 14, 18, 0.85);
+            padding: 0.35rem 0.7rem;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--ink);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            pointer-events: none;
+        }
+        .live-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--signal);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--signal);
+            animation: pulse-dot 1.8s infinite ease-in-out;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .player-ad-overlay {
+            position: absolute;
+            inset: 0;
             z-index: 25;
             cursor: pointer;
             background: transparent;
         }
-        .player-ad-overlay.hidden {
-            display: none !important;
-        }
-        
-        /* Clappr target container */
-        #live-player-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
+        .player-ad-overlay.hidden { display: none !important; }
 
-        /* Styling inside Clappr to match dark theme aesthetics */
-        .clappr-style {
-            background-color: #000 !important;
-        }
-
-        /* Ultra-sleek Loading spinner inside player */
+        /* Spinner */
         .spinner {
-            position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
-            background: radial-gradient(circle at center, rgba(15, 23, 42, 0.85) 0%, rgba(0, 0, 0, 0.96) 100%);
-            z-index: 2; transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s ease;
-            text-align: center; color: #fff; padding: 20px;
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: var(--carbon);
+            z-index: 2;
+            transition: opacity 0.3s ease;
+            text-align: center;
+            color: var(--ink);
+            padding: 20px;
         }
         .spinner-box {
-            background: rgba(15, 23, 42, 0.65);
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-            padding: 28px 36px; border-radius: 20px;
-            display: flex; flex-direction: column; align-items: center; gap: 14px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(59, 130, 246, 0.1);
-            max-width: 360px; width: 90%;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            padding: 24px 32px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            max-width: 340px;
         }
         .spinner-wrapper {
-            position: relative; width: 48px; height: 48px;
-            display: flex; align-items: center; justify-content: center;
+            position: relative;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .spinner-ring {
-            position: absolute; inset: 0;
-            border: 3px solid rgba(59, 130, 246, 0.15);
-            border-top-color: #3b82f6; border-right-color: #60a5fa;
-            border-radius: 50%; animation: spin 0.75s linear infinite;
+            position: absolute;
+            inset: 0;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-top-color: var(--signal);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
         }
         @keyframes spin { to { transform: rotate(360deg); } }
         .spinner-dot {
-            width: 8px; height: 8px; background: #3b82f6; border-radius: 50%;
-            box-shadow: 0 0 10px #3b82f6; animation: pulseDot 1.2s ease-in-out infinite alternate;
+            width: 6px;
+            height: 6px;
+            background: var(--signal);
+            border-radius: 50%;
         }
-        @keyframes pulseDot { 0% { transform: scale(0.8); opacity: 0.6; } 100% { transform: scale(1.2); opacity: 1; } }
+        .spinner-title { font-size: 14px; font-weight: 700; color: var(--ink); text-transform: uppercase; letter-spacing: 0.05em; }
+        .spinner-subtext { font-size: 12px; color: var(--dim); }
 
-        .spinner-badge {
-            display: inline-flex; align-items: center; gap: 6px;
-            padding: 4px 12px; background: rgba(59, 130, 246, 0.12);
-            border: 1px solid rgba(59, 130, 246, 0.25); border-radius: 20px;
-            font-size: 11px; font-weight: 600; color: #60a5fa;
-            letter-spacing: 0.8px; text-transform: uppercase;
+        /* Broadcast Controls & Stats Bar (Directly Under Player from Reference UI) */
+        .broadcast-stats-bar {
+            margin-top: 0.75rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            border-radius: 8px;
+            border: 1px solid var(--line);
+            background: var(--elevated);
+            padding: 0.75rem 1rem;
         }
-        .spinner-badge .live-dot {
-            width: 6px; height: 6px; background: #60a5fa; border-radius: 50%;
-            box-shadow: 0 0 8px #60a5fa;
+        .stats-group {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1.25rem;
+            font-family: monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+        .stat-label { color: var(--dim); }
+        .stat-value { color: var(--ink); }
+        .stat-value-signal { color: var(--signal); }
+        .action-buttons-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
         }
 
-        .spinner-title { font-size: 15px; font-weight: 600; color: #f8fafc; letter-spacing: -0.2px; }
-        .spinner-subtext { font-size: 12px; color: #94a3b8; line-height: 1.5; font-weight: 400; }
-
-        /* Professional Main Stream Toast */
-        #main-toast {
-            position: fixed; top: 20px; left: 50%; transform: translateX(-50%) translateY(-25px);
-            opacity: 0; pointer-events: none;
-            padding: 8px 18px; border-radius: 30px; font-size: 12.5px; font-weight: 500;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            display: flex; align-items: center; gap: 8px; z-index: 1000;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-            letter-spacing: 0.2px;
-        }
-        #main-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); pointer-events: auto; }
-        #main-toast.success { background: rgba(6, 78, 59, 0.85); color: #6ee7b7; border: 1px solid rgba(52, 211, 153, 0.3); }
-        #main-toast.error { background: rgba(127, 29, 29, 0.85); color: #fca5a5; border: 1px solid rgba(248, 113, 113, 0.3); }
-
-        /* Customizing Plyr CSS Variables to fit design system */
+        /* Plyr CSS Overrides */
         :root {
-            --plyr-color-main: #3b82f6; /* Accent blue */
+            --plyr-color-main: var(--signal);
             --plyr-video-background: #000000;
-            --plyr-font-family: 'Outfit', sans-serif;
-            --plyr-border-radius: 1rem;
+            --plyr-font-family: var(--font-family);
+            --plyr-border-radius: 8px;
         }
         .plyr {
-            border-radius: 1rem !important;
-            border: 1px solid var(--border-color);
-            overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
             width: 100% !important;
             height: 100% !important;
-        }
-        .plyr--full-ui input[type=range] {
-            color: #3b82f6 !important;
-        }
-        .plyr__control--overlaid {
-            background: rgba(59, 130, 246, 0.9) !important;
-        }
-        .plyr__control--overlaid:hover {
-            background: #2563eb !important;
-        }
-        .plyr__control[aria-expanded=true] {
-            background: #3b82f6 !important;
-            color: white !important;
+            border-radius: 8px !important;
         }
 
-        /* Error view */
-        #error-view { 
-            text-align: center; 
-            padding: 5rem 2rem; 
-            border: 1px solid var(--border-color); 
-            border-radius: 1rem; 
-            background: var(--card-bg); 
-            backdrop-filter: blur(8px);
+        /* Error View */
+        #error-view {
+            text-align: center;
+            padding: 4rem 2rem;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--surface);
             max-width: 500px;
-            margin: 2rem auto;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            margin: 3rem auto;
         }
-        #error-view .err-icon { font-size: 4.5rem; margin-bottom: 1.5rem; filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.2)); }
-        #error-view h2 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.75rem; letter-spacing: -0.02em; }
-        #error-view p { color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.5; font-size: 0.95rem; }
-        #error-view a { 
-            display: inline-block; 
-            background: linear-gradient(135deg, #ef4444, #dc2626); 
-            color: white; 
-            padding: 0.85rem 2.25rem; 
-            border-radius: 0.75rem; 
-            font-weight: 600; 
-            text-decoration: none; 
-            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
-            transition: all 0.2s ease; 
+        .err-icon { font-size: 3.5rem; margin-bottom: 1rem; }
+        #error-view h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem; text-transform: uppercase; }
+        #error-view p { color: var(--dim); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.5; }
+        .btn-signal {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--signal);
+            color: var(--carbon);
+            padding: 0.75rem 1.6rem;
+            border-radius: 6px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s ease;
         }
-        #error-view a:hover { 
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(239, 68, 68, 0.45);
+        .btn-signal:hover {
+            background: var(--signal-hover);
+            color: #ffffff;
+        }
+
+        /* Footer (From Reference UI) */
+        .broadcast-footer {
+            margin-top: 1.25rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            border-top: 1px solid var(--line);
+            padding: 1.25rem 0.25rem 0;
+            font-family: monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--dim);
         }
 
         /* Floating Telegram Button */
@@ -378,7 +537,7 @@
             padding: 0.6rem 1.1rem 0.6rem 0.8rem;
             border-radius: 9999px;
             font-size: 0.85rem;
-            font-weight: 600;
+            font-weight: 700;
             box-shadow: 0 4px 18px rgba(0, 136, 204, 0.45);
             animation: tg-pulse 2.5s ease-in-out infinite;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -391,12 +550,28 @@
         #float-tg svg {
             width: 18px;
             height: 18px;
-            flex-shrink: 0;
+            fill: white;
         }
         @keyframes tg-pulse {
             0%, 100% { transform: translateY(0) scale(1); box-shadow: 0 4px 18px rgba(0,136,204,0.45); }
             50%       { transform: translateY(-4px) scale(1.03); box-shadow: 0 10px 28px rgba(0,136,204,0.65); }
         }
+
+        /* Toast */
+        #main-toast {
+            position: fixed; top: 18px; left: 50%; transform: translateX(-50%) translateY(-25px);
+            opacity: 0; pointer-events: none;
+            padding: 8px 18px; border-radius: 6px; font-size: 12px; font-weight: 600;
+            font-family: monospace; text-transform: uppercase; letter-spacing: 0.08em;
+            display: flex; align-items: center; gap: 8px; z-index: 1000;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+        }
+        #main-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); pointer-events: auto; }
+        #main-toast.success { background: rgba(16, 185, 129, 0.9); color: #042f2e; border: 1px solid rgba(52, 211, 153, 0.3); }
+        #main-toast.error { background: rgba(239, 68, 68, 0.9); color: #ffffff; border: 1px solid rgba(248, 113, 113, 0.3); }
+        #main-toast.info { background: rgba(26, 30, 39, 0.95); color: var(--ink); border: 1px solid var(--line); }
     </style>
     <!-- Adsterra Popunder -->
     <script src="https://pl31503790.profitableratecpmnetwork.com/ec/8c/af/ec8caf215d92bd77dfa766d702a1ec0f.js"></script>
@@ -408,14 +583,28 @@
             <div class="overlay-icon">📢</div>
             <h2 class="overlay-title">Join Our Telegram</h2>
             <p class="overlay-text">Stay updated with the latest match links and avoid missing out on live games!</p>
-            <a href="https://t.me/aryanstreams" target="_blank" class="overlay-btn">Join Telegram</a>
+            <a href="https://t.me/aryanstreams" target="_blank" class="overlay-btn">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                Join Telegram
+            </a>
             <a href="https://www.profitableratecpmnetwork.com/t8e8e5yh?key=6da983d7e115700ad4dc612c0e107ec8" target="_blank" rel="noopener noreferrer" class="overlay-btn-secondary" id="ok-btn" onclick="handleOkClick(event)">Ok</a>
         </div>
     </div>
 
+    <!-- Header (Matching Reference UI) -->
     <header>
-        <span class="header-label">Official Channels:</span>
-        <a href="https://t.me/aryanstreams" target="_blank" class="btn-tg">📣 Telegram</a>
+        <div class="header-inner">
+            <a href="/" class="brand">
+                <span class="brand-badge">A</span>
+                <span class="brand-name">ARYANSTREAMS</span>
+            </a>
+            <div class="header-actions">
+                <a href="https://t.me/aryanstreams" target="_blank" class="btn-terminal">
+                    <svg viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                    <span>Telegram</span>
+                </a>
+            </div>
+        </div>
     </header>
 
     <!-- Floating Telegram Button -->
@@ -424,67 +613,99 @@
         <span>Join</span>
     </a>
 
+    <!-- Status Toast Banner -->
+    <div id="main-toast"></div>
+
     <main>
         <div id="stream-view" class="hidden">
-            <div class="channel-title-bar">
-                <h1 id="channel-name">
-                    <span class="live-dot"></span> Loading...
-                </h1>
-            </div>
+            <!-- Title Section (Matching Reference UI) -->
+            <section class="rise rise-title channel-header-section">
+                <div class="channel-title-wrap">
+                    <span class="badge-live">
+                        <span class="live-dot-dark"></span> LIVE
+                    </span>
+                    <h1 id="channel-name" class="channel-title-heading">Connecting Stream...</h1>
+                </div>
+            </section>
 
-            <!-- Status Toast Banner -->
-            <div id="main-toast"></div>
+            <!-- Player Stage (Matching Reference UI) -->
+            <section class="rise rise-player">
+                <div class="player-box">
+                    <div class="stream-status-overlay">
+                        <span class="live-dot"></span> Stream connected · 1080p60
+                    </div>
 
-            <!-- Iframe player -->
-            <div id="iframe-container-div" class="hidden">
-                <div class="player-wrap">
-                    <div class="player-ad-overlay" onclick="handlePlayerAdClick(event)"></div>
-                    <div class="spinner" id="iframe-spinner">
-                        <div class="spinner-box">
-                            <div class="spinner-wrapper">
-                                <div class="spinner-ring"></div>
-                                <div class="spinner-dot"></div>
+                    <!-- Iframe player -->
+                    <div id="iframe-container-div" class="hidden" style="width:100%; height:100%;">
+                        <div class="player-ad-overlay" onclick="handlePlayerAdClick(event)"></div>
+                        <div class="spinner" id="iframe-spinner">
+                            <div class="spinner-box">
+                                <div class="spinner-wrapper">
+                                    <div class="spinner-ring"></div>
+                                    <div class="spinner-dot"></div>
+                                </div>
+                                <div class="spinner-title">Initializing Stream</div>
+                                <div class="spinner-subtext">Connecting to broadcast feed...</div>
                             </div>
-                            <div class="spinner-badge">
-                                <span class="live-dot"></span> CONNECTING
+                        </div>
+                        <iframe id="embed-frame" allowfullscreen allow="autoplay; encrypted-media; picture-in-picture; fullscreen" scrolling="no" onload="onIframeLoaded()"></iframe>
+                    </div>
+
+                    <!-- Plyr video player -->
+                    <div id="video-container-div" class="hidden" style="width:100%; height:100%;">
+                        <div class="player-ad-overlay" onclick="handlePlayerAdClick(event)"></div>
+                        <div class="spinner" id="video-spinner">
+                            <div class="spinner-box">
+                                <div class="spinner-wrapper">
+                                    <div class="spinner-ring"></div>
+                                    <div class="spinner-dot"></div>
+                                </div>
+                                <div class="spinner-title">Initializing Stream</div>
+                                <div class="spinner-subtext">Connecting to broadcast feed...</div>
                             </div>
-                            <div class="spinner-title">Initializing Stream</div>
-                            <div class="spinner-subtext">Connecting to CDN server... Please wait a moment.</div>
+                        </div>
+                        <div id="live-player-container">
+                            <video id="player" playsinline controls style="width:100%; height:100%; object-fit:cover;"></video>
                         </div>
                     </div>
-                    <iframe id="embed-frame" allowfullscreen allow="autoplay; encrypted-media; picture-in-picture; fullscreen" scrolling="no" onload="onIframeLoaded()"></iframe>
                 </div>
-            </div>
+            </section>
 
-            <!-- Plyr video player -->
-            <div id="video-container-div" class="hidden">
-                <div class="player-wrap">
-                    <div class="player-ad-overlay" onclick="handlePlayerAdClick(event)"></div>
-                    <div class="spinner" id="video-spinner">
-                        <div class="spinner-box">
-                            <div class="spinner-wrapper">
-                                <div class="spinner-ring"></div>
-                                <div class="spinner-dot"></div>
-                            </div>
-                            <div class="spinner-badge">
-                                <span class="live-dot"></span> CONNECTING
-                            </div>
-                            <div class="spinner-title">Initializing Stream</div>
-                            <div class="spinner-subtext">Connecting to CDN server... Please wait a moment.</div>
-                        </div>
-                    </div>
-                    <div id="live-player-container">
-                        <video id="player" playsinline controls style="width:100%; height:100%; object-fit:cover;"></video>
-                    </div>
+            <!-- Broadcast Controls & Stats Bar (Matching Reference UI) -->
+            <section class="rise rise-controls broadcast-stats-bar">
+                <div class="stats-group">
+                    <span class="stat-item"><span class="stat-label">Latency</span> <span class="stat-value">18ms</span></span>
+                    <span class="stat-item"><span class="stat-label">Buffer</span> <span class="stat-value-signal">Stable</span></span>
+                    <span class="stat-item"><span class="stat-label">Feed</span> <span class="stat-value">CDN Direct</span></span>
                 </div>
-            </div>
+                <div class="action-buttons-group">
+                    <button class="btn-terminal" onclick="reloadStream()" title="Reload Broadcast">
+                        <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg>
+                        <span>Reload</span>
+                    </button>
+                    <button class="btn-terminal" onclick="copyStreamLink()" title="Copy Stream Link">
+                        <svg viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                        <span id="copy-btn-text">Share</span>
+                    </button>
+                    <a href="https://t.me/aryanstreams" target="_blank" class="btn-terminal btn-terminal-highlight">
+                        <svg viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                        <span>Join Telegram</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Broadcast Footer (Matching Reference UI) -->
+            <footer class="broadcast-footer">
+                <span>AryanStreams Live · Broadcast Control</span>
+                <span id="live-clock">--:--:--</span>
+            </footer>
         </div>
 
         <div id="error-view" class="hidden">
-            <div class="err-icon">📺</div>
+            <div class="err-icon">📡</div>
             <h2>Stream Offline</h2>
             <p>Please check the channel link or join our social channels for updates and fresh backup streams.</p>
-            <a href="https://t.me/aryanstreams" target="_blank">Join Telegram</a>
+            <a href="https://t.me/aryanstreams" target="_blank" class="btn-signal">Join Telegram</a>
         </div>
     </main>
 
@@ -558,6 +779,71 @@
             }
         }
 
+        let activeChannel = null;
+
+        function reloadStream() {
+            if (!activeChannel) {
+                location.reload();
+                return;
+            }
+            showMainToast('● RELOADING STREAM...', 'info');
+            if (activeChannel.type === 'video') {
+                loadPlyr(activeChannel.url);
+            } else {
+                var frame = document.getElementById('embed-frame');
+                if (frame) {
+                    var spinner = document.getElementById('iframe-spinner');
+                    if (spinner) {
+                        spinner.style.display = 'flex';
+                        spinner.style.opacity = '1';
+                    }
+                    frame.src = activeChannel.url;
+                }
+            }
+        }
+
+        function copyStreamLink() {
+            const url = window.location.href;
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(url).then(onCopied).catch(fallbackCopy);
+            } else {
+                fallbackCopy();
+            }
+
+            function fallbackCopy() {
+                try {
+                    const tempInput = document.createElement('input');
+                    tempInput.value = url;
+                    document.body.appendChild(tempInput);
+                    tempInput.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(tempInput);
+                    onCopied();
+                } catch (e) {
+                    showMainToast('Failed to copy', 'error');
+                }
+            }
+
+            function onCopied() {
+                const btnText = document.getElementById('copy-btn-text');
+                if (btnText) {
+                    const orig = btnText.textContent;
+                    btnText.textContent = 'Copied!';
+                    setTimeout(() => { btnText.textContent = orig; }, 2000);
+                }
+                showMainToast('● STREAM LINK COPIED', 'success');
+            }
+        }
+
+        function updateClock() {
+            const clockEl = document.getElementById('live-clock');
+            if (clockEl) {
+                const now = new Date();
+                clockEl.textContent = now.toLocaleTimeString('en-GB', { hour12: false });
+            }
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
 
         const channels = {
             // ── New ADILX & Footsters Channels (Pages.dev Wrappers) ──────────
@@ -1214,8 +1500,9 @@
                          channels['api_' + keyLower];
 
                 if (ch) {
+                    activeChannel = ch;
                     document.getElementById('stream-view').classList.remove('hidden');
-                    document.getElementById('channel-name').innerHTML = '<span class="live-dot"></span> ' + ch.name;
+                    document.getElementById('channel-name').textContent = ch.name;
 
                     if (ch.type === 'video') {
                         document.getElementById('video-container-div').classList.remove('hidden');
