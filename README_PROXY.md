@@ -2,7 +2,7 @@
 
 Since streams like **SonyLIV/Akamai** check for specific headers (`User-Agent`, `Origin`, `Referer`) and restrict access to their own domains, they cannot be loaded directly in a standard web browser without bypassing these limitations. 
 
-Here are three simple step-by-step options to play them on your website using `index_v2.html`.
+Here are three simple step-by-step options to play them on your website using `index.html`.
 
 ---
 
@@ -27,7 +27,7 @@ This runs a lightweight proxy server on your own computer.
    ==================================================
    ```
 4. **Configure the Website**:
-   - Open `index_v2.html` in your browser (e.g., `index_v2.html?stream=s5`).
+   - Open `index.html` in your browser (e.g., `index.html?stream=s5`).
    - Click the settings gear icon (⚙️) in the top-right header.
    - Change the **Proxy Status** to **Enabled**.
    - Set the **Proxy URL** to `http://localhost:3000/proxy` (this is the default).
@@ -47,7 +47,7 @@ This is 100% free, takes 2 minutes, and provides high performance for any users 
 6. Click **Save and deploy** in the top-right.
 7. Copy your worker's public URL (it will look like `https://m3u8-proxy.yourname.workers.dev`).
 8. **Configure the Website**:
-   - Open your site (e.g., `index_v2.html?stream=s5`).
+   - Open your site (e.g., `index.html?stream=s5`).
    - Click the settings gear icon (⚙️).
    - Change the **Proxy Status** to **Enabled**.
    - Paste your worker URL: `https://m3u8-proxy.yourname.workers.dev` (do not add `/proxy` at the end).
@@ -68,4 +68,4 @@ This bypasses CORS and overrides headers directly inside your browser.
    - Header Name: `Origin` | Value: `https://www.sonyliv.com`
    - Header Name: `Referer` | Value: `https://www.sonyliv.com/`
    - Header Name: `User-Agent` | Value: `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36`
-5. Open `index_v2.html?stream=s5` with the proxy set to **Disabled** (Direct Play). It will now stream directly through your browser since the extension is injecting the correct headers on the fly.
+5. Open `index.html?stream=s5` with the proxy set to **Disabled** (Direct Play). It will now stream directly through your browser since the extension is injecting the correct headers on the fly.
