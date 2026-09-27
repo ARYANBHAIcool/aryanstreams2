@@ -250,9 +250,8 @@
 
                 player.getNetworkingEngine().registerRequestFilter(function(type, req) {
                     var url = req.uris[0];
-                    var isRestrictedHost = location.hostname.endsWith('.pages.dev') || location.hostname.endsWith('.vercel.app');
-                    if (isRestrictedHost && url && (url.includes('aiv-cdn.net') || url.includes('aiv-cdn.com')) && !url.includes('/proxy/')) {
-                        req.uris[0] = '/proxy/' + url;
+                    if (url && (url.includes('aiv-cdn.net') || url.includes('aiv-cdn.com')) && !url.includes('stream-relay-buddy.lovable.app') && !url.includes('/proxy/')) {
+                        req.uris[0] = 'https://stream-relay-buddy.lovable.app/api/public/proxy?url=' + encodeURIComponent(url);
                     }
 
                     var isJio = (url && (url.includes('jiotv') || url.includes('jio.com'))) || (activeCookie && activeCookie.length > 0);
