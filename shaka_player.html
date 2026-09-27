@@ -145,7 +145,9 @@
         var MPD_URL  = params.get('mpd')  || '';
         var KEY_ID   = params.get('kid')  || '';
         var KEY      = params.get('key')  || '';
-        var REFERER  = params.get('referer') || 'https://www.amazon.com/gp/';
+        var CH_ID    = params.get('chid') || params.get('id') || '';
+        var COOKIE   = params.get('cookie') || '';
+        var REFERER  = params.get('referer') || '';
 
         var $video   = document.getElementById('video');
         var $loading = document.getElementById('loading');
@@ -176,115 +178,171 @@
             }
         }
 
-        if (!MPD_URL) {
-            hideLoading();
-            showError('No MPD URL provided. Use ?mpd=<URL>&kid=<KEY_ID>&key=<KEY>');
-            return;
+        function rawCookie(c) {
+            return c && c.startsWith("__hdnea__=") ? c.slice(10) : (c || "");
+        }
+        function withCookie(u, r) {
+            if (!u || !r) return u;
+            if (u.indexOf("__hdnea__") !== -1) return u;
+            return u + (u.indexOf("?") !== -1 ? "&" : "?") + "__hdnea__=" + r;
         }
 
-        // ΓöÇΓöÇ Init Shaka ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
-        shaka.polyfill.installAll();
-
-        if (!shaka.Player.isBrowserSupported()) {
-            hideLoading();
-            showError('Browser not supported for DASH playback.');
-            return;
+        async function fetchChannelData(id) {
+            var endpoints = [
+                'https://sonujson-v5.pages.dev/Data/sports.json',
+                'https://sonujson-v3.pages.dev/Data/sports.json'
+            ];
+            for (var i = 0; i < endpoints.length; i++) {
+                try {
+                    var res = await fetch(endpoints[i], { cache: 'no-store' });
+                    if (!res.ok) continue;
+                    var json = await res.json();
+                    if (json && Array.isArray(json.channels)) {
+                        var target = json.channels.find(function(c) {
+                            return String(c.id).toLowerCase() === String(id).toLowerCase();
+                        });
+                        if (target) return target;
+                    }
+                } catch (e) {}
+            }
+            return null;
         }
 
-        var player = new shaka.Player();
+        async function initPlayer() {
+            var activeMpd = MPD_URL;
+            var activeKid = KEY_ID;
+            var activeKey = KEY;
+            var activeCookie = COOKIE;
+            var activeRawCookie = rawCookie(COOKIE);
 
-        player.attach($video).then(function() {
-            // Add Shaka UI controls (play, volume, fullscreen, quality etc.)
-            var ui = new shaka.ui.Overlay(player, document.getElementById('player-container'), $video);
-            ui.configure({
-                controlPanelElements: [
-                    'play_pause', 'mute', 'volume', 'spacer',
-                    'time_and_duration', 'spacer',
-                    'quality', 'picture_in_picture', 'fullscreen'
-                ],
-                seekBarColors: {
-                    base: '#555',
-                    buffered: '#888',
-                    played: '#3b82f6'
+            if (CH_ID && (!activeMpd || !activeKey)) {
+                showToast('Connecting Channel...', 'info');
+                var ch = await fetchChannelData(CH_ID);
+                if (ch) {
+                    activeMpd = ch.stream_url;
+                    activeKid = ch.key_id;
+                    activeKey = ch.key;
+                    activeCookie = ch.cookie || '';
+                    activeRawCookie = rawCookie(activeCookie);
                 }
-            });
-
-            // Smart request filter:
-            // - On *.pages.dev: proxy restricted CDNs (aiv-cdn.net/com) to bypass origin blacklist.
-            // - On Custom Domains (.com, .net, etc.): all CDNs are 100% direct with 0 worker requests.
-            player.getNetworkingEngine().registerRequestFilter(function(type, req) {
-                var url = req.uris[0];
-                var isRestrictedHost = location.hostname.endsWith('.pages.dev') || location.hostname.endsWith('.vercel.app');
-                if (isRestrictedHost && url && (url.includes('aiv-cdn.net') || url.includes('aiv-cdn.com')) && !url.includes('/proxy/')) {
-                    req.uris[0] = '/proxy/' + url;
-                }
-            });
-
-            // ── Build player config ─────────────────────────────────────────
-            var config = {
-                streaming: {
-                    lowLatencyMode: true,
-                    bufferingGoal: 15,
-                    rebufferingGoal: 2,
-                    stallEnabled: true,
-                    retryParameters: {
-                        maxAttempts: 5,
-                        baseDelay: 1000,
-                        backoffFactor: 2
-                    }
-                },
-                manifest: {
-                    dash: {
-                        autoCorrectDrift: true
-                    },
-                    retryParameters: {
-                        maxAttempts: 5,
-                        baseDelay: 1000,
-                        backoffFactor: 2
-                    }
-                },
-                abr: {
-                    enabled: true,
-                    defaultBandwidthEstimate: 2000000
-                }
-            };
-
-            // Add DRM clear-keys if provided
-            if (KEY_ID && KEY) {
-                config.drm = {
-                    clearKeys: {}
-                };
-                config.drm.clearKeys[KEY_ID] = KEY;
             }
 
-            player.configure(config);
-
-            // ΓöÇΓöÇ Load and play ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
-            player.load(MPD_URL).then(function() {
-                $video.muted = true;  // muted autoplay (browsers require this)
-                $video.play().catch(function() {});
-            }).catch(function(e) {
-                console.error('Load error:', e);
-                showError('Stream load failed ΓÇô retrying...');
-                setTimeout(function() { location.reload(); }, 5000);
-            });
-
-            // ΓöÇΓöÇ Events ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
-            $video.addEventListener('playing', function() {
+            if (!activeMpd) {
                 hideLoading();
-            });
+                showError('No MPD URL provided. Use ?mpd=<URL>&kid=<KEY_ID>&key=<KEY> or ?chid=<ID>');
+                return;
+            }
 
-            $video.addEventListener('canplay', function() {
+            shaka.polyfill.installAll();
+
+            if (!shaka.Player.isBrowserSupported()) {
                 hideLoading();
-            });
+                showError('Browser not supported for DASH playback.');
+                return;
+            }
 
-            player.addEventListener('error', function(ev) {
-                var err = ev.detail;
-                if (err && err.severity === shaka.util.Error.Severity.RECOVERABLE) return;
-                console.error('Shaka error:', err && err.code, err && err.message);
-                showError('Playback error ΓÇô retrying...');
-                setTimeout(function() { player.load(MPD_URL).catch(function(){}); }, 5000);
+            var player = new shaka.Player();
+
+            player.attach($video).then(function() {
+                var ui = new shaka.ui.Overlay(player, document.getElementById('player-container'), $video);
+                ui.configure({
+                    controlPanelElements: [
+                        'play_pause', 'mute', 'volume', 'spacer',
+                        'time_and_duration', 'spacer',
+                        'quality', 'picture_in_picture', 'fullscreen'
+                    ],
+                    seekBarColors: {
+                        base: '#555',
+                        buffered: '#888',
+                        played: '#3b82f6'
+                    }
+                });
+
+                player.getNetworkingEngine().registerRequestFilter(function(type, req) {
+                    var url = req.uris[0];
+                    var isRestrictedHost = location.hostname.endsWith('.pages.dev') || location.hostname.endsWith('.vercel.app');
+                    if (isRestrictedHost && url && (url.includes('aiv-cdn.net') || url.includes('aiv-cdn.com')) && !url.includes('/proxy/')) {
+                        req.uris[0] = '/proxy/' + url;
+                    }
+
+                    var isJio = (url && (url.includes('jiotv') || url.includes('jio.com'))) || (activeCookie && activeCookie.length > 0);
+                    if (isJio) {
+                        req.headers["Referer"] = REFERER || "https://www.jiotv.com/";
+                        req.headers["User-Agent"] = "Mozilla/5.0 (Linux; Android 11; SM-G991B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36";
+                        if (activeCookie) req.headers["Cookie"] = activeCookie;
+                        if (activeRawCookie && (type === shaka.net.NetworkingEngine.RequestType.MANIFEST || type === shaka.net.NetworkingEngine.RequestType.SEGMENT)) {
+                            req.uris = req.uris.map(function(u) { return withCookie(u, activeRawCookie); });
+                        }
+                    } else if (REFERER) {
+                        req.headers["Referer"] = REFERER;
+                    }
+                });
+
+                var config = {
+                    streaming: {
+                        lowLatencyMode: true,
+                        bufferingGoal: 15,
+                        rebufferingGoal: 2,
+                        stallEnabled: true,
+                        retryParameters: {
+                            maxAttempts: 5,
+                            baseDelay: 1000,
+                            backoffFactor: 2
+                        }
+                    },
+                    manifest: {
+                        dash: {
+                            autoCorrectDrift: true
+                        },
+                        retryParameters: {
+                            maxAttempts: 5,
+                            baseDelay: 1000,
+                            backoffFactor: 2
+                        }
+                    },
+                    abr: {
+                        enabled: true,
+                        defaultBandwidthEstimate: 2000000
+                    }
+                };
+
+                if (activeKid && activeKey) {
+                    config.drm = {
+                        clearKeys: {}
+                    };
+                    config.drm.clearKeys[activeKid] = activeKey;
+                }
+
+                player.configure(config);
+
+                player.load(activeMpd).then(function() {
+                    $video.muted = true;
+                    $video.play().catch(function() {});
+                }).catch(function(e) {
+                    console.error('Load error:', e);
+                    showError('Stream load failed – retrying...');
+                    setTimeout(function() { location.reload(); }, 4000);
+                });
+
+                $video.addEventListener('playing', function() {
+                    hideLoading();
+                });
+
+                $video.addEventListener('canplay', function() {
+                    hideLoading();
+                });
+
+                player.addEventListener('error', function(ev) {
+                    var err = ev.detail;
+                    if (err && err.severity === shaka.util.Error.Severity.RECOVERABLE) return;
+                    console.error('Shaka error:', err && err.code, err && err.message);
+                    showError('Playback error – retrying...');
+                    setTimeout(function() { player.load(activeMpd).catch(function(){}); }, 5000);
+                });
             });
+        }
+
+        initPlayer();
 
             // Unmute and trigger direct link ad with smart cooldown
             var shakaAdFiredCount = 0;
