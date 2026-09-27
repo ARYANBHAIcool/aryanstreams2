@@ -129,17 +129,6 @@
     (function() {
         "use strict";
 
-        // ΓöÇΓöÇ Configuration ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
-        // You can pass parameters via URL:
-        //   ?mpd=<MPD_URL>&kid=<KEY_ID>&key=<KEY>&referer=<REFERER>
-        //
-        // Or use the hash format (for iframe embedding):
-        //   #mpd=<MPD_URL>&kid=<KEY_ID>&key=<KEY>
-        //
-        // Example:
-        //   shaka_player.html?mpd=https://...cenc.mpd&kid=1d0c...&key=ad27...
-        // ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
-
         var params = new URLSearchParams(location.search || location.hash.replace('#',''));
 
         var MPD_URL  = params.get('mpd')  || '';
@@ -243,7 +232,8 @@
 
             var player = new shaka.Player();
 
-            player.attach($video).then(function() {
+            try {
+                await player.attach($video);
                 var ui = new shaka.ui.Overlay(player, document.getElementById('player-container'), $video);
                 ui.configure({
                     controlPanelElements: [
@@ -315,14 +305,9 @@
 
                 player.configure(config);
 
-                player.load(activeMpd).then(function() {
-                    $video.muted = true;
-                    $video.play().catch(function() {});
-                }).catch(function(e) {
-                    console.error('Load error:', e);
-                    showError('Stream load failed – retrying...');
-                    setTimeout(function() { location.reload(); }, 4000);
-                });
+                await player.load(activeMpd);
+                $video.muted = true;
+                $video.play().catch(function() {});
 
                 $video.addEventListener('playing', function() {
                     hideLoading();
@@ -339,115 +324,113 @@
                     showError('Playback error – retrying...');
                     setTimeout(function() { player.load(activeMpd).catch(function(){}); }, 5000);
                 });
-            });
+            } catch(e) {
+                console.error('Init error:', e);
+                showError('Stream load failed – retrying...');
+                setTimeout(function() { location.reload(); }, 4000);
+            }
         }
 
         initPlayer();
 
-            // Unmute and trigger direct link ad with smart cooldown
-            var shakaAdFiredCount = 0;
-            var maxShakaAds = 3;
-            var lastShakaAdTime = 0;
-            var SHAKA_AD_COOLDOWN = 60000;
+        // Unmute and trigger direct link ad with smart cooldown
+        var shakaAdFiredCount = 0;
+        var maxShakaAds = 3;
+        var lastShakaAdTime = 0;
+        var SHAKA_AD_COOLDOWN = 60000;
 
-            function triggerShakaAd() {
-                var now = Date.now();
-                if (shakaAdFiredCount >= maxShakaAds) return;
-                if (lastShakaAdTime !== 0 && (now - lastShakaAdTime < SHAKA_AD_COOLDOWN)) return;
-                lastShakaAdTime = now;
-                shakaAdFiredCount++;
-                try {
-                    window.open('https://www.profitableratecpmnetwork.com/t8e8e5yh?key=6da983d7e115700ad4dc612c0e107ec8', '_blank');
-                } catch (err) {}
-            }
+        function triggerShakaAd() {
+            var now = Date.now();
+            if (shakaAdFiredCount >= maxShakaAds) return;
+            if (lastShakaAdTime !== 0 && (now - lastShakaAdTime < SHAKA_AD_COOLDOWN)) return;
+            lastShakaAdTime = now;
+            shakaAdFiredCount++;
+            try {
+                window.open('https://www.profitableratecpmnetwork.com/t8e8e5yh?key=6da983d7e115700ad4dc612c0e107ec8', '_blank');
+            } catch (err) {}
+        }
 
-            document.addEventListener('click', function unmuteAndAd() {
-                $video.muted = false;
-                triggerShakaAd();
-            });
-
-            // ── Mobile Screen Auto-Rotate & Fullscreen Fit ───────────────────
-            function lockLandscape() {
-                try {
-                    if (screen.orientation && screen.orientation.lock) {
-                        screen.orientation.lock('landscape').catch(function() {});
-                    } else if (screen.lockOrientation) {
-                        screen.lockOrientation('landscape');
-                    } else if (screen.mozLockOrientation) {
-                        screen.mozLockOrientation('landscape');
-                    } else if (screen.msLockOrientation) {
-                        screen.msLockOrientation('landscape');
-                    }
-                } catch (e) {}
-            }
-
-            function unlockOrientation() {
-                try {
-                    if (screen.orientation && screen.orientation.unlock) {
-                        screen.orientation.unlock();
-                    } else if (screen.unlockOrientation) {
-                        screen.unlockOrientation();
-                    } else if (screen.mozUnlockOrientation) {
-                        screen.mozUnlockOrientation();
-                    } else if (screen.msUnlockOrientation) {
-                        screen.msUnlockOrientation();
-                    }
-                } catch (e) {}
-            }
-
-            function handleFullscreenChange() {
-                var isFs = !!(
-                    document.fullscreenElement ||
-                    document.webkitFullscreenElement ||
-                    document.mozFullScreenElement ||
-                    document.msFullscreenElement
-                );
-                if (isFs) {
-                    lockLandscape();
-                } else {
-                    unlockOrientation();
-                }
-            }
-            document.addEventListener('fullscreenchange', handleFullscreenChange);
-            document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
-            document.addEventListener('mozfullscreenchange', handleFullscreenChange);
-            document.addEventListener('MSFullscreenChange', handleFullscreenChange);
-
-            if (window.matchMedia) {
-                try {
-                    var landscapeMql = window.matchMedia('(orientation: landscape)');
-                    function onOrientationMqlChange(e) {
-                        var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || (window.innerWidth <= 900 && 'ontouchstart' in window);
-                        if (!isMobile) return;
-                        var isFs = !!(document.fullscreenElement || document.webkitFullscreenElement);
-                        if (e.matches && !isFs) {
-                            if ($video && !$video.paused) {
-                                var container = document.getElementById('player-container') || $video;
-                                if (container.requestFullscreen) {
-                                    container.requestFullscreen().catch(function() {});
-                                } else if ($video.webkitEnterFullscreen) {
-                                    $video.webkitEnterFullscreen();
-                                }
-                            }
-                        } else if (!e.matches && isFs) {
-                            if (document.exitFullscreen) {
-                                document.exitFullscreen().catch(function() {});
-                            }
-                        }
-                    }
-                    if (landscapeMql.addEventListener) {
-                        landscapeMql.addEventListener('change', onOrientationMqlChange);
-                    } else if (landscapeMql.addListener) {
-                        landscapeMql.addListener(onOrientationMqlChange);
-                    }
-                } catch (e) {}
-            }
-
-        }).catch(function(e) {
-            hideLoading();
-            showError('Player init failed: ' + e.message);
+        document.addEventListener('click', function unmuteAndAd() {
+            $video.muted = false;
+            triggerShakaAd();
         });
 
+        // ── Mobile Screen Auto-Rotate & Fullscreen Fit ───────────────────
+        function lockLandscape() {
+            try {
+                if (screen.orientation && screen.orientation.lock) {
+                    screen.orientation.lock('landscape').catch(function() {});
+                } else if (screen.lockOrientation) {
+                    screen.lockOrientation('landscape');
+                } else if (screen.mozLockOrientation) {
+                    screen.mozLockOrientation('landscape');
+                } else if (screen.msLockOrientation) {
+                    screen.msLockOrientation('landscape');
+                }
+            } catch (e) {}
+        }
+
+        function unlockOrientation() {
+            try {
+                if (screen.orientation && screen.orientation.unlock) {
+                    screen.orientation.unlock();
+                } else if (screen.unlockOrientation) {
+                    screen.unlockOrientation();
+                } else if (screen.mozUnlockOrientation) {
+                    screen.mozUnlockOrientation();
+                } else if (screen.msUnlockOrientation) {
+                    screen.msUnlockOrientation();
+                }
+            } catch (e) {}
+        }
+
+        function handleFullscreenChange() {
+            var isFs = !!(
+                document.fullscreenElement ||
+                document.webkitFullscreenElement ||
+                document.mozFullScreenElement ||
+                document.msFullscreenElement
+            );
+            if (isFs) {
+                lockLandscape();
+            } else {
+                unlockOrientation();
+            }
+        }
+        document.addEventListener('fullscreenchange', handleFullscreenChange);
+        document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+        document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+        document.addEventListener('MSFullscreenChange', handleFullscreenChange);
+
+        if (window.matchMedia) {
+            try {
+                var landscapeMql = window.matchMedia('(orientation: landscape)');
+                function onOrientationMqlChange(e) {
+                    var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || (window.innerWidth <= 900 && 'ontouchstart' in window);
+                    if (!isMobile) return;
+                    var isFs = !!(document.fullscreenElement || document.webkitFullscreenElement);
+                    if (e.matches && !isFs) {
+                        if ($video && !$video.paused) {
+                            var container = document.getElementById('player-container') || $video;
+                            if (container.requestFullscreen) {
+                                container.requestFullscreen().catch(function() {});
+                            } else if ($video.webkitEnterFullscreen) {
+                                $video.webkitEnterFullscreen();
+                            }
+                        }
+                    } else if (!e.matches && isFs) {
+                        if (document.exitFullscreen) {
+                            document.exitFullscreen().catch(function() {});
+                        }
+                    }
+                }
+                if (landscapeMql.addEventListener) {
+                    landscapeMql.addEventListener('change', onOrientationMqlChange);
+                } else if (landscapeMql.addListener) {
+                    landscapeMql.addListener(onOrientationMqlChange);
+                }
+            } catch (e) {}
+        }
     })();
     </script>
 
