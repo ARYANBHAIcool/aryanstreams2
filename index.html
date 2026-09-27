@@ -946,31 +946,30 @@
             "engvssp_bein":     { type: "iframe", name: "England vs Spain (beIN English)", url: "shaka_player.html?mpd=https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/8m8cd46i1t/out/v1/83985c68e4174e90a58a1f2c024be4c9/cenc.mpd?&kid=0b42be2664d7e811d04f3e504e0924c5&key=ae24090123b8c72ac5404dc152847cb8" },
             "engvssp_fox":      { type: "iframe", name: "England vs Spain (FOX Sports)",   url: "shaka_player.html?mpd=https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/awxnrqkbo5/out/v1/716529a4091947b0877e6cb80dbd6ccb/cenc.mpd&kid=09453ce820d65fbc675de3185f9e454c&key=98cff9600995fa381c76fdacf3c7edae" },
 
-            // ── AKS1 Direct MPD & M3U8 Channels (No Matchdekho Iframes) ───────
-            "aks1_hindi":       { type: "iframe", name: "Star Sports Hindi (AKS1 MPD)",          url: "shaka_player.html?mpd=https://jiotvpllive.cdn.jio.com//bpk-tv/StarSportsHD2Hin_BTS/WDVLive/index.mpd&kid=bd1ea6a1c1fb5dcdb709434e0826bbc0&key=f57f22cba32739ce7beb1fab3f3d060b" },
-            "aks1_english":     { type: "iframe", name: "Star Sports English (AKS1 MPD)",        url: "shaka_player.html?mpd=https://jiotvpllive.cdn.jio.com//bpk-tv/Star_Sports_HD2_BTS/WDVLive/index.mpd&kid=9457eb90129456fa8ea95e10ba4ac51e&key=e620a970cea474c491ac78ae71a4d764" },
-            "aks1_tamil":       { type: "iframe", name: "Star Sports Tamil (AKS1 MPD)",          url: "shaka_player.html?mpd=https://jiotvpllive.cdn.jio.com//bpk-tv/Star_Sports2_Tamil_HD_BTS/WDVLive/index.mpd&kid=dc44fe6251825774b90d58dcfa7d94e0&key=63e3ae853f483a86752b5b9e6d61eb20" },
-            "aks1_telugu":      { type: "iframe", name: "Star Sports Telugu (AKS1 MPD)",         url: "shaka_player.html?mpd=https://jiotvpllive.cdn.jio.com//bpk-tv/Star_Sports2_Telugu_HD_BTS/WDVLive/index.mpd&kid=c8a2fb190fc957c1b8333af9a7a39d31&key=be7497b59d4ce9e33d29bfd1d38bad1d" },
-            "aks1_willow":      { type: "iframe", name: "Willow Cricbuzz (AKS1 MPD)",            url: "shaka_player.html?mpd=https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/alfdweafqm/out/v1/a429fd66def345f7baf21a2a43c12dfd/cenc.mpd&kid=71a0d47149350b92846f380f637114f8&key=bf5386127fc245e3525c39060550d621" },
+            // ── AKS1 Channels (Clean SonuCDN V3 Engine & Direct M3U8) ────────
+            "aks1_hindi":       { type: "iframe", name: "Star Sports Hindi (AKS1)",              url: "https://sonucdn-v3.pages.dev/star.html?id=H2HD" },
+            "aks1_english":     { type: "iframe", name: "Star Sports English (AKS1)",            url: "https://sonucdn-v3.pages.dev/star.html?id=E2HD" },
+            "aks1_tamil":       { type: "iframe", name: "Star Sports Tamil (AKS1)",              url: "https://sonucdn-v3.pages.dev/star.html?id=S2HD" },
+            "aks1_telugu":      { type: "iframe", name: "Star Sports Telugu (AKS1)",             url: "https://sonucdn-v3.pages.dev/star.html?id=TE2HD" },
+            "aks1_willow":      { type: "iframe", name: "Willow Cricbuzz (AKS1)",                url: "https://sonucdn-v3.pages.dev/channel/willow.html" },
+            "aks1_tnt":         { type: "iframe", name: "TNT Sports AQ (AKS1)",                  url: "https://sonucdn-v3.pages.dev/channel/tnt.html" },
             "aks1_all":         { type: "video",  name: "All Devices AQ (AKS1 Direct)",          url: "https://amg01269-amg01269c1-sportstribal-emea-5204.playouts.now.amagi.tv/ts-eu-w1-n2/playlist/amg01269-willowtvfast-willowplus-sportstribalemea/cb573d1c796c64899ad43678d1f74382917b3dcb0e6c886470af4a9765d96300dbf9b9c8fd3ab13c1ec0468a710b6b5a4d05b671db7c02c5c76ad91174204213cfcac9229d86170ab5c60c2c3aab016635837209c0790a79dca93d0d8636ba304530e01b615b37c2ec5da46852db87028978378aabde7144220806c3084d86f108f2bdb84240db6bbfb21a5a817e13efd342c1821aa687d15d975e8777a71580c3a18e810dd1809564af55b0630b5e242aab9513fca1cb69f7e00b10b2334d6f1051efa2e191245ea77433977c62a9c501de00c7885fed089c302dea29a9258769ab00e59426625b96ad206c11deaf76602fa1f7a199f32121bc2c93c88f89232cc9a5472a05a169a9e7f699e7bbb847a4baeea349e848ec5b3d72acb056929cfda8e0bc864b8824f03c95f2276f41790d0e8a5cedcf238b699554a1c00639070d65a39e47cb8fdd1e613414c6b273ec464bea89c2c3fe1e2bc6652c5fea4bd04f4a399f63222fb36db1b11458a40a46c53934f05d75a747ffb323bce7f8ed1434b8db8813ab36a1e54485ae50fe236d0f51f3df235d4c407890dd670b316bca0ab1809daf245f72819daadfce572a083013206edab49d1ed9e2ed261f1fcd5666507c1f19930eb5388a54a9619a56ea61ca4610e87672dd4ca0601f3847325772f0/154/720x404_1513283/index.m3u8" },
-            "aks1_tnt":         { type: "iframe", name: "TNT Sports AQ (AKS1 MPD)",              url: "shaka_player.html?mpd=https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/h1kfxvwp9c/out/v1/2899320e61bb4d218ccb5bf704c27cc2/cenc.mpd?&kid=595932d92efbd8423ac32fbffcc78dca&key=adea3202c6154d11faad1d54b363763c" },
             "aks1_ios":         { type: "video",  name: "IOS / FanCode (AKS1 M3U8 Direct)",      url: "https://jiotvvod.cdn.jio.com/bpkvod/jiotv/default/public_689456dc811e78d54181230a/public_689456dc811e78d54181230a/index_jtv_androidtv_premium.m3u8" },
             "aks1_fc":          { type: "video",  name: "FanCode Live (AKS1 M3U8 Direct)",       url: "https://jiotvvod.cdn.jio.com/bpkvod/jiotv/default/public_689456dc811e78d54181230a/public_689456dc811e78d54181230a/index_jtv_androidtv_premium.m3u8" },
             "aks1_ptv":         { type: "video",  name: "PTV Sports (AKS1 M3U8 Direct)",         url: "https://flussonic.defineatoz.com/PTV/index.m3u8" },
-            "aks1_willow_mpd":  { type: "iframe", name: "Willow Cricbuzz (AKS1 MPD)",            url: "shaka_player.html?mpd=https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/alfdweafqm/out/v1/a429fd66def345f7baf21a2a43c12dfd/cenc.mpd&kid=71a0d47149350b92846f380f637114f8&key=bf5386127fc245e3525c39060550d621" },
-            "aks1_h1hd":        { type: "iframe", name: "Star Sports 1 Hindi HD (AKS1 MPD)",    url: "shaka_player.html?mpd=https://jiotvpllive.cdn.jio.com//bpk-tv/Star_Sports_HD1_Hindi_BTS/WDVLive/index.mpd&kid=400131994b445d8c8817202248760fda&key=2d56cb6f07a75b9aff165d534ae2bfc4" },
-            "aks1_h2hd":        { type: "iframe", name: "Star Sports 2 Hindi HD (AKS1 MPD)",    url: "shaka_player.html?mpd=https://jiotvpllive.cdn.jio.com//bpk-tv/StarSportsHD2Hin_BTS/WDVLive/index.mpd&kid=bd1ea6a1c1fb5dcdb709434e0826bbc0&key=f57f22cba32739ce7beb1fab3f3d060b" },
-            "aks1_e1hd":        { type: "iframe", name: "Star Sports 1 English HD (AKS1 MPD)",  url: "shaka_player.html?mpd=https://jiotvpllive.cdn.jio.com//bpk-tv/Star_Sports_HD1_BTS/WDVLive/index.mpd&kid=965dc2ddb1d85138ad787999a7f30ca5&key=859695076e67fe961836b564db6d689c" },
-            "aks1_e2hd":        { type: "iframe", name: "Star Sports 2 English HD (AKS1 MPD)",  url: "shaka_player.html?mpd=https://jiotvpllive.cdn.jio.com//bpk-tv/Star_Sports_HD2_BTS/WDVLive/index.mpd&kid=9457eb90129456fa8ea95e10ba4ac51e&key=e620a970cea474c491ac78ae71a4d764" },
-            "aks1_s2hd":        { type: "iframe", name: "Star Sports 2 Tamil HD (AKS1 MPD)",    url: "shaka_player.html?mpd=https://jiotvpllive.cdn.jio.com//bpk-tv/Star_Sports2_Tamil_HD_BTS/WDVLive/index.mpd&kid=dc44fe6251825774b90d58dcfa7d94e0&key=63e3ae853f483a86752b5b9e6d61eb20" },
-            "aks1_te2hd":       { type: "iframe", name: "Star Sports 2 Telugu HD (AKS1 MPD)",   url: "shaka_player.html?mpd=https://jiotvpllive.cdn.jio.com//bpk-tv/Star_Sports2_Telugu_HD_BTS/WDVLive/index.mpd&kid=c8a2fb190fc957c1b8333af9a7a39d31&key=be7497b59d4ce9e33d29bfd1d38bad1d" },
-            "aks1_ss3":         { type: "iframe", name: "Star Sports 3 SD (AKS1 MPD)",          url: "shaka_player.html?mpd=https://jiotvpllive.cdn.jio.com//bpk-tv/Star_Sports_3_BTS/WDVLive/index.mpd&kid=e4e8647eaf0659ac85f61765a5abcdc1&key=d749c9b27505beb0e1a8b6c30ca65de6" },
-            "aks1_se1hd":       { type: "iframe", name: "Star Sports Select 1 HD (AKS1 MPD)",   url: "shaka_player.html?mpd=https://jiotvpllive.cdn.jio.com//bpk-tv/Star_Sports_Select_HD_1_BTS/WDVLive/index.mpd&kid=c2c048e439d65316beeda6ef64d5d0f8&key=e2fdc132cbdee65501b845ce414fce39" },
-            "aks1_se2hd":       { type: "iframe", name: "Star Sports Select 2 HD (AKS1 MPD)",   url: "shaka_player.html?mpd=https://jiotvpllive.cdn.jio.com//bpk-tv/Star_Sports_Select_HD_2_BTS/WDVLive/index.mpd&kid=6017d0514d425fa38f6e80ba6dcc852f&key=0018944b00adf2078f62386f30c68b74" },
-            "aks1_s1":          { type: "iframe", name: "Sony Sports 1 SD (AKS1 MPD)",          url: "shaka_player.html?mpd=https://jiotvmblive.cdn.jio.com/bpk-tv/Ten_1_MOB/WDVLive/index.mpd&kid=3394be91407c5fe99d784d2f2d6d4a12&key=58665e1df41f9f22ed73c56384bb3f51" },
-            "aks1_s2":          { type: "iframe", name: "Sony Sports 2 SD (AKS1 MPD)",          url: "shaka_player.html?mpd=https://jiotvmblive.cdn.jio.com/bpk-tv/Ten_2_MOB/WDVLive/index.mpd&kid=671ce7c8ccc95e0a95cba0d12831d12e&key=175d284c9647b6feb379e7c1650a4f82" },
-            "aks1_s3":          { type: "iframe", name: "Sony Sports 3 SD (AKS1 MPD)",          url: "shaka_player.html?mpd=https://jiotvmblive.cdn.jio.com/bpk-tv/Ten_3_MOB/WDVLive/index.mpd&kid=68318f7c97c55ba6ab8d0398a88fed3e&key=d312fb3325b4eb9462b4a0d2b6794adf" },
-            "aks1_s5":          { type: "iframe", name: "Sony Sports 5 SD (AKS1 MPD)",          url: "shaka_player.html?mpd=https://jiotvmblive.cdn.jio.com/bpk-tv/Sony_Six_SD_MOB/WDVLive/index.mpd&kid=d2d8709de11d5955b60c57d3c955733e&key=7655200b24bf82808fb8addf2f02847b" },
+            "aks1_h1hd":        { type: "iframe", name: "Star Sports 1 Hindi HD (AKS1)",         url: "https://sonucdn-v3.pages.dev/star.html?id=H1HD" },
+            "aks1_h2hd":        { type: "iframe", name: "Star Sports 2 Hindi HD (AKS1)",         url: "https://sonucdn-v3.pages.dev/star.html?id=H2HD" },
+            "aks1_e1hd":        { type: "iframe", name: "Star Sports 1 English HD (AKS1)",       url: "https://sonucdn-v3.pages.dev/star.html?id=E1HD" },
+            "aks1_e2hd":        { type: "iframe", name: "Star Sports 2 English HD (AKS1)",       url: "https://sonucdn-v3.pages.dev/star.html?id=E2HD" },
+            "aks1_s2hd":        { type: "iframe", name: "Star Sports 2 Tamil HD (AKS1)",         url: "https://sonucdn-v3.pages.dev/star.html?id=S2HD" },
+            "aks1_te2hd":       { type: "iframe", name: "Star Sports 2 Telugu HD (AKS1)",        url: "https://sonucdn-v3.pages.dev/star.html?id=TE2HD" },
+            "aks1_ss3":         { type: "iframe", name: "Star Sports 3 SD (AKS1)",               url: "https://sonucdn-v3.pages.dev/star.html?id=SS3" },
+            "aks1_se1hd":       { type: "iframe", name: "Star Sports Select 1 HD (AKS1)",        url: "https://sonucdn-v3.pages.dev/star.html?id=SE1HD" },
+            "aks1_se2hd":       { type: "iframe", name: "Star Sports Select 2 HD (AKS1)",        url: "https://sonucdn-v3.pages.dev/star.html?id=SE2HD" },
+            "aks1_s1":          { type: "iframe", name: "Sony Sports 1 SD (AKS1)",               url: "https://sonucdn-v3.pages.dev/star.html?id=STEN1" },
+            "aks1_s2":          { type: "iframe", name: "Sony Sports 2 SD (AKS1)",               url: "https://sonucdn-v3.pages.dev/star.html?id=STEN2" },
+            "aks1_s3":          { type: "iframe", name: "Sony Sports 3 SD (AKS1)",               url: "https://sonucdn-v3.pages.dev/star.html?id=STEN3" },
+            "aks1_s5":          { type: "iframe", name: "Sony Sports 5 SD (AKS1)",               url: "https://sonucdn-v3.pages.dev/star.html?id=STEN5" },
 
             // ── New ADILX & Footsters Channels (Pages.dev Wrappers) ──────────
             "adilx_sky":        { type: "iframe", name: "Sky Sports UK (ADILX)",          url: "https://adilx.pages.dev/?SKY" },
@@ -1678,6 +1677,8 @@
                 var keyLower = streamKey.toLowerCase();
                 var ch = channels[streamKey] || 
                          channels[keyLower] || 
+                         channels['aks1_' + keyLower] || 
+                         channels['aks_' + keyLower] || 
                          channels['as2_' + keyLower] || 
                          channels['as1_' + keyLower] || 
                          channels['as_' + keyLower] ||
