@@ -924,53 +924,7 @@
         }
 
         const channels = {
-            // ── Live Matches ──────────────────────────────────────────────────
-            "nmvszsw":          { type: "video",  name: "NM vs ZSW (Live Match)",         url: "https://live05.meung.app/live/90865415_tsc.m3u8" },
-            "slvsmo":           { type: "video",  name: "SL vs MO (Live Match)",          url: "https://live05.meung.app/live/14707124_tsc.m3u8" },
-            "alvsbl":           { type: "video",  name: "AL vs BL (Live Match)",          url: "https://live05.meung.app/live/82054853_tsc.m3u8" },
-            "crvscz":           { type: "video",  name: "CR vs CZ (Live Match)",          url: "https://live05.meung.app/live/87379114_tsc.m3u8" },
-            "spveg":            { type: "video",  name: "SP vs EG (Live Match)",          url: "https://live05.meung.app/live/14830711_tsc.m3u8" },
-            "spvseg":           { type: "video",  name: "SP vs EG (Live Match)",          url: "https://live05.meung.app/live/14830711_tsc.m3u8" },
-            "nm_zsw":           { type: "video",  name: "NM vs ZSW (Live Match)",         url: "https://live05.meung.app/live/90865415_tsc.m3u8" },
-            "sl_mo":            { type: "video",  name: "SL vs MO (Live Match)",          url: "https://live05.meung.app/live/14707124_tsc.m3u8" },
-            "al_bl":            { type: "video",  name: "AL vs BL (Live Match)",          url: "https://live05.meung.app/live/82054853_tsc.m3u8" },
-            "cr_cz":            { type: "video",  name: "CR vs CZ (Live Match)",          url: "https://live05.meung.app/live/87379114_tsc.m3u8" },
-            "sp_eg":            { type: "video",  name: "SP vs EG (Live Match)",          url: "https://live05.meung.app/live/14830711_tsc.m3u8" },
-            "irevsisr":         { type: "video",  name: "Ireland vs Israel (Live Match)", url: "https://live05.miekgo.app/live/07428422.m3u8" },
-            "irevsisr1":        { type: "video",  name: "Ireland vs Israel (Live Match)", url: "https://live05.miekgo.app/live/07428422.m3u8" },
-            "ire_isr":          { type: "video",  name: "Ireland vs Israel (Live Match)", url: "https://live05.miekgo.app/live/07428422.m3u8" },
-
-            // ── England vs Spain (DASH MPD ClearKey Streams) ───────────────────
-            "engvssp1":         { type: "iframe", name: "England vs Spain 1 (ESPN)",       url: "shaka_player.html?mpd=https://vcdn.mn10.entel.bo/Content/DASH/Live/Channel(8757cb0a-3584-40cd-901e-8937c7deba83)/master.mpd&kid=cb004fb100bd92f23793562891e3236b&key=b3e4e74ae2080b137e68bbd0ef8a7e05" },
-            "engvssp2":         { type: "iframe", name: "England vs Spain 2 (Italia 1)",   url: "shaka_player.html?mpd=https://live03p-seg.msf.cdn.mediaset.net/live/ch-i1/i1-dash-widevine.isml/manifest.mpd&kid=00f9f3c0783536b8ee91704e23b78016&key=bfd04d6f544c9cc4d35cb13ab6778587" },
-            "engvssp":          { type: "iframe", name: "England vs Spain 1 (ESPN)",       url: "shaka_player.html?mpd=https://vcdn.mn10.entel.bo/Content/DASH/Live/Channel(8757cb0a-3584-40cd-901e-8937c7deba83)/master.mpd&kid=cb004fb100bd92f23793562891e3236b&key=b3e4e74ae2080b137e68bbd0ef8a7e05" },
-            "eng_sp_1":         { type: "iframe", name: "England vs Spain 1 (ESPN)",       url: "shaka_player.html?mpd=https://vcdn.mn10.entel.bo/Content/DASH/Live/Channel(8757cb0a-3584-40cd-901e-8937c7deba83)/master.mpd&kid=cb004fb100bd92f23793562891e3236b&key=b3e4e74ae2080b137e68bbd0ef8a7e05" },
-            "eng_sp_2":         { type: "iframe", name: "England vs Spain 2 (Italia 1)",   url: "shaka_player.html?mpd=https://live03p-seg.msf.cdn.mediaset.net/live/ch-i1/i1-dash-widevine.isml/manifest.mpd&kid=00f9f3c0783536b8ee91704e23b78016&key=bfd04d6f544c9cc4d35cb13ab6778587" },
-            "engvssp_bein":     { type: "iframe", name: "England vs Spain (beIN English)", url: "shaka_player.html?mpd=https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/8m8cd46i1t/out/v1/83985c68e4174e90a58a1f2c024be4c9/cenc.mpd?&kid=0b42be2664d7e811d04f3e504e0924c5&key=ae24090123b8c72ac5404dc152847cb8" },
-            "engvssp_fox":      { type: "iframe", name: "England vs Spain (FOX Sports)",   url: "shaka_player.html?mpd=https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/awxnrqkbo5/out/v1/716529a4091947b0877e6cb80dbd6ccb/cenc.mpd&kid=09453ce820d65fbc675de3185f9e454c&key=98cff9600995fa381c76fdacf3c7edae" },
-
-            // ── Germany vs Greece (UEFA Nations League - DASH MPD & M3U8) ──
-            "gervsgre":         { type: "iframe", name: "Germany vs Greece (beIN Sports)", url: "shaka_player.html?mpd=https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/8m8cd46i1t/out/v1/83985c68e4174e90a58a1f2c024be4c9/cenc.mpd&kid=0b42be2664d7e811d04f3e504e0924c5&key=ae24090123b8c72ac5404dc152847cb8" },
-            "gervsgre1":        { type: "iframe", name: "Germany vs Greece (beIN Sports)", url: "shaka_player.html?mpd=https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/8m8cd46i1t/out/v1/83985c68e4174e90a58a1f2c024be4c9/cenc.mpd&kid=0b42be2664d7e811d04f3e504e0924c5&key=ae24090123b8c72ac5404dc152847cb8" },
-            "gervsgre2":        { type: "iframe", name: "Germany vs Greece (SporTV BR)",   url: "shaka_player.html?mpd=https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/orhlovwjv8/out/v1/3fbdf8c3ec6743d085d32dace1764176/cenc.mpd&kid=2357a3e2fe6f07c42c00ee9eec769a27&key=061d7a73d6f4b13160e3d9fdbc154a0a" },
-            "gervsgre3":        { type: "iframe", name: "Germany vs Greece (FOX Sports)",  url: "shaka_player.html?mpd=https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/awxnrqkbo5/out/v1/716529a4091947b0877e6cb80dbd6ccb/cenc.mpd&kid=09453ce820d65fbc675de3185f9e454c&key=98cff9600995fa381c76fdacf3c7edae" },
-            "gervsgre4":        { type: "video",  name: "Germany vs Greece (Live Feed 4)",  url: "https://live05.miekgo.app/live/33982309.m3u8" },
-            "gervsgre_bein":    { type: "iframe", name: "Germany vs Greece (beIN Sports)", url: "shaka_player.html?mpd=https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/8m8cd46i1t/out/v1/83985c68e4174e90a58a1f2c024be4c9/cenc.mpd&kid=0b42be2664d7e811d04f3e504e0924c5&key=ae24090123b8c72ac5404dc152847cb8" },
-            "gervsgre_sportstv":{ type: "iframe", name: "Germany vs Greece (SporTV BR)",   url: "shaka_player.html?mpd=https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/orhlovwjv8/out/v1/3fbdf8c3ec6743d085d32dace1764176/cenc.mpd&kid=2357a3e2fe6f07c42c00ee9eec769a27&key=061d7a73d6f4b13160e3d9fdbc154a0a" },
-            "ger_gre":          { type: "iframe", name: "Germany vs Greece (beIN Sports)", url: "shaka_player.html?mpd=https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/8m8cd46i1t/out/v1/83985c68e4174e90a58a1f2c024be4c9/cenc.mpd&kid=0b42be2664d7e811d04f3e504e0924c5&key=ae24090123b8c72ac5404dc152847cb8" },
-            "ger_gre_2":        { type: "iframe", name: "Germany vs Greece (SporTV BR)",   url: "shaka_player.html?mpd=https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/orhlovwjv8/out/v1/3fbdf8c3ec6743d085d32dace1764176/cenc.mpd&kid=2357a3e2fe6f07c42c00ee9eec769a27&key=061d7a73d6f4b13160e3d9fdbc154a0a" },
-            "ger_gre_4":        { type: "video",  name: "Germany vs Greece (Live Feed 4)",  url: "https://live05.miekgo.app/live/33982309.m3u8" },
-
-            // ── Norway vs Portugal (UEFA Nations League - DASH MPD & M3U8) ──
-            "norvspor":         { type: "iframe", name: "Norway vs Portugal (beIN Sports)",url: "shaka_player.html?mpd=https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/q4u5nwaogz/out/v1/18de6d3e65934f3a8de4358e69eab86c/cenc.mpd&kid=7995c724a13748ed970840a8ab5bb9b3&key=67bdaf1e2175b9ff682fcdf0e2354b1e" },
-            "norvspor1":        { type: "iframe", name: "Norway vs Portugal (beIN Sports)",url: "shaka_player.html?mpd=https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/q4u5nwaogz/out/v1/18de6d3e65934f3a8de4358e69eab86c/cenc.mpd&kid=7995c724a13748ed970840a8ab5bb9b3&key=67bdaf1e2175b9ff682fcdf0e2354b1e" },
-            "norvspor2":        { type: "iframe", name: "Norway vs Portugal (Sport 1 CZ)", url: "shaka_player.html?mpd=https://dash2.antik.sk/stream/nvidia_sport_1/playlist_cenc.mpd&kid=11223344556677889900112233445566&key=4b80724d0ef86bcb2c21f7999d67739d" },
-            "norvspor3":        { type: "video",  name: "Norway vs Portugal (Live Feed 3)", url: "https://live05.miekgo.app/live/08552895.m3u8" },
-            "norvspor_bein":    { type: "iframe", name: "Norway vs Portugal (beIN Sports)",url: "shaka_player.html?mpd=https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/q4u5nwaogz/out/v1/18de6d3e65934f3a8de4358e69eab86c/cenc.mpd&kid=7995c724a13748ed970840a8ab5bb9b3&key=67bdaf1e2175b9ff682fcdf0e2354b1e" },
-            "norvspor_sports1": { type: "iframe", name: "Norway vs Portugal (Sport 1 CZ)", url: "shaka_player.html?mpd=https://dash2.antik.sk/stream/nvidia_sport_1/playlist_cenc.mpd&kid=11223344556677889900112233445566&key=4b80724d0ef86bcb2c21f7999d67739d" },
-            "nor_por":          { type: "iframe", name: "Norway vs Portugal (beIN Sports)",url: "shaka_player.html?mpd=https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/q4u5nwaogz/out/v1/18de6d3e65934f3a8de4358e69eab86c/cenc.mpd&kid=7995c724a13748ed970840a8ab5bb9b3&key=67bdaf1e2175b9ff682fcdf0e2354b1e" },
-            "nor_por_2":        { type: "iframe", name: "Norway vs Portugal (Sport 1 CZ)", url: "shaka_player.html?mpd=https://dash2.antik.sk/stream/nvidia_sport_1/playlist_cenc.mpd&kid=11223344556677889900112233445566&key=4b80724d0ef86bcb2c21f7999d67739d" },
-            "nor_por_3":        { type: "video",  name: "Norway vs Portugal (Live Feed 3)", url: "https://live05.miekgo.app/live/08552895.m3u8" },
+            // ── Live Matches (Ready for New Feeds) ─────────────────────────────
 
             // ── AKS1 Channels (Self-Hosted Dynamic Token Shaka Player) ─────────
             "aks1_hindi":       { type: "iframe", name: "Star Sports Hindi (AKS1)",              url: "shaka_player.html?chid=H2HD" },
