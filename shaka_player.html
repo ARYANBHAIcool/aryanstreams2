@@ -167,22 +167,41 @@
             }
         }
 
+        var ID_MAP = {
+            'ss1h': '1108', 'ss1': '1106', 'ss1tam': '3277', 'ss1tel': '3278', 'ss1kan': '1650',
+            'ss2': '1109', 'ss2h': '1984', 'ss2tam': '3273', 'ss2tel': '3274', 'ss2kan': '1122',
+            'ss3': '1389', 'ssselect1': '460', 'ssselect2': '461', 'sskhel': '1998',
+            'ten1': '162', 'ten2': '891', 'ten3': '892', 'ten4': '1773', 'ten5': '155',
+            'sten1': '162', 'sten2': '891', 'sten3': '892', 'sten4': '1773', 'sten5': '155', 'sten5hd': '155',
+            'sony1': '162', 'sony2': '891', 'sony3': '892', 'sony4': '1773', 'sony5': '155', 'sonyten5': '155',
+            'sony_ten1_hd': '162', 'sony_ten2_hd': '891', 'sony_ten3_hd': '892', 'sony_ten5_hd': '155',
+            'dds': '204', 'ddsports': '204', 'eurosport': '875', 'eurohd': '875'
+        };
+
         function rawCookie(c) {
-            return c && c.startsWith("__hdnea__=") ? c.slice(10) : (c || "");
+            if (!c) return "";
+            return c.startsWith("__hdnea__=") ? c.slice(10) : c;
+        }
+        function formatCookieHeader(c) {
+            if (!c) return "";
+            return c.startsWith("__hdnea__=") ? c : "__hdnea__=" + c;
         }
         function withCookie(u, r) {
             if (!u || !r) return u;
-            if (u.indexOf("__hdnea__") !== -1) return u;
+            if (u.indexOf("__hdnea__") !== -1 || u.indexOf("st=") !== -1) return u;
             return u + (u.indexOf("?") !== -1 ? "&" : "?") + "__hdnea__=" + r;
         }
 
         async function fetchChannelData(id) {
             var endpoints = [
+                'https://raw.githubusercontent.com/sportlive18/jio-tv-auto-update-playlist/refs/heads/main/star2.json',
+                'https://my-api-5e7.pages.dev/jiotv2.json',
                 'https://sonujson-v5.pages.dev/Data/sports.json',
-                'https://sonujson-v3.pages.dev/Data/sports.json',
-                'https://my-api-5e7.pages.dev/jiotv2.json'
+                'https://sonujson-v3.pages.dev/Data/sports.json'
             ];
             var idStr = String(id).trim().toLowerCase();
+            var mappedId = (ID_MAP[idStr] || idStr).toLowerCase();
+
             for (var i = 0; i < endpoints.length; i++) {
                 try {
                     var res = await fetch(endpoints[i], { cache: 'no-store' });
@@ -193,10 +212,11 @@
                         var target = list.find(function(c) {
                             var chId = String(c.id || c.channel_id || '').toLowerCase();
                             var chName = String(c.name || c.channel_name || '').toLowerCase();
-                            return chId === idStr || chName === idStr || chName.includes(idStr);
+                            return chId === mappedId || chId === idStr || chName === idStr || chName.includes(idStr) || (mappedId && chName.includes(mappedId));
                         });
                         if (target) {
                             return {
+                                name: target.name || target.channel_name,
                                 stream_url: target.stream_url || target.channel_url || target.url,
                                 key_id: target.key_id || target.keyId || target.kid,
                                 key: target.key,
@@ -270,7 +290,9 @@
                     if (isJio) {
                         req.headers["Referer"] = REFERER || "https://www.jiotv.com/";
                         req.headers["User-Agent"] = "Mozilla/5.0 (Linux; Android 11; SM-G991B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36";
-                        if (activeCookie) req.headers["Cookie"] = activeCookie;
+                        if (activeCookie) {
+                            req.headers["Cookie"] = formatCookieHeader(activeCookie);
+                        }
                         if (activeRawCookie && (type === shaka.net.NetworkingEngine.RequestType.MANIFEST || type === shaka.net.NetworkingEngine.RequestType.SEGMENT)) {
                             req.uris = req.uris.map(function(u) { return withCookie(u, activeRawCookie); });
                         }
