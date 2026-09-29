@@ -924,6 +924,88 @@
         }
 
         const channels = {
+            // ── MDTV & Sony Sports Ten 5 HD Streams ───────────────────────────
+            "sony_sports_ten_5_hd": { type: "iframe", name: "Sony Sports Ten 5 HD (MDTV)",       url: "shaka_player.html?chid=STEN5HD" },
+            "sony_ten5_hd":         { type: "iframe", name: "Sony Sports Ten 5 HD (MDTV)",       url: "shaka_player.html?chid=STEN5HD" },
+            "ten5hd":               { type: "iframe", name: "Sony Sports Ten 5 HD (MDTV)",       url: "shaka_player.html?chid=STEN5HD" },
+            "ten5":                 { type: "iframe", name: "Sony Sports Ten 5 HD (MDTV)",       url: "shaka_player.html?chid=STEN5HD" },
+            "mdtv_ten5":            { type: "iframe", name: "Sony Sports Ten 5 HD (MDTV)",       url: "shaka_player.html?chid=STEN5HD" },
+            "sony5_hd":             { type: "iframe", name: "Sony Sports Ten 5 HD (MDTV)",       url: "shaka_player.html?chid=STEN5HD" },
+            "sten5":                { type: "iframe", name: "Sony Sports Ten 5 HD (MDTV)",       url: "shaka_player.html?chid=STEN5HD" },
+            "sten5hd":              { type: "iframe", name: "Sony Sports Ten 5 HD (MDTV)",       url: "shaka_player.html?chid=STEN5HD" },
+            "155":                  { type: "iframe", name: "Sony Sports Ten 5 HD (MDTV 155)",   url: "shaka_player.html?chid=STEN5HD" },
+            "ten5_direct":          { type: "iframe", name: "Sony Sports Ten 5 HD (Direct DASH)",url: "shaka_player.html?mpd=https://jiotvmblive.cdn.jio.com/bpk-tv/Sony_Six_HD_MOB/WDVLive/index.mpd&kid=8cb7b40cefe053ea91895e3194bb9912&key=467cf6d740b7212fcfc648644fb79943" },
+
+            // ── Sony Sports Network (MDTV & Jio Feeds) ───────────────────────
+            "sony_ten1_hd":         { type: "iframe", name: "Sony Sports Ten 1 HD (MDTV)",       url: "shaka_player.html?chid=STEN1" },
+            "ten1":                 { type: "iframe", name: "Sony Sports Ten 1 HD (MDTV)",       url: "shaka_player.html?chid=STEN1" },
+            "162":                  { type: "iframe", name: "Sony Sports Ten 1 HD (MDTV 162)",   url: "shaka_player.html?chid=STEN1" },
+            "sony_ten2_hd":         { type: "iframe", name: "Sony Sports Ten 2 HD (MDTV)",       url: "shaka_player.html?chid=STEN2HD" },
+            "ten2":                 { type: "iframe", name: "Sony Sports Ten 2 HD (MDTV)",       url: "shaka_player.html?chid=STEN2HD" },
+            "891":                  { type: "iframe", name: "Sony Sports Ten 2 HD (MDTV 891)",   url: "shaka_player.html?chid=STEN2HD" },
+            "sony_ten3_hd":         { type: "iframe", name: "Sony Sports Ten 3 Hindi HD (MDTV)", url: "shaka_player.html?chid=STEN3HD" },
+            "ten3":                 { type: "iframe", name: "Sony Sports Ten 3 Hindi HD (MDTV)", url: "shaka_player.html?chid=STEN3HD" },
+            "892":                  { type: "iframe", name: "Sony Sports Ten 3 Hindi HD (MDTV 892)", url: "shaka_player.html?chid=STEN3HD" },
+            "sony_ten4_tamil":      { type: "iframe", name: "Sony Sports Ten 4 Tamil (MDTV)",   url: "shaka_player.html?chid=STENT" },
+            "sony_ten4_telugu":     { type: "iframe", name: "Sony Sports Ten 4 Telugu (MDTV)",  url: "shaka_player.html?chid=STENTU" },
+            "ten4":                 { type: "iframe", name: "Sony Sports Ten 4 (MDTV)",          url: "shaka_player.html?chid=STENT" },
+            "1773":                 { type: "iframe", name: "Sony Sports Ten 4 Tamil (MDTV 1773)", url: "shaka_player.html?chid=STENT" },
+            "3514":                 { type: "iframe", name: "Sony Sports Ten 4 Telugu (MDTV 3514)", url: "shaka_player.html?chid=STENTU" },
+
+            // ── Star Sports Network (MDTV Feeds) ─────────────────────────────
+            "star_sports_1_hindi_hd": { type: "iframe", name: "Star Sports 1 Hindi HD (MDTV)",  url: "shaka_player.html?chid=H1HD" },
+            "ss1h":                   { type: "iframe", name: "Star Sports 1 Hindi HD (MDTV)",  url: "shaka_player.html?chid=H1HD" },
+            "1108":                   { type: "iframe", name: "Star Sports 1 Hindi HD (MDTV 1108)", url: "shaka_player.html?chid=H1HD" },
+            "star_sports_1_hd":       { type: "iframe", name: "Star Sports 1 English HD (MDTV)", url: "shaka_player.html?chid=E1HD" },
+            "ss1":                    { type: "iframe", name: "Star Sports 1 English HD (MDTV)", url: "shaka_player.html?chid=E1HD" },
+            "1106":                   { type: "iframe", name: "Star Sports 1 English HD (MDTV 1106)", url: "shaka_player.html?chid=E1HD" },
+            "star_sports_2_hindi_hd": { type: "iframe", name: "Star Sports 2 Hindi HD (MDTV)",  url: "shaka_player.html?chid=H2HD" },
+            "ss2h":                   { type: "iframe", name: "Star Sports 2 Hindi HD (MDTV)",  url: "shaka_player.html?chid=H2HD" },
+            "1984":                   { type: "iframe", name: "Star Sports 2 Hindi HD (MDTV 1984)", url: "shaka_player.html?chid=H2HD" },
+            "star_sports_2_hd":       { type: "iframe", name: "Star Sports 2 English HD (MDTV)", url: "shaka_player.html?chid=E2HD" },
+            "ss2":                    { type: "iframe", name: "Star Sports 2 English HD (MDTV)", url: "shaka_player.html?chid=E2HD" },
+            "1109":                   { type: "iframe", name: "Star Sports 2 English HD (MDTV 1109)", url: "shaka_player.html?chid=E2HD" },
+            "ss1tam":                 { type: "iframe", name: "Star Sports 1 Tamil HD (MDTV)",  url: "shaka_player.html?chid=S2HD" },
+            "3277":                   { type: "iframe", name: "Star Sports 1 Tamil HD (MDTV 3277)", url: "shaka_player.html?chid=S2HD" },
+            "ss1tel":                 { type: "iframe", name: "Star Sports 1 Telugu HD (MDTV)", url: "shaka_player.html?chid=TE2HD" },
+            "3278":                   { type: "iframe", name: "Star Sports 1 Telugu HD (MDTV 3278)", url: "shaka_player.html?chid=TE2HD" },
+            "ss1kan":                 { type: "iframe", name: "Star Sports 1 Kannada (MDTV)",   url: "shaka_player.html?chid=KA1SD" },
+            "1650":                   { type: "iframe", name: "Star Sports 1 Kannada (MDTV 1650)", url: "shaka_player.html?chid=KA1SD" },
+            "ss2tam":                 { type: "iframe", name: "Star Sports 2 Tamil HD (MDTV)",  url: "shaka_player.html?chid=S2HD" },
+            "3273":                   { type: "iframe", name: "Star Sports 2 Tamil HD (MDTV 3273)", url: "shaka_player.html?chid=S2HD" },
+            "ss2tel":                 { type: "iframe", name: "Star Sports 2 Telugu HD (MDTV)", url: "shaka_player.html?chid=TE2HD" },
+            "3274":                   { type: "iframe", name: "Star Sports 2 Telugu HD (MDTV 3274)", url: "shaka_player.html?chid=TE2HD" },
+            "ss2kan":                 { type: "iframe", name: "Star Sports 2 Kannada (MDTV)",   url: "shaka_player.html?chid=KA2SD" },
+            "1122":                   { type: "iframe", name: "Star Sports 2 Kannada (MDTV 1122)", url: "shaka_player.html?chid=KA2SD" },
+            "ss3":                    { type: "iframe", name: "Star Sports 3 SD (MDTV)",        url: "shaka_player.html?chid=SS3" },
+            "1389":                   { type: "iframe", name: "Star Sports 3 SD (MDTV 1389)",   url: "shaka_player.html?chid=SS3" },
+            "ssselect1":              { type: "iframe", name: "Star Sports Select 1 HD (MDTV)", url: "shaka_player.html?chid=SE1HD" },
+            "460":                    { type: "iframe", name: "Star Sports Select 1 HD (MDTV 460)", url: "shaka_player.html?chid=SE1HD" },
+            "ssselect2":              { type: "iframe", name: "Star Sports Select 2 HD (MDTV)", url: "shaka_player.html?chid=SE2HD" },
+            "461":                    { type: "iframe", name: "Star Sports Select 2 HD (MDTV 461)", url: "shaka_player.html?chid=SE2HD" },
+            "sskhel":                 { type: "iframe", name: "Star Sports Khel (MDTV)",        url: "shaka_player.html?chid=H1SD" },
+            "1998":                   { type: "iframe", name: "Star Sports Khel (MDTV 1998)",   url: "shaka_player.html?chid=H1SD" },
+
+            // ── DD Sports, Eurosport & Additional MDTV Channels ───────────────
+            "dd_sports":              { type: "iframe", name: "DD Sports HD (MDTV)",            url: "shaka_player.html?chid=DDS" },
+            "dds":                    { type: "iframe", name: "DD Sports HD (MDTV)",            url: "shaka_player.html?chid=DDS" },
+            "204":                    { type: "iframe", name: "DD Sports HD (MDTV 204)",        url: "shaka_player.html?chid=DDS" },
+            "eurosport_hd":           { type: "iframe", name: "Eurosport HD (MDTV)",            url: "shaka_player.html?chid=EUROHD" },
+            "eurosport":              { type: "iframe", name: "Eurosport HD (MDTV)",            url: "shaka_player.html?chid=EUROHD" },
+            "875":                    { type: "iframe", name: "Eurosport HD (MDTV 875)",        url: "shaka_player.html?chid=EUROHD" },
+            "1294":                   { type: "iframe", name: "Eurosport SD (MDTV 1294)",       url: "shaka_player.html?chid=EUROHD" },
+
+            // ── Direct M3U8 Feeds (FanCode, Telewebion, Fox) ──────────────────
+            "fancode_hin":            { type: "video",  name: "FanCode Hindi (Direct M3U8)",     url: "https://livecf.fancode.com/143352_hindi_hls_ac18250e3545689_1ta-di_h264/index.m3u8" },
+            "fancode_hindi":          { type: "video",  name: "FanCode Hindi (Direct M3U8)",     url: "https://livecf.fancode.com/143352_hindi_hls_ac18250e3545689_1ta-di_h264/index.m3u8" },
+            "fc_hin":                 { type: "video",  name: "FanCode Hindi (Direct M3U8)",     url: "https://livecf.fancode.com/143352_hindi_hls_ac18250e3545689_1ta-di_h264/index.m3u8" },
+            "fancode_eng":            { type: "video",  name: "FanCode English (Direct M3U8)",   url: "https://livecf.fancode.com/143353_english_hls_63ced2230f71145_1ta-di_h264/index.m3u8" },
+            "fancode_english":        { type: "video",  name: "FanCode English (Direct M3U8)",   url: "https://livecf.fancode.com/143353_english_hls_63ced2230f71145_1ta-di_h264/index.m3u8" },
+            "fc_eng":                 { type: "video",  name: "FanCode English (Direct M3U8)",   url: "https://livecf.fancode.com/143353_english_hls_63ced2230f71145_1ta-di_h264/index.m3u8" },
+            "telewebion_fifa":        { type: "video",  name: "FIFA Telewebion (Direct M3U8)",   url: "https://ncdn.telewebion.ir/faratar/live/playlist.m3u8" },
+            "fifa_ios":               { type: "video",  name: "FIFA iOS Telewebion (Direct M3U8)", url: "https://ncdn.telewebion.ir/faratar/live/playlist.m3u8" },
+            "fox_sports_hd":          { type: "video",  name: "Fox Sports HD (Akamai Direct)",   url: "https://foxdtc-video.akamaized.net/ZXhwPTE3ODQ1Njk4MTc7YWNsPS8qO3dzaWQ9ZGMxZjljNTI3YmNiYWM3MTY5ZDA4ZDgyNjBkMDg2ZjNfZm94ZHRjX3dlYl9lbi1VUztobWFjPVBvcFdWWUpTMERKUjNMTEVZOWZDOVFFVDhKbklzSFpBaWRSMnBVaXRtVTA9/live/tx001-ue2/index.m3u8" },
+
             // ── Live Matches (Ready for New Feeds) ─────────────────────────────
 
             // ── AKS1 Channels (Self-Hosted Dynamic Token Shaka Player) ─────────
@@ -1661,12 +1743,14 @@
                 searchStr = '?' + window.location.hash.replace(/^#/, '');
             }
             var urlParams = new URLSearchParams(searchStr);
-            var streamKey = urlParams.get('stream') || urlParams.get('match') || urlParams.get('id') || urlParams.get('ch') || urlParams.get('play');
+            var streamKey = urlParams.get('stream') || urlParams.get('channel') || urlParams.get('match') || urlParams.get('id') || urlParams.get('ch') || urlParams.get('play');
 
             if (streamKey) {
-                var keyLower = streamKey.toLowerCase();
+                var keyLower = streamKey.trim().toLowerCase();
+                var keyNormalized = keyLower.replace(/[\s\-_]+/g, '_');
                 var ch = channels[streamKey] || 
                          channels[keyLower] || 
+                         channels[keyNormalized] || 
                          channels['aks1_' + keyLower] || 
                          channels['aks_' + keyLower] || 
                          channels['as2_' + keyLower] || 
@@ -1674,6 +1758,16 @@
                          channels['as_' + keyLower] ||
                          channels['fb_' + keyLower] ||
                          channels['api_' + keyLower];
+
+                // If still not matched, check if any channel key starts with or includes normalized key
+                if (!ch) {
+                    for (var k in channels) {
+                        if (k.toLowerCase() === keyNormalized || k.toLowerCase().includes(keyNormalized) || keyNormalized.includes(k.toLowerCase())) {
+                            ch = channels[k];
+                            break;
+                        }
+                    }
+                }
 
                 if (ch) {
                     activeChannel = ch;

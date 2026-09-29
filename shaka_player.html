@@ -179,18 +179,30 @@
         async function fetchChannelData(id) {
             var endpoints = [
                 'https://sonujson-v5.pages.dev/Data/sports.json',
-                'https://sonujson-v3.pages.dev/Data/sports.json'
+                'https://sonujson-v3.pages.dev/Data/sports.json',
+                'https://my-api-5e7.pages.dev/jiotv2.json'
             ];
+            var idStr = String(id).trim().toLowerCase();
             for (var i = 0; i < endpoints.length; i++) {
                 try {
                     var res = await fetch(endpoints[i], { cache: 'no-store' });
                     if (!res.ok) continue;
                     var json = await res.json();
-                    if (json && Array.isArray(json.channels)) {
-                        var target = json.channels.find(function(c) {
-                            return String(c.id).toLowerCase() === String(id).toLowerCase();
+                    var list = (json && (json.channels || json.data)) || (Array.isArray(json) ? json : []);
+                    if (Array.isArray(list)) {
+                        var target = list.find(function(c) {
+                            var chId = String(c.id || c.channel_id || '').toLowerCase();
+                            var chName = String(c.name || c.channel_name || '').toLowerCase();
+                            return chId === idStr || chName === idStr || chName.includes(idStr);
                         });
-                        if (target) return target;
+                        if (target) {
+                            return {
+                                stream_url: target.stream_url || target.channel_url || target.url,
+                                key_id: target.key_id || target.keyId || target.kid,
+                                key: target.key,
+                                cookie: target.cookie || ''
+                            };
+                        }
                     }
                 } catch (e) {}
             }
