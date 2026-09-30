@@ -1587,6 +1587,19 @@
 
             if (Hls.isSupported()) {
                 const hls = new Hls({
+                    enableWorker: true,
+                    lowLatencyMode: false,
+                    backBufferLength: 15,
+                    maxBufferLength: 15,
+                    maxMaxBufferLength: 30,
+                    maxBufferSize: 30 * 1000 * 1000,
+                    maxBufferHole: 0.5,
+                    highBufferWatchdogPeriod: 2,
+                    nudgeOffset: 0.1,
+                    nudgeMaxRetry: 5,
+                    maxFragLookUpTolerance: 0.25,
+                    liveSyncDurationCount: 3,
+                    liveMaxLatencyDurationCount: 10,
                     xhrSetup: function(xhr, url) {
                         xhr.withCredentials = false;
                         
@@ -1605,6 +1618,24 @@
                 hlsInstance = hls;
                 hls.loadSource(playableUrl);
                 hls.attachMedia(video);
+
+                hls.on(Hls.Events.ERROR, function (event, data) {
+                    if (data.fatal) {
+                        switch (data.type) {
+                            case Hls.ErrorTypes.NETWORK_ERROR:
+                                console.warn('Network error encountered, auto-recovering...');
+                                hls.startLoad();
+                                break;
+                            case Hls.ErrorTypes.MEDIA_ERROR:
+                                console.warn('Media error encountered, auto-recovering...');
+                                hls.recoverMediaError();
+                                break;
+                            default:
+                                console.error('Fatal unrecoverable HLS error:', data);
+                                break;
+                        }
+                    }
+                });
 
                 hls.on(Hls.Events.MANIFEST_PARSED, function (event, data) {
                     if (spinner) {

@@ -286,10 +286,6 @@
 
                 player.getNetworkingEngine().registerRequestFilter(function(type, req) {
                     var url = req.uris[0];
-                    if (url && (url.includes('aiv-cdn.net') || url.includes('aiv-cdn.com')) && !url.includes('stream-relay-buddy.lovable.app') && !url.includes('/proxy/')) {
-                        req.uris[0] = 'https://stream-relay-buddy.lovable.app/api/public/proxy?url=' + encodeURIComponent(url);
-                    }
-
                     var isJio = (url && (url.includes('jiotv') || url.includes('jio.com'))) || (activeCookie && activeCookie.length > 0);
                     if (isJio) {
                         req.headers["Referer"] = REFERER || "https://www.jiotv.com/";
@@ -307,14 +303,19 @@
 
                 var config = {
                     streaming: {
-                        lowLatencyMode: true,
-                        bufferingGoal: 15,
-                        rebufferingGoal: 2,
+                        lowLatencyMode: false,
+                        bufferingGoal: 10,
+                        rebufferingGoal: 1.5,
+                        bufferBehind: 15,
+                        safeSeekOffset: 4,
                         stallEnabled: true,
+                        stallThreshold: 1,
+                        stallSkip: 0.3,
                         retryParameters: {
-                            maxAttempts: 5,
-                            baseDelay: 1000,
-                            backoffFactor: 2
+                            maxAttempts: 4,
+                            baseDelay: 500,
+                            backoffFactor: 1.5,
+                            timeout: 10000
                         }
                     },
                     manifest: {
@@ -322,14 +323,16 @@
                             autoCorrectDrift: true
                         },
                         retryParameters: {
-                            maxAttempts: 5,
-                            baseDelay: 1000,
-                            backoffFactor: 2
+                            maxAttempts: 4,
+                            baseDelay: 500,
+                            backoffFactor: 1.5,
+                            timeout: 10000
                         }
                     },
                     abr: {
                         enabled: true,
-                        defaultBandwidthEstimate: 2000000
+                        defaultBandwidthEstimate: 2500000,
+                        switchInterval: 2
                     }
                 };
 
@@ -354,12 +357,23 @@
                     hideLoading();
                 });
 
+                player.addEventListener('stalldetected', function() {
+                    try {
+                        if (player.isLive()) {
+                            var drift = player.seekRange().end - $video.currentTime;
+                            if (drift > 12) {
+                                player.goToLive();
+                            }
+                        }
+                    } catch(e) {}
+                });
+
                 player.addEventListener('error', function(ev) {
                     var err = ev.detail;
                     if (err && err.severity === shaka.util.Error.Severity.RECOVERABLE) return;
                     console.error('Shaka error:', err && err.code, err && err.message);
                     showError('Playback error – retrying...');
-                    setTimeout(function() { player.load(activeMpd).catch(function(){}); }, 5000);
+                    setTimeout(function() { player.load(activeMpd).catch(function(){}); }, 4000);
                 });
             } catch(e) {
                 console.error('Init error:', e);
