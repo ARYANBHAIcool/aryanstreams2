@@ -286,7 +286,25 @@
 
                 player.getNetworkingEngine().registerRequestFilter(function(type, req) {
                     var url = req.uris[0];
-                    var isJio = (url && (url.includes('jiotv') || url.includes('jio.com'))) || (activeCookie && activeCookie.length > 0);
+                    if (!url) return;
+
+                    var isAiv = url.includes('aiv-cdn.net') || url.includes('aiv-cdn.com') || url.includes('pv-cdn.net');
+                    if (isAiv) {
+                        if (url.includes('zp4zc7ykfs')) {
+                            // Direct Akamai endpoint for Willow with full CORS support (0 proxy latency)
+                            req.uris = req.uris.map(function(u) {
+                                return u.replace('https://otte.cache.aiv-cdn.net/bom-nitro/enc/', 'https://a96aivottlinear-a.akamaihd.net/OTTB/bom-nitro/enc/');
+                            });
+                        } else if (!url.startsWith('https://stream-relay-buddy.lovable.app')) {
+                            // Route through CORS proxy relay for other CloudFront AIV streams
+                            req.uris = req.uris.map(function(u) {
+                                return 'https://stream-relay-buddy.lovable.app/api/public/proxy?url=' + encodeURIComponent(u);
+                            });
+                        }
+                        return;
+                    }
+
+                    var isJio = url.includes('jiotv') || url.includes('jio.com') || (activeCookie && activeCookie.length > 0);
                     if (isJio) {
                         req.headers["Referer"] = REFERER || "https://www.jiotv.com/";
                         req.headers["User-Agent"] = "Mozilla/5.0 (Linux; Android 11; SM-G991B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36";
