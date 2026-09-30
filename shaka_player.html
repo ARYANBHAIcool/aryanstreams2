@@ -171,11 +171,15 @@
             'ss1h': '1108', 'ss1': '1106', 'ss1tam': '3277', 'ss1tel': '3278', 'ss1kan': '1650',
             'ss2': '1109', 'ss2h': '1984', 'ss2tam': '3273', 'ss2tel': '3274', 'ss2kan': '1122',
             'ss3': '1389', 'ssselect1': '460', 'ssselect2': '461', 'sskhel': '1998',
+            'h1hd': '1108', 'e1hd': '1106', 'h2hd': '1984', 'e2hd': '1109',
+            's2hd': '3273', 'te2hd': '3274', 'ka1sd': '1650', 'ka2sd': '1122',
+            'se1hd': '460', 'se2hd': '461', 'h1sd': '1998',
             'ten1': '162', 'ten2': '891', 'ten3': '892', 'ten4': '1773', 'ten5': '155',
+            'ten1hd': '162', 'ten2hd': '891', 'ten3hd': '892', 'ten4hd': '1773', 'ten5hd': '155',
             'sten1': '162', 'sten2': '891', 'sten3': '892', 'sten4': '1773', 'sten5': '155', 'sten5hd': '155',
             'sony1': '162', 'sony2': '891', 'sony3': '892', 'sony4': '1773', 'sony5': '155', 'sonyten5': '155',
-            'sony_ten1_hd': '162', 'sony_ten2_hd': '891', 'sony_ten3_hd': '892', 'sony_ten5_hd': '155',
-            'dds': '204', 'ddsports': '204', 'eurosport': '875', 'eurohd': '875'
+            'sony_ten1_hd': '162', 'sony_ten2_hd': '891', 'sony_ten3_hd': '892', 'sony_ten4_tamil': '3514', 'sony_ten4_telugu': '1773', 'sony_ten5_hd': '155',
+            'dds': '204', 'ddsports': '204', 'eurosport': '875', 'eurohd': '875', 'eurosport_hd': '875'
         };
 
         function rawCookie(c) {
@@ -188,7 +192,7 @@
         }
         function withCookie(u, r) {
             if (!u || !r) return u;
-            if (u.indexOf("__hdnea__") !== -1 || u.indexOf("st=") !== -1) return u;
+            if (u.indexOf("__hdnea__") !== -1) return u;
             return u + (u.indexOf("?") !== -1 ? "&" : "?") + "__hdnea__=" + r;
         }
 
