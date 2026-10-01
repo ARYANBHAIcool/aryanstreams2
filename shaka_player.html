@@ -168,18 +168,47 @@
         }
 
         var ID_MAP = {
-            'ss1h': '1108', 'ss1': '1106', 'ss1tam': '3277', 'ss1tel': '3278', 'ss1kan': '1650',
-            'ss2': '1109', 'ss2h': '1984', 'ss2tam': '3273', 'ss2tel': '3274', 'ss2kan': '1122',
-            'ss3': '1389', 'ssselect1': '460', 'ssselect2': '461', 'sskhel': '1998',
-            'h1hd': '1108', 'e1hd': '1106', 'h2hd': '1984', 'e2hd': '1109',
-            's2hd': '3273', 'te2hd': '3274', 'ka1sd': '1650', 'ka2sd': '1122',
-            'se1hd': '460', 'se2hd': '461', 'h1sd': '1998',
+            // Star Sports
+            'ss1h': 'H1HD', 'ss1': 'E1HD', 'ss1tam': 'T1HD', 'ss1tel': 'TE1HD', 'ss1kan': 'KA1SD',
+            'ss2': 'E2HD', 'ss2h': 'H2HD', 'ss2tam': 'S2HD', 'ss2tel': 'TE2HD', 'ss2kan': 'KA2SD',
+            'ss3': 'SS3', 'ssselect1': 'SE1HD', 'ssselect2': 'SE2HD', 'sskhel': 'H1SD',
+            'h1hd': 'H1HD', 'e1hd': 'E1HD', 'h2hd': 'H2HD', 'e2hd': 'E2HD',
+            's2hd': 'S2HD', 'te2hd': 'TE2HD', 'ka1sd': 'KA1SD', 'ka2sd': 'KA2SD',
+            'se1hd': 'SE1HD', 'se2hd': 'SE2HD', 'h1sd': 'H1SD',
+            '1108': 'H1HD', '1106': 'E1HD', '1984': 'H2HD', '1109': 'E2HD',
+            '3273': 'S2HD', '3274': 'TE2HD', '1650': 'KA1SD', '1122': 'KA2SD',
+            '1389': 'SS3', '460': 'SE1HD', '461': 'SE2HD', '1998': 'H1SD',
+
+            // Sony Sports Ten
             'ten1': '162', 'ten2': '891', 'ten3': '892', 'ten4': '1773', 'ten5': '155',
             'ten1hd': '162', 'ten2hd': '891', 'ten3hd': '892', 'ten4hd': '1773', 'ten5hd': '155',
             'sten1': '162', 'sten2': '891', 'sten3': '892', 'sten4': '1773', 'sten5': '155', 'sten5hd': '155',
             'sony1': '162', 'sony2': '891', 'sony3': '892', 'sony4': '1773', 'sony5': '155', 'sonyten5': '155',
             'sony_ten1_hd': '162', 'sony_ten2_hd': '891', 'sony_ten3_hd': '892', 'sony_ten4_tamil': '3514', 'sony_ten4_telugu': '1773', 'sony_ten5_hd': '155',
-            'dds': '204', 'ddsports': '204', 'eurosport': '875', 'eurohd': '875', 'eurosport_hd': '875'
+            '162': '162', '891': '891', '892': '892', '1773': '1773', '3514': '3514', '155': '155',
+            'dds': '204', 'ddsports': '204', '204': '204', 'eurosport': 'EUROHD', 'eurohd': 'EUROHD', 'eurosport_hd': 'EUROHD', '875': 'EUROHD'
+        };
+
+        var FALLBACK_MAP = {
+            '162': ['STEN1', 'STEN1HD', 'sony1'],
+            '891': ['STEN2', 'STEN2HD', 'sony2'],
+            '892': ['STEN3', 'STEN3HD', 'sony3'],
+            '1773': ['STENTU', 'STENT', 'sony4'],
+            '3514': ['STENT', 'STENTU', 'sony4'],
+            '155': ['STEN5', 'STEN5HD', 'sony5'],
+            'STEN1': ['162', 'STEN1HD', 'sony1'],
+            'STEN2': ['891', 'STEN2HD', 'sony2'],
+            'STEN3': ['892', 'STEN3HD', 'sony3'],
+            'STENT': ['3514', '1773', 'sony4'],
+            'STENTU': ['1773', '3514', 'sony4'],
+            'STEN5': ['155', 'STEN5HD', 'sony5'],
+            'H1HD': ['1108', 'h1hd'],
+            'E1HD': ['1106', 'e1hd'],
+            'H2HD': ['1984', 'h2hd'],
+            'E2HD': ['1109', 'e2hd'],
+            'S2HD': ['3273', '3277', 's2hd'],
+            'TE2HD': ['3274', '3278', 'te2hd'],
+            'EUROHD': ['875', '1294', 'eurosport']
         };
 
         function rawCookie(c) {
@@ -196,15 +225,41 @@
             return u + (u.indexOf("?") !== -1 ? "&" : "?") + "__hdnea__=" + r;
         }
 
+        function isCookieValid(cookieStr, expireVal) {
+            if (!cookieStr && !expireVal) return true;
+            var nowSec = Math.floor(Date.now() / 1000);
+            var expSec = 0;
+            if (typeof expireVal === 'number' && expireVal > 0) {
+                expSec = expireVal;
+            } else if (cookieStr) {
+                var m = cookieStr.match(/exp=(\d+)/);
+                if (m) expSec = parseInt(m[1], 10);
+            }
+            if (expSec > 0) {
+                return expSec > (nowSec + 30);
+            }
+            return true;
+        }
+
         async function fetchChannelData(id) {
             var endpoints = [
+                'https://sonujson-v5.pages.dev/Data/sports.json',
+                'https://sonujson-v4.pages.dev/Data/sports.json',
                 'https://raw.githubusercontent.com/sportlive18/jio-tv-auto-update-playlist/refs/heads/main/star2.json',
                 'https://my-api-5e7.pages.dev/jiotv2.json',
-                'https://sonujson-v5.pages.dev/Data/sports.json',
                 'https://sonujson-v3.pages.dev/Data/sports.json'
             ];
             var idStr = String(id).trim().toLowerCase();
             var mappedId = (ID_MAP[idStr] || idStr).toLowerCase();
+            var allSearchIds = [mappedId, idStr];
+
+            var upperMapped = mappedId.toUpperCase();
+            if (FALLBACK_MAP[upperMapped]) {
+                FALLBACK_MAP[upperMapped].forEach(function(f) { allSearchIds.push(f.toLowerCase()); });
+            }
+            if (FALLBACK_MAP[idStr.toUpperCase()]) {
+                FALLBACK_MAP[idStr.toUpperCase()].forEach(function(f) { allSearchIds.push(f.toLowerCase()); });
+            }
 
             for (var i = 0; i < endpoints.length; i++) {
                 try {
@@ -212,20 +267,29 @@
                     if (!res.ok) continue;
                     var json = await res.json();
                     var list = (json && (json.channels || json.data)) || (Array.isArray(json) ? json : []);
-                    if (Array.isArray(list)) {
+                    if (!Array.isArray(list)) continue;
+
+                    for (var s = 0; s < allSearchIds.length; s++) {
+                        var searchId = allSearchIds[s];
                         var target = list.find(function(c) {
                             var chId = String(c.id || c.channel_id || '').toLowerCase();
                             var chName = String(c.name || c.channel_name || '').toLowerCase();
-                            return chId === mappedId || chId === idStr || chName === idStr || chName.includes(idStr) || (mappedId && chName.includes(mappedId));
+                            return chId === searchId || chName === searchId;
                         });
+
                         if (target) {
-                            return {
-                                name: target.name || target.channel_name,
-                                stream_url: target.stream_url || target.channel_url || target.url,
-                                key_id: target.key_id || target.keyId || target.kid,
-                                key: target.key,
-                                cookie: target.cookie || ''
-                            };
+                            var cookie = target.cookie || '';
+                            var expire = target.cookie_expire || 0;
+                            if (isCookieValid(cookie, expire)) {
+                                return {
+                                    name: target.name || target.channel_name,
+                                    stream_url: target.stream_url || target.channel_url || target.url,
+                                    key_id: target.key_id || target.keyId || target.kid,
+                                    key: target.key,
+                                    cookie: cookie,
+                                    source: endpoints[i]
+                                };
+                            }
                         }
                     }
                 } catch (e) {}
@@ -354,12 +418,29 @@
                     hideLoading();
                 });
 
-                player.addEventListener('error', function(ev) {
+                player.addEventListener('error', async function(ev) {
                     var err = ev.detail;
                     if (err && err.severity === shaka.util.Error.Severity.RECOVERABLE) return;
                     console.error('Shaka error:', err && err.code, err && err.message);
-                    showError('Playback error – retrying...');
-                    setTimeout(function() { player.load(activeMpd).catch(function(){}); }, 5000);
+                    showError('Playback error – reconnecting...');
+                    if (CH_ID) {
+                        try {
+                            var refreshed = await fetchChannelData(CH_ID);
+                            if (refreshed) {
+                                activeMpd = refreshed.stream_url;
+                                activeKid = refreshed.key_id;
+                                activeKey = refreshed.key;
+                                activeCookie = refreshed.cookie || '';
+                                activeRawCookie = rawCookie(activeCookie);
+                                if (activeKid && activeKey) {
+                                    var drmCfg = { clearKeys: {} };
+                                    drmCfg.clearKeys[activeKid] = activeKey;
+                                    player.configure({ drm: drmCfg });
+                                }
+                            }
+                        } catch(e) {}
+                    }
+                    setTimeout(function() { player.load(activeMpd).catch(function(){}); }, 3000);
                 });
             } catch(e) {
                 console.error('Init error:', e);
