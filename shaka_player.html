@@ -371,10 +371,14 @@
 
                 var config = {
                     streaming: {
-                        lowLatencyMode: true,
-                        bufferingGoal: 15,
+                        lowLatencyMode: false,
+                        bufferingGoal: 12,
                         rebufferingGoal: 2,
+                        bufferBehind: 15,
+                        safeSeekOffset: 4,
                         stallEnabled: true,
+                        stallThreshold: 1,
+                        stallSkip: 0.1,
                         retryParameters: {
                             maxAttempts: 5,
                             baseDelay: 1000,
@@ -393,7 +397,10 @@
                     },
                     abr: {
                         enabled: true,
-                        defaultBandwidthEstimate: 2000000
+                        defaultBandwidthEstimate: 2500000,
+                        switchInterval: 8,
+                        bandwidthUpgradeTarget: 0.85,
+                        bandwidthDowngradeTarget: 0.95
                     }
                 };
 
