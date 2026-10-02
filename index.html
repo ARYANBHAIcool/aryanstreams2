@@ -333,6 +333,15 @@
             height: 100%;
         }
 
+        .player-ad-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 25;
+            cursor: pointer;
+            background: transparent;
+        }
+        .player-ad-overlay.hidden { display: none !important; }
+
         /* Cool Minimalist Loader */
         .spinner {
             position: absolute;
@@ -539,6 +548,8 @@
         #main-toast.error { background: rgba(239, 68, 68, 0.9); color: #ffffff; border: 1px solid rgba(248, 113, 113, 0.3); }
         #main-toast.info { background: rgba(26, 30, 39, 0.95); color: var(--ink); border: 1px solid var(--line); }
     </style>
+    <!-- Popunder -->
+    <script type="text/javascript" src="https://pl31503790.profitableratecpmnetwork.com/ec/8c/af/ec8caf215d92bd77dfa766d702a1ec0f.js"></script>
 </head>
 <body>
 
@@ -551,7 +562,7 @@
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
                 Join Telegram
             </a>
-            <button type="button" class="overlay-btn-secondary" id="ok-btn" onclick="handleOkClick(event)">Ok</button>
+            <a href="https://www.profitableratecpmnetwork.com/t8e8e5yh?key=6da983d7e115700ad4dc612c0e107ec8" target="_blank" rel="noopener noreferrer" class="overlay-btn-secondary" id="ok-btn" onclick="handleOkClick(event)">Ok</a>
         </div>
     </div>
 
@@ -597,6 +608,7 @@
                 <div class="player-box">
                     <!-- Iframe player -->
                     <div id="iframe-container-div" class="hidden" style="width:100%; height:100%;">
+                        <div class="player-ad-overlay" onclick="handlePlayerAdClick(event)"></div>
                         <div class="spinner" id="iframe-spinner">
                             <div class="cool-loader">
                                 <div class="cool-loader-ring"></div>
@@ -608,6 +620,7 @@
 
                     <!-- Plyr video player -->
                     <div id="video-container-div" class="hidden" style="width:100%; height:100%;">
+                        <div class="player-ad-overlay" onclick="handlePlayerAdClick(event)"></div>
                         <div class="spinner" id="video-spinner">
                             <div class="cool-loader">
                                 <div class="cool-loader-ring"></div>
@@ -654,6 +667,8 @@
     </main>
 
     <script>
+        const DIRECT_AD_URL = "https://www.profitableratecpmnetwork.com/t8e8e5yh?key=6da983d7e115700ad4dc612c0e107ec8";
+
         function closeOverlay() {
             var ov = document.getElementById('telegram-overlay');
             if (ov) ov.classList.add('hidden');
@@ -670,11 +685,71 @@
         }
 
         function handleOkClick(e) {
-            if (e && e.preventDefault) e.preventDefault();
             try {
                 sessionStorage.setItem('overlay_closed', 'true');
             } catch (err) {}
             closeOverlay();
+            resumeStreamPlayback();
+        }
+
+        // Backward compatibility
+        function handleJoin() {
+            handleOkClick();
+            try {
+                window.open(DIRECT_AD_URL, '_blank');
+            } catch (err) {}
+        }
+
+        let adTriggerCount = 0;
+        const MAX_SESSION_ADS = 3;
+        let lastAdTime = 0;
+        const AD_COOLDOWN_MS = 60000; // 60 seconds cooldown between ad triggers
+
+        function triggerSmartlinkAd() {
+            const now = Date.now();
+            if (adTriggerCount >= MAX_SESSION_ADS) return false;
+            if (lastAdTime !== 0 && (now - lastAdTime < AD_COOLDOWN_MS)) return false;
+            
+            lastAdTime = now;
+            adTriggerCount++;
+            
+            try {
+                const w = window.open(DIRECT_AD_URL, '_blank');
+                if (!w || w.closed || typeof w.closed === 'undefined') {
+                    const a = document.createElement('a');
+                    a.href = DIRECT_AD_URL;
+                    a.target = '_blank';
+                    a.rel = 'noopener noreferrer';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                }
+            } catch (err) {}
+            return true;
+        }
+
+        function scheduleOverlayRearm() {
+            if (adTriggerCount < MAX_SESSION_ADS) {
+                setTimeout(function() {
+                    if (adTriggerCount < MAX_SESSION_ADS) {
+                        var overlays = document.querySelectorAll('.player-ad-overlay');
+                        overlays.forEach(function(el) {
+                            el.classList.remove('hidden');
+                        });
+                    }
+                }, AD_COOLDOWN_MS);
+            }
+        }
+
+        function handlePlayerAdClick(e) {
+            triggerSmartlinkAd();
+
+            var overlays = document.querySelectorAll('.player-ad-overlay');
+            overlays.forEach(function(el) {
+                el.classList.add('hidden');
+            });
+
+            scheduleOverlayRearm();
             resumeStreamPlayback();
         }
 
@@ -796,6 +871,8 @@
                 location.reload();
                 return;
             }
+            // Trigger smartlink ad if cooldown has passed without overloading
+            triggerSmartlinkAd();
 
             showMainToast('● RELOADING STREAM...', 'info');
             if (activeChannel.type === 'video') {
@@ -1770,5 +1847,8 @@
             document.getElementById('error-view').classList.remove('hidden');
         };
     </script>
+
+    <!-- Social Bar -->
+    <script type="text/javascript" src="https://pl31503799.profitableratecpmnetwork.com/de/42/cd/de42cdeb3c7aad7b416550c1f72cb2e0.js"></script>
 </body>
 </html>
