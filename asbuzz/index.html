@@ -968,23 +968,20 @@
                 const cnp = match.CnpTV || {};
                 const srv = SERVER_CONFIG.find(s => s.id === serverId) || SERVER_CONFIG[0];
                 let mpdUrl = cnp[srv.key];
-
                 if (!mpdUrl) {
                     const fallback = SERVER_CONFIG.find(s => !!cnp[s.key]);
                     if (fallback) mpdUrl = cnp[fallback.key];
                 }
 
-                // Route through our own high-speed private as-proxy
-                if (mpdUrl && (mpdUrl.includes('akamaii.lovable.app') || mpdUrl.includes('stream-relay-buddy') || mpdUrl.includes('sunny-relay-friend') || mpdUrl.includes('sonyliv-beta'))) {
-                    const rawPart = mpdUrl.split('?url=')[1];
-                    if (rawPart) {
-                        mpdUrl = 'https://as-proxy.lovable.app/api/public/px/geobypass?url=' + rawPart;
-                    }
-                }
-
                 if (!mpdUrl) {
                     showToast('No active stream source available for this event.', 'error');
                     return;
+                }
+
+                // Extract clean direct MPD URL for Shaka Player
+                let directMpd = mpdUrl;
+                if (mpdUrl.includes('?url=')) {
+                    directMpd = decodeURIComponent(mpdUrl.split('?url=')[1]);
                 }
 
                 // Update URL search query without reload
@@ -1083,12 +1080,20 @@
                 shakaPlayerInstance.configure(config);
 
                 try {
-                    await shakaPlayerInstance.load(mpdUrl);
+                    await shakaPlayerInstance.load(directMpd);
                     $video.muted = true;
                     $video.play().catch(() => {});
                 } catch (err) {
-                    console.error('Failed to load MPD:', err);
-                    showToast('Stream failed to load. Try another server.', 'error', 4000);
+                    console.warn('Direct MPD load failed, attempting proxy fallback:', err);
+                    try {
+                        const proxiedUrl = 'https://as-proxy.lovable.app/api/public/px/geobypass?url=' + encodeURIComponent(directMpd);
+                        await shakaPlayerInstance.load(proxiedUrl);
+                        $video.muted = true;
+                        $video.play().catch(() => {});
+                    } catch (err2) {
+                        console.error('Failed to load MPD:', err2);
+                        showToast('Stream failed to load. Try another server.', 'error', 4000);
+                    }
                 }
             }
 
