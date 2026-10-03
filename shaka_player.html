@@ -179,11 +179,9 @@
             '3273': 'S2HD', '3274': 'TE2HD', '1650': 'KA1SD', '1122': 'KA2SD',
             '1389': 'SS3', '460': 'SE1HD', '461': 'SE2HD', '1998': 'H1SD',
 
-            // Sony Sports Ten Direct HD Feeds
+            // Sony Sports Ten
             'ten1': '162', 'ten2': '891', 'ten3': '892', 'ten4': '1773', 'ten5': '155',
             'ten1hd': '162', 'ten2hd': '891', 'ten3hd': '892', 'ten4hd': '1773', 'ten5hd': '155',
-            's6': '162', 's6hd': '162', 's2': '891', 's2hd': '891', 's3hindi': '892', 's3hindihd': '892',
-            's4tamil': '3514', 's4telugu': '1773', 's5': '155', 's5hd': '155',
             'sten1': '162', 'sten2': '891', 'sten3': '892', 'sten4': '1773', 'sten5': '155', 'sten5hd': '155',
             'sony1': '162', 'sony2': '891', 'sony3': '892', 'sony4': '1773', 'sony5': '155', 'sonyten5': '155',
             'sony_ten1_hd': '162', 'sony_ten2_hd': '891', 'sony_ten3_hd': '892', 'sony_ten4_tamil': '3514', 'sony_ten4_telugu': '1773', 'sony_ten5_hd': '155',
@@ -192,12 +190,12 @@
         };
 
         var FALLBACK_MAP = {
-            '162': ['162', 'STEN1HD', 'sony1', 'STEN1'],
-            '891': ['891', 'STEN2HD', 'sony2', 'STEN2'],
-            '892': ['892', 'STEN3HD', 'sony3', 'STEN3'],
-            '1773': ['1773', 'STENTU', 'sony4', 'STENT'],
-            '3514': ['3514', 'STENT', 'sony4', 'STENTU'],
-            '155': ['155', 'STEN5HD', 'sony5', 'STEN5'],
+            '162': ['STEN1', 'STEN1HD', 'sony1'],
+            '891': ['STEN2', 'STEN2HD', 'sony2'],
+            '892': ['STEN3', 'STEN3HD', 'sony3'],
+            '1773': ['STENTU', 'STENT', 'sony4'],
+            '3514': ['STENT', 'STENTU', 'sony4'],
+            '155': ['STEN5', 'STEN5HD', 'sony5'],
             'STEN1': ['162', 'STEN1HD', 'sony1'],
             'STEN2': ['891', 'STEN2HD', 'sony2'],
             'STEN3': ['892', 'STEN3HD', 'sony3'],
@@ -245,50 +243,34 @@
 
         async function fetchChannelData(id) {
             var endpoints = [
-                'https://raw.githubusercontent.com/sportlive18/jio-tv-auto-update-playlist/refs/heads/main/star2.json',
                 'https://sonujson-v5.pages.dev/Data/sports.json',
                 'https://sonujson-v4.pages.dev/Data/sports.json',
+                'https://raw.githubusercontent.com/sportlive18/jio-tv-auto-update-playlist/refs/heads/main/star2.json',
                 'https://my-api-5e7.pages.dev/jiotv2.json',
                 'https://sonujson-v3.pages.dev/Data/sports.json'
             ];
             var idStr = String(id).trim().toLowerCase();
-            var isHdRequested = idStr.includes('hd') || ['162', '891', '892', '1773', '155', '3514', 'h1hd', 'e1hd', 'h2hd', 'e2hd', 's2hd', 'te2hd', 'se1hd', 'se2hd'].includes(idStr);
             var mappedId = (ID_MAP[idStr] || idStr).toLowerCase();
-
-            // Build priority search list
-            var searchSequence = [mappedId];
-            if (mappedId !== idStr) searchSequence.push(idStr);
+            var allSearchIds = [mappedId, idStr];
 
             var upperMapped = mappedId.toUpperCase();
-            var fallbacks = FALLBACK_MAP[upperMapped] || FALLBACK_MAP[idStr.toUpperCase()] || [];
-
-            if (isHdRequested) {
-                // Prioritize HD fallback IDs before SD fallback IDs
-                fallbacks.forEach(function(f) {
-                    if (f.toUpperCase().includes('HD')) searchSequence.push(f.toLowerCase());
-                });
-                fallbacks.forEach(function(f) {
-                    var low = f.toLowerCase();
-                    if (!searchSequence.includes(low)) searchSequence.push(low);
-                });
-            } else {
-                fallbacks.forEach(function(f) {
-                    var low = f.toLowerCase();
-                    if (!searchSequence.includes(low)) searchSequence.push(low);
-                });
+            if (FALLBACK_MAP[upperMapped]) {
+                FALLBACK_MAP[upperMapped].forEach(function(f) { allSearchIds.push(f.toLowerCase()); });
+            }
+            if (FALLBACK_MAP[idStr.toUpperCase()]) {
+                FALLBACK_MAP[idStr.toUpperCase()].forEach(function(f) { allSearchIds.push(f.toLowerCase()); });
             }
 
-            // Search by ID priority first, checking all endpoints
-            for (var s = 0; s < searchSequence.length; s++) {
-                var searchId = searchSequence[s];
-                for (var i = 0; i < endpoints.length; i++) {
-                    try {
-                        var res = await fetch(endpoints[i], { cache: 'no-store' });
-                        if (!res.ok) continue;
-                        var json = await res.json();
-                        var list = (json && (json.channels || json.data)) || (Array.isArray(json) ? json : []);
-                        if (!Array.isArray(list)) continue;
+            for (var i = 0; i < endpoints.length; i++) {
+                try {
+                    var res = await fetch(endpoints[i], { cache: 'no-store' });
+                    if (!res.ok) continue;
+                    var json = await res.json();
+                    var list = (json && (json.channels || json.data)) || (Array.isArray(json) ? json : []);
+                    if (!Array.isArray(list)) continue;
 
+                    for (var s = 0; s < allSearchIds.length; s++) {
+                        var searchId = allSearchIds[s];
                         var target = list.find(function(c) {
                             var chId = String(c.id || c.channel_id || '').toLowerCase();
                             var chName = String(c.name || c.channel_name || '').toLowerCase();
@@ -297,7 +279,7 @@
 
                         if (target) {
                             var cookie = target.cookie || '';
-                            var expire = target.cookie_expire || target.cookie_expires || 0;
+                            var expire = target.cookie_expire || 0;
                             if (isCookieValid(cookie, expire)) {
                                 return {
                                     name: target.name || target.channel_name,
@@ -309,8 +291,8 @@
                                 };
                             }
                         }
-                    } catch (e) {}
-                }
+                    }
+                } catch (e) {}
             }
             return null;
         }
