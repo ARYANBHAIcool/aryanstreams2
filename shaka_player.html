@@ -105,6 +105,40 @@
         #status-toast.error {
             background: rgba(127, 29, 29, 0.85); color: #fca5a5; border: 1px solid rgba(248, 113, 113, 0.3);
         }
+
+        /* Prominent Tap to Unmute Overlay */
+        .unmute-banner {
+            position: fixed;
+            top: 18px;
+            left: 18px;
+            z-index: 250;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(15, 23, 42, 0.92);
+            color: #38bdf8;
+            border: 1.5px solid rgba(56, 189, 248, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 700;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+            transition: all 0.2s ease;
+            letter-spacing: 0.5px;
+            user-select: none;
+        }
+        .unmute-banner:hover {
+            background: #0284c7;
+            color: #fff;
+            transform: scale(1.04);
+        }
+        .unmute-banner.hidden {
+            display: none !important;
+        }
     </style>
     <!-- Popunder -->
     <script type="text/javascript" src="https://pl31503790.profitableratecpmnetwork.com/ec/8c/af/ec8caf215d92bd77dfa766d702a1ec0f.js"></script>
@@ -120,6 +154,11 @@
 
     <div id="player-container">
         <video id="video" playsinline webkit-playsinline autoplay style="width:100%; height:100%; object-fit:contain; background:#000;"></video>
+    </div>
+
+    <div id="unmute-banner" class="unmute-banner hidden">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+        <span>TAP FOR SOUND 🔊</span>
     </div>
 
     <div id="status-toast"></div>
@@ -386,6 +425,7 @@
                 await player.attach($video);
                 var ui = new shaka.ui.Overlay(player, document.getElementById('player-container'), $video);
                 ui.configure({
+                    addBigPlayButton: true,
                     controlPanelElements: [
                         'play_pause', 'mute', 'volume', 'spacer',
                         'time_and_duration', 'spacer',
@@ -462,40 +502,73 @@
 
                 player.configure(config);
 
-                await player.load(activeMpd);
-                
-                // Try playing unmuted first; if browser blocks, fallback to muted autoplay
-                $video.muted = false;
-                var playPromise = $video.play();
-                if (playPromise !== undefined) {
-                    playPromise.catch(function() {
-                        // Autoplay with audio was blocked, mute and retry
-                        $video.muted = true;
-                        $video.play().catch(function() {});
+                var $unmuteBtn = document.getElementById('unmute-banner');
+
+                function updateUnmuteState() {
+                    if (!$unmuteBtn) return;
+                    if ($video.muted || $video.volume === 0) {
+                        $unmuteBtn.classList.remove('hidden');
+                    } else {
+                        $unmuteBtn.classList.add('hidden');
+                    }
+                }
+
+                function forceUnmute() {
+                    try {
+                        $video.muted = false;
+                        $video.volume = 1.0;
+                    } catch(e) {}
+                    updateUnmuteState();
+                }
+
+                if ($unmuteBtn) {
+                    $unmuteBtn.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        forceUnmute();
                     });
                 }
 
-                // Automatically unmute when playback starts or user interacts
-                $video.addEventListener('play', function() {
-                    $video.muted = false;
-                });
-
-                function unmuteHandler() {
-                    if ($video.muted) {
-                        $video.muted = false;
-                    }
+                await player.load(activeMpd);
+                
+                // Try playing unmuted first; if browser blocks autoplay audio, fallback to muted and show button
+                $video.muted = false;
+                $video.volume = 1.0;
+                var playPromise = $video.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(function() {
+                        updateUnmuteState();
+                    }).catch(function() {
+                        // Browser autoplay policy blocked audio, start muted and display Unmute banner
+                        $video.muted = true;
+                        $video.play().catch(function() {});
+                        updateUnmuteState();
+                    });
                 }
-                document.addEventListener('pointerdown', unmuteHandler, { capture: true, once: true });
-                document.addEventListener('click', unmuteHandler, { capture: true, once: true });
-                document.addEventListener('keydown', unmuteHandler, { capture: true, once: true });
-                document.getElementById('player-container').addEventListener('click', unmuteHandler, { capture: true, once: true });
+
+                $video.addEventListener('play', function() {
+                    updateUnmuteState();
+                });
+                $video.addEventListener('volumechange', updateUnmuteState);
+
+                document.addEventListener('pointerdown', forceUnmute, { capture: true, once: true });
+                document.addEventListener('click', forceUnmute, { capture: true, once: true });
+                document.addEventListener('keydown', forceUnmute, { capture: true, once: true });
+                document.getElementById('player-container').addEventListener('click', forceUnmute, { capture: true });
+
+                window.addEventListener('message', function(ev) {
+                    if (ev && ev.data && ev.data.type === 'unmute') {
+                        forceUnmute();
+                    }
+                });
 
                 $video.addEventListener('playing', function() {
                     hideLoading();
+                    updateUnmuteState();
                 });
 
                 $video.addEventListener('canplay', function() {
                     hideLoading();
+                    updateUnmuteState();
                 });
 
                 player.addEventListener('error', async function(ev) {

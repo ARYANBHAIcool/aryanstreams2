@@ -682,7 +682,20 @@
                     console.log("Autoplay resume prevented:", err);
                 });
             }
+            var frame = document.getElementById('embed-frame');
+            if (frame && frame.contentWindow) {
+                try {
+                    frame.contentWindow.postMessage({ type: 'unmute' }, '*');
+                } catch(e) {}
+            }
         }
+
+        document.addEventListener('click', function() {
+            var frame = document.getElementById('embed-frame');
+            if (frame && frame.contentWindow) {
+                try { frame.contentWindow.postMessage({ type: 'unmute' }, '*'); } catch(e) {}
+            }
+        });
 
         function handleOkClick(e) {
             try {
