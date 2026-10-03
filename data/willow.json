@@ -1,25 +1,7 @@
 {
-  "last_updated": "10/3/2026, 2:58:35 PM IST",
+  "last_updated": "10/3/2026, 7:53:26 PM IST",
   "source": "https://sonujson-v5.pages.dev/Data/willow.json",
   "Matches": [
-    {
-      "id": "B0HLKTXTGR",
-      "event_name": "Asian Games 2026 - Final - Pakistan vs India",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.2a56250b-b41c-4f01-9dcd-5153f52d5e64/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "LIVE",
-      "time": "9:30 AM IST",
-      "CnpTV": {
-        "fastly_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/cmfpvuwoyv/out/v1/94c214cd527c4b5592de7eb9c9a10028/cenc.mpd",
-        "amazon_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/cmfpvuwoyv/out/v1/94c214cd527c4b5592de7eb9c9a10028/cenc.mpd",
-        "akamai_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/cmfpvuwoyv/out/v1/94c214cd527c4b5592de7eb9c9a10028/cenc.mpd",
-        "cloudfront_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/cmfpvuwoyv/out/v1/94c214cd527c4b5592de7eb9c9a10028/cenc.mpd",
-        "fastly_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/d6zz1cyw70/out/v1/a05e0b3952fe4421a28515ca7a95261f/cenc.mpd",
-        "amazon_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.cache.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/d6zz1cyw70/out/v1/a05e0b3952fe4421a28515ca7a95261f/cenc.mpd",
-        "akamai_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/d6zz1cyw70/out/v1/a05e0b3952fe4421a28515ca7a95261f/cenc.mpd",
-        "cloudfront_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://dash-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/d6zz1cyw70/out/v1/a05e0b3952fe4421a28515ca7a95261f/cenc.mpd"
-      },
-      "drm_key": "e2f0d4bbcead5d0b26b654d9f2bd0b73:0819905841d515ef09147d3a436d370d"
-    },
     {
       "id": "B0HK89RJ8C",
       "event_name": "West Indies tour of India 2026 - 3rd ODI - India vs West Indies",
@@ -41,11 +23,20 @@
     {
       "id": "B0HJCTRPQQ",
       "event_name": "World Championship of Legends 2026 - 1st Match - India Champions vs Australia Champions",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.207b9d79-5d96-4d77-9c89-7d8d881faade/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "UPCOMING",
-      "time": "Live at 5 PM IST",
-      "CnpTV": {},
-      "drm_key": ""
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.207b9d79-5d96-4d77-9c89-7d8d881faade/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "LIVE",
+      "time": "4:35 PM IST",
+      "CnpTV": {
+        "fastly_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/pbidfsvt6s/out/v1/fa36ffe7709740a08bda86c6a3281782/cenc.mpd",
+        "amazon_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.cache.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/pbidfsvt6s/out/v1/fa36ffe7709740a08bda86c6a3281782/cenc.mpd",
+        "akamai_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/pbidfsvt6s/out/v1/fa36ffe7709740a08bda86c6a3281782/cenc.mpd",
+        "cloudfront_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://ss-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/pbidfsvt6s/out/v1/fa36ffe7709740a08bda86c6a3281782/cenc.mpd",
+        "fastly_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/fh0rvu2vmm/out/v1/db5c8bb455b2458bb00a0ecb9d176abe/cenc.mpd",
+        "amazon_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/fh0rvu2vmm/out/v1/db5c8bb455b2458bb00a0ecb9d176abe/cenc.mpd",
+        "akamai_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/fh0rvu2vmm/out/v1/db5c8bb455b2458bb00a0ecb9d176abe/cenc.mpd",
+        "cloudfront_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://dash-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/fh0rvu2vmm/out/v1/db5c8bb455b2458bb00a0ecb9d176abe/cenc.mpd"
+      },
+      "drm_key": "e8dfce98828222c090e14a5f39f5bf33:ad47b761acd8ba42ee10390a3775e0e7"
     },
     {
       "id": "B0HKFV1K7D",
@@ -197,6 +188,15 @@
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.93411739-3488-40b7-865f-f09383e04841/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
       "time": "Sat, Oct 17 7 PM IST",
+      "CnpTV": {},
+      "drm_key": ""
+    },
+    {
+      "id": "B0HFWWJWH6",
+      "event_name": "Australia tour of South Africa 2026 - 2nd Test - South Africa vs Australia",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.df9be69a-7bd6-4883-a021-b7e4801a1573/3/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Sun, Oct 18 1 PM IST",
       "CnpTV": {},
       "drm_key": ""
     }
