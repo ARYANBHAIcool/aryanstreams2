@@ -1279,10 +1279,6 @@
 
             if (Hls.isSupported()) {
                 const hls = new Hls({
-                    liveSyncDurationCount: 3,
-                    liveMaxLatencyDurationCount: 6,
-                    maxBufferLength: 30,
-                    maxMaxBufferLength: 60,
                     xhrSetup: function(xhr, url) {
                         xhr.withCredentials = false;
                         
