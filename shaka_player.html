@@ -179,9 +179,11 @@
             '3273': 'S2HD', '3274': 'TE2HD', '1650': 'KA1SD', '1122': 'KA2SD',
             '1389': 'SS3', '460': 'SE1HD', '461': 'SE2HD', '1998': 'H1SD',
 
-            // Sony Sports Ten
+            // Sony Sports Ten Direct HD Feeds
             'ten1': '162', 'ten2': '891', 'ten3': '892', 'ten4': '1773', 'ten5': '155',
             'ten1hd': '162', 'ten2hd': '891', 'ten3hd': '892', 'ten4hd': '1773', 'ten5hd': '155',
+            's6': '162', 's6hd': '162', 's2': '891', 's2hd': '891', 's3hindi': '892', 's3hindihd': '892',
+            's4tamil': '3514', 's4telugu': '1773', 's5': '155', 's5hd': '155',
             'sten1': '162', 'sten2': '891', 'sten3': '892', 'sten4': '1773', 'sten5': '155', 'sten5hd': '155',
             'sony1': '162', 'sony2': '891', 'sony3': '892', 'sony4': '1773', 'sony5': '155', 'sonyten5': '155',
             'sony_ten1_hd': '162', 'sony_ten2_hd': '891', 'sony_ten3_hd': '892', 'sony_ten4_tamil': '3514', 'sony_ten4_telugu': '1773', 'sony_ten5_hd': '155',
@@ -190,12 +192,12 @@
         };
 
         var FALLBACK_MAP = {
-            '162': ['STEN1', 'STEN1HD', 'sony1'],
-            '891': ['STEN2', 'STEN2HD', 'sony2'],
-            '892': ['STEN3', 'STEN3HD', 'sony3'],
-            '1773': ['STENTU', 'STENT', 'sony4'],
-            '3514': ['STENT', 'STENTU', 'sony4'],
-            '155': ['STEN5', 'STEN5HD', 'sony5'],
+            '162': ['162', 'STEN1HD', 'sony1', 'STEN1'],
+            '891': ['891', 'STEN2HD', 'sony2', 'STEN2'],
+            '892': ['892', 'STEN3HD', 'sony3', 'STEN3'],
+            '1773': ['1773', 'STENTU', 'sony4', 'STENT'],
+            '3514': ['3514', 'STENT', 'sony4', 'STENTU'],
+            '155': ['155', 'STEN5HD', 'sony5', 'STEN5'],
             'STEN1': ['162', 'STEN1HD', 'sony1'],
             'STEN2': ['891', 'STEN2HD', 'sony2'],
             'STEN3': ['892', 'STEN3HD', 'sony3'],
