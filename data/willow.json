@@ -1,5 +1,5 @@
 {
-  "last_updated": "10/3/2026, 7:53:26 PM IST",
+  "last_updated": "10/3/2026, 11:37:10 PM IST",
   "source": "https://sonujson-v5.pages.dev/Data/willow.json",
   "Matches": [
     {
@@ -21,38 +21,11 @@
       "drm_key": "465e30cbfd3748843f54933153276ed8:0f9351d5b352b8f7939bd6695e38afe3"
     },
     {
-      "id": "B0HJCTRPQQ",
-      "event_name": "World Championship of Legends 2026 - 1st Match - India Champions vs Australia Champions",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.207b9d79-5d96-4d77-9c89-7d8d881faade/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "LIVE",
-      "time": "4:35 PM IST",
-      "CnpTV": {
-        "fastly_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/pbidfsvt6s/out/v1/fa36ffe7709740a08bda86c6a3281782/cenc.mpd",
-        "amazon_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.cache.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/pbidfsvt6s/out/v1/fa36ffe7709740a08bda86c6a3281782/cenc.mpd",
-        "akamai_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/pbidfsvt6s/out/v1/fa36ffe7709740a08bda86c6a3281782/cenc.mpd",
-        "cloudfront_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://ss-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/pbidfsvt6s/out/v1/fa36ffe7709740a08bda86c6a3281782/cenc.mpd",
-        "fastly_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/fh0rvu2vmm/out/v1/db5c8bb455b2458bb00a0ecb9d176abe/cenc.mpd",
-        "amazon_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/fh0rvu2vmm/out/v1/db5c8bb455b2458bb00a0ecb9d176abe/cenc.mpd",
-        "akamai_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/fh0rvu2vmm/out/v1/db5c8bb455b2458bb00a0ecb9d176abe/cenc.mpd",
-        "cloudfront_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://dash-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/fh0rvu2vmm/out/v1/db5c8bb455b2458bb00a0ecb9d176abe/cenc.mpd"
-      },
-      "drm_key": "e8dfce98828222c090e14a5f39f5bf33:ad47b761acd8ba42ee10390a3775e0e7"
-    },
-    {
-      "id": "B0HKFV1K7D",
-      "event_name": "World Championship of Legends 2026 - 2nd Match -Pakistan Champions vs Bangladesh Champions",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.c2d83029-72a6-48be-9e7a-26323b50ecf4/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "UPCOMING",
-      "time": "Live at 9 PM IST",
-      "CnpTV": {},
-      "drm_key": ""
-    },
-    {
       "id": "B0HKZV4FQT",
       "event_name": "World Championship of Legends 2026 - 3rd Match - South Africa Champions vs West Indies Champions",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.ce44eeda-5da5-4fbd-a598-f12291753ba4/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
-      "time": "Tomorrow 5 PM IST",
+      "time": "Live at 5 PM IST",
       "CnpTV": {},
       "drm_key": ""
     },
@@ -61,7 +34,7 @@
       "event_name": "World Championship of Legends 2026 - 4th Match - India Champions vs England Champions",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.4524fa7f-ea9e-4903-8d2b-14d5c05a3b76/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
-      "time": "Tomorrow 9 PM IST",
+      "time": "Live at 9 PM IST",
       "CnpTV": {},
       "drm_key": ""
     },
@@ -70,7 +43,7 @@
       "event_name": "World Championship of Legends 2026 - 5th Match - Australia Champions vs Pakistan Champions",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.11c0edbc-8211-459b-880b-d945e2bb824b/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
-      "time": "Mon, Oct 5 5 PM IST",
+      "time": "Tomorrow 5 PM IST",
       "CnpTV": {},
       "drm_key": ""
     },
@@ -79,7 +52,7 @@
       "event_name": "World Championship of Legends 2026 - 6th Match - Bangladesh Champions vs England Champions",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.aabde2a7-12aa-490f-a366-aaa5e5ff97f2/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
-      "time": "Mon, Oct 5 9 PM IST",
+      "time": "Tomorrow 9 PM IST",
       "CnpTV": {},
       "drm_key": ""
     },
@@ -107,6 +80,15 @@
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.81817caf-58bf-4758-b796-a9421f2412cb/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
       "time": "Tue, Oct 6 9 PM IST",
+      "CnpTV": {},
+      "drm_key": ""
+    },
+    {
+      "id": "B0HKFV1K7D",
+      "event_name": "World Championship of Legends 2026 - 2nd Match -Pakistan Champions vs Bangladesh Champions",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.c2d83029-72a6-48be-9e7a-26323b50ecf4/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Thu, Oct 8 9 PM IST",
       "CnpTV": {},
       "drm_key": ""
     },
