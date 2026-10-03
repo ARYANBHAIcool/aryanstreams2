@@ -179,13 +179,14 @@
             '3273': 'S2HD', '3274': 'TE2HD', '1650': 'KA1SD', '1122': 'KA2SD',
             '1389': 'SS3', '460': 'SE1HD', '461': 'SE2HD', '1998': 'H1SD',
 
-            // Sony Sports Ten
-            'ten1': 'STEN1', 'ten2': 'STEN2', 'ten3': 'STEN3', 'ten4': 'STENT', 'ten5': 'STEN5',
-            'ten1hd': 'STEN1', 'ten2hd': 'STEN2', 'ten3hd': 'STEN3', 'ten4hd': 'STENT', 'ten5hd': 'STEN5',
-            'sten1': 'STEN1', 'sten2': 'STEN2', 'sten3': 'STEN3', 'sten4': 'STENT', 'sten5': 'STEN5', 'sten5hd': 'STEN5',
-            'sony1': 'STEN1', 'sony2': 'STEN2', 'sony3': 'STEN3', 'sony4': 'STENT', 'sony5': 'STEN5', 'sonyten5': 'STEN5',
-            'sony_ten1_hd': 'STEN1', 'sony_ten2_hd': 'STEN2', 'sony_ten3_hd': 'STEN3', 'sony_ten4_tamil': 'STENT', 'sony_ten4_telugu': 'STENTU', 'sony_ten5_hd': 'STEN5',
-            '162': 'STEN1', '891': 'STEN2', '892': 'STEN3', '1773': 'STENT', '3514': 'STENT', '155': 'STEN5',
+            // Sony Sports Ten HD vs SD Mapping
+            'ten1hd': '162', 'ten1': 'STEN1', 'sony_ten1_hd': '162', '162': '162',
+            'ten2hd': '891', 'ten2': 'STEN2', 'sony_ten2_hd': '891', '891': '891',
+            'ten3hd': '892', 'ten3': 'STEN3', 'sony_ten3_hd': '892', '892': '892',
+            'ten4hd': '3514', 'ten4': 'STENT', 'sony_ten4_tamil': '3514', 'sony_ten4_telugu': '1773', '1773': '1773', '3514': '3514',
+            'ten5hd': '155', 'ten5': 'STEN5', 'sony_ten5_hd': '155', 'sonyten5': '155', '155': '155',
+            'sten1': 'STEN1', 'sten2': 'STEN2', 'sten3': 'STEN3', 'sten4': 'STENT', 'sten5': 'STEN5', 'sten5hd': '155',
+            'sony1': '162', 'sony2': '891', 'sony3': '892', 'sony4': '3514', 'sony5': '155',
             'dds': '204', 'ddsports': '204', '204': '204', 'eurosport': 'EUROHD', 'eurohd': 'EUROHD', 'eurosport_hd': 'EUROHD', '875': 'EUROHD'
         };
 
@@ -372,17 +373,15 @@
                 var config = {
                     streaming: {
                         lowLatencyMode: false,
-                        bufferingGoal: 12,
-                        rebufferingGoal: 2,
-                        bufferBehind: 15,
-                        safeSeekOffset: 4,
-                        stallEnabled: true,
-                        stallThreshold: 1,
-                        stallSkip: 0.1,
+                        bufferingGoal: 10,
+                        rebufferingGoal: 1.5,
+                        bufferBehind: 20,
+                        safeSeekOffset: 5,
+                        stallEnabled: false,
                         retryParameters: {
                             maxAttempts: 5,
-                            baseDelay: 1000,
-                            backoffFactor: 2
+                            baseDelay: 800,
+                            backoffFactor: 1.5
                         }
                     },
                     manifest: {
@@ -391,16 +390,16 @@
                         },
                         retryParameters: {
                             maxAttempts: 5,
-                            baseDelay: 1000,
-                            backoffFactor: 2
+                            baseDelay: 800,
+                            backoffFactor: 1.5
                         }
                     },
                     abr: {
                         enabled: true,
-                        defaultBandwidthEstimate: 2500000,
-                        switchInterval: 8,
-                        bandwidthUpgradeTarget: 0.85,
-                        bandwidthDowngradeTarget: 0.95
+                        defaultBandwidthEstimate: 1500000,
+                        switchInterval: 4,
+                        bandwidthUpgradeTarget: 0.80,
+                        bandwidthDowngradeTarget: 0.90
                     }
                 };
 
