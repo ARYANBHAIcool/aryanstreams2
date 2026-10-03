@@ -192,7 +192,7 @@
 
         var FALLBACK_MAP = {
             '162': ['STEN1', 'STEN1HD', 'sony1'],
-            '891': ['STEN2', 'STEN2HD', 'sony2'],
+            '891': ['STEN2HD', 'sony2'],
             '892': ['STEN3', 'STEN3HD', 'sony3'],
             '1773': ['STENTU', 'STENT', 'sony4'],
             '3514': ['STENT', 'STENTU', 'sony4'],
@@ -243,6 +243,57 @@
         }
 
         async function fetchChannelData(id) {
+            var idStr = String(id).trim().toLowerCase();
+            var mappedId = (ID_MAP[idStr] || idStr).toLowerCase();
+
+            // 1. Dedicated Live Sony Ten 2 HD Resolver (Verified Working Audio)
+            if (['891', 'ten2', 'ten2hd', 'sony_ten2_hd', 's2', 'sony2'].includes(idStr) || ['891', 'ten2', 'ten2hd', 'sony_ten2_hd', 's2', 'sony2'].includes(mappedId)) {
+                try {
+                    var s3Urls = [
+                        'https://allrounder2-0.pages.dev/api/Sony-3.json',
+                        'https://allrounder3-0.pages.dev/api/Sony-3.json'
+                    ];
+                    for (var u = 0; u < s3Urls.length; u++) {
+                        try {
+                            var s3Res = await fetch(s3Urls[u], { cache: 'no-store' });
+                            if (s3Res.ok) {
+                                var s3Data = await s3Res.json();
+                                if (s3Data && s3Data.cookie) {
+                                    return {
+                                        name: "Sony Sports Ten 2 HD",
+                                        stream_url: "https://jiotvmblive.cdn.jio.com/bpk-tv/Ten2_HD_MOB/WDVLive/index.mpd",
+                                        key_id: "91fce77f2f8056f084ed961c7ebe86ed",
+                                        key: "8214bd5eb6c21444e8ea644824affd79",
+                                        cookie: s3Data.cookie,
+                                        source: s3Urls[u]
+                                    };
+                                }
+                            }
+                        } catch(e) {}
+                    }
+                } catch(e) {}
+            }
+
+            // 2. Dedicated Star Sports 2 Hindi HD Resolver
+            if (['h2hd', '1984', 'ss2h'].includes(idStr) || ['h2hd', '1984', 'ss2h'].includes(mappedId)) {
+                try {
+                    var hRes = await fetch('https://allrounder2-0.pages.dev/api/Hindi.json', { cache: 'no-store' });
+                    if (hRes.ok) {
+                        var hData = await hRes.json();
+                        if (hData && hData.cookie) {
+                            return {
+                                name: "Star Sports 2 Hindi HD",
+                                stream_url: "https://jiotvpllive.cdn.jio.com//bpk-tv/StarSportsHD2Hin_BTS/WDVLive/index.mpd",
+                                key_id: "bd1ea6a1c1fb5dcdb709434e0826bbc0",
+                                key: "f57f22cba32739ce7beb1fab3f3d060b",
+                                cookie: hData.cookie,
+                                source: "Hindi"
+                            };
+                        }
+                    }
+                } catch(e) {}
+            }
+
             var endpoints = [
                 'https://sonujson-v5.pages.dev/Data/sports.json',
                 'https://sonujson-v4.pages.dev/Data/sports.json',
@@ -250,8 +301,6 @@
                 'https://my-api-5e7.pages.dev/jiotv2.json',
                 'https://sonujson-v3.pages.dev/Data/sports.json'
             ];
-            var idStr = String(id).trim().toLowerCase();
-            var mappedId = (ID_MAP[idStr] || idStr).toLowerCase();
             var allSearchIds = [mappedId, idStr];
 
             var upperMapped = mappedId.toUpperCase();
@@ -414,8 +463,32 @@
                 player.configure(config);
 
                 await player.load(activeMpd);
-                $video.muted = true;
-                $video.play().catch(function() {});
+                
+                // Try playing unmuted first; if browser blocks, fallback to muted autoplay
+                $video.muted = false;
+                var playPromise = $video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(function() {
+                        // Autoplay with audio was blocked, mute and retry
+                        $video.muted = true;
+                        $video.play().catch(function() {});
+                    });
+                }
+
+                // Automatically unmute when playback starts or user interacts
+                $video.addEventListener('play', function() {
+                    $video.muted = false;
+                });
+
+                function unmuteHandler() {
+                    if ($video.muted) {
+                        $video.muted = false;
+                    }
+                }
+                document.addEventListener('pointerdown', unmuteHandler, { capture: true, once: true });
+                document.addEventListener('click', unmuteHandler, { capture: true, once: true });
+                document.addEventListener('keydown', unmuteHandler, { capture: true, once: true });
+                document.getElementById('player-container').addEventListener('click', unmuteHandler, { capture: true, once: true });
 
                 $video.addEventListener('playing', function() {
                     hideLoading();
