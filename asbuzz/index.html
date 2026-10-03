@@ -974,6 +974,14 @@
                     if (fallback) mpdUrl = cnp[fallback.key];
                 }
 
+                // Route through our own high-speed private as-proxy
+                if (mpdUrl && (mpdUrl.includes('akamaii.lovable.app') || mpdUrl.includes('stream-relay-buddy') || mpdUrl.includes('sunny-relay-friend') || mpdUrl.includes('sonyliv-beta'))) {
+                    const rawPart = mpdUrl.split('?url=')[1];
+                    if (rawPart) {
+                        mpdUrl = 'https://as-proxy.lovable.app/api/public/px/geobypass?url=' + rawPart;
+                    }
+                }
+
                 if (!mpdUrl) {
                     showToast('No active stream source available for this event.', 'error');
                     return;
