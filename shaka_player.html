@@ -179,30 +179,30 @@
             '3273': 'S2HD', '3274': 'TE2HD', '1650': 'KA1SD', '1122': 'KA2SD',
             '1389': 'SS3', '460': 'SE1HD', '461': 'SE2HD', '1998': 'H1SD',
 
-            // Sony Sports Ten HD vs SD Mapping
-            'ten1hd': '162', 'ten1': 'STEN1', 'sony_ten1_hd': '162', '162': '162',
-            'ten2hd': '891', 'ten2': '891', 's2': '891', 'sony_ten2_hd': '891', '891': '891',
-            'ten3hd': '892', 'ten3': 'STEN3', 'sony_ten3_hd': '892', '892': '892',
-            'ten4hd': '3514', 'ten4': 'STENT', 'sony_ten4_tamil': '3514', 'sony_ten4_telugu': '1773', '1773': '1773', '3514': '3514',
-            'ten5hd': '155', 'ten5': 'STEN5', 'sony_ten5_hd': '155', 'sonyten5': '155', '155': '155',
-            'sten1': 'STEN1', 'sten2': '891', 'sten3': 'STEN3', 'sten4': 'STENT', 'sten5': 'STEN5', 'sten5hd': '155',
+            // Sony Sports Ten Direct TV Channel Feeds
+            'ten1hd': '162', 'ten1': '162', 'sony_ten1_hd': '162', 'ten1_ios': '162', '162': '162',
+            'ten2hd': '891', 'ten2': '891', 's2': '891', 'sony_ten2_hd': '891', 'ten2_ios': '891', '891': '891',
+            'ten3hd': '892', 'ten3': '892', 'sony_ten3_hd': '892', 'ten3_ios': '892', '892': '892',
+            'ten4hd': '3514', 'ten4': '3514', 'sony_ten4_tamil': '3514', 'sony_ten4_telugu': '1773', 'ten4_ios': '3514', '1773': '1773', '3514': '3514',
+            'ten5hd': '155', 'ten5': '155', 'sony_ten5_hd': '155', 'sonyten5': '155', 'ten5_ios': '155', '155': '155',
+            'sten1': '162', 'sten2': '891', 'sten3': '892', 'sten4': '3514', 'sten5': '155', 'sten5hd': '155',
             'sony1': '162', 'sony2': '891', 'sony3': '892', 'sony4': '3514', 'sony5': '155',
             'dds': '204', 'ddsports': '204', '204': '204', 'eurosport': 'EUROHD', 'eurohd': 'EUROHD', 'eurosport_hd': 'EUROHD', '875': 'EUROHD'
         };
 
         var FALLBACK_MAP = {
-            '162': ['STEN1', 'STEN1HD', 'sony1'],
-            '891': ['STEN2', 'STEN2HD', 'sony2'],
-            '892': ['STEN3', 'STEN3HD', 'sony3'],
-            '1773': ['STENTU', 'STENT', 'sony4'],
-            '3514': ['STENT', 'STENTU', 'sony4'],
-            '155': ['STEN5', 'STEN5HD', 'sony5'],
-            'STEN1': ['162', 'STEN1HD', 'sony1'],
-            'STEN2': ['891', 'STEN2HD', 'sony2'],
-            'STEN3': ['892', 'STEN3HD', 'sony3'],
+            '162': ['sony1', 'STEN1HD', '162'],
+            '891': ['sony2', 'STEN2HD', '891'],
+            '892': ['sony3', 'STEN3HD', '892'],
+            '1773': ['sony4', '3514', '1773'],
+            '3514': ['sony4', '1773', '3514'],
+            '155': ['sony5', 'STEN5HD', '155'],
+            'STEN1': ['162', 'sony1'],
+            'STEN2': ['891', 'sony2'],
+            'STEN3': ['892', 'sony3'],
             'STENT': ['3514', '1773', 'sony4'],
             'STENTU': ['1773', '3514', 'sony4'],
-            'STEN5': ['155', 'STEN5HD', 'sony5'],
+            'STEN5': ['155', 'sony5'],
             'H1HD': ['1108', 'h1hd'],
             'E1HD': ['1106', 'e1hd'],
             'H2HD': ['1984', 'h2hd'],
@@ -244,10 +244,10 @@
 
         async function fetchChannelData(id) {
             var endpoints = [
-                'https://sonujson-v5.pages.dev/Data/sports.json',
-                'https://sonujson-v4.pages.dev/Data/sports.json',
                 'https://raw.githubusercontent.com/sportlive18/jio-tv-auto-update-playlist/refs/heads/main/star2.json',
                 'https://my-api-5e7.pages.dev/jiotv2.json',
+                'https://sonujson-v5.pages.dev/Data/sports.json',
+                'https://sonujson-v4.pages.dev/Data/sports.json',
                 'https://sonujson-v3.pages.dev/Data/sports.json'
             ];
             var idStr = String(id).trim().toLowerCase();
