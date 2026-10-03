@@ -243,34 +243,50 @@
 
         async function fetchChannelData(id) {
             var endpoints = [
+                'https://raw.githubusercontent.com/sportlive18/jio-tv-auto-update-playlist/refs/heads/main/star2.json',
                 'https://sonujson-v5.pages.dev/Data/sports.json',
                 'https://sonujson-v4.pages.dev/Data/sports.json',
-                'https://raw.githubusercontent.com/sportlive18/jio-tv-auto-update-playlist/refs/heads/main/star2.json',
                 'https://my-api-5e7.pages.dev/jiotv2.json',
                 'https://sonujson-v3.pages.dev/Data/sports.json'
             ];
             var idStr = String(id).trim().toLowerCase();
+            var isHdRequested = idStr.includes('hd') || ['162', '891', '892', '1773', '155', '3514', 'h1hd', 'e1hd', 'h2hd', 'e2hd', 's2hd', 'te2hd', 'se1hd', 'se2hd'].includes(idStr);
             var mappedId = (ID_MAP[idStr] || idStr).toLowerCase();
-            var allSearchIds = [mappedId, idStr];
+
+            // Build priority search list
+            var searchSequence = [mappedId];
+            if (mappedId !== idStr) searchSequence.push(idStr);
 
             var upperMapped = mappedId.toUpperCase();
-            if (FALLBACK_MAP[upperMapped]) {
-                FALLBACK_MAP[upperMapped].forEach(function(f) { allSearchIds.push(f.toLowerCase()); });
-            }
-            if (FALLBACK_MAP[idStr.toUpperCase()]) {
-                FALLBACK_MAP[idStr.toUpperCase()].forEach(function(f) { allSearchIds.push(f.toLowerCase()); });
+            var fallbacks = FALLBACK_MAP[upperMapped] || FALLBACK_MAP[idStr.toUpperCase()] || [];
+
+            if (isHdRequested) {
+                // Prioritize HD fallback IDs before SD fallback IDs
+                fallbacks.forEach(function(f) {
+                    if (f.toUpperCase().includes('HD')) searchSequence.push(f.toLowerCase());
+                });
+                fallbacks.forEach(function(f) {
+                    var low = f.toLowerCase();
+                    if (!searchSequence.includes(low)) searchSequence.push(low);
+                });
+            } else {
+                fallbacks.forEach(function(f) {
+                    var low = f.toLowerCase();
+                    if (!searchSequence.includes(low)) searchSequence.push(low);
+                });
             }
 
-            for (var i = 0; i < endpoints.length; i++) {
-                try {
-                    var res = await fetch(endpoints[i], { cache: 'no-store' });
-                    if (!res.ok) continue;
-                    var json = await res.json();
-                    var list = (json && (json.channels || json.data)) || (Array.isArray(json) ? json : []);
-                    if (!Array.isArray(list)) continue;
+            // Search by ID priority first, checking all endpoints
+            for (var s = 0; s < searchSequence.length; s++) {
+                var searchId = searchSequence[s];
+                for (var i = 0; i < endpoints.length; i++) {
+                    try {
+                        var res = await fetch(endpoints[i], { cache: 'no-store' });
+                        if (!res.ok) continue;
+                        var json = await res.json();
+                        var list = (json && (json.channels || json.data)) || (Array.isArray(json) ? json : []);
+                        if (!Array.isArray(list)) continue;
 
-                    for (var s = 0; s < allSearchIds.length; s++) {
-                        var searchId = allSearchIds[s];
                         var target = list.find(function(c) {
                             var chId = String(c.id || c.channel_id || '').toLowerCase();
                             var chName = String(c.name || c.channel_name || '').toLowerCase();
@@ -279,7 +295,7 @@
 
                         if (target) {
                             var cookie = target.cookie || '';
-                            var expire = target.cookie_expire || 0;
+                            var expire = target.cookie_expire || target.cookie_expires || 0;
                             if (isCookieValid(cookie, expire)) {
                                 return {
                                     name: target.name || target.channel_name,
@@ -291,8 +307,8 @@
                                 };
                             }
                         }
-                    }
-                } catch (e) {}
+                    } catch (e) {}
+                }
             }
             return null;
         }
