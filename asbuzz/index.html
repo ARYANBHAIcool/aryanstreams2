@@ -738,10 +738,10 @@
             "use strict";
 
             const API_ENDPOINTS = [
-                "../data/willow.json",
-                "/data/willow.json",
                 "https://sonujson-v5.pages.dev/Data/willow.json",
-                "https://sonujson-v4.pages.dev/Data/willow.json"
+                "https://sonujson-v4.pages.dev/Data/willow.json",
+                "../data/willow.json",
+                "/data/willow.json"
             ];
 
             const SERVER_CONFIG = [
@@ -760,6 +760,27 @@
             let searchQuery = '';
             let shakaPlayerInstance = null;
             let shakaUiOverlay = null;
+
+            // Helper to determine if a match has live streams
+            function isMatchLive(m) {
+                if (!m) return false;
+                const status = String(m.status || '').toUpperCase();
+                const cnp = m.CnpTV || {};
+                const hasStreams = Object.keys(cnp).some(k => typeof cnp[k] === 'string' && cnp[k].trim().length > 0);
+                return status === 'LIVE' || hasStreams;
+            }
+
+            // Sort matches so live matches always stay on top
+            function sortMatches(list) {
+                if (!Array.isArray(list)) return [];
+                return list.slice().sort((a, b) => {
+                    const aLive = isMatchLive(a);
+                    const bLive = isMatchLive(b);
+                    if (aLive && !bLive) return -1;
+                    if (!aLive && bLive) return 1;
+                    return 0;
+                });
+            }
 
             // DOM elements
             const $container = document.getElementById('matches-container');
@@ -792,7 +813,7 @@
                         const data = await res.json();
                         const list = (data && (data.Matches || data.matches || data.channels || data.events)) || (Array.isArray(data) ? data : []);
                         if (Array.isArray(list) && list.length > 0) {
-                            return list;
+                            return sortMatches(list);
                         }
                     } catch (e) {
                         console.warn("Fetch error from", ep, e);
@@ -814,7 +835,7 @@
             // Render Match Cards
             function renderMatches() {
                 let filtered = allMatches.filter(m => {
-                    const isLive = String(m.status || '').toUpperCase() === 'LIVE';
+                    const isLive = isMatchLive(m);
                     if (currentFilter === 'live' && !isLive) return false;
                     if (currentFilter === 'upcoming' && isLive) return false;
                     if (searchQuery) {
@@ -825,7 +846,7 @@
                 });
 
                 // Update counts
-                const liveCount = allMatches.filter(m => String(m.status || '').toUpperCase() === 'LIVE').length;
+                const liveCount = allMatches.filter(m => isMatchLive(m)).length;
                 const upCount = allMatches.length - liveCount;
                 document.getElementById('count-all').textContent = allMatches.length;
                 document.getElementById('count-live').textContent = liveCount;
@@ -846,7 +867,7 @@
 
                 filtered.forEach(m => {
                     const id = m.id || '';
-                    const isLive = String(m.status || '').toUpperCase() === 'LIVE';
+                    const isLive = isMatchLive(m);
                     const cnp = m.CnpTV || {};
 
                     const card = document.createElement('div');
