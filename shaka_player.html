@@ -475,10 +475,31 @@
             } catch (err) {}
         }
 
-        document.addEventListener('click', function unmuteAndAd() {
-            $video.muted = false;
+        function unmuteAudio() {
+            if ($video) {
+                $video.muted = false;
+                $video.volume = 1.0;
+            }
+        }
+
+        $video.addEventListener('play', unmuteAudio);
+        $video.addEventListener('playing', unmuteAudio);
+
+        function handleUserInteraction() {
+            unmuteAudio();
             triggerShakaAd();
-        });
+        }
+
+        window.addEventListener('click', handleUserInteraction);
+        window.addEventListener('pointerdown', unmuteAudio, { capture: true });
+        window.addEventListener('touchstart', unmuteAudio, { capture: true });
+
+        var playerBox = document.getElementById('player-container');
+        if (playerBox) {
+            playerBox.addEventListener('pointerdown', unmuteAudio, { capture: true });
+            playerBox.addEventListener('touchstart', unmuteAudio, { capture: true });
+            playerBox.addEventListener('click', handleUserInteraction);
+        }
 
         // ── Mobile Screen Auto-Rotate & Fullscreen Fit ───────────────────
         function lockLandscape() {
