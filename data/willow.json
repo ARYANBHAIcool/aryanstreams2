@@ -1,13 +1,13 @@
 {
-  "last_updated": "10/4/2026, 4:48:44 PM IST",
+  "last_updated": "10/4/2026, 9:25:37 PM IST",
   "source": "https://sonujson-v5.pages.dev/Data/willow.json",
   "Matches": [
     {
       "id": "B0HKZV4FQT",
       "event_name": "World Championship of Legends 2026 - 3rd Match - South Africa Champions vs West Indies Champions",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.ce44eeda-5da5-4fbd-a598-f12291753ba4/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "UPCOMING",
-      "time": "Live at 5 PM IST",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.ce44eeda-5da5-4fbd-a598-f12291753ba4/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "LIVE",
+      "time": "4:30 PM IST",
       "CnpTV": {},
       "drm_key": ""
     },
@@ -15,8 +15,8 @@
       "id": "B0HLH2242V",
       "event_name": "World Championship of Legends 2026 - 4th Match - India Champions vs England Champions",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.4524fa7f-ea9e-4903-8d2b-14d5c05a3b76/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "UPCOMING",
-      "time": "Live at 9 PM IST",
+      "status": "LIVE",
+      "time": "9 PM IST",
       "CnpTV": {},
       "drm_key": ""
     },
@@ -62,6 +62,24 @@
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.81817caf-58bf-4758-b796-a9421f2412cb/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
       "time": "Tue, Oct 6 9 PM IST",
+      "CnpTV": {},
+      "drm_key": ""
+    },
+    {
+      "id": "B0HLL22FZ8",
+      "event_name": "World Championship of Legends 2026 - 9th Match - Australia Champions vs Bangladesh Champions",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.93de5075-39ad-45ff-8429-73e091c3121f/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Wed, Oct 7 5 PM IST",
+      "CnpTV": {},
+      "drm_key": ""
+    },
+    {
+      "id": "B0HLVXRCKB",
+      "event_name": "World Championship of Legends 2026 - 10th Match - England Champions vs West Indies Champions",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.326316a9-a3f2-4b99-ba9a-f5dc82fe4bae/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Wed, Oct 7 9 PM IST",
       "CnpTV": {},
       "drm_key": ""
     },
@@ -161,24 +179,6 @@
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.a9e3a6bf-cfcc-47ef-ae36-51407a2b0e89/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
       "time": "Sun, Oct 11 9:20 AM IST",
-      "CnpTV": {},
-      "drm_key": ""
-    },
-    {
-      "id": "B0HJ6B6N6C",
-      "event_name": "World Championship of Legends 2026 - 15th Match - Australia Champions vs West Indies Champions",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.1bb21bba-6293-4cba-948c-6d3edffdc9dc/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "UPCOMING",
-      "time": "Sun, Oct 11 5 PM IST",
-      "CnpTV": {},
-      "drm_key": ""
-    },
-    {
-      "id": "B0HKGD8WKF",
-      "event_name": "West Indies tour of India 2026 - 3rd T20I - India vs West Indies",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.08fd741a-6d6b-4395-82f8-1f2c449b616d/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "UPCOMING",
-      "time": "Sun, Oct 11 7 PM IST",
       "CnpTV": {},
       "drm_key": ""
     }
