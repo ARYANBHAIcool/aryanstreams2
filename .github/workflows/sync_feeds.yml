@@ -27,7 +27,12 @@ jobs:
 
       - name: Commit & Push Changes
         run: |
-          git config --global user.name "ARYANBHAIcool"
-          git config --global user.email "mearyankumarsingh@gmail.com"
+          if [[ "${{ github.repository_owner }}" =~ "ARYANBHAIcool" ]]; then
+            git config --global user.name "ARYANBHAIcool"
+            git config --global user.email "kingaryan69and@gmail.com"
+          else
+            git config --global user.name "Aryan Kumar Singh"
+            git config --global user.email "mearyankumarsingh@gmail.com"
+          fi
           git add data/sports.json data/willow.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update Sony, Star & Willow live feeds [skip ci]" && git push)
