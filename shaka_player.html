@@ -169,6 +169,12 @@
 
         var ID_MAP = {
             // Star Sports
+            'star1': 'E1HD', 'star1hd': 'E1HD', 'star1enghd': 'E1HD', 'star1eng': 'E1SD',
+            'star_sports_1_hd': 'E1HD', 'star_sports_1_hindi_hd': 'H1HD',
+            'star2': 'E2HD', 'star2hd': 'E2HD', 'star2enghd': 'E2HD', 'star2eng': 'E2SD',
+            'star_sports_2_hd': 'E2HD', 'star_sports_2_hindi_hd': 'H2HD',
+            'star1hindihd': 'H1HD', 'star1hindi': 'H1SD',
+            'star2hindihd': 'H2HD', 'star2hindi': 'H2SD',
             'ss1h': 'H1HD', 'ss1': 'E1HD', 'ss1tam': 'T1HD', 'ss1tel': 'TE1HD', 'ss1kan': 'KA1SD',
             'ss2': 'E2HD', 'ss2h': 'H2HD', 'ss2tam': 'S2HD', 'ss2tel': 'TE2HD', 'ss2kan': 'KA2SD',
             'ss3': 'SS3', 'ssselect1': 'SE1HD', 'ssselect2': 'SE2HD', 'sskhel': 'H1SD',
@@ -191,24 +197,32 @@
         };
 
         var FALLBACK_MAP = {
-            '162': ['sony1', 'STEN1HD', '162'],
-            '891': ['sony2', 'STEN2HD', '891'],
-            '892': ['sony3', 'STEN3HD', '892'],
-            '1773': ['sony4', '3514', '1773'],
-            '3514': ['sony4', '1773', '3514'],
-            '155': ['sony5', 'STEN5HD', '155'],
-            'STEN1': ['162', 'sony1'],
-            'STEN2': ['891', 'sony2'],
-            'STEN3': ['892', 'sony3'],
-            'STENT': ['3514', '1773', 'sony4'],
-            'STENTU': ['1773', '3514', 'sony4'],
-            'STEN5': ['155', 'sony5'],
-            'H1HD': ['1108', 'h1hd'],
-            'E1HD': ['1106', 'e1hd'],
-            'H2HD': ['1984', 'h2hd'],
-            'E2HD': ['1109', 'e2hd'],
-            'S2HD': ['3273', '3277', 's2hd'],
-            'TE2HD': ['3274', '3278', 'te2hd'],
+            '162': ['3531', 'sten1', 'sony1', '162'],
+            '891': ['3532', 'sten2', 'sony2', '891'],
+            '892': ['3533', 'sten3', 'sony3', '892'],
+            '1773': ['3398', 'stentu', 'sony4', '1773'],
+            '3514': ['3397', 'stent', 'sony4', '3514'],
+            '155': ['3534', 'sten5', 'sony5', '155'],
+            'STEN1': ['3531', '162', 'sony1', 'sten1'],
+            'STEN2': ['3532', '891', 'sony2', 'sten2'],
+            'STEN3': ['3533', '892', 'sony3', 'sten3'],
+            'STENT': ['3397', '3514', '1773', 'sony4', 'stent'],
+            'STENTU': ['3398', '1773', '3514', 'sony4', 'stentu'],
+            'STEN5': ['3534', '155', 'sony5', 'sten5'],
+            'H1HD': ['h1hd', '1108'],
+            'E1HD': ['e1hd', '1106'],
+            'H2HD': ['h2hd', '1984'],
+            'E2HD': ['e2hd', '1109'],
+            'H1SD': ['h1sd', '362'],
+            'E1SD': ['e1sd', '1142'],
+            'H2SD': ['h2sd', '1985'],
+            'E2SD': ['e2sd', '1141'],
+            'S2HD': ['s2hd', '3273', '3277'],
+            'TE2HD': ['te2hd', '3274', '3278'],
+            'T1HD': ['t1hd', '3277'],
+            'TE1HD': ['te1hd', '3278'],
+            'KA1SD': ['ka1sd', '1650'],
+            'KA2SD': ['ka2sd', '1122'],
             'EUROHD': ['875', '1294', 'eurosport']
         };
 
@@ -244,11 +258,10 @@
 
         async function fetchChannelData(id) {
             var endpoints = [
-                'https://raw.githubusercontent.com/sportlive18/jio-tv-auto-update-playlist/refs/heads/main/star2.json',
-                'https://my-api-5e7.pages.dev/jiotv2.json',
                 'https://sonujson-v5.pages.dev/Data/sports.json',
+                'https://raw.githubusercontent.com/sportlive18/jio-tv-auto-update-playlist/refs/heads/main/jtv2.json',
                 'https://sonujson-v4.pages.dev/Data/sports.json',
-                'https://sonujson-v3.pages.dev/Data/sports.json'
+                'https://my-api-5e7.pages.dev/jiotv2.json'
             ];
             var idStr = String(id).trim().toLowerCase();
             var mappedId = (ID_MAP[idStr] || idStr).toLowerCase();
@@ -256,10 +269,10 @@
 
             var upperMapped = mappedId.toUpperCase();
             if (FALLBACK_MAP[upperMapped]) {
-                FALLBACK_MAP[upperMapped].forEach(function(f) { allSearchIds.push(f.toLowerCase()); });
+                FALLBACK_MAP[upperMapped].forEach(function(f) { allSearchIds.push(String(f).toLowerCase()); });
             }
             if (FALLBACK_MAP[idStr.toUpperCase()]) {
-                FALLBACK_MAP[idStr.toUpperCase()].forEach(function(f) { allSearchIds.push(f.toLowerCase()); });
+                FALLBACK_MAP[idStr.toUpperCase()].forEach(function(f) { allSearchIds.push(String(f).toLowerCase()); });
             }
 
             for (var i = 0; i < endpoints.length; i++) {
@@ -282,14 +295,36 @@
                             var cookie = target.cookie || '';
                             var expire = target.cookie_expire || 0;
                             if (isCookieValid(cookie, expire)) {
-                                return {
-                                    name: target.name || target.channel_name,
-                                    stream_url: target.stream_url || target.channel_url || target.url,
-                                    key_id: target.key_id || target.keyId || target.kid,
-                                    key: target.key,
-                                    cookie: cookie,
-                                    source: endpoints[i]
-                                };
+                                var clearKeys = {};
+                                if (Array.isArray(target.sonuxs)) {
+                                    target.sonuxs.forEach(function(pair) {
+                                        var parts = String(pair).split(':');
+                                        if (parts.length === 2 && parts[0].trim() && parts[1].trim()) {
+                                            clearKeys[parts[0].trim().toLowerCase()] = parts[1].trim().toLowerCase();
+                                        }
+                                    });
+                                }
+                                var kid = target.key_id || target.keyId || target.kid || '';
+                                var key = target.key || '';
+                                if (kid && key) {
+                                    clearKeys[String(kid).trim().toLowerCase()] = String(key).trim().toLowerCase();
+                                }
+                                var clearKeyIds = Object.keys(clearKeys);
+                                if (!key && clearKeyIds.length > 0) {
+                                    kid = clearKeyIds[0];
+                                    key = clearKeys[kid];
+                                }
+                                if (key || clearKeyIds.length > 0) {
+                                    return {
+                                        name: target.name || target.channel_name,
+                                        stream_url: target.stream_url || target.channel_url || target.url,
+                                        key_id: kid,
+                                        key: key,
+                                        clearKeys: clearKeys,
+                                        cookie: cookie,
+                                        source: endpoints[i]
+                                    };
+                                }
                             }
                         }
                     }
@@ -304,8 +339,13 @@
             var activeKey = KEY;
             var activeCookie = COOKIE;
             var activeRawCookie = rawCookie(COOKIE);
+            var activeClearKeys = {};
 
-            if (CH_ID && (!activeMpd || !activeKey)) {
+            if (activeKid && activeKey) {
+                activeClearKeys[activeKid.toLowerCase()] = activeKey.toLowerCase();
+            }
+
+            if (CH_ID && (!activeMpd || !activeKey || Object.keys(activeClearKeys).length === 0)) {
                 showToast('Connecting Channel...', 'info');
                 var ch = await fetchChannelData(CH_ID);
                 if (ch) {
@@ -314,6 +354,11 @@
                     activeKey = ch.key;
                     activeCookie = ch.cookie || '';
                     activeRawCookie = rawCookie(activeCookie);
+                    if (ch.clearKeys && Object.keys(ch.clearKeys).length > 0) {
+                        activeClearKeys = ch.clearKeys;
+                    } else if (activeKid && activeKey) {
+                        activeClearKeys[activeKid.toLowerCase()] = activeKey.toLowerCase();
+                    }
                 }
             }
 
@@ -363,7 +408,12 @@
                             req.headers["Cookie"] = formatCookieHeader(activeCookie);
                         }
                         if (activeRawCookie && (type === shaka.net.NetworkingEngine.RequestType.MANIFEST || type === shaka.net.NetworkingEngine.RequestType.SEGMENT)) {
-                            req.uris = req.uris.map(function(u) { return withCookie(u, activeRawCookie); });
+                            req.uris = req.uris.map(function(u) {
+                                if (u.includes('.cdn.jio.com//')) {
+                                    u = u.replace('.cdn.jio.com//', '.cdn.jio.com/');
+                                }
+                                return withCookie(u, activeRawCookie);
+                            });
                         }
                     } else if (REFERER) {
                         req.headers["Referer"] = REFERER;
@@ -404,7 +454,11 @@
                     }
                 };
 
-                if (activeKid && activeKey) {
+                if (Object.keys(activeClearKeys).length > 0) {
+                    config.drm = {
+                        clearKeys: activeClearKeys
+                    };
+                } else if (activeKid && activeKey) {
                     config.drm = {
                         clearKeys: {}
                     };
@@ -414,8 +468,14 @@
                 player.configure(config);
 
                 await player.load(activeMpd);
-                $video.muted = true;
-                $video.play().catch(function() {});
+                $video.muted = false;
+                var playPromise = $video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(function() {
+                        $video.muted = true;
+                        $video.play().catch(function() {});
+                    });
+                }
 
                 $video.addEventListener('playing', function() {
                     hideLoading();
@@ -439,10 +499,14 @@
                                 activeKey = refreshed.key;
                                 activeCookie = refreshed.cookie || '';
                                 activeRawCookie = rawCookie(activeCookie);
-                                if (activeKid && activeKey) {
-                                    var drmCfg = { clearKeys: {} };
-                                    drmCfg.clearKeys[activeKid] = activeKey;
-                                    player.configure({ drm: drmCfg });
+                                if (refreshed.clearKeys && Object.keys(refreshed.clearKeys).length > 0) {
+                                    activeClearKeys = refreshed.clearKeys;
+                                } else if (activeKid && activeKey) {
+                                    activeClearKeys = {};
+                                    activeClearKeys[activeKid.toLowerCase()] = activeKey.toLowerCase();
+                                }
+                                if (Object.keys(activeClearKeys).length > 0) {
+                                    player.configure({ drm: { clearKeys: activeClearKeys } });
                                 }
                             }
                         } catch(e) {}
