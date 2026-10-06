@@ -396,10 +396,6 @@
 
                 player.getNetworkingEngine().registerRequestFilter(function(type, req) {
                     var url = req.uris[0];
-                    if (url && (url.includes('aiv-cdn.net') || url.includes('aiv-cdn.com')) && !url.includes('stream-relay-buddy.lovable.app') && !url.includes('/proxy/')) {
-                        req.uris[0] = 'https://stream-relay-buddy.lovable.app/api/public/proxy?url=' + encodeURIComponent(url);
-                    }
-
                     var isJio = (url && (url.includes('jiotv') || url.includes('jio.com'))) || (activeCookie && activeCookie.length > 0);
                     if (isJio) {
                         req.headers["Referer"] = REFERER || "https://www.jiotv.com/";
@@ -424,14 +420,16 @@
                     streaming: {
                         lowLatencyMode: false,
                         bufferingGoal: 10,
-                        rebufferingGoal: 1.5,
-                        bufferBehind: 20,
+                        rebufferingGoal: 2,
+                        bufferBehind: 30,
                         safeSeekOffset: 5,
-                        stallEnabled: false,
+                        stallEnabled: true,
+                        stallThreshold: 1,
                         retryParameters: {
                             maxAttempts: 5,
-                            baseDelay: 800,
-                            backoffFactor: 1.5
+                            baseDelay: 500,
+                            backoffFactor: 1.5,
+                            timeout: 10000
                         }
                     },
                     manifest: {
@@ -441,16 +439,17 @@
                         },
                         retryParameters: {
                             maxAttempts: 5,
-                            baseDelay: 800,
-                            backoffFactor: 1.5
+                            baseDelay: 500,
+                            backoffFactor: 1.5,
+                            timeout: 10000
                         }
                     },
                     abr: {
                         enabled: true,
-                        defaultBandwidthEstimate: 1500000,
+                        defaultBandwidthEstimate: 3000000,
                         switchInterval: 4,
-                        bandwidthUpgradeTarget: 0.80,
-                        bandwidthDowngradeTarget: 0.90
+                        bandwidthUpgradeTarget: 0.85,
+                        bandwidthDowngradeTarget: 0.95
                     }
                 };
 
