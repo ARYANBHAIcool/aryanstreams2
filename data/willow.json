@@ -1,22 +1,13 @@
 {
-  "last_updated": "10/6/2026, 8:49:15 PM IST",
+  "last_updated": "10/7/2026, 1:22:07 AM IST",
   "source": "https://sonujson-v5.pages.dev/Data/willow.json",
   "Matches": [
-    {
-      "id": "B0HK9Y5FHK",
-      "event_name": "West Indies tour of India 2026 - 1st T20I - India vs West Indies",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.451fb099-2099-4a06-84a3-eb023cf8a464/4/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "LIVE",
-      "time": "6:30 PM IST",
-      "CnpTV": {},
-      "drm_key": ""
-    },
     {
       "id": "B0HJHV2T96",
       "event_name": "World Championship of Legends 2026 - 8th Match - Pakistan Champions vs West Indies Champions",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.81817caf-58bf-4758-b796-a9421f2412cb/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "UPCOMING",
-      "time": "Live at 9 PM IST",
+      "status": "LIVE",
+      "time": "9 PM IST",
       "CnpTV": {},
       "drm_key": ""
     },
@@ -25,7 +16,7 @@
       "event_name": "World Championship of Legends 2026 - 7th Match - Australia Champions vs Bangladesh Champions",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.93de5075-39ad-45ff-8429-73e091c3121f/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
-      "time": "Tomorrow 5 PM IST",
+      "time": "Live at 5 PM IST",
       "CnpTV": {},
       "drm_key": ""
     },
@@ -34,7 +25,7 @@
       "event_name": "World Championship of Legends 2026 - 8th Match - England Champions vs West Indies Champions",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.326316a9-a3f2-4b99-ba9a-f5dc82fe4bae/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
-      "time": "Tomorrow 9 PM IST",
+      "time": "Live at 9 PM IST",
       "CnpTV": {},
       "drm_key": ""
     },
@@ -52,7 +43,7 @@
       "event_name": "World Championship of Legends 2026 - 2nd Match -Pakistan Champions vs Bangladesh Champions",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.c2d83029-72a6-48be-9e7a-26323b50ecf4/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
-      "time": "Thu, Oct 8 9 PM IST",
+      "time": "Tomorrow 9 PM IST",
       "CnpTV": {},
       "drm_key": ""
     },
@@ -179,6 +170,15 @@
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.d7edc9c9-e9a5-44ea-8be9-de746e38b0b2/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
       "time": "Sun, Oct 11 9 PM IST",
+      "CnpTV": {},
+      "drm_key": ""
+    },
+    {
+      "id": "B0HLSZ4843",
+      "event_name": "World Championship of Legends 2026 - 17th Match - Pakistan Champions vs South Africa Champions",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.fa2e2ab4-efd7-42ef-b5e8-f4c1d8e89c70/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Mon, Oct 12 9 PM IST",
       "CnpTV": {},
       "drm_key": ""
     }
