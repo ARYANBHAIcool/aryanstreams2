@@ -1,0 +1,33 @@
+name: Auto-Sync Sports, Sony, Star & Willow Feeds
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run Feed Sync Script
+        run: node scripts/sync_feeds.js
+
+      - name: Commit & Push Changes
+        run: |
+          git config --global user.name "ARYANBHAIcool"
+          git config --global user.email "mearyankumarsingh@gmail.com"
+          git add data/sports.json data/willow.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update Sony, Star & Willow live feeds [skip ci]" && git push)
