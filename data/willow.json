@@ -1,22 +1,13 @@
 {
-  "last_updated": "10/7/2026, 2:53:01 PM IST",
+  "last_updated": "10/7/2026, 10:19:53 PM IST",
   "source": "https://sonujson-v5.pages.dev/Data/willow.json",
   "Matches": [
     {
-      "id": "B0HLL22FZ8",
-      "event_name": "World Championship of Legends 2026 - 7th Match - Australia Champions vs Bangladesh Champions",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.93de5075-39ad-45ff-8429-73e091c3121f/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "UPCOMING",
-      "time": "Live at 5 PM IST",
-      "CnpTV": {},
-      "drm_key": ""
-    },
-    {
       "id": "B0HLVXRCKB",
       "event_name": "World Championship of Legends 2026 - 8th Match - England Champions vs West Indies Champions",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.326316a9-a3f2-4b99-ba9a-f5dc82fe4bae/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "UPCOMING",
-      "time": "Live at 9 PM IST",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.326316a9-a3f2-4b99-ba9a-f5dc82fe4bae/3/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "LIVE",
+      "time": "8:45 PM IST",
       "CnpTV": {},
       "drm_key": ""
     },
@@ -179,6 +170,15 @@
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.cdc9cd37-d91c-4bfd-98de-3dca55bce2e8/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
       "time": "Tue, Oct 13 5 PM IST",
+      "CnpTV": {},
+      "drm_key": ""
+    },
+    {
+      "id": "B0HL1539PF",
+      "event_name": "Sri Lanka tour of Pakistan 2026 - 3rd T20I - Pakistan vs Sri Lanka",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.51687d87-e60f-4b13-b24a-cdc87f75cd9c/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Tue, Oct 13 8:30 PM IST",
       "CnpTV": {},
       "drm_key": ""
     }
