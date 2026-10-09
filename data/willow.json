@@ -1,5 +1,5 @@
 {
-  "last_updated": "10/10/2026, 1:19:40 AM IST",
+  "last_updated": "10/10/2026, 5:25:18 AM IST",
   "source": "https://sonujson-v5.pages.dev/Data/willow.json",
   "Matches": [
     {
@@ -8,15 +8,6 @@
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.11c0edbc-8211-459b-880b-d945e2bb824b/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "LIVE",
       "time": "4:30 PM IST",
-      "CnpTV": {},
-      "drm_key": ""
-    },
-    {
-      "id": "B0HLKPZ929",
-      "event_name": "World Championship of Legends 2026 - 10th Match - Bangladesh Champions vs West Indies Champions",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.93be2d9e-1f2d-4eaf-8109-5aff5b5498c2/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "LIVE",
-      "time": "9 PM IST",
       "CnpTV": {},
       "drm_key": ""
     },
@@ -183,14 +174,13 @@
       "drm_key": ""
     },
     {
-      "id": "B0HJ5QZLX7",
-      "event_name": "West Indies tour of India 2026 - 2nd T20I - India vs West Indies",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.4436fe90-cc8a-438e-b753-ee18b7112ac8/4/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "LIVE",
-      "time": "6:30 PM IST",
+      "id": "B0HF49JPT3",
+      "event_name": "West Indies tour of India 2026 - 5th T20I - India vs West Indies",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.93411739-3488-40b7-865f-f09383e04841/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Sat, Oct 17 7 PM IST",
       "CnpTV": {},
-      "drm_key": "",
-      "retained_since": "2026-10-09T19:33:29.854Z"
+      "drm_key": ""
     }
   ]
 }
