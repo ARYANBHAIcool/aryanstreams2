@@ -1,40 +1,13 @@
 {
-  "last_updated": "10/10/2026, 9:50:27 PM IST",
+  "last_updated": "10/11/2026, 3:34:50 AM IST",
   "source": "https://sonujson-v5.pages.dev/Data/willow.json",
   "Matches": [
-    {
-      "id": "B0HKFRWMBH",
-      "event_name": "Australia tour of South Africa 2026 - 1st Test - South Africa vs Australia",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.d0f64737-d567-4434-8e64-4a43048ea637/6/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "LIVE",
-      "time": "12:30 PM IST",
-      "CnpTV": {},
-      "drm_key": ""
-    },
-    {
-      "id": "B0HKDRJKXR",
-      "event_name": "World Championship of Legends 2026 - 11th Match - India Champions vs South Africa Champions",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.e82d51fd-b787-4793-ad4a-6d3c95c77148/4/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "LIVE",
-      "time": "8:30 PM IST",
-      "CnpTV": {},
-      "drm_key": ""
-    },
-    {
-      "id": "B0HKYJJGN7",
-      "event_name": "World Championship of Legends 2026 - 14th Match - India Champions vs Pakistan Champions",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.6317851c-ab03-4f6f-a682-e74f4cec7147/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "LIVE",
-      "time": "9 PM IST",
-      "CnpTV": {},
-      "drm_key": ""
-    },
     {
       "id": "B0HJYC38NP",
       "event_name": "Bangladesh Women tour of Australia 2026 - 2nd ODI - Australia Women vs Bangladesh Women",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.a9e3a6bf-cfcc-47ef-ae36-51407a2b0e89/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
-      "time": "Tomorrow 9:20 AM IST",
+      "time": "Live at 9:20 AM IST",
       "CnpTV": {},
       "drm_key": ""
     },
@@ -43,7 +16,16 @@
       "event_name": "Afghanistan vs Bangladesh in UAE 2026 - One-off Test - Afghanistan vs Bangladesh",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.abf514cc-bb21-4f3c-900b-065784936f1b/6/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
-      "time": "Tomorrow 11 AM IST",
+      "time": "Live at 11 AM IST",
+      "CnpTV": {},
+      "drm_key": ""
+    },
+    {
+      "id": "B0HKFRWMBH",
+      "event_name": "Australia tour of South Africa 2026 - 1st Test - South Africa vs Australia",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.d0f64737-d567-4434-8e64-4a43048ea637/6/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Live at 1 PM IST",
       "CnpTV": {},
       "drm_key": ""
     },
@@ -52,7 +34,7 @@
       "event_name": "World Championship of Legends 2026 - 12th Match - Australia Champions vs West Indies Champions",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.1bb21bba-6293-4cba-948c-6d3edffdc9dc/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
-      "time": "Tomorrow 5 PM IST",
+      "time": "Live at 5 PM IST",
       "CnpTV": {},
       "drm_key": ""
     },
@@ -61,7 +43,7 @@
       "event_name": "Sri Lanka tour of Pakistan 2026 - 2nd T20I - Pakistan vs Sri Lanka",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.3a7dd554-e418-4e73-b45e-fe5efe7c6eee/3/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
-      "time": "Tomorrow 6:30 PM IST",
+      "time": "Live at 6:30 PM IST",
       "CnpTV": {},
       "drm_key": ""
     },
@@ -70,7 +52,7 @@
       "event_name": "West Indies tour of India 2026 - 3rd T20I - India vs West Indies",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.08fd741a-6d6b-4395-82f8-1f2c449b616d/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
-      "time": "Tomorrow 7 PM IST",
+      "time": "Live at 7 PM IST",
       "CnpTV": {},
       "drm_key": ""
     },
@@ -79,7 +61,7 @@
       "event_name": "World Championship of Legends 2026 - 13th Match - India Champions vs Bangladesh Champions",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.d7edc9c9-e9a5-44ea-8be9-de746e38b0b2/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
-      "time": "Tomorrow 9 PM IST",
+      "time": "Live at 9 PM IST",
       "CnpTV": {},
       "drm_key": ""
     },
@@ -88,7 +70,7 @@
       "event_name": "World Championship of Legends 2026 - 17th Match - Pakistan Champions vs South Africa Champions",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.fa2e2ab4-efd7-42ef-b5e8-f4c1d8e89c70/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
-      "time": "Mon, Oct 12 9 PM IST",
+      "time": "Tomorrow 9 PM IST",
       "CnpTV": {},
       "drm_key": ""
     },
@@ -183,14 +165,13 @@
       "drm_key": ""
     },
     {
-      "id": "B0HLDHTG7C",
-      "event_name": "World Championship of Legends 2026 - 5th Match - Australia Champions vs Pakistan Champions",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.11c0edbc-8211-459b-880b-d945e2bb824b/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "LIVE",
-      "time": "4:30 PM IST",
+      "id": "B0HKDPRJRS",
+      "event_name": "Australia tour of South Africa 2026 - 3rd Test - South Africa vs Australia",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.20a790a3-51e9-4ec1-9a8b-cb632845af2d/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Tue, Oct 27 1 PM IST",
       "CnpTV": {},
-      "drm_key": "",
-      "retained_since": "2026-10-10T16:03:56.112Z"
+      "drm_key": ""
     }
   ]
 }
