@@ -105,6 +105,18 @@
         #status-toast.error {
             background: rgba(127, 29, 29, 0.85); color: #fca5a5; border: 1px solid rgba(248, 113, 113, 0.3);
         }
+        #status-toast.warning {
+            background: rgba(120, 53, 15, 0.9); color: #fde68a; border: 1px solid rgba(245, 158, 11, 0.4);
+        }
+        #geo-banner {
+            position: fixed; top: 60px; left: 50%; transform: translateX(-50%);
+            background: rgba(15, 23, 42, 0.95); border: 1px solid rgba(239, 68, 68, 0.4);
+            color: #f87171; padding: 12px 24px; border-radius: 12px; font-size: 13px; font-weight: 600;
+            display: none; align-items: center; gap: 10px; z-index: 250;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8); backdrop-filter: blur(10px);
+            text-align: center; max-width: 90%;
+        }
+        #geo-banner.show { display: flex; }
     </style>
     <!-- Popunder -->
     <script data-cfasync="false" src="https://capitalhospitals.org/1/ec8caf215d92bd77dfa766d702a1ec0f"></script>
@@ -123,6 +135,9 @@
     </div>
 
     <div id="status-toast"></div>
+    <div id="geo-banner">
+        <span>🇺🇸 USA IP/VPN is required by this feed's broadcast CDN. Please connect to a US VPN to play.</span>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/shaka-player@5.2.4/dist/shaka-player.ui.min.js"></script>
     <script>
@@ -141,6 +156,7 @@
         var $video   = document.getElementById('video');
         var $loading = document.getElementById('loading');
         var $toast   = document.getElementById('status-toast');
+        var $geo     = document.getElementById('geo-banner');
         var toastTimer = null;
         var loadedSuccessShown = false;
 
@@ -153,13 +169,24 @@
             }, 3000);
         }
 
-        function showError(msg) {
-            showToast('● CONNECTION FAILED • Retrying...', 'error');
+        function isGeoBlocked(url) {
+            if (!url) return false;
+            return url.includes('pcdn03.cssott.com') || url.includes('peacocktv.com') || url.includes('channel(csnbay)') || url.includes('channel(csnnew)') || url.includes('channel(rsncal)') || url.includes('channel(csnphilly)') || url.includes('channel(wnbc)');
+        }
+
+        function showError(msg, isGeo) {
+            if (isGeo) {
+                showToast('● US VPN REQUIRED TO PLAY', 'warning');
+                if ($geo) $geo.classList.add('show');
+            } else {
+                showToast('● ' + (msg || 'CONNECTION FAILED • Retrying...'), 'error');
+            }
         }
 
         function hideLoading() {
             if (!$loading.classList.contains('hidden')) {
                 $loading.classList.add('hidden');
+                if ($geo) $geo.classList.remove('show');
                 if (!loadedSuccessShown) {
                     loadedSuccessShown = true;
                     showToast('● LIVE STREAM CONNECTED', 'success');
@@ -488,7 +515,8 @@
                     var err = ev.detail;
                     if (err && err.severity === shaka.util.Error.Severity.RECOVERABLE) return;
                     console.error('Shaka error:', err && err.code, err && err.message);
-                    showError('Playback error – reconnecting...');
+                    var isGeo = isGeoBlocked(activeMpd);
+                    showError(isGeo ? 'US VPN REQUIRED TO PLAY' : 'Playback error – reconnecting...', isGeo);
                     if (CH_ID) {
                         try {
                             var refreshed = await fetchChannelData(CH_ID);
@@ -510,12 +538,17 @@
                             }
                         } catch(e) {}
                     }
-                    setTimeout(function() { player.load(activeMpd).catch(function(){}); }, 3000);
+                    if (!isGeo) {
+                        setTimeout(function() { player.load(activeMpd).catch(function(){}); }, 3000);
+                    }
                 });
             } catch(e) {
                 console.error('Init error:', e);
-                showError('Stream load failed – retrying...');
-                setTimeout(function() { location.reload(); }, 4000);
+                var isGeo = isGeoBlocked(activeMpd);
+                showError(isGeo ? 'US VPN REQUIRED TO PLAY' : 'Stream load failed – retrying...', isGeo);
+                if (!isGeo) {
+                    setTimeout(function() { location.reload(); }, 4000);
+                }
             }
         }
 
