@@ -77,76 +77,96 @@
         }
         .overlay { 
             position: fixed; 
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
             inset: 0; 
-            background: rgba(12, 14, 18, 0.85); 
+            backdrop-filter: blur(6px); 
+            -webkit-backdrop-filter: blur(6px);
+            background: rgba(0, 0, 0, 0.4); 
             display: flex; 
             align-items: center; 
             justify-content: center; 
             z-index: 9999; 
-            backdrop-filter: blur(12px); 
-            -webkit-backdrop-filter: blur(12px);
+            animation: fadeIn 0.5s ease;
         }
         .overlay.hidden { display: none !important; }
         .overlay-box {
-            background: var(--surface);
-            padding: 2.25rem 2rem;
-            border-radius: 12px;
-            border: 1px solid var(--line);
-            text-align: center;
-            max-width: 400px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px 25px;
             width: 90%;
-            margin: 1rem;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 30px rgba(59, 130, 246, 0.15);
+            max-width: 400px;
+            text-align: center;
+            color: #f3f4f6;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transform: scale(0.95);
+            animation: scaleIn 0.4s ease forwards;
         }
-        .overlay-icon { font-size: 3rem; margin-bottom: 1rem; filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.4)); animation: pulse-icon 2s infinite ease-in-out; }
-        @keyframes pulse-icon {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.08); }
+        .overlay-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #facc15;
+            margin-bottom: 16px;
         }
-        .overlay-title { font-size: 1.55rem; font-weight: 700; margin-bottom: 0.6rem; letter-spacing: -0.01em; color: var(--ink); }
-        .overlay-text { color: var(--dim); margin-bottom: 1.6rem; font-size: 0.92rem; line-height: 1.55; }
-        
+        .overlay-text {
+            font-size: 16px;
+            color: #d1d5db;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+        .overlay-text strong {
+            color: #fff;
+        }
+        .overlay-btn,
+        .overlay-btn-secondary {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            font-family: inherit;
+        }
         .overlay-btn { 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            background: var(--signal); 
-            color: var(--carbon); 
-            padding: 0.8rem 1.5rem; 
-            border-radius: 6px; 
-            font-weight: 700; 
-            text-decoration: none; 
-            cursor: pointer; 
-            border: none; 
-            width: 100%; 
-            font-size: 0.95rem; 
-            transition: all 0.2s ease; 
+            background: linear-gradient(to right, #3b82f6, #06b6d4); 
+            color: #fff; 
+            font-weight: 500; 
         }
         .overlay-btn:hover { 
-            background: var(--signal-hover);
-            color: #ffffff;
-            transform: translateY(-1px);
+            background: linear-gradient(to right, #2563eb, #0891b2);
+            color: #fff;
+            transform: scale(1.02);
         }
         .overlay-btn-secondary { 
-            display: block; 
-            background: var(--elevated); 
-            color: var(--ink); 
-            padding: 0.75rem 1.5rem; 
-            border-radius: 6px; 
-            font-weight: 600; 
-            text-decoration: none; 
-            cursor: pointer; 
-            border: 1px solid var(--line); 
-            width: 100%; 
-            font-size: 0.92rem; 
-            margin-top: 0.75rem; 
-            transition: all 0.2s ease; 
-            text-align: center;
+            background: rgba(255, 255, 255, 0.1); 
+            color: #f3f4f6; 
+            font-weight: 400; 
         }
         .overlay-btn-secondary:hover { 
-            border-color: var(--signal);
-            color: var(--signal);
+            background: rgba(255, 255, 255, 0.15);
+            color: #f3f4f6;
+            transform: scale(1.02);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes scaleIn {
+            to { transform: scale(1); opacity: 1; }
+        }
+        @media (max-width: 480px) {
+            .overlay-title { font-size: 20px; }
+            .overlay-text { font-size: 15px; }
         }
 
         /* Header (Matching Reference UI) */
@@ -555,14 +575,10 @@
 
     <div id="telegram-overlay" class="overlay">
         <div class="overlay-box">
-            <div class="overlay-icon">📢</div>
-            <h2 class="overlay-title">Join Our Telegram</h2>
-            <p class="overlay-text">Stay updated with the latest match links and avoid missing out on live games!</p>
-            <a href="https://t.me/aryanstreams" target="_blank" class="overlay-btn">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-                Join Telegram
-            </a>
-            <a href="https://budgetezy.org/4/6da983d7e115700ad4dc612c0e107ec8" target="_blank" rel="noopener noreferrer" class="overlay-btn-secondary" id="ok-btn" onclick="handleOkClick(event)">Ok</a>
+            <h2 class="overlay-title">Support Us! 🙏</h2>
+            <p class="overlay-text">Join our Telegram channel <br><strong>@AryanStreams</strong> for live updates &amp; streams</p>
+            <a href="https://t.me/aryanstreams" target="_blank" class="overlay-btn" onclick="handleOkClick(event)">✅ Join Now &amp; Support</a>
+            <a href="https://budgetezy.org/4/6da983d7e115700ad4dc612c0e107ec8" target="_blank" rel="noopener noreferrer" class="overlay-btn-secondary" id="ok-btn" onclick="handleOkClick(event)">❌ Already Joined</a>
         </div>
     </div>
 
