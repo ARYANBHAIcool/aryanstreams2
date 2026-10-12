@@ -1,49 +1,22 @@
 {
-  "last_updated": "10/12/2026, 9:02:15 PM IST",
+  "last_updated": "10/13/2026, 4:06:41 AM IST",
   "source": "https://sonujson-v5.pages.dev/Data/willow.json",
   "Matches": [
     {
       "id": "B0HLG67G7Q",
       "event_name": "Afghanistan vs Bangladesh in UAE 2026 - One-off Test - Afghanistan vs Bangladesh",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.abf514cc-bb21-4f3c-900b-065784936f1b/7/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "LIVE",
-      "time": "11 AM IST",
-      "CnpTV": {
-        "fastly_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/61zrupwmyb/out/v1/6cc49c58f415453894718c5813bbcd89/cenc.mpd",
-        "amazon_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.cache.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/61zrupwmyb/out/v1/6cc49c58f415453894718c5813bbcd89/cenc.mpd",
-        "akamai_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/61zrupwmyb/out/v1/6cc49c58f415453894718c5813bbcd89/cenc.mpd",
-        "cloudfront_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://ss-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/61zrupwmyb/out/v1/6cc49c58f415453894718c5813bbcd89/cenc.mpd",
-        "fastly_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/cp3g1fxief/out/v1/c24f3ab23c4442118b881700b15e2568/cenc.mpd",
-        "amazon_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/cp3g1fxief/out/v1/c24f3ab23c4442118b881700b15e2568/cenc.mpd",
-        "akamai_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/cp3g1fxief/out/v1/c24f3ab23c4442118b881700b15e2568/cenc.mpd",
-        "cloudfront_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://dash-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/cp3g1fxief/out/v1/c24f3ab23c4442118b881700b15e2568/cenc.mpd"
-      },
-      "drm_key": "cc795082715e39585bb8b9913a2072db:b6a161d647a3e1319649cbae2ee256bf"
+      "status": "UPCOMING",
+      "time": "Live at 11 AM IST",
+      "CnpTV": {},
+      "drm_key": ""
     },
     {
       "id": "B0HKFRWMBH",
       "event_name": "Australia tour of South Africa 2026 - 1st Test - South Africa vs Australia",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.d0f64737-d567-4434-8e64-4a43048ea637/9/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "LIVE",
-      "time": "12:30 PM IST",
-      "CnpTV": {
-        "fastly_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/nud9c5syvx/out/v1/f5d58491aba84f35985919762ad77d6a/cenc.mpd",
-        "amazon_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.cache.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/nud9c5syvx/out/v1/f5d58491aba84f35985919762ad77d6a/cenc.mpd",
-        "akamai_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/nud9c5syvx/out/v1/f5d58491aba84f35985919762ad77d6a/cenc.mpd",
-        "cloudfront_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://ss-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/nud9c5syvx/out/v1/f5d58491aba84f35985919762ad77d6a/cenc.mpd",
-        "fastly_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/yl9r6tbirc/out/v1/9cc35bdd6b6f4131a1fc4d1a054d246a/cenc.mpd",
-        "amazon_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/yl9r6tbirc/out/v1/9cc35bdd6b6f4131a1fc4d1a054d246a/cenc.mpd",
-        "akamai_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/yl9r6tbirc/out/v1/9cc35bdd6b6f4131a1fc4d1a054d246a/cenc.mpd",
-        "cloudfront_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://dash-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/yl9r6tbirc/out/v1/9cc35bdd6b6f4131a1fc4d1a054d246a/cenc.mpd"
-      },
-      "drm_key": "abceab2f1340be6c70c54b7176d30608:9c281b70e5626752d2481f498677b3df"
-    },
-    {
-      "id": "B0HLSZ4843",
-      "event_name": "World Championship of Legends 2026 - 17th Match - Pakistan Champions vs South Africa Champions",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.fa2e2ab4-efd7-42ef-b5e8-f4c1d8e89c70/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
-      "time": "Live at 9 PM IST",
+      "time": "Live at 1 PM IST",
       "CnpTV": {},
       "drm_key": ""
     },
@@ -52,7 +25,7 @@
       "event_name": "World Championship of Legends 2026 - 14th Match -  South Africa Champions vs England Champions",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.cdc9cd37-d91c-4bfd-98de-3dca55bce2e8/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
-      "time": "Tomorrow 5 PM IST",
+      "time": "Live at 5 PM IST",
       "CnpTV": {},
       "drm_key": ""
     },
@@ -61,7 +34,34 @@
       "event_name": "Sri Lanka tour of Pakistan 2026 - 3rd T20I - Pakistan vs Sri Lanka",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.51687d87-e60f-4b13-b24a-cdc87f75cd9c/4/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
-      "time": "Tomorrow 6:30 PM IST",
+      "time": "Live at 6:30 PM IST",
+      "CnpTV": {},
+      "drm_key": ""
+    },
+    {
+      "id": "B0HL8XQ54M",
+      "event_name": "Atlanta Open T20 2026 - 1st Match - ICR Falcons vs All Stars Cardinals",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.b719baa2-6bec-4a46-8c30-ed697705c000/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Live at 7:30 PM IST",
+      "CnpTV": {},
+      "drm_key": ""
+    },
+    {
+      "id": "B0HMP5RSYC",
+      "event_name": "Atlanta Open T20 2026 - 2nd Match - Prime Gladiators vs Atlanta Force",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.1aff7eec-1af3-4f98-b32d-1ae28480d28b/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Live at 7:45 PM IST",
+      "CnpTV": {},
+      "drm_key": ""
+    },
+    {
+      "id": "B0HMFC2J1S",
+      "event_name": "Atlanta Open T20 2026 - 3rd Mtach - Atlanta Lightning vs Bay Blazers",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.cffd1013-2f10-47e4-b5d1-1f382496ba20/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Live at 8 PM IST",
       "CnpTV": {},
       "drm_key": ""
     },
@@ -70,7 +70,34 @@
       "event_name": "World Championship of Legends 2026 - 15th Match - India Champions vs West Indies Champions",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.dc23bbae-312c-498d-a861-9e646bdd67cb/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
-      "time": "Tomorrow 9 PM IST",
+      "time": "Live at 9 PM IST",
+      "CnpTV": {},
+      "drm_key": ""
+    },
+    {
+      "id": "B0HMNKW3WQ",
+      "event_name": "Atlanta Open T20 2026 - 4th Match - Atlanta Fire vs Seattle Thunderbolts",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.79595a23-68e4-4b57-afed-d758f30cb2a6/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Tomorrow 11:30 PM IST",
+      "CnpTV": {},
+      "drm_key": ""
+    },
+    {
+      "id": "B0HMC7M36S",
+      "event_name": "Atlanta Open T20 2026 - 5th Match - RR Stars vs St. Louis Americans",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.8183e238-3d9f-4554-acb4-a41159b3cb1f/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Tomorrow 11:45 PM IST",
+      "CnpTV": {},
+      "drm_key": ""
+    },
+    {
+      "id": "B0HK43WKWQ",
+      "event_name": "Atlanta Open T20 2026 - 6th Match - Space City Cowboys vs Michigan Cricket Stars",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.414ddf7a-cff0-4ffc-a6f6-25d3b6afa61e/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Tomorrow 12 AM IST",
       "CnpTV": {},
       "drm_key": ""
     },
@@ -79,7 +106,7 @@
       "event_name": "Bangladesh Women tour of Australia 2026 - 3rd ODI - Australia Women vs Bangladesh Women",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.2deaa170-a5ef-4927-b11b-ecec3c38094e/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
-      "time": "Wed, Oct 14 9:20 AM IST",
+      "time": "Tomorrow 9:20 AM IST",
       "CnpTV": {},
       "drm_key": ""
     },
@@ -88,7 +115,7 @@
       "event_name": "World Championship of Legends 2026 - 20th Match - England Champions vs Pakistan Champions",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.1cb2e3c0-3189-44e4-a97c-e64801579a57/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
-      "time": "Wed, Oct 14 5 PM IST",
+      "time": "Tomorrow 5 PM IST",
       "CnpTV": {},
       "drm_key": ""
     },
@@ -97,7 +124,34 @@
       "event_name": "West Indies tour of India 2026 - 4th T20I - India vs West Indies",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.eb485c36-d154-4681-b87b-81f985a775b5/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
-      "time": "Wed, Oct 14 7 PM IST",
+      "time": "Tomorrow 7 PM IST",
+      "CnpTV": {},
+      "drm_key": ""
+    },
+    {
+      "id": "B0HLGZXT5D",
+      "event_name": "Atlanta Open T20 2026 - 7th Match - Bay Blazers vs St. Louis Americans",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.fd48ca76-f071-4a35-92da-afe3baad9571/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Tomorrow 7:30 PM IST",
+      "CnpTV": {},
+      "drm_key": ""
+    },
+    {
+      "id": "B0HL1V8HT9",
+      "event_name": "Atlanta Open T20 2026 - 8th Match - Michigan Cricket Stars vs Atlanta Force",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.9dddbc86-1666-4db3-94be-8d6e38e73d79/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Tomorrow 7:45 PM IST",
+      "CnpTV": {},
+      "drm_key": ""
+    },
+    {
+      "id": "B0HLW9WBXF",
+      "event_name": "Atlanta Open T20 2026 - 9th Match - Seattle Thunderbolts vs All Stars Cardinals",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.10b013e0-e33a-40fa-be69-9e3e7654210f/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Tomorrow 8 PM IST",
       "CnpTV": {},
       "drm_key": ""
     },
@@ -106,7 +160,7 @@
       "event_name": "World Championship of Legends 2026 - 16th Match - Australia Champions vs England Champions",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.626b2305-90e3-41ea-a88a-a3280dc97638/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
-      "time": "Wed, Oct 14 8 PM IST",
+      "time": "Tomorrow 8 PM IST",
       "CnpTV": {},
       "drm_key": ""
     },
@@ -115,34 +169,16 @@
       "event_name": "World Championship of Legends 2026 - 17th Match - Bangladesh Champions vs South Africa Champions",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.9238c000-24c5-4723-927e-f21e892189af/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
-      "time": "Wed, Oct 14 9 PM IST",
+      "time": "Tomorrow 9 PM IST",
       "CnpTV": {},
       "drm_key": ""
     },
     {
-      "id": "B0HF49JPT3",
-      "event_name": "West Indies tour of India 2026 - 5th T20I - India vs West Indies",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.93411739-3488-40b7-865f-f09383e04841/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "id": "B0HM6VSC6B",
+      "event_name": "Atlanta Open T20 2026 - 10th Match - Atlanta Lightning vs RR Stars",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.0ce1a22c-5c64-4dfd-935e-f150d91a4250/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
-      "time": "Sat, Oct 17 7 PM IST",
-      "CnpTV": {},
-      "drm_key": ""
-    },
-    {
-      "id": "B0HFWWJWH6",
-      "event_name": "Australia tour of South Africa 2026 - 2nd Test - South Africa vs Australia",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.df9be69a-7bd6-4883-a021-b7e4801a1573/3/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "UPCOMING",
-      "time": "Sun, Oct 18 1 PM IST",
-      "CnpTV": {},
-      "drm_key": ""
-    },
-    {
-      "id": "B0HKDPRJRS",
-      "event_name": "Australia tour of South Africa 2026 - 3rd Test - South Africa vs Australia",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.20a790a3-51e9-4ec1-9a8b-cb632845af2d/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "UPCOMING",
-      "time": "Tue, Oct 27 1 PM IST",
+      "time": "Thu, Oct 15 11:30 PM IST",
       "CnpTV": {},
       "drm_key": ""
     }
