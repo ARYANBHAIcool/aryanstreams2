@@ -1086,7 +1086,7 @@
                 } catch (err) {
                     console.warn('Direct MPD load failed, attempting proxy fallback:', err);
                     try {
-                        const proxiedUrl = 'https://as-proxy.lovable.app/api/public/px/geobypass?url=' + encodeURIComponent(directMpd);
+                        const proxiedUrl = 'https://akamaii.lovable.app/api/public/px/geobypass?url=' + encodeURIComponent(directMpd);
                         await shakaPlayerInstance.load(proxiedUrl);
                         $video.muted = true;
                         $video.play().catch(() => {});
