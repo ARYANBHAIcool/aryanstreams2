@@ -967,6 +967,11 @@
             "vilvsnap":         { type: "iframe", name: "Villarreal vs Napoli (UCL 2)",              url: "https://trend48.st/event/m-villarreal-vs-napoli-1013" },
             "atlvsmutd":        { type: "iframe", name: "Atletico Madrid vs Manchester United",      url: "https://trend48.st/event/m-atletico-madrid-vs-manchester-united-1013" },
             "atletico_united":  { type: "iframe", name: "Atletico Madrid vs Manchester United",      url: "https://trend48.st/event/m-atletico-madrid-vs-manchester-united-1013" },
+            "mru":              { type: "iframe", name: "Atletico Madrid vs Manchester United",      url: "https://trend48.st/event/m-atletico-madrid-vs-manchester-united-1013" },
+            "manutd":           { type: "iframe", name: "Atletico Madrid vs Manchester United",      url: "https://trend48.st/event/m-atletico-madrid-vs-manchester-united-1013" },
+            "manu":             { type: "iframe", name: "Atletico Madrid vs Manchester United",      url: "https://trend48.st/event/m-atletico-madrid-vs-manchester-united-1013" },
+            "m3u":              { type: "video",  name: "Sony Sports Ten 2 HD (Universal M3U8)",     url: "https://akamaii.lovable.app/api/public/px/sony?url=https://dishmt.slivcdn.com/hls/live/2020434/TEN2HD/master.m3u8?hdnea=exp=1791926588~acl=/*~id=70344724512814818662184449453437~hmac=5ca34a43fd8d383080723e8260f26b216845b6a71ee06ff957f4df1c90e472d8" },
+            "m3u8":             { type: "video",  name: "Sony Sports Ten 2 HD (Universal M3U8)",     url: "https://akamaii.lovable.app/api/public/px/sony?url=https://dishmt.slivcdn.com/hls/live/2020434/TEN2HD/master.m3u8?hdnea=exp=1791926588~acl=/*~id=70344724512814818662184449453437~hmac=5ca34a43fd8d383080723e8260f26b216845b6a71ee06ff957f4df1c90e472d8" },
 
             // ── Live Matches ───────────────────────────────────────────────────
             "rmvsvi":    { type: "video",  name: "Real Madrid vs Villarreal (Live HD)",      url: "https://live05.miekgo.app/live/08552895.m3u8" },
@@ -1381,12 +1386,20 @@
         // Helper to format url with proxy configuration
         function getPlayableUrl(url) {
             const parsed = parseStreamUrl(url);
+
+            // If already going through an edge relay (lovable.app, Cloudflare worker, papacito, etc.), play directly
+            if (parsed.baseUrl.includes('lovable.app') || 
+                parsed.baseUrl.includes('workers.dev') || 
+                parsed.baseUrl.includes('pages.dev') || 
+                parsed.baseUrl.includes('papacito.cfd') ||
+                parsed.baseUrl.includes('miekgo.app')) {
+                return parsed.baseUrl;
+            }
+
             const hasHeaders = Object.keys(parsed.headers).length > 0;
             const needsProxy = hasHeaders || 
                                parsed.baseUrl.includes('fancode.com') || 
-                               parsed.baseUrl.includes('akamaized.net') || 
-                               parsed.baseUrl.includes('sonyliv.com') || 
-                               parsed.baseUrl.includes('slivcdn.com');
+                               parsed.baseUrl.includes('akamaized.net');
 
             if (needsProxy) {
                 // Determine proxy endpoint based on current page path
