@@ -1,5 +1,5 @@
 {
-  "last_updated": "10/14/2026, 12:06:34 PM IST",
+  "last_updated": "10/14/2026, 5:56:01 PM IST",
   "source": "https://sonujson-v5.pages.dev/Data/willow.json",
   "Matches": [
     {
@@ -21,13 +21,22 @@
       "drm_key": "9b642c93aae95d414b5cf3b7486da7cd:f349ed601c76da554355e0fcc32f7b9f"
     },
     {
-      "id": "B0HJZN542R",
-      "event_name": "World Championship of Legends 2026 - 20th Match - England Champions vs Pakistan Champions",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.1cb2e3c0-3189-44e4-a97c-e64801579a57/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "UPCOMING",
-      "time": "Live at 5 PM IST",
-      "CnpTV": {},
-      "drm_key": ""
+      "id": "B0HK18F8NM",
+      "event_name": "World Championship of Legends 2026 - 16th Match - Australia Champions vs England Champions",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.626b2305-90e3-41ea-a88a-a3280dc97638/4/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "LIVE",
+      "time": "4:30 PM IST",
+      "CnpTV": {
+        "fastly_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/fx9eabcx49/out/v1/de28c6748478496398ba4b53d1d62085/cenc.mpd",
+        "amazon_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/fx9eabcx49/out/v1/de28c6748478496398ba4b53d1d62085/cenc.mpd",
+        "akamai_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/fx9eabcx49/out/v1/de28c6748478496398ba4b53d1d62085/cenc.mpd",
+        "cloudfront_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/fx9eabcx49/out/v1/de28c6748478496398ba4b53d1d62085/cenc.mpd",
+        "fastly_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/2nblcfrrf7/out/v1/ac32368934c242f5afaabf2f160b6b53/cenc.mpd",
+        "amazon_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.cache.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/2nblcfrrf7/out/v1/ac32368934c242f5afaabf2f160b6b53/cenc.mpd",
+        "akamai_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/2nblcfrrf7/out/v1/ac32368934c242f5afaabf2f160b6b53/cenc.mpd",
+        "cloudfront_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://dash-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/2nblcfrrf7/out/v1/ac32368934c242f5afaabf2f160b6b53/cenc.mpd"
+      },
+      "drm_key": "3641653d92b89e446fa098a00d4735dd:f8e294f57b60561ee4a6e53996813e85"
     },
     {
       "id": "B0HKCPFL9G",
@@ -60,15 +69,6 @@
       "id": "B0HLW9WBXF",
       "event_name": "Atlanta Open T20 2026 - 9th Match - Seattle Thunderbolts vs All Stars Cardinals",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.10b013e0-e33a-40fa-be69-9e3e7654210f/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "UPCOMING",
-      "time": "Live at 8 PM IST",
-      "CnpTV": {},
-      "drm_key": ""
-    },
-    {
-      "id": "B0HK18F8NM",
-      "event_name": "World Championship of Legends 2026 - 16th Match - Australia Champions vs England Champions",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.626b2305-90e3-41ea-a88a-a3280dc97638/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
       "time": "Live at 8 PM IST",
       "CnpTV": {},
@@ -188,6 +188,15 @@
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.df9be69a-7bd6-4883-a021-b7e4801a1573/3/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
       "time": "Sun, Oct 18 1 PM IST",
+      "CnpTV": {},
+      "drm_key": ""
+    },
+    {
+      "id": "B0HLWVSMP1",
+      "event_name": "Zimbabwe Women tour of India 2026 - 2nd T20I - India Women vs Zimbabwe Women",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.ce490310-1690-4efb-8183-aed9c087d64c/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Sun, Oct 18 7 PM IST",
       "CnpTV": {},
       "drm_key": ""
     }
