@@ -652,7 +652,7 @@
             <h2 class="overlay-title">Support &amp; Join Our Community 🙏</h2>
             <p class="overlay-text">Join our Telegram channel <br><strong>@AryanStreams</strong> for live updates &amp; streams</p>
             <a href="https://t.me/aryanstreams" target="_blank" rel="noopener noreferrer" class="overlay-btn" id="joinButton" onclick="handleJoinClick(event)">✅ Join Now &amp; Support</a>
-            <a href="https://budgetezy.org/4/6da983d7e115700ad4dc612c0e107ec8" target="_blank" rel="noopener noreferrer" class="overlay-btn-secondary" id="ok-btn" onclick="handleAlreadyJoined(event)">Already Joined</a>
+            <a href="javascript:void(0)" class="overlay-btn-secondary" id="ok-btn" onclick="handleAlreadyJoined(event)">Already Joined</a>
         </div>
     </div>
 
@@ -826,17 +826,20 @@
         }, true);
 
         let adTriggerCount = 0;
-        const MAX_SESSION_ADS = 3;
+        const MAX_SESSION_ADS = 1; // Strictly max 1 ad per session (massive reduction in ads)
         let lastAdTime = 0;
-        const AD_COOLDOWN_MS = 60000; // 60 seconds cooldown between ad triggers
 
         function triggerSmartlinkAd() {
-            const now = Date.now();
+            try {
+                if (sessionStorage.getItem('session_ad_shown') === 'true') return false;
+            } catch (e) {}
             if (adTriggerCount >= MAX_SESSION_ADS) return false;
-            if (lastAdTime !== 0 && (now - lastAdTime < AD_COOLDOWN_MS)) return false;
             
-            lastAdTime = now;
+            lastAdTime = Date.now();
             adTriggerCount++;
+            try {
+                sessionStorage.setItem('session_ad_shown', 'true');
+            } catch (e) {}
             
             try {
                 const w = window.open(DIRECT_AD_URL, '_blank');
@@ -853,30 +856,24 @@
             return true;
         }
 
-        function scheduleOverlayRearm() {
-            if (adTriggerCount < MAX_SESSION_ADS) {
-                setTimeout(function() {
-                    if (adTriggerCount < MAX_SESSION_ADS) {
-                        var overlays = document.querySelectorAll('.player-ad-overlay');
-                        overlays.forEach(function(el) {
-                            el.classList.remove('hidden');
-                        });
-                    }
-                }, AD_COOLDOWN_MS);
-            }
-        }
-
         function handlePlayerAdClick(e) {
             triggerSmartlinkAd();
 
+            // Permanently remove all ad overlays from the DOM so no more clicks can be intercepted
             var overlays = document.querySelectorAll('.player-ad-overlay');
             overlays.forEach(function(el) {
-                el.classList.add('hidden');
+                el.remove();
             });
 
-            scheduleOverlayRearm();
             resumeStreamPlayback();
         }
+
+        // Clean up overlays immediately if user already saw an ad this session
+        try {
+            if (sessionStorage.getItem('session_ad_shown') === 'true') {
+                document.querySelectorAll('.player-ad-overlay').forEach(function(el) { el.remove(); });
+            }
+        } catch (e) {}
 
         window.addEventListener('pageshow', function (event) {
             try {
@@ -1922,7 +1919,5 @@
         };
     </script>
 
-    <!-- Social Bar -->
-    <script data-cfasync="false" src="https://czernik.org/14/de42cdeb3c7aad7b416550c1f72cb2e0"></script>
 </body>
 </html>

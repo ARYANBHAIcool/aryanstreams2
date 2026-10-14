@@ -554,27 +554,27 @@
 
         initPlayer();
 
-        // Unmute and trigger direct link ad with smart cooldown
+        // Unmute and trigger direct link ad (strictly once per session)
         var shakaAdFiredCount = 0;
-        var maxShakaAds = 3;
-        var lastShakaAdTime = 0;
-        var SHAKA_AD_COOLDOWN = 60000;
+        var maxShakaAds = 1;
 
         function triggerShakaAd() {
-            var now = Date.now();
+            try {
+                if (sessionStorage.getItem('shaka_ad_shown') === 'true') return;
+            } catch(e) {}
             if (shakaAdFiredCount >= maxShakaAds) return;
-            if (lastShakaAdTime !== 0 && (now - lastShakaAdTime < SHAKA_AD_COOLDOWN)) return;
-            lastShakaAdTime = now;
             shakaAdFiredCount++;
             try {
+                sessionStorage.setItem('shaka_ad_shown', 'true');
                 window.open('https://budgetezy.org/4/6da983d7e115700ad4dc612c0e107ec8', '_blank');
             } catch (err) {}
         }
 
-        document.addEventListener('click', function unmuteAndAd() {
+        function unmuteAndAd() {
             $video.muted = false;
             triggerShakaAd();
-        });
+        }
+        document.addEventListener('click', unmuteAndAd, { once: true });
 
         // ── Mobile Screen Auto-Rotate & Fullscreen Fit ───────────────────
         function lockLandscape() {

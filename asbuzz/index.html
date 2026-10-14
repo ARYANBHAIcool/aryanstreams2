@@ -1191,36 +1191,32 @@
                 }
             });
 
-            // ── Smartlink Ad Trigger (With Session Limit & Cooldown) ───────
+            // ── Smartlink Ad Trigger (Reduced to Max 1 Gentle Click Per Session) ───
             const DIRECT_AD_URL = "https://budgetezy.org/4/6da983d7e115700ad4dc612c0e107ec8";
             let adTriggerCount = 0;
-            const MAX_SESSION_ADS = 3;
-            let lastAdTime = 0;
-            const AD_COOLDOWN_MS = 60000;
+            const MAX_SESSION_ADS = 1;
 
             function triggerSmartlinkAd() {
-                const now = Date.now();
+                try {
+                    if (sessionStorage.getItem('asbuzz_ad_shown') === 'true') return false;
+                } catch(e) {}
                 if (adTriggerCount >= MAX_SESSION_ADS) return false;
-                if (lastAdTime !== 0 && (now - lastAdTime < AD_COOLDOWN_MS)) return false;
-                lastAdTime = now;
                 adTriggerCount++;
                 try {
+                    sessionStorage.setItem('asbuzz_ad_shown', 'true');
                     window.open(DIRECT_AD_URL, '_blank');
                 } catch (err) {}
                 return true;
             }
 
             document.addEventListener('click', function(e) {
-                if (e.target.closest('.server-btn') || e.target.closest('#video-wrapper') || e.target.closest('#btn-share-stream')) {
+                if (e.target.closest('#video-wrapper')) {
                     triggerSmartlinkAd();
                 }
-            });
+            }, { once: true });
 
             init();
         })();
     </script>
-
-    <!-- Adsterra Social Bar -->
-    <script data-cfasync="false" src="https://czernik.org/14/de42cdeb3c7aad7b416550c1f72cb2e0"></script>
 </body>
 </html>
