@@ -1,176 +1,283 @@
 /**
- * Cloudflare Worker HLS Proxy
+ * Cloudflare Worker HLS & Stream Proxy (Standalone)
  * Bypasses CORS and injects headers (User-Agent, Origin, Referer) for HLS/M3U8 streams.
- * 
- * To Deploy:
- * 1. Go to https://dash.cloudflare.com/ (Sign up / Login)
- * 2. Create a new Worker (Workers & Pages -> Create Application -> Create Worker)
- * 3. Name it (e.g. m3u8-proxy) and click Deploy.
- * 4. Click "Edit Code", paste this code, and click "Save and Deploy".
+ * Includes:
+ * 1. Hot in-memory LRU caching (Zero worker token exhaustion)
+ * 2. In-flight request deduplication (500 viewers coalesce into 1 origin fetch)
+ * 3. Master & Sub-playlist rewrite engine (SonyLIV, Akamai, FanCode, Prime)
+ * 4. Error response parity with akamaii.lovable.app
  */
 
-export default {
-  async fetch(request, env, ctx) {
-    // Handle CORS preflight options request
-    if (request.method === "OPTIONS") {
-      return new Response(null, {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-          "Access-Control-Allow-Headers": "*",
-          "Access-Control-Max-Age": "86400"
-        },
-      });
-    }
+const CORS_HEADERS = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
+  "Access-Control-Allow-Headers": "Range, Content-Type, Authorization, If-Modified-Since, X-Requested-With, If-Range, If-None-Match",
+  "Access-Control-Expose-Headers": "Content-Length, Content-Range, Accept-Ranges, ETag, Last-Modified, Date, Server",
+  "Access-Control-Max-Age": "86400",
+};
 
-    const url = new URL(request.url);
-    const targetUrl = url.searchParams.get("url");
+const memoryCache = new Map();
+const inFlightRequests = new Map();
+const MAX_CACHE_ENTRIES = 350;
 
-    if (!targetUrl) {
-      return new Response("Missing 'url' query parameter.", { 
-        status: 400, 
-        headers: { "Access-Control-Allow-Origin": "*" } 
-      });
-    }
+function getCached(key) {
+  const item = memoryCache.get(key);
+  if (!item) return null;
+  if (Date.now() > item.expires) {
+    memoryCache.delete(key);
+    return null;
+  }
+  return item;
+}
 
-    // Build the request headers for the target server
-    const targetHeaders = new Headers();
+function setCache(key, status, headers, body, ttlSeconds) {
+  if (memoryCache.size >= MAX_CACHE_ENTRIES) {
+    const oldest = memoryCache.keys().next().value;
+    if (oldest) memoryCache.delete(oldest);
+  }
+  const cleanHeaders = new Headers(headers);
+  cleanHeaders.delete("set-cookie");
+  cleanHeaders.delete("connection");
+  cleanHeaders.delete("keep-alive");
 
-    // Forward range header if requested by client (essential for safari & scrubbing)
-    const range = request.headers.get("range");
-    if (range) {
-      targetHeaders.set("range", range);
-    }
+  memoryCache.set(key, {
+    status,
+    headers: cleanHeaders,
+    body,
+    expires: Date.now() + (ttlSeconds * 1000)
+  });
+}
 
-    // Read custom headers from query parameters (e.g., ?User-Agent=...&Origin=...)
-    for (const [key, value] of url.searchParams.entries()) {
-      if (key !== "url" && key !== "headers") {
-        targetHeaders.set(key, value);
-      }
-    }
+function errorXml(code, provider) {
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<Error>\n  <Code>${code}</Code>\n  <Provider>${provider}</Provider>\n</Error>\n`;
+}
 
-    // If headers are provided in a JSON string param (?headers={...})
-    const headersParam = url.searchParams.get("headers");
-    if (headersParam) {
-      try {
-        const parsedHeaders = JSON.parse(headersParam);
-        for (const [key, value] of Object.entries(parsedHeaders)) {
-          targetHeaders.set(key, value);
+function getProvider(pathname) {
+  const p = pathname.toLowerCase();
+  if (p.includes("/sony")) return "sony";
+  if (p.includes("/geobypass")) return "geobypass";
+  return "stream";
+}
+
+function rewriteM3U8(text, finalUrl, proxyBase) {
+  const lines = text.split(/\r?\n/);
+  return lines.map((line) => {
+    const trimmed = line.trim();
+    if (!trimmed) return line;
+
+    if (trimmed.includes("URI=")) {
+      return line.replace(/URI=["']([^"']+)["']/g, (_match, uri) => {
+        try {
+          const absolute = new URL(uri, finalUrl).toString();
+          return `URI="${proxyBase}${encodeURIComponent(absolute)}"`;
+        } catch (_e) {
+          return line;
         }
-      } catch (e) {
-        console.error("Failed to parse headers JSON parameter:", e.message);
-      }
+      });
     }
 
-    // Auto-spoof Akamai/SonyLIV headers if they are not explicitly specified
-    if (targetUrl.includes("akamaized.net") || targetUrl.includes("sonyliv.com") || targetUrl.includes("slivcdn.com")) {
-      if (!targetHeaders.has("User-Agent") && !targetHeaders.has("user-agent")) {
-        targetHeaders.set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
-      }
-      if (!targetHeaders.has("Origin") && !targetHeaders.has("origin")) {
-        targetHeaders.set("Origin", "https://www.sonyliv.com");
-      }
-      if (!targetHeaders.has("Referer") && !targetHeaders.has("referer")) {
-        targetHeaders.set("Referer", "https://www.sonyliv.com/");
-      }
-    } else if (targetUrl.includes("fancode.com")) {
-      if (!targetHeaders.has("User-Agent") && !targetHeaders.has("user-agent")) {
-        targetHeaders.set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
-      }
-      if (!targetHeaders.has("Origin") && !targetHeaders.has("origin")) {
-        targetHeaders.set("Origin", "https://www.fancode.com");
-      }
-      if (!targetHeaders.has("Referer") && !targetHeaders.has("referer")) {
-        targetHeaders.set("Referer", "https://www.fancode.com/");
-      }
+    if (trimmed.startsWith("#")) {
+      return line;
     }
 
     try {
-      const response = await fetch(targetUrl, {
-        method: "GET",
+      const absolute = new URL(trimmed, finalUrl).toString();
+      return `${proxyBase}${encodeURIComponent(absolute)}`;
+    } catch (_e) {
+      return line;
+    }
+  }).join("\n");
+}
+
+function applyDefaultHeaders(targetUrl, targetHeaders) {
+  if (targetUrl.includes("akamaized.net") || targetUrl.includes("sonyliv.com") || targetUrl.includes("slivcdn.com")) {
+    if (!targetHeaders.has("User-Agent")) {
+      targetHeaders.set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36");
+    }
+    targetHeaders.set("Origin", "https://www.sonyliv.com");
+    targetHeaders.set("Referer", "https://www.sonyliv.com/");
+    return;
+  }
+
+  if (targetUrl.includes("fancode.com")) {
+    if (!targetHeaders.has("User-Agent")) {
+      targetHeaders.set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36");
+    }
+    targetHeaders.set("Origin", "https://www.fancode.com");
+    targetHeaders.set("Referer", "https://www.fancode.com/");
+    return;
+  }
+
+  if (targetUrl.includes("aiv-cdn.net") || targetUrl.includes("aiv-cdn.com") || targetUrl.includes("pv-cdn.net") || targetUrl.includes("amazon")) {
+    if (!targetHeaders.has("User-Agent")) {
+      targetHeaders.set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36");
+    }
+    targetHeaders.set("Origin", "https://www.amazon.com");
+    targetHeaders.set("Referer", "https://www.amazon.com/gp/");
+    return;
+  }
+
+  if (!targetHeaders.has("User-Agent")) {
+    targetHeaders.set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36");
+  }
+}
+
+export default {
+  async fetch(request, env, ctx) {
+    const requestUrl = new URL(request.url);
+    const provider = getProvider(requestUrl.pathname);
+
+    // 1. Preflight CORS
+    if (request.method === "OPTIONS") {
+      return new Response(null, { status: 204, headers: CORS_HEADERS });
+    }
+
+    // 2. Extract target URL
+    let targetUrl = requestUrl.searchParams.get("url") || "";
+    if (!targetUrl && requestUrl.pathname.length > 1) {
+      const match = requestUrl.pathname.match(/^\/(?:api\/)?(?:public\/)?(?:px\/[^\/]+\/|proxy\/)?(.+)$/);
+      if (match && (match[1].startsWith("http://") || match[1].startsWith("https://"))) {
+        targetUrl = match[1];
+      }
+    }
+
+    targetUrl = targetUrl.trim().replace(/[,\s]+$/g, "");
+    if (!targetUrl) {
+      return new Response(errorXml("MISSING_URL", provider), {
+        status: 400,
+        headers: { ...CORS_HEADERS, "Content-Type": "application/xml; charset=utf-8", "Cache-Control": "no-store" },
+      });
+    }
+
+    let parsedTarget;
+    try {
+      parsedTarget = new URL(targetUrl);
+    } catch (_e) {
+      return new Response(errorXml("INVALID_URL", provider), {
+        status: 400,
+        headers: { ...CORS_HEADERS, "Content-Type": "application/xml; charset=utf-8", "Cache-Control": "no-store" },
+      });
+    }
+
+    const cacheKey = targetUrl;
+
+    // 3. Cache HIT from RAM
+    const cached = getCached(cacheKey);
+    if (cached && request.method === "GET") {
+      const hitHeaders = new Headers(cached.headers);
+      hitHeaders.set("X-Cache-Status", "HIT-EDGE-MEM");
+      return new Response(cached.body, { status: cached.status, headers: hitHeaders });
+    }
+
+    // 4. Request Deduplication
+    if (inFlightRequests.has(cacheKey) && request.method === "GET") {
+      try {
+        const coalesced = await inFlightRequests.get(cacheKey);
+        const hitHeaders = new Headers(coalesced.headers);
+        hitHeaders.set("X-Cache-Status", "HIT-COALESCED");
+        return new Response(coalesced.body, { status: coalesced.status, headers: hitHeaders });
+      } catch (_e) {}
+    }
+
+    // 5. Upstream Headers
+    const targetHeaders = new Headers();
+    const range = request.headers.get("range");
+    if (range) targetHeaders.set("range", range);
+
+    for (const [key, value] of requestUrl.searchParams.entries()) {
+      if (key !== "url" && key !== "headers") targetHeaders.set(key, value);
+    }
+
+    applyDefaultHeaders(targetUrl, targetHeaders);
+
+    // 6. Upstream Fetch
+    const fetchPromise = (async () => {
+      const upstream = await fetch(targetUrl, {
+        method: request.method === "HEAD" ? "HEAD" : "GET",
         headers: targetHeaders,
+        redirect: "follow",
       });
 
-      const contentType = response.headers.get("content-type") || "";
-      const finalUrl = response.url || targetUrl;
-      const isM3U8 = contentType.includes("mpegurl") || 
-                     contentType.includes("x-mpegurl") || 
-                     targetUrl.includes(".m3u8") || 
-                     finalUrl.includes(".m3u8");
+      const contentType = (upstream.headers.get("content-type") || "").toLowerCase();
+      const finalUrl = upstream.url || targetUrl;
+      const isM3U8 = contentType.includes("mpegurl") || targetUrl.includes(".m3u8") || finalUrl.includes(".m3u8");
+      const isKey = targetUrl.includes("serve.key") || parsedTarget.pathname.endsWith(".key") || targetUrl.includes("/key");
+      const isSegment = targetUrl.includes(".ts") || targetUrl.includes(".m4s") || targetUrl.includes(".mp4");
 
-      // Setup response headers to allow CORS
-      const newResponseHeaders = new Headers(response.headers);
-      newResponseHeaders.set("Access-Control-Allow-Origin", "*");
-      newResponseHeaders.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-      newResponseHeaders.set("Access-Control-Allow-Headers", "*");
+      const responseHeaders = new Headers(CORS_HEADERS);
+      const headersToPass = [
+        "content-type",
+        "content-length",
+        "content-range",
+        "accept-ranges",
+        "last-modified",
+        "etag",
+        "date",
+      ];
+      headersToPass.forEach((h) => {
+        const val = upstream.headers.get(h);
+        if (val) responseHeaders.set(h, val);
+      });
+      responseHeaders.delete("set-cookie");
 
-      if (isM3U8) {
-        // Enforce playlist content type
-        newResponseHeaders.set("Content-Type", "application/vnd.apple.mpegurl");
-
-        // Parse and rewrite relative URLs in the playlist
-        const bodyText = await response.text();
-        const lines = bodyText.split(/\r?\n/);
-        
-        // Prepare header parameters for sub-requests
-        const headerParams = new URLSearchParams();
-        for (const [k, v] of targetHeaders.entries()) {
-          // Do not forward range header to individual segments unless they require it
-          if (k.toLowerCase() !== "range") {
-            headerParams.append(k, v);
-          }
-        }
-        const headerQuery = headerParams.toString();
-        const proxyBase = `${url.protocol}//${url.host}${url.pathname}`;
-
-        const rewrittenLines = lines.map(line => {
-          let trimmed = line.trim();
-          if (trimmed.length === 0) return line;
-
-          // Rewrite URLs (lines that don't start with '#')
-          if (!trimmed.startsWith("#")) {
-            const absolute = new URL(trimmed, finalUrl).toString();
-            if (absolute.includes(".m3u8") || absolute.includes(".key") || absolute.includes("/key") || absolute.includes("key=")) {
-              return `${proxyBase}?url=${encodeURIComponent(absolute)}&${headerQuery}`;
-            }
-            return absolute;
-          }
-
-          // Rewrite URIs in tags (like keys and audio media playlists)
-          if (trimmed.includes("URI=")) {
-            return trimmed.replace(/URI="([^"]+)"/g, (match, p1) => {
-              const absolute = new URL(p1, finalUrl).toString();
-              if (absolute.includes(".m3u8") || absolute.includes(".key") || absolute.includes("/key") || absolute.includes("key=") || trimmed.includes("KEY")) {
-                const proxied = `${proxyBase}?url=${encodeURIComponent(absolute)}&${headerQuery}`;
-                return `URI="${proxied}"`;
-              }
-              return `URI="${absolute}"`;
-            });
-          }
-
-          return line;
-        });
-
-        return new Response(rewrittenLines.join("\n"), {
-          status: response.status,
-          statusText: response.statusText,
-          headers: newResponseHeaders,
-        });
-      } else {
-        // Stream back raw video segments/keys
-        return new Response(response.body, {
-          status: response.status,
-          statusText: response.statusText,
-          headers: newResponseHeaders,
-        });
+      // Key delivery
+      if (isKey) {
+        const keyBuffer = await upstream.arrayBuffer();
+        responseHeaders.set("Content-Type", "application/octet-stream");
+        responseHeaders.set("Cache-Control", "public, max-age=60, s-maxage=60");
+        setCache(cacheKey, upstream.status, responseHeaders, keyBuffer, 60);
+        return { status: upstream.status, headers: responseHeaders, body: keyBuffer };
       }
-    } catch (err) {
-      return new Response(`Proxy Fetch Failed: ${err.message}`, {
-        status: 500,
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Content-Type": "text/plain"
+
+      // M3U8 Rewriting
+      if (isM3U8 && upstream.ok && request.method !== "HEAD") {
+        const rawText = await upstream.text();
+        const isMaster = rawText.includes("#EXT-X-STREAM-INF") || rawText.includes("#EXT-X-I-FRAME-STREAM-INF");
+        const proxyBase = `${requestUrl.protocol}//${requestUrl.host}${requestUrl.pathname}?url=`;
+        const rewritten = rewriteM3U8(rawText, finalUrl, proxyBase);
+        const encoded = new TextEncoder().encode(rewritten);
+
+        responseHeaders.set("Content-Type", "application/vnd.apple.mpegurl");
+        responseHeaders.delete("content-length");
+
+        if (isMaster) {
+          responseHeaders.set("Cache-Control", "public, max-age=120, s-maxage=120, stale-while-revalidate=60");
+          setCache(cacheKey, upstream.status, responseHeaders, encoded, 120);
+        } else {
+          responseHeaders.set("Cache-Control", "public, max-age=2, s-maxage=2, stale-while-revalidate=2");
+          setCache(cacheKey, upstream.status, responseHeaders, encoded, 2);
         }
+
+        return { status: upstream.status, headers: responseHeaders, body: encoded };
+      }
+
+      // Video Segments
+      if (isSegment && upstream.ok && request.method !== "HEAD") {
+        const segBuffer = await upstream.arrayBuffer();
+        responseHeaders.set("Content-Type", contentType || "video/MP2T");
+        responseHeaders.set("Cache-Control", "public, max-age=180, s-maxage=180, immutable");
+        setCache(cacheKey, upstream.status, responseHeaders, segBuffer, 120);
+        return { status: upstream.status, headers: responseHeaders, body: segBuffer };
+      }
+
+      return {
+        status: upstream.status,
+        headers: responseHeaders,
+        body: upstream.body,
+      };
+    })();
+
+    inFlightRequests.set(cacheKey, fetchPromise);
+
+    try {
+      const result = await fetchPromise;
+      inFlightRequests.delete(cacheKey);
+      return new Response(result.body, { status: result.status, headers: result.headers });
+    } catch (_err) {
+      inFlightRequests.delete(cacheKey);
+      return new Response(errorXml("PROXY_FETCH_FAILED", provider), {
+        status: 502,
+        headers: { ...CORS_HEADERS, "Content-Type": "application/xml; charset=utf-8", "Cache-Control": "no-store" },
       });
     }
   }
