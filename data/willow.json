@@ -1,87 +1,96 @@
 {
-  "last_updated": "10/14/2026, 5:56:01 PM IST",
+  "last_updated": "10/14/2026, 10:15:01 PM IST",
   "source": "https://sonujson-v5.pages.dev/Data/willow.json",
   "Matches": [
     {
-      "id": "B0H67BR4HM",
-      "event_name": "Bangladesh Women tour of Australia 2026 - 3rd ODI - Australia Women vs Bangladesh Women",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.2deaa170-a5ef-4927-b11b-ecec3c38094e/3/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "LIVE",
-      "time": "8:50 AM IST",
-      "CnpTV": {
-        "fastly_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/ggndcqlkr1/out/v1/dd887eb17ab74b409d1c8493b0f252c3/cenc.mpd",
-        "amazon_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/ggndcqlkr1/out/v1/dd887eb17ab74b409d1c8493b0f252c3/cenc.mpd",
-        "akamai_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/ggndcqlkr1/out/v1/dd887eb17ab74b409d1c8493b0f252c3/cenc.mpd",
-        "cloudfront_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/ggndcqlkr1/out/v1/dd887eb17ab74b409d1c8493b0f252c3/cenc.mpd",
-        "fastly_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/ygbu9zhvmy/out/v1/8f6343801240445e81b672e284bf94ef/cenc.mpd",
-        "amazon_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.cache.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/ygbu9zhvmy/out/v1/8f6343801240445e81b672e284bf94ef/cenc.mpd",
-        "akamai_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/ygbu9zhvmy/out/v1/8f6343801240445e81b672e284bf94ef/cenc.mpd",
-        "cloudfront_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://dash-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/ygbu9zhvmy/out/v1/8f6343801240445e81b672e284bf94ef/cenc.mpd"
-      },
-      "drm_key": "9b642c93aae95d414b5cf3b7486da7cd:f349ed601c76da554355e0fcc32f7b9f"
-    },
-    {
-      "id": "B0HK18F8NM",
-      "event_name": "World Championship of Legends 2026 - 16th Match - Australia Champions vs England Champions",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.626b2305-90e3-41ea-a88a-a3280dc97638/4/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "LIVE",
-      "time": "4:30 PM IST",
-      "CnpTV": {
-        "fastly_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/fx9eabcx49/out/v1/de28c6748478496398ba4b53d1d62085/cenc.mpd",
-        "amazon_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/fx9eabcx49/out/v1/de28c6748478496398ba4b53d1d62085/cenc.mpd",
-        "akamai_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/fx9eabcx49/out/v1/de28c6748478496398ba4b53d1d62085/cenc.mpd",
-        "cloudfront_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/fx9eabcx49/out/v1/de28c6748478496398ba4b53d1d62085/cenc.mpd",
-        "fastly_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/2nblcfrrf7/out/v1/ac32368934c242f5afaabf2f160b6b53/cenc.mpd",
-        "amazon_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.cache.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/2nblcfrrf7/out/v1/ac32368934c242f5afaabf2f160b6b53/cenc.mpd",
-        "akamai_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/2nblcfrrf7/out/v1/ac32368934c242f5afaabf2f160b6b53/cenc.mpd",
-        "cloudfront_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://dash-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/2nblcfrrf7/out/v1/ac32368934c242f5afaabf2f160b6b53/cenc.mpd"
-      },
-      "drm_key": "3641653d92b89e446fa098a00d4735dd:f8e294f57b60561ee4a6e53996813e85"
-    },
-    {
       "id": "B0HKCPFL9G",
       "event_name": "West Indies tour of India 2026 - 4th T20I - India vs West Indies",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.eb485c36-d154-4681-b87b-81f985a775b5/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "UPCOMING",
-      "time": "Live at 7 PM IST",
-      "CnpTV": {},
-      "drm_key": ""
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.eb485c36-d154-4681-b87b-81f985a775b5/4/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "LIVE",
+      "time": "6:30 PM IST",
+      "CnpTV": {
+        "fastly_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/repj13zdmh/out/v1/65b0c672947c48488934234f7a1173a0/cenc.mpd",
+        "amazon_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.cache.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/repj13zdmh/out/v1/65b0c672947c48488934234f7a1173a0/cenc.mpd",
+        "akamai_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/repj13zdmh/out/v1/65b0c672947c48488934234f7a1173a0/cenc.mpd",
+        "cloudfront_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://ss-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/repj13zdmh/out/v1/65b0c672947c48488934234f7a1173a0/cenc.mpd",
+        "fastly_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/wuptkn13ob/out/v1/017607cdc30048e8892984f37cfce626/cenc.mpd",
+        "amazon_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/wuptkn13ob/out/v1/017607cdc30048e8892984f37cfce626/cenc.mpd",
+        "akamai_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/wuptkn13ob/out/v1/017607cdc30048e8892984f37cfce626/cenc.mpd",
+        "cloudfront_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://dash-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/wuptkn13ob/out/v1/017607cdc30048e8892984f37cfce626/cenc.mpd"
+      },
+      "drm_key": "a71918fcc2f12066f70b7c39b0e0dcf3:a5e35121d4f6f16694bea15334f14814"
     },
     {
       "id": "B0HLGZXT5D",
       "event_name": "Atlanta Open T20 2026 - 7th Match - Bay Blazers vs St. Louis Americans",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.fd48ca76-f071-4a35-92da-afe3baad9571/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "UPCOMING",
-      "time": "Live at 7:30 PM IST",
-      "CnpTV": {},
-      "drm_key": ""
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.fd48ca76-f071-4a35-92da-afe3baad9571/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "LIVE",
+      "time": "7:10 PM IST",
+      "CnpTV": {
+        "fastly_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/q2le5ib0wo/out/v1/0b75f2440fc143fb8afc202e5df5d191/cenc.mpd",
+        "amazon_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/q2le5ib0wo/out/v1/0b75f2440fc143fb8afc202e5df5d191/cenc.mpd",
+        "akamai_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/q2le5ib0wo/out/v1/0b75f2440fc143fb8afc202e5df5d191/cenc.mpd",
+        "cloudfront_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/q2le5ib0wo/out/v1/0b75f2440fc143fb8afc202e5df5d191/cenc.mpd",
+        "fastly_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/trg58gbd3h/out/v1/80215dfd8deb4e0496e37ab8cb4e7bc5/cenc.mpd",
+        "amazon_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.cache.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/trg58gbd3h/out/v1/80215dfd8deb4e0496e37ab8cb4e7bc5/cenc.mpd",
+        "akamai_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/trg58gbd3h/out/v1/80215dfd8deb4e0496e37ab8cb4e7bc5/cenc.mpd",
+        "cloudfront_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://dash-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/trg58gbd3h/out/v1/80215dfd8deb4e0496e37ab8cb4e7bc5/cenc.mpd"
+      },
+      "drm_key": "596a4aab07fd2cb169508db4a2420f7e:56f74ca762666c16bc4a00734e97f061"
     },
     {
       "id": "B0HL1V8HT9",
       "event_name": "Atlanta Open T20 2026 - 8th Match - Michigan Cricket Stars vs Atlanta Force",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.9dddbc86-1666-4db3-94be-8d6e38e73d79/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "UPCOMING",
-      "time": "Live at 7:45 PM IST",
-      "CnpTV": {},
-      "drm_key": ""
+      "status": "LIVE",
+      "time": "7:45 PM IST",
+      "CnpTV": {
+        "fastly_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/faiccv4ljc/out/v1/7cd3f5259bf648688780967d78153b46/cenc.mpd",
+        "amazon_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.cache.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/faiccv4ljc/out/v1/7cd3f5259bf648688780967d78153b46/cenc.mpd",
+        "akamai_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/faiccv4ljc/out/v1/7cd3f5259bf648688780967d78153b46/cenc.mpd",
+        "cloudfront_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://ss-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/faiccv4ljc/out/v1/7cd3f5259bf648688780967d78153b46/cenc.mpd",
+        "fastly_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/mtzmefdsoj/out/v1/d51892d08e494bfdade461aba734b10a/cenc.mpd",
+        "amazon_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/mtzmefdsoj/out/v1/d51892d08e494bfdade461aba734b10a/cenc.mpd",
+        "akamai_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/mtzmefdsoj/out/v1/d51892d08e494bfdade461aba734b10a/cenc.mpd",
+        "cloudfront_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://dash-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/mtzmefdsoj/out/v1/d51892d08e494bfdade461aba734b10a/cenc.mpd"
+      },
+      "drm_key": "b878ee6fc2b131b203b319c3b9003e13:e7b5cfbbbe1e28c75156271c08c32b55"
     },
     {
       "id": "B0HLW9WBXF",
       "event_name": "Atlanta Open T20 2026 - 9th Match - Seattle Thunderbolts vs All Stars Cardinals",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.10b013e0-e33a-40fa-be69-9e3e7654210f/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "UPCOMING",
-      "time": "Live at 8 PM IST",
-      "CnpTV": {},
-      "drm_key": ""
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.10b013e0-e33a-40fa-be69-9e3e7654210f/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "LIVE",
+      "time": "7:55 PM IST",
+      "CnpTV": {
+        "fastly_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/nwajpntln8/out/v1/daef1abdc25841c2bff84edd57973d6c/cenc.mpd",
+        "amazon_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/nwajpntln8/out/v1/daef1abdc25841c2bff84edd57973d6c/cenc.mpd",
+        "akamai_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/nwajpntln8/out/v1/daef1abdc25841c2bff84edd57973d6c/cenc.mpd",
+        "cloudfront_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/nwajpntln8/out/v1/daef1abdc25841c2bff84edd57973d6c/cenc.mpd",
+        "fastly_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/fg7b2vnowu/out/v1/13edfa28cbb0429e83b7010a4569bb9a/cenc.mpd",
+        "amazon_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.cache.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/fg7b2vnowu/out/v1/13edfa28cbb0429e83b7010a4569bb9a/cenc.mpd",
+        "akamai_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/fg7b2vnowu/out/v1/13edfa28cbb0429e83b7010a4569bb9a/cenc.mpd",
+        "cloudfront_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://dash-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/fg7b2vnowu/out/v1/13edfa28cbb0429e83b7010a4569bb9a/cenc.mpd"
+      },
+      "drm_key": "ff8dd2dac0dbb1929b3c9655cc594f8e:bce6a3219c3063981c3c034b88e4f883"
     },
     {
       "id": "B0HLW7T6D1",
       "event_name": "World Championship of Legends 2026 - 17th Match - Bangladesh Champions vs South Africa Champions",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.9238c000-24c5-4723-927e-f21e892189af/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "UPCOMING",
-      "time": "Live at 9 PM IST",
-      "CnpTV": {},
-      "drm_key": ""
+      "status": "LIVE",
+      "time": "9 PM IST",
+      "CnpTV": {
+        "fastly_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/gn7vodveso/out/v1/f63636d3d10f4b0b9d06b55333f30f14/cenc.mpd",
+        "amazon_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.cache.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/gn7vodveso/out/v1/f63636d3d10f4b0b9d06b55333f30f14/cenc.mpd",
+        "akamai_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/gn7vodveso/out/v1/f63636d3d10f4b0b9d06b55333f30f14/cenc.mpd",
+        "cloudfront_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://ss-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/gn7vodveso/out/v1/f63636d3d10f4b0b9d06b55333f30f14/cenc.mpd",
+        "fastly_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/cwqgdjfpwl/out/v1/e1a4a031eeee4321846b00db40d403af/cenc.mpd",
+        "amazon_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/cwqgdjfpwl/out/v1/e1a4a031eeee4321846b00db40d403af/cenc.mpd",
+        "akamai_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/cwqgdjfpwl/out/v1/e1a4a031eeee4321846b00db40d403af/cenc.mpd",
+        "cloudfront_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://dash-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/cwqgdjfpwl/out/v1/e1a4a031eeee4321846b00db40d403af/cenc.mpd"
+      },
+      "drm_key": "de134773b445a7d9c41e41aa5c345bbf:b0f546e2413a82fdad302ceac53c0493"
     },
     {
       "id": "B0HM6VSC6B",
@@ -197,6 +206,24 @@
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.ce490310-1690-4efb-8183-aed9c087d64c/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
       "time": "Sun, Oct 18 7 PM IST",
+      "CnpTV": {},
+      "drm_key": ""
+    },
+    {
+      "id": "B0HKMGSFBW",
+      "event_name": "Zimbabwe Women tour of India 2026 - 3rd T20I - India Women vs Zimbabwe Women",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.6b4fa639-76c1-4aff-bf00-aa2a560eb3a2/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Tue, Oct 20 7 PM IST",
+      "CnpTV": {},
+      "drm_key": ""
+    },
+    {
+      "id": "B0HL5YN53G",
+      "event_name": "Zimbabwe Women tour of India 2026 - 1st ODI - India Women vs Zimbabwe Women",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.1e5b6fd4-25b7-4e3a-be5b-aa3786467831/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Fri, Oct 23 2 PM IST",
       "CnpTV": {},
       "drm_key": ""
     }
