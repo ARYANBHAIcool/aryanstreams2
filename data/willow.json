@@ -1,15 +1,24 @@
 {
-  "last_updated": "10/14/2026, 6:51:40 AM IST",
+  "last_updated": "10/14/2026, 12:06:34 PM IST",
   "source": "https://sonujson-v5.pages.dev/Data/willow.json",
   "Matches": [
     {
       "id": "B0H67BR4HM",
       "event_name": "Bangladesh Women tour of Australia 2026 - 3rd ODI - Australia Women vs Bangladesh Women",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.2deaa170-a5ef-4927-b11b-ecec3c38094e/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "UPCOMING",
-      "time": "Live at 9:20 AM IST",
-      "CnpTV": {},
-      "drm_key": ""
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.2deaa170-a5ef-4927-b11b-ecec3c38094e/3/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "LIVE",
+      "time": "8:50 AM IST",
+      "CnpTV": {
+        "fastly_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/ggndcqlkr1/out/v1/dd887eb17ab74b409d1c8493b0f252c3/cenc.mpd",
+        "amazon_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/ggndcqlkr1/out/v1/dd887eb17ab74b409d1c8493b0f252c3/cenc.mpd",
+        "akamai_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/ggndcqlkr1/out/v1/dd887eb17ab74b409d1c8493b0f252c3/cenc.mpd",
+        "cloudfront_server1": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/ggndcqlkr1/out/v1/dd887eb17ab74b409d1c8493b0f252c3/cenc.mpd",
+        "fastly_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/ygbu9zhvmy/out/v1/8f6343801240445e81b672e284bf94ef/cenc.mpd",
+        "amazon_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://otte.cache.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/ygbu9zhvmy/out/v1/8f6343801240445e81b672e284bf94ef/cenc.mpd",
+        "akamai_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/ygbu9zhvmy/out/v1/8f6343801240445e81b672e284bf94ef/cenc.mpd",
+        "cloudfront_server2": "https://akamaii.lovable.app/api/public/px/geobypass?url=https://dash-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/ygbu9zhvmy/out/v1/8f6343801240445e81b672e284bf94ef/cenc.mpd"
+      },
+      "drm_key": "9b642c93aae95d414b5cf3b7486da7cd:f349ed601c76da554355e0fcc32f7b9f"
     },
     {
       "id": "B0HJZN542R",
