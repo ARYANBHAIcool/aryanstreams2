@@ -1,13 +1,31 @@
 {
-  "last_updated": "10/15/2026, 2:41:05 PM IST",
+  "last_updated": "10/15/2026, 7:42:22 PM IST",
   "source": "https://sonujson-v5.pages.dev/Data/willow.json",
   "Matches": [
+    {
+      "id": "B0HG5QLZ17",
+      "event_name": "World Championship of Legends 2026 - 1st Semi-Final - South Africa Champions vs England Champions",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.d6c1d2b1-8cf5-4b47-97e6-605cc92bd127/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Tomorrow 5 PM IST",
+      "CnpTV": {},
+      "drm_key": ""
+    },
     {
       "id": "B0HMFMVSCQ",
       "event_name": "Zimbabwe Women tour of India 2026 - 1st T20I - India Women vs Zimbabwe Women",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.48d9ce0e-672f-4c19-9c08-34bb689c0d62/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
       "time": "Tomorrow 7 PM IST",
+      "CnpTV": {},
+      "drm_key": ""
+    },
+    {
+      "id": "B0HMJGLWX8",
+      "event_name": "World Championship of Legends 2026 - 2nd Semi-Final - Australia Champions vs West Indies Champions",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.b1c237f9-9368-4429-b2e7-6f8e767f4ae5/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Tomorrow 9 PM IST",
       "CnpTV": {},
       "drm_key": ""
     },
@@ -30,6 +48,15 @@
       "drm_key": ""
     },
     {
+      "id": "B0HMQL4NJS",
+      "event_name": "Pakistan ODI Tri-Series 2026 - 1st Match - Pakistan vs Sri Lanka",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.ff2ab606-8760-414e-8ecf-129071962621/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Sun, Oct 18 2:30 PM IST",
+      "CnpTV": {},
+      "drm_key": ""
+    },
+    {
       "id": "B0HLWVSMP1",
       "event_name": "Zimbabwe Women tour of India 2026 - 2nd T20I - India Women vs Zimbabwe Women",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.ce490310-1690-4efb-8183-aed9c087d64c/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
@@ -39,11 +66,29 @@
       "drm_key": ""
     },
     {
+      "id": "B0GLKK9LBV",
+      "event_name": "Pakistan ODI Tri-Series 2026 - 2nd Match - Pakistan vs England",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.abf1e0e9-9f21-4e46-a441-e074eaf2d220/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Tue, Oct 20 2:30 PM IST",
+      "CnpTV": {},
+      "drm_key": ""
+    },
+    {
       "id": "B0HKMGSFBW",
       "event_name": "Zimbabwe Women tour of India 2026 - 3rd T20I - India Women vs Zimbabwe Women",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.6b4fa639-76c1-4aff-bf00-aa2a560eb3a2/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
       "time": "Tue, Oct 20 7 PM IST",
+      "CnpTV": {},
+      "drm_key": ""
+    },
+    {
+      "id": "B0HMLGQPBV",
+      "event_name": "Pakistan ODI Tri-Series 2026 - 3rd Match - Sri Lanka vs England",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.343f357f-7382-4a16-88df-1c4941942e53/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Thu, Oct 22 2:30 PM IST",
       "CnpTV": {},
       "drm_key": ""
     },
@@ -66,6 +111,15 @@
       "drm_key": ""
     },
     {
+      "id": "B0HMG5YWFC",
+      "event_name": "Pakistan ODI Tri-Series 2026 - 4th Match - Pakistan vs England",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.6e464c74-5145-4aa7-ab93-bf7dc4a472f7/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Sun, Oct 25 2:30 PM IST",
+      "CnpTV": {},
+      "drm_key": ""
+    },
+    {
       "id": "B0HKDPRJRS",
       "event_name": "Australia tour of South Africa 2026 - 3rd Test - South Africa vs Australia",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.20a790a3-51e9-4ec1-9a8b-cb632845af2d/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
@@ -75,11 +129,29 @@
       "drm_key": ""
     },
     {
+      "id": "B0HN2PT7BB",
+      "event_name": "Pakistan ODI Tri-Series 2026 - 5th Match - Pakistan vs Sri Lanka",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.1751377a-8a97-41ca-8cfe-a48a200fae9c/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Tue, Oct 27 2:30 PM IST",
+      "CnpTV": {},
+      "drm_key": ""
+    },
+    {
       "id": "B0HMGDLS21",
       "event_name": "Zimbabwe Women tour of India 2026 - 3rd ODI - India Women vs Zimbabwe Women",
       "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.e1dcd31f-dfe8-44de-84bd-ed233da230f6/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "UPCOMING",
       "time": "Wed, Oct 28 2 PM IST",
+      "CnpTV": {},
+      "drm_key": ""
+    },
+    {
+      "id": "B0HG6HPFD3",
+      "event_name": "Pakistan ODI Tri-Series 2026 - 6th Match - Sri Lanka vs England",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.84dc9ca5-fdc8-46c9-bc90-b6008efe1e58/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Thu, Oct 29 2:30 PM IST",
       "CnpTV": {},
       "drm_key": ""
     }
