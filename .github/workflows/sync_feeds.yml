@@ -24,7 +24,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
 
       - name: Run Feed Sync Script
         run: node scripts/sync_feeds.js
@@ -42,11 +42,28 @@ jobs:
             git config --global user.email "mearyankumarsingh@gmail.com"
           fi
 
+          # Pull latest remote changes cleanly
+          git fetch origin main
+          git rebase -X theirs origin/main || git rebase --abort || true
+
+          # Stage freshly generated feeds
           git add data/sports.json data/sports.m3u data/willow.json data/sony_m3u8.json
 
-          if ! git diff --quiet || ! git diff --staged --quiet; then
+          if ! git diff --staged --quiet; then
             TIMESTAMP=$(date -u +"%d/%m/%Y, %I:%M:%S %p UTC")
-            git commit -m "📡 refreshed playlist @ ${TIMESTAMP} • Catch the thrill live! ⚡"
-            git pull --rebase origin main || true
-            git push origin main
+            git commit -m "📡 refreshed playlist @ ${TIMESTAMP} • Catch the thrill live! ⚡" || true
+            
+            # Safe push with automatic retry if remote had a concurrent push
+            for attempt in 1 2 3; do
+              if git push origin main; then
+                echo "Successfully pushed changes on attempt $attempt"
+                break
+              fi
+              echo "Push attempt $attempt failed, rebasing with latest remote..."
+              git fetch origin main
+              git rebase -X theirs origin/main || git rebase --abort || true
+              sleep 2
+            done
+          else
+            echo "Feeds are already completely up to date with remote."
           fi
