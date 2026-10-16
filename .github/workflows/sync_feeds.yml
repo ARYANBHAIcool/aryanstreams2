@@ -2,9 +2,12 @@ name: Auto-Sync Live Feeds
 
 on:
   schedule:
-    # Run every 5 minutes around the clock
-    - cron: '*/5 * * * *'
+    # Staggered schedules to avoid GitHub peak-minute queuing delays
+    - cron: '*/10 * * * *'
+    - cron: '5,15,25,35,45,55 * * * *'
   workflow_dispatch:
+  repository_dispatch:
+    types: [sync-feeds, refresh, ping]
 
 jobs:
   sync:
