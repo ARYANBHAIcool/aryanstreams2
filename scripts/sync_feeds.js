@@ -176,14 +176,40 @@ async function syncSports() {
             }
 
             if (Array.isArray(channels) && channels.length > 0) {
+                const dataDir = path.join(__dirname, '..', 'data');
+                if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
+                const filePath = path.join(dataDir, 'sports.json');
+                const m3uPath = path.join(dataDir, 'sports.m3u');
+
+                function getSportsSignature(chs) {
+                    return chs.map(c => `${c.id || c.channel_id || ''}|${c.stream_url || ''}|${c.raw_url || ''}|${(c.sonuxs || []).join(',')}|${c.cookie || ''}`).sort().join('\n');
+                }
+
+                let hasChanged = true;
+                if (fs.existsSync(filePath) && fs.existsSync(m3uPath)) {
+                    try {
+                        const oldData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+                        const oldSig = getSportsSignature(oldData.channels || []);
+                        const newSig = getSportsSignature(channels);
+                        const hoursSince = (Date.now() - fs.statSync(m3uPath).mtimeMs) / (1000 * 60 * 60);
+                        if (oldSig === newSig && hoursSince < 6) {
+                            hasChanged = false;
+                        }
+                    } catch (e) {
+                        hasChanged = true;
+                    }
+                }
+
+                if (!hasChanged) {
+                    console.log('⚡ Sports & TV channels are unchanged. Keeping existing playlist (no dummy commit).');
+                    return true;
+                }
+
                 const payload = {
                     last_updated: new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }) + ' IST',
                     source: src,
                     channels: channels
                 };
-                const dataDir = path.join(__dirname, '..', 'data');
-                if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
-                const filePath = path.join(dataDir, 'sports.json');
                 fs.writeFileSync(filePath, JSON.stringify(payload, null, 2), 'utf8');
                 console.log(`✅ Saved ${channels.length} channels from upstream to ${filePath}`);
 
@@ -210,7 +236,6 @@ async function syncSports() {
                     }
                     m3uOut += `${ch.stream_url}\n\n`;
                 });
-                const m3uPath = path.join(dataDir, 'sports.m3u');
                 fs.writeFileSync(m3uPath, m3uOut, 'utf8');
                 console.log(`✅ Saved sports.m3u playlist to ${m3uPath}`);
 
@@ -316,15 +341,40 @@ async function syncWillow() {
 
     const matches = Array.from(matchMap.values());
     if (matches.length > 0) {
+        const dataDir = path.join(__dirname, '..', 'data');
+        if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
+        const filePath = path.join(dataDir, 'willow.json');
+
+        function getWillowSignature(ms) {
+            return ms.map(m => `${m.id || m.match_id || ''}|${m.stream_url || ''}|${JSON.stringify(m.CnpTV || {})}|${m.drm_key || ''}`).sort().join('\n');
+        }
+
+        let hasChanged = true;
+        if (fs.existsSync(filePath)) {
+            try {
+                const oldData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+                const oldSig = getWillowSignature(oldData.Matches || []);
+                const newSig = getWillowSignature(matches);
+                const hoursSince = (Date.now() - fs.statSync(filePath).mtimeMs) / (1000 * 60 * 60);
+                if (oldSig === newSig && hoursSince < 6) {
+                    hasChanged = false;
+                }
+            } catch (e) {
+                hasChanged = true;
+            }
+        }
+
+        if (!hasChanged) {
+            console.log('⚡ Willow matches & stream links are unchanged. Keeping existing feed (no dummy commit).');
+            return true;
+        }
+
         const payload = {
             last_updated: new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }) + ' IST',
             sources_checked: WILLOW_SOURCES.length,
             sources_active: sourcesSucceeded,
             Matches: matches
         };
-        const dataDir = path.join(__dirname, '..', 'data');
-        if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
-        const filePath = path.join(dataDir, 'willow.json');
         fs.writeFileSync(filePath, JSON.stringify(payload, null, 2), 'utf8');
         console.log(`✅ Saved ${matches.length} unified matches from ${sourcesSucceeded} active sources to ${filePath}`);
         return true;
@@ -366,14 +416,39 @@ async function syncSonyM3U8() {
             }
 
             if (channels.length > 0) {
+                const dataDir = path.join(__dirname, '..', 'data');
+                if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
+                const filePath = path.join(dataDir, 'sony_m3u8.json');
+
+                function getSonySignature(chs) {
+                    return chs.map(c => `${c.id || ''}|${c.raw_url || ''}`).sort().join('\n');
+                }
+
+                let hasChanged = true;
+                if (fs.existsSync(filePath)) {
+                    try {
+                        const oldData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+                        const oldSig = getSonySignature(oldData.channels || []);
+                        const newSig = getSonySignature(channels);
+                        const hoursSince = (Date.now() - fs.statSync(filePath).mtimeMs) / (1000 * 60 * 60);
+                        if (oldSig === newSig && hoursSince < 6) {
+                            hasChanged = false;
+                        }
+                    } catch (e) {
+                        hasChanged = true;
+                    }
+                }
+
+                if (!hasChanged) {
+                    console.log('⚡ Sony M3U8 channels are unchanged. Keeping existing feed (no dummy commit).');
+                    return true;
+                }
+
                 const payload = {
                     last_updated: new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }) + ' IST',
                     source: src,
                     channels: channels
                 };
-                const dataDir = path.join(__dirname, '..', 'data');
-                if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
-                const filePath = path.join(dataDir, 'sony_m3u8.json');
                 fs.writeFileSync(filePath, JSON.stringify(payload, null, 2), 'utf8');
                 console.log(`✅ Saved ${channels.length} Sony M3U8 channels to ${filePath}`);
                 return true;

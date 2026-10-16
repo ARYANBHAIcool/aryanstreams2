@@ -2,9 +2,8 @@ name: Auto-Sync Live Feeds
 
 on:
   schedule:
-    # 7-minute staggered schedules matching doctor-8trange cadence
-    - cron: '*/7 * * * *'
-    - cron: '3,10,17,24,31,38,45,52 * * * *'
+    # 20-minute schedule: only commits on actual stream/channel changes (~15-35 commits/day like doctor-8trange)
+    - cron: '*/20 * * * *'
   workflow_dispatch:
   repository_dispatch:
     types: [sync-feeds, refresh, ping]
