@@ -182,6 +182,33 @@ async function syncSports() {
                 const filePath = path.join(dataDir, 'sports.json');
                 fs.writeFileSync(filePath, JSON.stringify(payload, null, 2), 'utf8');
                 console.log(`✅ Saved ${channels.length} channels from upstream to ${filePath}`);
+
+                // Also write clean sports.m3u playlist for IPTV and external players
+                let m3uOut = '#EXTM3U x-tvg-url="https://www.tsepg.cf/epg.xml.gz"\n';
+                m3uOut += `#PLAYLIST: AryanStreams Live TV & Sports Feeds\n`;
+                m3uOut += `#LAST_UPDATE: ${payload.last_updated}\n\n`;
+
+                const seenUrls = new Set();
+                channels.forEach(ch => {
+                    if (!ch.stream_url || seenUrls.has(ch.stream_url)) return;
+                    seenUrls.add(ch.stream_url);
+
+                    m3uOut += `#EXTINF:-1 tvg-id="${ch.channel_id || ch.id}" tvg-name="${ch.name}" tvg-logo="${ch.logo || ''}" group-title="Live Sports",${ch.name}\n`;
+                    m3uOut += `#KODIPROP:inputstream=inputstream.adaptive\n`;
+                    m3uOut += `#KODIPROP:inputstream.adaptive.manifest_type=mpd\n`;
+                    if (ch.sonuxs && ch.sonuxs.length > 0) {
+                        m3uOut += `#KODIPROP:inputstream.adaptive.license_type=clearkey\n`;
+                        m3uOut += `#KODIPROP:inputstream.adaptive.license_key=${ch.sonuxs.join(',')}\n`;
+                    }
+                    if (ch.cookie) {
+                        m3uOut += `#EXTHTTP:{"User-Agent": "Virat", "Referer": "https://www.jiotv.com/", "Origin": "https://www.jiotv.com/", "Cookie": "${ch.cookie}"}\n`;
+                    }
+                    m3uOut += `${ch.stream_url}\n\n`;
+                });
+                const m3uPath = path.join(dataDir, 'sports.m3u');
+                fs.writeFileSync(m3uPath, m3uOut, 'utf8');
+                console.log(`✅ Saved sports.m3u playlist to ${m3uPath}`);
+
                 return true;
             }
         } catch (err) {

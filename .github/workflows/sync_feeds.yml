@@ -1,8 +1,9 @@
-name: Auto-Sync Sports, Sony, Star & Willow Feeds
+name: Auto-Sync Live Feeds
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    # Run every 5 minutes around the clock
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -26,13 +27,23 @@ jobs:
         run: node scripts/sync_feeds.js
 
       - name: Commit & Push Changes
+        shell: bash
+        env:
+          REPO_OWNER: ${{ github.repository_owner }}
         run: |
-          if [[ "${{ github.repository_owner }}" =~ "ARYANBHAIcool" ]]; then
+          if [ "$REPO_OWNER" = "ARYANBHAIcool" ]; then
             git config --global user.name "ARYANBHAIcool"
             git config --global user.email "kingaryan69and@gmail.com"
           else
             git config --global user.name "Aryan Kumar Singh"
             git config --global user.email "mearyankumarsingh@gmail.com"
           fi
-          git add data/sports.json data/willow.json data/sony_m3u8.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update Sony, Star & Willow live feeds [skip ci]" && git push)
+
+          git add data/sports.json data/sports.m3u data/willow.json data/sony_m3u8.json
+
+          if ! git diff --quiet || ! git diff --staged --quiet; then
+            TIMESTAMP=$(date -u +"%d/%m/%Y, %I:%M:%S %p UTC")
+            git commit -m "📡 refreshed playlist @ ${TIMESTAMP} • Catch the thrill live! ⚡"
+            git pull --rebase origin main || true
+            git push origin main
+          fi
