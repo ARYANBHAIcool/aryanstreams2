@@ -12,7 +12,6 @@ const WILLOW_SOURCES = [
     'https://raw.githubusercontent.com/srhady/willow-event/refs/heads/main/primevideo_sports.json',
     'https://raw.githubusercontent.com/sportlive18/Willow-Cricbuzz-Prime-Video-Sport-Live-Event-Auto-Updated-Playlist/refs/heads/main/willow.json',
     'https://raw.githubusercontent.com/sportlive18/Willow-Cricbuzz-Prime-Video-Sport-Live-Event-Auto-Updated-Playlist/refs/heads/main/primesport.json',
-    'https://sonujson-devloper.vercel.app/Data/willoe.json',
     'https://sonujson-v5.pages.dev/Data/willow.json'
 ];
 
