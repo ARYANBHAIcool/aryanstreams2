@@ -236,21 +236,25 @@
             'STENT': ['3397', '3514', '1773', 'sony4', 'stent'],
             'STENTU': ['3398', '1773', '3514', 'sony4', 'stentu'],
             'STEN5': ['3534', '155', 'sony5', 'sten5'],
-            'H1HD': ['h1hd', '1108'],
-            'E1HD': ['e1hd', '1106'],
-            'H2HD': ['h2hd', '1984'],
-            'E2HD': ['e2hd', '1109'],
-            'H1SD': ['h1sd', '362'],
-            'E1SD': ['e1sd', '1142'],
-            'H2SD': ['h2sd', '1985'],
-            'E2SD': ['e2sd', '1141'],
+            'H1HD': ['h1hd', 'h1sd', 'h2hd', 'h2sd', '1108', 'star1hindihd'],
+            'E1HD': ['e1hd', 'e1sd', 'star1', 'star1hd', '1106', '1142'],
+            'H2HD': ['h2hd', 'h2sd', '1984'],
+            'E2HD': ['e2hd', 'e2sd', '1109'],
+            'H1SD': ['h1sd', 'h1hd', '362'],
+            'E1SD': ['e1sd', 'e1hd', '1142'],
+            'H2SD': ['h2sd', 'h2hd', '1985'],
+            'E2SD': ['e2sd', 'e2hd', '1141'],
             'S2HD': ['s2hd', '3273', '3277'],
             'TE2HD': ['te2hd', '3274', '3278'],
             'T1HD': ['t1hd', '3277'],
             'TE1HD': ['te1hd', '3278'],
             'KA1SD': ['ka1sd', '1650'],
             'KA2SD': ['ka2sd', '1122'],
-            'EUROHD': ['875', '1294', 'eurosport']
+            'EUROHD': ['875', '1294', 'eurosport'],
+            'SS1': ['e1hd', 'e1sd', 'star1', 'star1hd', '1106', '1142'],
+            'SS1H': ['h1hd', 'h1sd', 'h2hd', 'h2sd', '1108', 'star1hindihd'],
+            'SS2': ['e2hd', 'e2sd', '1109'],
+            'SS2H': ['h2hd', 'h2sd', '1984']
         };
 
         function rawCookie(c) {
@@ -286,9 +290,9 @@
         async function fetchChannelData(id) {
             var endpoints = [
                 'data/sports.json',
-                'https://sonujson-v5.pages.dev/Data/sports.json',
-                'https://raw.githubusercontent.com/sportlive18/jio-tv-auto-update-playlist/refs/heads/main/jtv2.json',
                 'https://sonujson-v4.pages.dev/Data/sports.json',
+                'https://sonujson-v5.pages.dev/Data/sports.json',
+                'https://sonujson-v2.pages.dev/Data/sports.json',
                 'https://my-api-5e7.pages.dev/jiotv2.json'
             ];
             var idStr = String(id).trim().toLowerCase();
@@ -303,10 +307,19 @@
                 FALLBACK_MAP[idStr.toUpperCase()].forEach(function(f) { allSearchIds.push(String(f).toLowerCase()); });
             }
 
+            var firstCandidate = null;
+
             for (var i = 0; i < endpoints.length; i++) {
                 try {
-                    var res = await fetch(endpoints[i], { cache: 'no-store' });
+                    var controller = (typeof AbortController !== 'undefined') ? new AbortController() : null;
+                    var timeoutId = controller ? setTimeout(function() { controller.abort(); }, 3500) : null;
+                    var fetchOpts = { cache: 'no-store' };
+                    if (controller) fetchOpts.signal = controller.signal;
+
+                    var res = await fetch(endpoints[i], fetchOpts);
+                    if (timeoutId) clearTimeout(timeoutId);
                     if (!res.ok) continue;
+
                     var json = await res.json();
                     var list = (json && (json.channels || json.data)) || (Array.isArray(json) ? json : []);
                     if (!Array.isArray(list)) continue;
@@ -322,41 +335,49 @@
                         if (target) {
                             var cookie = target.cookie || '';
                             var expire = target.cookie_expire || 0;
-                            if (isCookieValid(cookie, expire)) {
-                                var clearKeys = {};
-                                if (Array.isArray(target.sonuxs)) {
-                                    target.sonuxs.forEach(function(pair) {
-                                        var parts = String(pair).split(':');
-                                        if (parts.length === 2 && parts[0].trim() && parts[1].trim()) {
-                                            clearKeys[parts[0].trim().toLowerCase()] = parts[1].trim().toLowerCase();
-                                        }
-                                    });
+                            var clearKeys = {};
+                            if (Array.isArray(target.sonuxs)) {
+                                target.sonuxs.forEach(function(pair) {
+                                    var parts = String(pair).split(':');
+                                    if (parts.length === 2 && parts[0].trim() && parts[1].trim()) {
+                                        clearKeys[parts[0].trim().toLowerCase()] = parts[1].trim().toLowerCase();
+                                    }
+                                });
+                            }
+                            var kid = target.key_id || target.keyId || target.kid || '';
+                            var key = target.key || '';
+                            if (kid && key) {
+                                clearKeys[String(kid).trim().toLowerCase()] = String(key).trim().toLowerCase();
+                            }
+                            var clearKeyIds = Object.keys(clearKeys);
+                            if (!key && clearKeyIds.length > 0) {
+                                kid = clearKeyIds[0];
+                                key = clearKeys[kid];
+                            }
+                            var streamUrl = target.stream_url || target.channel_url || target.url;
+                            if ((key || clearKeyIds.length > 0) && streamUrl) {
+                                var candidateObj = {
+                                    name: target.name || target.channel_name,
+                                    stream_url: streamUrl,
+                                    key_id: kid,
+                                    key: key,
+                                    clearKeys: clearKeys,
+                                    cookie: cookie,
+                                    source: endpoints[i]
+                                };
+                                if (!firstCandidate) {
+                                    firstCandidate = candidateObj;
                                 }
-                                var kid = target.key_id || target.keyId || target.kid || '';
-                                var key = target.key || '';
-                                if (kid && key) {
-                                    clearKeys[String(kid).trim().toLowerCase()] = String(key).trim().toLowerCase();
-                                }
-                                var clearKeyIds = Object.keys(clearKeys);
-                                if (!key && clearKeyIds.length > 0) {
-                                    kid = clearKeyIds[0];
-                                    key = clearKeys[kid];
-                                }
-                                if (key || clearKeyIds.length > 0) {
-                                    return {
-                                        name: target.name || target.channel_name,
-                                        stream_url: target.stream_url || target.channel_url || target.url,
-                                        key_id: kid,
-                                        key: key,
-                                        clearKeys: clearKeys,
-                                        cookie: cookie,
-                                        source: endpoints[i]
-                                    };
+                                if (isCookieValid(cookie, expire)) {
+                                    return candidateObj;
                                 }
                             }
                         }
                     }
                 } catch (e) {}
+            }
+            if (firstCandidate) {
+                return firstCandidate;
             }
             return null;
         }

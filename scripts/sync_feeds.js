@@ -4,9 +4,10 @@ const fs = require('fs');
 const path = require('path');
 
 const SPORTS_SOURCES = [
-    'https://sonujson-v5.pages.dev/Data/sports.json',
     'https://sonujson-v4.pages.dev/Data/sports.json',
-    'https://raw.githubusercontent.com/sportlive18/jio-tv-auto-update-playlist/refs/heads/main/jtv2.json'
+    'https://sonujson-v5.pages.dev/Data/sports.json',
+    'https://sonujson-v2.pages.dev/Data/sports.json',
+    'https://my-api-5e7.pages.dev/jiotv2.json'
 ];
 
 const WILLOW_SOURCES = [
