@@ -3,6 +3,8 @@ const path = require('path');
 const fs = require('fs');
 
 const rootDir = path.join(__dirname, '..');
+const fancodeDir = path.join(rootDir, '..', 'streamfancode');
+
 const logDir = path.join(rootDir, 'logs');
 if (!fs.existsSync(logDir)) {
     fs.mkdirSync(logDir, { recursive: true });
@@ -24,27 +26,26 @@ function log(msg) {
 }
 
 function runSyncCycle() {
-    log('🔄 Starting feed sync cycle...');
+    log('🔄 Starting multi-repo feed sync cycle...');
+    
+    // 1. Sync streamfifa (aryanstreams & aryanstreams2)
     try {
-        // Fast rebase pull to stay synced with remote if there were commits elsewhere
         try {
             execSync('git pull --rebase origin main', { cwd: rootDir, stdio: 'ignore' });
-        } catch (e) {
-            // Ignore minor pull conflicts, continue sync
-        }
+        } catch (e) {}
 
         execSync('node scripts/sync_feeds.js', { stdio: 'inherit', cwd: rootDir });
 
         const status = execSync('git status --porcelain', { encoding: 'utf8', cwd: rootDir }).trim();
         if (status) {
-            log('📝 Live feed updates detected. Staging files...');
+            log('📝 Live feed updates detected in streamfifa. Staging files...');
             execSync('git add data/sports.json data/sports.m3u data/willow.json data/sony_m3u8.json', { cwd: rootDir });
 
             const timestamp = new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' });
             const commitMsg = `📡 refreshed playlist @ ${timestamp} IST • Catch the thrill live! ⚡`;
             
             execSync(`git commit -m "${commitMsg}"`, { stdio: 'inherit', cwd: rootDir });
-            log('✅ Committed successfully.');
+            log('✅ Committed successfully in streamfifa.');
 
             log('🚀 Pushing to origin (aryanstreams)...');
             try {
@@ -65,23 +66,33 @@ function runSyncCycle() {
                     execSync('git pull --rebase second main && git push second main', { cwd: rootDir });
                 } catch (e) {}
             }
-
-            log(`✨ Auto-sync completed! Next cycle in ${INTERVAL_MINUTES} minutes.`);
         } else {
-            log(`⚡ Feeds are already up to date. Next check in ${INTERVAL_MINUTES} minutes.`);
+            log('⚡ streamfifa feeds are already up to date.');
         }
     } catch (err) {
-        log(`❌ Cycle error: ${err.message}`);
+        log(`❌ streamfifa cycle error: ${err.message}`);
     }
+
+    // 2. Sync streamfancode (ascode on ARYANBHAIcool)
+    if (fs.existsSync(fancodeDir)) {
+        try {
+            log('🏏 Starting FanCode feed sync for ascode (ARYANBHAIcool)...');
+            execSync('node scripts/sync_fancode.js --commit-and-push', { stdio: 'inherit', cwd: fancodeDir });
+            log('✅ ascode FanCode sync completed.');
+        } catch (fcErr) {
+            log(`⚠️ ascode sync error: ${fcErr.message}`);
+        }
+    }
+
+    log(`✨ All repo syncs finished! Next cycle in ${INTERVAL_MINUTES} minutes.`);
 }
 
 if (require.main === module) {
-    log('====================================================');
-    log('   🚀 AryanStreams Auto-Sync Daemon (doctor-8trange style)');
+    log('================================================================');
+    log('   🚀 Multi-Repo Auto-Sync Daemon (doctor-8trange style)');
     log(`   ⏱️  Interval: Every ${INTERVAL_MINUTES} minutes`);
-    log('   📡 Syncs: JioTV Sports, Willow, Sony M3U8, sports.m3u');
-    log('   🎯 Targets: origin (aryanstreams) & second (aryanstreams2)');
-    log('====================================================');
+    log('   📡 Repos: aryanstreams, aryanstreams2, ascode (Fncode)');
+    log('================================================================');
 
     runSyncCycle();
 

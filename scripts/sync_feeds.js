@@ -9,7 +9,11 @@ const SPORTS_SOURCES = [
 
 const WILLOW_SOURCES = [
     'https://raw.githubusercontent.com/srhady/willow-event/refs/heads/main/live_sports.json',
-    'https://raw.githubusercontent.com/srhady/willow-event/refs/heads/main/primevideo_sports.json'
+    'https://raw.githubusercontent.com/srhady/willow-event/refs/heads/main/primevideo_sports.json',
+    'https://raw.githubusercontent.com/sportlive18/Willow-Cricbuzz-Prime-Video-Sport-Live-Event-Auto-Updated-Playlist/refs/heads/main/willow.json',
+    'https://raw.githubusercontent.com/sportlive18/Willow-Cricbuzz-Prime-Video-Sport-Live-Event-Auto-Updated-Playlist/refs/heads/main/primesport.json',
+    'https://sonujson-devloper.vercel.app/Data/willoe.json',
+    'https://sonujson-v5.pages.dev/Data/willow.json'
 ];
 
 const SONY_M3U8_SOURCES = [
@@ -218,30 +222,111 @@ async function syncSports() {
     return false;
 }
 
+function normalizeWillowMatch(m) {
+    const alpha = m.stream_url_alpha || {};
+    const bravo = m.stream_url_bravo || {};
+    const rawCnp = m.CnpTV || {};
+
+    const fastly1 = rawCnp.fastly_server1 || alpha['Fistly Server'] || alpha['Fastly Server'] || '';
+    const amazon1 = rawCnp.amazon_server1 || alpha['Amazon Server'] || '';
+    const akamai1 = rawCnp.akamai_server1 || alpha['Akamai Server'] || '';
+    const cf1 = rawCnp.cloudfront_server1 || alpha['Cloudfront Server 1'] || alpha['CloudFront Server 1'] || alpha['Cloudfront Server'] || '';
+
+    const fastly2 = rawCnp.fastly_server2 || bravo['Fistly Server'] || bravo['Fastly Server'] || '';
+    const amazon2 = rawCnp.amazon_server2 || bravo['Amazon Server'] || '';
+    const akamai2 = rawCnp.akamai_server2 || bravo['Akamai Server'] || '';
+    const cf2 = rawCnp.cloudfront_server2 || bravo['Cloudfront Server 1'] || bravo['CloudFront Server 1'] || bravo['Cloudfront Server'] || '';
+
+    const cnp = {
+        fastly_server1: fastly1,
+        amazon_server1: amazon1,
+        akamai_server1: akamai1,
+        cloudfront_server1: cf1,
+        fastly_server2: fastly2,
+        amazon_server2: amazon2,
+        akamai_server2: akamai2,
+        cloudfront_server2: cf2
+    };
+
+    const id = m.id || m.match_id || '';
+    const title = m.event_name || m.title || m.synopsis || 'Live Cricket Event';
+    const image = m.image || m.cover_image || '';
+    const isLive = Object.values(cnp).some(v => typeof v === 'string' && v.trim().length > 0);
+    const status = (m.status || (isLive ? 'LIVE' : 'UPCOMING')).toUpperCase();
+    const time = m.time || (isLive ? 'LIVE NOW' : 'Upcoming');
+    const sport = m.sport || 'Cricket';
+    const drmKey = m.drm_key || '';
+
+    return {
+        id: id,
+        match_id: id,
+        event_name: title,
+        title: title,
+        synopsis: m.synopsis || title,
+        image: image,
+        cover_image: image,
+        status: status,
+        time: time,
+        sport: sport,
+        drm_key: drmKey,
+        CnpTV: cnp,
+        stream_url_alpha: alpha,
+        stream_url_bravo: bravo
+    };
+}
+
 async function syncWillow() {
-    console.log('🔄 Syncing Willow & Cricbuzz Live Matches from upstream...');
+    console.log('🔄 Syncing Willow & Cricbuzz Live Matches from multiple redundant upstreams...');
+    const matchMap = new Map();
+    let sourcesSucceeded = 0;
+
     for (const src of WILLOW_SOURCES) {
         try {
             console.log(`Fetching Willow from upstream: ${src}`);
             const text = await fetchEndpoint(src);
             const data = JSON.parse(text);
-            const matches = data.Matches || data.matches || (Array.isArray(data) ? data : []);
-            if (Array.isArray(matches) && matches.length > 0) {
-                const payload = {
-                    last_updated: new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }) + ' IST',
-                    source: src,
-                    Matches: matches
-                };
-                const dataDir = path.join(__dirname, '..', 'data');
-                if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
-                const filePath = path.join(dataDir, 'willow.json');
-                fs.writeFileSync(filePath, JSON.stringify(payload, null, 2), 'utf8');
-                console.log(`✅ Saved ${matches.length} matches from upstream to ${filePath}`);
-                return true;
+            const rawList = data.Matches || data.matches || (Array.isArray(data) ? data : []);
+            if (Array.isArray(rawList) && rawList.length > 0) {
+                sourcesSucceeded++;
+                rawList.forEach(m => {
+                    const norm = normalizeWillowMatch(m);
+                    if (!norm.id) return;
+                    if (!matchMap.has(norm.id)) {
+                        matchMap.set(norm.id, norm);
+                    } else {
+                        const existing = matchMap.get(norm.id);
+                        Object.keys(norm.CnpTV).forEach(k => {
+                            if (!existing.CnpTV[k] && norm.CnpTV[k]) {
+                                existing.CnpTV[k] = norm.CnpTV[k];
+                            }
+                        });
+                        if (!existing.drm_key && norm.drm_key) existing.drm_key = norm.drm_key;
+                        if (!existing.image && norm.image) {
+                            existing.image = norm.image;
+                            existing.cover_image = norm.image;
+                        }
+                    }
+                });
             }
         } catch (err) {
-            console.warn(`⚠️ Failed to fetch Willow from ${src}:`, err.message);
+            console.warn(`⚠️ Upstream ${src} temporarily unavailable:`, err.message);
         }
+    }
+
+    const matches = Array.from(matchMap.values());
+    if (matches.length > 0) {
+        const payload = {
+            last_updated: new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }) + ' IST',
+            sources_checked: WILLOW_SOURCES.length,
+            sources_active: sourcesSucceeded,
+            Matches: matches
+        };
+        const dataDir = path.join(__dirname, '..', 'data');
+        if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
+        const filePath = path.join(dataDir, 'willow.json');
+        fs.writeFileSync(filePath, JSON.stringify(payload, null, 2), 'utf8');
+        console.log(`✅ Saved ${matches.length} unified matches from ${sourcesSucceeded} active sources to ${filePath}`);
+        return true;
     }
     return false;
 }

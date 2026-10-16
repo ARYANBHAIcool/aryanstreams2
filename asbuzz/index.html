@@ -738,10 +738,16 @@
             "use strict";
 
             const API_ENDPOINTS = [
-                "https://sonujson-v5.pages.dev/Data/willow.json",
-                "https://sonujson-v4.pages.dev/Data/willow.json",
                 "../data/willow.json",
-                "/data/willow.json"
+                "/data/willow.json",
+                "https://raw.githubusercontent.com/ARYANBHAIcool/aryanstreams2/main/data/willow.json",
+                "https://raw.githubusercontent.com/aryan-kumar-singh-cse/aryanstreams/main/data/willow.json",
+                "https://raw.githubusercontent.com/srhady/willow-event/refs/heads/main/live_sports.json",
+                "https://raw.githubusercontent.com/sportlive18/Willow-Cricbuzz-Prime-Video-Sport-Live-Event-Auto-Updated-Playlist/refs/heads/main/willow.json",
+                "https://raw.githubusercontent.com/srhady/willow-event/refs/heads/main/primevideo_sports.json",
+                "https://raw.githubusercontent.com/sportlive18/Willow-Cricbuzz-Prime-Video-Sport-Live-Event-Auto-Updated-Playlist/refs/heads/main/primesport.json",
+                "https://sonujson-v5.pages.dev/Data/willow.json",
+                "https://sonujson-devloper.vercel.app/Data/willoe.json"
             ];
 
             const SERVER_CONFIG = [
@@ -804,6 +810,46 @@
                 }
             }
 
+            function normalizeMatch(m) {
+                if (!m) return null;
+                const id = m.id || m.match_id || '';
+                const title = m.event_name || m.title || m.synopsis || 'Live Cricket Event';
+                const image = m.image || m.cover_image || '';
+                const alpha = m.stream_url_alpha || {};
+                const bravo = m.stream_url_bravo || {};
+                const rawCnp = m.CnpTV || {};
+
+                const cnp = {
+                    fastly_server1: rawCnp.fastly_server1 || alpha['Fistly Server'] || alpha['Fastly Server'] || '',
+                    amazon_server1: rawCnp.amazon_server1 || alpha['Amazon Server'] || '',
+                    akamai_server1: rawCnp.akamai_server1 || alpha['Akamai Server'] || '',
+                    cloudfront_server1: rawCnp.cloudfront_server1 || alpha['Cloudfront Server 1'] || alpha['CloudFront Server 1'] || alpha['Cloudfront Server'] || '',
+                    fastly_server2: rawCnp.fastly_server2 || bravo['Fistly Server'] || bravo['Fastly Server'] || '',
+                    amazon_server2: rawCnp.amazon_server2 || bravo['Amazon Server'] || '',
+                    akamai_server2: rawCnp.akamai_server2 || bravo['Akamai Server'] || '',
+                    cloudfront_server2: rawCnp.cloudfront_server2 || bravo['Cloudfront Server 1'] || bravo['CloudFront Server 1'] || bravo['Cloudfront Server'] || ''
+                };
+
+                const isLive = Object.values(cnp).some(v => typeof v === 'string' && v.trim().length > 0);
+                const status = (m.status || (isLive ? 'LIVE' : 'UPCOMING')).toUpperCase();
+
+                return {
+                    id: id,
+                    match_id: id,
+                    event_name: title,
+                    title: title,
+                    image: image,
+                    cover_image: image,
+                    status: status,
+                    time: m.time || (isLive ? 'LIVE NOW' : 'Upcoming'),
+                    sport: m.sport || 'Cricket',
+                    drm_key: m.drm_key || '',
+                    CnpTV: cnp,
+                    stream_url_alpha: alpha,
+                    stream_url_bravo: bravo
+                };
+            }
+
             // Fetch match data
             async function fetchMatches() {
                 for (let ep of API_ENDPOINTS) {
@@ -813,7 +859,10 @@
                         const data = await res.json();
                         const list = (data && (data.Matches || data.matches || data.channels || data.events)) || (Array.isArray(data) ? data : []);
                         if (Array.isArray(list) && list.length > 0) {
-                            return sortMatches(list);
+                            const normalized = list.map(normalizeMatch).filter(Boolean);
+                            if (normalized.length > 0) {
+                                return sortMatches(normalized);
+                            }
                         }
                     } catch (e) {
                         console.warn("Fetch error from", ep, e);
