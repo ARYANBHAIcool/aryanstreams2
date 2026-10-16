@@ -189,8 +189,9 @@ async function syncSports() {
 
                 // Also write clean sports.m3u playlist for IPTV and external players
                 let m3uOut = '#EXTM3U x-tvg-url="https://www.tsepg.cf/epg.xml.gz"\n';
-                m3uOut += `#PLAYLIST: AryanStreams Live TV & Sports Feeds\n`;
-                m3uOut += `#LAST_UPDATE: ${payload.last_updated}\n\n`;
+                m3uOut += '# Written and Directed by ✨ A R Y A N ✨\n';
+                m3uOut += '# Join us on Telegram: https://t.me/aryantv_official\n';
+                m3uOut += `#DATE:- ${payload.last_updated}\n\n`;
 
                 const seenUrls = new Set();
                 channels.forEach(ch => {

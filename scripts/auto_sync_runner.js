@@ -14,7 +14,7 @@ const logFile = path.join(logDir, 'auto_sync.log');
 const args = process.argv.slice(2);
 const runOnce = args.includes('--once');
 const customInterval = args.find(a => /^\d+$/.test(a));
-const INTERVAL_MINUTES = customInterval ? parseInt(customInterval, 10) : 10;
+const INTERVAL_MINUTES = customInterval ? parseInt(customInterval, 10) : 7;
 
 function log(msg) {
     const timeStr = new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' });
