@@ -746,8 +746,7 @@
                 "https://raw.githubusercontent.com/sportlive18/Willow-Cricbuzz-Prime-Video-Sport-Live-Event-Auto-Updated-Playlist/refs/heads/main/willow.json",
                 "https://raw.githubusercontent.com/srhady/willow-event/refs/heads/main/primevideo_sports.json",
                 "https://raw.githubusercontent.com/sportlive18/Willow-Cricbuzz-Prime-Video-Sport-Live-Event-Auto-Updated-Playlist/refs/heads/main/primesport.json",
-                "https://sonujson-v5.pages.dev/Data/willow.json",
-                "https://sonujson-devloper.vercel.app/Data/willoe.json"
+                "https://sonujson-v5.pages.dev/Data/willow.json"
             ];
 
             const SERVER_CONFIG = [
@@ -850,25 +849,44 @@
                 };
             }
 
-            // Fetch match data
+            // Fetch match data from all redundant endpoints concurrently and merge seamlessly
             async function fetchMatches() {
-                for (let ep of API_ENDPOINTS) {
+                const matchMap = new Map();
+
+                await Promise.allSettled(API_ENDPOINTS.map(async (ep) => {
                     try {
                         const res = await fetch(ep + '?_=' + Date.now(), { cache: 'no-store' });
-                        if (!res.ok) continue;
+                        if (!res.ok) return;
                         const data = await res.json();
                         const list = (data && (data.Matches || data.matches || data.channels || data.events)) || (Array.isArray(data) ? data : []);
-                        if (Array.isArray(list) && list.length > 0) {
-                            const normalized = list.map(normalizeMatch).filter(Boolean);
-                            if (normalized.length > 0) {
-                                return sortMatches(normalized);
-                            }
+                        if (Array.isArray(list)) {
+                            list.forEach(raw => {
+                                const norm = normalizeMatch(raw);
+                                if (!norm || !norm.title) return;
+                                const key = (norm.id || norm.title.toLowerCase().replace(/[^a-z0-9]/g, ''));
+                                if (!matchMap.has(key)) {
+                                    matchMap.set(key, norm);
+                                } else {
+                                    // Merge stream servers and update status if a live stream is found
+                                    const existing = matchMap.get(key);
+                                    Object.keys(norm.CnpTV || {}).forEach(k => {
+                                        if (!existing.CnpTV[k] && norm.CnpTV[k]) {
+                                            existing.CnpTV[k] = norm.CnpTV[k];
+                                        }
+                                    });
+                                    if (!existing.drm_key && norm.drm_key) existing.drm_key = norm.drm_key;
+                                    if (!existing.image && norm.image) existing.image = norm.image;
+                                    if (norm.status === 'LIVE') existing.status = 'LIVE';
+                                }
+                            });
                         }
                     } catch (e) {
                         console.warn("Fetch error from", ep, e);
                     }
-                }
-                return [];
+                }));
+
+                const all = Array.from(matchMap.values());
+                return sortMatches(all);
             }
 
             // Parse DRM key (KID:KEY)
