@@ -31,7 +31,7 @@ function runSyncCycle() {
     // 1. Sync streamfifa (aryanstreams & aryanstreams2)
     try {
         try {
-            execSync('git pull --rebase origin main', { cwd: rootDir, stdio: 'ignore' });
+            execSync('git fetch origin main && (git rebase -X theirs origin/main || git rebase --abort)', { cwd: rootDir, stdio: 'ignore' });
         } catch (e) {}
 
         execSync('node scripts/sync_feeds.js', { stdio: 'inherit', cwd: rootDir });
@@ -53,7 +53,7 @@ function runSyncCycle() {
             } catch (err) {
                 log(`⚠️ Push to origin failed: ${err.message}`);
                 try {
-                    execSync('git pull --rebase origin main && git push origin main', { cwd: rootDir });
+                    execSync('git fetch origin main && git rebase -X theirs origin/main && git push origin main', { cwd: rootDir, stdio: 'ignore' });
                 } catch (e) {}
             }
 
@@ -63,7 +63,7 @@ function runSyncCycle() {
             } catch (err) {
                 log(`⚠️ Push to second failed: ${err.message}`);
                 try {
-                    execSync('git pull --rebase second main && git push second main', { cwd: rootDir });
+                    execSync('git fetch second main && git rebase -X theirs second/main && git push second main', { cwd: rootDir, stdio: 'ignore' });
                 } catch (e) {}
             }
         } else {
