@@ -287,6 +287,63 @@
             return true;
         }
 
+        var DYNAMIC_COOKIE_MAP = {
+            'ss1': 'ss1', 'e1hd': 'ss1', '1106': 'ss1', 'star1': 'ss1', 'star1hd': 'ss1', 'star1enghd': 'ss1',
+            'ss2': 'ss2', 'e2hd': 'ss2', '1109': 'ss2', 'star2': 'ss2', 'star2hd': 'ss2', 'star2enghd': 'ss2',
+            'ss1h': 'ss1h', 'h1hd': 'ss1h', '1108': 'ss1h', 'star1hindihd': 'ss1h',
+            'ss2h': 'ss2h', 'h2hd': 'ss2h', '1984': 'ss2h', 'star2hindihd': 'ss2h',
+            'ss1tam': 'ss1tam', 's2hd': 'ss1tam', 't1hd': 'ss1tam', '3277': 'ss1tam',
+            'ss2tam': 'ss2tam', '3273': 'ss2tam',
+            'ss1tel': 'ss1tel', 'te1hd': 'ss1tel', 'te2hd': 'ss1tel', '3278': 'ss1tel',
+            'ss2tel': 'ss2tel', '3274': 'ss2tel',
+            'ss1kan': 'ss1kan', 'ka1sd': 'ss1kan', '1650': 'ss1kan',
+            'ss2kan': 'ss2kan', 'ka2sd': 'ss2kan', '1122': 'ss2kan'
+        };
+
+        async function fetchFreshCookie(id) {
+            var normId = String(id || '').toLowerCase().trim();
+            var workerKey = DYNAMIC_COOKIE_MAP[normId];
+            if (!workerKey) {
+                var mapped = (ID_MAP[normId] || '').toLowerCase();
+                workerKey = DYNAMIC_COOKIE_MAP[mapped] || normId;
+            }
+
+            // 1. Primary High-Performance Worker API (Generates real-time tokens for all Star Sports channels)
+            if (workerKey) {
+                try {
+                    var r1 = await fetch('https://rough-snowflake-13bc.himanshuvalverde.workers.dev/?id=' + encodeURIComponent(workerKey) + '&_=' + Date.now(), {
+                        cache: 'no-store'
+                    });
+                    if (r1.ok) {
+                        var d1 = await r1.json();
+                        if (d1 && d1.cookie) return d1.cookie.trim();
+                    }
+                } catch(e) {}
+            }
+
+            // 2. Allrounder Fallback APIs
+            if (workerKey === 'ss1h' || normId.indexOf('hindi') !== -1 || normId === 'h1hd') {
+                try {
+                    var r2 = await fetch('https://allrounder2-0.pages.dev/api/Hindi.json?_=' + Date.now(), { cache: 'no-store' });
+                    if (r2.ok) {
+                        var d2 = await r2.json();
+                        if (d2 && d2.cookie) return d2.cookie.trim();
+                    }
+                } catch(e) {}
+            }
+            if (workerKey === 'ss1' || normId.indexOf('eng') !== -1 || normId === 'e1hd') {
+                try {
+                    var r3 = await fetch('https://allrounder2-0.pages.dev/api/sony-3.json?_=' + Date.now(), { cache: 'no-store' });
+                    if (r3.ok) {
+                        var d3 = await r3.json();
+                        if (d3 && d3.cookie) return d3.cookie.trim();
+                    }
+                } catch(e) {}
+            }
+
+            return null;
+        }
+
         function parseM3uChannels(text) {
             var lines = text.split('\n');
             var channels = [];
@@ -454,6 +511,16 @@
                 } catch (e) {}
             }
             if (firstCandidate) {
+                if (!isCookieValid(firstCandidate.cookie, firstCandidate.cookie_expire)) {
+                    try {
+                        var fresh = await fetchFreshCookie(id);
+                        if (fresh) {
+                            firstCandidate.cookie = fresh;
+                            var expMatch = fresh.match(/exp=(\d+)/);
+                            firstCandidate.cookie_expire = expMatch ? parseInt(expMatch[1], 10) : 0;
+                        }
+                    } catch(e) {}
+                }
                 return firstCandidate;
             }
             return null;
@@ -484,6 +551,13 @@
                         activeClearKeys = ch.clearKeys;
                     } else if (activeKid && activeKey) {
                         activeClearKeys[activeKid.toLowerCase()] = activeKey.toLowerCase();
+                    }
+                }
+                if (!isCookieValid(activeCookie)) {
+                    var freshCookie = await fetchFreshCookie(CH_ID);
+                    if (freshCookie) {
+                        activeCookie = freshCookie;
+                        activeRawCookie = rawCookie(activeCookie);
                     }
                 }
             }
@@ -615,14 +689,16 @@
                     console.error('Shaka error:', err && err.code, err && err.message);
                     var isGeo = isGeoBlocked(activeMpd);
                     showError(isGeo ? 'US VPN REQUIRED TO PLAY' : 'Playback error – reconnecting...', isGeo);
-                    if (CH_ID) {
+                    if (CH_ID || activeKid) {
                         try {
-                            var refreshed = await fetchChannelData(CH_ID);
+                            var targetId = CH_ID || activeKid;
+                            var freshCookie = await fetchFreshCookie(targetId);
+                            var refreshed = await fetchChannelData(targetId);
                             if (refreshed) {
                                 activeMpd = refreshed.stream_url;
                                 activeKid = refreshed.key_id;
                                 activeKey = refreshed.key;
-                                activeCookie = refreshed.cookie || '';
+                                activeCookie = freshCookie || refreshed.cookie || '';
                                 activeRawCookie = rawCookie(activeCookie);
                                 if (refreshed.clearKeys && Object.keys(refreshed.clearKeys).length > 0) {
                                     activeClearKeys = refreshed.clearKeys;
@@ -633,6 +709,9 @@
                                 if (Object.keys(activeClearKeys).length > 0) {
                                     player.configure({ drm: { clearKeys: activeClearKeys } });
                                 }
+                            } else if (freshCookie) {
+                                activeCookie = freshCookie;
+                                activeRawCookie = rawCookie(activeCookie);
                             }
                         } catch(e) {}
                     }

@@ -55,6 +55,44 @@ const JIO_MAP = {
     '204':  ['204', 'dds', 'ddsports']
 };
 
+const DYNAMIC_COOKIE_MAP = {
+    'ss1': 'ss1', 'e1hd': 'ss1', '1106': 'ss1', 'star1': 'ss1', 'star1hd': 'ss1', 'star1enghd': 'ss1',
+    'ss2': 'ss2', 'e2hd': 'ss2', '1109': 'ss2', 'star2': 'ss2', 'star2hd': 'ss2', 'star2enghd': 'ss2',
+    'ss1h': 'ss1h', 'h1hd': 'ss1h', '1108': 'ss1h', 'star1hindihd': 'ss1h',
+    'ss2h': 'ss2h', 'h2hd': 'ss2h', '1984': 'ss2h', 'star2hindihd': 'ss2h',
+    'ss1tam': 'ss1tam', 's2hd': 'ss1tam', 't1hd': 'ss1tam', '3277': 'ss1tam',
+    'ss2tam': 'ss2tam', '3273': 'ss2tam',
+    'ss1tel': 'ss1tel', 'te1hd': 'ss1tel', 'te2hd': 'ss1tel', '3278': 'ss1tel',
+    'ss2tel': 'ss2tel', '3274': 'ss2tel',
+    'ss1kan': 'ss1kan', 'ka1sd': 'ss1kan', '1650': 'ss1kan',
+    'ss2kan': 'ss2kan', 'ka2sd': 'ss2kan', '1122': 'ss2kan'
+};
+
+async function fetchDynamicCookie(workerKey) {
+    try {
+        const text = await fetchEndpoint('https://rough-snowflake-13bc.himanshuvalverde.workers.dev/?id=' + encodeURIComponent(workerKey));
+        const data = JSON.parse(text);
+        if (data && data.cookie) return data.cookie.trim();
+    } catch(e) {}
+
+    if (workerKey === 'ss1h') {
+        try {
+            const text = await fetchEndpoint('https://allrounder2-0.pages.dev/api/Hindi.json');
+            const data = JSON.parse(text);
+            if (data && data.cookie) return data.cookie.trim();
+        } catch(e) {}
+    }
+    if (workerKey === 'ss1') {
+        try {
+            const text = await fetchEndpoint('https://allrounder2-0.pages.dev/api/sony-3.json');
+            const data = JSON.parse(text);
+            if (data && data.cookie) return data.cookie.trim();
+        } catch(e) {}
+    }
+
+    return null;
+}
+
 function parseZioM3U(m3uContent) {
     const lines = m3uContent.split('\n');
     const channels = [];
@@ -175,6 +213,42 @@ async function syncSports() {
             }
 
             if (Array.isArray(channels) && channels.length > 0) {
+                // Auto-refresh Star Sports live cookies if expired or expiring within 30 minutes
+                const nowSec = Math.floor(Date.now() / 1000);
+                const cookieCache = {};
+                let refreshedCookiesCount = 0;
+
+                for (const ch of channels) {
+                    const id = String(ch.id || ch.channel_id || '').toLowerCase();
+                    const workerKey = DYNAMIC_COOKIE_MAP[id];
+                    if (workerKey) {
+                        const isExpiring = !ch.cookie || !ch.cookie_expire || ch.cookie_expire < (nowSec + 1800);
+                        if (isExpiring) {
+                            if (cookieCache[workerKey] === undefined) {
+                                console.log(`Refreshing live cookie for ${workerKey}...`);
+                                const fresh = await fetchDynamicCookie(workerKey);
+                                if (fresh) {
+                                    const expMatch = fresh.match(/exp=(\d+)/);
+                                    cookieCache[workerKey] = {
+                                        cookie: fresh,
+                                        expire: expMatch ? parseInt(expMatch[1], 10) : 0
+                                    };
+                                } else {
+                                    cookieCache[workerKey] = null;
+                                }
+                            }
+                            if (cookieCache[workerKey]) {
+                                ch.cookie = cookieCache[workerKey].cookie;
+                                ch.cookie_expire = cookieCache[workerKey].expire;
+                                refreshedCookiesCount++;
+                            }
+                        }
+                    }
+                }
+                if (refreshedCookiesCount > 0) {
+                    console.log(`✅ Refreshed live cookies for ${refreshedCookiesCount} channel entries!`);
+                }
+
                 const dataDir = path.join(__dirname, '..', 'data');
                 if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
                 const filePath = path.join(dataDir, 'sports.json');
@@ -191,7 +265,7 @@ async function syncSports() {
                         const oldSig = getSportsSignature(oldData.channels || []);
                         const newSig = getSportsSignature(channels);
                         const hoursSince = (Date.now() - fs.statSync(m3uPath).mtimeMs) / (1000 * 60 * 60);
-                        if (oldSig === newSig && hoursSince < 6) {
+                        if (oldSig === newSig && hoursSince < 6 && refreshedCookiesCount === 0) {
                             hasChanged = false;
                         }
                     } catch (e) {
