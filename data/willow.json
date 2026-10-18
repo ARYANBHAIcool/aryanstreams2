@@ -1,7 +1,7 @@
 {
-  "last_updated": "10/18/2026, 2:09:57 PM IST",
+  "last_updated": "10/18/2026, 2:50:05 PM IST",
   "sources_checked": 6,
-  "sources_active": 4,
+  "sources_active": 3,
   "Matches": [
     {
       "id": "smart-modified-tour-at-north-wilkesboro-motor-speedway",
@@ -142,6 +142,32 @@
           "url": "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvaWl0MGU3cXMtNjU2MA"
         }
       ],
+      "CnpTV": {
+        "fastly_server1": "",
+        "amazon_server1": "",
+        "akamai_server1": "",
+        "cloudfront_server1": "",
+        "fastly_server2": "",
+        "amazon_server2": "",
+        "akamai_server2": "",
+        "cloudfront_server2": ""
+      },
+      "stream_url_alpha": {},
+      "stream_url_bravo": {}
+    },
+    {
+      "id": "B0HM5LHW5W",
+      "match_id": "B0HM5LHW5W",
+      "event_name": "World Championship of Legends 2026 - Final - England Champions vs West Indies Champions",
+      "title": "World Championship of Legends 2026 - Final - England Champions vs West Indies Champions",
+      "synopsis": "World Championship of Legends 2026 - Final - England Champions vs West Indies Champions",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.a07e9e92-e35b-448b-bf80-a27d56114757/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "cover_image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.a07e9e92-e35b-448b-bf80-a27d56114757/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Upcoming",
+      "sport": "Cricket",
+      "drm_key": "",
+      "streams": [],
       "CnpTV": {
         "fastly_server1": "",
         "amazon_server1": "",
