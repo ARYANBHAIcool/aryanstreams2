@@ -322,6 +322,50 @@ async function syncSports() {
     return false;
 }
 
+const CRICKET_CHANNELS = {
+    willow1: {
+        name: 'Willow Cricket HD',
+        url: 'https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng'
+    },
+    willow2: {
+        name: 'Willow Cricket 2',
+        url: 'https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvMTRxdWF3ZDUtODgxOQ'
+    },
+    willow_usa: {
+        name: 'Willow USA (Trend48)',
+        url: 'https://trend48.st/live-tv?ch=willow-usa'
+    },
+    sky_cricket: {
+        name: 'Sky Sports Cricket',
+        url: 'https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvcWZ4NDAzOHAtOTU'
+    },
+    fox_cricket: {
+        name: 'Fox Sports 501 (Cricket)',
+        url: 'https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvaW1pZm5lb2otMTQxNw'
+    },
+    sony_sports: {
+        name: 'Sony Sports Network',
+        url: 'https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvdG9hcm5hbzMtNTI1'
+    },
+    sony_sports_3: {
+        name: 'Sony Sports Network 3',
+        url: 'https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvaWl0MGU3cXMtNjU2MA'
+    }
+};
+
+function isWillow1Linear(u) {
+    if (!u) return false;
+    if (u.includes('c3BkOGdwb2gtNjU4Ng') || u.includes('spd8gpoh-6586')) return true;
+    try {
+        if (u.includes('id=')) {
+            const b64 = u.split('id=')[1].split('&')[0];
+            const dec = Buffer.from(b64, 'base64').toString('utf8');
+            return dec.includes('spd8gpoh-6586');
+        }
+    } catch(e) {}
+    return false;
+}
+
 function normalizeWillowMatch(m) {
     const alpha = m.stream_url_alpha || {};
     const bravo = m.stream_url_bravo || {};
@@ -348,15 +392,67 @@ function normalizeWillowMatch(m) {
         cloudfront_server2: cf2
     };
 
-    const rawStreams = Array.isArray(m.streams) ? m.streams.slice() : [];
+    let rawStreams = Array.isArray(m.streams) ? m.streams.slice() : [];
     if (m.url && rawStreams.length === 0) rawStreams.push({ name: 'Live Stream', url: m.url });
     const cleanId = (m.id || m.match_id || '').replace(/^match-/, '');
     const title = m.event_name || m.name || m.title || m.synopsis || 'Live Cricket Event';
     const image = m.image || m.cover_image || m.poster || '';
-    const hasDirect = rawStreams.length > 0;
-    const isLive = hasDirect || Object.values(cnp).some(v => typeof v === 'string' && v.trim().length > 0);
-    const status = (m.status || (isLive ? 'LIVE' : 'UPCOMING')).toUpperCase();
-    const time = m.time || (isLive ? 'LIVE NOW' : 'Upcoming');
+
+    // Check specific matches to avoid false blanket linear channel assignment
+    const isAusVsSa2ndTest = /2nd Test.*South Africa vs Australia|South Africa vs Australia.*2nd Test|Australia tour of South Africa.*2nd Test/i.test(title);
+    const isPakVsSl1stOdi = /1st Match.*Pakistan vs Sri Lanka|Pakistan vs Sri Lanka.*1st Match|Pakistan ODI Tri-Series.*1st Match/i.test(title);
+    const isIndWVsZimW2ndT20I = /2nd T20I.*India Women vs Zimbabwe Women|India Women vs Zimbabwe Women.*2nd T20I/i.test(title);
+
+    // If stream is the linear Willow 1 URL, only allow it for South Africa vs Australia 2nd Test
+    rawStreams = rawStreams.filter(st => {
+        if (!st || !st.url) return false;
+        if (isWillow1Linear(st.url)) {
+            return isAusVsSa2ndTest;
+        }
+        return true;
+    });
+
+    if (isAusVsSa2ndTest) {
+        // SA vs AUS is live right now on Willow HD 1, Fox Cricket, Sky Sports
+        const dedicated = [
+            CRICKET_CHANNELS.willow1,
+            CRICKET_CHANNELS.willow_usa,
+            CRICKET_CHANNELS.fox_cricket,
+            CRICKET_CHANNELS.sky_cricket
+        ];
+        dedicated.forEach(ds => {
+            if (!rawStreams.some(s => s.url === ds.url)) rawStreams.push(ds);
+        });
+    } else if (isPakVsSl1stOdi) {
+        // PAK vs SL 1st ODI is live today at 2:30 PM IST on Willow Cricket 2, Sky Sports, Sony Sports
+        const dedicated = [
+            CRICKET_CHANNELS.willow2,
+            CRICKET_CHANNELS.sky_cricket,
+            CRICKET_CHANNELS.sony_sports,
+            CRICKET_CHANNELS.willow_usa
+        ];
+        dedicated.forEach(ds => {
+            if (!rawStreams.some(s => s.url === ds.url)) rawStreams.push(ds);
+        });
+    } else if (isIndWVsZimW2ndT20I) {
+        // India Women vs Zimbabwe Women 2nd T20I on Sony Sports
+        const dedicated = [
+            CRICKET_CHANNELS.sony_sports,
+            CRICKET_CHANNELS.sony_sports_3
+        ];
+        dedicated.forEach(ds => {
+            if (!rawStreams.some(s => s.url === ds.url)) rawStreams.push(ds);
+        });
+    }
+
+    const hasCnp = Object.values(cnp).some(v => typeof v === 'string' && v.trim().length > 0 && !v.includes('pages.dev'));
+    const isLive = isAusVsSa2ndTest || isPakVsSl1stOdi || hasCnp;
+    const status = isLive ? 'LIVE' : (m.status ? m.status.toUpperCase() : 'UPCOMING');
+    let time = m.time || (isLive ? 'LIVE NOW' : 'Upcoming');
+    if (isAusVsSa2ndTest) time = 'LIVE NOW';
+    else if (isPakVsSl1stOdi) time = 'LIVE NOW • 2:30 PM IST';
+    else if (isIndWVsZimW2ndT20I) time = 'Live at 7:00 PM IST';
+
     const sport = m.sport || m.category || 'Cricket';
     const drmKey = m.drm_key || '';
 
@@ -409,7 +505,15 @@ async function syncWillow() {
                         });
                         if (!existing.drm_key && norm.drm_key) existing.drm_key = norm.drm_key;
                         if (norm.streams && norm.streams.length > 0) {
-                            existing.streams = (existing.streams || []).concat(norm.streams.filter(s => !(existing.streams || []).some(es => es.url === s.url)));
+                            norm.streams.forEach(st => {
+                                if (isWillow1Linear(st.url) && !/2nd Test.*South Africa vs Australia|South Africa vs Australia.*2nd Test/i.test(existing.event_name)) return;
+                                if (!existing.streams.some(es => es.url === st.url)) {
+                                    existing.streams.push(st);
+                                }
+                            });
+                        }
+                        if (!/2nd Test.*South Africa vs Australia|South Africa vs Australia.*2nd Test/i.test(existing.event_name)) {
+                            existing.streams = (existing.streams || []).filter(st => !isWillow1Linear(st.url));
                         }
                         if (!existing.image && norm.image) {
                             existing.image = norm.image;
@@ -431,7 +535,7 @@ async function syncWillow() {
         const filePath = path.join(dataDir, 'willow.json');
 
         function getWillowSignature(ms) {
-            return ms.map(m => `${m.id || m.match_id || ''}|${m.stream_url || ''}|${JSON.stringify(m.CnpTV || {})}|${m.drm_key || ''}`).sort().join('\n');
+            return ms.map(m => `${m.id || m.match_id || ''}|${JSON.stringify(m.streams || [])}|${JSON.stringify(m.CnpTV || {})}|${m.drm_key || ''}`).sort().join('\n');
         }
 
         let hasChanged = true;

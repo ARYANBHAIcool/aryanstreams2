@@ -774,9 +774,10 @@
                 if (!m) return false;
                 const status = String(m.status || '').toUpperCase();
                 const cnp = m.CnpTV || {};
-                const hasStreams = Object.keys(cnp).some(k => typeof cnp[k] === 'string' && cnp[k].trim().length > 0);
+                const hasStreams = Object.keys(cnp).some(k => typeof cnp[k] === 'string' && cnp[k].trim().length > 0 && !cnp[k].includes('pages.dev'));
                 const hasDirect = Array.isArray(m.streams) && m.streams.length > 0;
-                return status === 'LIVE' || hasStreams || hasDirect || /australia|south africa|pakistan|sri lanka/i.test(m.event_name || '');
+                const isTodayActive = /2nd Test.*South Africa vs Australia|South Africa vs Australia.*2nd Test|1st Match.*Pakistan vs Sri Lanka|Pakistan vs Sri Lanka.*1st Match/i.test(m.event_name || '');
+                return status === 'LIVE' || hasStreams || (hasDirect && isTodayActive);
             }
 
             // Sort matches so live matches always stay on top
@@ -962,32 +963,29 @@
                     const availableServers = SERVER_CONFIG.filter(s => !!cnp[s.key] && typeof cnp[s.key] === 'string' && cnp[s.key].startsWith('http') && !cnp[s.key].includes('pages.dev'));
                     const directStreams = m.streams || [];
 
-                    let serversHtml = '';
+                    let serverButtons = [];
+                    if (availableServers.length > 0) {
+                        availableServers.forEach(s => {
+                            serverButtons.push(`
+                                <button class="server-btn ${s.highlight ? 'highlight' : ''}" onclick="window.playMatch('${id}', ${s.id})">
+                                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                    <span>${s.label}</span>
+                                </button>
+                            `);
+                        });
+                    }
                     if (directStreams.length > 0) {
-                        serversHtml = `
-                            <div class="server-grid">
-                                ${directStreams.map((st, idx) => `
-                                    <button class="server-btn ${idx === 0 ? 'highlight' : ''}" onclick="window.playIframeStream('${st.url}', '${(m.event_name || 'Live Match').replace(/'/g, "\\'")}', '${id}', ${idx + 1})">
-                                        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                        <span>${st.name || 'Live Stream ' + (idx + 1)}</span>
-                                    </button>
-                                `).join('')}
-                            </div>
-                        `;
-                    } else if (availableServers.length > 0) {
-                        serversHtml = `
-                            <div class="server-grid">
-                                ${availableServers.map(s => `
-                                    <button class="server-btn ${s.highlight ? 'highlight' : ''}" onclick="window.playMatch('${id}', ${s.id})">
-                                        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                        <span>${s.label}</span>
-                                    </button>
-                                `).join('')}
-                            </div>
-                        `;
-                    } else if (/australia|south africa|pakistan|sri lanka/i.test(m.event_name || '')) {
-                        serversHtml = `
-                            <div class="server-grid">
+                        directStreams.forEach((st, idx) => {
+                            serverButtons.push(`
+                                <button class="server-btn ${serverButtons.length === 0 && idx === 0 ? 'highlight' : ''}" onclick="window.playIframeStream('${st.url}', '${(m.event_name || 'Live Match').replace(/'/g, "\\'")}', '${id}', ${idx + 1})">
+                                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                    <span>${st.name || 'Live Stream ' + (idx + 1)}</span>
+                                </button>
+                            `);
+                        });
+                    } else if (serverButtons.length === 0) {
+                        if (/2nd Test.*South Africa vs Australia|South Africa vs Australia.*2nd Test/i.test(m.event_name || '')) {
+                            serverButtons.push(`
                                 <button class="server-btn highlight" onclick="window.playIframeStream('https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng', '${(m.event_name || 'Live Match').replace(/'/g, "\\'")}', '${id}', 1)">
                                     <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                                     <span>Willow HD (Stan / BinTV)</span>
@@ -996,13 +994,32 @@
                                     <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                                     <span>Willow USA (Trend48)</span>
                                 </button>
-                            </div>
-                        `;
+                            `);
+                        } else if (/1st Match.*Pakistan vs Sri Lanka|Pakistan vs Sri Lanka.*1st Match/i.test(m.event_name || '')) {
+                            serverButtons.push(`
+                                <button class="server-btn highlight" onclick="window.playIframeStream('https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvMTRxdWF3ZDUtODgxOQ', '${(m.event_name || 'Live Match').replace(/'/g, "\\'")}', '${id}', 1)">
+                                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                    <span>Willow Cricket 2</span>
+                                </button>
+                                <button class="server-btn" onclick="window.playIframeStream('https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvcWZ4NDAzOHAtOTU', '${(m.event_name || 'Live Match').replace(/'/g, "\\'")}', '${id}', 2)">
+                                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                    <span>Sky Sports Cricket</span>
+                                </button>
+                            `);
+                        }
+                    }
+
+                    let serversHtml = '';
+                    if (serverButtons.length > 0) {
+                        serversHtml = `<div class="server-grid">${serverButtons.join('')}</div>`;
                     } else {
                         serversHtml = `
-                            <button class="server-btn" style="grid-column: span 2; opacity: 0.7; cursor: default;">
-                                <span>Upcoming Broadcast</span>
-                            </button>
+                            <div class="server-grid" style="grid-template-columns: 1fr;">
+                                <button class="server-btn" style="opacity: 0.7; cursor: default;">
+                                    <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                                    <span>${m.time || 'Upcoming Broadcast'}</span>
+                                </button>
+                            </div>
                         `;
                     }
 
@@ -1107,13 +1124,18 @@
                     return;
                 }
 
-                if (!mpdUrl && /australia|south africa|pakistan|sri lanka/i.test(match.event_name || '')) {
+                if (!mpdUrl && /2nd Test.*South Africa vs Australia|South Africa vs Australia.*2nd Test/i.test(match.event_name || '')) {
                     window.playIframeStream('https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng', match.event_name, match.id, 1);
                     return;
                 }
 
+                if (!mpdUrl && /1st Match.*Pakistan vs Sri Lanka|Pakistan vs Sri Lanka.*1st Match/i.test(match.event_name || '')) {
+                    window.playIframeStream('https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvMTRxdWF3ZDUtODgxOQ', match.event_name, match.id, 1);
+                    return;
+                }
+
                 if (!mpdUrl) {
-                    showToast('No active stream source available for this event.', 'error');
+                    showToast('This event is scheduled for ' + (match.time || 'later') + '. Live stream will activate when broadcast begins.', 'info', 4000);
                     return;
                 }
 
