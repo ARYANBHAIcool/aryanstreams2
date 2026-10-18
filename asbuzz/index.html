@@ -527,6 +527,64 @@
             gap: 0.5rem;
         }
 
+        .player-servers-bar {
+            height: 44px;
+            background: rgba(14, 17, 23, 0.98);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 0 1rem;
+            overflow-x: auto;
+            white-space: nowrap;
+            z-index: 10;
+        }
+
+        .player-servers-bar::-webkit-scrollbar {
+            height: 3px;
+        }
+
+        .player-servers-bar::-webkit-scrollbar-thumb {
+            background: rgba(255, 184, 0, 0.35);
+            border-radius: 3px;
+        }
+
+        .player-server-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: var(--dim);
+            font-size: 0.76rem;
+            font-weight: 700;
+            font-family: var(--font-sub);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+            user-select: none;
+        }
+
+        .player-server-pill svg {
+            width: 10px;
+            height: 10px;
+            fill: currentColor;
+        }
+
+        .player-server-pill:hover {
+            color: var(--ink);
+            border-color: rgba(255, 184, 0, 0.4);
+            background: rgba(255, 184, 0, 0.08);
+        }
+
+        .player-server-pill.active {
+            background: rgba(255, 184, 0, 0.18);
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
         #video-wrapper {
             position: relative;
             width: 100%;
@@ -719,6 +777,7 @@
                 </button>
             </div>
         </div>
+        <div class="player-servers-bar" id="player-servers-bar" style="display: none;"></div>
         <div id="video-wrapper">
             <video id="player-video" playsinline webkit-playsinline preload="auto"></video>
         </div>
@@ -918,6 +977,59 @@
                 return null;
             }
 
+            // Build Unified Stream / Server List for a Match
+            function getMatchStreamList(m) {
+                if (!m) return [];
+                const cnp = m.CnpTV || {};
+                const availableMpd = SERVER_CONFIG.filter(s => !!cnp[s.key] && typeof cnp[s.key] === 'string' && cnp[s.key].startsWith('http') && !cnp[s.key].includes('pages.dev'));
+                let directStreams = Array.isArray(m.streams) ? m.streams.slice() : [];
+
+                if (directStreams.length === 0) {
+                    if (/2nd Test.*South Africa vs Australia|South Africa vs Australia.*2nd Test/i.test(m.event_name || '')) {
+                        directStreams = [
+                            { name: 'Willow Cricket HD', url: 'https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng' },
+                            { name: 'Willow USA (Trend48)', url: 'https://trend48.st/live-tv?ch=willow-usa' },
+                            { name: 'Fox Sports 501', url: 'https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvaW1pZm5lb2otMTQxNw' },
+                            { name: 'Sky Sports Cricket', url: 'https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvcWZ4NDAzOHAtOTU' }
+                        ];
+                    } else if (/1st Match.*Pakistan vs Sri Lanka|Pakistan vs Sri Lanka.*1st Match/i.test(m.event_name || '')) {
+                        directStreams = [
+                            { name: 'Willow Cricket 2', url: 'https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvMTRxdWF3ZDUtODgxOQ' },
+                            { name: 'Sky Sports Cricket', url: 'https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvcWZ4NDAzOHAtOTU' },
+                            { name: 'Sony Sports Network', url: 'https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvdG9hcm5hbzMtNTI1' },
+                            { name: 'Willow USA (Trend48)', url: 'https://trend48.st/live-tv?ch=willow-usa' }
+                        ];
+                    } else if (/2nd T20I.*India Women vs Zimbabwe Women|India Women vs Zimbabwe Women.*2nd T20I/i.test(m.event_name || '')) {
+                        directStreams = [
+                            { name: 'Sony Sports Network', url: 'https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvdG9hcm5hbzMtNTI1' },
+                            { name: 'Sony Sports Network 3', url: 'https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvaWl0MGU3cXMtNjU2MA' }
+                        ];
+                    }
+                }
+
+                const list = [];
+                availableMpd.forEach(s => {
+                    list.push({
+                        id: s.id,
+                        label: s.label,
+                        type: 'mpd',
+                        mpdUrl: cnp[s.key]
+                    });
+                });
+
+                directStreams.forEach(st => {
+                    const sid = list.length + 1;
+                    list.push({
+                        id: sid,
+                        label: st.name || ('Server ' + sid),
+                        type: 'iframe',
+                        url: st.url
+                    });
+                });
+
+                return list;
+            }
+
             // Render Match Cards
             function renderMatches() {
                 let filtered = allMatches.filter(m => {
@@ -959,59 +1071,21 @@
                     const card = document.createElement('div');
                     card.className = 'match-card';
 
-                    // Available servers
-                    const availableServers = SERVER_CONFIG.filter(s => !!cnp[s.key] && typeof cnp[s.key] === 'string' && cnp[s.key].startsWith('http') && !cnp[s.key].includes('pages.dev'));
-                    const directStreams = m.streams || [];
-
-                    let serverButtons = [];
-                    if (availableServers.length > 0) {
-                        availableServers.forEach(s => {
-                            serverButtons.push(`
-                                <button class="server-btn ${s.highlight ? 'highlight' : ''}" onclick="window.playMatch('${id}', ${s.id})">
-                                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                    <span>${s.label}</span>
-                                </button>
-                            `);
-                        });
-                    }
-                    if (directStreams.length > 0) {
-                        directStreams.forEach((st, idx) => {
-                            serverButtons.push(`
-                                <button class="server-btn ${serverButtons.length === 0 && idx === 0 ? 'highlight' : ''}" onclick="window.playIframeStream('${st.url}', '${(m.event_name || 'Live Match').replace(/'/g, "\\'")}', '${id}', ${idx + 1})">
-                                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                    <span>${st.name || 'Live Stream ' + (idx + 1)}</span>
-                                </button>
-                            `);
-                        });
-                    } else if (serverButtons.length === 0) {
-                        if (/2nd Test.*South Africa vs Australia|South Africa vs Australia.*2nd Test/i.test(m.event_name || '')) {
-                            serverButtons.push(`
-                                <button class="server-btn highlight" onclick="window.playIframeStream('https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng', '${(m.event_name || 'Live Match').replace(/'/g, "\\'")}', '${id}', 1)">
-                                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                    <span>Willow HD (Stan / BinTV)</span>
-                                </button>
-                                <button class="server-btn" onclick="window.playIframeStream('https://trend48.st/live-tv?ch=willow-usa', '${(m.event_name || 'Live Match').replace(/'/g, "\\'")}', '${id}', 2)">
-                                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                    <span>Willow USA (Trend48)</span>
-                                </button>
-                            `);
-                        } else if (/1st Match.*Pakistan vs Sri Lanka|Pakistan vs Sri Lanka.*1st Match/i.test(m.event_name || '')) {
-                            serverButtons.push(`
-                                <button class="server-btn highlight" onclick="window.playIframeStream('https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvMTRxdWF3ZDUtODgxOQ', '${(m.event_name || 'Live Match').replace(/'/g, "\\'")}', '${id}', 1)">
-                                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                    <span>Willow Cricket 2</span>
-                                </button>
-                                <button class="server-btn" onclick="window.playIframeStream('https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvcWZ4NDAzOHAtOTU', '${(m.event_name || 'Live Match').replace(/'/g, "\\'")}', '${id}', 2)">
-                                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                    <span>Sky Sports Cricket</span>
-                                </button>
-                            `);
-                        }
-                    }
+                    // Available servers from unified list
+                    const serverList = getMatchStreamList(m);
 
                     let serversHtml = '';
-                    if (serverButtons.length > 0) {
-                        serversHtml = `<div class="server-grid">${serverButtons.join('')}</div>`;
+                    if (serverList.length > 0) {
+                        serversHtml = `
+                            <div class="server-grid">
+                                ${serverList.map((s, idx) => `
+                                    <button class="server-btn ${idx === 0 ? 'highlight' : ''}" onclick="window.playMatch('${id}', ${s.id})">
+                                        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                        <span>${s.label}</span>
+                                    </button>
+                                `).join('')}
+                            </div>
+                        `;
                     } else {
                         serversHtml = `
                             <div class="server-grid" style="grid-template-columns: 1fr;">
@@ -1090,7 +1164,32 @@
                 });
             }
 
-            // Start Shaka Player
+            // Render in-player server switcher
+            function renderPlayerServerSwitcher(match, activeSer) {
+                const bar = document.getElementById('player-servers-bar');
+                if (!bar) return;
+                bar.innerHTML = '';
+
+                const serverList = getMatchStreamList(match);
+                if (!serverList || serverList.length <= 1) {
+                    bar.style.display = 'none';
+                    return;
+                }
+
+                bar.style.display = 'flex';
+                serverList.forEach(s => {
+                    const btn = document.createElement('button');
+                    btn.className = 'player-server-pill' + (s.id === activeSer ? ' active' : '');
+                    btn.innerHTML = `<svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M8 5v14l11-7z"/></svg><span>${s.label}</span>`;
+                    btn.onclick = (e) => {
+                        e.stopPropagation();
+                        playMatch(match.id, s.id);
+                    };
+                    bar.appendChild(btn);
+                });
+            }
+
+            // Start Player (Shaka DASH or Direct Stream)
             async function playMatch(matchId, serverId = 1) {
                 const cleanId = String(matchId || '').trim();
                 const match = allMatches.find(m => String(m.id || '').trim().toLowerCase() === cleanId.toLowerCase() || String(m.match_id || '').trim().toLowerCase() === cleanId.toLowerCase());
@@ -1099,43 +1198,42 @@
                     return;
                 }
 
+                const serverList = getMatchStreamList(match);
+                if (!serverList || serverList.length === 0) {
+                    showToast('This event is scheduled for ' + (match.time || 'later') + '. Live stream will activate when broadcast begins.', 'info', 4000);
+                    return;
+                }
+
+                let requestedSer = parseInt(serverId || 1, 10) || 1;
+                let targetServer = serverList.find(s => s.id === requestedSer);
+                if (!targetServer) {
+                    const sIdx = Math.max(0, Math.min(serverList.length - 1, requestedSer - 1));
+                    targetServer = serverList[sIdx];
+                    requestedSer = targetServer.id;
+                }
+
                 currentActiveMatch = match;
-                currentActiveServerId = serverId;
+                currentActiveServerId = requestedSer;
 
                 // Update URL search query immediately with unique match link
-                const newUrl = window.location.pathname + '?id=' + encodeURIComponent(match.id) + '&ser=' + serverId;
-                window.history.pushState({ id: match.id, ser: serverId }, '', newUrl);
+                const newUrl = window.location.pathname + '?id=' + encodeURIComponent(match.id) + '&ser=' + requestedSer;
+                window.history.pushState({ id: match.id, ser: requestedSer }, '', newUrl);
 
-                const cnp = match.CnpTV || {};
-                const srv = SERVER_CONFIG.find(s => s.id === serverId) || SERVER_CONFIG[0];
-                let mpdUrl = cnp[srv.key];
+                renderPlayerServerSwitcher(match, requestedSer);
+
+                if (targetServer.type === 'iframe') {
+                    window.playIframeStream(targetServer.url, `${match.event_name} (${targetServer.label})`, match.id, requestedSer);
+                    return;
+                }
+
+                let mpdUrl = targetServer.mpdUrl;
                 if (!mpdUrl) {
-                    const fallback = SERVER_CONFIG.find(s => !!cnp[s.key]);
-                    if (fallback) mpdUrl = cnp[fallback.key];
-                }
-
-                if (mpdUrl && (mpdUrl.includes('bintv-sources') || mpdUrl.includes('trend48') || mpdUrl.includes('pages.dev'))) {
-                    window.playIframeStream(mpdUrl, match.event_name, match.id, serverId);
+                    showToast('This server is not currently online. Try another server.', 'info', 3000);
                     return;
                 }
 
-                if (!mpdUrl && match.streams && match.streams.length > 0) {
-                    window.playIframeStream(match.streams[0].url, match.event_name, match.id, 1);
-                    return;
-                }
-
-                if (!mpdUrl && /2nd Test.*South Africa vs Australia|South Africa vs Australia.*2nd Test/i.test(match.event_name || '')) {
-                    window.playIframeStream('https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng', match.event_name, match.id, 1);
-                    return;
-                }
-
-                if (!mpdUrl && /1st Match.*Pakistan vs Sri Lanka|Pakistan vs Sri Lanka.*1st Match/i.test(match.event_name || '')) {
-                    window.playIframeStream('https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvMTRxdWF3ZDUtODgxOQ', match.event_name, match.id, 1);
-                    return;
-                }
-
-                if (!mpdUrl) {
-                    showToast('This event is scheduled for ' + (match.time || 'later') + '. Live stream will activate when broadcast begins.', 'info', 4000);
+                if (mpdUrl.includes('bintv-sources') || mpdUrl.includes('trend48') || mpdUrl.includes('pages.dev')) {
+                    window.playIframeStream(mpdUrl, `${match.event_name} (${targetServer.label})`, match.id, requestedSer);
                     return;
                 }
 
@@ -1145,9 +1243,13 @@
                     directMpd = decodeURIComponent(mpdUrl.split('?url=')[1]);
                 }
 
-                $playerTitle.textContent = `${match.event_name} (${srv.label})`;
+                $playerTitle.textContent = `${match.event_name} (${targetServer.label})`;
                 $playerModal.classList.add('active');
                 document.body.style.overflow = 'hidden';
+
+                const iframe = document.getElementById('player-iframe');
+                if (iframe) iframe.style.display = 'none';
+                $video.style.display = 'block';
 
                 shaka.polyfill.installAll();
                 if (!shaka.Player.isBrowserSupported()) {
@@ -1266,6 +1368,11 @@
                     iframe.src = 'about:blank';
                     iframe.style.display = 'none';
                 }
+                const serverBar = document.getElementById('player-servers-bar');
+                if (serverBar) {
+                    serverBar.style.display = 'none';
+                    serverBar.innerHTML = '';
+                }
                 $video.style.display = '';
                 $playerModal.classList.remove('active');
                 document.body.style.overflow = '';
@@ -1278,13 +1385,14 @@
                 if (shakaPlayerInstance) {
                     shakaPlayerInstance.unload().catch(() => {});
                 }
+                const targetSer = parseInt(streamIdx || 1, 10) || 1;
                 if (matchId) {
                     const cleanId = String(matchId).trim();
                     const match = allMatches.find(m => String(m.id || '').toLowerCase() === cleanId.toLowerCase() || String(m.match_id || '').toLowerCase() === cleanId.toLowerCase());
                     if (match) currentActiveMatch = match;
-                    currentActiveServerId = streamIdx;
-                    const newUrl = window.location.pathname + '?id=' + encodeURIComponent(matchId) + '&ser=' + streamIdx;
-                    window.history.pushState({ id: matchId, ser: streamIdx }, '', newUrl);
+                    currentActiveServerId = targetSer;
+                    const newUrl = window.location.pathname + '?id=' + encodeURIComponent(matchId) + '&ser=' + targetSer;
+                    window.history.pushState({ id: matchId, ser: targetSer }, '', newUrl);
                 }
                 $video.style.display = 'none';
                 let iframe = document.getElementById('player-iframe');
@@ -1304,7 +1412,12 @@
                 $playerTitle.textContent = title || 'Live Cricket Stream';
                 $playerModal.classList.add('active');
                 document.body.style.overflow = 'hidden';
-                showToast('● LIVE STREAM CONNECTED', 'success', 2500);
+
+                if (currentActiveMatch) {
+                    renderPlayerServerSwitcher(currentActiveMatch, targetSer);
+                }
+
+                showToast('● SERVER ' + targetSer + ' CONNECTED', 'success', 2500);
             };
 
             $btnClose.addEventListener('click', closePlayer);

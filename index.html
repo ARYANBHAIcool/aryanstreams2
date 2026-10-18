@@ -1894,6 +1894,21 @@
                     }
                 }
 
+                // Handle server parameter (&ser=1, &ser=2, &ser=3, &ser=4, &ser=5)
+                var serParam = urlParams.get('ser') || urlParams.get('server');
+                if (serParam) {
+                    if (/pak|sl|sri/i.test(streamKey)) {
+                        if (serParam === '2' && channels['pakvssl_sky']) ch = channels['pakvssl_sky'];
+                        else if (serParam === '3' && channels['pakvssl_sony']) ch = channels['pakvssl_sony'];
+                        else if (serParam === '4' && channels['willow_trend48']) ch = channels['willow_trend48'];
+                        else if (serParam === '5' && channels['skysportscricket']) ch = channels['skysportscricket'];
+                    } else if (/aus|sa|south/i.test(streamKey)) {
+                        if (serParam === '2' && channels['willow_trend48']) ch = channels['willow_trend48'];
+                        else if (serParam === '3' && channels['foxcricket']) ch = channels['foxcricket'];
+                        else if (serParam === '4' && channels['skysportscricket']) ch = channels['skysportscricket'];
+                    }
+                }
+
                 if (ch) {
                     activeChannel = ch;
                     document.getElementById('stream-view').classList.remove('hidden');
