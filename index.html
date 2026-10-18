@@ -1218,11 +1218,34 @@
             "cbuzz3":           { type: "iframe", name: "Cricbuzz Server 3 (DASH MPD)",   url: "shaka_player.html?mpd=https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/oz1myqmjwy/out/v1/a511251e49ee413ab48bad03d3d32863/cenc.mpd&kid=227091e30e129f3d085506e8153c208a&key=5e082e054635e0532947eedb4f5b1861" },
             "cbuzz7":           { type: "iframe", name: "Cricbuzz Server 7 (DASH MPD)",   url: "shaka_player.html?mpd=https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/z6hqb23eri/out/v1/143173b0de4342c1b0181d0b5b62a620/cenc.mpd&kid=227091e30e129f3d085506e8153c208a&key=5e082e054635e0532947eedb4f5b1861" },
 
-            // ── Willow Cricket ───────────────────────────────────────────────
-            "willow":           { type: "iframe", name: "Willow Cricket HD (Prime Direct)", url: "shaka_player.html?mpd=https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/vphstwik8p/out/v1/dde4fbca83c24d2a8d5b98060ffdde6c/cenc.mpd&kid=e82afe190e1a2ecc0f3cc2f3e4de056f&key=fe561b16157b65130a9accb3f8b54e95" },
-            "willowhd":         { type: "iframe", name: "Willow Cricket HD (Prime Direct)", url: "shaka_player.html?mpd=https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/vphstwik8p/out/v1/dde4fbca83c24d2a8d5b98060ffdde6c/cenc.mpd&kid=e82afe190e1a2ecc0f3cc2f3e4de056f&key=fe561b16157b65130a9accb3f8b54e95" },
-            "willow2":          { type: "video",  name: "Willow 2 Fast Stream (Direct)",   url: "https://amg01269-amg01269c1-sportstribal-emea-5204.playouts.now.amagi.tv/playlist/amg01269-willowtvfast-willowplus-sportstribalemea/playlist.m3u8" },
-            "willow3":          { type: "video",  name: "Willow Cricbuzz 24x7 (Direct)",   url: "https://papacito.cfd/m3u/us-willow-cricket/live.m3u8" },
+            // ── Willow Cricket & Live Cricket Matches ─────────────────────────
+            "willow":           { type: "iframe", name: "Willow Cricket HD (Live Direct)",   url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng" },
+            "willowhd":         { type: "iframe", name: "Willow Cricket HD (Live Direct)",   url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng" },
+            "willow_bintv":     { type: "iframe", name: "Willow Cricket HD (BinTV Direct)",  url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng" },
+            "willow_trend48":   { type: "iframe", name: "Willow Cricket USA (Trend48)",      url: "https://trend48.st/live-tv?ch=willow-usa" },
+            "willow2":          { type: "video",  name: "Willow 2 Fast Stream (Direct)",     url: "https://amg01269-amg01269c1-sportstribal-emea-5204.playouts.now.amagi.tv/playlist/amg01269-willowtvfast-willowplus-sportstribalemea/playlist.m3u8" },
+            "willow3":          { type: "video",  name: "Willow Cricbuzz 24x7 (Direct)",     url: "https://papacito.cfd/m3u/us-willow-cricket/live.m3u8" },
+
+            // Australia vs South Africa Live Stream Aliases
+            "ausvssa":                         { type: "iframe", name: "Australia vs South Africa - 2nd Test (Willow HD)", url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng" },
+            "aussavsa":                        { type: "iframe", name: "Australia vs South Africa - 2nd Test (Willow HD)", url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng" },
+            "aus_vs_sa":                       { type: "iframe", name: "Australia vs South Africa - 2nd Test (Willow HD)", url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng" },
+            "savsaus":                         { type: "iframe", name: "Australia vs South Africa - 2nd Test (Willow HD)", url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng" },
+            "sa_vs_aus":                       { type: "iframe", name: "Australia vs South Africa - 2nd Test (Willow HD)", url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng" },
+            "australia":                       { type: "iframe", name: "Australia vs South Africa - 2nd Test (Willow HD)", url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng" },
+            "southafrica":                     { type: "iframe", name: "Australia vs South Africa - 2nd Test (Willow HD)", url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng" },
+            "b0hfwwjwh6":                      { type: "iframe", name: "Australia vs South Africa - 2nd Test (Willow HD)", url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng" },
+            "match-b0hfwwjwh6":                { type: "iframe", name: "Australia vs South Africa - 2nd Test (Willow HD)", url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng" },
+
+            // Pakistan vs Sri Lanka Live Stream Aliases
+            "pakvssl":                         { type: "iframe", name: "Pakistan vs Sri Lanka - 1st ODI (Willow HD)",      url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng" },
+            "pak_vs_sl":                       { type: "iframe", name: "Pakistan vs Sri Lanka - 1st ODI (Willow HD)",      url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng" },
+            "pakistan":                        { type: "iframe", name: "Pakistan vs Sri Lanka - 1st ODI (Willow HD)",      url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng" },
+            "srilanka":                        { type: "iframe", name: "Pakistan vs Sri Lanka - 1st ODI (Willow HD)",      url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng" },
+            "slvspak":                         { type: "iframe", name: "Pakistan vs Sri Lanka - 1st ODI (Willow HD)",      url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng" },
+            "pakvsl":                          { type: "iframe", name: "Pakistan vs Sri Lanka - 1st ODI (Willow HD)",      url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng" },
+            "b0hmql4njs":                      { type: "iframe", name: "Pakistan vs Sri Lanka - 1st ODI (Willow HD)",      url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng" },
+            "match-b0hmql4njs":                { type: "iframe", name: "Pakistan vs Sri Lanka - 1st ODI (Willow HD)",      url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng" },
 
             // ── TNT Sports Network (UK) ──────────────────────────────────────
             "tnt1":             { type: "iframe", name: "TNT Sports 1 HD",                 url: "shaka_player.html?mpd=https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/rhf2dwosdt/out/v1/ee550d2a68d846c797e6ce4de2e8b76d/cenc.mpd&kid=69a5aa835a061ce64a630d1046727e40&key=d02feac8a999bd06bf4059bf33411749" },

@@ -742,6 +742,7 @@
                 "/data/willow.json",
                 "https://raw.githubusercontent.com/ARYANBHAIcool/aryanstreams2/main/data/willow.json",
                 "https://raw.githubusercontent.com/aryan-kumar-singh-cse/aryanstreams/main/data/willow.json",
+                "https://bintvjson.lovable.app/api/public/bintvjson",
                 "https://raw.githubusercontent.com/srhady/willow-event/refs/heads/main/live_sports.json",
                 "https://raw.githubusercontent.com/sportlive18/Willow-Cricbuzz-Prime-Video-Sport-Live-Event-Auto-Updated-Playlist/refs/heads/main/willow.json",
                 "https://raw.githubusercontent.com/srhady/willow-event/refs/heads/main/primevideo_sports.json",
@@ -772,7 +773,8 @@
                 const status = String(m.status || '').toUpperCase();
                 const cnp = m.CnpTV || {};
                 const hasStreams = Object.keys(cnp).some(k => typeof cnp[k] === 'string' && cnp[k].trim().length > 0);
-                return status === 'LIVE' || hasStreams;
+                const hasDirect = Array.isArray(m.streams) && m.streams.length > 0;
+                return status === 'LIVE' || hasStreams || hasDirect || /australia|south africa|pakistan|sri lanka/i.test(m.event_name || '');
             }
 
             // Sort matches so live matches always stay on top
@@ -829,7 +831,13 @@
                     cloudfront_server2: rawCnp.cloudfront_server2 || bravo['Cloudfront Server 1'] || bravo['CloudFront Server 1'] || bravo['Cloudfront Server'] || ''
                 };
 
-                const isLive = Object.values(cnp).some(v => typeof v === 'string' && v.trim().length > 0);
+                const rawStreams = Array.isArray(m.streams) ? m.streams.slice() : [];
+                const directUrl = m.live_stream || m.url || '';
+                if (directUrl && rawStreams.length === 0) {
+                    rawStreams.push({ name: 'Live Stream', url: directUrl });
+                }
+                const hasDirect = rawStreams.length > 0;
+                const isLive = hasDirect || Object.values(cnp).some(v => typeof v === 'string' && v.trim().length > 0);
                 const status = (m.status || (isLive ? 'LIVE' : 'UPCOMING')).toUpperCase();
 
                 return {
@@ -843,6 +851,7 @@
                     time: m.time || (isLive ? 'LIVE NOW' : 'Upcoming'),
                     sport: m.sport || 'Cricket',
                     drm_key: m.drm_key || '',
+                    streams: rawStreams,
                     CnpTV: cnp,
                     stream_url_alpha: alpha,
                     stream_url_bravo: bravo
@@ -858,12 +867,16 @@
                         const res = await fetch(ep + '?_=' + Date.now(), { cache: 'no-store' });
                         if (!res.ok) return;
                         const data = await res.json();
-                        const list = (data && (data.Matches || data.matches || data.channels || data.events)) || (Array.isArray(data) ? data : []);
+                        let list = (data && (data.Matches || data.matches || data.channels || data.events)) || (Array.isArray(data) ? data : []);
+                        if ((!list || list.length === 0) && data && (data['Live Events'] || data['Upcoming Events'])) {
+                            list = (data['Live Events'] || []).concat(data['Upcoming Events'] || []);
+                        }
                         if (Array.isArray(list)) {
                             list.forEach(raw => {
                                 const norm = normalizeMatch(raw);
                                 if (!norm || !norm.title) return;
-                                const key = (norm.id || norm.title.toLowerCase().replace(/[^a-z0-9]/g, ''));
+                                const cleanId = (norm.id || '').replace(/^match-/, '');
+                                const key = cleanId || norm.title.toLowerCase().replace(/[^a-z0-9]/g, '');
                                 if (!matchMap.has(key)) {
                                     matchMap.set(key, norm);
                                 } else {
@@ -875,6 +888,9 @@
                                         }
                                     });
                                     if (!existing.drm_key && norm.drm_key) existing.drm_key = norm.drm_key;
+                                    if (norm.streams && norm.streams.length > 0) {
+                                        existing.streams = (existing.streams || []).concat(norm.streams.filter(s => !(existing.streams || []).some(es => es.url === s.url)));
+                                    }
                                     if (!existing.image && norm.image) existing.image = norm.image;
                                     if (norm.status === 'LIVE') existing.status = 'LIVE';
                                 }
@@ -941,10 +957,22 @@
                     card.className = 'match-card';
 
                     // Available servers
-                    const availableServers = SERVER_CONFIG.filter(s => !!cnp[s.key]);
+                    const availableServers = SERVER_CONFIG.filter(s => !!cnp[s.key] && typeof cnp[s.key] === 'string' && cnp[s.key].startsWith('http') && !cnp[s.key].includes('pages.dev'));
+                    const directStreams = m.streams || [];
 
                     let serversHtml = '';
-                    if (availableServers.length > 0) {
+                    if (directStreams.length > 0) {
+                        serversHtml = `
+                            <div class="server-grid">
+                                ${directStreams.map((st, idx) => `
+                                    <button class="server-btn ${idx === 0 ? 'highlight' : ''}" onclick="window.playIframeStream('${st.url}', '${(m.event_name || 'Live Match').replace(/'/g, "\\'")}')">
+                                        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                        <span>${st.name || 'Live Stream ' + (idx + 1)}</span>
+                                    </button>
+                                `).join('')}
+                            </div>
+                        `;
+                    } else if (availableServers.length > 0) {
                         serversHtml = `
                             <div class="server-grid">
                                 ${availableServers.map(s => `
@@ -953,6 +981,19 @@
                                         <span>${s.label}</span>
                                     </button>
                                 `).join('')}
+                            </div>
+                        `;
+                    } else if (/australia|south africa|pakistan|sri lanka/i.test(m.event_name || '')) {
+                        serversHtml = `
+                            <div class="server-grid">
+                                <button class="server-btn highlight" onclick="window.playIframeStream('https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng', '${(m.event_name || 'Live Match').replace(/'/g, "\\'")}')">
+                                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                    <span>Willow HD (Stan / BinTV)</span>
+                                </button>
+                                <button class="server-btn" onclick="window.playIframeStream('https://trend48.st/live-tv?ch=willow-usa', '${(m.event_name || 'Live Match').replace(/'/g, "\\'")}')">
+                                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                    <span>Willow USA (Trend48)</span>
+                                </button>
                             </div>
                         `;
                     } else {
@@ -1038,6 +1079,21 @@
                 if (!mpdUrl) {
                     const fallback = SERVER_CONFIG.find(s => !!cnp[s.key]);
                     if (fallback) mpdUrl = cnp[fallback.key];
+                }
+
+                if (mpdUrl && (mpdUrl.includes('bintv-sources') || mpdUrl.includes('trend48') || mpdUrl.includes('pages.dev'))) {
+                    window.playIframeStream(mpdUrl, match.event_name);
+                    return;
+                }
+
+                if (!mpdUrl && match.streams && match.streams.length > 0) {
+                    window.playIframeStream(match.streams[0].url, match.event_name);
+                    return;
+                }
+
+                if (!mpdUrl && /australia|south africa|pakistan|sri lanka/i.test(match.event_name || '')) {
+                    window.playIframeStream('https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng', match.event_name);
+                    return;
                 }
 
                 if (!mpdUrl) {
@@ -1171,11 +1227,42 @@
                 if (shakaPlayerInstance) {
                     shakaPlayerInstance.unload().catch(() => {});
                 }
+                const iframe = document.getElementById('player-iframe');
+                if (iframe) {
+                    iframe.src = 'about:blank';
+                    iframe.style.display = 'none';
+                }
+                $video.style.display = '';
                 $playerModal.classList.remove('active');
                 document.body.style.overflow = '';
                 const cleanUrl = window.location.pathname;
                 window.history.pushState({}, '', cleanUrl);
             }
+
+            window.playIframeStream = function(url, title) {
+                if (shakaPlayerInstance) {
+                    shakaPlayerInstance.unload().catch(() => {});
+                }
+                $video.style.display = 'none';
+                let iframe = document.getElementById('player-iframe');
+                if (!iframe) {
+                    iframe = document.createElement('iframe');
+                    iframe.id = 'player-iframe';
+                    iframe.style.width = '100%';
+                    iframe.style.height = '100%';
+                    iframe.style.border = 'none';
+                    iframe.style.background = '#000';
+                    iframe.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen; screen-wake-lock; orientation';
+                    iframe.allowFullscreen = true;
+                    $videoWrapper.appendChild(iframe);
+                }
+                iframe.style.display = 'block';
+                iframe.src = url;
+                $playerTitle.textContent = title || 'Live Cricket Stream';
+                $playerModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                showToast('● LIVE STREAM CONNECTED', 'success', 2500);
+            };
 
             $btnClose.addEventListener('click', closePlayer);
 

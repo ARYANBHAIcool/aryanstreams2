@@ -8,6 +8,7 @@ const SPORTS_SOURCES = [
 ];
 
 const WILLOW_SOURCES = [
+    'https://bintvjson.lovable.app/api/public/bintvjson',
     'https://raw.githubusercontent.com/srhady/willow-event/refs/heads/main/live_sports.json',
     'https://raw.githubusercontent.com/srhady/willow-event/refs/heads/main/primevideo_sports.json',
     'https://raw.githubusercontent.com/sportlive18/Willow-Cricbuzz-Prime-Video-Sport-Live-Event-Auto-Updated-Playlist/refs/heads/main/willow.json',
@@ -347,18 +348,21 @@ function normalizeWillowMatch(m) {
         cloudfront_server2: cf2
     };
 
-    const id = m.id || m.match_id || '';
-    const title = m.event_name || m.title || m.synopsis || 'Live Cricket Event';
-    const image = m.image || m.cover_image || '';
-    const isLive = Object.values(cnp).some(v => typeof v === 'string' && v.trim().length > 0);
+    const rawStreams = Array.isArray(m.streams) ? m.streams.slice() : [];
+    if (m.url && rawStreams.length === 0) rawStreams.push({ name: 'Live Stream', url: m.url });
+    const cleanId = (m.id || m.match_id || '').replace(/^match-/, '');
+    const title = m.event_name || m.name || m.title || m.synopsis || 'Live Cricket Event';
+    const image = m.image || m.cover_image || m.poster || '';
+    const hasDirect = rawStreams.length > 0;
+    const isLive = hasDirect || Object.values(cnp).some(v => typeof v === 'string' && v.trim().length > 0);
     const status = (m.status || (isLive ? 'LIVE' : 'UPCOMING')).toUpperCase();
     const time = m.time || (isLive ? 'LIVE NOW' : 'Upcoming');
-    const sport = m.sport || 'Cricket';
+    const sport = m.sport || m.category || 'Cricket';
     const drmKey = m.drm_key || '';
 
     return {
-        id: id,
-        match_id: id,
+        id: cleanId,
+        match_id: cleanId,
         event_name: title,
         title: title,
         synopsis: m.synopsis || title,
@@ -368,6 +372,7 @@ function normalizeWillowMatch(m) {
         time: time,
         sport: sport,
         drm_key: drmKey,
+        streams: rawStreams,
         CnpTV: cnp,
         stream_url_alpha: alpha,
         stream_url_bravo: bravo
@@ -384,7 +389,10 @@ async function syncWillow() {
             console.log(`Fetching Willow from upstream: ${src}`);
             const text = await fetchEndpoint(src);
             const data = JSON.parse(text);
-            const rawList = data.Matches || data.matches || (Array.isArray(data) ? data : []);
+            let rawList = data.Matches || data.matches || (Array.isArray(data) ? data : []);
+            if ((!rawList || rawList.length === 0) && data && (data['Live Events'] || data['Upcoming Events'])) {
+                rawList = (data['Live Events'] || []).concat(data['Upcoming Events'] || []).filter(e => e.category === 'Cricket' || /cricket|test|odi|t20/i.test(e.name || ''));
+            }
             if (Array.isArray(rawList) && rawList.length > 0) {
                 sourcesSucceeded++;
                 rawList.forEach(m => {
@@ -400,10 +408,14 @@ async function syncWillow() {
                             }
                         });
                         if (!existing.drm_key && norm.drm_key) existing.drm_key = norm.drm_key;
+                        if (norm.streams && norm.streams.length > 0) {
+                            existing.streams = (existing.streams || []).concat(norm.streams.filter(s => !(existing.streams || []).some(es => es.url === s.url)));
+                        }
                         if (!existing.image && norm.image) {
                             existing.image = norm.image;
                             existing.cover_image = norm.image;
                         }
+                        if (norm.status === 'LIVE') existing.status = 'LIVE';
                     }
                 });
             }
