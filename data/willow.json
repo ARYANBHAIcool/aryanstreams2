@@ -1,7 +1,7 @@
 {
-  "last_updated": "10/18/2026, 5:21:14 AM IST",
+  "last_updated": "10/18/2026, 12:52:45 PM IST",
   "sources_checked": 5,
-  "sources_active": 5,
+  "sources_active": 3,
   "Matches": [
     {
       "id": "B0HFWWJWH6",
@@ -365,31 +365,6 @@
       "time": "Thu, Oct 29 3 PM BDT",
       "sport": "Cricket",
       "drm_key": "",
-      "CnpTV": {
-        "fastly_server1": "",
-        "amazon_server1": "",
-        "akamai_server1": "",
-        "cloudfront_server1": "",
-        "fastly_server2": "",
-        "amazon_server2": "",
-        "akamai_server2": "",
-        "cloudfront_server2": ""
-      },
-      "stream_url_alpha": {},
-      "stream_url_bravo": {}
-    },
-    {
-      "id": "B0HM7XD72M",
-      "match_id": "B0HM7XD72M",
-      "event_name": "PPA Tour: Virginia Beach Open-Semifinals",
-      "title": "PPA Tour: Virginia Beach Open-Semifinals",
-      "synopsis": "PPA Tour: Virginia Beach Open-Semifinals",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.51665a89-3981-44df-ab29-45f90201087a/1/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpg",
-      "cover_image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.51665a89-3981-44df-ab29-45f90201087a/1/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpg",
-      "status": "LIVE",
-      "time": "LIVE NOW",
-      "sport": "Cricket",
-      "drm_key": "2be100252a42be3a17d29c93e28eaacc:07c5e72df3602e9652dd06d839776e72",
       "CnpTV": {
         "fastly_server1": "",
         "amazon_server1": "",
