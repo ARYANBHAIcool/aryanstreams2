@@ -766,6 +766,8 @@
             let searchQuery = '';
             let shakaPlayerInstance = null;
             let shakaUiOverlay = null;
+            let currentActiveMatch = null;
+            let currentActiveServerId = 1;
 
             // Helper to determine if a match has live streams
             function isMatchLive(m) {
@@ -965,7 +967,7 @@
                         serversHtml = `
                             <div class="server-grid">
                                 ${directStreams.map((st, idx) => `
-                                    <button class="server-btn ${idx === 0 ? 'highlight' : ''}" onclick="window.playIframeStream('${st.url}', '${(m.event_name || 'Live Match').replace(/'/g, "\\'")}')">
+                                    <button class="server-btn ${idx === 0 ? 'highlight' : ''}" onclick="window.playIframeStream('${st.url}', '${(m.event_name || 'Live Match').replace(/'/g, "\\'")}', '${id}', ${idx + 1})">
                                         <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                                         <span>${st.name || 'Live Stream ' + (idx + 1)}</span>
                                     </button>
@@ -986,11 +988,11 @@
                     } else if (/australia|south africa|pakistan|sri lanka/i.test(m.event_name || '')) {
                         serversHtml = `
                             <div class="server-grid">
-                                <button class="server-btn highlight" onclick="window.playIframeStream('https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng', '${(m.event_name || 'Live Match').replace(/'/g, "\\'")}')">
+                                <button class="server-btn highlight" onclick="window.playIframeStream('https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng', '${(m.event_name || 'Live Match').replace(/'/g, "\\'")}', '${id}', 1)">
                                     <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                                     <span>Willow HD (Stan / BinTV)</span>
                                 </button>
-                                <button class="server-btn" onclick="window.playIframeStream('https://trend48.st/live-tv?ch=willow-usa', '${(m.event_name || 'Live Match').replace(/'/g, "\\'")}')">
+                                <button class="server-btn" onclick="window.playIframeStream('https://trend48.st/live-tv?ch=willow-usa', '${(m.event_name || 'Live Match').replace(/'/g, "\\'")}', '${id}', 2)">
                                     <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                                     <span>Willow USA (Trend48)</span>
                                 </button>
@@ -1014,15 +1016,21 @@
                         <div class="card-body">
                             <div>
                                 <h3 class="card-title">${m.event_name || 'Live Cricket Event'}</h3>
-                                <div class="card-meta" style="margin-top: 0.5rem;">
-                                    <span>
-                                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
-                                        ${m.sport || 'Cricket'}
-                                    </span>
-                                    <span>
-                                        <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
-                                        ${m.time || 'Live'}
-                                    </span>
+                                <div class="card-meta" style="margin-top: 0.5rem; display: flex; align-items: center; justify-content: space-between;">
+                                    <div style="display: flex; gap: 0.75rem; align-items: center;">
+                                        <span>
+                                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+                                            ${m.sport || 'Cricket'}
+                                        </span>
+                                        <span>
+                                            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                                            ${m.time || 'Live'}
+                                        </span>
+                                    </div>
+                                    <button class="card-share-btn" onclick="event.stopPropagation(); window.copyMatchLink('${id}', '${(m.event_name || 'Match').replace(/'/g, "\\'")}')" title="Copy Match Link" style="background: rgba(255,184,0,0.12); border: 1px solid rgba(255,184,0,0.25); color: var(--gold); border-radius: 6px; padding: 3px 8px; font-size: 0.75rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
+                                        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                                        <span>Share</span>
+                                    </button>
                                 </div>
                             </div>
                             ${serversHtml}
@@ -1067,11 +1075,19 @@
 
             // Start Shaka Player
             async function playMatch(matchId, serverId = 1) {
-                const match = allMatches.find(m => String(m.id || '').trim() === String(matchId).trim());
+                const cleanId = String(matchId || '').trim();
+                const match = allMatches.find(m => String(m.id || '').trim().toLowerCase() === cleanId.toLowerCase() || String(m.match_id || '').trim().toLowerCase() === cleanId.toLowerCase());
                 if (!match) {
                     showToast('Match not found: ' + matchId, 'error');
                     return;
                 }
+
+                currentActiveMatch = match;
+                currentActiveServerId = serverId;
+
+                // Update URL search query immediately with unique match link
+                const newUrl = window.location.pathname + '?id=' + encodeURIComponent(match.id) + '&ser=' + serverId;
+                window.history.pushState({ id: match.id, ser: serverId }, '', newUrl);
 
                 const cnp = match.CnpTV || {};
                 const srv = SERVER_CONFIG.find(s => s.id === serverId) || SERVER_CONFIG[0];
@@ -1082,17 +1098,17 @@
                 }
 
                 if (mpdUrl && (mpdUrl.includes('bintv-sources') || mpdUrl.includes('trend48') || mpdUrl.includes('pages.dev'))) {
-                    window.playIframeStream(mpdUrl, match.event_name);
+                    window.playIframeStream(mpdUrl, match.event_name, match.id, serverId);
                     return;
                 }
 
                 if (!mpdUrl && match.streams && match.streams.length > 0) {
-                    window.playIframeStream(match.streams[0].url, match.event_name);
+                    window.playIframeStream(match.streams[0].url, match.event_name, match.id, 1);
                     return;
                 }
 
                 if (!mpdUrl && /australia|south africa|pakistan|sri lanka/i.test(match.event_name || '')) {
-                    window.playIframeStream('https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng', match.event_name);
+                    window.playIframeStream('https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng', match.event_name, match.id, 1);
                     return;
                 }
 
@@ -1106,10 +1122,6 @@
                 if (mpdUrl.includes('?url=')) {
                     directMpd = decodeURIComponent(mpdUrl.split('?url=')[1]);
                 }
-
-                // Update URL search query without reload
-                const newUrl = window.location.pathname + '?id=' + encodeURIComponent(matchId) + '&ser=' + serverId;
-                window.history.pushState({ id: matchId, ser: serverId }, '', newUrl);
 
                 $playerTitle.textContent = `${match.event_name} (${srv.label})`;
                 $playerModal.classList.add('active');
@@ -1235,13 +1247,22 @@
                 $video.style.display = '';
                 $playerModal.classList.remove('active');
                 document.body.style.overflow = '';
+                currentActiveMatch = null;
                 const cleanUrl = window.location.pathname;
                 window.history.pushState({}, '', cleanUrl);
             }
 
-            window.playIframeStream = function(url, title) {
+            window.playIframeStream = function(url, title, matchId, streamIdx = 1) {
                 if (shakaPlayerInstance) {
                     shakaPlayerInstance.unload().catch(() => {});
+                }
+                if (matchId) {
+                    const cleanId = String(matchId).trim();
+                    const match = allMatches.find(m => String(m.id || '').toLowerCase() === cleanId.toLowerCase() || String(m.match_id || '').toLowerCase() === cleanId.toLowerCase());
+                    if (match) currentActiveMatch = match;
+                    currentActiveServerId = streamIdx;
+                    const newUrl = window.location.pathname + '?id=' + encodeURIComponent(matchId) + '&ser=' + streamIdx;
+                    window.history.pushState({ id: matchId, ser: streamIdx }, '', newUrl);
                 }
                 $video.style.display = 'none';
                 let iframe = document.getElementById('player-iframe');
@@ -1266,16 +1287,62 @@
 
             $btnClose.addEventListener('click', closePlayer);
 
-            // Share Stream Button
-            $btnShare.addEventListener('click', () => {
-                const url = window.location.href;
+            // Unique Share Link Generator
+            function copyShareLink(matchId, matchTitle, serverId) {
+                let targetId = matchId;
+                if (!targetId && currentActiveMatch) {
+                    targetId = currentActiveMatch.id;
+                }
+                if (!targetId) {
+                    const { id } = parseUrlParams();
+                    targetId = id;
+                }
+                if (!targetId && allMatches.length > 0) {
+                    targetId = allMatches[0].id;
+                }
+
+                if (!targetId) {
+                    showToast('No match selected to share', 'error');
+                    return;
+                }
+
+                const targetSer = serverId || currentActiveServerId || 1;
+                const urlObj = new URL(window.location.href);
+                urlObj.searchParams.set('id', targetId);
+                urlObj.searchParams.set('ser', targetSer);
+                const shareUrl = urlObj.toString();
+
                 if (navigator.clipboard && navigator.clipboard.writeText) {
-                    navigator.clipboard.writeText(url).then(() => {
-                        showToast('Stream link copied to clipboard!', 'success');
+                    navigator.clipboard.writeText(shareUrl).then(() => {
+                        showToast('● UNIQUE MATCH LINK COPIED!', 'success');
+                    }).catch(() => {
+                        fallbackCopy(shareUrl);
                     });
                 } else {
-                    showToast('Link: ' + url, 'info');
+                    fallbackCopy(shareUrl);
                 }
+            }
+
+            function fallbackCopy(text) {
+                try {
+                    const temp = document.createElement('input');
+                    temp.value = text;
+                    document.body.appendChild(temp);
+                    temp.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(temp);
+                    showToast('● UNIQUE MATCH LINK COPIED!', 'success');
+                } catch(e) {
+                    showToast('Link: ' + text, 'info');
+                }
+            }
+
+            window.copyMatchLink = copyShareLink;
+
+            // Share Stream Button in player modal
+            $btnShare.addEventListener('click', (e) => {
+                e.preventDefault();
+                copyShareLink();
             });
 
             // Filter Tabs Click
@@ -1297,14 +1364,22 @@
             // Parse URL Parameters
             function parseUrlParams() {
                 const params = new URLSearchParams(window.location.search);
-                let id = params.get('id') || params.get('stream') || params.get('match') || params.get('play');
+                let id = params.get('id') || params.get('match') || params.get('play') || params.get('ch');
+                if (!id) {
+                    const st = params.get('stream');
+                    if (st && st !== '0' && st !== '1') id = st;
+                }
                 let ser = parseInt(params.get('ser') || params.get('server') || '1', 10);
 
-                // Check for ?CB... format (e.g. ?CBB0HFGFK4HY)
+                // Check for ?CB... format (e.g. ?CBB0HFGFK4HY) or raw ?B0H...
                 if (!id && window.location.search.length > 1) {
                     const raw = window.location.search.slice(1).split('&')[0];
                     if (raw.startsWith('CB')) {
                         id = raw.slice(2);
+                    } else if (raw.includes('=')) {
+                        id = raw.split('=')[1];
+                    } else if (raw.length > 3) {
+                        id = raw;
                     }
                 }
                 return { id, ser };
@@ -1317,8 +1392,12 @@
 
                 const { id, ser } = parseUrlParams();
                 if (id) {
-                    // Match by full id or partial match
-                    const match = allMatches.find(m => String(m.id || '').toLowerCase() === id.toLowerCase() || String(m.id || '').includes(id));
+                    const cleanId = decodeURIComponent(id).trim().toLowerCase();
+                    // Match by full id, match_id, or title keywords
+                    let match = allMatches.find(m => String(m.id || '').toLowerCase() === cleanId || String(m.match_id || '').toLowerCase() === cleanId);
+                    if (!match) {
+                        match = allMatches.find(m => String(m.id || '').toLowerCase().includes(cleanId) || (m.event_name || '').toLowerCase().includes(cleanId));
+                    }
                     if (match) {
                         playMatch(match.id, ser);
                     }
