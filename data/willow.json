@@ -1,7 +1,7 @@
 {
-  "last_updated": "10/18/2026, 2:50:05 PM IST",
+  "last_updated": "10/18/2026, 3:24:12 PM IST",
   "sources_checked": 6,
-  "sources_active": 3,
+  "sources_active": 4,
   "Matches": [
     {
       "id": "smart-modified-tour-at-north-wilkesboro-motor-speedway",
@@ -45,10 +45,14 @@
       "status": "LIVE",
       "time": "LIVE NOW",
       "sport": "Cricket",
-      "drm_key": "",
+      "drm_key": "783624418a73874b1bacbd79dda56c44:9c3a8a06ed069e28aa86c5e22dfeae67",
       "streams": [
         {
-          "name": "Willow HD",
+          "name": "Willow HD - NO IOS",
+          "url": "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9ldmVudC1kZWNvZGVyLWxpdGUubG92YWJsZS5hcHAvYXVzdHJhbGlhLXRvdXItb2Ytc291dGgtYWZyaWNhLTIwMjYtMm5kLXRlc3Qtc291dGgtYWZyaWNhLXZzLWF1c3RyYWxpYS9CMEhGV1dKV0g2"
+        },
+        {
+          "name": "Willow Cricket HD",
           "url": "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng"
         },
         {
@@ -65,10 +69,10 @@
         }
       ],
       "CnpTV": {
-        "fastly_server1": "",
-        "amazon_server1": "",
-        "akamai_server1": "",
-        "cloudfront_server1": "",
+        "fastly_server1": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/qs5pyspzlo/out/v1/3ef8ed04d65740bab473e63afb981a30/cenc.mpd",
+        "amazon_server1": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/qs5pyspzlo/out/v1/3ef8ed04d65740bab473e63afb981a30/cenc.mpd",
+        "akamai_server1": "https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/qs5pyspzlo/out/v1/3ef8ed04d65740bab473e63afb981a30/cenc.mpd",
+        "cloudfront_server1": "https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/qs5pyspzlo/out/v1/3ef8ed04d65740bab473e63afb981a30/cenc.mpd",
         "fastly_server2": "",
         "amazon_server2": "",
         "akamai_server2": "",
@@ -88,8 +92,12 @@
       "status": "LIVE",
       "time": "LIVE NOW • 2:30 PM IST",
       "sport": "Cricket",
-      "drm_key": "",
+      "drm_key": "012110afbe9bdf40e7da3cc766ad041e:b2b91f89d2b223b349208e44e5ff49da",
       "streams": [
+        {
+          "name": "Willow HD - NO IOS",
+          "url": "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9ldmVudC1kZWNvZGVyLWxpdGUubG92YWJsZS5hcHAvcGFraXN0YW4tb2RpLXRyaS1zZXJpZXMtMjAyNi0xc3QtbWF0Y2gtcGFraXN0YW4tdnMtc3JpLWxhbmthL0IwSE1RTDROSlM"
+        },
         {
           "name": "Willow Cricket 2",
           "url": "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvMTRxdWF3ZDUtODgxOQ"
@@ -108,10 +116,10 @@
         }
       ],
       "CnpTV": {
-        "fastly_server1": "",
-        "amazon_server1": "",
-        "akamai_server1": "",
-        "cloudfront_server1": "",
+        "fastly_server1": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/886jnqvhnx/out/v1/c3fafabc2248406a87537176ca13a389/cenc.mpd",
+        "amazon_server1": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/886jnqvhnx/out/v1/c3fafabc2248406a87537176ca13a389/cenc.mpd",
+        "akamai_server1": "https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/886jnqvhnx/out/v1/c3fafabc2248406a87537176ca13a389/cenc.mpd",
+        "cloudfront_server1": "https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/886jnqvhnx/out/v1/c3fafabc2248406a87537176ca13a389/cenc.mpd",
         "fastly_server2": "",
         "amazon_server2": "",
         "akamai_server2": "",
