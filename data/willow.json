@@ -1,39 +1,8 @@
 {
-  "last_updated": "10/20/2026, 11:26:35 PM IST",
+  "last_updated": "10/21/2026, 12:24:00 AM IST",
   "sources_checked": 6,
   "sources_active": 6,
   "Matches": [
-    {
-      "id": "B0HKMGSFBW",
-      "match_id": "B0HKMGSFBW",
-      "event_name": "Zimbabwe Women tour of India 2026 - 3rd T20I - India Women vs Zimbabwe Women",
-      "title": "Zimbabwe Women tour of India 2026 - 3rd T20I - India Women vs Zimbabwe Women",
-      "synopsis": "Zimbabwe Women tour of India 2026 - 3rd T20I - India Women vs Zimbabwe Women",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.6b4fa639-76c1-4aff-bf00-aa2a560eb3a2/3/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "cover_image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.6b4fa639-76c1-4aff-bf00-aa2a560eb3a2/3/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "LIVE",
-      "time": "Upcoming",
-      "sport": "Cricket",
-      "drm_key": "77d1b790dcdefadfdd7f53df877b08a4:dbc8074a1b65f4a12b58eea47f17c17f",
-      "streams": [
-        {
-          "name": "Willow HD - NO IOS",
-          "url": "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9ldmVudC1kZWNvZGVyLWxpdGUubG92YWJsZS5hcHAvemltYmFid2Utd29tZW4tdG91ci1vZi1pbmRpYS0yMDI2LTNyZC10MjBpLWluZGlhLXdvbWVuLXZzLXppbWJhYndlLXdvbWVuL0IwSEtNR1NGQlc"
-        }
-      ],
-      "CnpTV": {
-        "fastly_server1": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/xxcki87hmi/out/v1/f215fd515a544d8586fe506b03d432a5/cenc.mpd",
-        "amazon_server1": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/xxcki87hmi/out/v1/f215fd515a544d8586fe506b03d432a5/cenc.mpd",
-        "akamai_server1": "https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/xxcki87hmi/out/v1/f215fd515a544d8586fe506b03d432a5/cenc.mpd",
-        "cloudfront_server1": "https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/xxcki87hmi/out/v1/f215fd515a544d8586fe506b03d432a5/cenc.mpd",
-        "fastly_server2": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/xbpbqa6j8t/out/v1/4866c32a2cc34d94a4adcd18c7b3b9a1/cenc.mpd",
-        "amazon_server2": "https://otte.cache.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/xbpbqa6j8t/out/v1/4866c32a2cc34d94a4adcd18c7b3b9a1/cenc.mpd",
-        "akamai_server2": "https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/xbpbqa6j8t/out/v1/4866c32a2cc34d94a4adcd18c7b3b9a1/cenc.mpd",
-        "cloudfront_server2": "https://ss-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/xbpbqa6j8t/out/v1/4866c32a2cc34d94a4adcd18c7b3b9a1/cenc.mpd"
-      },
-      "stream_url_alpha": {},
-      "stream_url_bravo": {}
-    },
     {
       "id": "B0HFWWJWH6",
       "match_id": "B0HFWWJWH6",
@@ -546,6 +515,32 @@
       "stream_url_bravo": {}
     },
     {
+      "id": "B0HNGCKJ18",
+      "match_id": "B0HNGCKJ18",
+      "event_name": "Womens Big Bash League 2026 - 5th Match - Perth Scorchers Women vs Melbourne Renegades Women",
+      "title": "Womens Big Bash League 2026 - 5th Match - Perth Scorchers Women vs Melbourne Renegades Women",
+      "synopsis": "Womens Big Bash League 2026 - 5th Match - Perth Scorchers Women vs Melbourne Renegades Women",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.473de08a-bbf3-4dd2-9f27-d805debb9f93/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "cover_image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.473de08a-bbf3-4dd2-9f27-d805debb9f93/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Upcoming",
+      "sport": "Cricket",
+      "drm_key": "",
+      "streams": [],
+      "CnpTV": {
+        "fastly_server1": "",
+        "amazon_server1": "",
+        "akamai_server1": "",
+        "cloudfront_server1": "",
+        "fastly_server2": "",
+        "amazon_server2": "",
+        "akamai_server2": "",
+        "cloudfront_server2": ""
+      },
+      "stream_url_alpha": {},
+      "stream_url_bravo": {}
+    },
+    {
       "id": "B0HMQXVDYY",
       "match_id": "B0HMQXVDYY",
       "event_name": "Sabah vs. Dortmund",
@@ -648,6 +643,70 @@
       },
       "stream_url_alpha": {},
       "stream_url_bravo": {}
+    },
+    {
+      "id": "B0HJL459BY",
+      "match_id": "B0HJL459BY",
+      "event_name": "Oct 20 - UTR PTT Newport Beach",
+      "title": "Oct 20 - UTR PTT Newport Beach",
+      "synopsis": "Oct 20 - UTR PTT Newport Beach",
+      "image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.332aec39-23b7-4298-a308-ebfcc517ac67/3/BOXART-16X9/en-US._UR1920,1080_SX624_FMpng_.png",
+      "cover_image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.332aec39-23b7-4298-a308-ebfcc517ac67/3/BOXART-16X9/en-US._UR1920,1080_SX624_FMpng_.png",
+      "status": "LIVE",
+      "time": "LIVE NOW",
+      "sport": "Cricket",
+      "drm_key": "637f9f8bcaf6fdfb0d04d4cd64b882fb:9bf8f2b6774a6f85b291df4cb39e9a1d",
+      "streams": [],
+      "CnpTV": {
+        "fastly_server1": "",
+        "amazon_server1": "",
+        "akamai_server1": "",
+        "cloudfront_server1": "",
+        "fastly_server2": "",
+        "amazon_server2": "",
+        "akamai_server2": "",
+        "cloudfront_server2": ""
+      },
+      "stream_url_alpha": {},
+      "stream_url_bravo": {}
+    },
+    {
+      "id": "B0HKMGSFBW",
+      "match_id": "B0HKMGSFBW",
+      "event_name": "Zimbabwe Women tour of India 2026 - 3rd T20I - India Women vs Zimbabwe Women",
+      "title": "Zimbabwe Women tour of India 2026 - 3rd T20I - India Women vs Zimbabwe Women",
+      "synopsis": "Zimbabwe Women tour of India 2026 - 3rd T20I - India Women vs Zimbabwe Women",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.6b4fa639-76c1-4aff-bf00-aa2a560eb3a2/3/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "cover_image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.6b4fa639-76c1-4aff-bf00-aa2a560eb3a2/3/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "LIVE",
+      "time": "7 PM BDT",
+      "sport": "Cricket",
+      "drm_key": "77d1b790dcdefadfdd7f53df877b08a4:dbc8074a1b65f4a12b58eea47f17c17f",
+      "streams": [],
+      "CnpTV": {
+        "fastly_server1": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/xxcki87hmi/out/v1/f215fd515a544d8586fe506b03d432a5/cenc.mpd",
+        "amazon_server1": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/xxcki87hmi/out/v1/f215fd515a544d8586fe506b03d432a5/cenc.mpd",
+        "akamai_server1": "https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/xxcki87hmi/out/v1/f215fd515a544d8586fe506b03d432a5/cenc.mpd",
+        "cloudfront_server1": "https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/xxcki87hmi/out/v1/f215fd515a544d8586fe506b03d432a5/cenc.mpd",
+        "fastly_server2": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/xbpbqa6j8t/out/v1/4866c32a2cc34d94a4adcd18c7b3b9a1/cenc.mpd",
+        "amazon_server2": "https://otte.cache.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/xbpbqa6j8t/out/v1/4866c32a2cc34d94a4adcd18c7b3b9a1/cenc.mpd",
+        "akamai_server2": "https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/xbpbqa6j8t/out/v1/4866c32a2cc34d94a4adcd18c7b3b9a1/cenc.mpd",
+        "cloudfront_server2": "https://ss-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/xbpbqa6j8t/out/v1/4866c32a2cc34d94a4adcd18c7b3b9a1/cenc.mpd"
+      },
+      "stream_url_alpha": {
+        "Fistly Server": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/xxcki87hmi/out/v1/f215fd515a544d8586fe506b03d432a5/cenc.mpd",
+        "Amazon Server": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/xxcki87hmi/out/v1/f215fd515a544d8586fe506b03d432a5/cenc.mpd",
+        "Akamai Server": "https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/xxcki87hmi/out/v1/f215fd515a544d8586fe506b03d432a5/cenc.mpd",
+        "Cloudfront Server 1": "https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/xxcki87hmi/out/v1/f215fd515a544d8586fe506b03d432a5/cenc.mpd",
+        "Cloudfront Server 2": "https://dash-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/xxcki87hmi/out/v1/f215fd515a544d8586fe506b03d432a5/cenc.mpd"
+      },
+      "stream_url_bravo": {
+        "Fistly Server": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/xbpbqa6j8t/out/v1/4866c32a2cc34d94a4adcd18c7b3b9a1/cenc.mpd",
+        "Amazon Server": "https://otte.cache.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/xbpbqa6j8t/out/v1/4866c32a2cc34d94a4adcd18c7b3b9a1/cenc.mpd",
+        "Akamai Server": "https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/xbpbqa6j8t/out/v1/4866c32a2cc34d94a4adcd18c7b3b9a1/cenc.mpd",
+        "Cloudfront Server 1": "https://ss-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/xbpbqa6j8t/out/v1/4866c32a2cc34d94a4adcd18c7b3b9a1/cenc.mpd",
+        "Cloudfront Server 2": "https://dash-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/xbpbqa6j8t/out/v1/4866c32a2cc34d94a4adcd18c7b3b9a1/cenc.mpd"
+      }
     },
     {
       "id": "B0HLQZ1LGR",
