@@ -1,54 +1,27 @@
 {
-  "last_updated": "10/19/2026, 2:32:36 AM IST",
+  "last_updated": "10/20/2026, 2:07:03 PM IST",
   "sources_checked": 6,
   "sources_active": 6,
   "Matches": [
-    {
-      "id": "B0HN5C4CSG",
-      "match_id": "B0HN5C4CSG",
-      "event_name": "ODI Tri-Nation Series in UAE 2026 - 2nd Match - Afghanistan vs Zimbabwe",
-      "title": "ODI Tri-Nation Series in UAE 2026 - 2nd Match - Afghanistan vs Zimbabwe",
-      "synopsis": "ODI Tri-Nation Series in UAE 2026 - 2nd Match - Afghanistan vs Zimbabwe",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.5efef589-1f64-4d38-aa3b-301bc9215d8f/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "cover_image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.5efef589-1f64-4d38-aa3b-301bc9215d8f/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "LIVE",
-      "time": "Upcoming",
-      "sport": "Cricket",
-      "drm_key": "b63bf9986e63e4f8cc0d3a3fd9fa3e21:5478464224b4593f065df98ad6e48d6b",
-      "streams": [
-        {
-          "name": "Willow HD - NO IOS",
-          "url": "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9ldmVudC1kZWNvZGVyLWxpdGUubG92YWJsZS5hcHAvb2RpLXRyaS1uYXRpb24tc2VyaWVzLWluLXVhZS0yMDI2LTJuZC1tYXRjaC1hZmdoYW5pc3Rhbi12cy16aW1iYWJ3ZS9CMEhONUM0Q1NH"
-        }
-      ],
-      "CnpTV": {
-        "fastly_server1": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/ntgkngsbhm/out/v1/1dd7bec97b924f498f6019abe8b5e46e/cenc.mpd",
-        "amazon_server1": "https://otte.cache.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/ntgkngsbhm/out/v1/1dd7bec97b924f498f6019abe8b5e46e/cenc.mpd",
-        "akamai_server1": "https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/ntgkngsbhm/out/v1/1dd7bec97b924f498f6019abe8b5e46e/cenc.mpd",
-        "cloudfront_server1": "https://ss-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/ntgkngsbhm/out/v1/1dd7bec97b924f498f6019abe8b5e46e/cenc.mpd",
-        "fastly_server2": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/fnparssbf9/out/v1/fd27f9f2ac2a400db81a85b1a22ea66e/cenc.mpd",
-        "amazon_server2": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/fnparssbf9/out/v1/fd27f9f2ac2a400db81a85b1a22ea66e/cenc.mpd",
-        "akamai_server2": "https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/fnparssbf9/out/v1/fd27f9f2ac2a400db81a85b1a22ea66e/cenc.mpd",
-        "cloudfront_server2": "https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/fnparssbf9/out/v1/fd27f9f2ac2a400db81a85b1a22ea66e/cenc.mpd"
-      },
-      "stream_url_alpha": {},
-      "stream_url_bravo": {}
-    },
     {
       "id": "B0HFWWJWH6",
       "match_id": "B0HFWWJWH6",
       "event_name": "Australia tour of South Africa 2026 - 2nd Test - South Africa vs Australia",
       "title": "Australia tour of South Africa 2026 - 2nd Test - South Africa vs Australia",
       "synopsis": "Australia tour of South Africa 2026 - 2nd Test - South Africa vs Australia",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.df9be69a-7bd6-4883-a021-b7e4801a1573/5/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "cover_image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.df9be69a-7bd6-4883-a021-b7e4801a1573/5/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.df9be69a-7bd6-4883-a021-b7e4801a1573/7/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "cover_image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.df9be69a-7bd6-4883-a021-b7e4801a1573/7/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "LIVE",
       "time": "LIVE NOW",
       "sport": "Cricket",
-      "drm_key": "",
+      "drm_key": "080ee04799e134b38da01ba4bfca26b7:e7238b74d5c55457ea611fe541c358aa",
       "streams": [
         {
-          "name": "Willow HD",
+          "name": "Willow HD - NO IOS",
+          "url": "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9ldmVudC1kZWNvZGVyLWxpdGUubG92YWJsZS5hcHAvYXVzdHJhbGlhLXRvdXItb2Ytc291dGgtYWZyaWNhLTIwMjYtMm5kLXRlc3Qtc291dGgtYWZyaWNhLXZzLWF1c3RyYWxpYS9CMEhGV1dKV0g2"
+        },
+        {
+          "name": "Willow Cricket HD",
           "url": "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng"
         },
         {
@@ -65,40 +38,14 @@
         }
       ],
       "CnpTV": {
-        "fastly_server1": "",
-        "amazon_server1": "",
-        "akamai_server1": "",
-        "cloudfront_server1": "",
-        "fastly_server2": "",
-        "amazon_server2": "",
-        "akamai_server2": "",
-        "cloudfront_server2": ""
-      },
-      "stream_url_alpha": {},
-      "stream_url_bravo": {}
-    },
-    {
-      "id": "B0HN5C4CSG",
-      "match_id": "B0HN5C4CSG",
-      "event_name": "ODI Tri-Nation Series in UAE 2026 - 2nd Match - Afghanistan vs Zimbabwe",
-      "title": "ODI Tri-Nation Series in UAE 2026 - 2nd Match - Afghanistan vs Zimbabwe",
-      "synopsis": "ODI Tri-Nation Series in UAE 2026 - 2nd Match - Afghanistan vs Zimbabwe",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.5efef589-1f64-4d38-aa3b-301bc9215d8f/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "cover_image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.5efef589-1f64-4d38-aa3b-301bc9215d8f/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "UPCOMING",
-      "time": "Upcoming",
-      "sport": "Cricket",
-      "drm_key": "",
-      "streams": [],
-      "CnpTV": {
-        "fastly_server1": "",
-        "amazon_server1": "",
-        "akamai_server1": "",
-        "cloudfront_server1": "",
-        "fastly_server2": "",
-        "amazon_server2": "",
-        "akamai_server2": "",
-        "cloudfront_server2": ""
+        "fastly_server1": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/chnnxqauwu/out/v1/dfdb7db2bdf5432aacc28e53343360aa/cenc.mpd",
+        "amazon_server1": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/chnnxqauwu/out/v1/dfdb7db2bdf5432aacc28e53343360aa/cenc.mpd",
+        "akamai_server1": "https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/chnnxqauwu/out/v1/dfdb7db2bdf5432aacc28e53343360aa/cenc.mpd",
+        "cloudfront_server1": "https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/chnnxqauwu/out/v1/dfdb7db2bdf5432aacc28e53343360aa/cenc.mpd",
+        "fastly_server2": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/4kosuavavh/out/v1/9e742bb032404e1fb540828f2aaca55c/cenc.mpd",
+        "amazon_server2": "https://otte.cache.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/4kosuavavh/out/v1/9e742bb032404e1fb540828f2aaca55c/cenc.mpd",
+        "akamai_server2": "https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/4kosuavavh/out/v1/9e742bb032404e1fb540828f2aaca55c/cenc.mpd",
+        "cloudfront_server2": "https://ss-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/4kosuavavh/out/v1/9e742bb032404e1fb540828f2aaca55c/cenc.mpd"
       },
       "stream_url_alpha": {},
       "stream_url_bravo": {}
@@ -109,22 +56,58 @@
       "event_name": "Pakistan ODI Tri-Series 2026 - 2nd Match - Pakistan vs England",
       "title": "Pakistan ODI Tri-Series 2026 - 2nd Match - Pakistan vs England",
       "synopsis": "Pakistan ODI Tri-Series 2026 - 2nd Match - Pakistan vs England",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.abf1e0e9-9f21-4e46-a441-e074eaf2d220/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "cover_image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.abf1e0e9-9f21-4e46-a441-e074eaf2d220/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "UPCOMING",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.abf1e0e9-9f21-4e46-a441-e074eaf2d220/3/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "cover_image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.abf1e0e9-9f21-4e46-a441-e074eaf2d220/3/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "LIVE",
       "time": "Upcoming",
       "sport": "Cricket",
-      "drm_key": "",
-      "streams": [],
+      "drm_key": "69a735880c9bd9c4b32e5bbda6e7d31f:5c80ac6538d99e2fd05fceee6c549138",
+      "streams": [
+        {
+          "name": "Willow HD - NO IOS",
+          "url": "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9ldmVudC1kZWNvZGVyLWxpdGUubG92YWJsZS5hcHAvcGFraXN0YW4tb2RpLXRyaS1zZXJpZXMtMjAyNi0ybmQtbWF0Y2gtcGFraXN0YW4tdnMtZW5nbGFuZC9CMEdMS0s5TEJW"
+        }
+      ],
       "CnpTV": {
-        "fastly_server1": "",
-        "amazon_server1": "",
-        "akamai_server1": "",
-        "cloudfront_server1": "",
+        "fastly_server1": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/h6rrgqdnxb/out/v1/10b57d26728f4bf482f1eef2aa9e9058/cenc.mpd",
+        "amazon_server1": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/h6rrgqdnxb/out/v1/10b57d26728f4bf482f1eef2aa9e9058/cenc.mpd",
+        "akamai_server1": "https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/h6rrgqdnxb/out/v1/10b57d26728f4bf482f1eef2aa9e9058/cenc.mpd",
+        "cloudfront_server1": "https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/h6rrgqdnxb/out/v1/10b57d26728f4bf482f1eef2aa9e9058/cenc.mpd",
         "fastly_server2": "",
         "amazon_server2": "",
         "akamai_server2": "",
         "cloudfront_server2": ""
+      },
+      "stream_url_alpha": {},
+      "stream_url_bravo": {}
+    },
+    {
+      "id": "B0HLKFR7YJ",
+      "match_id": "B0HLKFR7YJ",
+      "event_name": "New Zealand Women tour of Australia 2026 - 2nd T20I - Australia Women vs New Zealand Women",
+      "title": "New Zealand Women tour of Australia 2026 - 2nd T20I - Australia Women vs New Zealand Women",
+      "synopsis": "New Zealand Women tour of Australia 2026 - 2nd T20I - Australia Women vs New Zealand Women",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.2c58ef14-8c26-4d0c-b185-8fc6f476bea3/3/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "cover_image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.2c58ef14-8c26-4d0c-b185-8fc6f476bea3/3/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "LIVE",
+      "time": "Upcoming",
+      "sport": "Cricket",
+      "drm_key": "ff6bbc0fa89d51311428943f62a4a963:baaf14b24baf5bcf71e5f342aea992c0",
+      "streams": [
+        {
+          "name": "Willow HD - NO IOS",
+          "url": "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9ldmVudC1kZWNvZGVyLWxpdGUubG92YWJsZS5hcHAvbmV3LXplYWxhbmQtd29tZW4tdG91ci1vZi1hdXN0cmFsaWEtMjAyNi0ybmQtdDIwaS1hdXN0cmFsaWEtd29tZW4tdnMtbmV3LXplYWxhbmQvQjBITEtGUjdZSg"
+        }
+      ],
+      "CnpTV": {
+        "fastly_server1": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/3qwmeeshe1/out/v1/c3d42e2bf228478ca14d236ae11f8804/cenc.mpd",
+        "amazon_server1": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/3qwmeeshe1/out/v1/c3d42e2bf228478ca14d236ae11f8804/cenc.mpd",
+        "akamai_server1": "https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/3qwmeeshe1/out/v1/c3d42e2bf228478ca14d236ae11f8804/cenc.mpd",
+        "cloudfront_server1": "https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/3qwmeeshe1/out/v1/c3d42e2bf228478ca14d236ae11f8804/cenc.mpd",
+        "fastly_server2": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/pabc4zn8o5/out/v1/59ab1033880d45108fe6ef7e6d493c5a/cenc.mpd",
+        "amazon_server2": "https://otte.cache.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/pabc4zn8o5/out/v1/59ab1033880d45108fe6ef7e6d493c5a/cenc.mpd",
+        "akamai_server2": "https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/pabc4zn8o5/out/v1/59ab1033880d45108fe6ef7e6d493c5a/cenc.mpd",
+        "cloudfront_server2": "https://ss-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/pabc4zn8o5/out/v1/59ab1033880d45108fe6ef7e6d493c5a/cenc.mpd"
       },
       "stream_url_alpha": {},
       "stream_url_bravo": {}
@@ -447,17 +430,17 @@
       "stream_url_bravo": {}
     },
     {
-      "id": "B0HMJJZY68",
-      "match_id": "B0HMJJZY68",
-      "event_name": "Elite: Midwest Regional 1, Round Robin Match Play",
-      "title": "Elite: Midwest Regional 1, Round Robin Match Play",
-      "synopsis": "Elite: Midwest Regional 1, Round Robin Match Play",
-      "image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.622252cf-e883-46eb-bbeb-4c3902a5709f/6/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpg",
-      "cover_image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.622252cf-e883-46eb-bbeb-4c3902a5709f/6/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpg",
-      "status": "LIVE",
-      "time": "LIVE NOW",
+      "id": "B0HLVY22CY",
+      "match_id": "B0HLVY22CY",
+      "event_name": "Sri Lanka tour of Pakistan 2026 - 1st Test - Pakistan vs Sri Lanka",
+      "title": "Sri Lanka tour of Pakistan 2026 - 1st Test - Pakistan vs Sri Lanka",
+      "synopsis": "Sri Lanka tour of Pakistan 2026 - 1st Test - Pakistan vs Sri Lanka",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.c65dfbd7-e120-4b1a-ac5c-60c3981498b0/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "cover_image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.c65dfbd7-e120-4b1a-ac5c-60c3981498b0/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "UPCOMING",
+      "time": "Upcoming",
       "sport": "Cricket",
-      "drm_key": "d9623774ac5c8c351aafe97c5fe70267:5164e6d05164a2d65fa8fcc962aa4861",
+      "drm_key": "",
       "streams": [],
       "CnpTV": {
         "fastly_server1": "",
@@ -473,13 +456,39 @@
       "stream_url_bravo": {}
     },
     {
-      "id": "B0HKQ6YPL8",
-      "match_id": "B0HKQ6YPL8",
-      "event_name": "World Skate Championships",
-      "title": "World Skate Championships",
-      "synopsis": "World Skate Championships",
-      "image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.5e4f3b99-6276-4aae-9fca-aae0fb169471/9/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpg",
-      "cover_image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.5e4f3b99-6276-4aae-9fca-aae0fb169471/9/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpg",
+      "id": "B0HKSHKSVR",
+      "match_id": "B0HKSHKSVR",
+      "event_name": "Tennis Today Live-Osaka-WTA, Ningbo-WTA, Brussels-ATP & Almaty-ATP Early Rounds",
+      "title": "Tennis Today Live-Osaka-WTA, Ningbo-WTA, Brussels-ATP & Almaty-ATP Early Rounds",
+      "synopsis": "Tennis Today Live-Osaka-WTA, Ningbo-WTA, Brussels-ATP & Almaty-ATP Early Rounds",
+      "image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.3086e688-1235-4cd1-8bce-fdab18175620/5/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpeg",
+      "cover_image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.3086e688-1235-4cd1-8bce-fdab18175620/5/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpeg",
+      "status": "LIVE",
+      "time": "LIVE NOW",
+      "sport": "Cricket",
+      "drm_key": "59f50679c9e60963bd0cb6640992aaaa:8685817c4d31f322e08940feeae2855a",
+      "streams": [],
+      "CnpTV": {
+        "fastly_server1": "",
+        "amazon_server1": "",
+        "akamai_server1": "",
+        "cloudfront_server1": "",
+        "fastly_server2": "",
+        "amazon_server2": "",
+        "akamai_server2": "",
+        "cloudfront_server2": ""
+      },
+      "stream_url_alpha": {},
+      "stream_url_bravo": {}
+    },
+    {
+      "id": "B0HF5VDZP4",
+      "match_id": "B0HF5VDZP4",
+      "event_name": "Australia vs. New Zealand",
+      "title": "Australia vs. New Zealand",
+      "synopsis": "Australia vs. New Zealand",
+      "image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.6b4b54f4-0be6-4eb7-b2bc-91ba70433024/4/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpeg",
+      "cover_image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.6b4b54f4-0be6-4eb7-b2bc-91ba70433024/4/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpeg",
       "status": "LIVE",
       "time": "LIVE NOW",
       "sport": "Cricket",
@@ -499,17 +508,17 @@
       "stream_url_bravo": {}
     },
     {
-      "id": "B0HKYGD7W4",
-      "match_id": "B0HKYGD7W4",
-      "event_name": "Juventus vs. Lazio",
-      "title": "Juventus vs. Lazio",
-      "synopsis": "Juventus vs. Lazio",
-      "image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.e0429092-ca48-4c7e-9c24-6b4047adeb6b/3/BOXART-16X9/en-US/1920x1080._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMpng_.png",
-      "cover_image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.e0429092-ca48-4c7e-9c24-6b4047adeb6b/3/BOXART-16X9/en-US/1920x1080._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMpng_.png",
+      "id": "B0HN22TLXZ",
+      "match_id": "B0HN22TLXZ",
+      "event_name": "Oct 20 - UTR PTT Carvoeiro",
+      "title": "Oct 20 - UTR PTT Carvoeiro",
+      "synopsis": "Oct 20 - UTR PTT Carvoeiro",
+      "image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.39b4bc65-2e38-4c00-a330-c824ea657078/3/BOXART-16X9/en-US._UR1920,1080_SX624_FMpng_.png",
+      "cover_image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.39b4bc65-2e38-4c00-a330-c824ea657078/3/BOXART-16X9/en-US._UR1920,1080_SX624_FMpng_.png",
       "status": "LIVE",
       "time": "LIVE NOW",
       "sport": "Cricket",
-      "drm_key": "d9623774ac5c8c351aafe97c5fe70267:5164e6d05164a2d65fa8fcc962aa4861",
+      "drm_key": "f52f307cc65718e8120122cc5c8cbfab:415be1c48464c433592d486586ea2884",
       "streams": [],
       "CnpTV": {
         "fastly_server1": "",
@@ -525,17 +534,17 @@
       "stream_url_bravo": {}
     },
     {
-      "id": "B0HKFYBF77",
-      "match_id": "B0HKFYBF77",
-      "event_name": "Oct 18 - UTR PTT Newport Beach",
-      "title": "Oct 18 - UTR PTT Newport Beach",
-      "synopsis": "Oct 18 - UTR PTT Newport Beach",
-      "image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.a9df70c4-c45c-438b-bf0a-98844e8ff7aa/5/BOXART-16X9/en-US._UR1920,1080_SX624_FMpng_.png",
-      "cover_image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.a9df70c4-c45c-438b-bf0a-98844e8ff7aa/5/BOXART-16X9/en-US._UR1920,1080_SX624_FMpng_.png",
+      "id": "B0HLXBPPY3",
+      "match_id": "B0HLXBPPY3",
+      "event_name": "World Beach Sprint Finals, Day 1",
+      "title": "World Beach Sprint Finals, Day 1",
+      "synopsis": "World Beach Sprint Finals, Day 1",
+      "image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.330e3123-a9d6-4b3b-9b8f-b54aa4173c1a/5/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpeg",
+      "cover_image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.330e3123-a9d6-4b3b-9b8f-b54aa4173c1a/5/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpeg",
       "status": "LIVE",
       "time": "LIVE NOW",
       "sport": "Cricket",
-      "drm_key": "8cea8fa1b2ad3d9c7c093e539cb686fc:c90e4202c7cb3befbbae889ed57fc8de",
+      "drm_key": "5d6c647cd1b56550bd34349b68ec8c82:09f952780ba5b30bc222439aaa3ac09b",
       "streams": [],
       "CnpTV": {
         "fastly_server1": "",
