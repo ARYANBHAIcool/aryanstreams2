@@ -204,7 +204,7 @@
             'star2hindihd': 'H2HD', 'star2hindi': 'H2SD',
             'ss1h': 'H1HD', 'ss1': 'E1HD', 'ss1tam': 'T1HD', 'ss1tel': 'TE1HD', 'ss1kan': 'KA1SD',
             'ss2': 'E2HD', 'ss2h': 'H2HD', 'ss2tam': 'S2HD', 'ss2tel': 'TE2HD', 'ss2kan': 'KA2SD',
-            'ss3': 'SS3', 'ssselect1': 'SE1HD', 'ssselect2': 'SE2HD', 'sskhel': 'H1SD',
+            'ss3': 'SS3', 'ssselect1': 'SE1HD', 'ssselect2': 'SE2HD', 'select1': 'SE1HD', 'select2': 'SE2HD', 'sskhel': 'H1SD',
             'h1hd': 'H1HD', 'e1hd': 'E1HD', 'h2hd': 'H2HD', 'e2hd': 'E2HD',
             's2hd': 'S2HD', 'te2hd': 'TE2HD', 'ka1sd': 'KA1SD', 'ka2sd': 'KA2SD',
             'se1hd': 'SE1HD', 'se2hd': 'SE2HD', 'h1sd': 'H1SD',
@@ -224,6 +224,8 @@
         };
 
         var FALLBACK_MAP = {
+            'SE1HD': ['SE1', '460', 'select1', 'ssselect1'],
+            'SE2HD': ['SE2', '461', 'select2', 'ssselect2'],
             '162': ['3531', 'sten1', 'sony1', '162'],
             '891': ['3532', 'sten2', 'sony2', '891'],
             '892': ['3533', 'sten3', 'sony3', '892'],
@@ -341,6 +343,24 @@
                 } catch(e) {}
             }
 
+            
+            // 3. Live Sports JSON Real-time Token Sync (Sonu Sports with Star Select 1 & 2)
+            try {
+                var rSonu = await fetch('https://sonujson-v5.pages.dev/Data/sports.json?_=' + Date.now(), { cache: 'no-store' });
+                if (rSonu.ok) {
+                    var dSonu = await rSonu.json();
+                    var listSonu = (dSonu && dSonu.channels) || (Array.isArray(dSonu) ? dSonu : []);
+                    var found = listSonu.find(function(c) {
+                        var cId = String(c.id || '').toLowerCase();
+                        var cCh = String(c.channel_id || '').toLowerCase();
+                        return cId === normId || cCh === normId || (workerKey && cId === workerKey) || (mapped && cId === mapped);
+                    });
+                    if (found && found.cookie && isCookieValid(found.cookie, found.cookie_expire)) {
+                        return found.cookie.trim();
+                    }
+                }
+            } catch(e) {}
+
             return null;
         }
 
@@ -418,6 +438,7 @@
 
         async function fetchChannelData(id) {
             var endpoints = [
+                'https://sonujson-v5.pages.dev/Data/sports.json',
                 'data/sports.json',
                 'https://sportlink-playlist.pages.dev/zio.m3u'
             ];
@@ -497,6 +518,7 @@
                                     key: key,
                                     clearKeys: clearKeys,
                                     cookie: cookie,
+                                    cookie_expire: expire,
                                     source: endpoints[i]
                                 };
                                 if (!firstCandidate) {

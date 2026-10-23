@@ -218,6 +218,45 @@ async function syncSports() {
                 const nowSec = Math.floor(Date.now() / 1000);
                 const cookieCache = {};
                 let refreshedCookiesCount = 0;
+                // Sync fresh tokens from sonujson (Star Sports Select 1/2 HD & SD, etc.)
+                try {
+                    console.log('Fetching live backup sports tokens from https://sonujson-v5.pages.dev/Data/sports.json ...');
+                    const sonuRaw = await fetchEndpoint('https://sonujson-v5.pages.dev/Data/sports.json');
+                    const sonuParsed = JSON.parse(sonuRaw);
+                    const sonuChannels = sonuParsed.channels || [];
+                    const sonuMap = new Map();
+                    sonuChannels.forEach(c => {
+                        if (c.id) sonuMap.set(c.id.toLowerCase(), c);
+                        if (c.channel_id) sonuMap.set(String(c.channel_id).toLowerCase(), c);
+                    });
+
+                    for (const ch of channels) {
+                        const aliases = ch.aliases || (ch.channel_id && JIO_MAP[ch.channel_id]) || [ch.id || '', ch.channel_id || ''];
+                        let match = null;
+                        for (const a of aliases) {
+                            if (a && sonuMap.has(String(a).toLowerCase())) {
+                                match = sonuMap.get(String(a).toLowerCase());
+                                break;
+                            }
+                        }
+                        if (match && match.cookie && match.cookie_expire && match.cookie_expire > nowSec) {
+                            if (!ch.cookie_expire || match.cookie_expire > ch.cookie_expire) {
+                                ch.cookie = match.cookie;
+                                ch.cookie_expire = match.cookie_expire;
+                                if (match.sonuxs && match.sonuxs.length > 0) {
+                                    ch.sonuxs = match.sonuxs;
+                                }
+                                if (match.stream_url) {
+                                    ch.stream_url = match.stream_url;
+                                }
+                                refreshedCookiesCount++;
+                            }
+                        }
+                    }
+                } catch(e) {
+                    console.log('Note: sonujson live token merge skipped:', e.message);
+                }
+
 
                 for (const ch of channels) {
                     const id = String(ch.id || ch.channel_id || '').toLowerCase();
