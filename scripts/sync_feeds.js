@@ -49,8 +49,11 @@ const JIO_MAP = {
     '891':  ['891', 'STEN2', 'ten2hd', 'ten2', 'sony2', 'sony_ten2_hd', 's2hd'],
     '892':  ['892', 'STEN3', 'ten3hd', 'ten3', 'sony3', 'sony_ten3_hd', 's3hindihd'],
     '3397': ['3514', '3397', 'STENT', 'ten4hd', 'ten4', 'sony4', 's4tamil'],
+    '3514': ['3514', '3397', 'STENT', 'ten4hd', 'ten4', 'sony4', 's4tamil'],
     '3398': ['1773', '3398', 'STENTU', 'ten4telugu', 's4telugu'],
+    '1773': ['1773', '3398', 'STENTU', 'ten4telugu', 's4telugu'],
     '3399': ['155', '3399', 'STEN5', 'ten5hd', 'ten5', 'sony5', 'sony_ten5_hd', 's5hd'],
+    '155':  ['155', '3399', 'STEN5', 'ten5hd', 'ten5', 'sony5', 'sony_ten5_hd', 's5hd'],
 
     // DD Sports & Others
     '204':  ['204', 'dds', 'ddsports']
@@ -239,18 +242,25 @@ async function syncSports() {
                                 break;
                             }
                         }
-                        if (match && match.cookie && match.cookie_expire && match.cookie_expire > nowSec) {
-                            if (!ch.cookie_expire || match.cookie_expire > ch.cookie_expire) {
+                        if (match) {
+                            const isFreshCookie = match.cookie && match.cookie_expire && match.cookie_expire > nowSec;
+                            if (isFreshCookie && (!ch.cookie_expire || match.cookie_expire >= ch.cookie_expire)) {
                                 ch.cookie = match.cookie;
                                 ch.cookie_expire = match.cookie_expire;
-                                if (match.sonuxs && match.sonuxs.length > 0) {
-                                    ch.sonuxs = match.sonuxs;
-                                }
-                                if (match.stream_url) {
-                                    ch.stream_url = match.stream_url;
-                                }
                                 refreshedCookiesCount++;
                             }
+                            if (match.stream_url) {
+                                ch.stream_url = match.stream_url;
+                            }
+                            if (match.sonuxs && match.sonuxs.length > 0) {
+                                ch.sonuxs = match.sonuxs;
+                            } else if (match.key_id && match.key) {
+                                ch.key_id = match.key_id.toLowerCase();
+                                ch.key = match.key.toLowerCase();
+                                ch.sonuxs = [`${ch.key_id}:${ch.key}`];
+                            }
+                            if (match.key_id) ch.key_id = match.key_id.toLowerCase();
+                            if (match.key) ch.key = match.key.toLowerCase();
                         }
                     }
                 } catch(e) {
