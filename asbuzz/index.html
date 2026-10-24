@@ -835,8 +835,8 @@
                 const cnp = m.CnpTV || {};
                 const hasStreams = Object.keys(cnp).some(k => typeof cnp[k] === 'string' && cnp[k].trim().length > 0 && !cnp[k].includes('pages.dev'));
                 const hasDirect = Array.isArray(m.streams) && m.streams.length > 0;
-                const isTodayActive = /2nd Test.*South Africa vs Australia|South Africa vs Australia.*2nd Test|1st Match.*Pakistan vs Sri Lanka|Pakistan vs Sri Lanka.*1st Match/i.test(m.event_name || '');
-                return status === 'LIVE' || hasStreams || (hasDirect && isTodayActive);
+                const isSeriesActive = /south africa.*australia|australia.*south africa|pakistan.*sri lanka|sri lanka.*pakistan|pakistan.*england|england.*pakistan|india.*zimbabwe|zimbabwe.*india|new zealand.*india|india.*new zealand/i.test(m.event_name || m.title || '');
+                return status === 'LIVE' || hasStreams || hasDirect || isSeriesActive;
             }
 
             // Sort matches so live matches always stay on top
@@ -977,6 +977,22 @@
                 return null;
             }
 
+            // Cricket Original Broadcast Feeds (Direct Pure Trend48 Web Players)
+            const CRICKET_ORIGINALS = {
+                willow_usa: { name: 'Willow Cricket HD (Server 1)', url: 'https://trend48.st/live-tv?ch=willow-usa' },
+                willow2: { name: 'Willow Cricket 2 (Server 2)', url: 'https://trend48.st/live-tv?ch=willowxtra-usa' },
+                sky_cricket: { name: 'Sky Sports Cricket (UK)', url: 'https://trend48.st/live-tv?ch=skysportscricket-uk' },
+                fox_cricket: { name: 'Fox Sports 501 (Cricket)', url: 'https://trend48.st/live-tv?ch=foxsports501-au' },
+                supersport_cricket: { name: 'SuperSport Cricket (ZA)', url: 'https://trend48.st/live-tv?ch=supersportcricket-za' },
+                asports: { name: 'A Sports HD (Pakistan)', url: 'https://trend48.st/live-tv?ch=asports-pk' },
+                tensports_pk: { name: 'Ten Sports PK', url: 'https://trend48.st/live-tv?ch=tensports-pk' },
+                sony_sports: { name: 'Sony Sports Ten 1 HD', url: 'https://trend48.st/live-tv?ch=sonyten1-in' },
+                sony_sports_3: { name: 'Sony Sports Ten 3 HD', url: 'https://trend48.st/live-tv?ch=sonyten3-in' },
+                sony_sports_5: { name: 'Sony Sports Ten 5 HD', url: 'https://trend48.st/live-tv?ch=sonyten5-in' },
+                ptv_sports: { name: 'PTV Sports HD', url: 'https://trend48.st/live-tv?ch=ptvsports-pk' },
+                star_sports1: { name: 'Star Sports 1 HD', url: 'https://trend48.st/live-tv?ch=starsports1-in' }
+            };
+
             // Build Unified Stream / Server List for a Match
             function getMatchStreamList(m) {
                 if (!m) return [];
@@ -984,25 +1000,71 @@
                 const availableMpd = SERVER_CONFIG.filter(s => !!cnp[s.key] && typeof cnp[s.key] === 'string' && cnp[s.key].startsWith('http') && !cnp[s.key].includes('pages.dev'));
                 let directStreams = Array.isArray(m.streams) ? m.streams.slice() : [];
 
+                // Clean out any legacy adware / popup links
+                directStreams = directStreams.filter(st => st && st.url && !st.url.includes('bintv-sources') && !st.url.includes('pages.dev'));
+
+                const title = m.event_name || m.title || '';
+                const isAusVsSa = /south africa.*australia|australia.*south africa/i.test(title);
+                const isPakVsSl = /pakistan.*sri lanka|sri lanka.*pakistan/i.test(title);
+                const isPakVsEng = /pakistan.*england|england.*pakistan/i.test(title);
+                const isIndVsZim = /india.*zimbabwe|zimbabwe.*india/i.test(title);
+                const isNzVsInd = /new zealand.*india|india.*new zealand/i.test(title);
+                const isWbbl = /wbbl|womens big bash|big bash/i.test(title);
+
                 if (directStreams.length === 0) {
-                    if (/2nd Test.*South Africa vs Australia|South Africa vs Australia.*2nd Test/i.test(m.event_name || '')) {
+                    if (isAusVsSa) {
                         directStreams = [
-                            { name: 'Willow Cricket HD', url: 'https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvc3BkOGdwb2gtNjU4Ng' },
-                            { name: 'Willow USA (Trend48)', url: 'https://trend48.st/live-tv?ch=willow-usa' },
-                            { name: 'Fox Sports 501', url: 'https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvaW1pZm5lb2otMTQxNw' },
-                            { name: 'Sky Sports Cricket', url: 'https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvcWZ4NDAzOHAtOTU' }
+                            CRICKET_ORIGINALS.willow_usa,
+                            CRICKET_ORIGINALS.fox_cricket,
+                            CRICKET_ORIGINALS.supersport_cricket,
+                            CRICKET_ORIGINALS.sky_cricket,
+                            CRICKET_ORIGINALS.star_sports1
                         ];
-                    } else if (/1st Match.*Pakistan vs Sri Lanka|Pakistan vs Sri Lanka.*1st Match/i.test(m.event_name || '')) {
+                    } else if (isPakVsSl) {
                         directStreams = [
-                            { name: 'Willow Cricket 2', url: 'https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvMTRxdWF3ZDUtODgxOQ' },
-                            { name: 'Sky Sports Cricket', url: 'https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvcWZ4NDAzOHAtOTU' },
-                            { name: 'Sony Sports Network', url: 'https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvdG9hcm5hbzMtNTI1' },
-                            { name: 'Willow USA (Trend48)', url: 'https://trend48.st/live-tv?ch=willow-usa' }
+                            CRICKET_ORIGINALS.willow2,
+                            CRICKET_ORIGINALS.asports,
+                            CRICKET_ORIGINALS.tensports_pk,
+                            CRICKET_ORIGINALS.sky_cricket,
+                            CRICKET_ORIGINALS.sony_sports,
+                            CRICKET_ORIGINALS.ptv_sports
                         ];
-                    } else if (/2nd T20I.*India Women vs Zimbabwe Women|India Women vs Zimbabwe Women.*2nd T20I/i.test(m.event_name || '')) {
+                    } else if (isPakVsEng) {
                         directStreams = [
-                            { name: 'Sony Sports Network', url: 'https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvdG9hcm5hbzMtNTI1' },
-                            { name: 'Sony Sports Network 3', url: 'https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvaWl0MGU3cXMtNjU2MA' }
+                            CRICKET_ORIGINALS.sky_cricket,
+                            CRICKET_ORIGINALS.willow_usa,
+                            CRICKET_ORIGINALS.asports,
+                            CRICKET_ORIGINALS.tensports_pk,
+                            CRICKET_ORIGINALS.sony_sports
+                        ];
+                    } else if (isIndVsZim) {
+                        directStreams = [
+                            CRICKET_ORIGINALS.sony_sports,
+                            CRICKET_ORIGINALS.sony_sports_3,
+                            CRICKET_ORIGINALS.sony_sports_5,
+                            CRICKET_ORIGINALS.willow_usa
+                        ];
+                    } else if (isNzVsInd) {
+                        directStreams = [
+                            CRICKET_ORIGINALS.willow_usa,
+                            CRICKET_ORIGINALS.sky_cricket,
+                            CRICKET_ORIGINALS.sony_sports
+                        ];
+                    } else if (isWbbl) {
+                        directStreams = [
+                            CRICKET_ORIGINALS.fox_cricket,
+                            CRICKET_ORIGINALS.sky_cricket,
+                            CRICKET_ORIGINALS.willow_usa,
+                            CRICKET_ORIGINALS.sony_sports
+                        ];
+                    } else {
+                        // Generic Cricket fallback
+                        directStreams = [
+                            CRICKET_ORIGINALS.willow_usa,
+                            CRICKET_ORIGINALS.willow2,
+                            CRICKET_ORIGINALS.sky_cricket,
+                            CRICKET_ORIGINALS.fox_cricket,
+                            CRICKET_ORIGINALS.sony_sports
                         ];
                     }
                 }
@@ -1010,7 +1072,7 @@
                 const list = [];
                 availableMpd.forEach(s => {
                     list.push({
-                        id: s.id,
+                        id: list.length + 1,
                         label: s.label,
                         type: 'mpd',
                         mpdUrl: cnp[s.key]
@@ -1118,7 +1180,7 @@
                                             ${m.time || 'Live'}
                                         </span>
                                     </div>
-                                    <button class="card-share-btn" onclick="event.stopPropagation(); window.copyMatchLink('${id}', '${(m.event_name || 'Match').replace(/'/g, "\\'")}')" title="Copy Match Link" style="background: rgba(255,184,0,0.12); border: 1px solid rgba(255,184,0,0.25); color: var(--gold); border-radius: 6px; padding: 3px 8px; font-size: 0.75rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
+                                    <button class="card-share-btn" onclick="event.stopPropagation(); window.copyMatchLink('${id}', 1)" title="Copy Match Link" style="background: rgba(255,184,0,0.12); border: 1px solid rgba(255,184,0,0.25); color: var(--gold); border-radius: 6px; padding: 3px 8px; font-size: 0.75rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
                                         <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
                                         <span>Share</span>
                                     </button>
@@ -1257,7 +1319,7 @@
                     return;
                 }
 
-                showToast('Connecting to ' + srv.label + '...', 'info', 2000);
+                showToast('Connecting to ' + (targetServer.label || 'Server') + '...', 'info', 2000);
 
                 if (!shakaPlayerInstance) {
                     shakaPlayerInstance = new shaka.Player();
@@ -1345,7 +1407,7 @@
                 } catch (err) {
                     console.warn('Direct MPD load failed, attempting proxy fallback:', err);
                     try {
-                        const proxiedUrl = 'https://akamaii.lovable.app/api/public/px/geobypass?url=' + encodeURIComponent(directMpd);
+                        const proxiedUrl = 'https://as-proxy.lovable.app/api/public/px/geobypass?url=' + encodeURIComponent(directMpd);
                         await shakaPlayerInstance.load(proxiedUrl);
                         $video.muted = true;
                         $video.play().catch(() => {});
@@ -1423,7 +1485,7 @@
             $btnClose.addEventListener('click', closePlayer);
 
             // Unique Share Link Generator
-            function copyShareLink(matchId, matchTitle, serverId) {
+            function copyShareLink(matchId, serverId) {
                 let targetId = matchId;
                 if (!targetId && currentActiveMatch) {
                     targetId = currentActiveMatch.id;
@@ -1441,7 +1503,10 @@
                     return;
                 }
 
-                const targetSer = serverId || currentActiveServerId || 1;
+                const targetSer = (typeof serverId === 'number' || (typeof serverId === 'string' && !isNaN(parseInt(serverId, 10)))) 
+                    ? parseInt(serverId, 10) 
+                    : (currentActiveServerId || 1);
+
                 const urlObj = new URL(window.location.href);
                 urlObj.searchParams.set('id', targetId);
                 urlObj.searchParams.set('ser', targetSer);
@@ -1477,7 +1542,7 @@
             // Share Stream Button in player modal
             $btnShare.addEventListener('click', (e) => {
                 e.preventDefault();
-                copyShareLink();
+                copyShareLink(currentActiveMatch ? currentActiveMatch.id : null, currentActiveServerId);
             });
 
             // Filter Tabs Click
