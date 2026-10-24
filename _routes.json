@@ -3,7 +3,8 @@
   "include": [
     "/proxy*",
     "/api/proxy*",
-    "/fancode/proxy*"
+    "/fancode/proxy*",
+    "/api/public/px*"
   ],
   "exclude": []
 }
