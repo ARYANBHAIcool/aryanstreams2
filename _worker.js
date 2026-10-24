@@ -94,6 +94,15 @@ function rewriteM3U8(text, finalUrl, proxyBase) {
 }
 
 function applyDefaultHeaders(targetUrl, targetHeaders, request) {
+  if (targetUrl.includes("jio.com") || targetUrl.includes("jiotv")) {
+    if (!targetHeaders.has("User-Agent")) {
+      targetHeaders.set("User-Agent", "Virat");
+    }
+    targetHeaders.set("Origin", "https://www.jiotv.com");
+    targetHeaders.set("Referer", "https://www.jiotv.com/");
+    return;
+  }
+
   if (targetUrl.includes("akamaized.net") || targetUrl.includes("sonyliv.com") || targetUrl.includes("slivcdn.com")) {
     if (!targetHeaders.has("User-Agent")) {
       targetHeaders.set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36");
