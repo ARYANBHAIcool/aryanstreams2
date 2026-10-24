@@ -895,21 +895,8 @@
       "status": "LIVE",
       "time": "LIVE NOW • Prime Video",
       "sport": "Cricket",
-      "drm_key": "290e09c837da78d5cd961978d390515c:b748836c71e6a4ca68ef5b5652db6247",
-      "streams": [
-        {
-          "name": "Willow USA (Trend48)",
-          "url": "https://trend48.st/live-tv?ch=willow-usa"
-        },
-        {
-          "name": "Sky Sports Cricket",
-          "url": "https://trend48.st/live-tv?ch=skysportscricket-uk"
-        },
-        {
-          "name": "Sony Sports Ten 1 HD",
-          "url": "https://trend48.st/live-tv?ch=sonyten1-in"
-        }
-      ],
+      "drm_key": "5d6c647cd1b56550bd34349b68ec8c82:09f952780ba5b30bc222439aaa3ac09b",
+      "streams": [],
       "CnpTV": {
         "fastly_server1": "",
         "amazon_server1": "",
