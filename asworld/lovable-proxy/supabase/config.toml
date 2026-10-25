@@ -1,0 +1,4 @@
+project_id = "asworld-proxy"
+
+[functions.px]
+verify_jwt = false
