@@ -36,7 +36,15 @@ serve(async (req: Request) => {
   }
 
   try {
-    const parsedTarget = new URL(targetUrl);
+    // Map blocked domains to global unblocked mirrors
+    let effectiveUrl = targetUrl;
+    if (effectiveUrl.includes("embed.st/")) {
+      effectiveUrl = effectiveUrl.replace("embed.st/", "ppv.ms/");
+    } else if (effectiveUrl.includes("ppv.st/")) {
+      effectiveUrl = effectiveUrl.replace("ppv.st/", "ppv.ms/");
+    }
+
+    const parsedTarget = new URL(effectiveUrl);
     const customReferer = reqUrl.searchParams.get("referer") || `${parsedTarget.protocol}//${parsedTarget.host}/`;
     const customOrigin = `${parsedTarget.protocol}//${parsedTarget.host}`;
 
@@ -54,7 +62,7 @@ serve(async (req: Request) => {
     }
 
     // Fetch from upstream
-    const upstreamRes = await fetch(targetUrl, {
+    const upstreamRes = await fetch(effectiveUrl, {
       method: req.method,
       headers: fetchHeaders,
       redirect: "follow",
@@ -73,16 +81,16 @@ serve(async (req: Request) => {
     resHeaders.set("Cache-Control", "no-cache, no-store, must-revalidate");
 
     const contentType = (resHeaders.get("content-type") || "").toLowerCase();
-    const isM3U8 = targetUrl.includes(".m3u8") ||
+    const isM3U8 = effectiveUrl.includes(".m3u8") ||
                    contentType.includes("application/vnd.apple.mpegurl") ||
                    contentType.includes("application/x-mpegurl");
-    const isHTML = contentType.includes("text/html") || targetUrl.includes("/embed");
+    const isHTML = contentType.includes("text/html") || effectiveUrl.includes("/embed") || effectiveUrl.includes("/live/");
 
     // 1. M3U8 Playlist rewriting (routes segments through proxy)
     if (isM3U8) {
       const text = await upstreamRes.text();
       const proxyBase = `${reqUrl.origin}${reqUrl.pathname}?referer=${encodeURIComponent(customReferer)}&url=`;
-      const rewritten = rewriteM3u8(text, targetUrl, proxyBase);
+      const rewritten = rewriteM3u8(text, effectiveUrl, proxyBase);
 
       resHeaders.set("Content-Type", "application/vnd.apple.mpegurl");
       return new Response(rewritten, {
