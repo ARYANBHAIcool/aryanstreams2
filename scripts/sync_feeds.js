@@ -315,7 +315,7 @@ async function syncSports() {
                         const oldSig = getSportsSignature(oldData.channels || []);
                         const newSig = getSportsSignature(channels);
                         const hoursSince = (Date.now() - fs.statSync(m3uPath).mtimeMs) / (1000 * 60 * 60);
-                        if (oldSig === newSig && hoursSince < 6 && refreshedCookiesCount === 0) {
+                        if (oldSig === newSig && hoursSince < 6) {
                             hasChanged = false;
                         }
                     } catch (e) {

@@ -14,7 +14,7 @@ const logFile = path.join(logDir, 'auto_sync.log');
 const args = process.argv.slice(2);
 const runOnce = args.includes('--once');
 const customInterval = args.find(a => /^\d+$/.test(a));
-const INTERVAL_MINUTES = customInterval ? parseInt(customInterval, 10) : 20;
+const INTERVAL_MINUTES = customInterval ? parseInt(customInterval, 10) : 30;
 
 function log(msg) {
     const timeStr = new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' });
@@ -26,14 +26,10 @@ function log(msg) {
 }
 
 function runSyncCycle() {
-    log('🔄 Starting multi-repo feed sync cycle...');
+    log('🔄 Starting feed sync cycle...');
     
-    // 1. Sync streamfifa (aryanstreams & aryanstreams2)
+    // 1. Sync streamfifa
     try {
-        try {
-            execSync('git fetch origin main && (git rebase -X theirs origin/main || git rebase --abort)', { cwd: rootDir, stdio: 'ignore' });
-        } catch (e) {}
-
         execSync('node scripts/sync_feeds.js', { stdio: 'inherit', cwd: rootDir });
 
         const status = execSync('git status --porcelain', { encoding: 'utf8', cwd: rootDir }).trim();
@@ -47,24 +43,18 @@ function runSyncCycle() {
             execSync(`git commit -m "${commitMsg}"`, { stdio: 'inherit', cwd: rootDir });
             log('✅ Committed successfully in streamfifa.');
 
-            log('🚀 Pushing to origin (aryanstreams)...');
+            log('🚀 Pushing to origin...');
             try {
                 execSync('git push origin main', { stdio: 'inherit', cwd: rootDir });
             } catch (err) {
-                log(`⚠️ Push to origin failed: ${err.message}`);
-                try {
-                    execSync('git fetch origin main && git rebase -X theirs origin/main && git push origin main', { cwd: rootDir, stdio: 'ignore' });
-                } catch (e) {}
+                log(`⚠️ Push to origin skipped: ${err.message}`);
             }
 
-            log('🚀 Pushing to second (aryanstreams2)...');
+            log('🚀 Pushing to second...');
             try {
                 execSync('git push second main', { stdio: 'inherit', cwd: rootDir });
             } catch (err) {
-                log(`⚠️ Push to second failed: ${err.message}`);
-                try {
-                    execSync('git fetch second main && git rebase -X theirs second/main && git push second main', { cwd: rootDir, stdio: 'ignore' });
-                } catch (e) {}
+                log(`⚠️ Push to second skipped: ${err.message}`);
             }
         } else {
             log('⚡ streamfifa feeds are already up to date.');
@@ -73,14 +63,14 @@ function runSyncCycle() {
         log(`❌ streamfifa cycle error: ${err.message}`);
     }
 
-    // 2. Sync streamfancode (ascode on ARYANBHAIcool)
+    // 2. Sync streamfancode if directory exists
     if (fs.existsSync(fancodeDir)) {
         try {
-            log('🏏 Starting FanCode feed sync for ascode (ARYANBHAIcool)...');
+            log('🏏 Starting FanCode feed sync...');
             execSync('node scripts/sync_fancode.js --commit-and-push', { stdio: 'inherit', cwd: fancodeDir });
-            log('✅ ascode FanCode sync completed.');
+            log('✅ FanCode sync completed.');
         } catch (fcErr) {
-            log(`⚠️ ascode sync error: ${fcErr.message}`);
+            log(`⚠️ FanCode sync error: ${fcErr.message}`);
         }
     }
 
@@ -89,9 +79,8 @@ function runSyncCycle() {
 
 if (require.main === module) {
     log('================================================================');
-    log('   🚀 Multi-Repo Auto-Sync Daemon (doctor-8trange style)');
+    log('   🚀 Multi-Repo Auto-Sync Daemon');
     log(`   ⏱️  Interval: Every ${INTERVAL_MINUTES} minutes`);
-    log('   📡 Repos: aryanstreams, aryanstreams2, ascode (Fncode)');
     log('================================================================');
 
     runSyncCycle();

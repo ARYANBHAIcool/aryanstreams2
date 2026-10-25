@@ -2,12 +2,12 @@ name: Auto-Sync Live Feeds
 
 on:
   schedule:
-    # Staggered schedules to avoid GitHub Actions runner queue stalls; change-gated commits prevent spam
-    - cron: '*/10 * * * *'
-    - cron: '4,14,24,34,44,54 * * * *'
+    - cron: '*/20 * * * *'
   workflow_dispatch:
-  repository_dispatch:
-    types: [sync-feeds, refresh, ping]
+
+concurrency:
+  group: sync-live-feeds
+  cancel-in-progress: true
 
 jobs:
   sync:
@@ -19,12 +19,12 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 10
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 20
 
       - name: Run Feed Sync Script
         run: node scripts/sync_feeds.js
@@ -42,28 +42,13 @@ jobs:
             git config --global user.email "mearyankumarsingh@gmail.com"
           fi
 
-          # Pull latest remote changes cleanly
-          git fetch origin main
-          git rebase -X theirs origin/main || git rebase --abort || true
-
-          # Stage freshly generated feeds
           git add data/sports.json data/sports.m3u data/willow.json data/sony_m3u8.json
 
           if ! git diff --staged --quiet; then
             TIMESTAMP=$(date -u +"%d/%m/%Y, %I:%M:%S %p UTC")
             git commit -m "📡 refreshed playlist @ ${TIMESTAMP} • Catch the thrill live! ⚡" || true
-            
-            # Safe push with automatic retry if remote had a concurrent push
-            for attempt in 1 2 3; do
-              if git push origin main; then
-                echo "Successfully pushed changes on attempt $attempt"
-                break
-              fi
-              echo "Push attempt $attempt failed, rebasing with latest remote..."
-              git fetch origin main
-              git rebase -X theirs origin/main || git rebase --abort || true
-              sleep 2
-            done
+            git pull --rebase origin main || true
+            git push origin main || echo "Push skipped, will retry on next cycle."
           else
             echo "Feeds are already completely up to date with remote."
           fi
