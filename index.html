@@ -1300,6 +1300,13 @@
             "bein1tr_web":      { type: "iframe", name: "beIN Sports 1 Turkey (Trend48)",    url: "https://trend48.st/live-tv?ch=beinsports1-tr" },
 
             // European Football & La Liga (Trend48 & Apple)
+            // ── El Clásico: FC Barcelona vs Real Madrid ───────────────────────
+            "barcavsrlm":       { type: "iframe", name: "Barcelona vs Real Madrid (Server 1)", url: "https://trend48.st/live-tv?ch=movistarlaliga-es" },
+            "barcavsrealmadrid":{ type: "iframe", name: "Barcelona vs Real Madrid (Server 1)", url: "https://trend48.st/live-tv?ch=movistarlaliga-es" },
+            "clasico":          { type: "iframe", name: "Barcelona vs Real Madrid (Server 1)", url: "https://trend48.st/live-tv?ch=movistarlaliga-es" },
+            "elclasico":        { type: "iframe", name: "Barcelona vs Real Madrid (Server 1)", url: "https://trend48.st/live-tv?ch=movistarlaliga-es" },
+            "barca":            { type: "iframe", name: "Barcelona vs Real Madrid (Server 1)", url: "https://trend48.st/live-tv?ch=movistarlaliga-es" },
+            "realmadrid":       { type: "iframe", name: "Barcelona vs Real Madrid (Server 1)", url: "https://trend48.st/live-tv?ch=movistarlaliga-es" },
             "movistarlaliga_web": { type: "iframe", name: "Movistar LaLiga Spain (Trend48)", url: "https://trend48.st/live-tv?ch=movistarlaliga-es" },
             "mliga_web":          { type: "iframe", name: "Movistar LaLiga Spain (Trend48)", url: "https://trend48.st/live-tv?ch=movistarlaliga-es" },
             "movistardeportes_web":{ type: "iframe",name: "Movistar Deportes Spain (Trend48)",url: "https://trend48.st/live-tv?ch=movistardeportes-es" },
@@ -1952,6 +1959,12 @@
                         if (serParam === '2' && channels['willow_trend48']) ch = channels['willow_trend48'];
                         else if (serParam === '3' && channels['foxcricket']) ch = channels['foxcricket'];
                         else if (serParam === '4' && channels['skysportscricket']) ch = channels['skysportscricket'];
+                    } else if (/barca|rlm|realmadrid|clasico/i.test(streamKey)) {
+                        if (serParam === '2') ch = { type: "iframe", name: "Barcelona vs Real Madrid (Server 2)", url: "https://trend48.st/live-tv?ch=skysportsmainevent-uk" };
+                        else if (serParam === '3') ch = { type: "iframe", name: "Barcelona vs Real Madrid (Server 3)", url: "https://trend48.st/live-tv?ch=espndeportes-usa" };
+                        else if (serParam === '4') ch = { type: "iframe", name: "Barcelona vs Real Madrid (Server 4)", url: "https://trend48.st/live-tv?ch=tntsports1-uk" };
+                        else if (serParam === '5') ch = { type: "iframe", name: "Barcelona vs Real Madrid (Server 5)", url: "https://trend48.st/live-tv?ch=beinsports1-fr" };
+                        else ch = { type: "iframe", name: "Barcelona vs Real Madrid (Server 1)", url: "https://trend48.st/live-tv?ch=movistarlaliga-es" };
                     } else if (/apple/i.test(streamKey)) {
                         if (serParam === '2' && channels['apple1']) ch = channels['apple1'];
                         else if (serParam === '3' && channels['apple2']) ch = channels['apple2'];
