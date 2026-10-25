@@ -955,6 +955,9 @@
                                     }
                                     if (!existing.image && norm.image) existing.image = norm.image;
                                     if (norm.status === 'LIVE') existing.status = 'LIVE';
+                                    if (norm.time && norm.time !== 'Upcoming' && norm.time !== 'LIVE NOW' && (!existing.time || existing.time === 'Upcoming' || existing.time === 'LIVE NOW')) {
+                                        existing.time = norm.time;
+                                    }
                                 }
                             });
                         }
@@ -977,14 +980,14 @@
                 return null;
             }
 
-            // Cricket Original Broadcast Feeds (Direct Pure Trend48 Web Players)
+            // Cricket & Sports Original Broadcast Feeds (Direct Pure Trend48 Web Players)
             const CRICKET_ORIGINALS = {
-                willow_usa: { name: 'Willow Cricket HD (Server 1)', url: 'https://trend48.st/live-tv?ch=willow-usa' },
-                willow2: { name: 'Willow Cricket 2 (Server 2)', url: 'https://trend48.st/live-tv?ch=willowxtra-usa' },
-                sky_cricket: { name: 'Sky Sports Cricket (UK)', url: 'https://trend48.st/live-tv?ch=skysportscricket-uk' },
-                fox_cricket: { name: 'Fox Sports 501 (Cricket)', url: 'https://trend48.st/live-tv?ch=foxsports501-au' },
-                supersport_cricket: { name: 'SuperSport Cricket (ZA)', url: 'https://trend48.st/live-tv?ch=supersportcricket-za' },
-                asports: { name: 'A Sports HD (Pakistan)', url: 'https://trend48.st/live-tv?ch=asports-pk' },
+                willow_usa: { name: 'Willow Cricket HD', url: 'https://trend48.st/live-tv?ch=willow-usa' },
+                willow2: { name: 'Willow Cricket 2', url: 'https://trend48.st/live-tv?ch=willowxtra-usa' },
+                sky_cricket: { name: 'Sky Sports Cricket', url: 'https://trend48.st/live-tv?ch=skysportscricket-uk' },
+                fox_cricket: { name: 'Fox Sports 501', url: 'https://trend48.st/live-tv?ch=foxsports501-au' },
+                supersport_cricket: { name: 'SuperSport Cricket', url: 'https://trend48.st/live-tv?ch=supersportcricket-za' },
+                asports: { name: 'A Sports HD', url: 'https://trend48.st/live-tv?ch=asports-pk' },
                 tensports_pk: { name: 'Ten Sports PK', url: 'https://trend48.st/live-tv?ch=tensports-pk' },
                 sony_sports: { name: 'Sony Sports Ten 1 HD', url: 'https://trend48.st/live-tv?ch=sonyten1-in' },
                 sony_sports_3: { name: 'Sony Sports Ten 3 HD', url: 'https://trend48.st/live-tv?ch=sonyten3-in' },
@@ -993,15 +996,31 @@
                 star_sports1: { name: 'Star Sports 1 HD', url: 'https://trend48.st/live-tv?ch=starsports1-in' }
             };
 
-            // Build Unified Stream / Server List for a Match
+            const FOOTBALL_ORIGINALS = {
+                sky_pl: { name: 'Sky Sports Premier League', url: 'https://trend48.st/live-tv?ch=skysportspremierleague-uk' },
+                sky_main: { name: 'Sky Sports Main Event', url: 'https://trend48.st/live-tv?ch=skysportsmainevent-uk' },
+                tnt1: { name: 'TNT Sports 1', url: 'https://trend48.st/live-tv?ch=tntsports1-uk' },
+                bein1fr: { name: 'beIN Sports 1 FR', url: 'https://trend48.st/live-tv?ch=beinsports1-fr' },
+                movistar_laliga: { name: 'Movistar LaLiga', url: 'https://trend48.st/live-tv?ch=movistarlaliga-es' }
+            };
+
+            const GENERIC_ORIGINALS = {
+                srv1: { name: 'Sky Sports Main Event', url: 'https://trend48.st/live-tv?ch=skysportsmainevent-uk' },
+                srv2: { name: 'TNT Sports 1', url: 'https://trend48.st/live-tv?ch=tntsports1-uk' },
+                srv3: { name: 'Willow Cricket HD', url: 'https://trend48.st/live-tv?ch=willow-usa' },
+                srv4: { name: 'beIN Sports 1 FR', url: 'https://trend48.st/live-tv?ch=beinsports1-fr' },
+                srv5: { name: 'Sony Sports Ten 1 HD', url: 'https://trend48.st/live-tv?ch=sonyten1-in' }
+            };
+
+            // Build Unified Stream / Server List for a Match (Strictly Server 1 to 5)
             function getMatchStreamList(m) {
                 if (!m) return [];
                 const cnp = m.CnpTV || {};
                 const availableMpd = SERVER_CONFIG.filter(s => !!cnp[s.key] && typeof cnp[s.key] === 'string' && cnp[s.key].startsWith('http') && !cnp[s.key].includes('pages.dev'));
                 let directStreams = Array.isArray(m.streams) ? m.streams.slice() : [];
 
-                // Clean out any legacy adware / popup links
-                directStreams = directStreams.filter(st => st && st.url && !st.url.includes('bintv-sources') && !st.url.includes('pages.dev'));
+                // Filter out PPV.ST and old adware links
+                directStreams = directStreams.filter(st => st && st.url && !st.url.includes('ppv.st') && !st.url.includes('bintv-sources') && !st.url.includes('pages.dev'));
 
                 const title = m.event_name || m.title || '';
                 const isAusVsSa = /south africa.*australia|australia.*south africa/i.test(title);
@@ -1010,6 +1029,8 @@
                 const isIndVsZim = /india.*zimbabwe|zimbabwe.*india/i.test(title);
                 const isNzVsInd = /new zealand.*india|india.*new zealand/i.test(title);
                 const isWbbl = /wbbl|womens big bash|big bash/i.test(title);
+                const isCricket = isAusVsSa || isPakVsSl || isPakVsEng || isIndVsZim || isNzVsInd || isWbbl || /cricket|t20|odi|test/i.test(title);
+                const isFootball = /vs.?|fc|united|city|everton|aston villa|arsenal|chelsea|liverpool|madrid|barcelona|premier league/i.test(title) && !isCricket;
 
                 if (directStreams.length === 0) {
                     if (isAusVsSa) {
@@ -1048,32 +1069,43 @@
                         directStreams = [
                             CRICKET_ORIGINALS.willow_usa,
                             CRICKET_ORIGINALS.sky_cricket,
-                            CRICKET_ORIGINALS.sony_sports
+                            CRICKET_ORIGINALS.sony_sports,
+                            CRICKET_ORIGINALS.fox_cricket
                         ];
                     } else if (isWbbl) {
                         directStreams = [
                             CRICKET_ORIGINALS.fox_cricket,
                             CRICKET_ORIGINALS.sky_cricket,
                             CRICKET_ORIGINALS.willow_usa,
-                            CRICKET_ORIGINALS.sony_sports
+                            CRICKET_ORIGINALS.sony_sports,
+                            CRICKET_ORIGINALS.star_sports1
+                        ];
+                    } else if (isFootball) {
+                        directStreams = [
+                            FOOTBALL_ORIGINALS.sky_pl,
+                            FOOTBALL_ORIGINALS.sky_main,
+                            FOOTBALL_ORIGINALS.tnt1,
+                            FOOTBALL_ORIGINALS.bein1fr,
+                            FOOTBALL_ORIGINALS.movistar_laliga
                         ];
                     } else {
-                        // Generic Cricket fallback
                         directStreams = [
-                            CRICKET_ORIGINALS.willow_usa,
-                            CRICKET_ORIGINALS.willow2,
-                            CRICKET_ORIGINALS.sky_cricket,
-                            CRICKET_ORIGINALS.fox_cricket,
-                            CRICKET_ORIGINALS.sony_sports
+                            GENERIC_ORIGINALS.srv1,
+                            GENERIC_ORIGINALS.srv2,
+                            GENERIC_ORIGINALS.srv3,
+                            GENERIC_ORIGINALS.srv4,
+                            GENERIC_ORIGINALS.srv5
                         ];
                     }
                 }
 
                 const list = [];
                 availableMpd.forEach(s => {
+                    const sid = list.length + 1;
                     list.push({
-                        id: list.length + 1,
-                        label: s.label,
+                        id: sid,
+                        label: 'Server ' + sid,
+                        fullName: s.label,
                         type: 'mpd',
                         mpdUrl: cnp[s.key]
                     });
@@ -1083,7 +1115,8 @@
                     const sid = list.length + 1;
                     list.push({
                         id: sid,
-                        label: st.name || ('Server ' + sid),
+                        label: 'Server ' + sid,
+                        fullName: st.name || ('Server ' + sid),
                         type: 'iframe',
                         url: st.url
                     });
@@ -1141,9 +1174,9 @@
                         serversHtml = `
                             <div class="server-grid">
                                 ${serverList.map((s, idx) => `
-                                    <button class="server-btn ${idx === 0 ? 'highlight' : ''}" onclick="window.playMatch('${id}', ${s.id})">
+                                    <button class="server-btn ${idx === 0 ? 'highlight' : ''}" onclick="window.playMatch('${id}', ${s.id})" title="${s.fullName || s.label}">
                                         <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                        <span>${s.label}</span>
+                                        <span>Server ${s.id}</span>
                                     </button>
                                 `).join('')}
                             </div>
