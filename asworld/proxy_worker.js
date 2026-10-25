@@ -1,13 +1,12 @@
 /**
- * ASWORLD Universal Stream Edge Proxy
- * Deployable on: Cloudflare Workers, Lovable Edge Functions, Deno Deploy, or Vercel Edge.
+ * ASWORLD Universal Stream & Embed Edge Proxy
+ * Deployable on: Lovable Edge Functions, Cloudflare Workers, Deno Deploy, or Vercel Edge.
  * 
- * Features:
- * - Bypasses CORS restrictions (Access-Control-Allow-Origin: *)
- * - Spoofs Referer & User-Agent for protected stream origins
- * - Rewrites M3U8 playlists (relative & absolute paths) to route via proxy
- * - Passes through Range requests for smooth video buffering
- * - Zero token / zero bandwidth waste mode (proxies manifest, directs unblocked chunks)
+ * Specifically engineered to unlock PPV.ST & EMBED.ST iframes without VPN:
+ * 1. Automatically resolves blocked domains (embed.st, ppv.st) to unblocked global mirrors (ppv.ms, ppv.rw, ppv.tj)
+ * 2. Strips anti-iframe headers (X-Frame-Options: SAMEORIGIN, Content-Security-Policy: frame-ancestors)
+ * 3. Injects <base href="..."> so all client scripts and stylesheets resolve seamlessly
+ * 4. Enables CORS (Access-Control-Allow-Origin: *) for all HLS / M3U8 video chunks
  */
 
 export default {
@@ -28,12 +27,12 @@ export default {
         }
 
         // Extract target URL from query parameter (?url=...)
-        const targetUrl = url.searchParams.get('url');
+        let targetUrl = url.searchParams.get('url');
         if (!targetUrl) {
             return new Response(JSON.stringify({
                 status: 'online',
-                service: 'ASWORLD Stream Proxy',
-                usage: `${url.origin}/?url=<encoded_stream_url>&referer=<optional_referer>`
+                service: 'ASWORLD Stream & Embed Proxy',
+                usage: `${url.origin}/?url=<encoded_stream_or_embed_url>&referer=<optional>`
             }, null, 2), {
                 headers: {
                     'Content-Type': 'application/json',
@@ -43,7 +42,17 @@ export default {
         }
 
         try {
-            const parsedTarget = new URL(targetUrl);
+            // Unblock PPV.ST & EMBED.ST:
+            // In India and restricted regions, embed.st is SNI blocked.
+            // Map embed.st and ppv.st to the official unblocked mirror ppv.ms / ppv.rw
+            let effectiveUrl = targetUrl;
+            if (effectiveUrl.includes('embed.st/')) {
+                effectiveUrl = effectiveUrl.replace('embed.st/', 'ppv.ms/');
+            } else if (effectiveUrl.includes('ppv.st/')) {
+                effectiveUrl = effectiveUrl.replace('ppv.st/', 'ppv.ms/');
+            }
+
+            const parsedTarget = new URL(effectiveUrl);
             const customReferer = url.searchParams.get('referer') || `${parsedTarget.protocol}//${parsedTarget.host}/`;
             const customOrigin = `${parsedTarget.protocol}//${parsedTarget.host}`;
 
@@ -54,38 +63,65 @@ export default {
             fetchHeaders.set('Origin', customOrigin);
             fetchHeaders.set('Accept', '*/*');
 
-            // Pass range header if present (crucial for video scrubbing & byte chunks)
+            // Pass byte range header if present (for video scrubbing)
             const rangeHeader = request.headers.get('Range');
             if (rangeHeader) {
                 fetchHeaders.set('Range', rangeHeader);
             }
 
-            // Fetch upstream resource
-            const upstreamRes = await fetch(targetUrl, {
+            // Fetch upstream
+            const upstreamRes = await fetch(effectiveUrl, {
                 method: request.method,
                 headers: fetchHeaders,
                 redirect: 'follow'
             });
 
-            // Prepare response headers
+            // Prepare clean response headers
             const responseHeaders = new Headers(upstreamRes.headers);
             responseHeaders.set('Access-Control-Allow-Origin', '*');
             responseHeaders.set('Access-Control-Allow-Methods', 'GET, HEAD, OPTIONS');
-            responseHeaders.set('Access-Control-Allow-Headers': 'Range, Content-Type, Authorization, If-Modified-Since, X-Requested-With');
+            responseHeaders.set('Access-Control-Allow-Headers', 'Range, Content-Type, Authorization, If-Modified-Since, X-Requested-With');
             responseHeaders.set('Access-Control-Expose-Headers', 'Content-Length, Content-Range, Accept-Ranges');
             responseHeaders.set('Cache-Control', 'no-cache, no-store, must-revalidate');
 
-            const contentType = (responseHeaders.get('content-type') || '').toLowerCase();
-            const isM3U8 = targetUrl.includes('.m3u8') || contentType.includes('application/vnd.apple.mpegurl') || contentType.includes('application/x-mpegurl');
+            // CRITICAL FOR IFRAMES: Strip anti-embedding headers
+            responseHeaders.delete('x-frame-options');
+            responseHeaders.delete('content-security-policy');
+            responseHeaders.delete('content-security-policy-report-only');
 
-            // If it's an M3U8 manifest, rewrite segment URLs so chunks route via proxy
+            const contentType = (responseHeaders.get('content-type') || '').toLowerCase();
+            const isM3U8 = effectiveUrl.includes('.m3u8') || contentType.includes('application/vnd.apple.mpegurl') || contentType.includes('application/x-mpegurl');
+            const isHTML = contentType.includes('text/html') || effectiveUrl.includes('/embed') || effectiveUrl.includes('/live/');
+
+            // 1. HTML Embed Proxy (Unlocks embed.st / ppv.st inside iframes)
+            if (isHTML) {
+                let htmlText = await upstreamRes.text();
+                const baseHref = `${parsedTarget.protocol}//${parsedTarget.host}/`;
+
+                // Inject <base href="..."> so all relative scripts, CSS, and API endpoints load
+                if (htmlText.includes('<head>')) {
+                    htmlText = htmlText.replace('<head>', `<head><base href="${baseHref}">`);
+                } else if (htmlText.includes('<head ')) {
+                    htmlText = htmlText.replace(/<head[^>]*>/, `$&<base href="${baseHref}">`);
+                } else {
+                    htmlText = `<base href="${baseHref}">` + htmlText;
+                }
+
+                responseHeaders.set('Content-Type', 'text/html; charset=utf-8');
+                return new Response(htmlText, {
+                    status: upstreamRes.status,
+                    statusText: upstreamRes.statusText,
+                    headers: responseHeaders
+                });
+            }
+
+            // 2. M3U8 Playlist Proxy (Rewrites chunk paths)
             if (isM3U8) {
                 const text = await upstreamRes.text();
                 const proxyBase = `${url.origin}${url.pathname}?referer=${encodeURIComponent(customReferer)}&url=`;
+                const rewritten = rewriteM3u8(text, effectiveUrl, proxyBase);
                 
-                const rewritten = rewriteM3u8(text, targetUrl, proxyBase);
                 responseHeaders.set('Content-Type', 'application/vnd.apple.mpegurl');
-                
                 return new Response(rewritten, {
                     status: upstreamRes.status,
                     statusText: upstreamRes.statusText,
@@ -93,7 +129,7 @@ export default {
                 });
             }
 
-            // Stream raw video chunks / audio / images directly
+            // 3. Raw video / TS / audio / image chunks (stream direct)
             return new Response(upstreamRes.body, {
                 status: upstreamRes.status,
                 statusText: upstreamRes.statusText,
@@ -124,7 +160,6 @@ function rewriteM3u8(manifest, originalUrl, proxyBase) {
         const trimmed = line.trim();
         if (!trimmed) return line;
 
-        // Handle URI inside tags like #EXT-X-KEY:METHOD=...,URI="..."
         if (trimmed.startsWith('#EXT-X-KEY:') || trimmed.startsWith('#EXT-X-MAP:')) {
             return line.replace(/URI="([^"]+)"/, (match, uri) => {
                 const resolvedUri = resolveUrl(uri, basePath, parsedOriginal.origin);
@@ -132,12 +167,10 @@ function rewriteM3u8(manifest, originalUrl, proxyBase) {
             });
         }
 
-        // Leave tags and comments alone
         if (trimmed.startsWith('#')) {
             return line;
         }
 
-        // This is a chunk or child playlist URL
         const resolved = resolveUrl(trimmed, basePath, parsedOriginal.origin);
         return `${proxyBase}${encodeURIComponent(resolved)}`;
     });

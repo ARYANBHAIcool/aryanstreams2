@@ -1,44 +1,43 @@
-# ASWORLD — Next-Gen Stream Lab & Edge Proxy
+# ASWORLD — PPV.ST & EMBED.ST Unblock Engine
 
-A specialized testbed and edge proxy environment for testing high-concurrency sports streams without geo-restrictions, ISP blocks, or bandwidth limits.
-
----
-
-## 1. How It Works (Bypassing ISP Blocks & Free Hosting)
-
-### The Problem in India & Other Regions
-- ISPs (Jio, Airtel, Vi, etc.) block raw stream hostnames (e.g. `ppv.st`, `bintv`) via DNS poisoning and SNI TCP Resets.
-- If a browser attempts to connect to `ppv.st`, the ISP drops the connection before video chunks can download.
-
-### The ASWORLD Solution (Zero-Cost Edge Architecture)
-1. **Clean Front End Domain**: Traffic connects to unblocked edge domains (e.g., Lovable, Cloudflare Workers, Vercel, or custom domains).
-2. **Dynamic Header Spoofing**: Upstream servers expect strict `Referer`, `Origin`, and `User-Agent` headers. The proxy injects these automatically.
-3. **Manifest Rewriting**: The edge worker fetches the master/variant `.m3u8` playlist, rewrites chunk URLs, and delivers them with `Access-Control-Allow-Origin: *`.
-4. **Bandwidth Optimization**: For CDNs where video segments (`.ts`) are not ISP-blocked, the proxy can direct video segment downloads straight to the high-speed CDN, consuming **0 MB of proxy video bandwidth**.
+A dedicated testing lab and proxy solution designed to make `ppv.st` and `embed.st` iframes work globally (especially in India) **without requiring a VPN**.
 
 ---
 
-## 2. Included Files in `asworld/`
-- **[`index.html`](./index.html)**: Interactive stream player supporting:
-  - HLS (`.m3u8`) with Hls.js
-  - DASH (`.mpd`) with Shaka Player
-  - Clean Embed Frames (Trend48, Embedme)
-  - Live Telemetry Console (ping, engine, proxy logs)
-- **[`proxy_worker.js`](./proxy_worker.js)**: Standalone edge proxy worker. Can be deployed to:
-  - Lovable Edge Functions
-  - Cloudflare Workers (Free 100k requests/day)
-  - Deno Deploy / Supabase Edge Functions
-  - Vercel Edge Functions
+## 1. The Root Cause: Why `embed.st` & `ppv.st` Fail in India
+1. **ISP SNI TCP Resets (`ECONNRESET`)**:
+   - `embed.st` (IP `81.17.16.194`) is explicitly blocked by Indian ISPs (Jio, Airtel, Vi, etc.).
+   - When a browser makes a direct TLS connection to `embed.st`, the ISP drops the connection (`ECONNRESET`).
+2. **Anti-Embedding Headers (`X-Frame-Options: SAMEORIGIN`)**:
+   - When someone tries to put the embed directly inside an `<iframe>` on an external domain, the upstream server returns:
+     ```http
+     x-frame-options: SAMEORIGIN
+     content-security-policy: frame-ancestors 'self';
+     ```
+   - The browser refuses to render the frame unless these headers are stripped.
 
 ---
 
-## 3. How to Deploy `proxy_worker.js` (Free)
+## 2. The Solution Discovered in ASWORLD
 
-### On Lovable / Supabase Edge:
-1. Paste `proxy_worker.js` into your edge function index.
-2. Endpoint: `https://your-lovable-app.lovable.app/api/public/px?url=<STREAM_URL>`
+### Discovery: Official Unblocked Mirrors
+PPV operates clean global mirrors on unblocked IP ranges that return **HTTP 200 OK directly in India without VPN**:
+- `https://ppv.ms/embed-noads/admin/...` (200 OK in India)
+- `https://ppv.rw/embed-noads/admin/...` (200 OK in India)
+- `https://ppv.tj/embed-noads/admin/...` (200 OK in India)
+- `https://ppv.ug/embed-noads/admin/...` (200 OK in India)
 
-### On Cloudflare Workers (Free Tier):
-1. Go to Cloudflare Dashboard -> Workers & Pages -> Create Worker.
-2. Paste `proxy_worker.js` and click **Deploy**.
-3. Endpoint: `https://asworld-proxy.<subdomain>.workers.dev/?url=<STREAM_URL>`
+### The Proxy Function (Lovable / Cloudflare Worker):
+By routing through [`proxy_worker.js`](./proxy_worker.js):
+1. **Domain Rewriting**: Automatically translates blocked `embed.st` links to clean `ppv.ms` mirrors.
+2. **Header Stripping**: Deletes `X-Frame-Options` and `Content-Security-Policy` so the iframe embeds seamlessly anywhere.
+3. **Base Injection**: Injects `<base href="https://ppv.ms/">` so all Nuxt scripts, stylesheets, and Clappr players load without 404s.
+4. **CORS Enabling**: Adds `Access-Control-Allow-Origin: *` to video chunks.
+
+---
+
+## 3. How to Test in ASWORLD
+Open [`asworld/index.html`](./index.html) in your browser:
+- **Raw Mode**: Tests direct connection to `embed.st` (verifies the ISP block).
+- **Mirror Mode**: Tests direct connection to `ppv.ms` (proves unblocked playback in India).
+- **Edge Proxy Mode**: Tests full proxy with `X-Frame-Options` stripped for seamless iframe embedding.

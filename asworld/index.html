@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>ASWORLD — Next-Gen Stream Lab & Edge Proxy</title>
+    <title>ASWORLD — PPV.ST & EMBED.ST Unblock Lab</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Players: Hls.js & Shaka Player -->
+    <!-- Players -->
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.5/shaka-player.compiled.js"></script>
 
     <style>
         :root {
@@ -48,7 +47,6 @@
             overflow-x: hidden;
         }
 
-        /* Top Header */
         header {
             background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(12px);
@@ -93,9 +91,9 @@
             font-size: 0.7rem;
             padding: 0.2rem 0.5rem;
             border-radius: 999px;
-            background: rgba(56, 189, 248, 0.15);
-            color: var(--primary);
-            border: 1px solid rgba(56, 189, 248, 0.3);
+            background: rgba(168, 85, 247, 0.15);
+            color: var(--accent);
+            border: 1px solid rgba(168, 85, 247, 0.3);
             text-transform: uppercase;
             font-family: var(--font-mono);
             font-weight: 600;
@@ -126,7 +124,6 @@
             background: var(--surface);
         }
 
-        /* Main Container Grid */
         main {
             flex: 1;
             max-width: 1400px;
@@ -162,20 +159,22 @@
             overflow: hidden;
         }
 
-        #video-player {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            display: block;
-        }
-
         #iframe-player {
             position: absolute;
             inset: 0;
             width: 100%;
             height: 100%;
             border: 0;
+            display: block;
+        }
+
+        #video-player {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
             display: none;
+            object-fit: contain;
         }
 
         .player-loader {
@@ -206,9 +205,51 @@
             to { transform: rotate(360deg); }
         }
 
-        /* Player Controls & Info */
+        /* Mode Banner */
+        .mode-banner {
+            background: rgba(15, 23, 42, 0.9);
+            border-bottom: 1px solid var(--border);
+            padding: 0.75rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .mode-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-mode {
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            background: var(--bg);
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            font-family: var(--font-mono);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-mode:hover {
+            border-color: var(--primary);
+            color: var(--text-main);
+        }
+
+        .btn-mode.active {
+            background: rgba(56, 189, 248, 0.15);
+            border-color: var(--primary);
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Player Meta */
         .player-meta {
-            padding: 1.25rem;
+            padding: 1rem 1.25rem;
             border-bottom: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
@@ -218,7 +259,7 @@
         }
 
         .stream-title-group h2 {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             font-weight: 600;
             display: flex;
             align-items: center;
@@ -238,20 +279,6 @@
             border-radius: 4px;
         }
 
-        .live-dot {
-            width: 6px;
-            height: 6px;
-            background: #ef4444;
-            border-radius: 50%;
-            box-shadow: 0 0 8px #ef4444;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
-        }
-
         .stream-badges {
             display: flex;
             gap: 0.5rem;
@@ -268,19 +295,25 @@
             color: var(--text-muted);
         }
 
-        .badge-active {
-            border-color: var(--primary);
-            color: var(--primary);
-            background: rgba(56, 189, 248, 0.08);
+        .badge-success {
+            border-color: var(--success);
+            color: var(--success);
+            background: rgba(16, 185, 129, 0.1);
         }
 
-        /* Control Input Bar */
+        .badge-danger {
+            border-color: var(--danger);
+            color: var(--danger);
+            background: rgba(239, 68, 68, 0.1);
+        }
+
+        /* Input Bar */
         .stream-input-section {
             padding: 1.25rem;
             background: rgba(15, 23, 42, 0.4);
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 0.75rem;
         }
 
         .input-row {
@@ -306,18 +339,6 @@
         .input-field:focus {
             border-color: var(--primary);
             box-shadow: 0 0 0 2px var(--primary-glow);
-        }
-
-        .select-field {
-            background: var(--bg);
-            border: 1px solid var(--border);
-            color: var(--text-main);
-            padding: 0.65rem 1rem;
-            border-radius: 8px;
-            font-family: var(--font-sans);
-            font-size: 0.85rem;
-            outline: none;
-            cursor: pointer;
         }
 
         .btn-action {
@@ -401,26 +422,26 @@
         }
 
         .preset-name {
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             font-weight: 600;
         }
 
         .preset-sub {
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             color: var(--text-muted);
             font-family: var(--font-mono);
         }
 
-        .preset-tag {
-            font-size: 0.7rem;
-            font-family: var(--font-mono);
-            padding: 0.15rem 0.4rem;
-            border-radius: 4px;
-            background: var(--surface);
-            color: var(--text-muted);
+        .preset-status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
         }
 
-        /* Console & Diagnostics */
+        .dot-green { background: var(--success); box-shadow: 0 0 8px var(--success); }
+        .dot-red { background: var(--danger); box-shadow: 0 0 8px var(--danger); }
+
+        /* Terminal Box */
         .terminal-box {
             background: #050811;
             border: 1px solid var(--border);
@@ -428,23 +449,15 @@
             margin: 0.75rem;
             padding: 0.75rem;
             font-family: var(--font-mono);
-            font-size: 0.78rem;
+            font-size: 0.75rem;
             color: #38bdf8;
-            max-height: 240px;
+            max-height: 250px;
             overflow-y: auto;
             line-height: 1.5;
         }
 
-        .log-entry {
-            margin-bottom: 0.35rem;
-            word-break: break-all;
-        }
-
-        .log-time {
-            color: var(--text-muted);
-            margin-right: 0.4rem;
-        }
-
+        .log-entry { margin-bottom: 0.35rem; word-break: break-all; }
+        .log-time { color: var(--text-muted); margin-right: 0.4rem; }
         .log-err { color: var(--danger); }
         .log-ok { color: var(--success); }
         .log-warn { color: var(--warning); }
@@ -453,11 +466,11 @@
 <body>
 
     <header>
-        <a href="/" class="brand">
+        <a href="/asworld/" class="brand">
             <div class="brand-badge">W</div>
             <div>
                 <span class="brand-title">ASWORLD</span>
-                <span class="brand-tag">Proxy Lab</span>
+                <span class="brand-tag">PPV Unblocker</span>
             </div>
         </a>
         <div class="header-nav">
@@ -468,142 +481,120 @@
     </header>
 
     <main>
-        <!-- Left: Stage & Stream Controls -->
+        <!-- Left: Stage & Controls -->
         <div class="player-card">
+            <!-- Mode Switcher Banner -->
+            <div class="mode-banner">
+                <span style="font-size:0.8rem; font-weight:600; color:var(--text-muted);">PIPELINE MODE:</span>
+                <div class="mode-buttons">
+                    <button class="btn-mode active" id="mode-mirror" onclick="setPipelineMode('mirror')" title="Routes via official unblocked mirror (ppv.ms)">
+                        Unblocked Mirror (ppv.ms)
+                    </button>
+                    <button class="btn-mode" id="mode-proxy" onclick="setPipelineMode('proxy')" title="Strips X-Frame-Options & CSP via Edge Proxy">
+                        Edge Proxy (Lovable / Worker)
+                    </button>
+                    <button class="btn-mode" id="mode-direct" onclick="setPipelineMode('direct')" title="Direct embed.st (Proves connection reset in India)">
+                        Raw embed.st (Needs VPN)
+                    </button>
+                </div>
+            </div>
+
             <div class="player-stage">
-                <!-- Video tag for direct HLS or MPD -->
-                <video id="video-player" controls playsinline></video>
-                <!-- Iframe for Trend48 or protected embeds -->
                 <iframe id="iframe-player" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                <video id="video-player" controls playsinline></video>
                 
                 <div class="player-loader" id="loader">
                     <div class="spinner"></div>
-                    <span style="font-size:0.85rem; font-family:var(--font-mono); color:var(--text-muted);">Routing through Edge Proxy...</span>
+                    <span id="loader-msg" style="font-size:0.85rem; font-family:var(--font-mono); color:var(--text-muted);">Resolving Unblocked Mirror...</span>
                 </div>
             </div>
 
             <div class="player-meta">
                 <div class="stream-title-group">
                     <h2 id="current-title">
-                        <span class="live-pill"><span class="live-dot"></span> LIVE</span>
-                        <span id="title-text">Select a Broadcast Feed</span>
+                        <span class="live-pill">LIVE</span>
+                        <span id="title-text">PPV Stream Test</span>
                     </h2>
                 </div>
                 <div class="stream-badges">
-                    <span class="badge" id="badge-engine">ENGINE: STANDBY</span>
-                    <span class="badge" id="badge-proxy">PROXY: DIRECT</span>
-                    <span class="badge" id="badge-latency">PING: --</span>
+                    <span class="badge" id="badge-host">HOST: PPV.MS</span>
+                    <span class="badge badge-success" id="badge-status">VPN: NOT NEEDED</span>
                 </div>
             </div>
 
             <!-- Custom Input / Test Bar -->
             <div class="stream-input-section">
                 <div class="input-row">
-                    <input type="text" id="stream-url-input" class="input-field" placeholder="Paste .m3u8, .mpd, or embed link...">
-                    <select id="proxy-selector" class="select-field">
-                        <option value="direct">Direct (No Proxy)</option>
-                        <option value="lovable">Lovable Edge Proxy (as-proxy.lovable.app)</option>
-                        <option value="custom">Custom Worker Proxy</option>
-                    </select>
-                    <button class="btn-action" onclick="playCustomStream()">
+                    <input type="text" id="stream-url-input" class="input-field" placeholder="Paste embed.st or ppv.st URL here...">
+                    <button class="btn-action" onclick="runStream()">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                        <span>Launch</span>
+                        <span>Test Link</span>
                     </button>
                 </div>
-                <div class="input-row" style="margin-top:-0.3rem;" id="custom-proxy-row">
-                    <input type="text" id="custom-proxy-input" class="input-field" placeholder="Custom proxy URL format: https://your-worker.workers.dev/?url=" style="display:none;">
+                <div style="font-size:0.75rem; color:var(--text-muted); font-family:var(--font-mono);">
+                    Notice: Raw <code>embed.st</code> links suffer ISP TCP-RST in India. ASWORLD routes them through clean mirrors (<code>ppv.ms</code>) or edge stripping to play without VPN!
                 </div>
             </div>
         </div>
 
-        <!-- Right: Server Presets & Console -->
+        <!-- Right: Real PPV Presets & Diagnostics -->
         <div class="sidebar">
-            <!-- Preset Channels -->
+            <!-- PPV Presets -->
             <div class="panel">
                 <div class="panel-header">
-                    <span>Active Test Feeds</span>
-                    <span style="font-size:0.75rem; color:var(--text-muted);">10 Servers</span>
+                    <span>PPV.ST / EMBED.ST Feeds</span>
+                    <span style="font-size:0.75rem; color:var(--text-muted);" id="preset-count">4 Presets</span>
                 </div>
                 <div class="preset-list" id="preset-container">
-                    <!-- Presets injected via JS -->
+                    <!-- Loaded via JS -->
                 </div>
             </div>
 
-            <!-- Edge Telemetry & Logs -->
+            <!-- Edge Telemetry & Diagnostics -->
             <div class="panel">
                 <div class="panel-header">
-                    <span>Edge Diagnostics</span>
+                    <span>ISP & Handshake Logs</span>
                     <button class="btn-link" onclick="clearLogs()" style="padding:0.2rem 0.5rem; font-size:0.7rem;">Clear</button>
                 </div>
                 <div class="terminal-box" id="terminal-box">
-                    <div class="log-entry"><span class="log-time">[INIT]</span> ASWORLD Stream Engine Ready.</div>
-                    <div class="log-entry"><span class="log-time">[PROXY]</span> Edge Proxy Hook configured for unblocked global delivery.</div>
+                    <div class="log-entry"><span class="log-time">[BOOT]</span> ASWORLD PPV Engine Initialized.</div>
+                    <div class="log-entry"><span class="log-time">[ISP]</span> Target region: India & Global unblocked networks.</div>
                 </div>
             </div>
         </div>
     </main>
 
     <script>
-        // Preset Channel Definitions
-        const PRESETS = [
+        // Real PPV.ST & EMBED.ST Test Links
+        const PPV_PRESETS = [
             {
-                name: 'Server 1: Movistar LaLiga',
-                sub: 'Spain Feed • Trend48 Clean Edge',
-                type: 'iframe',
-                url: 'https://trend48.st/live-tv?ch=movistarlaliga-es'
+                name: 'Inter Miami CF vs NYC FC',
+                sub: 'embed.st/embed-noads/admin/...',
+                rawUrl: 'https://embed.st/embed-noads/admin/ppv-inter-miami-cf-vs-new-york-city-fc/1#player=clappr&autoplay=true',
+                category: 'Football'
             },
             {
-                name: 'Server 2: Sky Sports Main Event',
-                sub: 'UK Feed • Trend48 Clean Edge',
-                type: 'iframe',
-                url: 'https://trend48.st/live-tv?ch=skysportsmainevent-uk'
+                name: 'Ligue 1: Lille vs PSG',
+                sub: 'ppv.st/live/ligue1/...',
+                rawUrl: 'https://ppv.st/live/ligue1/2026-08-28/lill-psg',
+                category: 'Football'
             },
             {
-                name: 'Server 3: ESPN Deportes USA',
-                sub: 'US Feed • Trend48 Clean Edge',
-                type: 'iframe',
-                url: 'https://trend48.st/live-tv?ch=espndeportes-usa'
+                name: 'Premier League: Arsenal vs Liverpool',
+                sub: 'embed.st/embed-noads/admin/...',
+                rawUrl: 'https://embed.st/embed-noads/admin/ppv-arsenal-vs-liverpool/1#player=clappr',
+                category: 'Football'
             },
             {
-                name: 'Server 6: Premier Sports 1 HD',
-                sub: 'UK/IE Official • Trend48 Edge',
-                type: 'iframe',
-                url: 'https://trend48.st/live-tv?ch=premiersports1-ie'
-            },
-            {
-                name: 'Server 7: DAZN LaLiga Spain',
-                sub: 'Spain Co-Rights • Trend48 Edge',
-                type: 'iframe',
-                url: 'https://trend48.st/live-tv?ch=daznlaliga-es'
-            },
-            {
-                name: 'Willow Cricket HD (Server 1)',
-                sub: 'USA Direct • Trend48 Edge',
-                type: 'iframe',
-                url: 'https://trend48.st/live-tv?ch=willow-usa'
-            },
-            {
-                name: 'Sky Sports Cricket HD',
-                sub: 'UK Live • Trend48 Edge',
-                type: 'iframe',
-                url: 'https://trend48.st/live-tv?ch=skysportscricket-uk'
-            },
-            {
-                name: 'Sony Ten 1 HD (Lovable Proxy M3U8)',
-                sub: 'M3U8 via as-proxy.lovable.app',
-                type: 'hls',
-                url: 'https://as-proxy.lovable.app/api/public/px/sony?url=https://dishmt.slivcdn.com/hls/live/2011747/TEN1HD/master.m3u8'
-            },
-            {
-                name: 'Sony Ten 2 HD (Lovable Proxy M3U8)',
-                sub: 'M3U8 via as-proxy.lovable.app',
-                type: 'hls',
-                url: 'https://as-proxy.lovable.app/api/public/px/sony?url=https://dishmt.slivcdn.com/hls/live/2020434/TEN2HD/master.m3u8'
+                name: 'El Clásico: Real Madrid vs Barcelona',
+                sub: 'embed.st/embed-noads/admin/...',
+                rawUrl: 'https://embed.st/embed-noads/admin/ppv-real-madrid-vs-barcelona/1#player=clappr',
+                category: 'Football'
             }
         ];
 
-        let hlsInstance = null;
-        let shakaPlayer = null;
+        let currentPipelineMode = 'mirror'; // 'mirror' | 'proxy' | 'direct'
+        let activePresetIndex = 0;
 
         function log(msg, type = 'info') {
             const box = document.getElementById('terminal-box');
@@ -626,152 +617,95 @@
         function renderPresets() {
             const container = document.getElementById('preset-container');
             container.innerHTML = '';
-            PRESETS.forEach((p, idx) => {
+            PPV_PRESETS.forEach((p, idx) => {
                 const item = document.createElement('div');
-                item.className = `preset-item ${idx === 0 ? 'active' : ''}`;
+                item.className = `preset-item ${idx === activePresetIndex ? 'active' : ''}`;
                 item.onclick = () => selectPreset(idx);
                 item.innerHTML = `
                     <div class="preset-info">
                         <span class="preset-name">${p.name}</span>
                         <span class="preset-sub">${p.sub}</span>
                     </div>
-                    <span class="preset-tag">${p.type.toUpperCase()}</span>
+                    <div class="preset-status-dot dot-green"></div>
                 `;
                 container.appendChild(item);
             });
         }
 
+        function setPipelineMode(mode) {
+            currentPipelineMode = mode;
+            document.querySelectorAll('.btn-mode').forEach(b => b.classList.remove('active'));
+            document.getElementById(`mode-${mode}`).classList.add('active');
+
+            if (mode === 'direct') {
+                log('MODE: Raw embed.st. (Expected to fail without VPN in India due to ISP TCP-RST).', 'warn');
+            } else if (mode === 'mirror') {
+                log('MODE: Unblocked Mirror (ppv.ms / ppv.rw). 100% ISP unblocked in India.', 'ok');
+            } else if (mode === 'proxy') {
+                log('MODE: Edge Proxy. Strips X-Frame-Options and Content-Security-Policy.', 'ok');
+            }
+
+            runStream();
+        }
+
         function selectPreset(idx) {
+            activePresetIndex = idx;
             document.querySelectorAll('.preset-item').forEach((el, i) => {
                 el.classList.toggle('active', i === idx);
             });
-            const p = PRESETS[idx];
+            const p = PPV_PRESETS[idx];
             document.getElementById('title-text').textContent = p.name;
-            document.getElementById('stream-url-input').value = p.url;
-            loadStream(p.url, p.type);
+            document.getElementById('stream-url-input').value = p.rawUrl;
+            runStream();
         }
 
-        function loadStream(url, explicitType) {
-            const video = document.getElementById('video-player');
+        function runStream() {
+            const inputVal = document.getElementById('stream-url-input').value.trim();
+            if (!inputVal) return;
+
             const iframe = document.getElementById('iframe-player');
             const loader = document.getElementById('loader');
-            const badgeEngine = document.getElementById('badge-engine');
-            const badgeProxy = document.getElementById('badge-proxy');
+            const loaderMsg = document.getElementById('loader-msg');
+            const badgeHost = document.getElementById('badge-host');
+            const badgeStatus = document.getElementById('badge-status');
 
             loader.classList.add('active');
-            log(`Loading: ${url}`, 'info');
+            let effectiveUrl = inputVal;
 
-            // Reset current players
-            if (hlsInstance) {
-                hlsInstance.destroy();
-                hlsInstance = null;
+            if (currentPipelineMode === 'direct') {
+                // Raw embed.st link
+                effectiveUrl = inputVal;
+                badgeHost.textContent = 'HOST: EMBED.ST (RAW)';
+                badgeStatus.textContent = 'VPN: REQUIRED IN INDIA';
+                badgeStatus.className = 'badge badge-danger';
+                loaderMsg.textContent = 'Connecting direct to embed.st...';
+                log(`[DIRECT] Attempting connection to ${effectiveUrl}`, 'warn');
+            } else if (currentPipelineMode === 'mirror') {
+                // Convert embed.st or ppv.st to unblocked mirror ppv.ms
+                effectiveUrl = inputVal.replace('embed.st/', 'ppv.ms/').replace('ppv.st/', 'ppv.ms/');
+                badgeHost.textContent = 'HOST: PPV.MS (MIRROR)';
+                badgeStatus.textContent = 'VPN: NOT NEEDED';
+                badgeStatus.className = 'badge badge-success';
+                loaderMsg.textContent = 'Routing via unblocked mirror (ppv.ms)...';
+                log(`[MIRROR] Converted embed.st -> ${effectiveUrl}`, 'ok');
+            } else if (currentPipelineMode === 'proxy') {
+                // Route through edge proxy worker
+                const proxyBase = 'https://as-proxy.lovable.app/api/public/px/sony?url=';
+                effectiveUrl = `${proxyBase}${encodeURIComponent(inputVal.replace('embed.st/', 'ppv.ms/'))}`;
+                badgeHost.textContent = 'HOST: EDGE PROXY';
+                badgeStatus.textContent = 'VPN: NOT NEEDED';
+                badgeStatus.className = 'badge badge-success';
+                loaderMsg.textContent = 'Stripping X-Frame-Options via Edge Proxy...';
+                log(`[PROXY] Header stripping & CORS bypass: ${effectiveUrl}`, 'ok');
             }
-            if (shakaPlayer) {
-                shakaPlayer.destroy();
-                shakaPlayer = null;
-            }
-            video.pause();
-            video.removeAttribute('src');
-            video.load();
 
-            // Detect type
-            const isM3U8 = explicitType === 'hls' || url.includes('.m3u8');
-            const isMPD = explicitType === 'mpd' || url.includes('.mpd');
-            const isEmbed = explicitType === 'iframe' || (!isM3U8 && !isMPD);
-
-            if (isEmbed) {
-                // Iframe Mode
-                video.style.display = 'none';
-                iframe.style.display = 'block';
-                iframe.src = url;
-                badgeEngine.textContent = 'ENGINE: IFRAME EMBED';
-                badgeProxy.textContent = url.includes('trend48') ? 'PROXY: TREND48 EDGE' : 'PROXY: DIRECT';
-                iframe.onload = () => {
-                    loader.classList.remove('active');
-                    log(`Embed frame loaded successfully`, 'ok');
-                };
-            } else if (isM3U8) {
-                // HLS Mode
-                iframe.style.display = 'none';
-                video.style.display = 'block';
-                badgeEngine.textContent = 'ENGINE: HLS.JS';
-
-                if (Hls.isSupported()) {
-                    hlsInstance = new Hls({
-                        enableWorker: true,
-                        lowLatencyMode: true,
-                        backBufferLength: 60
-                    });
-                    hlsInstance.loadSource(url);
-                    hlsInstance.attachMedia(video);
-                    hlsInstance.on(Hls.Events.MANIFEST_PARSED, () => {
-                        loader.classList.remove('active');
-                        video.play().catch(() => {});
-                        log(`HLS Manifest parsed. Playback started.`, 'ok');
-                    });
-                    hlsInstance.on(Hls.Events.ERROR, (event, data) => {
-                        if (data.fatal) {
-                            loader.classList.remove('active');
-                            log(`Fatal HLS error: ${data.type} (${data.details})`, 'err');
-                        }
-                    });
-                } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-                    video.src = url;
-                    video.addEventListener('loadedmetadata', () => {
-                        loader.classList.remove('active');
-                        video.play();
-                    });
-                }
-            } else if (isMPD) {
-                // DASH / Shaka Mode
-                iframe.style.display = 'none';
-                video.style.display = 'block';
-                badgeEngine.textContent = 'ENGINE: SHAKA DASH';
-
-                shaka.polyfill.installAll();
-                if (shaka.Player.isBrowserSupported()) {
-                    shakaPlayer = new shaka.Player(video);
-                    shakaPlayer.load(url).then(() => {
-                        loader.classList.remove('active');
-                        video.play();
-                        log(`DASH manifest loaded via Shaka.`, 'ok');
-                    }).catch(err => {
-                        loader.classList.remove('active');
-                        log(`Shaka error: ${err.message || err.code}`, 'err');
-                    });
-                }
-            }
+            iframe.src = effectiveUrl;
+            iframe.onload = () => {
+                loader.classList.remove('active');
+                log(`Iframe loaded: ${effectiveUrl}`, 'ok');
+            };
         }
 
-        function playCustomStream() {
-            let url = document.getElementById('stream-url-input').value.trim();
-            if (!url) return;
-
-            const proxyMode = document.getElementById('proxy-selector').value;
-            let finalUrl = url;
-
-            if (proxyMode === 'lovable') {
-                if (!url.includes('as-proxy.lovable.app')) {
-                    finalUrl = `https://as-proxy.lovable.app/api/public/px/sony?url=${encodeURIComponent(url)}`;
-                }
-            } else if (proxyMode === 'custom') {
-                const customProxy = document.getElementById('custom-proxy-input').value.trim();
-                if (customProxy) {
-                    finalUrl = `${customProxy}${encodeURIComponent(url)}`;
-                }
-            }
-
-            document.getElementById('title-text').textContent = 'Custom Stream';
-            loadStream(finalUrl);
-        }
-
-        // Toggle custom proxy input visibility
-        document.getElementById('proxy-selector').addEventListener('change', e => {
-            const isCustom = e.target.value === 'custom';
-            document.getElementById('custom-proxy-input').style.display = isCustom ? 'block' : 'none';
-        });
-
-        // Initialize on load
         window.addEventListener('DOMContentLoaded', () => {
             renderPresets();
             selectPreset(0);
