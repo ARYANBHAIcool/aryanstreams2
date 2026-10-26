@@ -1328,6 +1328,11 @@
             // ── 2026 Ballon d'Or Ceremony (Trendy48 / Gala) ───────────────────
             "bdor":             { type: "iframe", name: "2026 Ballon d'Or Ceremony (BinTV Direct)", url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvY3g5ems4OWgtNTA" },
             "bdor1":            { type: "iframe", name: "2026 Ballon d'Or Ceremony (BinTV Direct)", url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvY3g5ems4OWgtNTA" },
+            "bdorall":          { type: "video",  name: "2026 Ballon d'Or Ceremony (DAZN 1 Direct M3U8)", url: "https://tims-nl-0001.uzhi.ru/main/secure/85fe259ac1058a380a803058389e7c5bc02950256297086f3690db0809346cb3/1793055431/dazn-1.m3u8" },
+            "bdor_all":         { type: "video",  name: "2026 Ballon d'Or Ceremony (DAZN 1 Direct M3U8)", url: "https://tims-nl-0001.uzhi.ru/main/secure/85fe259ac1058a380a803058389e7c5bc02950256297086f3690db0809346cb3/1793055431/dazn-1.m3u8" },
+            "bdor_m3u8":        { type: "video",  name: "2026 Ballon d'Or Ceremony (DAZN 1 Direct M3U8)", url: "https://tims-nl-0001.uzhi.ru/main/secure/85fe259ac1058a380a803058389e7c5bc02950256297086f3690db0809346cb3/1793055431/dazn-1.m3u8" },
+            "bdorm3u8":         { type: "video",  name: "2026 Ballon d'Or Ceremony (DAZN 1 Direct M3U8)", url: "https://tims-nl-0001.uzhi.ru/main/secure/85fe259ac1058a380a803058389e7c5bc02950256297086f3690db0809346cb3/1793055431/dazn-1.m3u8" },
+            "bdor_dazn":        { type: "video",  name: "2026 Ballon d'Or Ceremony (DAZN 1 Direct M3U8)", url: "https://tims-nl-0001.uzhi.ru/main/secure/85fe259ac1058a380a803058389e7c5bc02950256297086f3690db0809346cb3/1793055431/dazn-1.m3u8" },
             "bdor2":            { type: "iframe", name: "2026 Ballon d'Or Ceremony (Live Direct)", url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvY3g5ems4OWgtNTA" },
             "bdor3":            { type: "iframe", name: "2026 Ballon d'Or Ceremony (Live Direct)", url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvY3g5ems4OWgtNTA" },
             "bdor4":            { type: "iframe", name: "2026 Ballon d'Or Ceremony (Live Direct)", url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvYmludHYvY3g5ems4OWgtNTA" },
@@ -2063,6 +2068,7 @@
                         else if (serParam === '4') ch = channels['psgvslyon4'];
                         else ch = channels['psgvslyon'];
                     } else if (/bdor|ballon|ceremony/i.test(streamKey)) {
+                        if (streamKey === 'bdorall' || streamKey === 'bdor_all' || serParam === 'all' || serParam === 'm3u8') ch = channels['bdorall'];
                         if (serParam === '2') ch = channels['bdor2'];
                         else if (serParam === '3') ch = channels['bdor3'];
                         else if (serParam === '4') ch = channels['bdor4'];
