@@ -1,8 +1,55 @@
 {
-  "last_updated": "10/28/2026, 1:57:26 AM IST",
+  "last_updated": "10/28/2026, 5:29:03 AM IST",
   "sources_checked": 6,
   "sources_active": 6,
   "Matches": [
+    {
+      "id": "m-4249668_ENG",
+      "match_id": "m-4249668_ENG",
+      "event_name": "Western Australia vs South Australia [English]",
+      "title": "Western Australia vs South Australia [English]",
+      "synopsis": "Western Australia vs South Australia [English]",
+      "image": "https://www.fancode.com/skillup-uploads/cms-media/4249668_53087_SAU_WAU_FC-WEB.jpg",
+      "cover_image": "https://www.fancode.com/skillup-uploads/cms-media/4249668_53087_SAU_WAU_FC-WEB.jpg",
+      "status": "LIVE",
+      "time": "LIVE NOW",
+      "sport": "Cricket",
+      "drm_key": "",
+      "streams": [
+        {
+          "name": "Sky Sports Premier League (Server 1)",
+          "url": "https://trend48.st/live-tv?ch=skysportspremierleague-uk"
+        },
+        {
+          "name": "Sky Sports Main Event (Server 2)",
+          "url": "https://trend48.st/live-tv?ch=skysportsmainevent-uk"
+        },
+        {
+          "name": "TNT Sports 1 (Server 3)",
+          "url": "https://trend48.st/live-tv?ch=tntsports1-uk"
+        },
+        {
+          "name": "beIN Sports 1 FR (Server 4)",
+          "url": "https://trend48.st/live-tv?ch=beinsports1-fr"
+        },
+        {
+          "name": "Movistar LaLiga (Server 5)",
+          "url": "https://trend48.st/live-tv?ch=movistarlaliga-es"
+        }
+      ],
+      "CnpTV": {
+        "fastly_server1": "",
+        "amazon_server1": "",
+        "akamai_server1": "",
+        "cloudfront_server1": "",
+        "fastly_server2": "",
+        "amazon_server2": "",
+        "akamai_server2": "",
+        "cloudfront_server2": ""
+      },
+      "stream_url_alpha": {},
+      "stream_url_bravo": {}
+    },
     {
       "id": "m-4249783",
       "match_id": "m-4249783",
@@ -35,53 +82,6 @@
         {
           "name": "Star Sports 1 HD",
           "url": "https://trend48.st/live-tv?ch=starsports1-in"
-        }
-      ],
-      "CnpTV": {
-        "fastly_server1": "",
-        "amazon_server1": "",
-        "akamai_server1": "",
-        "cloudfront_server1": "",
-        "fastly_server2": "",
-        "amazon_server2": "",
-        "akamai_server2": "",
-        "cloudfront_server2": ""
-      },
-      "stream_url_alpha": {},
-      "stream_url_bravo": {}
-    },
-    {
-      "id": "m-4249668",
-      "match_id": "m-4249668",
-      "event_name": "South Australia vs Western Australia",
-      "title": "South Australia vs Western Australia",
-      "synopsis": "South Australia vs Western Australia",
-      "image": "https://www.fancode.com/skillup-uploads/cms-media/4249668_53087_SAU_WAU_FC-WEB.jpg",
-      "cover_image": "https://www.fancode.com/skillup-uploads/cms-media/4249668_53087_SAU_WAU_FC-WEB.jpg",
-      "status": "LIVE",
-      "time": "LIVE NOW",
-      "sport": "Cricket",
-      "drm_key": "",
-      "streams": [
-        {
-          "name": "Sky Sports Premier League (Server 1)",
-          "url": "https://trend48.st/live-tv?ch=skysportspremierleague-uk"
-        },
-        {
-          "name": "Sky Sports Main Event (Server 2)",
-          "url": "https://trend48.st/live-tv?ch=skysportsmainevent-uk"
-        },
-        {
-          "name": "TNT Sports 1 (Server 3)",
-          "url": "https://trend48.st/live-tv?ch=tntsports1-uk"
-        },
-        {
-          "name": "beIN Sports 1 FR (Server 4)",
-          "url": "https://trend48.st/live-tv?ch=beinsports1-fr"
-        },
-        {
-          "name": "Movistar LaLiga (Server 5)",
-          "url": "https://trend48.st/live-tv?ch=movistarlaliga-es"
         }
       ],
       "CnpTV": {
@@ -521,6 +521,147 @@
       "stream_url_bravo": {}
     },
     {
+      "id": "m-4250387",
+      "match_id": "m-4250387",
+      "event_name": "Melbourne Renegades Women vs Sydney Sixers Women",
+      "title": "Melbourne Renegades Women vs Sydney Sixers Women",
+      "synopsis": "Melbourne Renegades Women vs Sydney Sixers Women",
+      "image": "https://www.fancode.com/skillup-uploads/cms-media/FC_Sports_Default_cricket-old.jpg",
+      "cover_image": "https://www.fancode.com/skillup-uploads/cms-media/FC_Sports_Default_cricket-old.jpg",
+      "status": "LIVE",
+      "time": "LIVE NOW",
+      "sport": "Cricket",
+      "drm_key": "",
+      "streams": [
+        {
+          "name": "Sky Sports Premier League (Server 1)",
+          "url": "https://trend48.st/live-tv?ch=skysportspremierleague-uk"
+        },
+        {
+          "name": "Sky Sports Main Event (Server 2)",
+          "url": "https://trend48.st/live-tv?ch=skysportsmainevent-uk"
+        },
+        {
+          "name": "TNT Sports 1 (Server 3)",
+          "url": "https://trend48.st/live-tv?ch=tntsports1-uk"
+        },
+        {
+          "name": "beIN Sports 1 FR (Server 4)",
+          "url": "https://trend48.st/live-tv?ch=beinsports1-fr"
+        },
+        {
+          "name": "Movistar LaLiga (Server 5)",
+          "url": "https://trend48.st/live-tv?ch=movistarlaliga-es"
+        }
+      ],
+      "CnpTV": {
+        "fastly_server1": "",
+        "amazon_server1": "",
+        "akamai_server1": "",
+        "cloudfront_server1": "",
+        "fastly_server2": "",
+        "amazon_server2": "",
+        "akamai_server2": "",
+        "cloudfront_server2": ""
+      },
+      "stream_url_alpha": {},
+      "stream_url_bravo": {}
+    },
+    {
+      "id": "m-4250518",
+      "match_id": "m-4250518",
+      "event_name": "United Arab Emirates vs Oman",
+      "title": "United Arab Emirates vs Oman",
+      "synopsis": "United Arab Emirates vs Oman",
+      "image": "https://www.fancode.com/skillup-uploads/cms-media/ICC-CWC-League_Web-match-card.png",
+      "cover_image": "https://www.fancode.com/skillup-uploads/cms-media/ICC-CWC-League_Web-match-card.png",
+      "status": "LIVE",
+      "time": "LIVE NOW",
+      "sport": "Cricket",
+      "drm_key": "",
+      "streams": [
+        {
+          "name": "Sky Sports Premier League (Server 1)",
+          "url": "https://trend48.st/live-tv?ch=skysportspremierleague-uk"
+        },
+        {
+          "name": "Sky Sports Main Event (Server 2)",
+          "url": "https://trend48.st/live-tv?ch=skysportsmainevent-uk"
+        },
+        {
+          "name": "TNT Sports 1 (Server 3)",
+          "url": "https://trend48.st/live-tv?ch=tntsports1-uk"
+        },
+        {
+          "name": "beIN Sports 1 FR (Server 4)",
+          "url": "https://trend48.st/live-tv?ch=beinsports1-fr"
+        },
+        {
+          "name": "Movistar LaLiga (Server 5)",
+          "url": "https://trend48.st/live-tv?ch=movistarlaliga-es"
+        }
+      ],
+      "CnpTV": {
+        "fastly_server1": "",
+        "amazon_server1": "",
+        "akamai_server1": "",
+        "cloudfront_server1": "",
+        "fastly_server2": "",
+        "amazon_server2": "",
+        "akamai_server2": "",
+        "cloudfront_server2": ""
+      },
+      "stream_url_alpha": {},
+      "stream_url_bravo": {}
+    },
+    {
+      "id": "m-4250538",
+      "match_id": "m-4250538",
+      "event_name": "Himachal Highlenders vs Rajasthan Royalsmen",
+      "title": "Himachal Highlenders vs Rajasthan Royalsmen",
+      "synopsis": "Himachal Highlenders vs Rajasthan Royalsmen",
+      "image": "https://www.fancode.com/skillup-uploads/cms-media/4250538_53137_HHL_RR_FC-Web.png",
+      "cover_image": "https://www.fancode.com/skillup-uploads/cms-media/4250538_53137_HHL_RR_FC-Web.png",
+      "status": "LIVE",
+      "time": "LIVE NOW",
+      "sport": "Cricket",
+      "drm_key": "",
+      "streams": [
+        {
+          "name": "Sky Sports Premier League (Server 1)",
+          "url": "https://trend48.st/live-tv?ch=skysportspremierleague-uk"
+        },
+        {
+          "name": "Sky Sports Main Event (Server 2)",
+          "url": "https://trend48.st/live-tv?ch=skysportsmainevent-uk"
+        },
+        {
+          "name": "TNT Sports 1 (Server 3)",
+          "url": "https://trend48.st/live-tv?ch=tntsports1-uk"
+        },
+        {
+          "name": "beIN Sports 1 FR (Server 4)",
+          "url": "https://trend48.st/live-tv?ch=beinsports1-fr"
+        },
+        {
+          "name": "Movistar LaLiga (Server 5)",
+          "url": "https://trend48.st/live-tv?ch=movistarlaliga-es"
+        }
+      ],
+      "CnpTV": {
+        "fastly_server1": "",
+        "amazon_server1": "",
+        "akamai_server1": "",
+        "cloudfront_server1": "",
+        "fastly_server2": "",
+        "amazon_server2": "",
+        "akamai_server2": "",
+        "cloudfront_server2": ""
+      },
+      "stream_url_alpha": {},
+      "stream_url_bravo": {}
+    },
+    {
       "id": "B0HKDPRJRS",
       "match_id": "B0HKDPRJRS",
       "event_name": "Australia tour of South Africa 2026 - 3rd Test - South Africa vs Australia",
@@ -531,7 +672,7 @@
       "status": "LIVE",
       "time": "Live at 1:30 PM BDT",
       "sport": "Cricket",
-      "drm_key": "bdc52b31dcf25b0515a61fb9d0f444a2:468ae45daef1021713e7ea869a340f96",
+      "drm_key": "",
       "streams": [
         {
           "name": "Willow USA (Trend48)",
@@ -555,14 +696,14 @@
         }
       ],
       "CnpTV": {
-        "fastly_server1": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/mdzi0aespt/out/v1/ebc753f4d4af40e481e5506bad35eb42/cenc.mpd",
-        "amazon_server1": "https://otte.cache.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/mdzi0aespt/out/v1/ebc753f4d4af40e481e5506bad35eb42/cenc.mpd",
-        "akamai_server1": "https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/mdzi0aespt/out/v1/ebc753f4d4af40e481e5506bad35eb42/cenc.mpd",
-        "cloudfront_server1": "https://ss-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/mdzi0aespt/out/v1/ebc753f4d4af40e481e5506bad35eb42/cenc.mpd",
-        "fastly_server2": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/yi1ah9sgsj/out/v1/ffe37797429b4ed28810e8d7735124fc/cenc.mpd",
-        "amazon_server2": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/yi1ah9sgsj/out/v1/ffe37797429b4ed28810e8d7735124fc/cenc.mpd",
-        "akamai_server2": "https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/yi1ah9sgsj/out/v1/ffe37797429b4ed28810e8d7735124fc/cenc.mpd",
-        "cloudfront_server2": "https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/yi1ah9sgsj/out/v1/ffe37797429b4ed28810e8d7735124fc/cenc.mpd"
+        "fastly_server1": "",
+        "amazon_server1": "",
+        "akamai_server1": "",
+        "cloudfront_server1": "",
+        "fastly_server2": "",
+        "amazon_server2": "",
+        "akamai_server2": "",
+        "cloudfront_server2": ""
       },
       "stream_url_alpha": {},
       "stream_url_bravo": {}
@@ -1461,158 +1602,17 @@
       "stream_url_bravo": {}
     },
     {
-      "id": "B0HMBQZL83",
-      "match_id": "B0HMBQZL83",
-      "event_name": "Bradford vs. Peterborough",
-      "title": "Bradford vs. Peterborough",
-      "synopsis": "Bradford vs. Peterborough",
-      "image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.1f18b667-c078-4f17-a197-2abf3e82b4b9/1/BOXART-16X9/en-US/1920x1080._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMpng_.png",
-      "cover_image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.1f18b667-c078-4f17-a197-2abf3e82b4b9/1/BOXART-16X9/en-US/1920x1080._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMpng_.png",
-      "status": "LIVE",
-      "time": "LIVE NOW",
-      "sport": "Football",
-      "drm_key": "d9623774ac5c8c351aafe97c5fe70267:5164e6d05164a2d65fa8fcc962aa4861",
-      "streams": [
-        {
-          "name": "Sky Sports Premier League (Server 1)",
-          "url": "https://trend48.st/live-tv?ch=skysportspremierleague-uk"
-        },
-        {
-          "name": "Sky Sports Main Event (Server 2)",
-          "url": "https://trend48.st/live-tv?ch=skysportsmainevent-uk"
-        },
-        {
-          "name": "TNT Sports 1 (Server 3)",
-          "url": "https://trend48.st/live-tv?ch=tntsports1-uk"
-        },
-        {
-          "name": "beIN Sports 1 FR (Server 4)",
-          "url": "https://trend48.st/live-tv?ch=beinsports1-fr"
-        },
-        {
-          "name": "Movistar LaLiga (Server 5)",
-          "url": "https://trend48.st/live-tv?ch=movistarlaliga-es"
-        }
-      ],
-      "CnpTV": {
-        "fastly_server1": "",
-        "amazon_server1": "",
-        "akamai_server1": "",
-        "cloudfront_server1": "",
-        "fastly_server2": "",
-        "amazon_server2": "",
-        "akamai_server2": "",
-        "cloudfront_server2": ""
-      },
-      "stream_url_alpha": {},
-      "stream_url_bravo": {}
-    },
-    {
-      "id": "B0HJZRQ6JB",
-      "match_id": "B0HJZRQ6JB",
-      "event_name": "Tennis Today Live-Basel-ATP & Vienna-ATP Early Rounds",
-      "title": "Tennis Today Live-Basel-ATP & Vienna-ATP Early Rounds",
-      "synopsis": "Tennis Today Live-Basel-ATP & Vienna-ATP Early Rounds",
-      "image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.5a06d9b7-9e9b-4f4e-b4b7-7b8c3205a4c6/17/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpeg",
-      "cover_image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.5a06d9b7-9e9b-4f4e-b4b7-7b8c3205a4c6/17/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpeg",
+      "id": "B0HN3GXKWW",
+      "match_id": "B0HN3GXKWW",
+      "event_name": "Canadian Open, Day 3",
+      "title": "Canadian Open, Day 3",
+      "synopsis": "Canadian Open, Day 3",
+      "image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.7c088675-2202-4f36-b4ea-471914d7cab5/4/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpeg",
+      "cover_image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.7c088675-2202-4f36-b4ea-471914d7cab5/4/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpeg",
       "status": "LIVE",
       "time": "LIVE NOW",
       "sport": "Sports",
-      "drm_key": "59f50679c9e60963bd0cb6640992aaaa:8685817c4d31f322e08940feeae2855a",
-      "streams": [
-        {
-          "name": "Sky Sports Main Event (Server 1)",
-          "url": "https://trend48.st/live-tv?ch=skysportsmainevent-uk"
-        },
-        {
-          "name": "TNT Sports 1 (Server 2)",
-          "url": "https://trend48.st/live-tv?ch=tntsports1-uk"
-        },
-        {
-          "name": "Willow Cricket HD (Server 3)",
-          "url": "https://trend48.st/live-tv?ch=willow-usa"
-        },
-        {
-          "name": "beIN Sports 1 FR (Server 4)",
-          "url": "https://trend48.st/live-tv?ch=beinsports1-fr"
-        },
-        {
-          "name": "Sony Sports Ten 1 HD (Server 5)",
-          "url": "https://trend48.st/live-tv?ch=sonyten1-in"
-        }
-      ],
-      "CnpTV": {
-        "fastly_server1": "",
-        "amazon_server1": "",
-        "akamai_server1": "",
-        "cloudfront_server1": "",
-        "fastly_server2": "",
-        "amazon_server2": "",
-        "akamai_server2": "",
-        "cloudfront_server2": ""
-      },
-      "stream_url_alpha": {},
-      "stream_url_bravo": {}
-    },
-    {
-      "id": "B0FQQXFCMF",
-      "match_id": "B0FQQXFCMF",
-      "event_name": "Second Serve - Live-Basel-ATP & Vienna-ATP Early Rounds",
-      "title": "Second Serve - Live-Basel-ATP & Vienna-ATP Early Rounds",
-      "synopsis": "Second Serve - Live-Basel-ATP & Vienna-ATP Early Rounds",
-      "image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.68ccc8db-4407-492d-8b37-369596935fcd/19/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpeg",
-      "cover_image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.68ccc8db-4407-492d-8b37-369596935fcd/19/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpeg",
-      "status": "LIVE",
-      "time": "LIVE NOW",
-      "sport": "Sports",
-      "drm_key": "59f50679c9e60963bd0cb6640992aaaa:8685817c4d31f322e08940feeae2855a",
-      "streams": [
-        {
-          "name": "Sky Sports Main Event (Server 1)",
-          "url": "https://trend48.st/live-tv?ch=skysportsmainevent-uk"
-        },
-        {
-          "name": "TNT Sports 1 (Server 2)",
-          "url": "https://trend48.st/live-tv?ch=tntsports1-uk"
-        },
-        {
-          "name": "Willow Cricket HD (Server 3)",
-          "url": "https://trend48.st/live-tv?ch=willow-usa"
-        },
-        {
-          "name": "beIN Sports 1 FR (Server 4)",
-          "url": "https://trend48.st/live-tv?ch=beinsports1-fr"
-        },
-        {
-          "name": "Sony Sports Ten 1 HD (Server 5)",
-          "url": "https://trend48.st/live-tv?ch=sonyten1-in"
-        }
-      ],
-      "CnpTV": {
-        "fastly_server1": "",
-        "amazon_server1": "",
-        "akamai_server1": "",
-        "cloudfront_server1": "",
-        "fastly_server2": "",
-        "amazon_server2": "",
-        "akamai_server2": "",
-        "cloudfront_server2": ""
-      },
-      "stream_url_alpha": {},
-      "stream_url_bravo": {}
-    },
-    {
-      "id": "B0HMXW8B3D",
-      "match_id": "B0HMXW8B3D",
-      "event_name": "Oct 27 - UTR PTT Columbia Women",
-      "title": "Oct 27 - UTR PTT Columbia Women",
-      "synopsis": "Oct 27 - UTR PTT Columbia Women",
-      "image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.1a431439-30f5-4db5-a95b-2ca71682021b/5/BOXART-16X9/en-US._UR1920,1080_SX624_FMpng_.png",
-      "cover_image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.1a431439-30f5-4db5-a95b-2ca71682021b/5/BOXART-16X9/en-US._UR1920,1080_SX624_FMpng_.png",
-      "status": "LIVE",
-      "time": "LIVE NOW",
-      "sport": "Sports",
-      "drm_key": "faee08dc27a6288174a3300cb3262278:abf8d2db53d46e7c3c7099784a2d9b1b",
+      "drm_key": "5d6c647cd1b56550bd34349b68ec8c82:09f952780ba5b30bc222439aaa3ac09b",
       "streams": [
         {
           "name": "Sky Sports Main Event (Server 1)",
@@ -1696,6 +1696,53 @@
       "stream_url_bravo": {}
     },
     {
+      "id": "B0HMXW8B3D",
+      "match_id": "B0HMXW8B3D",
+      "event_name": "Oct 27 - UTR PTT Columbia Women",
+      "title": "Oct 27 - UTR PTT Columbia Women",
+      "synopsis": "Oct 27 - UTR PTT Columbia Women",
+      "image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.1a431439-30f5-4db5-a95b-2ca71682021b/5/BOXART-16X9/en-US._UR1920,1080_SX624_FMpng_.png",
+      "cover_image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.1a431439-30f5-4db5-a95b-2ca71682021b/5/BOXART-16X9/en-US._UR1920,1080_SX624_FMpng_.png",
+      "status": "LIVE",
+      "time": "LIVE NOW",
+      "sport": "Sports",
+      "drm_key": "faee08dc27a6288174a3300cb3262278:abf8d2db53d46e7c3c7099784a2d9b1b",
+      "streams": [
+        {
+          "name": "Sky Sports Main Event (Server 1)",
+          "url": "https://trend48.st/live-tv?ch=skysportsmainevent-uk"
+        },
+        {
+          "name": "TNT Sports 1 (Server 2)",
+          "url": "https://trend48.st/live-tv?ch=tntsports1-uk"
+        },
+        {
+          "name": "Willow Cricket HD (Server 3)",
+          "url": "https://trend48.st/live-tv?ch=willow-usa"
+        },
+        {
+          "name": "beIN Sports 1 FR (Server 4)",
+          "url": "https://trend48.st/live-tv?ch=beinsports1-fr"
+        },
+        {
+          "name": "Sony Sports Ten 1 HD (Server 5)",
+          "url": "https://trend48.st/live-tv?ch=sonyten1-in"
+        }
+      ],
+      "CnpTV": {
+        "fastly_server1": "",
+        "amazon_server1": "",
+        "akamai_server1": "",
+        "cloudfront_server1": "",
+        "fastly_server2": "",
+        "amazon_server2": "",
+        "akamai_server2": "",
+        "cloudfront_server2": ""
+      },
+      "stream_url_alpha": {},
+      "stream_url_bravo": {}
+    },
+    {
       "id": "B0HK3VH43P",
       "match_id": "B0HK3VH43P",
       "event_name": "Oct 27 - UTR PTT Philadelphia Men",
@@ -1740,59 +1787,6 @@
         "cloudfront_server2": ""
       },
       "stream_url_alpha": {},
-      "stream_url_bravo": {}
-    },
-    {
-      "id": "B0HNSCNTXG",
-      "match_id": "B0HNSCNTXG",
-      "event_name": "Afghanistan vs. Zimbabwe",
-      "title": "Afghanistan vs. Zimbabwe",
-      "synopsis": "Watch Afghanistan take on Zimbabwe in the Afghanistan v Zimbabwe Twenty20 Series in UAE 2026",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.68779caa-dd6b-46dc-b1de-3a19c8c208db/3/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "cover_image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.68779caa-dd6b-46dc-b1de-3a19c8c208db/3/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "LIVE",
-      "time": "8 PM BDT",
-      "sport": "Football",
-      "drm_key": "85e95a4fae22e02459252a03faaf3166:29334fa5e1d5708ed994f8bf74687933",
-      "streams": [
-        {
-          "name": "Sky Sports Premier League (Server 1)",
-          "url": "https://trend48.st/live-tv?ch=skysportspremierleague-uk"
-        },
-        {
-          "name": "Sky Sports Main Event (Server 2)",
-          "url": "https://trend48.st/live-tv?ch=skysportsmainevent-uk"
-        },
-        {
-          "name": "TNT Sports 1 (Server 3)",
-          "url": "https://trend48.st/live-tv?ch=tntsports1-uk"
-        },
-        {
-          "name": "beIN Sports 1 FR (Server 4)",
-          "url": "https://trend48.st/live-tv?ch=beinsports1-fr"
-        },
-        {
-          "name": "Movistar LaLiga (Server 5)",
-          "url": "https://trend48.st/live-tv?ch=movistarlaliga-es"
-        }
-      ],
-      "CnpTV": {
-        "fastly_server1": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/eieh0ekrzy/out/v1/2587259ec56e439086e501951f31ccf7/cenc.mpd",
-        "amazon_server1": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/eieh0ekrzy/out/v1/2587259ec56e439086e501951f31ccf7/cenc.mpd",
-        "akamai_server1": "https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/eieh0ekrzy/out/v1/2587259ec56e439086e501951f31ccf7/cenc.mpd",
-        "cloudfront_server1": "https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/eieh0ekrzy/out/v1/2587259ec56e439086e501951f31ccf7/cenc.mpd",
-        "fastly_server2": "",
-        "amazon_server2": "",
-        "akamai_server2": "",
-        "cloudfront_server2": ""
-      },
-      "stream_url_alpha": {
-        "Fistly Server": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/eieh0ekrzy/out/v1/2587259ec56e439086e501951f31ccf7/cenc.mpd",
-        "Amazon Server": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/eieh0ekrzy/out/v1/2587259ec56e439086e501951f31ccf7/cenc.mpd",
-        "Akamai Server": "https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/eieh0ekrzy/out/v1/2587259ec56e439086e501951f31ccf7/cenc.mpd",
-        "Cloudfront Server 1": "https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/eieh0ekrzy/out/v1/2587259ec56e439086e501951f31ccf7/cenc.mpd",
-        "Cloudfront Server 2": "https://dash-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/eieh0ekrzy/out/v1/2587259ec56e439086e501951f31ccf7/cenc.mpd"
-      },
       "stream_url_bravo": {}
     }
   ]
