@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASOP · Live & Upcoming Sports Streams</title>
+    <meta name="description" content="Watch Live Football, Cricket, Basketball, and sports matches online with multiple HD sources and live server switches.">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#f97316',
+                        dark: {
+                            900: '#121214',
+                            800: '#18181b',
+                            700: '#27272a',
+                            600: '#3f3f46'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        body { 
+            background-color: #171717; 
+            color: #f5f5f5; 
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #18181b; }
+        ::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #f97316; }
+
+        .pulse-live {
+            animation: pulse-dot 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(1.15); }
+        }
+
+        .match-card {
+            background-color: #262626;
+            transition: all 0.2s ease;
+        }
+        .match-card:hover {
+            background-color: #333333;
+            transform: translateY(-1px);
+        }
+
+        .server-btn {
+            transition: all 0.15s ease;
+        }
+        .server-btn:hover {
+            transform: scale(1.04);
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen selection:bg-orange-500 selection:text-white">
+
+    <!-- Top Navigation Header -->
+    <header class="sticky top-0 z-40 bg-neutral-900/95 backdrop-blur-md border-b border-neutral-800 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Brand / Logo -->
+                <div class="flex items-center gap-3">
+                    <a href="./" class="flex items-center gap-2 group text-decoration-none">
+                        <span class="w-9 h-9 rounded-xl bg-orange-500 flex items-center justify-center font-black text-black text-xl shadow-lg shadow-orange-500/20 group-hover:scale-105 transition-transform">⚡</span>
+                        <div class="flex flex-col">
+                            <span class="text-2xl font-black text-[#f97316] tracking-tight leading-none">ASOP</span>
+                            <span class="text-[10px] uppercase font-bold tracking-widest text-neutral-400">Streams</span>
+                        </div>
+                    </a>
+                    <span class="hidden md:inline-block ml-4 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-neutral-800 text-neutral-300 border border-neutral-700">
+                        Trend48 Direct Hub
+                    </span>
+                </div>
+
+                <!-- Desktop Category Nav -->
+                <nav class="hidden lg:flex items-center space-x-1">
+                    <button onclick="setSportFilter('all')" class="sport-nav-btn px-3 py-1.5 rounded-lg text-sm font-semibold text-orange-400 bg-orange-500/10 hover:bg-orange-500/20 transition-colors" data-sport="all">ALL</button>
+                    <button onclick="setSportFilter('football')" class="sport-nav-btn px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-300 hover:text-white hover:bg-neutral-800 transition-colors" data-sport="football">SOCCER</button>
+                    <button onclick="setSportFilter('cricket')" class="sport-nav-btn px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-300 hover:text-white hover:bg-neutral-800 transition-colors" data-sport="cricket">CRICKET</button>
+                    <button onclick="setSportFilter('basketball')" class="sport-nav-btn px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-300 hover:text-white hover:bg-neutral-800 transition-colors" data-sport="basketball">BASKETBALL</button>
+                    <button onclick="setSportFilter('american-football')" class="sport-nav-btn px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-300 hover:text-white hover:bg-neutral-800 transition-colors" data-sport="american-football">NFL</button>
+                    <button onclick="setSportFilter('hockey')" class="sport-nav-btn px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-300 hover:text-white hover:bg-neutral-800 transition-colors" data-sport="hockey">HOCKEY</button>
+                </nav>
+
+                <!-- Right Quick Links -->
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <a href="../fancode.html" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold bg-neutral-800 hover:bg-neutral-700 text-neutral-200 border border-neutral-700 transition">
+                        <span>🏏</span> FanCode
+                    </a>
+                    <a href="../" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold bg-orange-500 hover:bg-orange-600 text-black shadow-md shadow-orange-500/20 transition">
+                        <span>📺</span> Main Index
+                    </a>
+                    <button onclick="refreshData(true)" id="refreshBtn" title="Refresh matches" class="p-2 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-neutral-300 transition">
+                        <svg id="refreshIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sub-Header & Controls -->
+    <div class="bg-neutral-900 border-b border-neutral-800 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+                <!-- Search bar -->
+                <div class="relative flex-1 max-w-lg">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="Search match, team, league (e.g. Inter Milan, Venezia, Bologna)..." 
+                        oninput="onSearchChange(this.value)"
+                        class="w-full bg-neutral-800/90 text-sm text-neutral-100 placeholder-neutral-500 rounded-xl pl-10 pr-4 py-2.5 border border-neutral-700/80 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition"
+                    >
+                    <div class="absolute left-3.5 top-3 text-neutral-400 pointer-events-none">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </div>
+                    <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute right-3 top-2.5 text-neutral-400 hover:text-white text-xs bg-neutral-700 px-1.5 py-0.5 rounded">✕</button>
+                </div>
+
+                <!-- Status Filter Pills -->
+                <div class="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0 scrollbar-none">
+                    <button onclick="setStatusFilter('all')" id="btnStatusAll" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-neutral-700 text-white whitespace-nowrap transition">
+                        All (<span id="totalCount">0</span>)
+                    </button>
+                    <button onclick="setStatusFilter('live')" id="btnStatusLive" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-neutral-800 text-neutral-300 hover:text-white whitespace-nowrap flex items-center gap-1.5 transition">
+                        <span class="w-2 h-2 rounded-full bg-orange-500 pulse-live"></span>
+                        Live Now (<span id="liveCount">0</span>)
+                    </button>
+                    <button onclick="setStatusFilter('upcoming')" id="btnStatusUpcoming" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-neutral-800 text-neutral-300 hover:text-white whitespace-nowrap transition">
+                        Upcoming (<span id="upcomingCount">0</span>)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sport Category Pills -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none text-xs">
+                <button onclick="setSportFilter('all')" class="sport-pill px-3 py-1 rounded-full font-semibold bg-orange-500 text-black" data-sport="all">⭐ All</button>
+                <button onclick="setSportFilter('football')" class="sport-pill px-3 py-1 rounded-full font-semibold bg-neutral-800 text-neutral-300 hover:bg-neutral-700 hover:text-white" data-sport="football">⚽ Football</button>
+                <button onclick="setSportFilter('cricket')" class="sport-pill px-3 py-1 rounded-full font-semibold bg-neutral-800 text-neutral-300 hover:bg-neutral-700 hover:text-white" data-sport="cricket">🏏 Cricket</button>
+                <button onclick="setSportFilter('basketball')" class="sport-pill px-3 py-1 rounded-full font-semibold bg-neutral-800 text-neutral-300 hover:bg-neutral-700 hover:text-white" data-sport="basketball">🏀 Basketball</button>
+                <button onclick="setSportFilter('american-football')" class="sport-pill px-3 py-1 rounded-full font-semibold bg-neutral-800 text-neutral-300 hover:bg-neutral-700 hover:text-white" data-sport="american-football">🏈 NFL</button>
+                <button onclick="setSportFilter('hockey')" class="sport-pill px-3 py-1 rounded-full font-semibold bg-neutral-800 text-neutral-300 hover:bg-neutral-700 hover:text-white" data-sport="hockey">🏒 Hockey</button>
+                <button onclick="setSportFilter('darts')" class="sport-pill px-3 py-1 rounded-full font-semibold bg-neutral-800 text-neutral-300 hover:bg-neutral-700 hover:text-white" data-sport="darts">🎯 Darts</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        
+        <!-- Live Now Section -->
+        <section id="liveSection" class="mb-8">
+            <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-orange-500 pulse-live"></span>
+                    <h2 class="text-lg font-black tracking-wide text-white uppercase">Live Now</h2>
+                    <span id="liveBadgeNumber" class="text-xs px-2 py-0.5 rounded-full bg-orange-500/20 text-orange-400 font-bold border border-orange-500/30">0</span>
+                </div>
+                <span class="text-xs text-neutral-400">Auto-synced</span>
+            </div>
+            <div id="liveList" class="space-y-3">
+                <div class="py-8 text-center text-neutral-500 text-sm">Loading live matches...</div>
+            </div>
+        </section>
+
+        <!-- Upcoming Matches Section -->
+        <section id="upcomingSection">
+            <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-neutral-500"></span>
+                    <h2 class="text-lg font-black tracking-wide text-white uppercase">Upcoming Matches Today</h2>
+                    <span id="upcomingBadgeNumber" class="text-xs px-2 py-0.5 rounded-full bg-neutral-800 text-neutral-400 font-bold border border-neutral-700">0</span>
+                </div>
+            </div>
+            <div id="upcomingList" class="space-y-3">
+                <div class="py-8 text-center text-neutral-500 text-sm">Loading upcoming matches...</div>
+            </div>
+        </section>
+
+        <!-- No Results View -->
+        <div id="emptyView" class="hidden py-16 text-center">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-neutral-800 flex items-center justify-center text-3xl">🔍</div>
+            <h3 class="text-lg font-bold text-neutral-200 mb-1">No Matches Found</h3>
+            <p class="text-sm text-neutral-400 max-w-sm mx-auto mb-4">Try searching with a different team name or resetting your category filter.</p>
+            <button onclick="resetFilters()" class="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-black font-bold text-xs rounded-lg transition">Reset Filters</button>
+        </div>
+
+    </main>
+
+    <!-- Embedded Cinema Modal Player -->
+    <div id="playerModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-2 sm:p-4">
+        <div class="relative w-full max-w-5xl bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col">
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between px-4 py-3 bg-neutral-800/90 border-b border-neutral-700/60">
+                <div class="flex items-center gap-2 truncate pr-2">
+                    <span id="modalLiveDot" class="w-2.5 h-2.5 rounded-full bg-orange-500 pulse-live"></span>
+                    <h3 id="modalTitle" class="font-bold text-sm sm:text-base text-white truncate">Match Title</h3>
+                </div>
+                <div class="flex items-center gap-2">
+                    <a id="modalExternalBtn" href="#" target="_blank" class="px-2.5 py-1 text-xs font-semibold bg-neutral-700 hover:bg-neutral-600 text-neutral-200 rounded-lg flex items-center gap-1 transition">
+                        <span>↗</span> Standalone
+                    </a>
+                    <button onclick="toggleModalFullscreen()" title="Fullscreen" class="p-1.5 text-neutral-400 hover:text-white rounded-lg bg-neutral-700/60 hover:bg-neutral-700 transition">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
+                    </button>
+                    <button onclick="closePlayerModal()" class="p-1.5 text-neutral-400 hover:text-white rounded-lg bg-neutral-700/60 hover:bg-neutral-700 transition">
+                        ✕
+                    </button>
+                </div>
+            </div>
+
+            <!-- Server Selector Bar -->
+            <div id="modalServerBar" class="flex items-center gap-2 px-4 py-2 bg-neutral-800/50 border-b border-neutral-800 overflow-x-auto text-xs">
+                <span class="text-neutral-400 font-semibold mr-1">Sources:</span>
+                <div id="modalServerButtons" class="flex items-center gap-2"></div>
+            </div>
+
+            <!-- Video Player / Iframe Area -->
+            <div class="relative w-full aspect-video bg-black flex items-center justify-center">
+                <iframe 
+                    id="modalIframe" 
+                    src="" 
+                    class="w-full h-full border-0" 
+                    allowfullscreen 
+                    allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                ></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 border-t border-neutral-800 py-6 mt-12 text-center text-xs text-neutral-500">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div class="flex items-center gap-2">
+                <span class="font-black text-orange-500">ASOP</span>
+                <span>• Live Sports Aggregator & Multi-Source Index</span>
+            </div>
+            <div>Synced directly with Trendy48 API • Auto-Refreshes every 45s</div>
+        </div>
+    </footer>
+
+    <!-- App Script -->
+    <script>
+        // State
+        var allMatches = [];
+        var liveMatchesMap = {};
+        var currentSport = 'all';
+        var currentStatus = 'all';
+        var searchQuery = '';
+        var activeModalMatch = null;
+        var activeModalServerIndex = 0;
+        var autoRefreshTimer = null;
+
+        // Sport icons
+        var sportIcons = {
+            'football': '⚽',
+            'soccer': '⚽',
+            'cricket': '🏏',
+            'basketball': '🏀',
+            'american-football': '🏈',
+            'nfl': '🏈',
+            'hockey': '🏒',
+            'baseball': '⚾',
+            'darts': '🎯',
+            'f1': '🏎️',
+            'tennis': '🎾'
+        };
+
+        // Known direct embed servers for popular matches
+        var knownDirectEmbeds = {
+            'm-venezia-vs-inter-milan-1028': { name: 'Arena 4 Premium', url: 'https://trendy48.site/embed/arena4premiumserbia' },
+            'm-ac-milan-vs-bologna-1028': { name: 'TNT Sports 1 UK', url: 'https://trendy48.site/embed/tntsports1-uk' },
+            'm-parma-vs-udinese-1028': { name: 'Arena 6 Croatia', url: 'https://trendy48.site/embed/arena6croatia' },
+            'm-paris-saint-germain-vs-lyon-1025': { name: 'beIN Sports USA', url: 'https://trend48.st/live-tv?ch=beinsports-usa' }
+        };
+
+        // Fetch matches from Trendy48 APIs
+        function fetchMatches() {
+            var p1 = fetch('https://trendy48.online/api/matches/all-today').then(function(r) { return r.json(); }).catch(function() { return []; });
+            var p2 = fetch('https://trendy48.online/api/matches/live').then(function(r) { return r.json(); }).catch(function() { return []; });
+
+            return Promise.all([p1, p2]).then(function(results) {
+                var todayList = Array.isArray(results[0]) ? results[0] : [];
+                var liveList = Array.isArray(results[1]) ? results[1] : [];
+
+                liveMatchesMap = {};
+                liveList.forEach(function(m) {
+                    if (m && m.id) liveMatchesMap[m.id] = true;
+                });
+
+                allMatches = todayList;
+                render();
+            });
+        }
+
+        // Determine if match is live
+        function isMatchLive(match) {
+            if (liveMatchesMap[match.id]) return true;
+            if (match.date) {
+                var now = Date.now();
+                var diff = now - match.date;
+                // Live if started in last 2.5 hours
+                if (diff >= 0 && diff <= 150 * 60 * 1000) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // Extract sources for a match
+        function getMatchSources(match) {
+            var sources = [];
+            var primaryUrl = match.watch_url || ('https://trendy48.online/event/' + match.id);
+
+            // Primary source
+            sources.push({
+                index: 1,
+                name: 'Server 1',
+                detail: 'Trendy48 Live',
+                url: primaryUrl
+            });
+
+            // Extra sources from Trendy API if provided
+            if (Array.isArray(match.sources) && match.sources.length > 1) {
+                for (var i = 1; i < match.sources.length; i++) {
+                    var s = match.sources[i];
+                    sources.push({
+                        index: sources.length + 1,
+                        name: 'Server ' + (sources.length + 1),
+                        detail: s.name || s.source || 'Alternative',
+                        url: s.url || (s.id ? 'https://trendy48.online/event/' + s.id : primaryUrl)
+                    });
+                }
+            }
+
+            // Direct embed server if available
+            if (knownDirectEmbeds[match.id]) {
+                var embed = knownDirectEmbeds[match.id];
+                sources.push({
+                    index: sources.length + 1,
+                    name: 'Server ' + (sources.length + 1),
+                    detail: embed.name || 'Direct HD',
+                    url: embed.url
+                });
+            }
+
+            return sources;
+        }
+
+        // Split match title into two teams
+        function parseTeams(title) {
+            if (!title) return { t1: 'Match', t2: 'Live' };
+            var parts = title.split(/\s+vs\.?\s+|\s+v\.?\s+|\s+-\s+/i);
+            if (parts.length >= 2) {
+                return { t1: parts[0].trim(), t2: parts[1].trim() };
+            }
+            return { t1: title, t2: '' };
+        }
+
+        // Format countdown or start time
+        function formatMatchTime(timestamp, isLive) {
+            if (isLive) return 'Live Now!';
+            if (!timestamp) return 'Scheduled';
+            var d = new Date(timestamp);
+            var now = new Date();
+            var diffMs = d - now;
+            var diffMins = Math.round(diffMs / 60000);
+
+            if (diffMins <= 0) return 'Live Now!';
+            if (diffMins < 60) return 'In ' + diffMins + 'm';
+            
+            // Format time HH:MM
+            var hours = d.getHours().toString().padStart(2, '0');
+            var mins = d.getMinutes().toString().padStart(2, '0');
+            return hours + ':' + mins + ' (' + Math.round(diffMins / 60) + 'h)';
+        }
+
+        // Render match cards
+        function render() {
+            var filtered = allMatches.filter(function(m) {
+                // Sport filter
+                if (currentSport !== 'all') {
+                    var cat = (m.category || '').toLowerCase();
+                    if (cat !== currentSport) return false;
+                }
+                // Search filter
+                if (searchQuery) {
+                    var q = searchQuery.toLowerCase();
+                    var matchText = ((m.title || '') + ' ' + (m.id || '') + ' ' + (m.category || '')).toLowerCase();
+                    if (!matchText.includes(q)) return false;
+                }
+                return true;
+            });
+
+            var liveList = [];
+            var upcomingList = [];
+
+            filtered.forEach(function(m) {
+                if (isMatchLive(m)) {
+                    liveList.push(m);
+                } else {
+                    upcomingList.push(m);
+                }
+            });
+
+            // Sort upcoming by start date
+            upcomingList.sort(function(a, b) {
+                return (a.date || 0) - (b.date || 0);
+            });
+
+            // Update counters
+            document.getElementById('totalCount').textContent = allMatches.length;
+            document.getElementById('liveCount').textContent = Object.keys(liveMatchesMap).length;
+            document.getElementById('upcomingCount').textContent = Math.max(0, allMatches.length - Object.keys(liveMatchesMap).length);
+            document.getElementById('liveBadgeNumber').textContent = liveList.length;
+            document.getElementById('upcomingBadgeNumber').textContent = upcomingList.length;
+
+            var liveSec = document.getElementById('liveSection');
+            var upcomingSec = document.getElementById('upcomingSection');
+            var emptyView = document.getElementById('emptyView');
+
+            if (currentStatus === 'live') {
+                liveSec.classList.remove('hidden');
+                upcomingSec.classList.add('hidden');
+            } else if (currentStatus === 'upcoming') {
+                liveSec.classList.add('hidden');
+                upcomingSec.classList.remove('hidden');
+            } else {
+                liveSec.classList.remove('hidden');
+                upcomingSec.classList.remove('hidden');
+            }
+
+            // Render live cards
+            var liveHtml = liveList.map(function(m) { return createMatchCardHtml(m, true); }).join('');
+            document.getElementById('liveList').innerHTML = liveHtml || '<div class="py-6 text-center text-neutral-500 text-sm bg-neutral-800/40 rounded-xl border border-neutral-800">No live matches at this moment</div>';
+
+            // Render upcoming cards
+            var upcomingHtml = upcomingList.map(function(m) { return createMatchCardHtml(m, false); }).join('');
+            document.getElementById('upcomingList').innerHTML = upcomingHtml || '<div class="py-6 text-center text-neutral-500 text-sm bg-neutral-800/40 rounded-xl border border-neutral-800">No upcoming matches for this selection</div>';
+
+            // Empty state check
+            if (filtered.length === 0) {
+                liveSec.classList.add('hidden');
+                upcomingSec.classList.add('hidden');
+                emptyView.classList.remove('hidden');
+            } else {
+                emptyView.classList.add('hidden');
+            }
+        }
+
+        // Generate Match Card HTML replicating Footy4u layout
+        function createMatchCardHtml(m, isLive) {
+            var teams = parseTeams(m.title);
+            var sport = (m.category || 'football').toLowerCase();
+            var icon = sportIcons[sport] || '⚽';
+            var timeText = formatMatchTime(m.date, isLive);
+            var sources = getMatchSources(m);
+
+            // Server buttons HTML (if 1 then Server 1, if multiple then Server 1, Server 2...)
+            var serverBtnsHtml = sources.map(function(s, idx) {
+                var btnClass = s.index === 1 
+                    ? 'bg-orange-500 hover:bg-orange-600 text-black font-extrabold'
+                    : 'bg-neutral-800 hover:bg-neutral-700 text-neutral-200 border border-neutral-700 font-bold';
+
+                return '<button onclick="openPlayerWithSource(\'' + m.id + '\', ' + idx + ', event)" class="server-btn ' + btnClass + ' text-[11px] px-2.5 py-1 rounded-md shadow-sm whitespace-nowrap">' +
+                       s.name +
+                       '</button>';
+            }).join('');
+
+            return '<div onclick="openPlayerWithSource(\'' + m.id + '\', 0, event)" class="match-card text-white/90 w-full min-h-16 rounded-xl grid grid-cols-12 gap-3 sm:gap-4 text-sm p-3 items-center border border-neutral-800/80 cursor-pointer">' +
+                // Col 1: Status & Time Indicator (Footy4u style)
+                '<div class="col-span-4 sm:col-span-3 flex items-center gap-2.5 sm:gap-3">' +
+                    '<div class="' + (isLive ? 'bg-orange-500 shadow-[0_0_10px_rgba(249,115,22,0.8)]' : 'bg-neutral-600') + ' min-h-12 w-1.5 rounded-e-xl shrink-0"></div>' +
+                    '<div class="flex flex-col">' +
+                        (isLive 
+                            ? '<div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-orange-500 pulse-live"></span><span class="text-xs font-black text-orange-400 tracking-wide uppercase">Live Now!</span></div>' 
+                            : '<div class="text-xs font-bold text-neutral-200">' + timeText + '</div>'
+                        ) +
+                        '<span class="text-[11px] text-neutral-400 capitalize">' + (m.category || 'Sports') + '</span>' +
+                    '</div>' +
+                '</div>' +
+
+                // Col 2: Teams
+                '<div class="col-span-5 sm:col-span-6 flex flex-col justify-center gap-1.5 overflow-hidden">' +
+                    '<div class="flex items-center gap-2 font-medium truncate">' +
+                        '<span class="w-5 h-5 rounded-full bg-neutral-800 flex items-center justify-center text-xs shrink-0">' + icon + '</span>' +
+                        '<span class="truncate text-sm font-semibold text-neutral-100">' + escapeHtml(teams.t1) + '</span>' +
+                    '</div>' +
+                    (teams.t2 ? 
+                    '<div class="flex items-center gap-2 font-medium truncate">' +
+                        '<span class="w-5 h-5 rounded-full bg-neutral-800 flex items-center justify-center text-xs shrink-0">' + icon + '</span>' +
+                        '<span class="truncate text-sm font-semibold text-neutral-100">' + escapeHtml(teams.t2) + '</span>' +
+                    '</div>' : '') +
+                '</div>' +
+
+                // Col 3: Available Sources / Servers Buttons
+                '<div class="col-span-3 flex items-center justify-end gap-1.5 overflow-x-auto scrollbar-none">' +
+                    serverBtnsHtml +
+                '</div>' +
+            '</div>';
+        }
+
+        // Open Modal Player
+        function openPlayerWithSource(matchId, serverIdx, ev) {
+            if (ev) ev.stopPropagation();
+            var match = allMatches.find(function(m) { return m.id === matchId; });
+            if (!match) return;
+
+            activeModalMatch = match;
+            activeModalServerIndex = serverIdx || 0;
+
+            var sources = getMatchSources(match);
+            var activeSource = sources[activeModalServerIndex] || sources[0];
+
+            document.getElementById('modalTitle').textContent = match.title || 'Live Match';
+            document.getElementById('modalLiveDot').className = isMatchLive(match) 
+                ? 'w-2.5 h-2.5 rounded-full bg-orange-500 pulse-live' 
+                : 'w-2.5 h-2.5 rounded-full bg-neutral-500';
+
+            // Standalone link to index.html
+            document.getElementById('modalExternalBtn').href = '../?id=' + encodeURIComponent(match.id) + '&ser=' + (activeModalServerIndex + 1);
+
+            // Render Server Tabs inside modal
+            var serverTabsHtml = sources.map(function(s, idx) {
+                var isActive = idx === activeModalServerIndex;
+                var tabClass = isActive 
+                    ? 'bg-orange-500 text-black font-extrabold shadow-md' 
+                    : 'bg-neutral-700 hover:bg-neutral-600 text-neutral-200';
+
+                return '<button onclick="switchModalServer(' + idx + ')" class="px-3 py-1 rounded-md text-xs ' + tabClass + ' transition">' +
+                       s.name + (s.detail ? ' · ' + s.detail : '') +
+                       '</button>';
+            }).join('');
+
+            document.getElementById('modalServerButtons').innerHTML = serverTabsHtml;
+
+            // Load iframe
+            var frame = document.getElementById('modalIframe');
+            frame.src = activeSource.url;
+
+            document.getElementById('playerModal').classList.remove('hidden');
+        }
+
+        function switchModalServer(idx) {
+            if (!activeModalMatch) return;
+            openPlayerWithSource(activeModalMatch.id, idx);
+        }
+
+        function closePlayerModal() {
+            var frame = document.getElementById('modalIframe');
+            frame.src = '';
+            document.getElementById('playerModal').classList.add('hidden');
+            activeModalMatch = null;
+        }
+
+        function toggleModalFullscreen() {
+            var modal = document.querySelector('#playerModal > div');
+            if (!document.fullscreenElement) {
+                if (modal.requestFullscreen) modal.requestFullscreen();
+            } else {
+                if (document.exitFullscreen) document.exitFullscreen();
+            }
+        }
+
+        // Filter Handlers
+        function setSportFilter(sport) {
+            currentSport = sport;
+            document.querySelectorAll('.sport-nav-btn').forEach(function(btn) {
+                if (btn.getAttribute('data-sport') === sport) {
+                    btn.className = 'sport-nav-btn px-3 py-1.5 rounded-lg text-sm font-semibold text-orange-400 bg-orange-500/10 hover:bg-orange-500/20 transition-colors';
+                } else {
+                    btn.className = 'sport-nav-btn px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-300 hover:text-white hover:bg-neutral-800 transition-colors';
+                }
+            });
+
+            document.querySelectorAll('.sport-pill').forEach(function(pill) {
+                if (pill.getAttribute('data-sport') === sport) {
+                    pill.className = 'sport-pill px-3 py-1 rounded-full font-semibold bg-orange-500 text-black';
+                } else {
+                    pill.className = 'sport-pill px-3 py-1 rounded-full font-semibold bg-neutral-800 text-neutral-300 hover:bg-neutral-700 hover:text-white';
+                }
+            });
+
+            render();
+        }
+
+        function setStatusFilter(status) {
+            currentStatus = status;
+            ['All', 'Live', 'Upcoming'].forEach(function(name) {
+                var btn = document.getElementById('btnStatus' + name);
+                if (name.toLowerCase() === status) {
+                    btn.className = 'px-3 py-1.5 rounded-lg text-xs font-bold bg-neutral-700 text-white whitespace-nowrap transition';
+                } else {
+                    btn.className = 'px-3 py-1.5 rounded-lg text-xs font-bold bg-neutral-800 text-neutral-300 hover:text-white whitespace-nowrap transition';
+                }
+            });
+            render();
+        }
+
+        function onSearchChange(val) {
+            searchQuery = val.trim();
+            document.getElementById('clearSearchBtn').classList.toggle('hidden', !searchQuery);
+            render();
+        }
+
+        function clearSearch() {
+            var input = document.getElementById('searchInput');
+            input.value = '';
+            searchQuery = '';
+            document.getElementById('clearSearchBtn').classList.add('hidden');
+            render();
+        }
+
+        function resetFilters() {
+            currentSport = 'all';
+            currentStatus = 'all';
+            clearSearch();
+            setSportFilter('all');
+            setStatusFilter('all');
+        }
+
+        function refreshData(userTriggered) {
+            var icon = document.getElementById('refreshIcon');
+            if (icon) icon.classList.add('animate-spin');
+
+            fetchMatches().finally(function() {
+                if (icon) setTimeout(function() { icon.classList.remove('animate-spin'); }, 600);
+            });
+        }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+
+        // Close modal on Escape key or backdrop click
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closePlayerModal();
+        });
+        document.getElementById('playerModal').addEventListener('click', function(e) {
+            if (e.target === this) closePlayerModal();
+        });
+
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', function() {
+            fetchMatches();
+            // Auto refresh every 45 seconds
+            autoRefreshTimer = setInterval(fetchMatches, 45000);
+        });
+    </script>
+</body>
+</html>
