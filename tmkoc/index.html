@@ -9,7 +9,7 @@
   <!-- Open Graph / Meta -->
   <meta property="og:type" content="video.other">
   <meta property="og:title" content="Taarak Mehta Ka Ooltah Chashmah — Episode 4843 | AryanStreams">
-  <meta property="og:description" content="Watch & Download TMKOC Episode 4843 in HD with zero ads.">
+  <meta property="og:description" content="Watch & Download TMKOC Episode 4843 in Full HD with zero ads.">
   <meta property="og:site_name" content="AryanStreams">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Taarak Mehta Ka Ooltah Chashmah — Episode 4843">
@@ -152,6 +152,55 @@
       margin: 0 auto;
       padding: 24px 18px 40px;
       flex: 1;
+    }
+
+    /* Server Switcher Bar */
+    .server-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--card-dark);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 10px 16px;
+      margin-bottom: 16px;
+      overflow-x: auto;
+    }
+
+    .server-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+
+    .server-btn {
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      border: 1px solid #3f3f46;
+      background: #27272a;
+      color: #e4e4e7;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .server-btn:hover {
+      background: #3f3f46;
+      color: #fff;
+    }
+
+    .server-btn.active {
+      background: var(--accent-orange);
+      color: #000;
+      font-weight: 800;
+      border-color: var(--accent-orange);
+      box-shadow: 0 2px 10px rgba(249, 115, 22, 0.3);
     }
 
     /* Video Player Wrapper */
@@ -431,13 +480,21 @@
 
   <!-- Main Player Section -->
   <main class="container">
+
+    <!-- Server Selector -->
+    <div class="server-bar">
+      <span class="server-label">Servers:</span>
+      <button onclick="switchServer(1)" id="btnServer1" class="server-btn active">⚡ Server 1 (Edge HD Stream)</button>
+      <button onclick="switchServer(2)" id="btnServer2" class="server-btn">🌐 Server 2 (Direct GitHub CDN)</button>
+      <button onclick="switchServer(3)" id="btnServer3" class="server-btn">💻 Server 3 (Local Media)</button>
+    </div>
+
     <div class="player-card">
       <div class="video-container">
-        <video id="tmkoc-player" playsinline controls preload="metadata" crossorigin="anonymous">
-          <!-- Direct MP4 release asset (Range-requests enabled for smooth seeking) -->
-          <source id="video-source-cdn" src="https://github.com/ARYANBHAIcool/aryanstreams2/releases/download/v-tmkoc-4843/tmkoc_4843.mp4" type="video/mp4" size="1080">
-          <source id="video-source-local" src="tmkoc_4843.mp4" type="video/mp4" size="1080">
-          Your browser does not support the video tag.
+        <!-- Native video element without crossorigin to allow standard MP4 media streaming -->
+        <video id="tmkoc-player" playsinline controls preload="metadata">
+          <source id="video-source" src="https://aryanstreams.pages.dev/proxy/https://github.com/ARYANBHAIcool/aryanstreams2/releases/download/v-tmkoc-4843/tmkoc_4843.mp4" type="video/mp4">
+          Your browser does not support HTML5 video streaming.
         </video>
       </div>
 
@@ -497,9 +554,47 @@
   <script src="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.polyfilled.min.js"></script>
   <script>
     var player = null;
+    var currentServer = 1;
 
-    document.addEventListener('DOMContentLoaded', function() {
+    var serverUrls = {
+      1: "https://aryanstreams.pages.dev/proxy/https://github.com/ARYANBHAIcool/aryanstreams2/releases/download/v-tmkoc-4843/tmkoc_4843.mp4",
+      2: "https://github.com/ARYANBHAIcool/aryanstreams2/releases/download/v-tmkoc-4843/tmkoc_4843.mp4",
+      3: "tmkoc_4843.mp4"
+    };
+
+    function initPlayer(sourceUrl) {
       var video = document.getElementById('tmkoc-player');
+      
+      // If player already exists, change source directly
+      if (player) {
+        player.source = {
+          type: 'video',
+          title: 'TMKOC Episode 4843',
+          sources: [
+            {
+              src: sourceUrl,
+              type: 'video/mp4',
+              size: 1080
+            }
+          ]
+        };
+        video.play().catch(function() {});
+        return;
+      }
+
+      // Initial source
+      var sourceEl = document.getElementById('video-source');
+      if (sourceEl) sourceEl.src = sourceUrl;
+
+      // Handle video errors with auto-fallback
+      video.addEventListener('error', function(e) {
+        console.warn('Video playback error on server ' + currentServer + ', trying next server...', e);
+        if (currentServer === 1) {
+          switchServer(2);
+        } else if (currentServer === 2) {
+          switchServer(3);
+        }
+      });
 
       player = new Plyr(video, {
         controls: [
@@ -519,7 +614,22 @@
         speed: { selected: 1, options: [0.5, 0.75, 1, 1.25, 1.5, 2] },
         tooltips: { controls: true, seek: true }
       });
-    });
+    }
+
+    function switchServer(num) {
+      currentServer = num;
+      [1, 2, 3].forEach(function(n) {
+        var btn = document.getElementById('btnServer' + n);
+        if (btn) {
+          if (n === num) btn.classList.add('active');
+          else btn.classList.remove('active');
+        }
+      });
+
+      var target = serverUrls[num];
+      showToast('Switched to Server ' + num);
+      initPlayer(target);
+    }
 
     function toggleCinema() {
       if (player) {
@@ -544,6 +654,17 @@
         toast.classList.remove('show');
       }, 2500);
     }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Determine initial server: use relative /proxy if on pages.dev, else full URL
+      var origin = window.location.origin;
+      var initialUrl = serverUrls[1];
+      if (window.location.hostname.includes('pages.dev')) {
+        serverUrls[1] = origin + "/proxy/https://github.com/ARYANBHAIcool/aryanstreams2/releases/download/v-tmkoc-4843/tmkoc_4843.mp4";
+        initialUrl = serverUrls[1];
+      }
+      initPlayer(initialUrl);
+    });
   </script>
 </body>
 </html>

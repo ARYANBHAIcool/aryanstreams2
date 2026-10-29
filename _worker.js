@@ -298,6 +298,12 @@ async function handleProxy(request) {
       });
       responseHeaders.delete("set-cookie");
 
+      // Ensure proper MIME type and inline display for MP4 video streams
+      if (targetUrl.includes(".mp4")) {
+        responseHeaders.set("Content-Type", "video/mp4");
+        responseHeaders.delete("Content-Disposition");
+      }
+
       // Set Edge CDN and Browser caching: segments are immutable!
       responseHeaders.set("Cache-Control", "public, max-age=300, s-maxage=300, immutable");
       responseHeaders.set("X-Cache-Status", "STREAM-PASSTHROUGH");
