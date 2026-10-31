@@ -290,32 +290,287 @@
             'm-ac-milan-vs-bologna-1028': { name: 'TNT Sports 1 UK', url: 'https://trendy48.site/embed/tntsports1-uk' }
         };
 
-        // Fetch matches from Trendy48 APIs
-        function fetchMatches() {
-            var p1 = fetch('https://trendy48.online/api/matches/all-today').then(function(r) { return r.json(); }).catch(function() { return []; });
-            var p2 = fetch('https://trendy48.online/api/matches/live').then(function(r) { return r.json(); }).catch(function() { return []; });
+        // Team alias map for intelligent deduplication across feeds
+        var teamAliases = {
+            'man city': 'mancity', 'manchester city': 'mancity',
+            'man united': 'manunited', 'man utd': 'manunited', 'manchester united': 'manunited',
+            'paris saint-germain': 'psg', 'paris sg': 'psg', 'paris saint germain': 'psg', 'psg': 'psg',
+            'chelsea': 'chelsea', 'liverpool': 'liverpool', 'arsenal': 'arsenal',
+            'tottenham': 'tottenham', 'tottenham hotspur': 'tottenham',
+            'newcastle': 'newcastle', 'newcastle united': 'newcastle',
+            'barcelona': 'barcelona', 'barca': 'barcelona', 'fc barcelona': 'barcelona',
+            'real madrid': 'realmadrid', 'real': 'realmadrid',
+            'atletico': 'atletico', 'atletico madrid': 'atletico', 'atlético': 'atletico',
+            'bayern': 'bayern', 'bayern munich': 'bayern', 'fc bayern': 'bayern',
+            'dortmund': 'dortmund', 'borussia dortmund': 'dortmund',
+            'bayer leverkusen': 'leverkusen', 'leverkusen': 'leverkusen',
+            'vfb stuttgart': 'stuttgart', 'stuttgart': 'stuttgart',
+            'ac milan': 'milan', 'milan': 'milan',
+            'inter': 'inter', 'inter milan': 'inter', 'internazionale': 'inter',
+            'juventus': 'juventus', 'roma': 'roma', 'as roma': 'roma', 'napoli': 'napoli',
+            'leeds': 'leeds', 'leeds united': 'leeds',
+            'bournemouth': 'bournemouth', 'afc bournemouth': 'bournemouth',
+            'brighton': 'brighton', 'brighton & hove albion': 'brighton', 'brighton and hove albion': 'brighton',
+            'wolves': 'wolves', 'wolverhampton': 'wolves', 'wolverhampton wanderers': 'wolves',
+            'west ham': 'westham', 'west ham united': 'westham',
+            'canelo': 'canelo', 'canelo alvarez': 'canelo',
+            'mbilli': 'mbilli', 'christian mbilli': 'mbilli',
+            'pak': 'pak', 'pakistan': 'pak',
+            'sl': 'sl', 'sri lanka': 'sl'
+        };
 
-            return Promise.all([p1, p2]).then(function(results) {
-                var todayList = Array.isArray(results[0]) ? results[0] : [];
-                var liveList = Array.isArray(results[1]) ? results[1] : [];
+        function cleanTeam(name) {
+            if (!name) return '';
+            var s = name.toLowerCase().trim();
+            s = s.replace(/^(fc|afc|cf|sc|rc|vfb|ss|as)\s+/i, '');
+            s = s.replace(/\s+(fc|cf|sc|club|athletic)$/i, '');
+            s = s.replace(/[^a-z0-9\s]/g, '').trim();
+            if (teamAliases[s]) return teamAliases[s];
+            for (var k in teamAliases) {
+                if (s === k || s.indexOf(k) !== -1 || k.indexOf(s) !== -1) return teamAliases[k];
+            }
+            return s.replace(/\s+/g, '');
+        }
+
+        function extractTeams(title) {
+            if (!title) return { t1: '', t2: '' };
+            var parts = title.split(/\s+vs\.?\s+|\s+v\.?\s+|\s+-\s+/i);
+            if (parts.length >= 2) {
+                return { t1: cleanTeam(parts[0]), t2: cleanTeam(parts[1]) };
+            }
+            return { t1: cleanTeam(title), t2: '' };
+        }
+
+        function isSameMatch(tA, tB) {
+            if (!tA || !tB || !tA.t1 || !tB.t1) return false;
+            if (tA.t1 === tB.t1 && tA.t2 === tB.t2) return true;
+            if (tA.t1 === tB.t2 && tA.t2 === tB.t1) return true;
+            if (tA.t1.length >= 4 && tB.t1.length >= 4 && tA.t2.length >= 4 && tB.t2.length >= 4) {
+                var m1 = tA.t1.indexOf(tB.t1) !== -1 || tB.t1.indexOf(tA.t1) !== -1;
+                var m2 = tA.t2.indexOf(tB.t2) !== -1 || tB.t2.indexOf(tA.t2) !== -1;
+                if (m1 && m2) return true;
+            }
+            return false;
+        }
+
+        // Fetch matches from Trendy48, AdilX, and Futbol-X in parallel
+        function fetchMatches() {
+            var isSubDir = window.location.pathname.indexOf('/asop') !== -1 && !window.location.pathname.endsWith('asop.html');
+            var shakaBase = isSubDir ? '../shaka_player.html' : './shaka_player.html';
+
+            var pTrendyToday = fetch('https://trendy48.online/api/matches/all-today').then(function(r) { return r.json(); }).catch(function() { return []; });
+            var pTrendyLive = fetch('https://trendy48.online/api/matches/live').then(function(r) { return r.json(); }).catch(function() { return []; });
+            var pAdilFootball = fetch('https://sonujson-v6.pages.dev/Data/events/football.json').then(function(r) { return r.json(); }).catch(function() { return { events: [] }; });
+            var pAdilCricket = fetch('https://sonujson-v6.pages.dev/Data/events/cricket.json').then(function(r) { return r.json(); }).catch(function() { return { events: [] }; });
+            var pFutxFootball = fetch('https://www.futbol-x.xyz/api/football.json').then(function(r) { return r.json(); }).catch(function() { return { streams: [] }; });
+            var pFutxFights = fetch('https://www.futbol-x.xyz/api/fights.json').then(function(r) { return r.json(); }).catch(function() { return { streams: [] }; });
+            var pFutxBasket = fetch('https://www.futbol-x.xyz/api/basketball.json').then(function(r) { return r.json(); }).catch(function() { return { streams: [] }; });
+            var pFutxMotor = fetch('https://www.futbol-x.xyz/api/motorsports.json').then(function(r) { return r.json(); }).catch(function() { return { streams: [] }; });
+
+            return Promise.all([
+                pTrendyToday, pTrendyLive,
+                pAdilFootball, pAdilCricket,
+                pFutxFootball, pFutxFights, pFutxBasket, pFutxMotor
+            ]).then(function(results) {
+                var tToday = Array.isArray(results[0]) ? results[0] : [];
+                var tLive = Array.isArray(results[1]) ? results[1] : [];
+                var aFootball = results[2] || { events: [] };
+                var aCricket = results[3] || { events: [] };
+                var fFootball = results[4] || { streams: [] };
+                var fFights = results[5] || { streams: [] };
+                var fBasket = results[6] || { streams: [] };
+                var fMotor = results[7] || { streams: [] };
 
                 liveMatchesMap = {};
-                liveList.forEach(function(m) {
+                tLive.forEach(function(m) {
                     if (m && m.id) liveMatchesMap[m.id] = true;
                 });
 
-                allMatches = todayList;
+                var unified = [];
+
+                // 1. Ingest Trendy48
+                tToday.forEach(function(m) {
+                    if (!m || !m.title) return;
+                    var teams = extractTeams(m.title);
+                    var matchObj = {
+                        id: m.id,
+                        title: m.title,
+                        category: (m.category || 'football').toLowerCase(),
+                        date: m.date || 0,
+                        isLive: liveMatchesMap[m.id] === true,
+                        teams: teams,
+                        sources: []
+                    };
+
+                    var primaryUrl = m.watch_url || ('https://trendy48.online/event/' + m.id);
+                    matchObj.sources.push({
+                        index: 1,
+                        name: 'Server 1',
+                        detail: 'Trendy48 Live',
+                        type: 'iframe',
+                        url: primaryUrl,
+                        playerUrl: primaryUrl
+                    });
+
+                    if (Array.isArray(m.sources) && m.sources.length > 1) {
+                        for (var i = 1; i < m.sources.length; i++) {
+                            var s = m.sources[i];
+                            var sUrl = s.url || (s.id ? 'https://trendy48.online/event/' + s.id : primaryUrl);
+                            matchObj.sources.push({
+                                index: matchObj.sources.length + 1,
+                                name: 'Server ' + (matchObj.sources.length + 1),
+                                detail: s.name || s.source || 'Alternative',
+                                type: 'iframe',
+                                url: sUrl,
+                                playerUrl: sUrl
+                            });
+                        }
+                    }
+
+                    if (knownDirectEmbeds[m.id]) {
+                        var embed = knownDirectEmbeds[m.id];
+                        matchObj.sources.push({
+                            index: matchObj.sources.length + 1,
+                            name: 'Server ' + (matchObj.sources.length + 1),
+                            detail: embed.name || 'Direct HD',
+                            type: 'iframe',
+                            url: embed.url,
+                            playerUrl: embed.url
+                        });
+                    }
+
+                    unified.push(matchObj);
+                });
+
+                // 2. Ingest AdilX (Football & Cricket)
+                var adilEvents = [].concat(aFootball.events || [], aCricket.events || []);
+                adilEvents.forEach(function(ev) {
+                    var teamA = (ev.event && ev.event.teamA) || '';
+                    var teamB = (ev.event && ev.event.teamB) || '';
+                    var title = (teamA && teamB) ? (teamA + ' vs ' + teamB) : (ev.title || (ev.event && ev.event.name) || 'Live Match');
+                    var teams = { t1: cleanTeam(teamA), t2: cleanTeam(teamB) };
+                    if (!teams.t1 && !teams.t2) {
+                        var p = extractTeams(title);
+                        teams.t1 = p.t1;
+                        teams.t2 = p.t2;
+                    }
+
+                    var target = unified.find(function(m) { return isSameMatch(m.teams, teams); });
+                    var isLive = ev.status === 'live';
+
+                    if (!target) {
+                        target = {
+                            id: 'adil-' + (ev.id || ev.slug || Math.random().toString(36).substring(7)),
+                            title: title,
+                            category: (ev.event && ev.event.category ? ev.event.category : (ev.cat === 'Cricket' ? 'cricket' : 'football')).toLowerCase(),
+                            date: (ev.event && ev.event.startTimeIST) ? new Date(ev.event.startTimeIST).getTime() : 0,
+                            isLive: isLive,
+                            teams: teams,
+                            sources: []
+                        };
+                        unified.push(target);
+                    } else if (isLive) {
+                        target.isLive = true;
+                    }
+
+                    if (Array.isArray(ev.dashStreams)) {
+                        ev.dashStreams.forEach(function(ds) {
+                            if (!ds.url) return;
+                            var isDash = ds.type === 'dash' || ds.url.indexOf('.mpd') !== -1;
+                            var pUrl = ds.url;
+                            if (isDash && ds.key) {
+                                pUrl = shakaBase + '?mpd=' + encodeURIComponent(ds.url) + '&key=' + encodeURIComponent(ds.key);
+                            } else if (isDash) {
+                                pUrl = shakaBase + '?mpd=' + encodeURIComponent(ds.url);
+                            } else {
+                                pUrl = shakaBase + '?mpd=' + encodeURIComponent(ds.url);
+                            }
+
+                            target.sources.push({
+                                index: target.sources.length + 1,
+                                name: 'Server ' + (target.sources.length + 1),
+                                detail: ds.title ? ('AdilX ' + ds.title) : (isDash ? 'AdilX UHD (DASH)' : 'AdilX HD'),
+                                type: isDash ? 'dash' : 'hls',
+                                url: ds.url,
+                                key: ds.key,
+                                playerUrl: pUrl
+                            });
+                        });
+                    }
+                });
+
+                // 3. Ingest Futbol-X
+                var fxCats = [
+                    { cat: 'football', data: fFootball },
+                    { cat: 'fights', data: fFights },
+                    { cat: 'basketball', data: fBasket },
+                    { cat: 'motorsports', data: fMotor }
+                ];
+
+                fxCats.forEach(function(c) {
+                    var rawItems = (c.data && c.data.streams) || [];
+                    rawItems.forEach(function(item) {
+                        var streams = (item.streams && Array.isArray(item.streams) && typeof item.streams[0] === 'object' && item.streams[0].name)
+                            ? item.streams
+                            : [item];
+
+                        streams.forEach(function(s) {
+                            if (!s.name) return;
+                            var teams = extractTeams(s.name);
+                            var target = unified.find(function(m) { return isSameMatch(m.teams, teams); });
+
+                            var now = Date.now();
+                            var startTime = s.starts_at ? new Date(s.starts_at).getTime() : 0;
+                            var endTime = s.ends_at ? new Date(s.ends_at).getTime() : (startTime + 10800000);
+                            var isLive = s.always_live === 1 || (startTime > 0 && now >= startTime && now <= endTime);
+
+                            if (!target) {
+                                target = {
+                                    id: 'futx-' + (s.uri_name || Math.random().toString(36).substring(7)),
+                                    title: s.name,
+                                    category: (c.cat || s.tag || 'football').toLowerCase(),
+                                    date: startTime,
+                                    isLive: isLive,
+                                    poster: s.poster,
+                                    teams: teams,
+                                    sources: []
+                                };
+                                unified.push(target);
+                            } else if (isLive) {
+                                target.isLive = true;
+                            }
+
+                            if (Array.isArray(s.streams)) {
+                                s.streams.forEach(function(st) {
+                                    if (!st.url) return;
+                                    target.sources.push({
+                                        index: target.sources.length + 1,
+                                        name: 'Server ' + (target.sources.length + 1),
+                                        detail: st.title ? ('Futbol-X ' + st.title) : 'Futbol-X HD',
+                                        type: 'hls',
+                                        url: st.url,
+                                        playerUrl: shakaBase + '?mpd=' + encodeURIComponent(st.url)
+                                    });
+                                });
+                            }
+                        });
+                    });
+                });
+
+                allMatches = unified;
                 render();
             });
         }
 
         // Determine if match is live
         function isMatchLive(match) {
+            if (match.isLive === true) return true;
             if (liveMatchesMap[match.id]) return true;
+            if (match.status === 'live') return true;
+            if (match.status === 'ended') return false;
             if (match.date) {
                 var now = Date.now();
                 var diff = now - match.date;
-                // Live if started in last 2.5 hours
                 if (diff >= 0 && diff <= 150 * 60 * 1000) {
                     return true;
                 }
@@ -325,42 +580,18 @@
 
         // Extract sources for a match
         function getMatchSources(match) {
-            var sources = [];
+            if (Array.isArray(match.sources) && match.sources.length > 0) {
+                return match.sources;
+            }
             var primaryUrl = match.watch_url || ('https://trendy48.online/event/' + match.id);
-
-            // Primary source
-            sources.push({
+            return [{
                 index: 1,
                 name: 'Server 1',
-                detail: 'Trendy48 Live',
-                url: primaryUrl
-            });
-
-            // Extra sources from Trendy API if provided
-            if (Array.isArray(match.sources) && match.sources.length > 1) {
-                for (var i = 1; i < match.sources.length; i++) {
-                    var s = match.sources[i];
-                    sources.push({
-                        index: sources.length + 1,
-                        name: 'Server ' + (sources.length + 1),
-                        detail: s.name || s.source || 'Alternative',
-                        url: s.url || (s.id ? 'https://trendy48.online/event/' + s.id : primaryUrl)
-                    });
-                }
-            }
-
-            // Direct embed server if available
-            if (knownDirectEmbeds[match.id]) {
-                var embed = knownDirectEmbeds[match.id];
-                sources.push({
-                    index: sources.length + 1,
-                    name: 'Server ' + (sources.length + 1),
-                    detail: embed.name || 'Direct HD',
-                    url: embed.url
-                });
-            }
-
-            return sources;
+                detail: 'Live Stream',
+                type: 'iframe',
+                url: primaryUrl,
+                playerUrl: primaryUrl
+            }];
         }
 
         // Split match title into two teams
@@ -510,7 +741,7 @@
                 '</div>' +
 
                 // Col 3: Available Sources / Servers Buttons
-                '<div class="col-span-3 flex items-center justify-end gap-1.5 overflow-x-auto scrollbar-none">' +
+                '<div class="col-span-3 sm:col-span-4 flex items-center justify-end gap-1.5 flex-wrap">' +
                     serverBtnsHtml +
                 '</div>' +
             '</div>';
@@ -534,7 +765,8 @@
                 : 'w-2.5 h-2.5 rounded-full bg-neutral-500';
 
             // Standalone link to index.html
-            document.getElementById('modalExternalBtn').href = '../?id=' + encodeURIComponent(match.id) + '&ser=' + (activeModalServerIndex + 1);
+            var isSub = window.location.pathname.indexOf('/asop') !== -1 && !window.location.pathname.endsWith('asop.html');
+            document.getElementById('modalExternalBtn').href = (isSub ? '../' : './') + '?id=' + encodeURIComponent(match.id) + '&ser=' + (activeModalServerIndex + 1);
 
             // Render Server Tabs inside modal
             var serverTabsHtml = sources.map(function(s, idx) {
@@ -552,7 +784,7 @@
 
             // Load iframe
             var frame = document.getElementById('modalIframe');
-            frame.src = activeSource.url;
+            frame.src = activeSource.playerUrl || activeSource.url;
 
             document.getElementById('playerModal').classList.remove('hidden');
         }

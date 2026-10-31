@@ -146,7 +146,7 @@
 
         var params = new URLSearchParams(location.search || location.hash.replace('#',''));
 
-        var MPD_URL  = params.get('mpd')  || '';
+        var MPD_URL  = params.get('mpd') || params.get('url') || params.get('m3u8') || params.get('stream') || '';
         var KEY_ID   = params.get('kid')  || '';
         var KEY      = params.get('key')  || '';
         var CH_ID    = params.get('chid') || params.get('id') || '';
@@ -556,6 +556,11 @@
             var activeRawCookie = rawCookie(COOKIE);
             var activeClearKeys = {};
 
+            if (activeKey && activeKey.includes(':') && !activeKid) {
+                var kp = activeKey.split(':');
+                activeKid = kp[0].trim();
+                activeKey = kp[1].trim();
+            }
             if (activeKid && activeKey) {
                 activeClearKeys[activeKid.toLowerCase()] = activeKey.toLowerCase();
             }

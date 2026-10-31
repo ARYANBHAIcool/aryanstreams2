@@ -1253,6 +1253,18 @@
             "beinsports":       { type: "iframe", name: "beIN Sports USA HD (Trend48)",      url: "https://trend48.st/live-tv?ch=beinsports-usa" },
             "beinsport":        { type: "iframe", name: "beIN Sports USA HD (Trend48)",      url: "https://trend48.st/live-tv?ch=beinsports-usa" },
             "beinsportsusa":    { type: "iframe", name: "beIN Sports USA HD (Trend48)",      url: "https://trend48.st/live-tv?ch=beinsports-usa" },
+
+            // ── Permanent French / beIN / Sports Channels ───────────────────
+            "beinsports_usa":   { type: "iframe", name: "beIN Sports USA HD",                url: "https://trend48.st/live-tv?ch=beinsports-usa" },
+            "beinsports1":      { type: "iframe", name: "beIN Sports 1 MENA HD",             url: "https://trend48.st/live-tv?ch=beinsports1-sa" },
+            "beinsports2":      { type: "iframe", name: "beIN Sports 2 MENA HD",             url: "https://trend48.st/live-tv?ch=beinsports2-sa" },
+            "beinsports3":      { type: "iframe", name: "beIN Sports 3 MENA HD",             url: "https://trend48.st/live-tv?ch=beinsports3-sa" },
+            "beinsports4":      { type: "iframe", name: "beIN Sports 4 MENA HD",             url: "https://trend48.st/live-tv?ch=beinsports4-sa" },
+            "psg":              { type: "iframe", name: "Paris Saint-Germain (beIN Sports USA)", url: "https://trendy48.site/embed/beinsports-usa" },
+            "psg_web":          { type: "iframe", name: "Paris Saint-Germain (beIN Sports USA)", url: "https://trend48.st/live-tv?ch=beinsports-usa" },
+            "psgvslyon":        { type: "iframe", name: "PSG vs Lyon (beIN Sports USA)",     url: "https://trendy48.site/embed/beinsports-usa" },
+            "parissaintgermain":{ type: "iframe", name: "Paris Saint-Germain (beIN Sports USA)", url: "https://trendy48.site/embed/beinsports-usa" },
+
             "beinus_direct":    { type: "iframe", name: "beIN Sports USA (Direct Embed)",    url: "https://trendy48.site/embed/beinsports-usa" },
             "beinsports_direct":{ type: "iframe", name: "beIN Sports USA (Direct Embed)",    url: "https://trendy48.site/embed/beinsports-usa" },
             "tnt1_direct":      { type: "iframe", name: "TNT Sports 1 (Direct Embed)",       url: "https://trendy48.site/embed/tntsports1-uk" },
@@ -2105,8 +2117,39 @@
                 var keyNormalized = keyLower.replace(/[\s\-_]+/g, '_');
                 var serParam = urlParams.get('ser') || urlParams.get('server');
 
-                // Priority 1: If streamKey starts with "m-", it is directly a Trendy48 match event!
-                if (streamKey.startsWith('m-')) {
+                
+                // Direct stream URL check (HLS, DASH, iframe)
+                if (streamKey.startsWith('http://') || streamKey.startsWith('https://')) {
+                    var isMpd = streamKey.indexOf('.mpd') !== -1;
+                    var isM3u8 = streamKey.indexOf('.m3u8') !== -1;
+                    var kidParam = urlParams.get('kid') || '';
+                    var keyParam = urlParams.get('key') || '';
+                    if (isMpd || kidParam || keyParam) {
+                        renderChannel({
+                            type: 'iframe',
+                            name: 'Live Stream (DASH)',
+                            url: 'shaka_player.html?mpd=' + encodeURIComponent(streamKey) + (kidParam ? '&kid=' + encodeURIComponent(kidParam) : '') + (keyParam ? '&key=' + encodeURIComponent(keyParam) : '')
+                        });
+                        return;
+                    } else if (isM3u8) {
+                        renderChannel({
+                            type: 'video',
+                            name: 'Live Stream (Universal HLS)',
+                            url: streamKey
+                        });
+                        return;
+                    } else {
+                        renderChannel({
+                            type: 'iframe',
+                            name: 'Live Stream',
+                            url: streamKey
+                        });
+                        return;
+                    }
+                }
+
+                // Priority 1: If streamKey is an event ID (m-, adil-, futx-)
+                if (streamKey.startsWith('m-') || streamKey.startsWith('adil-') || streamKey.startsWith('futx-')) {
                     resolveTrendyMatch(streamKey, serParam, function(dynamicCh) {
                         if (dynamicCh) {
                             renderChannel(dynamicCh);
@@ -2256,8 +2299,12 @@
         }
 
         function resolveTrendyMatch(streamKey, serParam, cb) {
+            resolveUnifiedMatch(streamKey, serParam, cb);
+        }
+
+        function resolveUnifiedMatch(streamKey, serParam, cb) {
             var controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
-            var timer = setTimeout(function() { if (controller) controller.abort(); }, 3500);
+            var timer = setTimeout(function() { if (controller) controller.abort(); }, 4000);
 
             var directEmbeds = {
                 'm-le-havre-ac-vs-paris-saint-germain-1030': 'https://trendy48.site/embed/beinsports-usa',
@@ -2267,100 +2314,248 @@
                 'm-ac-milan-vs-bologna-1028': 'https://trendy48.site/embed/tntsports1-uk'
             };
 
-            fetch('https://trendy48.online/api/matches/all-today', {
-                signal: controller ? controller.signal : undefined
-            })
-            .then(function(res) { return res.json(); })
-            .then(function(matches) {
+            var teamAliases = {
+                'man city': 'mancity', 'manchester city': 'mancity',
+                'man united': 'manunited', 'man utd': 'manunited', 'manchester united': 'manunited',
+                'paris saint-germain': 'psg', 'paris sg': 'psg', 'paris saint germain': 'psg', 'psg': 'psg',
+                'chelsea': 'chelsea', 'liverpool': 'liverpool', 'arsenal': 'arsenal',
+                'tottenham': 'tottenham', 'tottenham hotspur': 'tottenham',
+                'newcastle': 'newcastle', 'newcastle united': 'newcastle',
+                'barcelona': 'barcelona', 'barca': 'barcelona', 'fc barcelona': 'barcelona',
+                'real madrid': 'realmadrid', 'real': 'realmadrid',
+                'atletico': 'atletico', 'atletico madrid': 'atletico', 'atlético': 'atletico',
+                'bayern': 'bayern', 'bayern munich': 'bayern', 'fc bayern': 'bayern',
+                'dortmund': 'dortmund', 'borussia dortmund': 'dortmund',
+                'bayer leverkusen': 'leverkusen', 'leverkusen': 'leverkusen',
+                'vfb stuttgart': 'stuttgart', 'stuttgart': 'stuttgart',
+                'ac milan': 'milan', 'milan': 'milan',
+                'inter': 'inter', 'inter milan': 'inter', 'internazionale': 'inter',
+                'juventus': 'juventus', 'roma': 'roma', 'as roma': 'roma', 'napoli': 'napoli',
+                'leeds': 'leeds', 'leeds united': 'leeds',
+                'bournemouth': 'bournemouth', 'afc bournemouth': 'bournemouth',
+                'brighton': 'brighton', 'brighton & hove albion': 'brighton', 'brighton and hove albion': 'brighton',
+                'wolves': 'wolves', 'wolverhampton': 'wolves', 'wolverhampton wanderers': 'wolves',
+                'west ham': 'westham', 'west ham united': 'westham',
+                'canelo': 'canelo', 'canelo alvarez': 'canelo',
+                'mbilli': 'mbilli', 'christian mbilli': 'mbilli',
+                'pak': 'pak', 'pakistan': 'pak',
+                'sl': 'sl', 'sri lanka': 'sl'
+            };
+
+            function cleanTeam(name) {
+                if (!name) return '';
+                var s = name.toLowerCase().trim();
+                s = s.replace(/^(fc|afc|cf|sc|rc|vfb|ss|as)\s+/i, '');
+                s = s.replace(/\s+(fc|cf|sc|club|athletic)$/i, '');
+                s = s.replace(/[^a-z0-9\s]/g, '').trim();
+                if (teamAliases[s]) return teamAliases[s];
+                for (var k in teamAliases) {
+                    if (s === k || s.indexOf(k) !== -1 || k.indexOf(s) !== -1) return teamAliases[k];
+                }
+                return s.replace(/\s+/g, '');
+            }
+
+            function extractTeams(title) {
+                if (!title) return { t1: '', t2: '' };
+                var parts = title.split(/\s+vs\.?\s+|\s+v\.?\s+|\s+-\s+/i);
+                if (parts.length >= 2) {
+                    return { t1: cleanTeam(parts[0]), t2: cleanTeam(parts[1]) };
+                }
+                return { t1: cleanTeam(title), t2: '' };
+            }
+
+            function isSameMatch(tA, tB) {
+                if (!tA || !tB || !tA.t1 || !tB.t1) return false;
+                if (tA.t1 === tB.t1 && tA.t2 === tB.t2) return true;
+                if (tA.t1 === tB.t2 && tA.t2 === tB.t1) return true;
+                if (tA.t1.length >= 4 && tB.t1.length >= 4 && tA.t2.length >= 4 && tB.t2.length >= 4) {
+                    var m1 = tA.t1.indexOf(tB.t1) !== -1 || tB.t1.indexOf(tA.t1) !== -1;
+                    var m2 = tA.t2.indexOf(tB.t2) !== -1 || tB.t2.indexOf(tA.t2) !== -1;
+                    if (m1 && m2) return true;
+                }
+                return false;
+            }
+
+            var p1 = fetch('https://trendy48.online/api/matches/all-today', { signal: controller ? controller.signal : undefined }).then(function(r) { return r.json(); }).catch(function() { return []; });
+            var p2 = fetch('https://sonujson-v6.pages.dev/Data/events/football.json', { signal: controller ? controller.signal : undefined }).then(function(r) { return r.json(); }).catch(function() { return { events: [] }; });
+            var p3 = fetch('https://sonujson-v6.pages.dev/Data/events/cricket.json', { signal: controller ? controller.signal : undefined }).then(function(r) { return r.json(); }).catch(function() { return { events: [] }; });
+            var p4 = fetch('https://www.futbol-x.xyz/api/football.json', { signal: controller ? controller.signal : undefined }).then(function(r) { return r.json(); }).catch(function() { return { streams: [] }; });
+            var p5 = fetch('https://www.futbol-x.xyz/api/fights.json', { signal: controller ? controller.signal : undefined }).then(function(r) { return r.json(); }).catch(function() { return { streams: [] }; });
+
+            Promise.all([p1, p2, p3, p4, p5]).then(function(results) {
                 clearTimeout(timer);
-                if (!Array.isArray(matches)) { cb(null); return; }
-                
+                var tToday = Array.isArray(results[0]) ? results[0] : [];
+                var aFootball = results[1] || { events: [] };
+                var aCricket = results[2] || { events: [] };
+                var fFootball = results[3] || { streams: [] };
+                var fFights = results[4] || { streams: [] };
+
+                var unified = [];
+
+                // 1. Trendy48
+                tToday.forEach(function(m) {
+                    if (!m || !m.title) return;
+                    var teams = extractTeams(m.title);
+                    var matchObj = {
+                        id: m.id,
+                        title: m.title,
+                        teams: teams,
+                        sources: []
+                    };
+                    var primaryUrl = m.watch_url || ('https://trendy48.online/event/' + m.id);
+                    matchObj.sources.push({
+                        type: 'iframe',
+                        name: 'Server 1',
+                        detail: 'Trendy48 Live',
+                        url: primaryUrl
+                    });
+                    if (Array.isArray(m.sources) && m.sources.length > 1) {
+                        for (var i = 1; i < m.sources.length; i++) {
+                            var s = m.sources[i];
+                            matchObj.sources.push({
+                                type: 'iframe',
+                                name: 'Server ' + (matchObj.sources.length + 1),
+                                detail: s.name || s.source || 'Alternative',
+                                url: s.url || (s.id ? 'https://trendy48.online/event/' + s.id : primaryUrl)
+                            });
+                        }
+                    }
+                    if (directEmbeds[m.id]) {
+                        matchObj.sources.push({
+                            type: 'iframe',
+                            name: 'Server ' + (matchObj.sources.length + 1),
+                            detail: 'Direct HD',
+                            url: directEmbeds[m.id]
+                        });
+                    }
+                    unified.push(matchObj);
+                });
+
+                // 2. AdilX
+                var adilEvents = [].concat(aFootball.events || [], aCricket.events || []);
+                adilEvents.forEach(function(ev) {
+                    var teamA = (ev.event && ev.event.teamA) || '';
+                    var teamB = (ev.event && ev.event.teamB) || '';
+                    var title = (teamA && teamB) ? (teamA + ' vs ' + teamB) : (ev.title || (ev.event && ev.event.name) || 'Match');
+                    var teams = { t1: cleanTeam(teamA), t2: cleanTeam(teamB) };
+                    if (!teams.t1 && !teams.t2) {
+                        var p = extractTeams(title);
+                        teams.t1 = p.t1;
+                        teams.t2 = p.t2;
+                    }
+                    var target = unified.find(function(m) { return isSameMatch(m.teams, teams); });
+                    if (!target) {
+                        target = {
+                            id: 'adil-' + (ev.id || ev.slug || Math.random().toString(36).substring(7)),
+                            title: title,
+                            teams: teams,
+                            sources: []
+                        };
+                        unified.push(target);
+                    }
+                    if (Array.isArray(ev.dashStreams)) {
+                        ev.dashStreams.forEach(function(ds) {
+                            if (!ds.url) return;
+                            var isDash = ds.type === 'dash' || ds.url.indexOf('.mpd') !== -1;
+                            target.sources.push({
+                                type: isDash ? 'dash' : 'video',
+                                name: 'Server ' + (target.sources.length + 1),
+                                detail: ds.title ? ('AdilX ' + ds.title) : (isDash ? 'AdilX UHD' : 'AdilX HD'),
+                                url: ds.url,
+                                key: ds.key
+                            });
+                        });
+                    }
+                });
+
+                // 3. Futbol-X
+                var fxCats = [fFootball, fFights];
+                fxCats.forEach(function(c) {
+                    var rawItems = (c && c.streams) || [];
+                    rawItems.forEach(function(item) {
+                        var streams = (item.streams && Array.isArray(item.streams) && typeof item.streams[0] === 'object' && item.streams[0].name)
+                            ? item.streams
+                            : [item];
+                        streams.forEach(function(s) {
+                            if (!s.name) return;
+                            var teams = extractTeams(s.name);
+                            var target = unified.find(function(m) { return isSameMatch(m.teams, teams); });
+                            if (!target) {
+                                target = {
+                                    id: 'futx-' + (s.uri_name || Math.random().toString(36).substring(7)),
+                                    title: s.name,
+                                    teams: teams,
+                                    sources: []
+                                };
+                                unified.push(target);
+                            }
+                            if (Array.isArray(s.streams)) {
+                                s.streams.forEach(function(st) {
+                                    if (!st.url) return;
+                                    target.sources.push({
+                                        type: 'video',
+                                        name: 'Server ' + (target.sources.length + 1),
+                                        detail: st.title ? ('Futbol-X ' + st.title) : 'Futbol-X HD',
+                                        url: st.url
+                                    });
+                                });
+                            }
+                        });
+                    });
+                });
+
+                // Search matching match
                 var rawKey = (streamKey || '').toLowerCase().trim();
                 var query = rawKey.replace(/[^a-z0-9]/g, '');
                 var matched = null;
 
-                var aliasMap = {
-                    'psg': ['paris', 'saint-germain', 'parissaintgermain', 'lehavre'],
-                    'barca': ['barcelona'],
-                    'rm': ['realmadrid', 'real madrid'],
-                    'real': ['realmadrid', 'real madrid'],
-                    'atm': ['atletico'],
-                    'milan': ['ac milan', 'milan'],
-                    'inter': ['inter milan', 'inter'],
-                    'city': ['manchester city'],
-                    'united': ['manchester united']
-                };
+                for (var i = 0; i < unified.length; i++) {
+                    var um = unified[i];
+                    var uIdClean = (um.id || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+                    var uTitleClean = (um.title || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
-                var vsParts = rawKey.split(/[\s\-_]*vs[\s\-_]*/i);
-
-                for (var i = 0; i < matches.length; i++) {
-                    var m = matches[i];
-                    var mIdClean = (m.id || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-                    var mTitleClean = (m.title || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-
-                    if (mIdClean === query || mTitleClean === query ||
-                        mIdClean.includes(query) || mTitleClean.includes(query) ||
-                        (query.length > 5 && (query.includes(mIdClean) || mIdClean.includes(query)))) {
-                        matched = m;
+                    if (uIdClean === query || uTitleClean === query ||
+                        uIdClean.indexOf(query) !== -1 || uTitleClean.indexOf(query) !== -1 ||
+                        (query.length > 5 && (query.indexOf(uIdClean) !== -1 || uIdClean.indexOf(query) !== -1))) {
+                        matched = um;
                         break;
-                    }
-
-                    var teamNames = (m.title || '').split(/\s+vs\.?\s+|\s+v\.?\s+/i);
-                    var acronyms = teamNames.map(function(t) {
-                        return t.split(/[\s\-_]+/).map(function(w) { return w[0]; }).join('').toLowerCase();
-                    });
-                    if (acronyms.includes(query)) {
-                        matched = m;
-                        break;
-                    }
-
-                    if (aliasMap[query]) {
-                        var isAlias = aliasMap[query].some(function(t) {
-                            var cleanT = t.replace(/[^a-z0-9]/g, '');
-                            return mIdClean.includes(cleanT) || mTitleClean.includes(cleanT);
-                        });
-                        if (isAlias) {
-                            matched = m;
-                            break;
-                        }
-                    }
-
-                    if (vsParts.length === 2) {
-                        var p1 = vsParts[0].replace(/[^a-z0-9]/g, '');
-                        var p2 = vsParts[1].replace(/[^a-z0-9]/g, '');
-                        var mTeams = teamNames.map(function(t) { return t.toLowerCase().replace(/[^a-z0-9]/g, ''); });
-                        var p1Match = mTeams.some(function(t) { return t.includes(p1) || p1.includes(t.slice(0, 5)); });
-                        var p2Match = mTeams.some(function(t) { return t.includes(p2) || p2.includes(t.slice(0, 5)); });
-                        if (p1Match && p2Match) {
-                            matched = m;
-                            break;
-                        }
                     }
                 }
 
-                if (matched) {
-                    var url = matched.watch_url || ('https://trendy48.online/event/' + matched.id);
-                    var title = matched.title || matched.id;
+                if (!matched) {
+                    // Try team extraction matching
+                    var qTeams = extractTeams(rawKey.replace(/[-_]+/g, ' '));
+                    matched = unified.find(function(m) { return isSameMatch(m.teams, qTeams); });
+                }
+
+                if (matched && matched.sources.length > 0) {
                     var sIndex = parseInt(serParam || '1', 10);
+                    var src = matched.sources[sIndex - 1] || matched.sources[0];
+                    var titleName = matched.title + (serParam ? ' (Server ' + serParam + ')' : '');
 
-                    if (sIndex === 2 && directEmbeds[matched.id]) {
-                        url = directEmbeds[matched.id];
-                    } else if (sIndex > 1 && matched.sources && matched.sources.length >= sIndex) {
-                        var extra = matched.sources[sIndex - 1];
-                        if (extra.url) url = extra.url;
-                        else if (extra.id) url = 'https://trendy48.online/event/' + extra.id;
+                    if (src.type === 'dash' || (src.url && src.url.indexOf('.mpd') !== -1)) {
+                        cb({
+                            type: 'iframe',
+                            name: titleName,
+                            url: 'shaka_player.html?mpd=' + encodeURIComponent(src.url) + (src.key ? '&key=' + encodeURIComponent(src.key) : '')
+                        });
+                    } else if (src.type === 'video' || (src.url && src.url.indexOf('.m3u8') !== -1)) {
+                        cb({
+                            type: 'video',
+                            name: titleName,
+                            url: src.url
+                        });
+                    } else {
+                        cb({
+                            type: 'iframe',
+                            name: titleName,
+                            url: src.url
+                        });
                     }
-
-                    cb({
-                        type: 'iframe',
-                        name: title + (serParam ? ' (Server ' + serParam + ')' : ''),
-                        url: url
-                    });
                 } else {
                     cb(null);
                 }
-            })
-            .catch(function() {
+            }).catch(function() {
                 clearTimeout(timer);
                 cb(null);
             });
@@ -2368,4 +2563,3 @@
     </script>
 
 </body>
-</html>
