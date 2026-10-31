@@ -2493,15 +2493,30 @@
                                 };
                                 unified.push(target);
                             }
+                            var livePage = s.uri_name ? ('https://www.futbol-x.xyz/live/' + encodeURIComponent(s.uri_name)) : '';
+                            var hasValid = false;
                             if (Array.isArray(s.streams)) {
                                 s.streams.forEach(function(st) {
-                                    if (!st.url) return;
+                                    if (!st || !st.url || !st.url.trim()) return;
+                                    hasValid = true;
                                     target.sources.push({
                                         type: 'video',
                                         name: 'Server ' + (target.sources.length + 1),
                                         detail: st.title ? ('Futbol-X ' + st.title) : 'Futbol-X HD',
-                                        url: st.url
+                                        url: st.url.trim(),
+                                        isFutx: true,
+                                        livePage: livePage
                                     });
+                                });
+                            }
+                            if (!hasValid && livePage) {
+                                target.sources.push({
+                                    type: 'iframe',
+                                    name: 'Server ' + (target.sources.length + 1),
+                                    detail: 'Futbol-X Live',
+                                    url: livePage,
+                                    isFutx: true,
+                                    livePage: livePage
                                 });
                             }
                         });
@@ -2536,6 +2551,50 @@
                     var sIndex = parseInt(serParam || '1', 10);
                     var src = matched.sources[sIndex - 1] || matched.sources[0];
                     var titleName = matched.title + (serParam ? ' (Server ' + serParam + ')' : '');
+
+                    // Handle Futbol-X streams with token resolution
+                    if (src.isFutx && src.url && src.url.indexOf('futx.nx.kg') !== -1 && src.url.indexOf('token=') === -1) {
+                        try {
+                            var fu = new URL(src.url);
+                            var ftokUrl = 'https://www.futbol-x.xyz/api/token.js?path=' + encodeURIComponent(fu.pathname) + '&sourceHost=' + encodeURIComponent(fu.hostname) + '&expires=900';
+                            fetch(ftokUrl).then(function(r) { return r.json(); }).then(function(ftData) {
+                                if (ftData && ftData.url) {
+                                    cb({
+                                        type: 'video',
+                                        name: titleName,
+                                        url: ftData.url
+                                    });
+                                } else if (src.livePage) {
+                                    cb({
+                                        type: 'iframe',
+                                        name: titleName,
+                                        url: src.livePage
+                                    });
+                                } else {
+                                    cb({
+                                        type: 'video',
+                                        name: titleName,
+                                        url: src.url
+                                    });
+                                }
+                            }).catch(function() {
+                                if (src.livePage) {
+                                    cb({
+                                        type: 'iframe',
+                                        name: titleName,
+                                        url: src.livePage
+                                    });
+                                } else {
+                                    cb({
+                                        type: 'video',
+                                        name: titleName,
+                                        url: src.url
+                                    });
+                                }
+                            });
+                            return;
+                        } catch(e) {}
+                    }
 
                     if (src.type === 'dash' || (src.url && src.url.indexOf('.mpd') !== -1)) {
                         cb({

@@ -546,17 +546,35 @@
                                 target.isLive = true;
                             }
 
+                            var livePage = s.uri_name ? ('https://www.futbol-x.xyz/live/' + encodeURIComponent(s.uri_name)) : '';
+                            var hasValidStream = false;
                             if (Array.isArray(s.streams)) {
                                 s.streams.forEach(function(st) {
-                                    if (!st.url) return;
+                                    if (!st || !st.url || !st.url.trim()) return;
+                                    hasValidStream = true;
+                                    var cleanUrl = st.url.trim();
                                     target.sources.push({
                                         index: target.sources.length + 1,
                                         name: 'Server ' + (target.sources.length + 1),
                                         detail: st.title ? ('Futbol-X ' + st.title) : 'Futbol-X HD',
                                         type: 'hls',
-                                        url: st.url,
-                                        playerUrl: shakaBase + '?mpd=' + encodeURIComponent(st.url)
+                                        isFutx: true,
+                                        livePage: livePage,
+                                        url: cleanUrl,
+                                        playerUrl: shakaBase + '?mpd=' + encodeURIComponent(cleanUrl)
                                     });
+                                });
+                            }
+                            if (!hasValidStream && livePage) {
+                                target.sources.push({
+                                    index: target.sources.length + 1,
+                                    name: 'Server ' + (target.sources.length + 1),
+                                    detail: 'Futbol-X Live',
+                                    type: 'iframe',
+                                    isFutx: true,
+                                    livePage: livePage,
+                                    url: livePage,
+                                    playerUrl: livePage
                                 });
                             }
                         });
@@ -790,6 +808,40 @@
 
             // Load iframe
             var frame = document.getElementById('modalIframe');
+
+            // Handle Futbol-X token resolution or live page fallback
+            if (activeSource && activeSource.isFutx) {
+                var streamUrl = activeSource.url;
+                if (streamUrl && streamUrl.indexOf('futx.nx.kg') !== -1 && streamUrl.indexOf('token=') === -1) {
+                    var shakaBase = isSub ? '../shaka_player.html' : './shaka_player.html';
+                    try {
+                        var fu = new URL(streamUrl);
+                        var tokUrl = 'https://www.futbol-x.xyz/api/token.js?path=' + encodeURIComponent(fu.pathname) + '&sourceHost=' + encodeURIComponent(fu.hostname) + '&expires=900';
+                        fetch(tokUrl).then(function(r) { return r.json(); }).then(function(tData) {
+                            if (tData && tData.url) {
+                                frame.src = shakaBase + '?mpd=' + encodeURIComponent(tData.url);
+                            } else if (activeSource.livePage) {
+                                frame.src = activeSource.livePage;
+                            } else {
+                                frame.src = shakaBase + '?mpd=' + encodeURIComponent(streamUrl);
+                            }
+                        }).catch(function() {
+                            if (activeSource.livePage) {
+                                frame.src = activeSource.livePage;
+                            } else {
+                                frame.src = shakaBase + '?mpd=' + encodeURIComponent(streamUrl);
+                            }
+                        });
+                        document.getElementById('playerModal').classList.remove('hidden');
+                        return;
+                    } catch(e) {}
+                } else if (activeSource.livePage && (!streamUrl || streamUrl.trim() === '')) {
+                    frame.src = activeSource.livePage;
+                    document.getElementById('playerModal').classList.remove('hidden');
+                    return;
+                }
+            }
+
             frame.src = activeSource.playerUrl || activeSource.url;
 
             document.getElementById('playerModal').classList.remove('hidden');
