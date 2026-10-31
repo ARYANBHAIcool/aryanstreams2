@@ -833,15 +833,108 @@ async function syncSonyM3U8() {
     return false;
 }
 
+
+async function syncEvents() {
+    console.log('🔄 Syncing own live events (Football & Cricket)...');
+    try {
+        const fetchJson = async (url) => {
+            try {
+                const text = await fetchEndpoint(url);
+                return JSON.parse(text);
+            } catch (e) {
+                return null;
+            }
+        };
+
+        const [fbV6, fbV5, crV6, crV5, srhadyWillow] = await Promise.all([
+            fetchJson('https://sonujson-v6.pages.dev/Data/events/football.json'),
+            fetchJson('https://sonujson-v5.pages.dev/Data/events/football.json'),
+            fetchJson('https://sonujson-v6.pages.dev/Data/events/cricket.json'),
+            fetchJson('https://sonujson-v5.pages.dev/Data/events/cricket.json'),
+            fetchJson('https://raw.githubusercontent.com/srhady/willow-event/refs/heads/main/live_sports.json')
+        ]);
+
+        const footballEvents = (fbV6 && fbV6.events && fbV6.events.length > 0) ? fbV6.events : ((fbV5 && fbV5.events) || []);
+        let cricketEvents = (crV6 && crV6.events && crV6.events.length > 0) ? crV6.events : ((crV5 && crV5.events) || []);
+
+        if (srhadyWillow && srhadyWillow.Matches && Array.isArray(srhadyWillow.Matches)) {
+            srhadyWillow.Matches.forEach(m => {
+                const exists = cricketEvents.some(ce => ce.title && ce.title.toLowerCase().includes((m.title || '').toLowerCase().slice(0, 10)));
+                if (!exists && m.match_id) {
+                    cricketEvents.push({
+                        id: m.match_id,
+                        title: m.title || 'Cricket Event',
+                        slug: (m.title || '').toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+                        cat: 'Live Events',
+                        status: 'live',
+                        event: {
+                            name: m.title,
+                            category: 'Cricket',
+                            teamA: m.team_1 || 'Team A',
+                            teamB: m.team_2 || 'Team B',
+                            startTimeIST: m.time_stamp || ''
+                        },
+                        dashStreams: (m.channels || []).map(ch => ({
+                            title: ch.name || 'Stream',
+                            type: ch.type || (ch.url && ch.url.includes('.mpd') ? 'dash' : 'hls'),
+                            url: ch.url,
+                            key: ch.key
+                        }))
+                    });
+                }
+            });
+        }
+
+        const eventsDir = path.join(__dirname, '..', 'data', 'events');
+        if (!fs.existsSync(eventsDir)) fs.mkdirSync(eventsDir, { recursive: true });
+
+        const nowIST = new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }) + ' IST';
+
+        if (footballEvents.length > 0) {
+            fs.writeFileSync(path.join(eventsDir, 'football.json'), JSON.stringify({
+                last_updated: nowIST,
+                source: "AryanStreams Official Feed",
+                events: footballEvents
+            }, null, 2), 'utf8');
+            console.log(`✅ Saved ${footballEvents.length} football events to data/events/football.json`);
+        }
+
+        if (cricketEvents.length > 0) {
+            fs.writeFileSync(path.join(eventsDir, 'cricket.json'), JSON.stringify({
+                last_updated: nowIST,
+                source: "AryanStreams Official Feed",
+                events: cricketEvents
+            }, null, 2), 'utf8');
+            console.log(`✅ Saved ${cricketEvents.length} cricket events to data/events/cricket.json`);
+        }
+
+        if (footballEvents.length > 0 || cricketEvents.length > 0) {
+            fs.writeFileSync(path.join(eventsDir, 'all.json'), JSON.stringify({
+                last_updated: nowIST,
+                source: "AryanStreams Official Feed",
+                football_count: footballEvents.length,
+                cricket_count: cricketEvents.length,
+                events: [...footballEvents, ...cricketEvents]
+            }, null, 2), 'utf8');
+            console.log(`✅ Saved ${footballEvents.length + cricketEvents.length} total events to data/events/all.json`);
+            return true;
+        }
+    } catch (e) {
+        console.warn('⚠️ syncEvents error:', e.message);
+    }
+    return false;
+}
+
 async function main() {
     const sOk = await syncSports();
     const wOk = await syncWillow();
     const mOk = await syncSonyM3U8();
-    if (!sOk && !wOk && !mOk) {
+    const eOk = await syncEvents();
+    if (!sOk && !wOk && !mOk && !eOk) {
         console.error('❌ Failed to sync any feeds');
         process.exit(1);
     }
-    console.log('🎉 All live feeds (Sports, Willow & Sony M3U8) successfully synchronized!');
+    console.log('🎉 All live feeds (Sports, Willow, Sony M3U8 & Own Events) successfully synchronized!');
 }
 
 main();

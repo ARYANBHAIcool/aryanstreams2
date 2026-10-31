@@ -360,8 +360,14 @@
 
             var pTrendyToday = fetch('https://trendy48.online/api/matches/all-today').then(function(r) { return r.json(); }).catch(function() { return []; });
             var pTrendyLive = fetch('https://trendy48.online/api/matches/live').then(function(r) { return r.json(); }).catch(function() { return []; });
-            var pAdilFootball = fetch('https://sonujson-v6.pages.dev/Data/events/football.json').then(function(r) { return r.json(); }).catch(function() { return { events: [] }; });
-            var pAdilCricket = fetch('https://sonujson-v6.pages.dev/Data/events/cricket.json').then(function(r) { return r.json(); }).catch(function() { return { events: [] }; });
+            var ownFootball = isSubDir ? '../data/events/football.json' : './data/events/football.json';
+            var ownCricket = isSubDir ? '../data/events/cricket.json' : './data/events/cricket.json';
+            var pAdilFootball = fetch(ownFootball).then(function(r) { return r.ok ? r.json() : Promise.reject(); }).catch(function() {
+                return fetch('https://sonujson-v6.pages.dev/Data/events/football.json').then(function(r) { return r.json(); });
+            }).catch(function() { return { events: [] }; });
+            var pAdilCricket = fetch(ownCricket).then(function(r) { return r.ok ? r.json() : Promise.reject(); }).catch(function() {
+                return fetch('https://sonujson-v6.pages.dev/Data/events/cricket.json').then(function(r) { return r.json(); });
+            }).catch(function() { return { events: [] }; });
             var pFutxFootball = fetch('https://www.futbol-x.xyz/api/football.json').then(function(r) { return r.json(); }).catch(function() { return { streams: [] }; });
             var pFutxFights = fetch('https://www.futbol-x.xyz/api/fights.json').then(function(r) { return r.json(); }).catch(function() { return { streams: [] }; });
             var pFutxBasket = fetch('https://www.futbol-x.xyz/api/basketball.json').then(function(r) { return r.json(); }).catch(function() { return { streams: [] }; });

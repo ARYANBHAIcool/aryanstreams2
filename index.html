@@ -2377,8 +2377,12 @@
             }
 
             var p1 = fetch('https://trendy48.online/api/matches/all-today', { signal: controller ? controller.signal : undefined }).then(function(r) { return r.json(); }).catch(function() { return []; });
-            var p2 = fetch('https://sonujson-v6.pages.dev/Data/events/football.json', { signal: controller ? controller.signal : undefined }).then(function(r) { return r.json(); }).catch(function() { return { events: [] }; });
-            var p3 = fetch('https://sonujson-v6.pages.dev/Data/events/cricket.json', { signal: controller ? controller.signal : undefined }).then(function(r) { return r.json(); }).catch(function() { return { events: [] }; });
+            var p2 = fetch('./data/events/football.json', { signal: controller ? controller.signal : undefined }).then(function(r) { return r.ok ? r.json() : Promise.reject(); }).catch(function() {
+                return fetch('https://sonujson-v6.pages.dev/Data/events/football.json', { signal: controller ? controller.signal : undefined }).then(function(r) { return r.json(); });
+            }).catch(function() { return { events: [] }; });
+            var p3 = fetch('./data/events/cricket.json', { signal: controller ? controller.signal : undefined }).then(function(r) { return r.ok ? r.json() : Promise.reject(); }).catch(function() {
+                return fetch('https://sonujson-v6.pages.dev/Data/events/cricket.json', { signal: controller ? controller.signal : undefined }).then(function(r) { return r.json(); });
+            }).catch(function() { return { events: [] }; });
             var p4 = fetch('https://www.futbol-x.xyz/api/football.json', { signal: controller ? controller.signal : undefined }).then(function(r) { return r.json(); }).catch(function() { return { streams: [] }; });
             var p5 = fetch('https://www.futbol-x.xyz/api/fights.json', { signal: controller ? controller.signal : undefined }).then(function(r) { return r.json(); }).catch(function() { return { streams: [] }; });
 

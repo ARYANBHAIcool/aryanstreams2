@@ -1,0 +1,420 @@
+{
+  "last_updated": "10/31/2026, 10:26:17 PM IST",
+  "source": "AryanStreams Official Feed",
+  "events": [
+    {
+      "id": 4896,
+      "title": "Nepal Premier League",
+      "slug": "npl-vs-npl",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "Nepal Premier League",
+        "category": "Cricket",
+        "teamA": "NPL",
+        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQAV3dcOxi7602i_xcqoTE6eoiGVCPJFo6uZwtDkDK-g&s=10",
+        "teamB": "NPL",
+        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQAV3dcOxi7602i_xcqoTE6eoiGVCPJFo6uZwtDkDK-g&s=10",
+        "startTimeIST": "2026-10-31 16:45:00 IST",
+        "endTimeIST": "2026-10-31 23:30:00 IST"
+      },
+      "dashStreams": [
+        {
+          "title": "NPL LIVE HD",
+          "type": "hls",
+          "url": "https://ottnlive-fstream.nettvstreamz.com/live_hls/npl_match_3/index.m3u8",
+          "key": null
+        },
+        {
+          "title": "STAR SPORTS HD",
+          "type": "hls",
+          "url": "https://baila-lentoo.pages.dev/all-sp/373201.m3u8",
+          "key": null
+        }
+      ]
+    },
+    {
+      "id": 4527,
+      "title": "ODI Tri-series in Pakistan",
+      "slug": "pak-vs-sl",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "ODI Tri-series in Pakistan",
+        "category": "Cricket",
+        "teamA": "PAK",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/187754/image",
+        "teamB": "SL",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/187756/image",
+        "startTimeIST": "2026-10-31 13:30:00 IST",
+        "endTimeIST": "2026-10-31 23:00:00 IST"
+      },
+      "dashStreams": [
+        {
+          "title": "WILLOW FHD",
+          "type": "dash",
+          "url": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/n7ex9isjbb/out/v1/81f4a6fe53954a978d1aad56ceefa0bd/cenc.mpd",
+          "key": "a323fd2c6886dfea4831314fd63c4eb7:462c6dd2b56c26e958f5981fea25aef4"
+        },
+        {
+          "title": "WILLOW ALT",
+          "type": "dash",
+          "url": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/n7ex9isjbb/out/v1/81f4a6fe53954a978d1aad56ceefa0bd/cenc.mpd",
+          "key": "a323fd2c6886dfea4831314fd63c4eb7:462c6dd2b56c26e958f5981fea25aef4"
+        }
+      ]
+    },
+    {
+      "id": 3934,
+      "title": "ICC World Test Championship",
+      "slug": "sa-vs-aus",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "ICC World Test Championship",
+        "category": "Cricket",
+        "teamA": "SA",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/187747/image",
+        "teamB": "AUS",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/187746/image",
+        "startTimeIST": "2026-10-31 13:50:00 IST",
+        "endTimeIST": "2026-10-31 23:00:00 IST"
+      },
+      "dashStreams": [
+        {
+          "title": "WILLOW FHD",
+          "type": "dash",
+          "url": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/muuiy51nil/out/v1/a441f3a044df462e89583d61af8fdd47/cenc.mpd",
+          "key": "055e7d596817187feb6148156f166cd4:d2f924558033464139e9367ffe346149"
+        },
+        {
+          "title": "FANCODE FHD",
+          "type": "dash",
+          "url": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/b3b3fkmrbl/out/v1/1084d5c9a97a4c5b9f9554c88f486646/cenc.mpd",
+          "key": "82dfca238e8c4b430a3269db71965db9:a00b28caf4ac628e77a553d440c0ddca"
+        },
+        {
+          "title": "WILLOW ALT",
+          "type": "dash",
+          "url": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/muuiy51nil/out/v1/a441f3a044df462e89583d61af8fdd47/cenc.mpd",
+          "key": "055e7d596817187feb6148156f166cd4:d2f924558033464139e9367ffe346149"
+        },
+        {
+          "title": "FANCODE SD",
+          "type": "dash",
+          "url": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash-sd/enc/iwpchve3wl/out/v1/946019f85dc64ae99ff9ce64a9727a62/cenc-sd.mpd",
+          "key": "286eb7dc538143790fa9913639531920:e3f5cb08d14d9e9c08438c673819540f"
+        }
+      ]
+    },
+    {
+      "id": 5023,
+      "title": "Hong Kong Sixes 2026",
+      "slug": "hong-kong-sixes-vs-hong-kong-sixes",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Hong Kong Sixes 2026",
+        "category": "Cricket",
+        "teamA": "Hong Kong Sixes",
+        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROAZg75-MhSbdgNwcKZHw5iCYHkWvg86Dv_g&s",
+        "teamB": "Hong Kong Sixes",
+        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROAZg75-MhSbdgNwcKZHw5iCYHkWvg86Dv_g&s",
+        "startTimeIST": "2026-11-01 07:00:00 IST",
+        "endTimeIST": "2026-11-01 14:30:00 IST"
+      },
+      "dashStreams": [
+        {
+          "title": "WILLOW FHD",
+          "type": "dash",
+          "url": "https://otte.live.fly.ww.aiv-cdn.net/fra-nitro/live/clients/dash/enc/nu7kjdrsmr/out/v1/2074ea6e3a4241c1b35884570c8ecb2e/cenc.mpd",
+          "key": "a694d0db6c7998b91bf89ed100e682b8:5b13f5556048466f7f19c23d70ae220b"
+        },
+        {
+          "title": "WILLOW ALT",
+          "type": "dash",
+          "url": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/tll6uwepxa/out/v1/a7f67cbb33df46539312956427343886/cenc.mpd",
+          "key": "290e09c837da78d5cd961978d390515c:b748836c71e6a4ca68ef5b5652db6247"
+        }
+      ]
+    },
+    {
+      "id": 4963,
+      "title": "Women's Big Bash League",
+      "slug": "wbbl-vs-wbbl",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Women's Big Bash League",
+        "category": "Cricket",
+        "teamA": "WBBL",
+        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH9OS4ikdL0U1wBewY6aIs6YK6KHWTHm7aa9O7wGaw4w&s=10",
+        "teamB": "WBBL",
+        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH9OS4ikdL0U1wBewY6aIs6YK6KHWTHm7aa9O7wGaw4w&s=10",
+        "startTimeIST": "2026-11-01 10:00:00 IST",
+        "endTimeIST": "2026-11-01 18:10:00 IST"
+      },
+      "dashStreams": [
+        {
+          "title": "WILLOW FHD",
+          "type": "dash",
+          "url": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/cie3oxklbt/out/v1/7e4172da4a0f4c4d9247c78ab34fc5bc/cenc.mpd",
+          "key": "82b8543f9ed421538363bacc50c6cc93:a1c7f34031ab2f04a33af7f2df053146"
+        },
+        {
+          "title": "WILLOW ALT",
+          "type": "dash",
+          "url": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/cie3oxklbt/out/v1/7e4172da4a0f4c4d9247c78ab34fc5bc/cenc.mpd",
+          "key": "82b8543f9ed421538363bacc50c6cc93:a1c7f34031ab2f04a33af7f2df053146"
+        },
+        {
+          "title": "EUROSPORTS FHD",
+          "type": "dash",
+          "url": "https://wbd.skandha.tv/EuroSport_HD/EuroSport_HD.isml/.mpd",
+          "key": "12ed56d780abcfebcd23aa27e4ac5015:6784567890abcfebcd23aa27e4ac2814"
+        }
+      ]
+    },
+    {
+      "id": 4726,
+      "title": "T20 International",
+      "slug": "nz-vs-ind",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "T20 International",
+        "category": "Cricket",
+        "teamA": "NZ",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/187755/image",
+        "teamB": "IND",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/187765/image",
+        "startTimeIST": "2026-11-01 12:30:00 IST",
+        "endTimeIST": "2026-11-01 17:15:00 IST"
+      },
+      "dashStreams": [
+        {
+          "title": "WILLOW FHD",
+          "type": "dash",
+          "url": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/jorvx5qfk6/out/v1/6dbb07d5c15c4ffb8b51bdcdc0425548/cenc.mpd",
+          "key": "6df39bfdcc3293c5018e97607998cae3:794ada809851b50c0e8a7568f92971e0"
+        },
+        {
+          "title": "PRIME HINDI FHD",
+          "type": "dash",
+          "url": "https://otte.live.fly.ww.aiv-cdn.net/fra-nitro/live/clients/dash/enc/p8ydakczjv/out/v1/c7d57d245b76476aa5ab68a5ef89da52/cenc.mpd",
+          "key": "638eaec11a32364c29f73241769dc3b0:51ad6ac914e442976749f485354b50fe"
+        },
+        {
+          "title": "PRIME ENG FHD",
+          "type": "dash",
+          "url": "https://otte.live.fly.ww.aiv-cdn.net/fra-nitro/live/clients/dash/enc/czglju6fm7/out/v1/8107cd9ee3af4efebf5bd2c7e71e6c00/cenc.mpd",
+          "key": "e9b05390d0d8a3766d720cc0dfa9c1c3:5b371247b3ec6ae9976204359d781e85"
+        },
+        {
+          "title": "TNT SPORTS FHD",
+          "type": "dash",
+          "url": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/rhf2dwosdt/out/v1/ee550d2a68d846c797e6ce4de2e8b76d/cenc.mpd",
+          "key": "69a5aa835a061ce64a630d1046727e40:d02feac8a999bd06bf4059bf33411749"
+        },
+        {
+          "title": "WILLOW ALT",
+          "type": "dash",
+          "url": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/jorvx5qfk6/out/v1/6dbb07d5c15c4ffb8b51bdcdc0425548/cenc.mpd",
+          "key": "6df39bfdcc3293c5018e97607998cae3:794ada809851b50c0e8a7568f92971e0"
+        }
+      ]
+    },
+    {
+      "id": 5055,
+      "title": "2nd UNOFFICIAL TEST",
+      "slug": "nz-vs-ind",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "2nd UNOFFICIAL TEST",
+        "category": "Cricket",
+        "teamA": "NZ",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/187755/image",
+        "teamB": "IND",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/187765/image",
+        "startTimeIST": "2026-11-01 12:30:00 IST",
+        "endTimeIST": "2026-11-01 17:00:00 IST"
+      },
+      "dashStreams": [
+        {
+          "title": "SONYLIV [ASIA]",
+          "type": "hls",
+          "url": "https://sonydaime.akamaized.net/hls/live/2120303/criclive3010/ENG/std_lrh-800300010.m3u8?hdnea=exp=1793440431~acl=/*~id=58342385308836800944090866097145~hmac=5bffa12c1ad3d571d42d0a08556a10c336eb428ed8191a43041a35af1aa43e3e",
+          "key": null
+        }
+      ]
+    },
+    {
+      "id": 4727,
+      "title": "T20 International",
+      "slug": "afg-vs-zim",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "T20 International",
+        "category": "Cricket",
+        "teamA": "AFG",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/187575/image",
+        "teamB": "ZIM",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/187745/image",
+        "startTimeIST": "2026-11-01 20:00:00 IST",
+        "endTimeIST": "2026-11-02 00:30:00 IST"
+      },
+      "dashStreams": [
+        {
+          "title": "WILLOW FHD",
+          "type": "dash",
+          "url": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/nbhokkdipi/out/v1/2b5492875ca8431a979f3ec685cce2f8/cenc.mpd",
+          "key": "d2efbc1c5f8ff101397ecf138e8741ba:7f4d45f386a7640749e0f07417471f01"
+        },
+        {
+          "title": "WILLOW ALT",
+          "type": "dash",
+          "url": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/nbhokkdipi/out/v1/2b5492875ca8431a979f3ec685cce2f8/cenc.mpd",
+          "key": "d2efbc1c5f8ff101397ecf138e8741ba:7f4d45f386a7640749e0f07417471f01"
+        }
+      ]
+    },
+    {
+      "id": 4728,
+      "title": "ICC World Test Championship",
+      "slug": "ban-vs-wi",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "ICC World Test Championship",
+        "category": "Cricket",
+        "teamA": "BAN",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/187744/image",
+        "teamB": "WI",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/187760/image",
+        "startTimeIST": "2026-11-05 09:00:00 IST",
+        "endTimeIST": "2026-11-05 17:30:00 IST"
+      },
+      "dashStreams": [
+        {
+          "title": "FANCODE FHD",
+          "type": "dash",
+          "url": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/avqlywnuzx/out/v1/aefca6420f944a9482e117f315de535f/cenc.mpd",
+          "key": "1994b1df7dfd2e8a8d7b9bf3fb900285:22a1444b3da18e139191665b3d652835"
+        },
+        {
+          "title": "FANCODE SD",
+          "type": "dash",
+          "url": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash-sd/enc/eayjamsonn/out/v1/6c25cddab58043a6ace0ac64d97983f0/cenc-sd.mpd",
+          "key": "5318e462b9e0677487cb87837f0bbdb1:4fa0fb973b95738306005f2e8591bf8e"
+        }
+      ]
+    },
+    {
+      "id": "B0HKDPRJRS",
+      "title": "Australia tour of South Africa 2026 - 3rd Test - South Africa vs Australia",
+      "slug": "australia-tour-of-south-africa-2026-3rd-test-south-africa-vs-australia",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "Australia tour of South Africa 2026 - 3rd Test - South Africa vs Australia",
+        "category": "Cricket",
+        "teamA": "Team A",
+        "teamB": "Team B",
+        "startTimeIST": ""
+      },
+      "dashStreams": []
+    },
+    {
+      "id": "B0HP445XSZ",
+      "title": "Pakistan ODI Tri-Series 2026 - Final - Pakistan vs Sri Lanka",
+      "slug": "pakistan-odi-tri-series-2026-final-pakistan-vs-sri-lanka",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "Pakistan ODI Tri-Series 2026 - Final - Pakistan vs Sri Lanka",
+        "category": "Cricket",
+        "teamA": "Team A",
+        "teamB": "Team B",
+        "startTimeIST": ""
+      },
+      "dashStreams": []
+    },
+    {
+      "id": "B0HM6M2GHF",
+      "title": "Womens Big Bash League 2026 - 6th Match - Sydney Thunder Women vs Brisbane Heat Women",
+      "slug": "womens-big-bash-league-2026-6th-match-sydney-thunder-women-vs-brisbane-heat-women",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "Womens Big Bash League 2026 - 6th Match - Sydney Thunder Women vs Brisbane Heat Women",
+        "category": "Cricket",
+        "teamA": "Team A",
+        "teamB": "Team B",
+        "startTimeIST": ""
+      },
+      "dashStreams": []
+    },
+    {
+      "id": "B0HNWRBDCQ",
+      "title": "New Zealand vs. India",
+      "slug": "new-zealand-vs-india",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "New Zealand vs. India",
+        "category": "Cricket",
+        "teamA": "Team A",
+        "teamB": "Team B",
+        "startTimeIST": ""
+      },
+      "dashStreams": []
+    },
+    {
+      "id": "B0HMDM29Y2",
+      "title": "Afghanistan vs. Zimbabwe",
+      "slug": "afghanistan-vs-zimbabwe",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "Afghanistan vs. Zimbabwe",
+        "category": "Cricket",
+        "teamA": "Team A",
+        "teamB": "Team B",
+        "startTimeIST": ""
+      },
+      "dashStreams": []
+    },
+    {
+      "id": "B0HLMSF6ZN",
+      "title": "India tour of New Zealand 2026 - 1st ODI - New Zealand vs India",
+      "slug": "india-tour-of-new-zealand-2026-1st-odi-new-zealand-vs-india",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "India tour of New Zealand 2026 - 1st ODI - New Zealand vs India",
+        "category": "Cricket",
+        "teamA": "Team A",
+        "teamB": "Team B",
+        "startTimeIST": ""
+      },
+      "dashStreams": []
+    },
+    {
+      "id": "B0HK3RP3SL",
+      "title": "USA Seniors Cricket NPL 2026 - 1st Match - Houston Saints vs Seattle Moose",
+      "slug": "usa-seniors-cricket-npl-2026-1st-match-houston-saints-vs-seattle-moose",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "USA Seniors Cricket NPL 2026 - 1st Match - Houston Saints vs Seattle Moose",
+        "category": "Cricket",
+        "teamA": "Team A",
+        "teamB": "Team B",
+        "startTimeIST": ""
+      },
+      "dashStreams": []
+    }
+  ]
+}
