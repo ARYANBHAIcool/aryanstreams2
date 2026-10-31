@@ -1,112 +1,7 @@
 {
-  "last_updated": "10/31/2026, 10:26:17 PM IST",
+  "last_updated": "10/31/2026, 11:44:41 PM IST",
   "source": "AryanStreams Official Feed",
   "events": [
-    {
-      "id": 4896,
-      "title": "Nepal Premier League",
-      "slug": "npl-vs-npl",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Nepal Premier League",
-        "category": "Cricket",
-        "teamA": "NPL",
-        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQAV3dcOxi7602i_xcqoTE6eoiGVCPJFo6uZwtDkDK-g&s=10",
-        "teamB": "NPL",
-        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQAV3dcOxi7602i_xcqoTE6eoiGVCPJFo6uZwtDkDK-g&s=10",
-        "startTimeIST": "2026-10-31 16:45:00 IST",
-        "endTimeIST": "2026-10-31 23:30:00 IST"
-      },
-      "dashStreams": [
-        {
-          "title": "NPL LIVE HD",
-          "type": "hls",
-          "url": "https://ottnlive-fstream.nettvstreamz.com/live_hls/npl_match_3/index.m3u8",
-          "key": null
-        },
-        {
-          "title": "STAR SPORTS HD",
-          "type": "hls",
-          "url": "https://baila-lentoo.pages.dev/all-sp/373201.m3u8",
-          "key": null
-        }
-      ]
-    },
-    {
-      "id": 4527,
-      "title": "ODI Tri-series in Pakistan",
-      "slug": "pak-vs-sl",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "ODI Tri-series in Pakistan",
-        "category": "Cricket",
-        "teamA": "PAK",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/187754/image",
-        "teamB": "SL",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/187756/image",
-        "startTimeIST": "2026-10-31 13:30:00 IST",
-        "endTimeIST": "2026-10-31 23:00:00 IST"
-      },
-      "dashStreams": [
-        {
-          "title": "WILLOW FHD",
-          "type": "dash",
-          "url": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/n7ex9isjbb/out/v1/81f4a6fe53954a978d1aad56ceefa0bd/cenc.mpd",
-          "key": "a323fd2c6886dfea4831314fd63c4eb7:462c6dd2b56c26e958f5981fea25aef4"
-        },
-        {
-          "title": "WILLOW ALT",
-          "type": "dash",
-          "url": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/n7ex9isjbb/out/v1/81f4a6fe53954a978d1aad56ceefa0bd/cenc.mpd",
-          "key": "a323fd2c6886dfea4831314fd63c4eb7:462c6dd2b56c26e958f5981fea25aef4"
-        }
-      ]
-    },
-    {
-      "id": 3934,
-      "title": "ICC World Test Championship",
-      "slug": "sa-vs-aus",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "ICC World Test Championship",
-        "category": "Cricket",
-        "teamA": "SA",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/187747/image",
-        "teamB": "AUS",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/187746/image",
-        "startTimeIST": "2026-10-31 13:50:00 IST",
-        "endTimeIST": "2026-10-31 23:00:00 IST"
-      },
-      "dashStreams": [
-        {
-          "title": "WILLOW FHD",
-          "type": "dash",
-          "url": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/muuiy51nil/out/v1/a441f3a044df462e89583d61af8fdd47/cenc.mpd",
-          "key": "055e7d596817187feb6148156f166cd4:d2f924558033464139e9367ffe346149"
-        },
-        {
-          "title": "FANCODE FHD",
-          "type": "dash",
-          "url": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/b3b3fkmrbl/out/v1/1084d5c9a97a4c5b9f9554c88f486646/cenc.mpd",
-          "key": "82dfca238e8c4b430a3269db71965db9:a00b28caf4ac628e77a553d440c0ddca"
-        },
-        {
-          "title": "WILLOW ALT",
-          "type": "dash",
-          "url": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/muuiy51nil/out/v1/a441f3a044df462e89583d61af8fdd47/cenc.mpd",
-          "key": "055e7d596817187feb6148156f166cd4:d2f924558033464139e9367ffe346149"
-        },
-        {
-          "title": "FANCODE SD",
-          "type": "dash",
-          "url": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash-sd/enc/iwpchve3wl/out/v1/946019f85dc64ae99ff9ce64a9727a62/cenc-sd.mpd",
-          "key": "286eb7dc538143790fa9913639531920:e3f5cb08d14d9e9c08438c673819540f"
-        }
-      ]
-    },
     {
       "id": 5023,
       "title": "Hong Kong Sixes 2026",
@@ -312,19 +207,35 @@
       ]
     },
     {
-      "id": "B0HKDPRJRS",
-      "title": "Australia tour of South Africa 2026 - 3rd Test - South Africa vs Australia",
-      "slug": "australia-tour-of-south-africa-2026-3rd-test-south-africa-vs-australia",
+      "id": 4896,
+      "title": "Nepal Premier League",
+      "slug": "npl-vs-npl",
       "cat": "Live Events",
-      "status": "live",
+      "status": "ended",
       "event": {
-        "name": "Australia tour of South Africa 2026 - 3rd Test - South Africa vs Australia",
+        "name": "Nepal Premier League",
         "category": "Cricket",
-        "teamA": "Team A",
-        "teamB": "Team B",
-        "startTimeIST": ""
+        "teamA": "NPL",
+        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQAV3dcOxi7602i_xcqoTE6eoiGVCPJFo6uZwtDkDK-g&s=10",
+        "teamB": "NPL",
+        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQAV3dcOxi7602i_xcqoTE6eoiGVCPJFo6uZwtDkDK-g&s=10",
+        "startTimeIST": "2026-10-31 16:45:00 IST",
+        "endTimeIST": "2026-10-31 23:30:00 IST"
       },
-      "dashStreams": []
+      "dashStreams": [
+        {
+          "title": "NPL LIVE HD",
+          "type": "hls",
+          "url": "https://ottnlive-fstream.nettvstreamz.com/live_hls/npl_match_3/index.m3u8",
+          "key": null
+        },
+        {
+          "title": "STAR SPORTS HD",
+          "type": "hls",
+          "url": "https://baila-lentoo.pages.dev/all-sp/373201.m3u8",
+          "key": null
+        }
+      ]
     },
     {
       "id": "B0HP445XSZ",
