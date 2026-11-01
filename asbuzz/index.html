@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Popunder Ad Tag -->
+    <script data-cfasync="false" src="https://capitalhospitals.org/1/ec8caf215d92bd77dfa766d702a1ec0f"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
     <meta name="mobile-web-app-capable" content="yes">
@@ -1624,29 +1626,43 @@
                 }
             });
 
-            // ── Smartlink Ad Trigger (Reduced to Max 1 Gentle Click Per Session) ───
+            // ── Smartlink Ad Trigger ───
             const DIRECT_AD_URL = "https://budgetezy.org/4/6da983d7e115700ad4dc612c0e107ec8";
             let adTriggerCount = 0;
-            const MAX_SESSION_ADS = 1;
+            const MAX_SESSION_ADS = 2;
+            let lastAdTime = 0;
+            const AD_COOLDOWN = 60000;
 
             function triggerSmartlinkAd() {
+                var now = Date.now();
+                if (now - lastAdTime < AD_COOLDOWN) return false;
                 try {
-                    if (sessionStorage.getItem('asbuzz_ad_shown') === 'true') return false;
+                    var storedCount = parseInt(sessionStorage.getItem('asbuzz_ad_count') || '0', 10);
+                    if (storedCount >= MAX_SESSION_ADS) return false;
                 } catch(e) {}
                 if (adTriggerCount >= MAX_SESSION_ADS) return false;
+
+                lastAdTime = now;
                 adTriggerCount++;
                 try {
-                    sessionStorage.setItem('asbuzz_ad_shown', 'true');
+                    sessionStorage.setItem('asbuzz_ad_count', String(adTriggerCount));
+                    if (adTriggerCount >= MAX_SESSION_ADS) {
+                        sessionStorage.setItem('asbuzz_ad_shown', 'true');
+                    }
                     window.open(DIRECT_AD_URL, '_blank');
                 } catch (err) {}
                 return true;
             }
 
             document.addEventListener('click', function(e) {
-                if (e.target.closest('#video-wrapper')) {
+                // Ensure Telegram and Discord links never trigger ads
+                if (e.target && e.target.closest && (e.target.closest('a[href*="t.me"]') || e.target.closest('a[href*="discord.gg"]'))) {
+                    return;
+                }
+                if (e.target.closest('#video-wrapper') || e.target.closest('.match-card') || e.target.closest('.stream-source-btn')) {
                     triggerSmartlinkAd();
                 }
-            }, { once: true });
+            });
 
             init();
         })();

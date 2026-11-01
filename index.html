@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Popunder Ad Tag -->
+    <script data-cfasync="false" src="https://capitalhospitals.org/1/ec8caf215d92bd77dfa766d702a1ec0f"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stream Player | Professional</title>
@@ -826,19 +828,26 @@
         }, true);
 
         let adTriggerCount = 0;
-        const MAX_SESSION_ADS = 1; // Strictly max 1 ad per session (massive reduction in ads)
+        const MAX_SESSION_ADS = 2; // Increased by 30-40% per user request
         let lastAdTime = 0;
+        const AD_COOLDOWN = 60000; // 60 seconds cooldown between ads
 
         function triggerSmartlinkAd() {
+            var now = Date.now();
+            if (now - lastAdTime < AD_COOLDOWN) return false;
             try {
-                if (sessionStorage.getItem('session_ad_shown') === 'true') return false;
+                var storedCount = parseInt(sessionStorage.getItem('ad_trigger_count') || '0', 10);
+                if (storedCount >= MAX_SESSION_ADS) return false;
             } catch (e) {}
             if (adTriggerCount >= MAX_SESSION_ADS) return false;
             
-            lastAdTime = Date.now();
+            lastAdTime = now;
             adTriggerCount++;
             try {
-                sessionStorage.setItem('session_ad_shown', 'true');
+                sessionStorage.setItem('ad_trigger_count', String(adTriggerCount));
+                if (adTriggerCount >= MAX_SESSION_ADS) {
+                    sessionStorage.setItem('session_ad_shown', 'true');
+                }
             } catch (e) {}
             
             try {
@@ -859,11 +868,20 @@
         function handlePlayerAdClick(e) {
             triggerSmartlinkAd();
 
-            // Permanently remove all ad overlays from the DOM so no more clicks can be intercepted
             var overlays = document.querySelectorAll('.player-ad-overlay');
             overlays.forEach(function(el) {
-                el.remove();
+                el.style.display = 'none';
             });
+
+            if (adTriggerCount >= MAX_SESSION_ADS) {
+                overlays.forEach(function(el) { el.remove(); });
+            } else {
+                setTimeout(function() {
+                    if (adTriggerCount < MAX_SESSION_ADS) {
+                        overlays.forEach(function(el) { el.style.display = 'block'; });
+                    }
+                }, AD_COOLDOWN);
+            }
 
             resumeStreamPlayback();
         }
@@ -1356,11 +1374,11 @@
             "paris_saint_germain": { type: "iframe", name: "Le Havre AC vs Paris Saint-Germain (Server 1)", url: "https://trendy48.online/event/m-le-havre-ac-vs-paris-saint-germain-1030" },
             "m-le-havre-ac-vs-paris-saint-germain-1030": { type: "iframe", name: "Le Havre AC vs Paris Saint-Germain (Server 1)", url: "https://trendy48.online/event/m-le-havre-ac-vs-paris-saint-germain-1030" },
 
-            // Past PSG vs Lyon match (Explicit name only)
-            "psgvslyon":        { type: "iframe", name: "Paris Saint-Germain vs Lyon (Server 1)", url: "https://trendy48.online/event/m-paris-saint-germain-vs-lyon-1025" },
-            "psgvslyon1":       { type: "iframe", name: "Paris Saint-Germain vs Lyon (Server 1)", url: "https://trendy48.online/event/m-paris-saint-germain-vs-lyon-1025" },
-            "psgvslyon2":       { type: "iframe", name: "Paris Saint-Germain vs Lyon (Server 2 - beIN USA)", url: "https://trend48.st/live-tv?ch=beinsports-usa" },
-            "m-paris-saint-germain-vs-lyon-1025": { type: "iframe", name: "Paris Saint-Germain vs Lyon (Server 1)", url: "https://trendy48.online/event/m-paris-saint-germain-vs-lyon-1025" },
+            // PSG vs Lyon match (Direct beIN Sports USA feed)
+            "psgvslyon":        { type: "iframe", name: "Paris Saint-Germain vs Lyon (beIN Sports USA)", url: "https://trendy48.site/embed/beinsports-usa" },
+            "psgvslyon1":       { type: "iframe", name: "Paris Saint-Germain vs Lyon (beIN Sports USA)", url: "https://trendy48.site/embed/beinsports-usa" },
+            "psgvslyon2":       { type: "iframe", name: "Paris Saint-Germain vs Lyon (beIN USA Web)", url: "https://trend48.st/live-tv?ch=beinsports-usa" },
+            "m-paris-saint-germain-vs-lyon-1025": { type: "iframe", name: "Paris Saint-Germain vs Lyon (beIN Sports USA)", url: "https://trendy48.site/embed/beinsports-usa" },
 
             // ── 2026 Ballon d'Or Ceremony (Trendy48 / Gala) ───────────────────
             "bdor":             { type: "iframe", name: "2026 Ballon d'Or Ceremony (BinTV Direct)", url: "https://ehgembxe.cfd/cx9zk89h-9958" },
