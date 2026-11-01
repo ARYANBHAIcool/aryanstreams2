@@ -1,50 +1,13 @@
 {
-  "last_updated": "11/1/2026, 8:45:33 PM IST",
+  "last_updated": "11/2/2026, 12:41:43 AM IST",
   "source": "AryanStreams Official Feed",
   "events": [
-    {
-      "id": 4896,
-      "title": "Nepal Premier League",
-      "slug": "npl-vs-npl",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Nepal Premier League",
-        "category": "Cricket",
-        "teamA": "NPL",
-        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQAV3dcOxi7602i_xcqoTE6eoiGVCPJFo6uZwtDkDK-g&s=10",
-        "teamB": "NPL",
-        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQAV3dcOxi7602i_xcqoTE6eoiGVCPJFo6uZwtDkDK-g&s=10",
-        "startTimeIST": "2026-11-01 16:45:00 IST",
-        "endTimeIST": "2026-11-01 21:15:00 IST"
-      },
-      "dashStreams": [
-        {
-          "title": "NPL LIVE HD",
-          "type": "hls",
-          "url": "https://spowncdn.bondsplive.online/nplok/logo.png?&e=.m3u8",
-          "key": null
-        },
-        {
-          "title": "HIMALAYA HD",
-          "type": "hls",
-          "url": "https://spchx.bondsplive.online/414167/logosp.webp?&e=.m3u8",
-          "key": null
-        },
-        {
-          "title": "FANCODE (IND)",
-          "type": "hls",
-          "url": "https://dai-fancode.pages.dev/mumbai/4250363_english_hls_3c429d187460404_1ta-di_h264/index.m3u8",
-          "key": null
-        }
-      ]
-    },
     {
       "id": 4727,
       "title": "T20 International",
       "slug": "afg-vs-zim",
       "cat": "Live Events",
-      "status": "live",
+      "status": "ended",
       "event": {
         "name": "T20 International",
         "category": "Cricket",
@@ -108,21 +71,6 @@
       ]
     },
     {
-      "id": "B0HMDM29Y2",
-      "title": "Afghanistan vs. Zimbabwe",
-      "slug": "afghanistan-vs-zimbabwe",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Afghanistan vs. Zimbabwe",
-        "category": "Cricket",
-        "teamA": "Team A",
-        "teamB": "Team B",
-        "startTimeIST": ""
-      },
-      "dashStreams": []
-    },
-    {
       "id": "B0HJ6P7GP3",
       "title": "Womens Big Bash League 2026 - 8th Match - Melbourne Stars Women vs Perth Scorchers Women",
       "slug": "womens-big-bash-league-2026-8th-match-melbourne-stars-women-vs-perth-scorchers-women",
@@ -160,6 +108,21 @@
       "status": "live",
       "event": {
         "name": "USA Seniors Cricket NPL 2026 - 1st Match - Houston Saints vs Seattle Moose",
+        "category": "Cricket",
+        "teamA": "Team A",
+        "teamB": "Team B",
+        "startTimeIST": ""
+      },
+      "dashStreams": []
+    },
+    {
+      "id": "B0HMNN211T",
+      "title": "Afghanistan vs Zimbabwe in UAE 2026 - 1st Test - Afghanistan vs Zimbabwe",
+      "slug": "afghanistan-vs-zimbabwe-in-uae-2026-1st-test-afghanistan-vs-zimbabwe",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "Afghanistan vs Zimbabwe in UAE 2026 - 1st Test - Afghanistan vs Zimbabwe",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",

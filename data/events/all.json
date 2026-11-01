@@ -1,88 +1,155 @@
 {
-  "last_updated": "11/1/2026, 8:45:33 PM IST",
+  "last_updated": "11/2/2026, 12:41:43 AM IST",
   "source": "AryanStreams Official Feed",
-  "football_count": 18,
-  "cricket_count": 7,
+  "football_count": 5,
+  "cricket_count": 6,
   "events": [
     {
-      "id": 4454,
-      "title": "Indian Super League",
-      "slug": "isl-vs-isl",
+      "id": 5146,
+      "title": "Premier League",
+      "slug": "liverpool-vs-arsenal",
       "cat": "Live Events",
-      "status": "live",
+      "status": "ended",
       "event": {
-        "name": "Indian Super League",
+        "name": "Premier League",
         "category": "Football",
-        "teamA": "ISL",
-        "teamAFlag": "https://img.sofascore.com/api/v1/unique-tournament/1900/image",
-        "teamB": "ISL",
-        "teamBFlag": "https://img.sofascore.com/api/v1/unique-tournament/1900/image",
-        "startTimeIST": "2026-11-01 17:00:00 IST",
-        "endTimeIST": "2026-11-01 22:00:00 IST"
+        "teamA": "Liverpool",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/44/image",
+        "teamB": "Arsenal",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/42/image",
+        "startTimeIST": "2026-11-01 22:00:00 IST",
+        "endTimeIST": "2026-11-02 00:20:00 IST"
       },
       "dashStreams": [
         {
-          "title": "PRIME VIDEO FHD",
+          "title": "PEACOCK ENG FHD",
           "type": "dash",
-          "url": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/ebirnvewph/out/v1/2e1afb64f23b48a5acac9886327c2b8c/cenc.mpd",
-          "key": "c57fbe97649816539cf25b0c95d37d9d:ddf4da52ec2358bdf08a6fc60c4d1bc3"
+          "url": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/4wn492fzje/out/v1/fda9936cc9c64529810d704dcb67951c/cenc.mpd",
+          "key": "f2ea8d5893c5bb84b8c9f43c462add5f:95b1c6f710c81d239adb7cf45ad26d39"
+        },
+        {
+          "title": "FUBO SPORTS FHD",
+          "type": "dash",
+          "url": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/4zomejgnew/out/v1/aaaab12c95924d80a77f87f7c745782a/cenc.mpd?aws_sessionId=d2c69f3e-2fc0-4075-b0f0-5d4281d3e718",
+          "key": "65f9ed4580a4af3c117a339c44cdfe3b:3e7d40c4b2ca331fe48bd65acae439d7"
+        },
+        {
+          "title": "FUBO SPORTS ALT",
+          "type": "dash",
+          "url": "https://otte.cache.aiv-cdn.net/dub-nitro/live/clients/dash/enc/1wlv9dr4vx/out/v1/632322be5f1047acb2472f90f8857182/cenc.mpd",
+          "key": "42f72c025dd53039244adc13b7e31dad:a7bd941a19f6dd14f3004a623a6ad3a1"
         }
       ]
     },
     {
-      "id": 5126,
+      "id": 5148,
+      "title": "Bundesliga",
+      "slug": "frankfurt-vs-hsv",
+      "cat": "Live Events",
+      "status": "ended",
+      "event": {
+        "name": "Bundesliga",
+        "category": "Football",
+        "teamA": "Frankfurt",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2674/image",
+        "teamB": "HSV",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2676/image",
+        "startTimeIST": "2026-11-01 22:00:00 IST",
+        "endTimeIST": "2026-11-02 00:20:00 IST"
+      },
+      "dashStreams": [
+        {
+          "title": "DAZN SPORTS FHD",
+          "type": "dash",
+          "url": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/b11iuahvrs/out/v1/73a078e42a334a549e9169473084c862/cenc.mpd",
+          "key": "2bcaa9d588854c88c6a93fd888819d5d:4fc1490ca0c58c154be198a8f3ff7038"
+        },
+        {
+          "title": "PEACOCK FHD",
+          "type": "dash",
+          "url": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/6wrmwxvrmn/out/v1/d1594ae398874403a6a39719fdd6418c/cenc.mpd?aws_sessionId=9395eb9e-263e-49b3-a0f7-226af35b230d",
+          "key": "76222d0cbeb4b175bab331e74a746aee:fb426b3410410e46cf468711db1beea6"
+        }
+      ]
+    },
+    {
+      "id": 5147,
+      "title": "Serie A",
+      "slug": "lecce-vs-genoa",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "Serie A",
+        "category": "Football",
+        "teamA": "Lecce",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2689/image",
+        "teamB": "Genoa",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2713/image",
+        "startTimeIST": "2026-11-01 22:30:00 IST",
+        "endTimeIST": "2026-11-02 00:50:00 IST"
+      },
+      "dashStreams": [
+        {
+          "title": "PARAMOUNT+ FHD",
+          "type": "dash",
+          "url": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/4qwtwsitzq/out/v1/05ae24d638094c31b98c2faa35945991/cenc.mpd?aws_sessionId=8b11c55f-701d-4e01-963a-b0a3272f9fa3",
+          "key": "98342fab63b4e326f32acbd643721f5f:8c39f70abf21ff4a3908025e72af3e86"
+        },
+        {
+          "title": "FUBO SPORTS FHD",
+          "type": "dash",
+          "url": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/aqhzignd6x/out/v1/00d2828855a944ffbbdc15232c4157a9/cenc.mpd?aws_sessionId=21a3c037-f46e-4e80-9fa0-71f5e55b4bd5",
+          "key": "8d1a722ce6166c97ae3ef028a3cc83bd:22cd575e524b0bf0520efb15034c67d3"
+        },
+        {
+          "title": "PEACOCK FHD",
+          "type": "dash",
+          "url": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/lbs21k4mtp/out/v1/222d7fffcc5b4b9dad0567fdb0af01a4/cenc.mpd?aws_sessionId=eaa2680d-9e1c-4ea2-a024-73f94036e317",
+          "key": "98342fab63b4e326f32acbd643721f5f:8c39f70abf21ff4a3908025e72af3e86"
+        },
+        {
+          "title": "beIN ENGLISH FHD",
+          "type": "dash",
+          "url": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/8m8cd46i1t/out/v1/83985c68e4174e90a58a1f2c024be4c9/cenc.mpd?",
+          "key": "0b42be2664d7e811d04f3e504e0924c5:ae24090123b8c72ac5404dc152847cb8"
+        },
+        {
+          "title": "CBS SPORTS FHD",
+          "type": "dash",
+          "url": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/5qz8wmdome/out/v1/b9323e853dce427eac214b77bd48a204/cenc.mpd",
+          "key": "d9623774ac5c8c351aafe97c5fe70267:5164e6d05164a2d65fa8fcc962aa4861"
+        },
+        {
+          "title": "SPORT 1 CZ FHD",
+          "type": "dash",
+          "url": "https://dash2.antik.sk/stream/nvidia_sport_1/playlist_cenc.mpd",
+          "key": "11223344556677889900112233445566:4b80724d0ef86bcb2c21f7999d67739d"
+        }
+      ]
+    },
+    {
+      "id": 5149,
       "title": "LaLiga",
-      "slug": "getafe-vs-sevilla",
+      "slug": "elche-vs-valencia",
       "cat": "Live Events",
       "status": "live",
       "event": {
         "name": "LaLiga",
         "category": "Football",
-        "teamA": "Getafe",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2859/image",
-        "teamB": "Sevilla",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2833/image",
-        "startTimeIST": "2026-11-01 18:30:00 IST",
-        "endTimeIST": "2026-11-01 20:50:00 IST"
+        "teamA": "Elche",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2846/image",
+        "teamB": "Valencia",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2828/image",
+        "startTimeIST": "2026-11-01 23:00:00 IST",
+        "endTimeIST": "2026-11-02 01:20:00 IST"
       },
       "dashStreams": [
         {
           "title": "PREMIER SPORTS FHD",
           "type": "dash",
-          "url": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/bcj3iscpd6/out/v1/fcd137b391214f7cb99dd4d7be90ca87/cenc.mpd",
-          "key": "1a5df53609ebc9857898c490f4724918:77f62980d582ec541280796acf8b2d19"
+          "url": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/m6sqanvm2m/out/v1/f6beb46c6e9a4132ad739f3ca27df6aa/cenc.mpd",
+          "key": "1444f4235529f183f0a5a486befe9cdb:e5e3fec67a1bb3472a2089c8a0a2557f"
         },
-        {
-          "title": "FANCODE FHD",
-          "type": "dash",
-          "url": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/b3b3fkmrbl/out/v1/1084d5c9a97a4c5b9f9554c88f486646/cenc.mpd",
-          "key": "82dfca238e8c4b430a3269db71965db9:a00b28caf4ac628e77a553d440c0ddca"
-        },
-        {
-          "title": "CazéTV FHD",
-          "type": "dash",
-          "url": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/ui54qo0g6h/out/v1/620e1448188d4bbe9a28d0dd52f45bb7/cenc.mpd",
-          "key": "ba6aca5a550163c38d06646bb50f04e7:516c3b471fce48a5b7a2e5ee7dd505f2"
-        }
-      ]
-    },
-    {
-      "id": 5129,
-      "title": "Scottish Premiership",
-      "slug": "falkirk-vs-celtic",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Scottish Premiership",
-        "category": "Football",
-        "teamA": "Falkirk",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2363/image",
-        "teamB": "Celtic",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2352/image",
-        "startTimeIST": "2026-11-01 18:30:00 IST",
-        "endTimeIST": "2026-11-01 20:50:00 IST"
-      },
-      "dashStreams": [
         {
           "title": "beIN ENGLISH FHD",
           "type": "dash",
@@ -90,28 +157,28 @@
           "key": "7995c724a13748ed970840a8ab5bb9b3:67bdaf1e2175b9ff682fcdf0e2354b1e"
         },
         {
-          "title": "SportDigital Fussball",
+          "title": "CazéTV FHD",
           "type": "dash",
-          "url": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/ssdefyhkkr/out/v1/cf01290cb7f64525bdf861580a016ca8/cenc.mpd?",
-          "key": "0ad4080cdff8c60b1233b22087f0b340:285f129c5eca01dd08a5d5a14ad801c8"
+          "url": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/3ynrpdanq2/out/v1/81fd4c26584044d2b1a1cc5b32fa9af0/cenc.mpd?",
+          "key": "34475edab991ad5e92548aebd710410a:501b209cccd323ac00bf5ac15b406cb4"
         }
       ]
     },
     {
-      "id": 5181,
+      "id": 5150,
       "title": "LaLiga 2",
-      "slug": "eldense-vs-granada",
+      "slug": "burgos-vs-castellon",
       "cat": "Live Events",
       "status": "live",
       "event": {
         "name": "LaLiga 2",
         "category": "Football",
-        "teamA": "Eldense",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/47321/image",
-        "teamB": "Granada",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/33779/image",
-        "startTimeIST": "2026-11-01 18:30:00 IST",
-        "endTimeIST": "2026-11-01 20:50:00 IST"
+        "teamA": "Burgos",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2854/image",
+        "teamB": "Castellón",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/5067/image",
+        "startTimeIST": "2026-11-01 23:00:00 IST",
+        "endTimeIST": "2026-11-02 01:20:00 IST"
       },
       "dashStreams": [
         {
@@ -123,440 +190,11 @@
       ]
     },
     {
-      "id": 5130,
-      "title": "VriendenLoterij Eredivisie",
-      "slug": "excelsior-vs-twente",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "VriendenLoterij Eredivisie",
-        "category": "Football",
-        "teamA": "Excelsior",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2967/image",
-        "teamB": "Twente",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2955/image",
-        "startTimeIST": "2026-11-01 19:00:00 IST",
-        "endTimeIST": "2026-11-01 21:20:00 IST"
-      },
-      "dashStreams": [
-        {
-          "title": "HD SERVER",
-          "type": "hls",
-          "url": "https://www.rtmpcdn.com/live/fb665ec8-646c-42da-9846-fd5012ba068e.m3u8",
-          "key": null
-        }
-      ]
-    },
-    {
-      "id": 5132,
-      "title": "Serie A",
-      "slug": "lazio-vs-cagliari",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Serie A",
-        "category": "Football",
-        "teamA": "Lazio",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2699/image",
-        "teamB": "Cagliari",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2719/image",
-        "startTimeIST": "2026-11-01 19:30:00 IST",
-        "endTimeIST": "2026-11-01 21:50:00 IST"
-      },
-      "dashStreams": [
-        {
-          "title": "PARAMOUNT+ FHD",
-          "type": "dash",
-          "url": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/sg26hcq4jb/out/v1/cbefa7d3aa044a42b3fbb2d9f0ed8771/cenc.mpd?aws_sessionId=6f72bd41-cc05-4448-bdc8-0110b089a955",
-          "key": "65bf781cc51efe95158616c012821dee:1fdadf8f65dc2dee9de4bd299a219263"
-        },
-        {
-          "title": "FUBO SPORTS FHD",
-          "type": "dash",
-          "url": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/fm0tdlxrfq/out/v1/ee234bf8b2854366834b938725860805/cenc.mpd?aws_sessionId=e9687835-fab1-4436-a8d9-38800aa116ef",
-          "key": "4d6c44925ac7c05add19ac2365681e5b:09602294e18cd9c2aa9843fe0fdbc160"
-        }
-      ]
-    },
-    {
-      "id": 5133,
-      "title": "Serie A",
-      "slug": "frosinone-vs-torino",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Serie A",
-        "category": "Football",
-        "teamA": "Frosinone",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2801/image",
-        "teamB": "Torino",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2696/image",
-        "startTimeIST": "2026-11-01 19:30:00 IST",
-        "endTimeIST": "2026-11-01 21:50:00 IST"
-      },
-      "dashStreams": [
-        {
-          "title": "PARAMOUNT+ FHD",
-          "type": "dash",
-          "url": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/z7k5coaglr/out/v1/f798f09d4b6b44de82700e47ff0207f6/cenc.mpd?aws_sessionId=d30fa58d-89fd-47ee-9f14-3bb210aa2b9e",
-          "key": "f905d936f4562b52ee955d3ff3dcd06c:65f555c4104074c2f2d2fe7a9f685ed5"
-        },
-        {
-          "title": "FUBO SPORTS FHD",
-          "type": "dash",
-          "url": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/yukpgzjukf/out/v1/e9584c6de0d145a9ac1b36ddf7795081/cenc.mpd?aws_sessionId=882cb45b-b0fd-4d57-999a-97cbc604a9b0",
-          "key": "e09a0900100e5ac77d4adb45a602a86b:7da511a38053d3e150d38f47ac7d8298"
-        }
-      ]
-    },
-    {
-      "id": 5134,
-      "title": "Ligue 1",
-      "slug": "strasbourg-vs-auxerre",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Ligue 1",
-        "category": "Football",
-        "teamA": "Strasbourg",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/1659/image",
-        "teamB": "Auxerre",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/1646/image",
-        "startTimeIST": "2026-11-01 19:30:00 IST",
-        "endTimeIST": "2026-11-01 21:50:00 IST"
-      },
-      "dashStreams": [
-        {
-          "title": "beIN SPORTS FHD",
-          "type": "dash",
-          "url": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/e3ozww2yny/out/v1/3a16d07c2cc0444bb8ea10d0483d1ced/cenc.mpd?aws_sessionId=61680024-9246-43b6-8499-8369b0070330",
-          "key": "74cbe15488783fab07ff8c702fabafcd:bb607803a49c2d6104f845e7886c971c"
-        }
-      ]
-    },
-    {
-      "id": 5135,
-      "title": "Women's Super League",
-      "slug": "birmingham-vs-tottenham",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Women's Super League",
-        "category": "Football",
-        "teamA": "Birmingham",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/66766/image",
-        "teamB": "Tottenham",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/273547/image",
-        "startTimeIST": "2026-11-01 19:30:00 IST",
-        "endTimeIST": "2026-11-01 21:50:00 IST"
-      },
-      "dashStreams": [
-        {
-          "title": "PARAMOUNT+ FHD",
-          "type": "dash",
-          "url": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/w9tlt39b4c/out/v1/e5537d935f1d4da49601b668c679a1b5/cenc.mpd?aws_sessionId=eb49c2d6-2c9a-4ec3-8d8a-ead06e528cdf",
-          "key": "0e4900dc17fb1dc015a949303139ce12:f097bd28477ea73824d2b3c6b747f30d"
-        }
-      ]
-    },
-    {
-      "id": 5136,
-      "title": "Women's Super League",
-      "slug": "brighton-vs-crystal-palace",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Women's Super League",
-        "category": "Football",
-        "teamA": "Brighton",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/266376/image",
-        "teamB": "Crystal Palace",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/234204/image",
-        "startTimeIST": "2026-11-01 19:30:00 IST",
-        "endTimeIST": "2026-11-01 21:50:00 IST"
-      },
-      "dashStreams": [
-        {
-          "title": "PARAMOUNT+ FHD",
-          "type": "dash",
-          "url": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/qp1tgbcynh/out/v1/84172b48b00945db9fa62fbfcb521f3d/cenc.mpd?aws_sessionId=6cdd27b8-ea14-4284-a9fe-ad5a1e20d6fe",
-          "key": "c37758ed86c66a3bf2bec0c29e7f6491:e84a1d94810130dad27a508b60ba091b"
-        }
-      ]
-    },
-    {
-      "id": 5137,
-      "title": "Women's Super League",
-      "slug": "west-ham-vs-liverpool",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Women's Super League",
-        "category": "Football",
-        "teamA": "West Ham",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/297802/image",
-        "teamB": "Liverpool",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/66774/image",
-        "startTimeIST": "2026-11-01 19:30:00 IST",
-        "endTimeIST": "2026-11-01 21:50:00 IST"
-      },
-      "dashStreams": [
-        {
-          "title": "PARAMOUNT+ FHD",
-          "type": "dash",
-          "url": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/ndctoimkk0/out/v1/c5b85559aa564641858f1bce599ddc08/cenc.mpd?aws_sessionId=91f3a046-0165-4104-91af-ae759517a396",
-          "key": "e5d2051a759dddf27e15405a86c935e4:3d07efeb5ad276d98f33675cc149d86c"
-        }
-      ]
-    },
-    {
-      "id": 5138,
-      "title": "Bundesliga",
-      "slug": "union-berlin-vs-koln",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Bundesliga",
-        "category": "Football",
-        "teamA": "Union Berlin",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2547/image",
-        "teamB": "Köln",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2671/image",
-        "startTimeIST": "2026-11-01 20:00:00 IST",
-        "endTimeIST": "2026-11-01 22:20:00 IST"
-      },
-      "dashStreams": [
-        {
-          "title": "DAZN SPORTS FHD",
-          "type": "dash",
-          "url": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/xl00zoj5d6/out/v1/61e522c484fc4c4c91edfc3079455477/cenc.mpd",
-          "key": "9442939e77cef9646b9598b373ebffe4:1dc1b4dc6f97f9b5fefef1dee17a7cb2"
-        }
-      ]
-    },
-    {
-      "id": 5139,
-      "title": "Women's Super League",
-      "slug": "charlton-vs-chelsea",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Women's Super League",
-        "category": "Football",
-        "teamA": "Charlton",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/234203/image",
-        "teamB": "Chelsea",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/66768/image",
-        "startTimeIST": "2026-11-01 20:00:00 IST",
-        "endTimeIST": "2026-11-01 22:20:00 IST"
-      },
-      "dashStreams": [
-        {
-          "title": "PARAMOUNT+ FHD",
-          "type": "dash",
-          "url": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/lq6k74mslj/out/v1/eabff88c0f9147ecb5c5fb47855f285b/cenc.mpd?aws_sessionId=7cace465-ef37-4404-9844-6c3533c4ee17",
-          "key": "b5341abc7b06077de81b52448f9e873e:cb169a61f3f764f1d4b4dc5c785dbbf9"
-        }
-      ]
-    },
-    {
-      "id": 5140,
-      "title": "LaLiga",
-      "slug": "racing-club-vs-real-madrid",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "LaLiga",
-        "category": "Football",
-        "teamA": "Racing Club",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2835/image",
-        "teamB": "Real Madrid",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2829/image",
-        "startTimeIST": "2026-11-01 20:45:00 IST",
-        "endTimeIST": "2026-11-01 23:05:00 IST"
-      },
-      "dashStreams": [
-        {
-          "title": "TSN SPORTS FHD",
-          "type": "dash",
-          "url": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/cscevwljkq/out/v1/972185041b244140860b7d56398e9aaf/cenc.mpd",
-          "key": "385ceb9714b75e0cef61254f80b31002:18dce92a2891fee68d21ede5173230f8"
-        },
-        {
-          "title": "PREMIER SPORTS FHD",
-          "type": "dash",
-          "url": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/bcj3iscpd6/out/v1/fcd137b391214f7cb99dd4d7be90ca87/cenc.mpd",
-          "key": "1a5df53609ebc9857898c490f4724918:77f62980d582ec541280796acf8b2d19"
-        },
-        {
-          "title": "beIN ENGLISH FHD",
-          "type": "dash",
-          "url": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/q4u5nwaogz/out/v1/18de6d3e65934f3a8de4358e69eab86c/cenc.mpd",
-          "key": "7995c724a13748ed970840a8ab5bb9b3:67bdaf1e2175b9ff682fcdf0e2354b1e"
-        },
-        {
-          "title": "FANCODE FHD",
-          "type": "dash",
-          "url": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/b3b3fkmrbl/out/v1/1084d5c9a97a4c5b9f9554c88f486646/cenc.mpd",
-          "key": "82dfca238e8c4b430a3269db71965db9:a00b28caf4ac628e77a553d440c0ddca"
-        },
-        {
-          "title": "D SPORTS FHD",
-          "type": "dash",
-          "url": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/z5oyxzsxdk/out/v1/7695a0f64a0e424b973d5b09a2a3eb91/cenc.mpd",
-          "key": "f836853d8eac19446ed9535f5fc568b1:b3bc5ef00602b29abac7e482d3d9fbf3"
-        },
-        {
-          "title": "Caze TV 3 FHD",
-          "type": "dash",
-          "url": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/vzeco5ty0v/out/v1/44c6b8f31a2544e3b2a9bb41ed5e241e/cenc.mpd",
-          "key": "ac7abaa9c9481aacfbdac64fc3ec3312:c0c504a2ed2e70b879a650b8770a38c6"
-        }
-      ]
-    },
-    {
-      "id": 5142,
-      "title": "LaLiga 2",
-      "slug": "ceuta-vs-sporting",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "LaLiga 2",
-        "category": "Football",
-        "teamA": "Ceuta",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2869/image",
-        "teamB": "Sporting",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2852/image",
-        "startTimeIST": "2026-11-01 20:45:00 IST",
-        "endTimeIST": "2026-11-01 23:05:00 IST"
-      },
-      "dashStreams": [
-        {
-          "title": "Laliga Hypermotion",
-          "type": "dash",
-          "url": "https://cache07.zapitv.com/live/eds_c2/HYPERMOTION1/dash_live_ez/HYPERMOTION1.mpd",
-          "key": "a88617e904504ee291f49f0e60a51d49:17f92d59fde3b6d2bf4ffb48e8ca720a"
-        }
-      ]
-    },
-    {
-      "id": 5123,
-      "title": "2. Bundesliga",
-      "slug": "st-pauli-vs-nurnberg",
-      "cat": "Live Events",
-      "status": "ended",
-      "event": {
-        "name": "2. Bundesliga",
-        "category": "Football",
-        "teamA": "St. Pauli",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2526/image",
-        "teamB": "Nürnberg",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2523/image",
-        "startTimeIST": "2026-11-01 18:00:00 IST",
-        "endTimeIST": "2026-11-01 20:20:00 IST"
-      },
-      "dashStreams": [
-        {
-          "title": "FAST SERVER",
-          "type": "hls",
-          "url": "https://live.vivo155.com/live/sd-1-4566595.m3u8?txSecret=570255fef8db81737fea7eb6b8f49adf&txTime=6AE743AB",
-          "key": null
-        }
-      ]
-    },
-    {
-      "id": 5124,
-      "title": "2. Bundesliga",
-      "slug": "furth-vs-kiel",
-      "cat": "Live Events",
-      "status": "ended",
-      "event": {
-        "name": "2. Bundesliga",
-        "category": "Football",
-        "teamA": "Fürth",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2551/image",
-        "teamB": "Kiel",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2573/image",
-        "startTimeIST": "2026-11-01 18:00:00 IST",
-        "endTimeIST": "2026-11-01 20:20:00 IST"
-      },
-      "dashStreams": [
-        {
-          "title": "FAST SERVER",
-          "type": "hls",
-          "url": "https://live.vivo155.com/live/sd-1-4566535.m3u8?txSecret=08ac4f20aa9473ce1d90d9b92d220d82&txTime=6AE743DE",
-          "key": null
-        }
-      ]
-    },
-    {
-      "id": 5125,
-      "title": "2. Bundesliga",
-      "slug": "hannover-vs-dresden",
-      "cat": "Live Events",
-      "status": "ended",
-      "event": {
-        "name": "2. Bundesliga",
-        "category": "Football",
-        "teamA": "Hannover",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2541/image",
-        "teamB": "Dresden",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2595/image",
-        "startTimeIST": "2026-11-01 18:00:00 IST",
-        "endTimeIST": "2026-11-01 20:20:00 IST"
-      },
-      "dashStreams": [
-        {
-          "title": "FAST SERVER",
-          "type": "hls",
-          "url": "https://live.vivo155.com/live/sd-1-4566602.m3u8?txSecret=7dcfce00d6b58711e3df86a0a99351a8&txTime=6AE743C8",
-          "key": null
-        }
-      ]
-    },
-    {
-      "id": 4896,
-      "title": "Nepal Premier League",
-      "slug": "npl-vs-npl",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Nepal Premier League",
-        "category": "Cricket",
-        "teamA": "NPL",
-        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQAV3dcOxi7602i_xcqoTE6eoiGVCPJFo6uZwtDkDK-g&s=10",
-        "teamB": "NPL",
-        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQAV3dcOxi7602i_xcqoTE6eoiGVCPJFo6uZwtDkDK-g&s=10",
-        "startTimeIST": "2026-11-01 16:45:00 IST",
-        "endTimeIST": "2026-11-01 21:15:00 IST"
-      },
-      "dashStreams": [
-        {
-          "title": "NPL LIVE HD",
-          "type": "hls",
-          "url": "https://spowncdn.bondsplive.online/nplok/logo.png?&e=.m3u8",
-          "key": null
-        },
-        {
-          "title": "HIMALAYA HD",
-          "type": "hls",
-          "url": "https://spchx.bondsplive.online/414167/logosp.webp?&e=.m3u8",
-          "key": null
-        },
-        {
-          "title": "FANCODE (IND)",
-          "type": "hls",
-          "url": "https://dai-fancode.pages.dev/mumbai/4250363_english_hls_3c429d187460404_1ta-di_h264/index.m3u8",
-          "key": null
-        }
-      ]
-    },
-    {
       "id": 4727,
       "title": "T20 International",
       "slug": "afg-vs-zim",
       "cat": "Live Events",
-      "status": "live",
+      "status": "ended",
       "event": {
         "name": "T20 International",
         "category": "Cricket",
@@ -620,21 +258,6 @@
       ]
     },
     {
-      "id": "B0HMDM29Y2",
-      "title": "Afghanistan vs. Zimbabwe",
-      "slug": "afghanistan-vs-zimbabwe",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Afghanistan vs. Zimbabwe",
-        "category": "Cricket",
-        "teamA": "Team A",
-        "teamB": "Team B",
-        "startTimeIST": ""
-      },
-      "dashStreams": []
-    },
-    {
       "id": "B0HJ6P7GP3",
       "title": "Womens Big Bash League 2026 - 8th Match - Melbourne Stars Women vs Perth Scorchers Women",
       "slug": "womens-big-bash-league-2026-8th-match-melbourne-stars-women-vs-perth-scorchers-women",
@@ -672,6 +295,21 @@
       "status": "live",
       "event": {
         "name": "USA Seniors Cricket NPL 2026 - 1st Match - Houston Saints vs Seattle Moose",
+        "category": "Cricket",
+        "teamA": "Team A",
+        "teamB": "Team B",
+        "startTimeIST": ""
+      },
+      "dashStreams": []
+    },
+    {
+      "id": "B0HMNN211T",
+      "title": "Afghanistan vs Zimbabwe in UAE 2026 - 1st Test - Afghanistan vs Zimbabwe",
+      "slug": "afghanistan-vs-zimbabwe-in-uae-2026-1st-test-afghanistan-vs-zimbabwe",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "Afghanistan vs Zimbabwe in UAE 2026 - 1st Test - Afghanistan vs Zimbabwe",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",
