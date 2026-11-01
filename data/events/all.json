@@ -1,59 +1,9 @@
 {
-  "last_updated": "11/1/2026, 5:50:41 PM IST",
+  "last_updated": "11/1/2026, 7:51:25 PM IST",
   "source": "AryanStreams Official Feed",
-  "football_count": 5,
-  "cricket_count": 8,
+  "football_count": 12,
+  "cricket_count": 7,
   "events": [
-    {
-      "id": 5118,
-      "title": "Trendyol Süper Lig",
-      "slug": "amed-vs-eyupspor",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Trendyol Süper Lig",
-        "category": "Football",
-        "teamA": "Amed",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/207011/image",
-        "teamB": "Eyüpspor",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/7040/image",
-        "startTimeIST": "2026-11-01 16:00:00 IST",
-        "endTimeIST": "2026-11-01 18:20:00 IST"
-      },
-      "dashStreams": [
-        {
-          "title": "HD SERVER",
-          "type": "hls",
-          "url": "https://live2.jorvakstreamcache.com/live/channel17.m3u8?",
-          "key": null
-        }
-      ]
-    },
-    {
-      "id": 5117,
-      "title": "VriendenLoterij Eredivisie",
-      "slug": "pec-zwolle-vs-ado",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "VriendenLoterij Eredivisie",
-        "category": "Football",
-        "teamA": "PEC Zwolle",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2971/image",
-        "teamB": "ADO",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2966/image",
-        "startTimeIST": "2026-11-01 16:45:00 IST",
-        "endTimeIST": "2026-11-01 19:05:00 IST"
-      },
-      "dashStreams": [
-        {
-          "title": "HD SERVER",
-          "type": "hls",
-          "url": "https://live2.jorvakstreamcache.com/live/channel6.m3u8?",
-          "key": null
-        }
-      ]
-    },
     {
       "id": 4454,
       "title": "Indian Super League",
@@ -80,11 +30,229 @@
       ]
     },
     {
+      "id": 5122,
+      "title": "Women's Super League",
+      "slug": "arsenal-vs-aston-villa",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "Women's Super League",
+        "category": "Football",
+        "teamA": "Arsenal",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/26243/image",
+        "teamB": "Aston Villa",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/266375/image",
+        "startTimeIST": "2026-11-01 17:30:00 IST",
+        "endTimeIST": "2026-11-01 19:50:00 IST"
+      },
+      "dashStreams": [
+        {
+          "title": "PARAMOUNT+ FHD",
+          "type": "dash",
+          "url": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/wjxi48cycl/out/v1/a5f67fb7a62642e789846c74f02438e2/cenc.mpd?aws_sessionId=06175cb3-c102-48f6-9a0d-de7303575efc",
+          "key": "f9ac0394e37c6f2f3cf2c0b425ba0a14:ff7d86fb4517b5593ae3d6b259b6b6ff"
+        }
+      ]
+    },
+    {
+      "id": 5123,
+      "title": "2. Bundesliga",
+      "slug": "st-pauli-vs-nurnberg",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "2. Bundesliga",
+        "category": "Football",
+        "teamA": "St. Pauli",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2526/image",
+        "teamB": "Nürnberg",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2523/image",
+        "startTimeIST": "2026-11-01 18:00:00 IST",
+        "endTimeIST": "2026-11-01 20:20:00 IST"
+      },
+      "dashStreams": [
+        {
+          "title": "FAST SERVER",
+          "type": "hls",
+          "url": "https://live.vivo155.com/live/sd-1-4566595.m3u8?txSecret=570255fef8db81737fea7eb6b8f49adf&txTime=6AE743AB",
+          "key": null
+        }
+      ]
+    },
+    {
+      "id": 5124,
+      "title": "2. Bundesliga",
+      "slug": "furth-vs-kiel",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "2. Bundesliga",
+        "category": "Football",
+        "teamA": "Fürth",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2551/image",
+        "teamB": "Kiel",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2573/image",
+        "startTimeIST": "2026-11-01 18:00:00 IST",
+        "endTimeIST": "2026-11-01 20:20:00 IST"
+      },
+      "dashStreams": [
+        {
+          "title": "FAST SERVER",
+          "type": "hls",
+          "url": "https://live.vivo155.com/live/sd-1-4566535.m3u8?txSecret=08ac4f20aa9473ce1d90d9b92d220d82&txTime=6AE743DE",
+          "key": null
+        }
+      ]
+    },
+    {
+      "id": 5125,
+      "title": "2. Bundesliga",
+      "slug": "hannover-vs-dresden",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "2. Bundesliga",
+        "category": "Football",
+        "teamA": "Hannover",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2541/image",
+        "teamB": "Dresden",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2595/image",
+        "startTimeIST": "2026-11-01 18:00:00 IST",
+        "endTimeIST": "2026-11-01 20:20:00 IST"
+      },
+      "dashStreams": [
+        {
+          "title": "FAST SERVER",
+          "type": "hls",
+          "url": "https://live.vivo155.com/live/sd-1-4566602.m3u8?txSecret=7dcfce00d6b58711e3df86a0a99351a8&txTime=6AE743C8",
+          "key": null
+        }
+      ]
+    },
+    {
+      "id": 5126,
+      "title": "LaLiga",
+      "slug": "getafe-vs-sevilla",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "LaLiga",
+        "category": "Football",
+        "teamA": "Getafe",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2859/image",
+        "teamB": "Sevilla",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2833/image",
+        "startTimeIST": "2026-11-01 18:30:00 IST",
+        "endTimeIST": "2026-11-01 20:50:00 IST"
+      },
+      "dashStreams": [
+        {
+          "title": "PREMIER SPORTS FHD",
+          "type": "dash",
+          "url": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/bcj3iscpd6/out/v1/fcd137b391214f7cb99dd4d7be90ca87/cenc.mpd",
+          "key": "1a5df53609ebc9857898c490f4724918:77f62980d582ec541280796acf8b2d19"
+        },
+        {
+          "title": "FANCODE FHD",
+          "type": "dash",
+          "url": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/b3b3fkmrbl/out/v1/1084d5c9a97a4c5b9f9554c88f486646/cenc.mpd",
+          "key": "82dfca238e8c4b430a3269db71965db9:a00b28caf4ac628e77a553d440c0ddca"
+        },
+        {
+          "title": "CazéTV FHD",
+          "type": "dash",
+          "url": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/ui54qo0g6h/out/v1/620e1448188d4bbe9a28d0dd52f45bb7/cenc.mpd",
+          "key": "ba6aca5a550163c38d06646bb50f04e7:516c3b471fce48a5b7a2e5ee7dd505f2"
+        }
+      ]
+    },
+    {
+      "id": 5129,
+      "title": "Scottish Premiership",
+      "slug": "falkirk-vs-celtic",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "Scottish Premiership",
+        "category": "Football",
+        "teamA": "Falkirk",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2363/image",
+        "teamB": "Celtic",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2352/image",
+        "startTimeIST": "2026-11-01 18:30:00 IST",
+        "endTimeIST": "2026-11-01 20:50:00 IST"
+      },
+      "dashStreams": [
+        {
+          "title": "beIN ENGLISH FHD",
+          "type": "dash",
+          "url": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/q4u5nwaogz/out/v1/18de6d3e65934f3a8de4358e69eab86c/cenc.mpd",
+          "key": "7995c724a13748ed970840a8ab5bb9b3:67bdaf1e2175b9ff682fcdf0e2354b1e"
+        },
+        {
+          "title": "SportDigital Fussball",
+          "type": "dash",
+          "url": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/ssdefyhkkr/out/v1/cf01290cb7f64525bdf861580a016ca8/cenc.mpd?",
+          "key": "0ad4080cdff8c60b1233b22087f0b340:285f129c5eca01dd08a5d5a14ad801c8"
+        }
+      ]
+    },
+    {
+      "id": 5181,
+      "title": "LaLiga 2",
+      "slug": "eldense-vs-granada",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "LaLiga 2",
+        "category": "Football",
+        "teamA": "Eldense",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/47321/image",
+        "teamB": "Granada",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/33779/image",
+        "startTimeIST": "2026-11-01 18:30:00 IST",
+        "endTimeIST": "2026-11-01 20:50:00 IST"
+      },
+      "dashStreams": [
+        {
+          "title": "LaLiga Hypermotion",
+          "type": "dash",
+          "url": "https://cache07.zapitv.com/live/eds_c2/HYPERMOTION1/dash_live_ez/HYPERMOTION1.mpd",
+          "key": "a88617e904504ee291f49f0e60a51d49:17f92d59fde3b6d2bf4ffb48e8ca720a"
+        }
+      ]
+    },
+    {
+      "id": 5130,
+      "title": "VriendenLoterij Eredivisie",
+      "slug": "excelsior-vs-twente",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "VriendenLoterij Eredivisie",
+        "category": "Football",
+        "teamA": "Excelsior",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2967/image",
+        "teamB": "Twente",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2955/image",
+        "startTimeIST": "2026-11-01 19:00:00 IST",
+        "endTimeIST": "2026-11-01 21:20:00 IST"
+      },
+      "dashStreams": [
+        {
+          "title": "HD SERVER",
+          "type": "hls",
+          "url": "https://www.rtmpcdn.com/live/fb665ec8-646c-42da-9846-fd5012ba068e.m3u8",
+          "key": null
+        }
+      ]
+    },
+    {
       "id": 5116,
       "title": "Serie A",
       "slug": "como-vs-venezia",
       "cat": "Live Events",
-      "status": "live",
+      "status": "ended",
       "event": {
         "name": "Serie A",
         "category": "Football",
@@ -129,27 +297,45 @@
       ]
     },
     {
-      "id": 5122,
-      "title": "Women's Super League",
-      "slug": "arsenal-vs-aston-villa",
+      "id": 5119,
+      "title": "Liga F Moeve",
+      "slug": "fc-badalona-women-vs-fc-barcelona",
       "cat": "Live Events",
-      "status": "live",
+      "status": "ended",
       "event": {
-        "name": "Women's Super League",
+        "name": "Liga F Moeve",
         "category": "Football",
-        "teamA": "Arsenal",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/26243/image",
-        "teamB": "Aston Villa",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/266375/image",
-        "startTimeIST": "2026-11-01 17:30:00 IST",
-        "endTimeIST": "2026-11-01 19:50:00 IST"
+        "teamA": "FC Badalona Women",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/77893/image",
+        "teamB": "FC Barcelona",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/77889/image",
+        "startTimeIST": "2026-11-01 17:00:00 IST",
+        "endTimeIST": "2026-11-01 19:20:00 IST"
+      },
+      "dashStreams": []
+    },
+    {
+      "id": 5120,
+      "title": "Serie A Women",
+      "slug": "inter-vs-lazio",
+      "cat": "Live Events",
+      "status": "ended",
+      "event": {
+        "name": "Serie A Women",
+        "category": "Football",
+        "teamA": "Inter",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/325685/image",
+        "teamB": "Lazio",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/389322/image",
+        "startTimeIST": "2026-11-01 17:00:00 IST",
+        "endTimeIST": "2026-11-01 19:20:00 IST"
       },
       "dashStreams": [
         {
-          "title": "PARAMOUNT+ FHD",
+          "title": "DAZN SPORTS FHD",
           "type": "dash",
-          "url": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/wjxi48cycl/out/v1/a5f67fb7a62642e789846c74f02438e2/cenc.mpd?aws_sessionId=06175cb3-c102-48f6-9a0d-de7303575efc",
-          "key": "f9ac0394e37c6f2f3cf2c0b425ba0a14:ff7d86fb4517b5593ae3d6b259b6b6ff"
+          "url": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/x34acymkv6/out/v1/867b4911d9134effa37c26e763dc67f7/cenc.mpd",
+          "key": "2917651a09473d5b42c4c61dcec03361:2e7c0b3f0ae39055759101c2d2c31e22"
         }
       ]
     },
@@ -173,19 +359,13 @@
         {
           "title": "NPL LIVE HD",
           "type": "hls",
-          "url": "https://lastwarningfal.bondsplive.online/495346/logosp.webp?&e=.m3u8?Referer: https://youjizz.com/",
-          "key": null
-        },
-        {
-          "title": "STAR SPORTS HD",
-          "type": "hls",
-          "url": "https://lastwarning-xtv.bondsplive.online/167579/logosp.webp?&e=.m3u8?Referer: https://youjizz.com/",
+          "url": "https://spowncdn.bondsplive.online/nplok/logo.png?&e=.m3u8",
           "key": null
         },
         {
           "title": "HIMALAYA HD",
           "type": "hls",
-          "url": "https://linkinpark-xtv.bondsplive.online/414167/logosp.webp?&e=.m3u8?Referer: https://youjizz.com/",
+          "url": "https://spchx.bondsplive.online/414167/logosp.webp?&e=.m3u8",
           "key": null
         },
         {
@@ -193,43 +373,6 @@
           "type": "hls",
           "url": "https://dai-fancode.pages.dev/mumbai/4250363_english_hls_3c429d187460404_1ta-di_h264/index.m3u8",
           "key": null
-        }
-      ]
-    },
-    {
-      "id": 4963,
-      "title": "Women's Big Bash League",
-      "slug": "wbbl-vs-wbbl",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Women's Big Bash League",
-        "category": "Cricket",
-        "teamA": "WBBL",
-        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH9OS4ikdL0U1wBewY6aIs6YK6KHWTHm7aa9O7wGaw4w&s=10",
-        "teamB": "WBBL",
-        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH9OS4ikdL0U1wBewY6aIs6YK6KHWTHm7aa9O7wGaw4w&s=10",
-        "startTimeIST": "2026-11-01 13:40:00 IST",
-        "endTimeIST": "2026-11-01 18:10:00 IST"
-      },
-      "dashStreams": [
-        {
-          "title": "WILLOW FHD",
-          "type": "dash",
-          "url": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/0bftapixow/out/v1/a435ed7a00f947deb4369b46d8f2fb70/cenc.mpd",
-          "key": "290e09c837da78d5cd961978d390515c:b748836c71e6a4ca68ef5b5652db6247"
-        },
-        {
-          "title": "WILLOW ALT",
-          "type": "dash",
-          "url": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/0bftapixow/out/v1/a435ed7a00f947deb4369b46d8f2fb70/cenc.mpd",
-          "key": "290e09c837da78d5cd961978d390515c:b748836c71e6a4ca68ef5b5652db6247"
-        },
-        {
-          "title": "EUROSPORTS FHD",
-          "type": "dash",
-          "url": "https://wbd.skandha.tv/EuroSport_HD/EuroSport_HD.isml/.mpd",
-          "key": "12ed56d780abcfebcd23aa27e4ac5015:6784567890abcfebcd23aa27e4ac2814"
         }
       ]
     },
