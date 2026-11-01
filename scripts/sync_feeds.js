@@ -72,6 +72,162 @@ const DYNAMIC_COOKIE_MAP = {
     'ss2kan': 'ss2kan', 'ka2sd': 'ss2kan', '1122': 'ss2kan'
 };
 
+const KNOWN_KEYS = {
+    // Star Sports
+    'h1hd': { kid: '11073b8f426e5092a2effada3bfaf721', key: '5d1c59a8052956bd056810f260161e5f' },
+    'ss1h': { kid: '11073b8f426e5092a2effada3bfaf721', key: '5d1c59a8052956bd056810f260161e5f' },
+    'star1hindihd': { kid: '11073b8f426e5092a2effada3bfaf721', key: '5d1c59a8052956bd056810f260161e5f' },
+    '1108': { kid: '11073b8f426e5092a2effada3bfaf721', key: '5d1c59a8052956bd056810f260161e5f' },
+
+    'h1sd': { kid: '30039b6e2c545c01aa84e649875c4977', key: '7aa610c68000fe9ed97851d40a52abff' },
+    'star1hindi': { kid: '30039b6e2c545c01aa84e649875c4977', key: '7aa610c68000fe9ed97851d40a52abff' },
+    '362': { kid: '30039b6e2c545c01aa84e649875c4977', key: '7aa610c68000fe9ed97851d40a52abff' },
+
+    'e1hd': { kid: '06dd6287c4b956419d15d6c8e513aeed', key: 'a82d6b850b5c281c0054fc6d55e1c6ba' },
+    'ss1': { kid: '06dd6287c4b956419d15d6c8e513aeed', key: 'a82d6b850b5c281c0054fc6d55e1c6ba' },
+    'star1': { kid: '06dd6287c4b956419d15d6c8e513aeed', key: 'a82d6b850b5c281c0054fc6d55e1c6ba' },
+    'star1hd': { kid: '06dd6287c4b956419d15d6c8e513aeed', key: 'a82d6b850b5c281c0054fc6d55e1c6ba' },
+    'star1enghd': { kid: '06dd6287c4b956419d15d6c8e513aeed', key: 'a82d6b850b5c281c0054fc6d55e1c6ba' },
+    '1106': { kid: '06dd6287c4b956419d15d6c8e513aeed', key: 'a82d6b850b5c281c0054fc6d55e1c6ba' },
+
+    'e1sd': { kid: 'a415207154a154e59d6259f6c436937c', key: '56c3bac0e95368220dd75b6312a4458c' },
+    'star1eng': { kid: 'a415207154a154e59d6259f6c436937c', key: '56c3bac0e95368220dd75b6312a4458c' },
+    '1142': { kid: 'a415207154a154e59d6259f6c436937c', key: '56c3bac0e95368220dd75b6312a4458c' },
+
+    'e2hd': { kid: 'b99144f27b865d6ba1007fead82b2783', key: 'b2f10f09a771327b9bc69484d78e4595' },
+    'ss2': { kid: 'b99144f27b865d6ba1007fead82b2783', key: 'b2f10f09a771327b9bc69484d78e4595' },
+    'star2': { kid: 'b99144f27b865d6ba1007fead82b2783', key: 'b2f10f09a771327b9bc69484d78e4595' },
+    'star2hd': { kid: 'b99144f27b865d6ba1007fead82b2783', key: 'b2f10f09a771327b9bc69484d78e4595' },
+    'star2enghd': { kid: 'b99144f27b865d6ba1007fead82b2783', key: 'b2f10f09a771327b9bc69484d78e4595' },
+    '1109': { kid: 'b99144f27b865d6ba1007fead82b2783', key: 'b2f10f09a771327b9bc69484d78e4595' },
+
+    'e2sd': { kid: 'd49703e538a2545fa2d8d57f34a4d0ba', key: '9ef07c1b359ee137db0493cebd6acdf0' },
+    'star2eng': { kid: 'd49703e538a2545fa2d8d57f34a4d0ba', key: '9ef07c1b359ee137db0493cebd6acdf0' },
+    '1141': { kid: 'd49703e538a2545fa2d8d57f34a4d0ba', key: '9ef07c1b359ee137db0493cebd6acdf0' },
+
+    'h2hd': { kid: '8e48435ba038548299ee73fef998535d', key: 'b89d18e54ad2b5576c27c3259db19a3e' },
+    'ss2h': { kid: '8e48435ba038548299ee73fef998535d', key: 'b89d18e54ad2b5576c27c3259db19a3e' },
+    'star2hindihd': { kid: '8e48435ba038548299ee73fef998535d', key: 'b89d18e54ad2b5576c27c3259db19a3e' },
+    '1984': { kid: '8e48435ba038548299ee73fef998535d', key: 'b89d18e54ad2b5576c27c3259db19a3e' },
+
+    'h2sd': { kid: 'f9af22f6d76f5f5d98a35eed7fc35292', key: 'b979fbf840b5c984733d28aaf683762e' },
+    'star2hindi': { kid: 'f9af22f6d76f5f5d98a35eed7fc35292', key: 'b979fbf840b5c984733d28aaf683762e' },
+    '1985': { kid: 'f9af22f6d76f5f5d98a35eed7fc35292', key: 'b979fbf840b5c984733d28aaf683762e' },
+
+    'ss3': { kid: 'e4e8647eaf0659ac85f61765a5abcdc1', key: 'd749c9b27505beb0e1a8b6c30ca65de6' },
+    '1389': { kid: 'e4e8647eaf0659ac85f61765a5abcdc1', key: 'd749c9b27505beb0e1a8b6c30ca65de6' },
+    'star3': { kid: 'e4e8647eaf0659ac85f61765a5abcdc1', key: 'd749c9b27505beb0e1a8b6c30ca65de6' },
+
+    'se1hd': { kid: 'cc04426ac28359a7b620934ddbbecb7c', key: '0074c460557b1f21a60fa0aada550e3a' },
+    'select1': { kid: 'cc04426ac28359a7b620934ddbbecb7c', key: '0074c460557b1f21a60fa0aada550e3a' },
+    'select_1': { kid: 'cc04426ac28359a7b620934ddbbecb7c', key: '0074c460557b1f21a60fa0aada550e3a' },
+    'ssselect1': { kid: 'cc04426ac28359a7b620934ddbbecb7c', key: '0074c460557b1f21a60fa0aada550e3a' },
+    'starselect1': { kid: 'cc04426ac28359a7b620934ddbbecb7c', key: '0074c460557b1f21a60fa0aada550e3a' },
+    '460': { kid: 'cc04426ac28359a7b620934ddbbecb7c', key: '0074c460557b1f21a60fa0aada550e3a' },
+
+    'se1': { kid: 'df07fac4675a597f92cbe2edbffb7c23', key: '0d6b8e6559306e043bf26c7c8ffce7ae' },
+    '1123': { kid: 'df07fac4675a597f92cbe2edbffb7c23', key: '0d6b8e6559306e043bf26c7c8ffce7ae' },
+
+    'se2hd': { kid: '2c443dffefb256a5b7a1364cc4af3529', key: '1d78f35200eb5977a95de669788cf128' },
+    'select2': { kid: '2c443dffefb256a5b7a1364cc4af3529', key: '1d78f35200eb5977a95de669788cf128' },
+    'select_2': { kid: '2c443dffefb256a5b7a1364cc4af3529', key: '1d78f35200eb5977a95de669788cf128' },
+    'ssselect2': { kid: '2c443dffefb256a5b7a1364cc4af3529', key: '1d78f35200eb5977a95de669788cf128' },
+    'starselect2': { kid: '2c443dffefb256a5b7a1364cc4af3529', key: '1d78f35200eb5977a95de669788cf128' },
+    '461': { kid: '2c443dffefb256a5b7a1364cc4af3529', key: '1d78f35200eb5977a95de669788cf128' },
+
+    'se2': { kid: '2b307daa57a75698acfac3e85d4ff8c5', key: 'd3c17909d061caa2e0a9c75e195ae3d4' },
+    '1114': { kid: '2b307daa57a75698acfac3e85d4ff8c5', key: 'd3c17909d061caa2e0a9c75e195ae3d4' },
+
+    't1hd': { kid: '2272c0bc6b2e5cb090b1f55996e0026c', key: '943923934de1d5536ab01c67fca8b337' },
+    'ss1tam': { kid: '2272c0bc6b2e5cb090b1f55996e0026c', key: '943923934de1d5536ab01c67fca8b337' },
+    'star1tamil': { kid: '2272c0bc6b2e5cb090b1f55996e0026c', key: '943923934de1d5536ab01c67fca8b337' },
+    '3277': { kid: '2272c0bc6b2e5cb090b1f55996e0026c', key: '943923934de1d5536ab01c67fca8b337' },
+
+    't1sd': { kid: 'a05f788e6082561fad5565ab7457c995', key: '5756af02f8923b1e8767ff375bafb4aa' },
+    '1124': { kid: 'a05f788e6082561fad5565ab7457c995', key: '5756af02f8923b1e8767ff375bafb4aa' },
+
+    'te1hd': { kid: 'a56a509011675303900ead16165ba38f', key: 'c4c4c7aec0ff4a3fa0c6d8cb1ae56c30' },
+    'ss1tel': { kid: 'a56a509011675303900ead16165ba38f', key: 'c4c4c7aec0ff4a3fa0c6d8cb1ae56c30' },
+    'star1telugu': { kid: 'a56a509011675303900ead16165ba38f', key: 'c4c4c7aec0ff4a3fa0c6d8cb1ae56c30' },
+    '3278': { kid: 'a56a509011675303900ead16165ba38f', key: 'c4c4c7aec0ff4a3fa0c6d8cb1ae56c30' },
+
+    'te1sd': { kid: '8aa7da0842d65285b23e55619ab0f1c6', key: 'fe01e21ac81a19049d3ba82b5bd33dfa' },
+    '1651': { kid: '8aa7da0842d65285b23e55619ab0f1c6', key: 'fe01e21ac81a19049d3ba82b5bd33dfa' },
+
+    'ka1sd': { kid: 'bab01ce8ab695712a5fe390f1b4ffca2', key: '5685130a845e217080b84fc170b67f00' },
+    'ss1kan': { kid: 'bab01ce8ab695712a5fe390f1b4ffca2', key: '5685130a845e217080b84fc170b67f00' },
+    'star1kannada': { kid: 'bab01ce8ab695712a5fe390f1b4ffca2', key: '5685130a845e217080b84fc170b67f00' },
+    '1650': { kid: 'bab01ce8ab695712a5fe390f1b4ffca2', key: '5685130a845e217080b84fc170b67f00' },
+
+    's2hd': { kid: '92cfd893ab8551d59a773afce91fc790', key: '906e0d6c4accf6bdaad9a6167f8ae53a' },
+    'ss2tam': { kid: '92cfd893ab8551d59a773afce91fc790', key: '906e0d6c4accf6bdaad9a6167f8ae53a' },
+    'star2tamil': { kid: '92cfd893ab8551d59a773afce91fc790', key: '906e0d6c4accf6bdaad9a6167f8ae53a' },
+    '3273': { kid: '92cfd893ab8551d59a773afce91fc790', key: '906e0d6c4accf6bdaad9a6167f8ae53a' },
+
+    'te2hd': { kid: '01fc3874f21058dcbf8204f07616ce81', key: '8ba560fb1fcdfeaddfc254965e3a42f6' },
+    'ss2tel': { kid: '01fc3874f21058dcbf8204f07616ce81', key: '8ba560fb1fcdfeaddfc254965e3a42f6' },
+    'star2telugu': { kid: '01fc3874f21058dcbf8204f07616ce81', key: '8ba560fb1fcdfeaddfc254965e3a42f6' },
+    '3274': { kid: '01fc3874f21058dcbf8204f07616ce81', key: '8ba560fb1fcdfeaddfc254965e3a42f6' },
+
+    'ka2sd': { kid: '7af2add2968a56309519ac2680c18f25', key: 'f992a14e0def17ccdfe16f58c4ce56c5' },
+    'ss2kan': { kid: '7af2add2968a56309519ac2680c18f25', key: 'f992a14e0def17ccdfe16f58c4ce56c5' },
+    'star2kannada': { kid: '7af2add2968a56309519ac2680c18f25', key: 'f992a14e0def17ccdfe16f58c4ce56c5' },
+    '1122': { kid: '7af2add2968a56309519ac2680c18f25', key: 'f992a14e0def17ccdfe16f58c4ce56c5' },
+
+    // Sony Sports
+    'sten1': { kid: '3394be91407c5fe99d784d2f2d6d4a12', key: '58665e1df41f9f22ed73c56384bb3f51' },
+    '162': { kid: '3394be91407c5fe99d784d2f2d6d4a12', key: '58665e1df41f9f22ed73c56384bb3f51' },
+    'ten1': { kid: '3394be91407c5fe99d784d2f2d6d4a12', key: '58665e1df41f9f22ed73c56384bb3f51' },
+    'ten1hd': { kid: '3394be91407c5fe99d784d2f2d6d4a12', key: '58665e1df41f9f22ed73c56384bb3f51' },
+
+    'sten2': { kid: '671ce7c8ccc95e0a95cba0d12831d12e', key: '175d284c9647b6feb379e7c1650a4f82' },
+    '891': { kid: '671ce7c8ccc95e0a95cba0d12831d12e', key: '175d284c9647b6feb379e7c1650a4f82' },
+    'ten2': { kid: '671ce7c8ccc95e0a95cba0d12831d12e', key: '175d284c9647b6feb379e7c1650a4f82' },
+    'ten2hd': { kid: '671ce7c8ccc95e0a95cba0d12831d12e', key: '175d284c9647b6feb379e7c1650a4f82' },
+
+    'sten3': { kid: '68318f7c97c55ba6ab8d0398a88fed3e', key: 'd312fb3325b4eb9462b4a0d2b6794adf' },
+    '892': { kid: '68318f7c97c55ba6ab8d0398a88fed3e', key: 'd312fb3325b4eb9462b4a0d2b6794adf' },
+    'ten3': { kid: '68318f7c97c55ba6ab8d0398a88fed3e', key: 'd312fb3325b4eb9462b4a0d2b6794adf' },
+    'ten3hd': { kid: '68318f7c97c55ba6ab8d0398a88fed3e', key: 'd312fb3325b4eb9462b4a0d2b6794adf' },
+    'sony3': { kid: '68318f7c97c55ba6ab8d0398a88fed3e', key: 'd312fb3325b4eb9462b4a0d2b6794adf' },
+
+    'stent': { kid: '0df5f800775c5979ab8aeaff28ee674b', key: '47dd1b9c8d4049760059aab27bddf1cb' },
+    '3514': { kid: '0df5f800775c5979ab8aeaff28ee674b', key: '47dd1b9c8d4049760059aab27bddf1cb' },
+    '3397': { kid: '0df5f800775c5979ab8aeaff28ee674b', key: '47dd1b9c8d4049760059aab27bddf1cb' },
+    'ten4': { kid: '0df5f800775c5979ab8aeaff28ee674b', key: '47dd1b9c8d4049760059aab27bddf1cb' },
+    'ten4hd': { kid: '0df5f800775c5979ab8aeaff28ee674b', key: '47dd1b9c8d4049760059aab27bddf1cb' },
+    's4tamil': { kid: '0df5f800775c5979ab8aeaff28ee674b', key: '47dd1b9c8d4049760059aab27bddf1cb' },
+
+    'stentu': { kid: '494a8a050ecc5a22adab6dc304ead1b4', key: '9b3bbf2ccb71a876a2bbeb9cde00d7bf' },
+    '1773': { kid: '494a8a050ecc5a22adab6dc304ead1b4', key: '9b3bbf2ccb71a876a2bbeb9cde00d7bf' },
+    '3398': { kid: '494a8a050ecc5a22adab6dc304ead1b4', key: '9b3bbf2ccb71a876a2bbeb9cde00d7bf' },
+    'ten4telugu': { kid: '494a8a050ecc5a22adab6dc304ead1b4', key: '9b3bbf2ccb71a876a2bbeb9cde00d7bf' },
+    's4telugu': { kid: '494a8a050ecc5a22adab6dc304ead1b4', key: '9b3bbf2ccb71a876a2bbeb9cde00d7bf' },
+
+    'sten5': { kid: 'd2d8709de11d5955b60c57d3c955733e', key: '7655200b24bf82808fb8addf2f02847b' },
+    '155': { kid: 'd2d8709de11d5955b60c57d3c955733e', key: '7655200b24bf82808fb8addf2f02847b' },
+    '3399': { kid: 'd2d8709de11d5955b60c57d3c955733e', key: '7655200b24bf82808fb8addf2f02847b' },
+    'ten5': { kid: 'd2d8709de11d5955b60c57d3c955733e', key: '7655200b24bf82808fb8addf2f02847b' },
+    'ten5hd': { kid: 'd2d8709de11d5955b60c57d3c955733e', key: '7655200b24bf82808fb8addf2f02847b' },
+    's5hd': { kid: 'd2d8709de11d5955b60c57d3c955733e', key: '7655200b24bf82808fb8addf2f02847b' }
+};
+
+function isCookieValid(cookieStr, expireVal) {
+    if (!cookieStr && !expireVal) return false;
+    const nowSec = Math.floor(Date.now() / 1000);
+    let expSec = 0;
+    if (typeof expireVal === 'number' && expireVal > 0) {
+        expSec = expireVal;
+    } else if (cookieStr) {
+        const m = cookieStr.match(/exp=(\d+)/);
+        if (m) expSec = parseInt(m[1], 10);
+    }
+    if (expSec > 0) {
+        return expSec > (nowSec + 60);
+    }
+    return Boolean(cookieStr && cookieStr.length > 20);
+}
+
 async function fetchDynamicCookie(workerKey) {
     try {
         const text = await fetchEndpoint('https://rough-snowflake-13bc.himanshuvalverde.workers.dev/?id=' + encodeURIComponent(workerKey));

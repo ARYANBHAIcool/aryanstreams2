@@ -1,5 +1,5 @@
 {
-  "last_updated": "11/1/2026, 4:15:45 PM IST",
+  "last_updated": "11/1/2026, 5:50:39 PM IST",
   "sources_checked": 6,
   "sources_active": 6,
   "Matches": [
@@ -46,96 +46,6 @@
         "amazon_server2": "",
         "akamai_server2": "",
         "cloudfront_server2": ""
-      },
-      "stream_url_alpha": {},
-      "stream_url_bravo": {}
-    },
-    {
-      "id": "B0HNWRBDCQ",
-      "match_id": "B0HNWRBDCQ",
-      "event_name": "New Zealand vs. India",
-      "title": "New Zealand vs. India",
-      "synopsis": "New Zealand vs. India",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.2d613298-262a-42ed-a769-e267442a7aa6/3/BOXART-16X9/en-US._UR1920,1080_.jpg",
-      "cover_image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.2d613298-262a-42ed-a769-e267442a7aa6/3/BOXART-16X9/en-US._UR1920,1080_.jpg",
-      "status": "LIVE",
-      "time": "LIVE NOW • Prime Video",
-      "sport": "Cricket",
-      "drm_key": "2765adbf6880195515fed136e5a989fa:f1356a68a923c31d7184dfa1b91c161f",
-      "streams": [
-        {
-          "name": "Willow USA (Trend48)",
-          "url": "https://trend48.st/live-tv?ch=willow-usa"
-        },
-        {
-          "name": "Sky Sports Cricket (UK)",
-          "url": "https://trend48.st/live-tv?ch=skysportscricket-uk"
-        },
-        {
-          "name": "Sony Sports Ten 1 HD",
-          "url": "https://trend48.st/live-tv?ch=sonyten1-in"
-        },
-        {
-          "name": "Fox Sports 501 (Cricket)",
-          "url": "https://trend48.st/live-tv?ch=foxsports501-au"
-        }
-      ],
-      "CnpTV": {
-        "fastly_server1": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/pog3pkfhga/out/v1/20164001c7d9489f898d05761ad05077/cenc.mpd",
-        "amazon_server1": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/pog3pkfhga/out/v1/20164001c7d9489f898d05761ad05077/cenc.mpd",
-        "akamai_server1": "https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/pog3pkfhga/out/v1/20164001c7d9489f898d05761ad05077/cenc.mpd",
-        "cloudfront_server1": "https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/pog3pkfhga/out/v1/20164001c7d9489f898d05761ad05077/cenc.mpd",
-        "fastly_server2": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/xgpgmpfnwa/out/v1/2f20ac6134fa485492d578e3c21c09aa/cenc.mpd",
-        "amazon_server2": "https://otte.cache.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/xgpgmpfnwa/out/v1/2f20ac6134fa485492d578e3c21c09aa/cenc.mpd",
-        "akamai_server2": "https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/xgpgmpfnwa/out/v1/2f20ac6134fa485492d578e3c21c09aa/cenc.mpd",
-        "cloudfront_server2": "https://ss-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/xgpgmpfnwa/out/v1/2f20ac6134fa485492d578e3c21c09aa/cenc.mpd"
-      },
-      "stream_url_alpha": {},
-      "stream_url_bravo": {}
-    },
-    {
-      "id": "B0HN61HF5F",
-      "match_id": "B0HN61HF5F",
-      "event_name": "Womens Big Bash League 2026 - 7th Match - Sydney Sixers Women vs Hobart Hurricanes Women",
-      "title": "Womens Big Bash League 2026 - 7th Match - Sydney Sixers Women vs Hobart Hurricanes Women",
-      "synopsis": "Womens Big Bash League 2026 - 7th Match - Sydney Sixers Women vs Hobart Hurricanes Women",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.63c97416-9e71-4c56-a95d-9ef474669f7a/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "cover_image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.63c97416-9e71-4c56-a95d-9ef474669f7a/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "LIVE",
-      "time": "2:10 PM BDT",
-      "sport": "Cricket",
-      "drm_key": "a59f28b25431a5ab1091707c14e6e5b5:0e2b44300a38bd47fbb02e9c687aa2c8",
-      "streams": [
-        {
-          "name": "Fox Sports 501 (Cricket)",
-          "url": "https://trend48.st/live-tv?ch=foxsports501-au"
-        },
-        {
-          "name": "Sky Sports Cricket (UK)",
-          "url": "https://trend48.st/live-tv?ch=skysportscricket-uk"
-        },
-        {
-          "name": "Willow USA (Trend48)",
-          "url": "https://trend48.st/live-tv?ch=willow-usa"
-        },
-        {
-          "name": "Sony Sports Ten 1 HD",
-          "url": "https://trend48.st/live-tv?ch=sonyten1-in"
-        },
-        {
-          "name": "Star Sports 1 HD",
-          "url": "https://trend48.st/live-tv?ch=starsports1-in"
-        }
-      ],
-      "CnpTV": {
-        "fastly_server1": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/vqu1w8f6e7/out/v1/f7d7ec07c208491681c1b6f68d0e823f/cenc.mpd",
-        "amazon_server1": "https://otte.cache.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/vqu1w8f6e7/out/v1/f7d7ec07c208491681c1b6f68d0e823f/cenc.mpd",
-        "akamai_server1": "https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/vqu1w8f6e7/out/v1/f7d7ec07c208491681c1b6f68d0e823f/cenc.mpd",
-        "cloudfront_server1": "https://ss-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/vqu1w8f6e7/out/v1/f7d7ec07c208491681c1b6f68d0e823f/cenc.mpd",
-        "fastly_server2": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/mjb1gtveu0/out/v1/f719851c96ae45818edf9d4f95cda2b3/cenc.mpd",
-        "amazon_server2": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/mjb1gtveu0/out/v1/f719851c96ae45818edf9d4f95cda2b3/cenc.mpd",
-        "akamai_server2": "https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/mjb1gtveu0/out/v1/f719851c96ae45818edf9d4f95cda2b3/cenc.mpd",
-        "cloudfront_server2": "https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/mjb1gtveu0/out/v1/f719851c96ae45818edf9d4f95cda2b3/cenc.mpd"
       },
       "stream_url_alpha": {},
       "stream_url_bravo": {}
@@ -979,6 +889,100 @@
       "stream_url_bravo": {}
     },
     {
+      "id": "B0HLQ78QD4",
+      "match_id": "B0HLQ78QD4",
+      "event_name": "Womens Big Bash League 2026 - 13th Match - Melbourne Renegades Women vs Adelaide Strikers Women",
+      "title": "Womens Big Bash League 2026 - 13th Match - Melbourne Renegades Women vs Adelaide Strikers Women",
+      "synopsis": "Womens Big Bash League 2026 - 13th Match - Melbourne Renegades Women vs Adelaide Strikers Women",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.a4105473-29cb-4c06-af5c-03d8b080da6c/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "cover_image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.a4105473-29cb-4c06-af5c-03d8b080da6c/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "LIVE",
+      "time": "Sat, Nov 7 10:40 AM BDT",
+      "sport": "Cricket",
+      "drm_key": "",
+      "streams": [
+        {
+          "name": "Fox Sports 501 (Cricket)",
+          "url": "https://trend48.st/live-tv?ch=foxsports501-au"
+        },
+        {
+          "name": "Sky Sports Cricket (UK)",
+          "url": "https://trend48.st/live-tv?ch=skysportscricket-uk"
+        },
+        {
+          "name": "Willow USA (Trend48)",
+          "url": "https://trend48.st/live-tv?ch=willow-usa"
+        },
+        {
+          "name": "Sony Sports Ten 1 HD",
+          "url": "https://trend48.st/live-tv?ch=sonyten1-in"
+        },
+        {
+          "name": "Star Sports 1 HD",
+          "url": "https://trend48.st/live-tv?ch=starsports1-in"
+        }
+      ],
+      "CnpTV": {
+        "fastly_server1": "",
+        "amazon_server1": "",
+        "akamai_server1": "",
+        "cloudfront_server1": "",
+        "fastly_server2": "",
+        "amazon_server2": "",
+        "akamai_server2": "",
+        "cloudfront_server2": ""
+      },
+      "stream_url_alpha": {},
+      "stream_url_bravo": {}
+    },
+    {
+      "id": "B0HLRWXZY4",
+      "match_id": "B0HLRWXZY4",
+      "event_name": "Womens Big Bash League 2026 - 14th Match - Brisbane Heat Women vs Hobart Hurricanes Women",
+      "title": "Womens Big Bash League 2026 - 14th Match - Brisbane Heat Women vs Hobart Hurricanes Women",
+      "synopsis": "Womens Big Bash League 2026 - 14th Match - Brisbane Heat Women vs Hobart Hurricanes Women",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.8540dc19-4fd6-482f-9bad-855bed41f903/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "cover_image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.8540dc19-4fd6-482f-9bad-855bed41f903/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "LIVE",
+      "time": "Sat, Nov 7 2:10 PM BDT",
+      "sport": "Cricket",
+      "drm_key": "",
+      "streams": [
+        {
+          "name": "Fox Sports 501 (Cricket)",
+          "url": "https://trend48.st/live-tv?ch=foxsports501-au"
+        },
+        {
+          "name": "Sky Sports Cricket (UK)",
+          "url": "https://trend48.st/live-tv?ch=skysportscricket-uk"
+        },
+        {
+          "name": "Willow USA (Trend48)",
+          "url": "https://trend48.st/live-tv?ch=willow-usa"
+        },
+        {
+          "name": "Sony Sports Ten 1 HD",
+          "url": "https://trend48.st/live-tv?ch=sonyten1-in"
+        },
+        {
+          "name": "Star Sports 1 HD",
+          "url": "https://trend48.st/live-tv?ch=starsports1-in"
+        }
+      ],
+      "CnpTV": {
+        "fastly_server1": "",
+        "amazon_server1": "",
+        "akamai_server1": "",
+        "cloudfront_server1": "",
+        "fastly_server2": "",
+        "amazon_server2": "",
+        "akamai_server2": "",
+        "cloudfront_server2": ""
+      },
+      "stream_url_alpha": {},
+      "stream_url_bravo": {}
+    },
+    {
       "id": "B0H86LZDSS",
       "match_id": "B0H86LZDSS",
       "event_name": "LIVE: HotelPlanner Final 2026 Day 4",
@@ -1073,6 +1077,53 @@
       "stream_url_bravo": {}
     },
     {
+      "id": "B0HPH15QTN",
+      "match_id": "B0HPH15QTN",
+      "event_name": "London City Lionesses vs. Manchester City",
+      "title": "London City Lionesses vs. Manchester City",
+      "synopsis": "London City Lionesses vs. Manchester City",
+      "image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.a354d0e9-11d7-460b-a126-692236dbbada/2/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpeg",
+      "cover_image": "https://images-na.ssl-images-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.a354d0e9-11d7-460b-a126-692236dbbada/2/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpeg",
+      "status": "LIVE",
+      "time": "LIVE NOW",
+      "sport": "Football",
+      "drm_key": "d9623774ac5c8c351aafe97c5fe70267:5164e6d05164a2d65fa8fcc962aa4861",
+      "streams": [
+        {
+          "name": "Sky Sports Premier League (Server 1)",
+          "url": "https://trend48.st/live-tv?ch=skysportspremierleague-uk"
+        },
+        {
+          "name": "Sky Sports Main Event (Server 2)",
+          "url": "https://trend48.st/live-tv?ch=skysportsmainevent-uk"
+        },
+        {
+          "name": "TNT Sports 1 (Server 3)",
+          "url": "https://trend48.st/live-tv?ch=tntsports1-uk"
+        },
+        {
+          "name": "beIN Sports 1 FR (Server 4)",
+          "url": "https://trend48.st/live-tv?ch=beinsports1-fr"
+        },
+        {
+          "name": "Movistar LaLiga (Server 5)",
+          "url": "https://trend48.st/live-tv?ch=movistarlaliga-es"
+        }
+      ],
+      "CnpTV": {
+        "fastly_server1": "",
+        "amazon_server1": "",
+        "akamai_server1": "",
+        "cloudfront_server1": "",
+        "fastly_server2": "",
+        "amazon_server2": "",
+        "akamai_server2": "",
+        "cloudfront_server2": ""
+      },
+      "stream_url_alpha": {},
+      "stream_url_bravo": {}
+    },
+    {
       "id": "B0HN9B1MVM",
       "match_id": "B0HN9B1MVM",
       "event_name": "Perth Steel vs. Canberra Heat",
@@ -1118,6 +1169,120 @@
       },
       "stream_url_alpha": {},
       "stream_url_bravo": {}
+    },
+    {
+      "id": "B0HNWRBDCQ",
+      "match_id": "B0HNWRBDCQ",
+      "event_name": "New Zealand vs. India",
+      "title": "New Zealand vs. India",
+      "synopsis": "Watch New Zealand take on India in the New Zealand v India Twenty20 Series 2026",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.2d613298-262a-42ed-a769-e267442a7aa6/3/BOXART-16X9/en-US._UR1920,1080_.jpg",
+      "cover_image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.2d613298-262a-42ed-a769-e267442a7aa6/3/BOXART-16X9/en-US._UR1920,1080_.jpg",
+      "status": "LIVE",
+      "time": "12:30 PM BDT",
+      "sport": "Cricket",
+      "drm_key": "2765adbf6880195515fed136e5a989fa:f1356a68a923c31d7184dfa1b91c161f",
+      "streams": [
+        {
+          "name": "Willow USA (Trend48)",
+          "url": "https://trend48.st/live-tv?ch=willow-usa"
+        },
+        {
+          "name": "Sky Sports Cricket (UK)",
+          "url": "https://trend48.st/live-tv?ch=skysportscricket-uk"
+        },
+        {
+          "name": "Sony Sports Ten 1 HD",
+          "url": "https://trend48.st/live-tv?ch=sonyten1-in"
+        },
+        {
+          "name": "Fox Sports 501 (Cricket)",
+          "url": "https://trend48.st/live-tv?ch=foxsports501-au"
+        }
+      ],
+      "CnpTV": {
+        "fastly_server1": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/pog3pkfhga/out/v1/20164001c7d9489f898d05761ad05077/cenc.mpd",
+        "amazon_server1": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/pog3pkfhga/out/v1/20164001c7d9489f898d05761ad05077/cenc.mpd",
+        "akamai_server1": "https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/pog3pkfhga/out/v1/20164001c7d9489f898d05761ad05077/cenc.mpd",
+        "cloudfront_server1": "https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/pog3pkfhga/out/v1/20164001c7d9489f898d05761ad05077/cenc.mpd",
+        "fastly_server2": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/xgpgmpfnwa/out/v1/2f20ac6134fa485492d578e3c21c09aa/cenc.mpd",
+        "amazon_server2": "https://otte.cache.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/xgpgmpfnwa/out/v1/2f20ac6134fa485492d578e3c21c09aa/cenc.mpd",
+        "akamai_server2": "https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/xgpgmpfnwa/out/v1/2f20ac6134fa485492d578e3c21c09aa/cenc.mpd",
+        "cloudfront_server2": "https://ss-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/xgpgmpfnwa/out/v1/2f20ac6134fa485492d578e3c21c09aa/cenc.mpd"
+      },
+      "stream_url_alpha": {
+        "Fistly Server": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/pog3pkfhga/out/v1/20164001c7d9489f898d05761ad05077/cenc.mpd",
+        "Amazon Server": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/pog3pkfhga/out/v1/20164001c7d9489f898d05761ad05077/cenc.mpd",
+        "Akamai Server": "https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/pog3pkfhga/out/v1/20164001c7d9489f898d05761ad05077/cenc.mpd",
+        "Cloudfront Server 1": "https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/pog3pkfhga/out/v1/20164001c7d9489f898d05761ad05077/cenc.mpd",
+        "Cloudfront Server 2": "https://dash-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/pog3pkfhga/out/v1/20164001c7d9489f898d05761ad05077/cenc.mpd"
+      },
+      "stream_url_bravo": {
+        "Fistly Server": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/xgpgmpfnwa/out/v1/2f20ac6134fa485492d578e3c21c09aa/cenc.mpd",
+        "Amazon Server": "https://otte.cache.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/xgpgmpfnwa/out/v1/2f20ac6134fa485492d578e3c21c09aa/cenc.mpd",
+        "Akamai Server": "https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/xgpgmpfnwa/out/v1/2f20ac6134fa485492d578e3c21c09aa/cenc.mpd",
+        "Cloudfront Server 1": "https://ss-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/xgpgmpfnwa/out/v1/2f20ac6134fa485492d578e3c21c09aa/cenc.mpd",
+        "Cloudfront Server 2": "https://dash-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/xgpgmpfnwa/out/v1/2f20ac6134fa485492d578e3c21c09aa/cenc.mpd"
+      }
+    },
+    {
+      "id": "B0HN61HF5F",
+      "match_id": "B0HN61HF5F",
+      "event_name": "Womens Big Bash League 2026 - 7th Match - Sydney Sixers Women vs Hobart Hurricanes Women",
+      "title": "Womens Big Bash League 2026 - 7th Match - Sydney Sixers Women vs Hobart Hurricanes Women",
+      "synopsis": "Womens Big Bash League 2026 - 7th Match - Sydney Sixers Women vs Hobart Hurricanes Women",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.63c97416-9e71-4c56-a95d-9ef474669f7a/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "cover_image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.63c97416-9e71-4c56-a95d-9ef474669f7a/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "status": "LIVE",
+      "time": "2:10 PM BDT",
+      "sport": "Cricket",
+      "drm_key": "a59f28b25431a5ab1091707c14e6e5b5:0e2b44300a38bd47fbb02e9c687aa2c8",
+      "streams": [
+        {
+          "name": "Fox Sports 501 (Cricket)",
+          "url": "https://trend48.st/live-tv?ch=foxsports501-au"
+        },
+        {
+          "name": "Sky Sports Cricket (UK)",
+          "url": "https://trend48.st/live-tv?ch=skysportscricket-uk"
+        },
+        {
+          "name": "Willow USA (Trend48)",
+          "url": "https://trend48.st/live-tv?ch=willow-usa"
+        },
+        {
+          "name": "Sony Sports Ten 1 HD",
+          "url": "https://trend48.st/live-tv?ch=sonyten1-in"
+        },
+        {
+          "name": "Star Sports 1 HD",
+          "url": "https://trend48.st/live-tv?ch=starsports1-in"
+        }
+      ],
+      "CnpTV": {
+        "fastly_server1": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/vqu1w8f6e7/out/v1/f7d7ec07c208491681c1b6f68d0e823f/cenc.mpd",
+        "amazon_server1": "https://otte.cache.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/vqu1w8f6e7/out/v1/f7d7ec07c208491681c1b6f68d0e823f/cenc.mpd",
+        "akamai_server1": "https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/vqu1w8f6e7/out/v1/f7d7ec07c208491681c1b6f68d0e823f/cenc.mpd",
+        "cloudfront_server1": "https://ss-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/vqu1w8f6e7/out/v1/f7d7ec07c208491681c1b6f68d0e823f/cenc.mpd",
+        "fastly_server2": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/mjb1gtveu0/out/v1/f719851c96ae45818edf9d4f95cda2b3/cenc.mpd",
+        "amazon_server2": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/mjb1gtveu0/out/v1/f719851c96ae45818edf9d4f95cda2b3/cenc.mpd",
+        "akamai_server2": "https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/mjb1gtveu0/out/v1/f719851c96ae45818edf9d4f95cda2b3/cenc.mpd",
+        "cloudfront_server2": "https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/mjb1gtveu0/out/v1/f719851c96ae45818edf9d4f95cda2b3/cenc.mpd"
+      },
+      "stream_url_alpha": {
+        "Fistly Server": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/vqu1w8f6e7/out/v1/f7d7ec07c208491681c1b6f68d0e823f/cenc.mpd",
+        "Amazon Server": "https://otte.cache.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/vqu1w8f6e7/out/v1/f7d7ec07c208491681c1b6f68d0e823f/cenc.mpd",
+        "Akamai Server": "https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/vqu1w8f6e7/out/v1/f7d7ec07c208491681c1b6f68d0e823f/cenc.mpd",
+        "Cloudfront Server 1": "https://ss-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/vqu1w8f6e7/out/v1/f7d7ec07c208491681c1b6f68d0e823f/cenc.mpd",
+        "Cloudfront Server 2": "https://dash-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/vqu1w8f6e7/out/v1/f7d7ec07c208491681c1b6f68d0e823f/cenc.mpd"
+      },
+      "stream_url_bravo": {
+        "Fistly Server": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/mjb1gtveu0/out/v1/f719851c96ae45818edf9d4f95cda2b3/cenc.mpd",
+        "Amazon Server": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/mjb1gtveu0/out/v1/f719851c96ae45818edf9d4f95cda2b3/cenc.mpd",
+        "Akamai Server": "https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/mjb1gtveu0/out/v1/f719851c96ae45818edf9d4f95cda2b3/cenc.mpd",
+        "Cloudfront Server 1": "https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/mjb1gtveu0/out/v1/f719851c96ae45818edf9d4f95cda2b3/cenc.mpd",
+        "Cloudfront Server 2": "https://dash-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/mjb1gtveu0/out/v1/f719851c96ae45818edf9d4f95cda2b3/cenc.mpd"
+      }
     },
     {
       "id": "B0H6HF19CZ",

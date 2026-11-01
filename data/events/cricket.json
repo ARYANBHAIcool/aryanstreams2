@@ -1,77 +1,46 @@
 {
-  "last_updated": "11/1/2026, 4:15:46 PM IST",
+  "last_updated": "11/1/2026, 5:50:41 PM IST",
   "source": "AryanStreams Official Feed",
   "events": [
     {
-      "id": 4726,
-      "title": "T20 International",
-      "slug": "nz-vs-ind",
+      "id": 4896,
+      "title": "Nepal Premier League",
+      "slug": "npl-vs-npl",
       "cat": "Live Events",
       "status": "live",
       "event": {
-        "name": "T20 International",
+        "name": "Nepal Premier League",
         "category": "Cricket",
-        "teamA": "NZ",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/187755/image",
-        "teamB": "IND",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/187765/image",
-        "startTimeIST": "2026-11-01 12:20:00 IST",
-        "endTimeIST": "2026-11-01 17:15:00 IST"
+        "teamA": "NPL",
+        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQAV3dcOxi7602i_xcqoTE6eoiGVCPJFo6uZwtDkDK-g&s=10",
+        "teamB": "NPL",
+        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQAV3dcOxi7602i_xcqoTE6eoiGVCPJFo6uZwtDkDK-g&s=10",
+        "startTimeIST": "2026-11-01 16:45:00 IST",
+        "endTimeIST": "2026-11-01 21:15:00 IST"
       },
       "dashStreams": [
         {
-          "title": "PRIME HINDI FHD",
-          "type": "dash",
-          "url": "https://otte.live.fly.ww.aiv-cdn.net/fra-nitro/live/clients/dash/enc/mohqiz9gyv/out/v1/95de092d1d574891ba87cd37df9c3f2b/cenc.mpd",
-          "key": "4d4e8cc811e844075fa97ed19abb1abe:9bcb83c52597af936e9b3ff8a4dd27e4"
-        },
-        {
-          "title": "PRIME ENG FHD",
-          "type": "dash",
-          "url": "https://otte.live.fly.ww.aiv-cdn.net/fra-nitro/live/clients/dash/enc/9z1fajy3r4/out/v1/2e1a478d31fb4c1dbd2e54391b006a35/cenc.mpd",
-          "key": "de23ce5421c57988c1ba1cd8a0d16551:fb50935ff66bcea5899f989c5bbfd270"
-        },
-        {
-          "title": "WILLOW FHD",
-          "type": "dash",
-          "url": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/pog3pkfhga/out/v1/20164001c7d9489f898d05761ad05077/cenc.mpd",
-          "key": "2765adbf6880195515fed136e5a989fa:f1356a68a923c31d7184dfa1b91c161f"
-        },
-        {
-          "title": "TNT SPORTS FHD",
-          "type": "dash",
-          "url": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/dev1hjwzh9/out/v1/a5f0ee7ad7b24906b14f43bebbbe4678/cenc.mpd",
-          "key": "cc91508324ce9dcaf425a43d58f1d9d4:643e5474d9edd87c7d9091c8c97994ca"
-        },
-        {
-          "title": "WILLOW ALT",
-          "type": "dash",
-          "url": "https://otte.cache.aiv-cdn.net/fra-nitro/live/clients/dash/enc/pog3pkfhga/out/v1/20164001c7d9489f898d05761ad05077/cenc.mpd",
-          "key": "2765adbf6880195515fed136e5a989fa:f1356a68a923c31d7184dfa1b91c161f"
-        }
-      ]
-    },
-    {
-      "id": 5055,
-      "title": "2nd UNOFFICIAL TEST",
-      "slug": "nz-vs-ind",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "2nd UNOFFICIAL TEST",
-        "category": "Cricket",
-        "teamA": "NZ",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/187755/image",
-        "teamB": "IND",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/187765/image",
-        "startTimeIST": "2026-11-01 12:30:00 IST",
-        "endTimeIST": "2026-11-01 17:00:00 IST"
-      },
-      "dashStreams": [
-        {
-          "title": "SONYLIV [ASIA]",
+          "title": "NPL LIVE HD",
           "type": "hls",
-          "url": "https://sonydaime.akamaized.net/hls/live/2120303/criclive3010/ENG/std_lrh-800300010.m3u8?hdnea=exp=1793440431~acl=/*~id=58342385308836800944090866097145~hmac=5bffa12c1ad3d571d42d0a08556a10c336eb428ed8191a43041a35af1aa43e3e",
+          "url": "https://lastwarningfal.bondsplive.online/495346/logosp.webp?&e=.m3u8?Referer: https://youjizz.com/",
+          "key": null
+        },
+        {
+          "title": "STAR SPORTS HD",
+          "type": "hls",
+          "url": "https://lastwarning-xtv.bondsplive.online/167579/logosp.webp?&e=.m3u8?Referer: https://youjizz.com/",
+          "key": null
+        },
+        {
+          "title": "HIMALAYA HD",
+          "type": "hls",
+          "url": "https://linkinpark-xtv.bondsplive.online/414167/logosp.webp?&e=.m3u8?Referer: https://youjizz.com/",
+          "key": null
+        },
+        {
+          "title": "FANCODE (IND)",
+          "type": "hls",
+          "url": "https://dai-fancode.pages.dev/mumbai/4250363_english_hls_3c429d187460404_1ta-di_h264/index.m3u8",
           "key": null
         }
       ]
@@ -110,37 +79,6 @@
           "type": "dash",
           "url": "https://wbd.skandha.tv/EuroSport_HD/EuroSport_HD.isml/.mpd",
           "key": "12ed56d780abcfebcd23aa27e4ac5015:6784567890abcfebcd23aa27e4ac2814"
-        }
-      ]
-    },
-    {
-      "id": 4896,
-      "title": "Nepal Premier League",
-      "slug": "npl-vs-npl",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Nepal Premier League",
-        "category": "Cricket",
-        "teamA": "NPL",
-        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQAV3dcOxi7602i_xcqoTE6eoiGVCPJFo6uZwtDkDK-g&s=10",
-        "teamB": "NPL",
-        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQAV3dcOxi7602i_xcqoTE6eoiGVCPJFo6uZwtDkDK-g&s=10",
-        "startTimeIST": "2026-11-01 16:45:00 IST",
-        "endTimeIST": "2026-11-01 21:15:00 IST"
-      },
-      "dashStreams": [
-        {
-          "title": "NPL LIVE HD",
-          "type": "hls",
-          "url": "https://ottnlive-fstream.nettvstreamz.com/live_hls/npl_match_3/index.m3u8",
-          "key": null
-        },
-        {
-          "title": "STAR SPORTS HD",
-          "type": "hls",
-          "url": "https://baila-lentoo.pages.dev/all-sp/373201.m3u8",
-          "key": null
         }
       ]
     },
@@ -207,36 +145,6 @@
       ]
     },
     {
-      "id": "B0HNWRBDCQ",
-      "title": "New Zealand vs. India",
-      "slug": "new-zealand-vs-india",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "New Zealand vs. India",
-        "category": "Cricket",
-        "teamA": "Team A",
-        "teamB": "Team B",
-        "startTimeIST": ""
-      },
-      "dashStreams": []
-    },
-    {
-      "id": "B0HN61HF5F",
-      "title": "Womens Big Bash League 2026 - 7th Match - Sydney Sixers Women vs Hobart Hurricanes Women",
-      "slug": "womens-big-bash-league-2026-7th-match-sydney-sixers-women-vs-hobart-hurricanes-women",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Womens Big Bash League 2026 - 7th Match - Sydney Sixers Women vs Hobart Hurricanes Women",
-        "category": "Cricket",
-        "teamA": "Team A",
-        "teamB": "Team B",
-        "startTimeIST": ""
-      },
-      "dashStreams": []
-    },
-    {
       "id": "B0HMDM29Y2",
       "title": "Afghanistan vs. Zimbabwe",
       "slug": "afghanistan-vs-zimbabwe",
@@ -244,6 +152,21 @@
       "status": "live",
       "event": {
         "name": "Afghanistan vs. Zimbabwe",
+        "category": "Cricket",
+        "teamA": "Team A",
+        "teamB": "Team B",
+        "startTimeIST": ""
+      },
+      "dashStreams": []
+    },
+    {
+      "id": "B0HJ6P7GP3",
+      "title": "Womens Big Bash League 2026 - 8th Match - Melbourne Stars Women vs Perth Scorchers Women",
+      "slug": "womens-big-bash-league-2026-8th-match-melbourne-stars-women-vs-perth-scorchers-women",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "Womens Big Bash League 2026 - 8th Match - Melbourne Stars Women vs Perth Scorchers Women",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",
