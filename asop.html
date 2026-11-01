@@ -283,7 +283,8 @@
 
         // Known direct embed servers for popular matches
         var knownDirectEmbeds = {
-            'm-le-havre-ac-vs-paris-saint-germain-1030': { name: 'beIN Sports USA', url: 'https://trendy48.site/embed/beinsports-usa' },
+            'm-paris-saint-germain-vs-lyon-1025': { name: 'beIN Sports USA HD', url: 'https://trendy48.site/embed/beinsports-usa' },
+            'm-le-havre-ac-vs-paris-saint-germain-1030': { name: 'beIN Sports USA HD', url: 'https://trendy48.site/embed/beinsports-usa' },
             'm-nice-vs-stade-rennais-1031': { name: 'Arena 8 Croatia', url: 'https://trendy48.site/embed/arena8croatia' },
             'm-konyaspor-vs-galatasaray-1030': { name: 'Server 2 (HD)', url: 'https://gistero.st/embed/OUIgV_cAKI4c8GR24YzRDRibkQd8yHACu4ukCo2fcNrpmYhQnA' },
             'm-venezia-vs-inter-milan-1028': { name: 'Arena 4 Premium', url: 'https://trendy48.site/embed/arena4premiumserbia' },
@@ -409,14 +410,34 @@
                     };
 
                     var primaryUrl = m.watch_url || ('https://trendy48.online/event/' + m.id);
-                    matchObj.sources.push({
-                        index: 1,
-                        name: 'Server 1',
-                        detail: 'Trendy48 Live',
-                        type: 'iframe',
-                        url: primaryUrl,
-                        playerUrl: primaryUrl
-                    });
+                    var isPsgMatch = /psg|paris/i.test(m.title);
+                    if (isPsgMatch) {
+                        matchObj.sources.push({
+                            index: 1,
+                            name: 'Server 1',
+                            detail: 'beIN Sports USA HD',
+                            type: 'iframe',
+                            url: 'https://trendy48.site/embed/beinsports-usa',
+                            playerUrl: 'https://trendy48.site/embed/beinsports-usa'
+                        });
+                        matchObj.sources.push({
+                            index: 2,
+                            name: 'Server 2',
+                            detail: 'beIN Sports USA Web',
+                            type: 'iframe',
+                            url: 'https://trend48.st/live-tv?ch=beinsports-usa',
+                            playerUrl: 'https://trend48.st/live-tv?ch=beinsports-usa'
+                        });
+                    } else {
+                        matchObj.sources.push({
+                            index: 1,
+                            name: 'Server 1',
+                            detail: 'Trendy48 Live',
+                            type: 'iframe',
+                            url: primaryUrl,
+                            playerUrl: primaryUrl
+                        });
+                    }
 
                     if (Array.isArray(m.sources) && m.sources.length > 1) {
                         for (var i = 1; i < m.sources.length; i++) {

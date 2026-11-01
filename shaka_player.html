@@ -213,31 +213,30 @@
             '1389': 'SS3', '460': 'SE1HD', '461': 'SE2HD', '1998': 'H1SD',
 
             // Sony Sports Ten Direct TV Channel Feeds
-            'ten1hd': '162', 'ten1': '162', 'sony_ten1_hd': '162', 'ten1_ios': '162', '162': '162',
-            'ten2hd': '891', 'ten2': '891', 's2': '891', 'sony_ten2_hd': '891', 'ten2_ios': '891', '891': '891',
-            'ten3hd': '892', 'ten3': '892', 'sony_ten3_hd': '892', 'ten3_ios': '892', '892': '892',
-            'ten4hd': '3514', 'ten4': '3514', 'sony_ten4_tamil': '3514', 'sony_ten4_telugu': '1773', 'ten4_ios': '3514', '1773': '1773', '3514': '3514',
-            'ten5hd': '155', 'ten5': '155', 'sony_ten5_hd': '155', 'sonyten5': '155', 'ten5_ios': '155', '155': '155',
-            'sten1': 'STEN1', 'sten2': 'STEN2', 'sten3': 'STEN3', 'sten4': 'STENT', 'stent': 'STENT', 'stentu': 'STENTU', 'sten5': 'STEN5', 'sten5hd': '155',
-            'sony1': '162', 'sony2': '891', 'sony3': '892', 'sony4': '3514', 'sony5': '155',
+            'ten1hd': 'STEN1', 'ten1': 'STEN1', 'sony_ten1_hd': 'STEN1', 'ten1_ios': 'STEN1', '162': 'STEN1', 'sten1': 'STEN1', 'sony1': 'STEN1',
+            'ten2hd': 'STEN2', 'ten2': 'STEN2', 's2': 'STEN2', 'sony_ten2_hd': 'STEN2', 'ten2_ios': 'STEN2', '891': 'STEN2', 'sten2': 'STEN2', 'sony2': 'STEN2',
+            'ten3hd': 'STEN3', 'ten3': 'STEN3', 'sony_ten3_hd': 'STEN3', 'ten3_ios': 'STEN3', '892': 'STEN3', 'sten3': 'STEN3', 'sony3': 'STEN3',
+            'ten4hd': 'STENT', 'ten4': 'STENT', 'sony_ten4_tamil': 'STENT', 'ten4_ios': 'STENT', '3514': 'STENT', 'stent': 'STENT', 'sony4': 'STENT', 's4tamil': 'STENT',
+            'sony_ten4_telugu': 'STENTU', '1773': 'STENTU', 'stentu': 'STENTU', 's4telugu': 'STENTU',
+            'ten5hd': 'STEN5', 'ten5': 'STEN5', 'sony_ten5_hd': 'STEN5', 'sonyten5': 'STEN5', 'ten5_ios': 'STEN5', '155': 'STEN5', 'sten5': 'STEN5', 'sony5': 'STEN5',
             'dds': '204', 'ddsports': '204', '204': '204', 'eurosport': 'EUROHD', 'eurohd': 'EUROHD', 'eurosport_hd': 'EUROHD', '875': 'EUROHD'
         };
 
         var FALLBACK_MAP = {
             'SE1HD': ['SE1', '460', 'select1', 'ssselect1'],
             'SE2HD': ['SE2', '461', 'select2', 'ssselect2'],
-            '162': ['STEN1', '3531', 'sten1', 'sony1', '162', 'ten1-hd', 'ten1'],
-            '891': ['STEN2', '3532', 'sten2', 'sony2', '891', 'ten2-hd', 'ten2'],
-            '892': ['STEN3', '3533', 'sten3', 'sony3', '892', 'ten3-hd', 'ten3'],
-            '1773': ['STENTU', '3398', 'stentu', 'sony4', '1773', 'ten4'],
-            '3514': ['STENT', '3397', 'stent', 'sony4', '3514', 'ten4-hd'],
-            '155': ['STEN5', '3534', 'sten5', 'sony5', '155', 'ten5-hd', 'ten5'],
             'STEN1': ['162', '3531', 'sony1', 'sten1', 'ten1-hd', 'ten1'],
             'STEN2': ['891', '3532', 'sony2', 'sten2', 'ten2-hd', 'ten2'],
             'STEN3': ['892', '3533', 'sony3', 'sten3', 'ten3-hd', 'ten3'],
-            'STENT': ['3514', '3397', '1773', 'sony4', 'stent', 'ten4-hd'],
-            'STENTU': ['1773', '3398', '3514', 'sony4', 'stentu'],
+            'STENT': ['3514', '3397', 'sony4', 'stent', 'ten4-hd', 'ten4'],
+            'STENTU': ['1773', '3398', 'sony4', 'stentu', 'ten4'],
             'STEN5': ['155', '3534', 'sony5', 'sten5', 'ten5-hd', 'ten5'],
+            '162': ['STEN1', 'ten1-hd', 'ten1'],
+            '891': ['STEN2', 'ten2-hd', 'ten2'],
+            '892': ['STEN3', 'ten3-hd', 'ten3'],
+            '3514': ['STENT', 'ten4-hd', 'ten4'],
+            '1773': ['STENTU', 'ten4'],
+            '155': ['STEN5', 'ten5-hd', 'ten5'],
             'H1HD': ['h1hd', 'h1sd', 'h2hd', 'h2sd', '1108', 'star1hindihd'],
             'E1HD': ['e1hd', 'e1sd', 'star1', 'star1hd', '1106', '1142'],
             'H2HD': ['h2hd', 'h2sd', '1984'],
@@ -290,6 +289,12 @@
         }
 
         var DYNAMIC_COOKIE_MAP = {
+            'sten1': 'sten1', '162': 'sten1', 'ten1': 'sten1', 'ten1hd': 'sten1',
+            'sten2': 'sten2', '891': 'sten2', 'ten2': 'sten2', 'ten2hd': 'sten2',
+            'sten3': 'sten3', '892': 'sten3', 'ten3': 'sten3', 'ten3hd': 'sten3',
+            'stent': 'stent', '3514': 'stent', 'ten4': 'stent', 'ten4hd': 'stent', 's4tamil': 'stent',
+            'stentu': 'stentu', '1773': 'stentu', 's4telugu': 'stentu',
+            'sten5': 'sten5', '155': 'sten5', 'ten5': 'sten5', 'ten5hd': 'sten5',
             'ss1': 'ss1', 'e1hd': 'ss1', '1106': 'ss1', 'star1': 'ss1', 'star1hd': 'ss1', 'star1enghd': 'ss1',
             'ss2': 'ss2', 'e2hd': 'ss2', '1109': 'ss2', 'star2': 'ss2', 'star2hd': 'ss2', 'star2enghd': 'ss2',
             'ss1h': 'ss1h', 'h1hd': 'ss1h', '1108': 'ss1h', 'star1hindihd': 'ss1h',
@@ -363,6 +368,8 @@
                         if ((normId === '892' || normId.includes('ten3') || normId === 'sten3' || workerKey === 'sten3') && (cId === 'sten3' || cNm.includes('sports 3') || cNm.includes('ten 3'))) return true;
                         if ((normId === '891' || normId.includes('ten2') || normId === 'sten2' || workerKey === 'sten2') && (cId === 'sten2' || cNm.includes('sports 2') || cNm.includes('ten 2'))) return true;
                         if ((normId === '162' || normId.includes('ten1') || normId === 'sten1' || workerKey === 'sten1') && (cId === 'sten1' || cNm.includes('sports 1') || cNm.includes('ten 1'))) return true;
+                        if ((normId === '3514' || normId.includes('ten4') || normId === 'stent' || workerKey === 'stent') && (cId === 'stent' || cNm.includes('sports 4') || cNm.includes('ten 4') || cNm.includes('tamil'))) return true;
+                        if ((normId === '1773' || normId === 'stentu' || workerKey === 'stentu') && (cId === 'stentu' || cNm.includes('telugu'))) return true;
                         if ((normId === '155' || normId.includes('ten5') || normId === 'sten5' || workerKey === 'sten5') && (cId === 'sten5' || cNm.includes('sports 5') || cNm.includes('ten 5'))) return true;
                         return false;
                     });
@@ -655,11 +662,7 @@
                     var url = req.uris[0];
                     var isJio = (url && (url.includes('jiotv') || url.includes('jio.com'))) || (activeCookie && activeCookie.length > 0);
                     if (isJio) {
-                        req.headers["Referer"] = REFERER || "https://www.jiotv.com/";
-                        req.headers["User-Agent"] = "Mozilla/5.0 (Linux; Android 11; SM-G991B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36";
-                        if (activeCookie) {
-                            req.headers["Cookie"] = formatCookieHeader(activeCookie);
-                        }
+                        // Avoid setting Cookie/UA/Referer headers in browser to prevent Akamai CORS preflight 403 Forbidden
                         if (activeRawCookie && (type === shaka.net.NetworkingEngine.RequestType.MANIFEST || type === shaka.net.NetworkingEngine.RequestType.SEGMENT)) {
                             req.uris = req.uris.map(function(u) {
                                 if (u.includes('.cdn.jio.com//')) {
@@ -740,10 +743,44 @@
                     hideLoading();
                 });
 
+                var m3uFallbackDone = false;
                 player.addEventListener('error', async function(ev) {
                     var err = ev.detail;
                     if (err && err.severity === shaka.util.Error.Severity.RECOVERABLE) return;
                     console.error('Shaka error:', err && err.code, err && err.message);
+
+                    // Seamless automatic fallback to live M3U8 proxy stream if DASH fails
+                    if (!m3uFallbackDone && (CH_ID || activeKid)) {
+                        m3uFallbackDone = true;
+                        try {
+                            var targetKey = String(CH_ID || activeKid || '').toLowerCase();
+                            var m3uKey = '';
+                            if (/ten3|892|sten3/i.test(targetKey)) m3uKey = 'ten3-hd';
+                            else if (/ten4|3514|stent|tamil/i.test(targetKey)) m3uKey = 'ten4-hd';
+                            else if (/1773|telugu|stentu/i.test(targetKey)) m3uKey = 'ten4';
+                            else if (/ten1|162|sten1/i.test(targetKey)) m3uKey = 'ten1-hd';
+                            else if (/ten2|891|sten2/i.test(targetKey)) m3uKey = 'ten2-hd';
+                            else if (/ten5|155|sten5/i.test(targetKey)) m3uKey = 'ten5-hd';
+
+                            if (m3uKey) {
+                                var sRes = await fetch('data/sony_m3u8.json?_=' + Date.now());
+                                if (sRes.ok) {
+                                    var sData = await sRes.json();
+                                    var sCh = (sData.channels || []).find(function(c) { return c.id === m3uKey; });
+                                    if (sCh && (sCh.proxied_url || sCh.raw_url)) {
+                                        var fbUrl = sCh.proxied_url || sCh.raw_url;
+                                        player.configure({ drm: { clearKeys: {} } });
+                                        showToast('● Connecting backup stream...', 'warning');
+                                        await player.load(fbUrl);
+                                        return;
+                                    }
+                                }
+                            }
+                        } catch(fbErr) {
+                            console.warn('M3U8 fallback error:', fbErr);
+                        }
+                    }
+
                     var isGeo = isGeoBlocked(activeMpd);
                     showError(isGeo ? 'US VPN REQUIRED TO PLAY' : 'Playback error – reconnecting...', isGeo);
                     if (CH_ID || activeKid) {
