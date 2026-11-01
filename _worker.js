@@ -102,13 +102,11 @@ function rewriteM3U8(text, finalUrl, proxyBase) {
 function applyDefaultHeaders(targetUrl, targetHeaders, request) {
   const urlLower = targetUrl.toLowerCase();
 
-  // JioTV Stream
+  // JioTV Stream (Akamai CDN blocks requests containing browser Origin/Referer headers)
   if (urlLower.includes("jio.com") || urlLower.includes("jiotv")) {
-    if (!targetHeaders.has("User-Agent")) {
-      targetHeaders.set("User-Agent", "Virat");
-    }
-    targetHeaders.set("Origin", "https://www.jiotv.com");
-    targetHeaders.set("Referer", "https://www.jiotv.com/");
+    targetHeaders.set("User-Agent", "JioOnDemand/1.5.2");
+    targetHeaders.delete("Origin");
+    targetHeaders.delete("Referer");
     return;
   }
 
@@ -226,7 +224,7 @@ async function handleProxy(request) {
   }
 
   const cacheKey = targetUrl;
-  const isSegment = targetUrl.includes(".ts") || targetUrl.includes(".m4s") || targetUrl.includes(".mp4");
+  const isSegment = targetUrl.includes(".ts") || targetUrl.includes(".m4s") || targetUrl.includes(".mp4") || targetUrl.includes(".dash");
   const isKey = targetUrl.includes("serve.key") || parsedTarget.pathname.endsWith(".key") || targetUrl.includes("/key");
 
   // 3. Check In-Memory Cache first (Playlists & DRM Keys)
@@ -298,8 +296,8 @@ async function handleProxy(request) {
       });
       responseHeaders.delete("set-cookie");
 
-      // Ensure proper MIME type and inline display for MP4 video streams
-      if (targetUrl.includes(".mp4")) {
+      // Ensure proper MIME type and inline display for MP4, DASH, and M4S video streams
+      if (targetUrl.includes(".mp4") || targetUrl.includes(".dash") || targetUrl.includes(".m4s")) {
         responseHeaders.set("Content-Type", "video/mp4");
         responseHeaders.delete("Content-Disposition");
       }
@@ -386,7 +384,29 @@ async function handleProxy(request) {
       return { status: upstream.status, headers: responseHeaders, body: encodedManifest };
     }
 
-    // Case C: Fallback passthrough for any other response
+    // Case C: MPD DASH Manifest BaseURL Rewriting
+    const isMPD = contentType.includes("dash+xml") || targetUrl.includes(".mpd") || finalUrl.includes(".mpd");
+    if (isMPD && upstream.ok && request.method !== "HEAD") {
+      const rawText = await upstream.text();
+      const baseDir = finalUrl.substring(0, finalUrl.lastIndexOf("/") + 1);
+      const rewritten = rawText.replace(/<BaseURL>([^<]+)<\/BaseURL>/gi, (match, val) => {
+        if (!val.startsWith("http://") && !val.startsWith("https://")) {
+          try {
+            return `<BaseURL>${new URL(val, baseDir).toString()}</BaseURL>`;
+          } catch(e) {
+            return match;
+          }
+        }
+        return match;
+      });
+      const encodedManifest = new TextEncoder().encode(rewritten);
+      responseHeaders.set("Content-Type", "application/dash+xml");
+      responseHeaders.delete("content-length");
+      responseHeaders.set("Cache-Control", "public, max-age=2, s-maxage=2, stale-while-revalidate=2");
+      return { status: upstream.status, headers: responseHeaders, body: encodedManifest };
+    }
+
+    // Case D: Fallback passthrough for any other response
     return {
       status: upstream.status,
       headers: responseHeaders,

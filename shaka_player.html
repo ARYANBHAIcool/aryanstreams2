@@ -215,9 +215,9 @@
             // Sony Sports Ten Direct TV Channel Feeds
             'ten1hd': 'STEN1', 'ten1': 'STEN1', 'sony_ten1_hd': 'STEN1', 'ten1_ios': 'STEN1', '162': 'STEN1', 'sten1': 'STEN1', 'sony1': 'STEN1',
             'ten2hd': 'STEN2', 'ten2': 'STEN2', 's2': 'STEN2', 'sony_ten2_hd': 'STEN2', 'ten2_ios': 'STEN2', '891': 'STEN2', 'sten2': 'STEN2', 'sony2': 'STEN2',
-            'ten3hd': 'STEN3', 'ten3': 'STEN3', 'sony_ten3_hd': 'STEN3', 'ten3_ios': 'STEN3', '892': 'STEN3', 'sten3': 'STEN3', 'sony3': 'STEN3',
-            'ten4hd': 'STENT', 'ten4': 'STENT', 'sony_ten4_tamil': 'STENT', 'ten4_ios': 'STENT', '3514': 'STENT', 'stent': 'STENT', 'sony4': 'STENT', 's4tamil': 'STENT',
-            'sony_ten4_telugu': 'STENTU', '1773': 'STENTU', 'stentu': 'STENTU', 's4telugu': 'STENTU',
+            'ten3hd': 'STEN3', 'ten3': 'STEN3', 'sony_ten3_hd': 'STEN3', 'ten3_ios': 'STEN3', '892': 'STEN3', 'sten3': 'STEN3', 'sony3': 'STEN3', 'sony_ten_3': 'STEN3', 'sony_ten_3_hd': 'STEN3',
+            'ten4hd': 'STENT', 'ten4': 'STENT', 'sony_ten4_tamil': 'STENT', 'ten4_ios': 'STENT', '3514': 'STENT', 'stent': 'STENT', 'sony4': 'STENT', 's4tamil': 'STENT', 'ten4tamil': 'STENT', 'sony_ten_4': 'STENT', 'tamil': 'STENT',
+            'sony_ten4_telugu': 'STENTU', '1773': 'STENTU', 'stentu': 'STENTU', 's4telugu': 'STENTU', 'ten4telugu': 'STENTU', 'sony_ten_4_telugu': 'STENTU', 'telugu': 'STENTU',
             'ten5hd': 'STEN5', 'ten5': 'STEN5', 'sony_ten5_hd': 'STEN5', 'sonyten5': 'STEN5', 'ten5_ios': 'STEN5', '155': 'STEN5', 'sten5': 'STEN5', 'sony5': 'STEN5',
             'dds': '204', 'ddsports': '204', '204': '204', 'eurosport': 'EUROHD', 'eurohd': 'EUROHD', 'eurosport_hd': 'EUROHD', '875': 'EUROHD'
         };
@@ -457,15 +457,9 @@
         async function fetchChannelData(id) {
             var idStr = String(id).trim().toLowerCase();
             var mappedId = (ID_MAP[idStr] || idStr).toLowerCase();
-            var isSony = /sten|ten[1-5]|sony[1-5]|892|3514|1773|stent|stentu/i.test(idStr) || /sten|stent/i.test(mappedId);
 
-            // Prioritize reliable CORS-enabled live Sony feeds for browser playback
-            var endpoints = isSony ? [
-                'data/sony_m3u8.json',
-                'https://sonujson-v5.pages.dev/Data/sports.json',
-                'data/sports.json',
-                'https://sportlink-playlist.pages.dev/zio.m3u'
-            ] : [
+            // Official Sony LIV DASH feeds with clearKeys prioritized, with resilient failover to sports.json and sony_m3u8
+            var endpoints = [
                 'https://sonujson-v5.pages.dev/Data/sports.json',
                 'data/sports.json',
                 'data/sony_m3u8.json',
@@ -670,15 +664,17 @@
                     var url = req.uris[0];
                     var isJio = (url && (url.includes('jiotv') || url.includes('jio.com'))) || (activeCookie && activeCookie.length > 0);
                     if (isJio) {
-                        // Avoid setting Cookie/UA/Referer headers in browser to prevent Akamai CORS preflight 403 Forbidden
-                        if (activeRawCookie && (type === shaka.net.NetworkingEngine.RequestType.MANIFEST || type === shaka.net.NetworkingEngine.RequestType.SEGMENT)) {
-                            req.uris = req.uris.map(function(u) {
-                                if (u.includes('.cdn.jio.com//')) {
-                                    u = u.replace('.cdn.jio.com//', '.cdn.jio.com/');
-                                }
-                                return withCookie(u, activeRawCookie);
-                            });
-                        }
+                        req.uris = req.uris.map(function(u) {
+                            if (u.includes('.cdn.jio.com//')) {
+                                u = u.replace('.cdn.jio.com//', '.cdn.jio.com/');
+                            }
+                            var fullUrl = activeRawCookie ? withCookie(u, activeRawCookie) : u;
+                            // Route all JioTV Akamai MBLIVE requests through edge proxy to strip Origin/Referer and guarantee HTTP 200 OK
+                            if (u.includes('jiotvmblive.cdn.jio.com') || (u.includes('/bpk-tv/') && u.includes('.jio.com'))) {
+                                return window.location.origin + '/api/public/px/jiotv?url=' + encodeURIComponent(fullUrl);
+                            }
+                            return fullUrl;
+                        });
                     } else if (REFERER) {
                         req.headers["Referer"] = REFERER;
                     }
@@ -737,6 +733,9 @@
 
                 if (activeRawCookie && (activeMpd.includes('jiotv') || activeMpd.includes('jio.com'))) {
                     activeMpd = withCookie(activeMpd, activeRawCookie);
+                }
+                if (activeMpd.includes('jiotvmblive.cdn.jio.com') || (activeMpd.includes('/bpk-tv/') && activeMpd.includes('.jio.com'))) {
+                    activeMpd = window.location.origin + '/api/public/px/jiotv?url=' + encodeURIComponent(activeMpd);
                 }
 
                 try {

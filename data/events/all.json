@@ -1,34 +1,9 @@
 {
-  "last_updated": "11/1/2026, 2:17:15 PM IST",
+  "last_updated": "11/1/2026, 4:15:46 PM IST",
   "source": "AryanStreams Official Feed",
   "football_count": 2,
-  "cricket_count": 12,
+  "cricket_count": 11,
   "events": [
-    {
-      "id": 5115,
-      "title": "A-League Men",
-      "slug": "perth-glory-vs-adelaide-united",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "A-League Men",
-        "category": "Football",
-        "teamA": "Perth Glory",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2945/image",
-        "teamB": "Adelaide United",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2946/image",
-        "startTimeIST": "2026-11-01 13:30:00 IST",
-        "endTimeIST": "2026-11-01 15:50:00 IST"
-      },
-      "dashStreams": [
-        {
-          "title": "TNT SPORTS 4",
-          "type": "dash",
-          "url": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/tdijwiga2k/out/v1/f5fde318678f4f7583bf27b7231bde1f/cenc.mpd",
-          "key": "fa34fa8c90336dd528c7a23871cad1fe:552a78d1aeb74f1650d68255c5749408"
-        }
-      ]
-    },
     {
       "id": 4454,
       "title": "Indian Super League",
@@ -55,33 +30,27 @@
       ]
     },
     {
-      "id": 5023,
-      "title": "Hong Kong Sixes 2026",
-      "slug": "hong-kong-sixes-vs-hong-kong-sixes",
+      "id": 5115,
+      "title": "A-League Men",
+      "slug": "perth-glory-vs-adelaide-united",
       "cat": "Live Events",
-      "status": "live",
+      "status": "ended",
       "event": {
-        "name": "Hong Kong Sixes 2026",
-        "category": "Cricket",
-        "teamA": "Hong Kong Sixes",
-        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROAZg75-MhSbdgNwcKZHw5iCYHkWvg86Dv_g&s",
-        "teamB": "Hong Kong Sixes",
-        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROAZg75-MhSbdgNwcKZHw5iCYHkWvg86Dv_g&s",
-        "startTimeIST": "2026-11-01 07:00:00 IST",
-        "endTimeIST": "2026-11-01 14:30:00 IST"
+        "name": "A-League Men",
+        "category": "Football",
+        "teamA": "Perth Glory",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2945/image",
+        "teamB": "Adelaide United",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2946/image",
+        "startTimeIST": "2026-11-01 13:30:00 IST",
+        "endTimeIST": "2026-11-01 15:50:00 IST"
       },
       "dashStreams": [
         {
-          "title": "TAPMAD FHD",
-          "type": "hls",
-          "url": "https://tencent-cdn.tapmad.com/v1/01a1456f124d15fc600b1e3e9683d7/01a145990eba15fc60e91e1786b054/main.m3u8",
-          "key": null
-        },
-        {
-          "title": "SONY SIX HD",
-          "type": "hls",
-          "url": "https://becarefulfal.bondsplive.online/441092/logosp.webp?&e=.m3u8",
-          "key": null
+          "title": "TNT SPORTS 4",
+          "type": "dash",
+          "url": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/tdijwiga2k/out/v1/f5fde318678f4f7583bf27b7231bde1f/cenc.mpd",
+          "key": "fa34fa8c90336dd528c7a23871cad1fe:552a78d1aeb74f1650d68255c5749408"
         }
       ]
     },
@@ -290,13 +259,13 @@
       ]
     },
     {
-      "id": "B0HM6M2GHF",
-      "title": "Womens Big Bash League 2026 - 6th Match - Sydney Thunder Women vs Brisbane Heat Women",
-      "slug": "womens-big-bash-league-2026-6th-match-sydney-thunder-women-vs-brisbane-heat-women",
+      "id": "B0HNWRBDCQ",
+      "title": "New Zealand vs. India",
+      "slug": "new-zealand-vs-india",
       "cat": "Live Events",
       "status": "live",
       "event": {
-        "name": "Womens Big Bash League 2026 - 6th Match - Sydney Thunder Women vs Brisbane Heat Women",
+        "name": "New Zealand vs. India",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",
@@ -305,13 +274,13 @@
       "dashStreams": []
     },
     {
-      "id": "B0HNWRBDCQ",
-      "title": "New Zealand vs. India",
-      "slug": "new-zealand-vs-india",
+      "id": "B0HN61HF5F",
+      "title": "Womens Big Bash League 2026 - 7th Match - Sydney Sixers Women vs Hobart Hurricanes Women",
+      "slug": "womens-big-bash-league-2026-7th-match-sydney-sixers-women-vs-hobart-hurricanes-women",
       "cat": "Live Events",
       "status": "live",
       "event": {
-        "name": "New Zealand vs. India",
+        "name": "Womens Big Bash League 2026 - 7th Match - Sydney Sixers Women vs Hobart Hurricanes Women",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",

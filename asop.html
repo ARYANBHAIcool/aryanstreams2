@@ -283,8 +283,8 @@
 
         // Known direct embed servers for popular matches
         var knownDirectEmbeds = {
-            'm-paris-saint-germain-vs-lyon-1025': { name: 'beIN Sports USA HD', url: 'https://trendy48.site/embed/beinsports-usa' },
-            'm-le-havre-ac-vs-paris-saint-germain-1030': { name: 'beIN Sports USA HD', url: 'https://trendy48.site/embed/beinsports-usa' },
+            'm-paris-saint-germain-vs-lyon-1025': { name: 'beIN Sports USA HD', url: 'https://trend48.st/live-tv?ch=beinsports-usa' },
+            'm-le-havre-ac-vs-paris-saint-germain-1030': { name: 'beIN Sports USA HD', url: 'https://trend48.st/live-tv?ch=beinsports-usa' },
             'm-nice-vs-stade-rennais-1031': { name: 'Arena 8 Croatia', url: 'https://trendy48.site/embed/arena8croatia' },
             'm-konyaspor-vs-galatasaray-1030': { name: 'Server 2 (HD)', url: 'https://gistero.st/embed/OUIgV_cAKI4c8GR24YzRDRibkQd8yHACu4ukCo2fcNrpmYhQnA' },
             'm-venezia-vs-inter-milan-1028': { name: 'Arena 4 Premium', url: 'https://trendy48.site/embed/arena4premiumserbia' },
@@ -417,8 +417,8 @@
                             name: 'Server 1',
                             detail: 'beIN Sports USA HD',
                             type: 'iframe',
-                            url: 'https://trendy48.site/embed/beinsports-usa',
-                            playerUrl: 'https://trendy48.site/embed/beinsports-usa'
+                            url: 'https://trend48.st/live-tv?ch=beinsports-usa',
+                            playerUrl: 'https://trend48.st/live-tv?ch=beinsports-usa'
                         });
                         matchObj.sources.push({
                             index: 2,
@@ -811,7 +811,8 @@
 
             // Standalone link to index.html
             var isSub = window.location.pathname.indexOf('/asop') !== -1 && !window.location.pathname.endsWith('asop.html');
-            document.getElementById('modalExternalBtn').href = (isSub ? '../' : './') + '?id=' + encodeURIComponent(match.id) + '&ser=' + (activeModalServerIndex + 1);
+            var extId = (/psg|paris|lyon/i.test(match.title || match.id)) ? 'psg' : match.id;
+            document.getElementById('modalExternalBtn').href = (isSub ? '../' : './') + '?id=' + encodeURIComponent(extId) + '&ser=' + (activeModalServerIndex + 1);
 
             // Render Server Tabs inside modal
             var serverTabsHtml = sources.map(function(s, idx) {
