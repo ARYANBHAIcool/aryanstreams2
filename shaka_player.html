@@ -455,14 +455,22 @@
         }
 
         async function fetchChannelData(id) {
-            var endpoints = [
+            var idStr = String(id).trim().toLowerCase();
+            var mappedId = (ID_MAP[idStr] || idStr).toLowerCase();
+            var isSony = /sten|ten[1-5]|sony[1-5]|892|3514|1773|stent|stentu/i.test(idStr) || /sten|stent/i.test(mappedId);
+
+            // Prioritize reliable CORS-enabled live Sony feeds for browser playback
+            var endpoints = isSony ? [
+                'data/sony_m3u8.json',
+                'https://sonujson-v5.pages.dev/Data/sports.json',
+                'data/sports.json',
+                'https://sportlink-playlist.pages.dev/zio.m3u'
+            ] : [
                 'https://sonujson-v5.pages.dev/Data/sports.json',
                 'data/sports.json',
                 'data/sony_m3u8.json',
                 'https://sportlink-playlist.pages.dev/zio.m3u'
             ];
-            var idStr = String(id).trim().toLowerCase();
-            var mappedId = (ID_MAP[idStr] || idStr).toLowerCase();
             var allSearchIds = [mappedId, idStr];
 
             var upperMapped = mappedId.toUpperCase();
@@ -712,7 +720,9 @@
                     }
                 };
 
-                if (Object.keys(activeClearKeys).length > 0) {
+                if (activeMpd.indexOf('.m3u8') !== -1) {
+                    config.drm = { clearKeys: {} };
+                } else if (Object.keys(activeClearKeys).length > 0) {
                     config.drm = {
                         clearKeys: activeClearKeys
                     };
@@ -725,7 +735,46 @@
 
                 player.configure(config);
 
-                await player.load(activeMpd);
+                if (activeRawCookie && (activeMpd.includes('jiotv') || activeMpd.includes('jio.com'))) {
+                    activeMpd = withCookie(activeMpd, activeRawCookie);
+                }
+
+                try {
+                    await player.load(activeMpd);
+                } catch(loadErr) {
+                    console.warn('Initial load failed for activeMpd, attempting live backup stream:', loadErr);
+                    var targetKey = String(CH_ID || activeKid || '').toLowerCase();
+                    var m3uKey = '';
+                    if (/ten3|892|sten3/i.test(targetKey)) m3uKey = 'ten3-hd';
+                    else if (/ten4.*tamil|stent|3514/i.test(targetKey) || targetKey === 'ten4' || targetKey === 'ten4hd') m3uKey = 'ten4-hd';
+                    else if (/ten4.*telugu|stentu|1773/i.test(targetKey)) m3uKey = 'ten4';
+                    else if (/ten1|162|sten1/i.test(targetKey)) m3uKey = 'ten1-hd';
+                    else if (/ten2|891|sten2/i.test(targetKey)) m3uKey = 'ten2-hd';
+                    else if (/ten5|155|sten5/i.test(targetKey)) m3uKey = 'ten5-hd';
+
+                    var loadedFallback = false;
+                    if (m3uKey) {
+                        try {
+                            var sRes = await fetch('data/sony_m3u8.json?_=' + Date.now());
+                            if (sRes.ok) {
+                                var sData = await sRes.json();
+                                var sCh = (sData.channels || []).find(function(c) { return c.id === m3uKey; });
+                                if (sCh && (sCh.proxied_url || sCh.raw_url)) {
+                                    var fbUrl = sCh.proxied_url || sCh.raw_url;
+                                    player.configure({ drm: { clearKeys: {} } });
+                                    showToast('● Connecting backup stream...', 'warning');
+                                    await player.load(fbUrl);
+                                    loadedFallback = true;
+                                }
+                            }
+                        } catch(innerErr) {
+                            console.error('Backup load failed:', innerErr);
+                        }
+                    }
+                    if (!loadedFallback) {
+                        throw loadErr;
+                    }
+                }
                 $video.muted = false;
                 var playPromise = $video.play();
                 if (playPromise !== undefined) {
