@@ -209,7 +209,23 @@ const KNOWN_KEYS = {
     '3399': { kid: 'd2d8709de11d5955b60c57d3c955733e', key: '7655200b24bf82808fb8addf2f02847b' },
     'ten5': { kid: 'd2d8709de11d5955b60c57d3c955733e', key: '7655200b24bf82808fb8addf2f02847b' },
     'ten5hd': { kid: 'd2d8709de11d5955b60c57d3c955733e', key: '7655200b24bf82808fb8addf2f02847b' },
-    's5hd': { kid: 'd2d8709de11d5955b60c57d3c955733e', key: '7655200b24bf82808fb8addf2f02847b' }
+    's5hd': { kid: 'd2d8709de11d5955b60c57d3c955733e', key: '7655200b24bf82808fb8addf2f02847b' },
+
+    // Premier Sports 1 & 2
+    'sc_premier': { kid: '1444f4235529f183f0a5a486befe9cdb', key: 'e5e3fec67a1bb3472a2089c8a0a2557f' },
+    'sc_premier1': { kid: '1444f4235529f183f0a5a486befe9cdb', key: 'e5e3fec67a1bb3472a2089c8a0a2557f' },
+    'sc_premier_1': { kid: '1444f4235529f183f0a5a486befe9cdb', key: 'e5e3fec67a1bb3472a2089c8a0a2557f' },
+    'sc_prem1': { kid: '1444f4235529f183f0a5a486befe9cdb', key: 'e5e3fec67a1bb3472a2089c8a0a2557f' },
+    'prem1': { kid: '1444f4235529f183f0a5a486befe9cdb', key: 'e5e3fec67a1bb3472a2089c8a0a2557f' },
+    'premier1': { kid: '1444f4235529f183f0a5a486befe9cdb', key: 'e5e3fec67a1bb3472a2089c8a0a2557f' },
+    'premiersports1': { kid: '1444f4235529f183f0a5a486befe9cdb', key: 'e5e3fec67a1bb3472a2089c8a0a2557f' },
+    'sc_premier2': { kid: '1a5df53609ebc9857898c490f4724918', key: '77f62980d582ec541280796acf8b2d19' },
+    'sc_premier_2': { kid: '1a5df53609ebc9857898c490f4724918', key: '77f62980d582ec541280796acf8b2d19' },
+    'sc_prem2': { kid: '1a5df53609ebc9857898c490f4724918', key: '77f62980d582ec541280796acf8b2d19' },
+    'prem2': { kid: '1a5df53609ebc9857898c490f4724918', key: '77f62980d582ec541280796acf8b2d19' },
+    'ps2': { kid: '1a5df53609ebc9857898c490f4724918', key: '77f62980d582ec541280796acf8b2d19' },
+    'premier2': { kid: '1a5df53609ebc9857898c490f4724918', key: '77f62980d582ec541280796acf8b2d19' },
+    'premiersports2': { kid: '1a5df53609ebc9857898c490f4724918', key: '77f62980d582ec541280796acf8b2d19' }
 };
 
 function isCookieValid(cookieStr, expireVal) {

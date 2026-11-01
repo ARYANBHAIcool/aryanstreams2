@@ -1,5 +1,5 @@
 {
-  "last_updated": "11/1/2026, 7:51:25 PM IST",
+  "last_updated": "11/1/2026, 8:45:33 PM IST",
   "source": "AryanStreams Official Feed",
   "events": [
     {
@@ -44,7 +44,7 @@
       "title": "T20 International",
       "slug": "afg-vs-zim",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "T20 International",
         "category": "Cricket",
@@ -59,14 +59,20 @@
         {
           "title": "WILLOW FHD",
           "type": "dash",
-          "url": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/nbhokkdipi/out/v1/2b5492875ca8431a979f3ec685cce2f8/cenc.mpd",
-          "key": "d2efbc1c5f8ff101397ecf138e8741ba:7f4d45f386a7640749e0f07417471f01"
+          "url": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/1ezgg5lj3v/out/v1/e6092692ffac4419aab30cecd66d3470/cenc.mpd",
+          "key": "468c69668fb1f8433921d80485af81dc:fdc96b10b6e9cdcc3c5904afb6bff82d"
+        },
+        {
+          "title": "FANCODE FHD",
+          "type": "dash",
+          "url": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/avqlywnuzx/out/v1/aefca6420f944a9482e117f315de535f/cenc.mpd",
+          "key": "1994b1df7dfd2e8a8d7b9bf3fb900285:22a1444b3da18e139191665b3d652835"
         },
         {
           "title": "WILLOW ALT",
           "type": "dash",
-          "url": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/nbhokkdipi/out/v1/2b5492875ca8431a979f3ec685cce2f8/cenc.mpd",
-          "key": "d2efbc1c5f8ff101397ecf138e8741ba:7f4d45f386a7640749e0f07417471f01"
+          "url": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/1ezgg5lj3v/out/v1/e6092692ffac4419aab30cecd66d3470/cenc.mpd",
+          "key": "468c69668fb1f8433921d80485af81dc:fdc96b10b6e9cdcc3c5904afb6bff82d"
         }
       ]
     },
