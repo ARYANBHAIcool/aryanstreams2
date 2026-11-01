@@ -226,18 +226,18 @@
         var FALLBACK_MAP = {
             'SE1HD': ['SE1', '460', 'select1', 'ssselect1'],
             'SE2HD': ['SE2', '461', 'select2', 'ssselect2'],
-            '162': ['3531', 'sten1', 'sony1', '162'],
-            '891': ['3532', 'sten2', 'sony2', '891'],
-            '892': ['3533', 'sten3', 'sony3', '892'],
-            '1773': ['3398', 'stentu', 'sony4', '1773'],
-            '3514': ['3397', 'stent', 'sony4', '3514'],
-            '155': ['3534', 'sten5', 'sony5', '155'],
-            'STEN1': ['3531', '162', 'sony1', 'sten1'],
-            'STEN2': ['3532', '891', 'sony2', 'sten2'],
-            'STEN3': ['3533', '892', 'sony3', 'sten3'],
-            'STENT': ['3397', '3514', '1773', 'sony4', 'stent'],
-            'STENTU': ['3398', '1773', '3514', 'sony4', 'stentu'],
-            'STEN5': ['3534', '155', 'sony5', 'sten5'],
+            '162': ['STEN1', '3531', 'sten1', 'sony1', '162', 'ten1-hd', 'ten1'],
+            '891': ['STEN2', '3532', 'sten2', 'sony2', '891', 'ten2-hd', 'ten2'],
+            '892': ['STEN3', '3533', 'sten3', 'sony3', '892', 'ten3-hd', 'ten3'],
+            '1773': ['STENTU', '3398', 'stentu', 'sony4', '1773', 'ten4'],
+            '3514': ['STENT', '3397', 'stent', 'sony4', '3514', 'ten4-hd'],
+            '155': ['STEN5', '3534', 'sten5', 'sony5', '155', 'ten5-hd', 'ten5'],
+            'STEN1': ['162', '3531', 'sony1', 'sten1', 'ten1-hd', 'ten1'],
+            'STEN2': ['891', '3532', 'sony2', 'sten2', 'ten2-hd', 'ten2'],
+            'STEN3': ['892', '3533', 'sony3', 'sten3', 'ten3-hd', 'ten3'],
+            'STENT': ['3514', '3397', '1773', 'sony4', 'stent', 'ten4-hd'],
+            'STENTU': ['1773', '3398', '3514', 'sony4', 'stentu'],
+            'STEN5': ['155', '3534', 'sony5', 'sten5', 'ten5-hd', 'ten5'],
             'H1HD': ['h1hd', 'h1sd', 'h2hd', 'h2sd', '1108', 'star1hindihd'],
             'E1HD': ['e1hd', 'e1sd', 'star1', 'star1hd', '1106', '1142'],
             'H2HD': ['h2hd', 'h2sd', '1984'],
@@ -299,7 +299,12 @@
             'ss1tel': 'ss1tel', 'te1hd': 'ss1tel', 'te2hd': 'ss1tel', '3278': 'ss1tel',
             'ss2tel': 'ss2tel', '3274': 'ss2tel',
             'ss1kan': 'ss1kan', 'ka1sd': 'ss1kan', '1650': 'ss1kan',
-            'ss2kan': 'ss2kan', 'ka2sd': 'ss2kan', '1122': 'ss2kan'
+            'ss2kan': 'ss2kan', 'ka2sd': 'ss2kan', '1122': 'ss2kan',
+            'sten1': 'sten1', '162': 'sten1', 'ten1': 'sten1', 'ten1hd': 'sten1',
+            'sten2': 'sten2', '891': 'sten2', 'ten2': 'sten2', 'ten2hd': 'sten2',
+            'sten3': 'sten3', '892': 'sten3', 'ten3': 'sten3', 'ten3hd': 'sten3', 'sony3': 'sten3',
+            'sten4': 'stent', '3514': 'stent', 'ten4': 'stent', 'ten4hd': 'stent',
+            'sten5': 'sten5', '155': 'sten5', 'ten5': 'sten5', 'ten5hd': 'sten5'
         };
 
         async function fetchFreshCookie(id) {
@@ -353,7 +358,13 @@
                     var found = listSonu.find(function(c) {
                         var cId = String(c.id || '').toLowerCase();
                         var cCh = String(c.channel_id || '').toLowerCase();
-                        return cId === normId || cCh === normId || (workerKey && cId === workerKey) || (mapped && cId === mapped);
+                        var cNm = String(c.name || '').toLowerCase();
+                        if (cId === normId || cCh === normId || (workerKey && cId === workerKey) || (mapped && cId === mapped)) return true;
+                        if ((normId === '892' || normId.includes('ten3') || normId === 'sten3' || workerKey === 'sten3') && (cId === 'sten3' || cNm.includes('sports 3') || cNm.includes('ten 3'))) return true;
+                        if ((normId === '891' || normId.includes('ten2') || normId === 'sten2' || workerKey === 'sten2') && (cId === 'sten2' || cNm.includes('sports 2') || cNm.includes('ten 2'))) return true;
+                        if ((normId === '162' || normId.includes('ten1') || normId === 'sten1' || workerKey === 'sten1') && (cId === 'sten1' || cNm.includes('sports 1') || cNm.includes('ten 1'))) return true;
+                        if ((normId === '155' || normId.includes('ten5') || normId === 'sten5' || workerKey === 'sten5') && (cId === 'sten5' || cNm.includes('sports 5') || cNm.includes('ten 5'))) return true;
+                        return false;
                     });
                     if (found && found.cookie && isCookieValid(found.cookie, found.cookie_expire)) {
                         return found.cookie.trim();
@@ -440,6 +451,7 @@
             var endpoints = [
                 'https://sonujson-v5.pages.dev/Data/sports.json',
                 'data/sports.json',
+                'data/sony_m3u8.json',
                 'https://sportlink-playlist.pages.dev/zio.m3u'
             ];
             var idStr = String(id).trim().toLowerCase();
@@ -471,6 +483,24 @@
                     var list = [];
                     if (text.indexOf('#EXTINF') !== -1 || endpoints[i].endsWith('.m3u')) {
                         list = parseM3uChannels(text);
+                    } else if (endpoints[i].indexOf('sony_m3u8') !== -1 || text.indexOf('dishmt.slivcdn.com') !== -1) {
+                        try {
+                            var sJson = JSON.parse(text);
+                            var sArr = sJson.channels || [];
+                            list = sArr.map(function(item) {
+                                return {
+                                    id: item.id,
+                                    channel_id: item.id,
+                                    name: item.name,
+                                    stream_url: item.proxied_url || item.raw_url,
+                                    key_id: '',
+                                    key: '',
+                                    clearKeys: {},
+                                    cookie: '',
+                                    cookie_expire: 0
+                                };
+                            });
+                        } catch(e) {}
                     } else {
                         try {
                             var json = JSON.parse(text);
@@ -510,7 +540,7 @@
                                 key = clearKeys[kid];
                             }
                             var streamUrl = target.stream_url || target.channel_url || target.url;
-                            if ((key || clearKeyIds.length > 0) && streamUrl) {
+                            if ((key || clearKeyIds.length > 0 || (streamUrl && streamUrl.indexOf('.m3u8') !== -1)) && streamUrl) {
                                 var candidateObj = {
                                     name: target.name || target.channel_name,
                                     stream_url: streamUrl,

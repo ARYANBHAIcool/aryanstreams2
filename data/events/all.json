@@ -1,9 +1,34 @@
 {
-  "last_updated": "11/1/2026, 12:40:32 PM IST",
+  "last_updated": "11/1/2026, 2:17:15 PM IST",
   "source": "AryanStreams Official Feed",
-  "football_count": 1,
+  "football_count": 2,
   "cricket_count": 12,
   "events": [
+    {
+      "id": 5115,
+      "title": "A-League Men",
+      "slug": "perth-glory-vs-adelaide-united",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "A-League Men",
+        "category": "Football",
+        "teamA": "Perth Glory",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2945/image",
+        "teamB": "Adelaide United",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2946/image",
+        "startTimeIST": "2026-11-01 13:30:00 IST",
+        "endTimeIST": "2026-11-01 15:50:00 IST"
+      },
+      "dashStreams": [
+        {
+          "title": "TNT SPORTS 4",
+          "type": "dash",
+          "url": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/tdijwiga2k/out/v1/f5fde318678f4f7583bf27b7231bde1f/cenc.mpd",
+          "key": "fa34fa8c90336dd528c7a23871cad1fe:552a78d1aeb74f1650d68255c5749408"
+        }
+      ]
+    },
     {
       "id": 4454,
       "title": "Indian Super League",
@@ -47,47 +72,16 @@
       },
       "dashStreams": [
         {
-          "title": "WILLOW FHD",
-          "type": "dash",
-          "url": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/gz9vwijf7m/out/v1/3ecfb634ab26422eaf14713d240485b6/cenc.mpd",
-          "key": "0cd1b4875e56c425ac0074163c244822:696c27c854a7ec46c52ba65865dc3c19"
-        }
-      ]
-    },
-    {
-      "id": 4963,
-      "title": "Women's Big Bash League",
-      "slug": "wbbl-vs-wbbl",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Women's Big Bash League",
-        "category": "Cricket",
-        "teamA": "WBBL",
-        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH9OS4ikdL0U1wBewY6aIs6YK6KHWTHm7aa9O7wGaw4w&s=10",
-        "teamB": "WBBL",
-        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH9OS4ikdL0U1wBewY6aIs6YK6KHWTHm7aa9O7wGaw4w&s=10",
-        "startTimeIST": "2026-11-01 10:00:00 IST",
-        "endTimeIST": "2026-11-01 18:10:00 IST"
-      },
-      "dashStreams": [
-        {
-          "title": "WILLOW FHD",
-          "type": "dash",
-          "url": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/gog1xdwuxy/out/v1/cce434bb1b314fce9867a98d8c323a56/cenc.mpd",
-          "key": "b22b486d9a7cdab18642ad31a3ac164a:554e2e626bde78f8babcb7faaf11f872"
+          "title": "TAPMAD FHD",
+          "type": "hls",
+          "url": "https://tencent-cdn.tapmad.com/v1/01a1456f124d15fc600b1e3e9683d7/01a145990eba15fc60e91e1786b054/main.m3u8",
+          "key": null
         },
         {
-          "title": "WILLOW ALT",
-          "type": "dash",
-          "url": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/gog1xdwuxy/out/v1/cce434bb1b314fce9867a98d8c323a56/cenc.mpd",
-          "key": "b22b486d9a7cdab18642ad31a3ac164a:554e2e626bde78f8babcb7faaf11f872"
-        },
-        {
-          "title": "EUROSPORTS FHD",
-          "type": "dash",
-          "url": "https://wbd.skandha.tv/EuroSport_HD/EuroSport_HD.isml/.mpd",
-          "key": "12ed56d780abcfebcd23aa27e4ac5015:6784567890abcfebcd23aa27e4ac2814"
+          "title": "SONY SIX HD",
+          "type": "hls",
+          "url": "https://becarefulfal.bondsplive.online/441092/logosp.webp?&e=.m3u8",
+          "key": null
         }
       ]
     },
@@ -135,7 +129,7 @@
         {
           "title": "WILLOW ALT",
           "type": "dash",
-          "url": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/pog3pkfhga/out/v1/20164001c7d9489f898d05761ad05077/cenc.mpd",
+          "url": "https://otte.cache.aiv-cdn.net/fra-nitro/live/clients/dash/enc/pog3pkfhga/out/v1/20164001c7d9489f898d05761ad05077/cenc.mpd",
           "key": "2765adbf6880195515fed136e5a989fa:f1356a68a923c31d7184dfa1b91c161f"
         }
       ]
@@ -162,6 +156,43 @@
           "type": "hls",
           "url": "https://sonydaime.akamaized.net/hls/live/2120303/criclive3010/ENG/std_lrh-800300010.m3u8?hdnea=exp=1793440431~acl=/*~id=58342385308836800944090866097145~hmac=5bffa12c1ad3d571d42d0a08556a10c336eb428ed8191a43041a35af1aa43e3e",
           "key": null
+        }
+      ]
+    },
+    {
+      "id": 4963,
+      "title": "Women's Big Bash League",
+      "slug": "wbbl-vs-wbbl",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "Women's Big Bash League",
+        "category": "Cricket",
+        "teamA": "WBBL",
+        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH9OS4ikdL0U1wBewY6aIs6YK6KHWTHm7aa9O7wGaw4w&s=10",
+        "teamB": "WBBL",
+        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH9OS4ikdL0U1wBewY6aIs6YK6KHWTHm7aa9O7wGaw4w&s=10",
+        "startTimeIST": "2026-11-01 13:40:00 IST",
+        "endTimeIST": "2026-11-01 18:10:00 IST"
+      },
+      "dashStreams": [
+        {
+          "title": "WILLOW FHD",
+          "type": "dash",
+          "url": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/0bftapixow/out/v1/a435ed7a00f947deb4369b46d8f2fb70/cenc.mpd",
+          "key": "290e09c837da78d5cd961978d390515c:b748836c71e6a4ca68ef5b5652db6247"
+        },
+        {
+          "title": "WILLOW ALT",
+          "type": "dash",
+          "url": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/0bftapixow/out/v1/a435ed7a00f947deb4369b46d8f2fb70/cenc.mpd",
+          "key": "290e09c837da78d5cd961978d390515c:b748836c71e6a4ca68ef5b5652db6247"
+        },
+        {
+          "title": "EUROSPORTS FHD",
+          "type": "dash",
+          "url": "https://wbd.skandha.tv/EuroSport_HD/EuroSport_HD.isml/.mpd",
+          "key": "12ed56d780abcfebcd23aa27e4ac5015:6784567890abcfebcd23aa27e4ac2814"
         }
       ]
     },
