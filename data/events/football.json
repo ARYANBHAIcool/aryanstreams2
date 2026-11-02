@@ -1,5 +1,5 @@
 {
-  "last_updated": "11/2/2026, 7:38:42 AM IST",
+  "last_updated": "11/2/2026, 3:07:59 PM IST",
   "source": "AryanStreams Official Feed",
   "events": [
     {
@@ -28,108 +28,27 @@
       ]
     },
     {
-      "id": 5159,
-      "title": "MLS",
-      "slug": "new-england-vs-inter-miami",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "MLS",
-        "category": "Football",
-        "teamA": "New England",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2511/image",
-        "teamB": "Inter Miami",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/337602/image",
-        "startTimeIST": "2026-11-02 05:30:00 IST",
-        "endTimeIST": "2026-11-02 07:50:00 IST"
-      },
-      "dashStreams": [
-        {
-          "title": "CANAL5 FHD",
-          "type": "dash",
-          "url": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/ntkdl68eob/out/v1/bd5dfb7676994383881bc6e71877d29d/cenc.mpd",
-          "key": "d695093ea3e66d75a4d213a3e2cbf360:01be3f645e89a067d2786c295f68dde4"
-        }
-      ]
-    },
-    {
-      "id": 5175,
-      "title": "NFL",
-      "slug": "commanders-vs-eagles",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "NFL",
-        "category": "Football",
-        "teamA": "Commanders",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4432/image",
-        "teamB": "Eagles",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/4428/image",
-        "startTimeIST": "2026-11-02 06:50:00 IST",
-        "endTimeIST": "2026-11-02 09:50:00 IST"
-      },
-      "dashStreams": [
-        {
-          "title": "TSN SPORTS FHD",
-          "type": "dash",
-          "url": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/w0rehjjrwe/out/v1/69a2a7041395406b970598f61680e7cf/cenc.mpd",
-          "key": "14eeabf30c14b7fbf3008c03099ce011:17d2ac8dbc5429bd70af3433aa12158d"
-        },
-        {
-          "title": "TSN4 SPORTS FHD",
-          "type": "dash",
-          "url": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/ihys8nw4wv/out/v1/fde190f369484bc6b6117cc16cd82a9f/cenc.mpd",
-          "key": "abc5b2883121012850ebda05b528c5ec:e5250924f4b738905f7163a0134587a7"
-        }
-      ]
-    },
-    {
-      "id": 5183,
-      "title": "MLS",
-      "slug": "los-angeles-vs-minnesota",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "MLS",
-        "category": "Football",
-        "teamA": "Los Angeles",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/274650/image",
-        "teamB": "Minnesota",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/41618/image",
-        "startTimeIST": "2026-11-02 07:00:00 IST",
-        "endTimeIST": "2026-11-02 09:20:00 IST"
-      },
-      "dashStreams": [
-        {
-          "title": "HD SERVER",
-          "type": "hls",
-          "url": "https://edgestream2.pro/hls/hjksgdfauzy51.m3u8",
-          "key": null
-        }
-      ]
-    },
-    {
-      "id": 5187,
-      "title": "MLS",
-      "slug": "portland-vs-houston",
+      "id": 4454,
+      "title": "Indian Super League",
+      "slug": "isl-vs-isl",
       "cat": "Live Events",
       "status": "upcoming",
       "event": {
-        "name": "MLS",
+        "name": "Indian Super League",
         "category": "Football",
-        "teamA": "Portland",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/22007/image",
-        "teamB": "Houston",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2508/image",
-        "startTimeIST": "2026-11-02 08:15:00 IST",
-        "endTimeIST": "2026-11-02 10:35:00 IST"
+        "teamA": "ISL",
+        "teamAFlag": "https://img.sofascore.com/api/v1/unique-tournament/1900/image",
+        "teamB": "ISL",
+        "teamBFlag": "https://img.sofascore.com/api/v1/unique-tournament/1900/image",
+        "startTimeIST": "2026-11-05 17:00:00 IST",
+        "endTimeIST": "2026-11-05 22:00:00 IST"
       },
       "dashStreams": [
         {
-          "title": "HD SERVER",
-          "type": "hls",
-          "url": "https://admin2.formaturamaxi.com.br/prem.m3u8",
-          "key": null
+          "title": "PRIME VIDEO FHD",
+          "type": "dash",
+          "url": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/ebirnvewph/out/v1/2e1afb64f23b48a5acac9886327c2b8c/cenc.mpd",
+          "key": "c57fbe97649816539cf25b0c95d37d9d:ddf4da52ec2358bdf08a6fc60c4d1bc3"
         }
       ]
     }
