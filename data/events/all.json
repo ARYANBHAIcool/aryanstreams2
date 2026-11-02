@@ -1,26 +1,139 @@
 {
-  "last_updated": "11/2/2026, 4:24:27 AM IST",
+  "last_updated": "11/2/2026, 7:38:42 AM IST",
   "source": "AryanStreams Official Feed",
-  "football_count": 1,
+  "football_count": 5,
   "cricket_count": 5,
   "events": [
     {
-      "id": 5157,
-      "title": "Liga Portugal Betclic",
-      "slug": "braga-vs-famalicao",
+      "id": 3926,
+      "title": "NFL REDZONE",
+      "slug": "nfl-vs-nfl",
       "cat": "Live Events",
-      "status": "ended",
+      "status": "live",
       "event": {
-        "name": "Liga Portugal Betclic",
+        "name": "NFL REDZONE",
         "category": "Football",
-        "teamA": "Braga",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2999/image",
-        "teamB": "Famalicão",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/49531/image",
-        "startTimeIST": "2026-11-02 02:00:00 IST",
-        "endTimeIST": "2026-11-02 04:20:00 IST"
+        "teamA": "NFL",
+        "teamAFlag": "https://img.sofascore.com/api/v1/unique-tournament/9464/image",
+        "teamB": "NFL",
+        "teamBFlag": "https://img.sofascore.com/api/v1/unique-tournament/9464/image",
+        "startTimeIST": "2026-11-01 23:25:00 IST",
+        "endTimeIST": "2026-11-02 23:25:00 IST"
       },
-      "dashStreams": []
+      "dashStreams": [
+        {
+          "title": "REDZONE FHD",
+          "type": "dash",
+          "url": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/dash/enc/tppdoitn9n/out/v1/9828b56372fb434fafdcf88c72052d01/cenc.mpd",
+          "key": "85f340146e46533b39d1415d90746352:448aafcc613ddfd448f14d9275eda19b"
+        }
+      ]
+    },
+    {
+      "id": 5159,
+      "title": "MLS",
+      "slug": "new-england-vs-inter-miami",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "MLS",
+        "category": "Football",
+        "teamA": "New England",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2511/image",
+        "teamB": "Inter Miami",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/337602/image",
+        "startTimeIST": "2026-11-02 05:30:00 IST",
+        "endTimeIST": "2026-11-02 07:50:00 IST"
+      },
+      "dashStreams": [
+        {
+          "title": "CANAL5 FHD",
+          "type": "dash",
+          "url": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/ntkdl68eob/out/v1/bd5dfb7676994383881bc6e71877d29d/cenc.mpd",
+          "key": "d695093ea3e66d75a4d213a3e2cbf360:01be3f645e89a067d2786c295f68dde4"
+        }
+      ]
+    },
+    {
+      "id": 5175,
+      "title": "NFL",
+      "slug": "commanders-vs-eagles",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "NFL",
+        "category": "Football",
+        "teamA": "Commanders",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4432/image",
+        "teamB": "Eagles",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4428/image",
+        "startTimeIST": "2026-11-02 06:50:00 IST",
+        "endTimeIST": "2026-11-02 09:50:00 IST"
+      },
+      "dashStreams": [
+        {
+          "title": "TSN SPORTS FHD",
+          "type": "dash",
+          "url": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/w0rehjjrwe/out/v1/69a2a7041395406b970598f61680e7cf/cenc.mpd",
+          "key": "14eeabf30c14b7fbf3008c03099ce011:17d2ac8dbc5429bd70af3433aa12158d"
+        },
+        {
+          "title": "TSN4 SPORTS FHD",
+          "type": "dash",
+          "url": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/ihys8nw4wv/out/v1/fde190f369484bc6b6117cc16cd82a9f/cenc.mpd",
+          "key": "abc5b2883121012850ebda05b528c5ec:e5250924f4b738905f7163a0134587a7"
+        }
+      ]
+    },
+    {
+      "id": 5183,
+      "title": "MLS",
+      "slug": "los-angeles-vs-minnesota",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "MLS",
+        "category": "Football",
+        "teamA": "Los Angeles",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/274650/image",
+        "teamB": "Minnesota",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/41618/image",
+        "startTimeIST": "2026-11-02 07:00:00 IST",
+        "endTimeIST": "2026-11-02 09:20:00 IST"
+      },
+      "dashStreams": [
+        {
+          "title": "HD SERVER",
+          "type": "hls",
+          "url": "https://edgestream2.pro/hls/hjksgdfauzy51.m3u8",
+          "key": null
+        }
+      ]
+    },
+    {
+      "id": 5187,
+      "title": "MLS",
+      "slug": "portland-vs-houston",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "MLS",
+        "category": "Football",
+        "teamA": "Portland",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/22007/image",
+        "teamB": "Houston",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2508/image",
+        "startTimeIST": "2026-11-02 08:15:00 IST",
+        "endTimeIST": "2026-11-02 10:35:00 IST"
+      },
+      "dashStreams": [
+        {
+          "title": "HD SERVER",
+          "type": "hls",
+          "url": "https://admin2.formaturamaxi.com.br/prem.m3u8",
+          "key": null
+        }
+      ]
     },
     {
       "id": 4728,
