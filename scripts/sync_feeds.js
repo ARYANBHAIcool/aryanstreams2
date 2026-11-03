@@ -953,8 +953,8 @@ async function syncSonyM3U8() {
                             id: idMatch[1].trim(),
                             name: name,
                             raw_url: streamUrl,
-                            proxied_url: 'https://as-proxy.lovable.app/api/public/px/sony?url=' + encodeURIComponent(streamUrl),
-                            backup_proxied_url: 'https://akamaii.lovable.app/api/public/px/sony?url=' + encodeURIComponent(streamUrl)
+                            proxied_url: 'https://aryanstreams.pages.dev/api/public/px/sony?url=' + encodeURIComponent(streamUrl),
+                            backup_proxied_url: 'https://corsproxy.io/?url=' + encodeURIComponent(streamUrl)
                         });
                     }
                 }
