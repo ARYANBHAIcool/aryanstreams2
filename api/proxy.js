@@ -114,10 +114,10 @@ module.exports = async (req, res) => {
         targetHeaders['range'] = req.headers['range'];
     }
 
-    // Set defaults if not provided but target is Akamai/SonyLIV
-    if (targetUrl.includes('akamaized.net') || targetUrl.includes('sonyliv.com') || targetUrl.includes('slivcdn.com')) {
+    // Set defaults if not provided but target is Akamai/SonyLIV/DishMT
+    if (targetUrl.includes('akamaized.net') || targetUrl.includes('sonyliv.com') || targetUrl.includes('slivcdn.com') || targetUrl.includes('dishmt')) {
         if (!targetHeaders['User-Agent'] && !targetHeaders['user-agent']) {
-            targetHeaders['User-Agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
+            targetHeaders['User-Agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36';
         }
         if (!targetHeaders['Origin'] && !targetHeaders['origin']) {
             targetHeaders['Origin'] = 'https://www.sonyliv.com';
@@ -177,6 +177,9 @@ module.exports = async (req, res) => {
             // Forward raw data (for video segments, keys, etc.)
             if (targetRes.headers['content-length']) {
                 res.setHeader('Content-Length', targetRes.headers['content-length']);
+            }
+            if (targetUrl.includes('.ts') || targetUrl.includes('.m4s') || targetUrl.includes('.mp4')) {
+                res.setHeader('Cache-Control', 'public, max-age=300, immutable');
             }
             res.writeHead(targetRes.statusCode, { 'Content-Type': contentType });
             targetRes.pipe(res);

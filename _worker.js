@@ -278,6 +278,10 @@ async function handleProxy(request) {
         method: request.method === "HEAD" ? "HEAD" : "GET",
         headers: targetHeaders,
         redirect: "follow",
+        cf: {
+          cacheEverything: true,
+          cacheTtl: 300,
+        },
       });
 
       const responseHeaders = new Headers(CORS_HEADERS);

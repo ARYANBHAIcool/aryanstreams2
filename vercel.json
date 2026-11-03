@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "regions": ["bom1"],
+  "rewrites": [
+    { "source": "/api/public/px/sony", "destination": "/api/proxy" },
+    { "source": "/api/public/px/:path*", "destination": "/api/proxy" },
+    { "source": "/api/proxy", "destination": "/api/proxy" }
+  ]
+}
