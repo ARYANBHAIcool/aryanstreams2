@@ -1,37 +1,31 @@
 {
-  "last_updated": "11/3/2026, 3:11:36 PM IST",
+  "last_updated": "11/3/2026, 11:05:32 PM IST",
   "source": "AryanStreams Official Feed",
-  "football_count": 2,
-  "cricket_count": 8,
+  "football_count": 3,
+  "cricket_count": 7,
   "events": [
     {
-      "id": 5191,
-      "title": "AFC Champions League Elite",
-      "slug": "newcastle-jets-vs-port",
+      "id": 5201,
+      "title": "UEFA Youth League",
+      "slug": "barcelona-u19-vs-aston-villa-u19",
       "cat": "Live Events",
       "status": "live",
       "event": {
-        "name": "AFC Champions League Elite",
+        "name": "UEFA Youth League",
         "category": "Football",
-        "teamA": "Newcastle Jets",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2934/image",
-        "teamB": "Port",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/41537/image",
-        "startTimeIST": "2026-11-03 13:15:00 IST",
-        "endTimeIST": "2026-11-03 15:35:00 IST"
+        "teamA": "Barcelona U19",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/90128/image",
+        "teamB": "Aston Villa U19",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/90122/image",
+        "startTimeIST": "2026-11-03 20:30:00 IST",
+        "endTimeIST": "2026-11-03 22:50:00 IST"
       },
       "dashStreams": [
         {
-          "title": "HD SERVER",
-          "type": "hls",
-          "url": "https://www.rtmpcdn.com/live/97f72f19-df76-4cac-b162-f71b7f3bd04b.m3u8",
-          "key": null
-        },
-        {
-          "title": "FAST SERVER",
-          "type": "hls",
-          "url": "https://live2.jorvakstreamcache.com/live/channel5.m3u8?",
-          "key": null
+          "title": "TNT SPORTS FHD",
+          "type": "dash",
+          "url": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/tdijwiga2k/out/v1/f5fde318678f4f7583bf27b7231bde1f/cenc.mpd",
+          "key": "fa34fa8c90336dd528c7a23871cad1fe:552a78d1aeb74f1650d68255c5749408"
         }
       ]
     },
@@ -61,33 +55,27 @@
       ]
     },
     {
-      "id": 4896,
-      "title": "Nepal Premier League",
-      "slug": "npl-vs-npl",
+      "id": 5189,
+      "title": "AFC Champions League Two",
+      "slug": "east-bengal-vs-al-seeb",
       "cat": "Live Events",
-      "status": "live",
+      "status": "ended",
       "event": {
-        "name": "Nepal Premier League",
-        "category": "Cricket",
-        "teamA": "NPL",
-        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQAV3dcOxi7602i_xcqoTE6eoiGVCPJFo6uZwtDkDK-g&s=10",
-        "teamB": "NPL",
-        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQAV3dcOxi7602i_xcqoTE6eoiGVCPJFo6uZwtDkDK-g&s=10",
-        "startTimeIST": "2026-11-03 12:10:00 IST",
-        "endTimeIST": "2026-11-03 21:15:00 IST"
+        "name": "AFC Champions League Two",
+        "category": "Football",
+        "teamA": "East Bengal",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/40655/image",
+        "teamB": "Al Seeb",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/71044/image",
+        "startTimeIST": "2026-11-03 19:15:00 IST",
+        "endTimeIST": "2026-11-03 21:35:00 IST"
       },
       "dashStreams": [
         {
-          "title": "FANCODE FHD",
-          "type": "dash",
-          "url": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/b3b3fkmrbl/out/v1/1084d5c9a97a4c5b9f9554c88f486646/cenc.mpd",
-          "key": "82dfca238e8c4b430a3269db71965db9:a00b28caf4ac628e77a553d440c0ddca"
-        },
-        {
-          "title": "FANCODE SD",
-          "type": "dash",
-          "url": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash-sd/enc/iwpchve3wl/out/v1/946019f85dc64ae99ff9ce64a9727a62/cenc-sd.mpd",
-          "key": "286eb7dc538143790fa9913639531920:e3f5cb08d14d9e9c08438c673819540f"
+          "title": "HD SERVER",
+          "type": "hls",
+          "url": "https://live2.jorvakstreamcache.com/live/channel18.m3u8?",
+          "key": null
         }
       ]
     },
