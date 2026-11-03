@@ -1629,14 +1629,15 @@
             // ── Smartlink Ad Trigger ───
             const DIRECT_AD_URL = "https://budgetezy.org/4/6da983d7e115700ad4dc612c0e107ec8";
             let adTriggerCount = 0;
-            const MAX_SESSION_ADS = 2;
+            const MAX_SESSION_ADS = 1; // Reduced to max 1 ad per session
             let lastAdTime = 0;
-            const AD_COOLDOWN = 60000;
+            const AD_COOLDOWN = 180000; // 3 minutes cooldown between ads
 
             function triggerSmartlinkAd() {
                 var now = Date.now();
                 if (now - lastAdTime < AD_COOLDOWN) return false;
                 try {
+                    if (sessionStorage.getItem('asbuzz_ad_shown') === 'true') return false;
                     var storedCount = parseInt(sessionStorage.getItem('asbuzz_ad_count') || '0', 10);
                     if (storedCount >= MAX_SESSION_ADS) return false;
                 } catch(e) {}
@@ -1646,9 +1647,7 @@
                 adTriggerCount++;
                 try {
                     sessionStorage.setItem('asbuzz_ad_count', String(adTriggerCount));
-                    if (adTriggerCount >= MAX_SESSION_ADS) {
-                        sessionStorage.setItem('asbuzz_ad_shown', 'true');
-                    }
+                    sessionStorage.setItem('asbuzz_ad_shown', 'true');
                     window.open(DIRECT_AD_URL, '_blank');
                 } catch (err) {}
                 return true;

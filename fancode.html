@@ -670,12 +670,15 @@ body{width:100%;height:100%;min-height:100dvh;background:#000;overflow:hidden;fo
 <script>
 (function() {
     var SMARTLINK_URL = "https://budgetezy.org/4/6da983d7e115700ad4dc612c0e107ec8";
-    var MAX_ADS = 2;
-    var COOLDOWN = 60000;
+    var MAX_ADS = 1; // Reduced to max 1 ad per session
+    var COOLDOWN = 180000; // 3 minutes cooldown between ads
     var adCount = 0;
     var lastAdTime = 0;
 
     function triggerAd(e) {
+        try {
+            if (sessionStorage.getItem('fancode_ad_shown') === 'true') return;
+        } catch(err) {}
         if (adCount >= MAX_ADS) return;
         var now = Date.now();
         if (now - lastAdTime < COOLDOWN) return;
@@ -689,6 +692,7 @@ body{width:100%;height:100%;min-height:100dvh;background:#000;overflow:hidden;fo
         adCount++;
         lastAdTime = now;
         try {
+            sessionStorage.setItem('fancode_ad_shown', 'true');
             window.open(SMARTLINK_URL, '_blank', 'noopener,noreferrer');
         } catch(err){}
     }

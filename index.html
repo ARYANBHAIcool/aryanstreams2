@@ -828,14 +828,15 @@
         }, true);
 
         let adTriggerCount = 0;
-        const MAX_SESSION_ADS = 2; // Increased by 30-40% per user request
+        const MAX_SESSION_ADS = 1; // Reduced to max 1 ad per session
         let lastAdTime = 0;
-        const AD_COOLDOWN = 60000; // 60 seconds cooldown between ads
+        const AD_COOLDOWN = 180000; // 3 minutes cooldown between ads
 
         function triggerSmartlinkAd() {
             var now = Date.now();
             if (now - lastAdTime < AD_COOLDOWN) return false;
             try {
+                if (sessionStorage.getItem('session_ad_shown') === 'true') return false;
                 var storedCount = parseInt(sessionStorage.getItem('ad_trigger_count') || '0', 10);
                 if (storedCount >= MAX_SESSION_ADS) return false;
             } catch (e) {}
@@ -868,20 +869,11 @@
         function handlePlayerAdClick(e) {
             triggerSmartlinkAd();
 
+            // Permanently remove all ad overlays once clicked so video playback is never obstructed
             var overlays = document.querySelectorAll('.player-ad-overlay');
             overlays.forEach(function(el) {
-                el.style.display = 'none';
+                el.remove();
             });
-
-            if (adTriggerCount >= MAX_SESSION_ADS) {
-                overlays.forEach(function(el) { el.remove(); });
-            } else {
-                setTimeout(function() {
-                    if (adTriggerCount < MAX_SESSION_ADS) {
-                        overlays.forEach(function(el) { el.style.display = 'block'; });
-                    }
-                }, AD_COOLDOWN);
-            }
 
             resumeStreamPlayback();
         }
