@@ -1,6 +1,6 @@
 /**
  * ASWORLD Universal Stream & Embed Edge Proxy
- * Deployable on: Lovable Edge Functions, Cloudflare Workers, Deno Deploy, or Vercel Edge.
+ * Deployable on: Cloudflare Workers, Vercel Edge, or Supabase Edge Functions.
  * 
  * Specifically engineered to unlock PPV.ST & EMBED.ST iframes without VPN:
  * 1. Automatically resolves blocked domains (embed.st, ppv.st) to unblocked global mirrors (ppv.ms, ppv.rw, ppv.tj)
