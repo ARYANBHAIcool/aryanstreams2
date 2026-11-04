@@ -1409,7 +1409,7 @@
                 } catch (err) {
                     console.warn('Direct MPD load failed, attempting proxy fallback:', err);
                     try {
-                        const proxiedUrl = 'https://aryanstreams.pages.dev/api/public/px/geobypass?url=' + encodeURIComponent(directMpd);
+                        const proxiedUrl = 'https://sportlink10-sayan.lovable.app/api/proxy?u=' + encodeURIComponent(directMpd);
                         await shakaPlayerInstance.load(proxiedUrl);
                         $video.muted = true;
                         $video.play().catch(() => {});
