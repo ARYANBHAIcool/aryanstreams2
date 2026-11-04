@@ -1,63 +1,15 @@
 {
-  "last_updated": "11/4/2026, 8:11:21 AM IST",
+  "last_updated": "11/4/2026, 4:02:15 PM IST",
   "source": "AryanStreams Official Feed",
-  "football_count": 31,
+  "football_count": 29,
   "cricket_count": 13,
   "events": [
-    {
-      "id": "14573",
-      "title": "Internacional vs Coritiba",
-      "slug": "internacional-vs-coritiba",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "Campeonato Brasileiro Série A",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/325/image/dark",
-        "teamA": "Internacional",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/1966/image",
-        "teamB": "Coritiba",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/1982/image",
-        "startTimeIST": "2026-11-04 06:00:00 IST",
-        "endTimeIST": "2026-11-04 08:20:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "CRICFy LIVE",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/nelfyucw9a/out/v1/6ffb2c365ad14f88b154591beb43d1f6/cenc.mpd",
-          "api": "56b79c1782b30e6b6fc973b0e8fd4104:fa38aaa865a57eda7c77444697ba8ed3"
-        }
-      ]
-    },
-    {
-      "id": "14589",
-      "title": "Melbourne Victory vs Persib Bandung",
-      "slug": "melbourne-victory-vs-persib-bandung",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "AFC Champions League Two",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/668/image/dark",
-        "teamA": "Melbourne Victory",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/5970/image",
-        "teamB": "Persib Bandung",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/64289/image",
-        "startTimeIST": "2026-11-04 13:15:00 IST",
-        "endTimeIST": "2026-11-04 15:35:00 IST"
-      },
-      "streams": []
-    },
     {
       "id": "14590",
       "title": "FC Seoul vs The Cong - Viettel",
       "slug": "fc-seoul-vs-the-cong-viettel",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -70,14 +22,22 @@
         "startTimeIST": "2026-11-04 15:30:00 IST",
         "endTimeIST": "2026-11-04 17:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "CRICFy LIVE",
+          "type": "0",
+          "link": "https://live.vivo155.com/live/hd-en-1-4621350.m3u8?txSecret=c36e19116a245a274b03d6bc38afb05a&txTime=6AEB0EB6",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14606",
       "title": "Pohang Steelers vs Gamba Osaka",
       "slug": "pohang-steelers-vs-gamba-osaka",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -90,7 +50,22 @@
         "startTimeIST": "2026-11-04 15:30:00 IST",
         "endTimeIST": "2026-11-04 17:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "CRICFy LIVE ",
+          "type": "0",
+          "link": "https://live.vivo155.com/live/hd-en-1-4621506.m3u8?txSecret=1a268250d7b49117021c378d986e778d&txTime=6AEB0B2B",
+          "api": ""
+        },
+        {
+          "id": 2,
+          "title": "HD SERVER",
+          "type": "0",
+          "link": "https://live2.jorvakstreamcache.com/live/channel6.m3u8?",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14607",
@@ -721,102 +696,11 @@
       ]
     },
     {
-      "id": "14009",
-      "title": "New Zealand vs India",
-      "slug": "new-zealand-vs-india",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "One Day International",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11190/image",
-        "teamA": "New Zealand",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/187755/image",
-        "teamB": "India",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/187765/image",
-        "startTimeIST": "2026-11-04 07:30:52 IST",
-        "endTimeIST": "2026-11-04 16:30:57 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "WILLOW - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/s3eotogzpl/out/v1/3a421da823214ef99571a137c1035f04/cenc.mpd",
-          "api": "7ef90352c28904be995275bc47f74c04:af5e36ddef7584474601c19b4ae5935a"
-        },
-        {
-          "id": 2,
-          "title": "PRIME ENG - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/xnz2tp3cz2/out/v1/57dea44e09564aa7b769ebdc51f9a42f/cenc.mpd",
-          "api": "db4b3e1da015cf0f03c2a5f4b9ee8433:964bab777741f2b59adedcbbcd463374"
-        },
-        {
-          "id": 3,
-          "title": "PRIME HINDI - AQ",
-          "type": "7",
-          "link": "https://otte.live.fly.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/ppmrp8tlzz/out/v1/cf829370483b4212ac7d5e3009c514b1/cenc.mpd",
-          "api": "952fb91696308da86bee7cd24edf0b58:bf359214ab3ac848738bdf014ace21b3"
-        },
-        {
-          "id": 4,
-          "title": "TNT SPORTS - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/puehlftk5j/out/v1/f7f0da1ee112481ca0024e6d4dd97f4a/cenc.mpd",
-          "api": "f3df7843080ae743bf865dc5fdf64c68:567c863bc12eb74788ea74888c042e1b"
-        },
-        {
-          "id": 5,
-          "title": "WILLOW - ALT",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/4dwybz2taj/out/v1/c90ad7bb77af498083f47bf86b7999b7/cenc.mpd",
-          "api": "6a028d5592b0e81f9c4fd4de4df6d5c7:9378d2ddd738b2d0b7a85ba65b643a7f"
-        },
-        {
-          "id": 6,
-          "title": "SonyLiv - English",
-          "type": "0",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119931/cricodi_0311/ENG/std_lrh-800300010.m3u8?hdnea=exp=1793796037~acl=/*~id=944eb554fe0d9d39204a057f1ae426e3-1793752837149~hmac=3f6ed50fb95858dc451bb75e5f83384c487dce331cf29ae361b3784bc545208d",
-          "api": ""
-        },
-        {
-          "id": 7,
-          "title": "SonyLiv - Hindi",
-          "type": "0",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119921/cricodi_0311/HIN/std_lrh-800300010.m3u8?hdnea=exp=1793796037~acl=/*~id=944eb554fe0d9d39204a057f1ae426e3-1793752837149~hmac=3f6ed50fb95858dc451bb75e5f83384c487dce331cf29ae361b3784bc545208d",
-          "api": ""
-        },
-        {
-          "id": 8,
-          "title": "SonyLiv - TEL",
-          "type": "0",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119941/cricodi_0311/TEL/std_lrh-800300010.m3u8?hdnea=exp=1793796155~acl=/*~id=9330fc4a2255cbf324394d7b5b191e90-1793752955164~hmac=1fd83137467b58c5eab840c4d951510eddecacd341e747518010c8de4e5e5aed",
-          "api": ""
-        },
-        {
-          "id": 9,
-          "title": "SonyLiv - TAM",
-          "type": "0",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119951/cricodi_0311/TAM/std_lrh-800300010.m3u8?hdnea=exp=1793796155~acl=/*~id=9330fc4a2255cbf324394d7b5b191e90-1793752955164~hmac=1fd83137467b58c5eab840c4d951510eddecacd341e747518010c8de4e5e5aed",
-          "api": ""
-        },
-        {
-          "id": 10,
-          "title": "SonyLiv - KAN",
-          "type": "0",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119782/cricodi_0311/KAN/std_lrh-800300010.m3u8?hdnea=exp=1793796155~acl=/*~id=9330fc4a2255cbf324394d7b5b191e90-1793752955164~hmac=1fd83137467b58c5eab840c4d951510eddecacd341e747518010c8de4e5e5aed",
-          "api": ""
-        }
-      ]
-    },
-    {
       "id": "14558",
       "title": "Hobart Hurricanes Women vs Melbourne Renegades Women",
       "slug": "hobart-hurricanes-women-vs-melbourne-renegades-women",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
@@ -832,9 +716,51 @@
       "streams": [
         {
           "id": 1,
-          "title": "CRICFy LIVE",
+          "title": "WILLOW - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/w6mcmg5vcu/out/v1/45db9febe2b64d59a5ecd2181616a9db/cenc.mpd",
+          "api": "c3bbeb16c18d825f04b51b17b67baf5a:f744722c08e3d13fecfa59de5436cce7"
+        },
+        {
+          "id": 2,
+          "title": "FANCODE - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/b3b3fkmrbl/out/v1/1084d5c9a97a4c5b9f9554c88f486646/cenc.mpd",
+          "api": "82dfca238e8c4b430a3269db71965db9:a00b28caf4ac628e77a553d440c0ddca"
+        },
+        {
+          "id": 3,
+          "title": "SKY CRICKET - AQ",
           "type": "0",
-          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+          "link": "https://bl.rutube.ru/livestream/7c13a51576b9ff2601f08f5d57dd5169/index.m3u8?s=uiXES2ePt7xTpQnbJxn7Dg&e=2074684474&scheme=https",
+          "api": ""
+        },
+        {
+          "id": 4,
+          "title": "WILLOW - ALT",
+          "type": "7",
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/w6mcmg5vcu/out/v1/45db9febe2b64d59a5ecd2181616a9db/cenc.mpd",
+          "api": "c3bbeb16c18d825f04b51b17b67baf5a:f744722c08e3d13fecfa59de5436cce7"
+        },
+        {
+          "id": 5,
+          "title": "EUROSPORTS - AQ",
+          "type": "7",
+          "link": "https://wbd.skandha.tv/EuroSport_HD/EuroSport_HD.isml/.mpd",
+          "api": "12ed56d780abcfebcd23aa27e4ac5015:6784567890abcfebcd23aa27e4ac2814"
+        },
+        {
+          "id": 6,
+          "title": "TAPMAD - AQ",
+          "type": "0",
+          "link": "https://tencent-cdn.tapmad.com/v1/01a14ab8af8915fc600b1e3e9683f0/01a14ab953dd1ea540a81c2b41b75f/main.m3u8",
+          "api": ""
+        },
+        {
+          "id": 7,
+          "title": "FANCODE - IN",
+          "type": "0",
+          "link": "https://dai-fancode.pages.dev/mumbai/4250395_english_hls_e4b3957daa9486_1ta-di_h264/index.m3u8",
           "api": ""
         }
       ]
@@ -1108,6 +1034,97 @@
           "title": "CRICFy LIVE",
           "type": "0",
           "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+          "api": ""
+        }
+      ]
+    },
+    {
+      "id": "14009",
+      "title": "New Zealand vs India",
+      "slug": "new-zealand-vs-india",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "One Day International",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11190/image",
+        "teamA": "New Zealand",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/187755/image",
+        "teamB": "India",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/187765/image",
+        "startTimeIST": "2026-11-07 07:30:51 IST",
+        "endTimeIST": "2026-11-07 16:30:55 IST"
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "PRIME ENG - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/xnz2tp3cz2/out/v1/57dea44e09564aa7b769ebdc51f9a42f/cenc.mpd",
+          "api": "db4b3e1da015cf0f03c2a5f4b9ee8433:964bab777741f2b59adedcbbcd463374"
+        },
+        {
+          "id": 2,
+          "title": "WILLOW - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/s3eotogzpl/out/v1/3a421da823214ef99571a137c1035f04/cenc.mpd",
+          "api": "7ef90352c28904be995275bc47f74c04:af5e36ddef7584474601c19b4ae5935a"
+        },
+        {
+          "id": 3,
+          "title": "PRIME HINDI - AQ",
+          "type": "7",
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/ppmrp8tlzz/out/v1/cf829370483b4212ac7d5e3009c514b1/cenc.mpd",
+          "api": "952fb91696308da86bee7cd24edf0b58:bf359214ab3ac848738bdf014ace21b3"
+        },
+        {
+          "id": 4,
+          "title": "TNT SPORTS - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/puehlftk5j/out/v1/f7f0da1ee112481ca0024e6d4dd97f4a/cenc.mpd",
+          "api": "f3df7843080ae743bf865dc5fdf64c68:567c863bc12eb74788ea74888c042e1b"
+        },
+        {
+          "id": 5,
+          "title": "WILLOW - ALT",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/4dwybz2taj/out/v1/c90ad7bb77af498083f47bf86b7999b7/cenc.mpd",
+          "api": "6a028d5592b0e81f9c4fd4de4df6d5c7:9378d2ddd738b2d0b7a85ba65b643a7f"
+        },
+        {
+          "id": 6,
+          "title": "SonyLiv - English",
+          "type": "0",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119931/cricodi_0311/ENG/std_lrh-800300010.m3u8?hdnea=exp=1793796037~acl=/*~id=944eb554fe0d9d39204a057f1ae426e3-1793752837149~hmac=3f6ed50fb95858dc451bb75e5f83384c487dce331cf29ae361b3784bc545208d",
+          "api": ""
+        },
+        {
+          "id": 7,
+          "title": "SonyLiv - Hindi",
+          "type": "0",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119921/cricodi_0311/HIN/std_lrh-800300010.m3u8?hdnea=exp=1793796037~acl=/*~id=944eb554fe0d9d39204a057f1ae426e3-1793752837149~hmac=3f6ed50fb95858dc451bb75e5f83384c487dce331cf29ae361b3784bc545208d",
+          "api": ""
+        },
+        {
+          "id": 8,
+          "title": "SonyLiv - TEL",
+          "type": "0",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119941/cricodi_0311/TEL/std_lrh-800300010.m3u8?hdnea=exp=1793796155~acl=/*~id=9330fc4a2255cbf324394d7b5b191e90-1793752955164~hmac=1fd83137467b58c5eab840c4d951510eddecacd341e747518010c8de4e5e5aed",
+          "api": ""
+        },
+        {
+          "id": 9,
+          "title": "SonyLiv - TAM",
+          "type": "0",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119951/cricodi_0311/TAM/std_lrh-800300010.m3u8?hdnea=exp=1793796155~acl=/*~id=9330fc4a2255cbf324394d7b5b191e90-1793752955164~hmac=1fd83137467b58c5eab840c4d951510eddecacd341e747518010c8de4e5e5aed",
+          "api": ""
+        },
+        {
+          "id": 10,
+          "title": "SonyLiv - KAN",
+          "type": "0",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119782/cricodi_0311/KAN/std_lrh-800300010.m3u8?hdnea=exp=1793796155~acl=/*~id=9330fc4a2255cbf324394d7b5b191e90-1793752955164~hmac=1fd83137467b58c5eab840c4d951510eddecacd341e747518010c8de4e5e5aed",
           "api": ""
         }
       ]

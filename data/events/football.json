@@ -1,61 +1,13 @@
 {
-  "last_updated": "11/4/2026, 8:11:21 AM IST",
+  "last_updated": "11/4/2026, 4:02:15 PM IST",
   "source": "AryanStreams Official Feed",
   "events": [
-    {
-      "id": "14573",
-      "title": "Internacional vs Coritiba",
-      "slug": "internacional-vs-coritiba",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "Campeonato Brasileiro Série A",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/325/image/dark",
-        "teamA": "Internacional",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/1966/image",
-        "teamB": "Coritiba",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/1982/image",
-        "startTimeIST": "2026-11-04 06:00:00 IST",
-        "endTimeIST": "2026-11-04 08:20:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "CRICFy LIVE",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/nelfyucw9a/out/v1/6ffb2c365ad14f88b154591beb43d1f6/cenc.mpd",
-          "api": "56b79c1782b30e6b6fc973b0e8fd4104:fa38aaa865a57eda7c77444697ba8ed3"
-        }
-      ]
-    },
-    {
-      "id": "14589",
-      "title": "Melbourne Victory vs Persib Bandung",
-      "slug": "melbourne-victory-vs-persib-bandung",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "AFC Champions League Two",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/668/image/dark",
-        "teamA": "Melbourne Victory",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/5970/image",
-        "teamB": "Persib Bandung",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/64289/image",
-        "startTimeIST": "2026-11-04 13:15:00 IST",
-        "endTimeIST": "2026-11-04 15:35:00 IST"
-      },
-      "streams": []
-    },
     {
       "id": "14590",
       "title": "FC Seoul vs The Cong - Viettel",
       "slug": "fc-seoul-vs-the-cong-viettel",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -68,14 +20,22 @@
         "startTimeIST": "2026-11-04 15:30:00 IST",
         "endTimeIST": "2026-11-04 17:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "CRICFy LIVE",
+          "type": "0",
+          "link": "https://live.vivo155.com/live/hd-en-1-4621350.m3u8?txSecret=c36e19116a245a274b03d6bc38afb05a&txTime=6AEB0EB6",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14606",
       "title": "Pohang Steelers vs Gamba Osaka",
       "slug": "pohang-steelers-vs-gamba-osaka",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -88,7 +48,22 @@
         "startTimeIST": "2026-11-04 15:30:00 IST",
         "endTimeIST": "2026-11-04 17:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "CRICFy LIVE ",
+          "type": "0",
+          "link": "https://live.vivo155.com/live/hd-en-1-4621506.m3u8?txSecret=1a268250d7b49117021c378d986e778d&txTime=6AEB0B2B",
+          "api": ""
+        },
+        {
+          "id": 2,
+          "title": "HD SERVER",
+          "type": "0",
+          "link": "https://live2.jorvakstreamcache.com/live/channel6.m3u8?",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14607",
