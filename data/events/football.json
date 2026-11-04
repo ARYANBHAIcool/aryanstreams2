@@ -1,513 +1,13 @@
 {
-  "last_updated": "11/4/2026, 11:43:25 PM IST",
+  "last_updated": "11/5/2026, 5:15:45 AM IST",
   "source": "AryanStreams Official Feed",
   "events": [
-    {
-      "id": "14549",
-      "title": "AEK Athens vs Real Madrid",
-      "slug": "aek-athens-vs-real-madrid",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "UEFA Champions League",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/7/image/dark",
-        "teamA": "AEK Athens",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/3250/image",
-        "teamB": "Real Madrid",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2829/image",
-        "startTimeIST": "2026-11-04 23:15:00 IST",
-        "endTimeIST": "2026-11-05 01:35:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "PARAMOUNT+ - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/failbdta50/out/v1/41a2b450ebe846d08a00e84663f9b324/cenc.mpd",
-          "api": "3513dd3c560190e3d442208dd4dca9dd:108531e39fdc0a80f2f990776e7037f3"
-        },
-        {
-          "id": 2,
-          "title": "TNT SPORTS - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/dev1hjwzh9/out/v1/a5f0ee7ad7b24906b14f43bebbbe4678/cenc.mpd",
-          "api": "cc91508324ce9dcaf425a43d58f1d9d4:643e5474d9edd87c7d9091c8c97994ca"
-        },
-        {
-          "id": 3,
-          "title": "SonyLiv PRIME - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/mdwszwnwl8/out/v1/7dae84dc172a435798fab72a8cd99828/cenc.mpd",
-          "api": "e9aa556dbdf0cba2f898cbcc26e2ae0e:e5e197eabb61007501d905521fa620d0"
-        },
-        {
-          "id": 4,
-          "title": "VIX SPANISH - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/bvddkqdcbo/out/v1/d2f281563daa4c8da8e2fd168552b757/cenc.mpd",
-          "api": "8423baa4631c12837510e853dcad96d6:1032cc040f378fdcec68c45ccbdb7215"
-        },
-        {
-          "id": 5,
-          "title": "DAZN DE - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/sgxlaurrkw/out/v1/c3f667057bc84a78b2df646b097fb1eb/cenc.mpd",
-          "api": "104827754710be1bfac19b2433cf6846:9f57ccbf41f5cb5fdcf0deb2b41509b0"
-        },
-        {
-          "id": 6,
-          "title": "HBO MAX BR - AQ",
-          "type": "7",
-          "link": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/gwhjevq6ar/out/v1/bf0c281f2dba46cb87434d45ed13003f/cenc.mpd",
-          "api": "83a4bc2c011e2c72b35b7b5f2d35560d:01bd0115c83d3493449181ba68998ab1"
-        },
-        {
-          "id": 7,
-          "title": "PARAMOUNT+ HD",
-          "type": "0",
-          "link": "https://chatgpt.hereisman.net/playlist/59240/load-playlist-multi?",
-          "api": ""
-        },
-        {
-          "id": 8,
-          "title": "CRICFy LIVE ",
-          "type": "0",
-          "link": "https://live.vivo155.com/live/hd-en-1-4628355.m3u8?txSecret=3dcd0c201d18a153b6e2d1e96e238ed8&txTime=6AEB829A",
-          "api": ""
-        },
-        {
-          "id": 9,
-          "title": "SonyLiv - ENG",
-          "type": "0",
-          "link": "https://sonymtmnew-akamaized.pages.dev/hls/live/2120305/Footlive0411/ENG/std_lrh-800300010.m3u8",
-          "api": ""
-        },
-        {
-          "id": 10,
-          "title": "SonyLiv - HIN",
-          "type": "0",
-          "link": "https://sonymtmnew-akamaized.pages.dev/hls/live/2120306/Footlive0411/HIN/std_lrh-800300010.m3u8",
-          "api": ""
-        },
-        {
-          "id": 11,
-          "title": "SonyLiv - TAM",
-          "type": "0",
-          "link": "https://sonymtmnew-akamaized.pages.dev/hls/live/2120302/Footlive0411/TAM/std_lrh-800300010.m3u8",
-          "api": ""
-        },
-        {
-          "id": 12,
-          "title": "SonyLiv - TEL",
-          "type": "0",
-          "link": "https://sonymtmnew-akamaized.pages.dev/hls/live/2120300/Footlive0411/TEL/std_lrh-800300010.m3u8",
-          "api": ""
-        },
-        {
-          "id": 13,
-          "title": "SonyLiv - KAN",
-          "type": "0",
-          "link": "https://sonymtmnew-akamaized.pages.dev/hls/live/2120307/Footlive0411/KAN/std_lrh-800300010.m3u8",
-          "api": ""
-        },
-        {
-          "id": 14,
-          "title": "HD SERVER ",
-          "type": "0",
-          "link": "https://www.rtmpcdn.com/live/ab49663e-0171-4576-bfe0-f3ef3215b513.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": "14550",
-      "title": "Fenerbahce vs Liverpool FC",
-      "slug": "fenerbahce-vs-liverpool-fc",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "UEFA Champions League",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/7/image/dark",
-        "teamA": "Fenerbahçe",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/3052/image",
-        "teamB": "Liverpool FC",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/44/image",
-        "startTimeIST": "2026-11-04 23:15:00 IST",
-        "endTimeIST": "2026-11-05 01:35:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "PARAMOUNT+ - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/finodo98vw/out/v1/0bba03d3a8594cd6bfe409ec5ecf1114/cenc.mpd",
-          "api": "368bdc08268c3e679d53a4b94964a911:a88f47b574b27e32d186ce686b45f9a5"
-        },
-        {
-          "id": 2,
-          "title": "TNT SPORTS - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/rhf2dwosdt/out/v1/ee550d2a68d846c797e6ce4de2e8b76d/cenc.mpd",
-          "api": "69a5aa835a061ce64a630d1046727e40:d02feac8a999bd06bf4059bf33411749"
-        },
-        {
-          "id": 3,
-          "title": "SonyLiv PRIME - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/hve6te3gra/out/v1/c852d0c20b0c4009a6320557da063330/cenc.mpd",
-          "api": "196d7adbb90349cc7b8fa41a4205a287:56e77fe45183734a76ab51d67efefa96"
-        },
-        {
-          "id": 4,
-          "title": "VIX SPANISH - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/lho2ni3olb/out/v1/d7683dec68ba4f86bfa5ddf4bd842020/cenc.mpd",
-          "api": "2453950127dfcbf10a57b540a2691b1e:4eb4220aeb59cb8ca47c0bbd3cac9e6e"
-        },
-        {
-          "id": 5,
-          "title": "DAZN DE - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/m4hzilar79/out/v1/89daf1d02da540d79fad24952ec7a8df/cenc.mpd",
-          "api": "d8102ff81175e6be48e14f62803ba7d5:7933876f7d2d1bcb66f43030e1ad926c"
-        },
-        {
-          "id": 6,
-          "title": "HBO MAX BR - AQ",
-          "type": "7",
-          "link": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/m0dk7evbbv/out/v1/2280611214d549bab3108a7ec929c99a/cenc.mpd",
-          "api": "09a695c21528e0853371b882814c3aac:805bb374cfeebf82408b6850ecda7d14"
-        },
-        {
-          "id": 7,
-          "title": "PARAMOUNT+ HD",
-          "type": "0",
-          "link": "https://chatgpt.hereisman.net/playlist/59241/load-playlist-multi?",
-          "api": ""
-        },
-        {
-          "id": 8,
-          "title": "beIN SPORTS - AQ",
-          "type": "0",
-          "link": "https://live-cdn.ryazanslah3.space/hls/bein2.m3u8?",
-          "api": ""
-        },
-        {
-          "id": 9,
-          "title": "CRICFy LIVE ",
-          "type": "0",
-          "link": "https://live.vivo155.com/live/hd-en-1-4628424.m3u8?txSecret=2a4f45736a005bef6796b7fd6aae6ccd&txTime=6AEB82CD",
-          "api": ""
-        },
-        {
-          "id": 10,
-          "title": "SonyLiv ",
-          "type": "0",
-          "link": "https://sonymtmnew-akamaized.pages.dev/hls/live/2022316/Footlive0411/ENG/std_lrh-800300010.m3u8",
-          "api": ""
-        },
-        {
-          "id": 11,
-          "title": "HD SERVER ",
-          "type": "0",
-          "link": "https://www.rtmpcdn.com/live/e7ccc407-251f-432b-a8c4-c5e352c045a1.m3u8",
-          "api": ""
-        },
-        {
-          "id": 12,
-          "title": "CRICFy FAST",
-          "type": "0",
-          "link": "https://live.uu1pp.com/sport/202_5738820_1.m3u8?txSecret=f91acbf43a64e2a1a4383d7e6da9421c&txTime=6AEBB7BD",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": "14602",
-      "title": "Cardiff City vs West Ham United",
-      "slug": "cardiff-city-vs-west-ham-united",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "Championship",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18/image/dark",
-        "teamA": "Cardiff City",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/61/image",
-        "teamB": "West Ham United",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/37/image",
-        "startTimeIST": "2026-11-05 01:15:00 IST",
-        "endTimeIST": "2026-11-05 03:35:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14603",
-      "title": "Wrexham vs Middlesbrough",
-      "slug": "wrexham-vs-middlesbrough",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "Championship",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18/image/dark",
-        "teamA": "Wrexham",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/64/image",
-        "teamB": "Middlesbrough",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/36/image",
-        "startTimeIST": "2026-11-05 01:15:00 IST",
-        "endTimeIST": "2026-11-05 03:35:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14605",
-      "title": "Oxford United vs Reading",
-      "slug": "oxford-united-vs-reading",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "League One",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/24/image/dark",
-        "teamA": "Oxford United",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/95/image",
-        "teamB": "Reading",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/28/image",
-        "startTimeIST": "2026-11-05 01:15:00 IST",
-        "endTimeIST": "2026-11-05 03:35:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14551",
-      "title": "Borussia Dortmund vs Real Betis",
-      "slug": "borussia-dortmund-vs-real-betis",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "UEFA Champions League",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/7/image/dark",
-        "teamA": "Borussia Dortmund",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2673/image",
-        "teamB": "Real Betis",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2816/image",
-        "startTimeIST": "2026-11-05 01:30:00 IST",
-        "endTimeIST": "2026-11-05 03:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "CRICFy LIVE",
-          "type": "0",
-          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": "14552",
-      "title": "FC Porto vs SSC Napoli",
-      "slug": "fc-porto-vs-ssc-napoli",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "UEFA Champions League",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/7/image/dark",
-        "teamA": "FC Porto",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/3002/image",
-        "teamB": "SSC Napoli",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2714/image",
-        "startTimeIST": "2026-11-05 01:30:00 IST",
-        "endTimeIST": "2026-11-05 03:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "CRICFy LIVE",
-          "type": "0",
-          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": "14553",
-      "title": "RC Lens vs Como",
-      "slug": "rc-lens-vs-como",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "UEFA Champions League",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/7/image/dark",
-        "teamA": "RC Lens",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/1648/image",
-        "teamB": "Como",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2704/image",
-        "startTimeIST": "2026-11-05 01:30:00 IST",
-        "endTimeIST": "2026-11-05 03:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "CRICFy LIVE",
-          "type": "0",
-          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": "14554",
-      "title": "PSV Eindhoven vs Club Brugge KV",
-      "slug": "psv-eindhoven-vs-club-brugge-kv",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "UEFA Champions League",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/7/image/dark",
-        "teamA": "PSV Eindhoven",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2952/image",
-        "teamB": "Club Brugge KV",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2888/image",
-        "startTimeIST": "2026-11-05 01:30:00 IST",
-        "endTimeIST": "2026-11-05 03:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "CRICFy LIVE",
-          "type": "0",
-          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": "14555",
-      "title": "RB Leipzig vs Manchester City",
-      "slug": "rb-leipzig-vs-manchester-city",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "UEFA Champions League",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/7/image/dark",
-        "teamA": "RB Leipzig",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/36360/image",
-        "teamB": "Manchester City",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/17/image",
-        "startTimeIST": "2026-11-05 01:30:00 IST",
-        "endTimeIST": "2026-11-05 03:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "CRICFy LIVE",
-          "type": "0",
-          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": "14556",
-      "title": "SK Slavia Praha vs Arsenal",
-      "slug": "sk-slavia-praha-vs-arsenal",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "UEFA Champions League",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/7/image/dark",
-        "teamA": "SK Slavia Praha",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2216/image",
-        "teamB": "Arsenal",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/42/image",
-        "startTimeIST": "2026-11-05 01:30:00 IST",
-        "endTimeIST": "2026-11-05 03:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "CRICFy LIVE",
-          "type": "0",
-          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": "14557",
-      "title": "Viking FK vs Sabah FK",
-      "slug": "viking-fk-vs-sabah-fk",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "UEFA Champions League",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/7/image/dark",
-        "teamA": "Viking FK",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/1164/image",
-        "teamB": "Sabah FK",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/267828/image",
-        "startTimeIST": "2026-11-05 01:30:00 IST",
-        "endTimeIST": "2026-11-05 03:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "CRICFy LIVE",
-          "type": "0",
-          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": "14604",
-      "title": "Bristol City vs Wolverhampton",
-      "slug": "bristol-city-vs-wolverhampton",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "Championship",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18/image/dark",
-        "teamA": "Bristol City",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/58/image",
-        "teamB": "Wolverhampton",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/3/image",
-        "startTimeIST": "2026-11-05 01:30:00 IST",
-        "endTimeIST": "2026-11-05 03:50:00 IST"
-      },
-      "streams": []
-    },
     {
       "id": "14598",
       "title": "Athletico vs Vasco da Gama",
       "slug": "athletico-vs-vasco-da-gama",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -520,14 +20,22 @@
         "startTimeIST": "2026-11-05 04:00:00 IST",
         "endTimeIST": "2026-11-05 06:20:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "PREMIERE BR - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/1obktrybht/out/v1/08265453c8f64d9fbeb3cf43764403a8/cenc.mpd",
+          "api": "332f62eb3cae824e98a4124da29a7d31:d1698cda3d040f9051125a61745b596b"
+        }
+      ]
     },
     {
       "id": "14599",
       "title": "Flamengo vs Gremio",
       "slug": "flamengo-vs-gremio",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -540,7 +48,15 @@
         "startTimeIST": "2026-11-05 04:00:00 IST",
         "endTimeIST": "2026-11-05 06:20:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "CRICFy LIVE",
+          "type": "0",
+          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14600",
@@ -560,7 +76,15 @@
         "startTimeIST": "2026-11-05 06:00:00 IST",
         "endTimeIST": "2026-11-05 08:20:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "PREMIERE BR - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/oy6rp0jwmf/out/v1/580ecf12bad24979baf8dd993dce053e/cenc.mpd",
+          "api": "9dc40460c93087aea84d6315f08ecb64:f69c8d4624fddff4ca89bd0b31bdc4a7"
+        }
+      ]
     },
     {
       "id": "14601",
@@ -580,7 +104,22 @@
         "startTimeIST": "2026-11-05 06:00:00 IST",
         "endTimeIST": "2026-11-05 08:20:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "PREMIER SPORTS - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/bcj3iscpd6/out/v1/fcd137b391214f7cb99dd4d7be90ca87/cenc.mpd",
+          "api": "1a5df53609ebc9857898c490f4724918:77f62980d582ec541280796acf8b2d19"
+        },
+        {
+          "id": 2,
+          "title": "PREMIERE BR - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/tirjor64kh/out/v1/fd2ed9916d994f09a3bd62b64141b9cb/cenc.mpd",
+          "api": "e23365c2ad97870c871712b73f0d6195:58709c714320bb862dbd07270df81c94"
+        }
+      ]
     },
     {
       "id": "14583",
@@ -637,6 +176,706 @@
           "api": ""
         }
       ]
+    },
+    {
+      "id": "14626",
+      "title": "AC Milan vs Ferencvaros TC",
+      "slug": "ac-milan-vs-ferencvaros-tc",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Europa League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/679/image/dark",
+        "teamA": "AC Milan",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2692/image",
+        "teamB": "Ferencváros TC",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/1925/image",
+        "startTimeIST": "2026-11-05 23:15:00 IST",
+        "endTimeIST": "2026-11-06 01:35:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14627",
+      "title": "RSC Anderlecht vs Red Bull Salzburg",
+      "slug": "rsc-anderlecht-vs-red-bull-salzburg",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Europa League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/679/image/dark",
+        "teamA": "RSC Anderlecht",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2900/image",
+        "teamB": "Red Bull Salzburg",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2046/image",
+        "startTimeIST": "2026-11-05 23:15:00 IST",
+        "endTimeIST": "2026-11-06 01:35:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14628",
+      "title": "Crystal Palace vs TSG Hoffenheim",
+      "slug": "crystal-palace-vs-tsg-hoffenheim",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Europa League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/679/image/dark",
+        "teamA": "Crystal Palace",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/7/image",
+        "teamB": "TSG Hoffenheim",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2569/image",
+        "startTimeIST": "2026-11-05 23:15:00 IST",
+        "endTimeIST": "2026-11-06 01:35:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14629",
+      "title": "Levski Sofia vs Jagiellonia Biaystok",
+      "slug": "levski-sofia-vs-jagiellonia-biaystok",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Europa League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/679/image/dark",
+        "teamA": "Levski Sofia",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/3273/image",
+        "teamB": "Jagiellonia Białystok",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/7691/image",
+        "startTimeIST": "2026-11-05 23:15:00 IST",
+        "endTimeIST": "2026-11-06 01:35:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14630",
+      "title": "Lillestrm SK vs FC Viktoria Plzen",
+      "slug": "lillestrm-sk-vs-fc-viktoria-plzen",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Europa League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/679/image/dark",
+        "teamA": "Lillestrøm SK",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/664/image",
+        "teamB": "FC Viktoria Plzeň",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4502/image",
+        "startTimeIST": "2026-11-05 23:15:00 IST",
+        "endTimeIST": "2026-11-06 01:35:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14631",
+      "title": "NEC Nijmegen vs Omonia Nicosia",
+      "slug": "nec-nijmegen-vs-omonia-nicosia",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Europa League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/679/image/dark",
+        "teamA": "NEC Nijmegen",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2962/image",
+        "teamB": "Omonia Nicosia",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/3395/image",
+        "startTimeIST": "2026-11-05 23:15:00 IST",
+        "endTimeIST": "2026-11-06 01:35:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14632",
+      "title": "Real Sociedad vs Olympique Lyonnais",
+      "slug": "real-sociedad-vs-olympique-lyonnais",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Europa League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/679/image/dark",
+        "teamA": "Real Sociedad",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2824/image",
+        "teamB": "Olympique Lyonnais",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/1649/image",
+        "startTimeIST": "2026-11-05 23:15:00 IST",
+        "endTimeIST": "2026-11-06 01:35:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14633",
+      "title": "AC Sparta Praha vs Bournemouth",
+      "slug": "ac-sparta-praha-vs-bournemouth",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Europa League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/679/image/dark",
+        "teamA": "AC Sparta Praha",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2218/image",
+        "teamB": "Bournemouth",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/60/image",
+        "startTimeIST": "2026-11-05 23:15:00 IST",
+        "endTimeIST": "2026-11-06 01:35:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14643",
+      "title": "AGF vs Sporting Braga",
+      "slug": "agf-vs-sporting-braga",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Conference League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/17015/image/dark",
+        "teamA": "AGF",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/1291/image",
+        "teamB": "Sporting Braga",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2999/image",
+        "startTimeIST": "2026-11-05 23:15:00 IST",
+        "endTimeIST": "2026-11-06 01:35:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14644",
+      "title": "Atalanta vs FC Kairat Almaty",
+      "slug": "atalanta-vs-fc-kairat-almaty",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Conference League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/17015/image/dark",
+        "teamA": "Atalanta",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2686/image",
+        "teamB": "FC Kairat Almaty",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/5172/image",
+        "startTimeIST": "2026-11-05 23:15:00 IST",
+        "endTimeIST": "2026-11-06 01:35:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14645",
+      "title": "FC Midtjylland vs AFC Ajax",
+      "slug": "fc-midtjylland-vs-afc-ajax",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Conference League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/17015/image/dark",
+        "teamA": "FC Midtjylland",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/1289/image",
+        "teamB": "AFC Ajax",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2953/image",
+        "startTimeIST": "2026-11-05 23:15:00 IST",
+        "endTimeIST": "2026-11-06 01:35:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14646",
+      "title": "FK Crvena zvezda vs Inter Club dEscaldes",
+      "slug": "fk-crvena-zvezda-vs-inter-club-descaldes",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Conference League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/17015/image/dark",
+        "teamA": "FK Crvena zvezda",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/5149/image",
+        "teamB": "Inter Club d'Escaldes",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/37946/image",
+        "startTimeIST": "2026-11-05 23:15:00 IST",
+        "endTimeIST": "2026-11-06 01:35:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14647",
+      "title": "Kuopion Palloseura vs KAA Gent",
+      "slug": "kuopion-palloseura-vs-kaa-gent",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Conference League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/17015/image/dark",
+        "teamA": "Kuopion Palloseura",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2244/image",
+        "teamB": "KAA Gent",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2903/image",
+        "startTimeIST": "2026-11-05 23:15:00 IST",
+        "endTimeIST": "2026-11-06 01:35:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14648",
+      "title": "Lincoln Red Imps vs HNK Hajduk Split",
+      "slug": "lincoln-red-imps-vs-hnk-hajduk-split",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Conference League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/17015/image/dark",
+        "teamA": "Lincoln Red Imps",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/126304/image",
+        "teamB": "HNK Hajduk Split",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2036/image",
+        "startTimeIST": "2026-11-05 23:15:00 IST",
+        "endTimeIST": "2026-11-06 01:35:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14649",
+      "title": "Mjallby AIF vs FK Borac Banja Luka",
+      "slug": "mjallby-aif-vs-fk-borac-banja-luka",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Conference League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/17015/image/dark",
+        "teamA": "Mjällby AIF",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/1783/image",
+        "teamB": "FK Borac Banja Luka",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/5235/image",
+        "startTimeIST": "2026-11-05 23:15:00 IST",
+        "endTimeIST": "2026-11-06 01:35:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14650",
+      "title": "FC Thun vs Heart of Midlothian",
+      "slug": "fc-thun-vs-heart-of-midlothian",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Conference League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/17015/image/dark",
+        "teamA": "FC Thun",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2454/image",
+        "teamB": "Heart of Midlothian",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2353/image",
+        "startTimeIST": "2026-11-05 23:15:00 IST",
+        "endTimeIST": "2026-11-06 01:35:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14651",
+      "title": "Trabzonspor vs SC Freiburg",
+      "slug": "trabzonspor-vs-sc-freiburg",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Conference League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/17015/image/dark",
+        "teamA": "Trabzonspor",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/3051/image",
+        "teamB": "SC Freiburg",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2538/image",
+        "startTimeIST": "2026-11-05 23:15:00 IST",
+        "endTimeIST": "2026-11-06 01:35:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14634",
+      "title": "AZ Alkmaar vs Juventus",
+      "slug": "az-alkmaar-vs-juventus",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Europa League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/679/image/dark",
+        "teamA": "AZ Alkmaar",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2950/image",
+        "teamB": "Juventus",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2687/image",
+        "startTimeIST": "2026-11-06 01:30:00 IST",
+        "endTimeIST": "2026-11-06 03:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14635",
+      "title": "Bayer 04 Leverkusen vs Olympique de Marseille",
+      "slug": "bayer-04-leverkusen-vs-olympique-de-marseille",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Europa League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/679/image/dark",
+        "teamA": "Bayer 04 Leverkusen",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2681/image",
+        "teamB": "Olympique de Marseille",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/1641/image",
+        "startTimeIST": "2026-11-06 01:30:00 IST",
+        "endTimeIST": "2026-11-06 03:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14636",
+      "title": "Benfica vs Lech Poznan",
+      "slug": "benfica-vs-lech-poznan",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Europa League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/679/image/dark",
+        "teamA": "Benfica",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/3006/image",
+        "teamB": "Lech Poznań",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/3121/image",
+        "startTimeIST": "2026-11-06 01:30:00 IST",
+        "endTimeIST": "2026-11-06 03:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14637",
+      "title": "Celta Vigo vs Royale Union Saint-Gilloise",
+      "slug": "celta-vigo-vs-royale-union-saint-gilloise",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Europa League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/679/image/dark",
+        "teamA": "Celta Vigo",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2821/image",
+        "teamB": "Royale Union Saint-Gilloise",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4860/image",
+        "startTimeIST": "2026-11-06 01:30:00 IST",
+        "endTimeIST": "2026-11-06 03:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14638",
+      "title": "Hapoel Beer Sheva vs OFI Crete",
+      "slug": "hapoel-beer-sheva-vs-ofi-crete",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Europa League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/679/image/dark",
+        "teamA": "Hapoel Be'er Sheva",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/5202/image",
+        "teamB": "OFI Crete",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/3241/image",
+        "startTimeIST": "2026-11-06 01:30:00 IST",
+        "endTimeIST": "2026-11-06 03:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14639",
+      "title": "Celtic vs Besiktas JK",
+      "slug": "celtic-vs-besiktas-jk",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Europa League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/679/image/dark",
+        "teamA": "Celtic",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2352/image",
+        "teamB": "Beşiktaş JK",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/3050/image",
+        "startTimeIST": "2026-11-06 01:30:00 IST",
+        "endTimeIST": "2026-11-06 03:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14640",
+      "title": "SK Sturm Graz vs NK Celje",
+      "slug": "sk-sturm-graz-vs-nk-celje",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Europa League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/679/image/dark",
+        "teamA": "SK Sturm Graz",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2051/image",
+        "teamB": "NK Celje",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2413/image",
+        "startTimeIST": "2026-11-06 01:30:00 IST",
+        "endTimeIST": "2026-11-06 03:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14641",
+      "title": "Sunderland vs GNK Dinamo Zagreb",
+      "slug": "sunderland-vs-gnk-dinamo-zagreb",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Europa League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/679/image/dark",
+        "teamA": "Sunderland",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/41/image",
+        "teamB": "GNK Dinamo Zagreb",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2032/image",
+        "startTimeIST": "2026-11-06 01:30:00 IST",
+        "endTimeIST": "2026-11-06 03:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14642",
+      "title": "Torreense vs FC Ararat-Armenia",
+      "slug": "torreense-vs-fc-ararat-armenia",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Europa League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/679/image/dark",
+        "teamA": "Torreense",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/25787/image",
+        "teamB": "FC Ararat-Armenia",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/262229/image",
+        "startTimeIST": "2026-11-06 01:30:00 IST",
+        "endTimeIST": "2026-11-06 03:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14652",
+      "title": "FC Kbenhavn vs FC Iberia 1999",
+      "slug": "fc-kbenhavn-vs-fc-iberia-1999",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Conference League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/17015/image/dark",
+        "teamA": "FC København",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/1284/image",
+        "teamB": "FC Iberia 1999",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/116312/image",
+        "startTimeIST": "2026-11-06 01:30:00 IST",
+        "endTimeIST": "2026-11-06 03:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14653",
+      "title": "FC Twente vs Pafos FC",
+      "slug": "fc-twente-vs-pafos-fc",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Conference League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/17015/image/dark",
+        "teamA": "FC Twente",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2955/image",
+        "teamB": "Pafos FC",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/171626/image",
+        "startTimeIST": "2026-11-06 01:30:00 IST",
+        "endTimeIST": "2026-11-06 03:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14654",
+      "title": "Getafe vs Brighton Hove Albion",
+      "slug": "getafe-vs-brighton-hove-albion",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Conference League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/17015/image/dark",
+        "teamA": "Getafe",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2859/image",
+        "teamB": "Brighton & Hove Albion",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/30/image",
+        "startTimeIST": "2026-11-06 01:30:00 IST",
+        "endTimeIST": "2026-11-06 03:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14655",
+      "title": "FC Lugano vs FK Kauno Zalgiris",
+      "slug": "fc-lugano-vs-fk-kauno-zalgiris",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Conference League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/17015/image/dark",
+        "teamA": "FC Lugano",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2443/image",
+        "teamB": "FK Kauno Žalgiris",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/80741/image",
+        "startTimeIST": "2026-11-06 01:30:00 IST",
+        "endTimeIST": "2026-11-06 03:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14656",
+      "title": "AS Monaco vs FC Nordsjlland",
+      "slug": "as-monaco-vs-fc-nordsjlland",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Conference League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/17015/image/dark",
+        "teamA": "AS Monaco",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/1653/image",
+        "teamB": "FC Nordsjælland",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/1292/image",
+        "startTimeIST": "2026-11-06 01:30:00 IST",
+        "endTimeIST": "2026-11-06 03:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14657",
+      "title": "Panathinaikos FC vs CSKA Sofia",
+      "slug": "panathinaikos-fc-vs-cska-sofia",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Conference League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/17015/image/dark",
+        "teamA": "Panathinaikos FC",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/3248/image",
+        "teamB": "CSKA Sofia",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/3275/image",
+        "startTimeIST": "2026-11-06 01:30:00 IST",
+        "endTimeIST": "2026-11-06 03:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14658",
+      "title": "Riga FC vs FK Jablonec",
+      "slug": "riga-fc-vs-fk-jablonec",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Conference League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/17015/image/dark",
+        "teamA": "Riga FC",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/162368/image",
+        "teamB": "FK Jablonec",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2205/image",
+        "startTimeIST": "2026-11-06 01:30:00 IST",
+        "endTimeIST": "2026-11-06 03:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14659",
+      "title": "Sint-Truidense VV vs SK Brann",
+      "slug": "sint-truidense-vv-vs-sk-brann",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Conference League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/17015/image/dark",
+        "teamA": "Sint-Truidense VV",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2895/image",
+        "teamB": "SK Brann",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/1159/image",
+        "startTimeIST": "2026-11-06 01:30:00 IST",
+        "endTimeIST": "2026-11-06 03:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14660",
+      "title": "Universitatea Craiova vs KF Egnatia",
+      "slug": "universitatea-craiova-vs-kf-egnatia",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Conference League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/17015/image/dark",
+        "teamA": "Universitatea Craiova",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/116223/image",
+        "teamB": "KF Egnatia",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/264619/image",
+        "startTimeIST": "2026-11-06 01:30:00 IST",
+        "endTimeIST": "2026-11-06 03:50:00 IST"
+      },
+      "streams": []
     }
   ]
 }
