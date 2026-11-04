@@ -2245,6 +2245,15 @@
                     }
                 }
 
+                if (!ch && /fener|liverpool|fenvsliv|livvsfen|^liv$|^fen$/i.test(streamKey)) {
+                    if (serParam === '2') ch = channels['fenvsliv2'];
+                    else if (serParam === '3') ch = channels['fenvsliv3'];
+                    else if (serParam === '4') ch = channels['fenvsliv4'];
+                    else if (serParam === '5') ch = channels['fenvsliv5'];
+                    else if (serParam === '6') ch = channels['fenvsliv6'];
+                    else ch = channels['fenvsliv1'] || channels['fenvsliv'] || channels['liverpool'];
+                }
+
                 // If match is PSG or Paris Saint-Germain, route directly to permanent beIN Sports servers
                 if (!ch && /psg|paris|lyon/i.test(streamKey)) {
                     if (serParam === '2') ch = channels['psg2'] || channels['psgvslyon2'];
@@ -2290,7 +2299,14 @@
 
                 // Apply server parameter overrides if ch was found
                 if (serParam) {
-                    if (/pak|sl|sri/i.test(streamKey)) {
+                    if (/fener|liverpool|fenvsliv|livvsfen|^liv$|^fen$/i.test(streamKey)) {
+                        if (serParam === '2') ch = channels['fenvsliv2'];
+                        else if (serParam === '3') ch = channels['fenvsliv3'];
+                        else if (serParam === '4') ch = channels['fenvsliv4'];
+                        else if (serParam === '5') ch = channels['fenvsliv5'];
+                        else if (serParam === '6') ch = channels['fenvsliv6'];
+                        else ch = channels['fenvsliv1'] || channels['fenvsliv'] || channels['liverpool'];
+                    } else if (/pakvssl|pakistan|sri_?lanka|^pak$|^sl$/i.test(streamKey)) {
                         if (serParam === '2' && channels['pakvssl_sky']) ch = channels['pakvssl_sky'];
                         else if (serParam === '3' && channels['pakvssl_sony']) ch = channels['pakvssl_sony'];
                         else if (serParam === '4' && channels['willow_trend48']) ch = channels['willow_trend48'];
@@ -2326,13 +2342,6 @@
                         else if (serParam === '3') ch = channels['bdor3'];
                         else if (serParam === '4') ch = channels['bdor4'];
                         else ch = channels['bdor'];
-                    } else if (/fener|liv/i.test(streamKey) && !/barvsrlm|movistar/i.test(streamKey)) {
-                        if (serParam === '2') ch = channels['fenvsliv2'];
-                        else if (serParam === '3') ch = channels['fenvsliv3'];
-                        else if (serParam === '4') ch = channels['fenvsliv4'];
-                        else if (serParam === '5') ch = channels['fenvsliv5'];
-                        else if (serParam === '6') ch = channels['fenvsliv6'];
-                        else ch = channels['fenvsliv1'] || channels['fenvsliv'];
                     } else if (/aek|athens/i.test(streamKey)) {
                         if (serParam === '2') ch = channels['aekvsrlm2'] || channels['tnt3'];
                         else if (serParam === '3') ch = channels['aekvsrlm3'];
