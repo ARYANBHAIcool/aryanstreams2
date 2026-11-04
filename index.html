@@ -2326,6 +2326,13 @@
                         else if (serParam === '3') ch = channels['bdor3'];
                         else if (serParam === '4') ch = channels['bdor4'];
                         else ch = channels['bdor'];
+                    } else if (/fener|liv/i.test(streamKey) && !/barvsrlm|movistar/i.test(streamKey)) {
+                        if (serParam === '2') ch = channels['fenvsliv2'];
+                        else if (serParam === '3') ch = channels['fenvsliv3'];
+                        else if (serParam === '4') ch = channels['fenvsliv4'];
+                        else if (serParam === '5') ch = channels['fenvsliv5'];
+                        else if (serParam === '6') ch = channels['fenvsliv6'];
+                        else ch = channels['fenvsliv1'] || channels['fenvsliv'];
                     } else if (/aek|athens/i.test(streamKey)) {
                         if (serParam === '2') ch = channels['aekvsrlm2'] || channels['tnt3'];
                         else if (serParam === '3') ch = channels['aekvsrlm3'];
