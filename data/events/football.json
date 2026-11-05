@@ -1,126 +1,7 @@
 {
-  "last_updated": "11/5/2026, 5:15:45 AM IST",
+  "last_updated": "11/5/2026, 10:56:42 AM IST",
   "source": "AryanStreams Official Feed",
   "events": [
-    {
-      "id": "14598",
-      "title": "Athletico vs Vasco da Gama",
-      "slug": "athletico-vs-vasco-da-gama",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "Campeonato Brasileiro Série A",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/325/image/dark",
-        "teamA": "Athletico",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/1967/image",
-        "teamB": "Vasco da Gama",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/1974/image",
-        "startTimeIST": "2026-11-05 04:00:00 IST",
-        "endTimeIST": "2026-11-05 06:20:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "PREMIERE BR - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/1obktrybht/out/v1/08265453c8f64d9fbeb3cf43764403a8/cenc.mpd",
-          "api": "332f62eb3cae824e98a4124da29a7d31:d1698cda3d040f9051125a61745b596b"
-        }
-      ]
-    },
-    {
-      "id": "14599",
-      "title": "Flamengo vs Gremio",
-      "slug": "flamengo-vs-gremio",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "Campeonato Brasileiro Série A",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/325/image/dark",
-        "teamA": "Flamengo",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/5981/image",
-        "teamB": "Grêmio",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/5926/image",
-        "startTimeIST": "2026-11-05 04:00:00 IST",
-        "endTimeIST": "2026-11-05 06:20:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "CRICFy LIVE",
-          "type": "0",
-          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": "14600",
-      "title": "Botafogo vs Atletico Mineiro",
-      "slug": "botafogo-vs-atletico-mineiro",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "Campeonato Brasileiro Série A",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/325/image/dark",
-        "teamA": "Botafogo",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/1958/image",
-        "teamB": "Atlético Mineiro",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/1977/image",
-        "startTimeIST": "2026-11-05 06:00:00 IST",
-        "endTimeIST": "2026-11-05 08:20:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "PREMIERE BR - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/oy6rp0jwmf/out/v1/580ecf12bad24979baf8dd993dce053e/cenc.mpd",
-          "api": "9dc40460c93087aea84d6315f08ecb64:f69c8d4624fddff4ca89bd0b31bdc4a7"
-        }
-      ]
-    },
-    {
-      "id": "14601",
-      "title": "Sao Paulo vs Corinthians",
-      "slug": "sao-paulo-vs-corinthians",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "Campeonato Brasileiro Série A",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/325/image/dark",
-        "teamA": "São Paulo",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/1981/image",
-        "teamB": "Corinthians",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/1957/image",
-        "startTimeIST": "2026-11-05 06:00:00 IST",
-        "endTimeIST": "2026-11-05 08:20:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "PREMIER SPORTS - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/bcj3iscpd6/out/v1/fcd137b391214f7cb99dd4d7be90ca87/cenc.mpd",
-          "api": "1a5df53609ebc9857898c490f4724918:77f62980d582ec541280796acf8b2d19"
-        },
-        {
-          "id": 2,
-          "title": "PREMIERE BR - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/tirjor64kh/out/v1/fd2ed9916d994f09a3bd62b64141b9cb/cenc.mpd",
-          "api": "e23365c2ad97870c871712b73f0d6195:58709c714320bb862dbd07270df81c94"
-        }
-      ]
-    },
     {
       "id": "14583",
       "title": "Pakistan vs India",
@@ -148,6 +29,126 @@
           "api": ""
         }
       ]
+    },
+    {
+      "id": "14661",
+      "title": "Kitchee SC vs Phnom Penh Crown",
+      "slug": "kitchee-sc-vs-phnom-penh-crown",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "AFC Champions League Two",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/668/image/dark",
+        "teamA": "Kitchee SC",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/42199/image",
+        "teamB": "Phnom Penh Crown",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/35605/image",
+        "startTimeIST": "2026-11-05 15:30:00 IST",
+        "endTimeIST": "2026-11-05 17:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14662",
+      "title": "Lion City Sailors vs Adelaide United",
+      "slug": "lion-city-sailors-vs-adelaide-united",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "AFC Champions League Two",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/668/image/dark",
+        "teamA": "Lion City Sailors",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/3041/image",
+        "teamB": "Adelaide United",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2946/image",
+        "startTimeIST": "2026-11-05 15:30:00 IST",
+        "endTimeIST": "2026-11-05 17:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14663",
+      "title": "Machida Zelvia vs Shanghai Shenhua",
+      "slug": "machida-zelvia-vs-shanghai-shenhua",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "AFC Champions League Two",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/668/image/dark",
+        "teamA": "Machida Zelvia",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/44409/image",
+        "teamB": "Shanghai Shenhua",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/3373/image",
+        "startTimeIST": "2026-11-05 15:30:00 IST",
+        "endTimeIST": "2026-11-05 17:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14664",
+      "title": "BG Pathum United vs Tai Po",
+      "slug": "bg-pathum-united-vs-tai-po",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "AFC Champions League Two",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/668/image/dark",
+        "teamA": "BG Pathum United",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/35607/image",
+        "teamB": "Tai Po",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/40662/image",
+        "startTimeIST": "2026-11-05 17:45:00 IST",
+        "endTimeIST": "2026-11-05 20:05:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14665",
+      "title": "Kuching City vs Gangwon FC",
+      "slug": "kuching-city-vs-gangwon-fc",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "AFC Champions League Two",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/668/image/dark",
+        "teamA": "Kuching City",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/338334/image",
+        "teamB": "Gangwon FC",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/34220/image",
+        "startTimeIST": "2026-11-05 17:45:00 IST",
+        "endTimeIST": "2026-11-05 20:05:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14666",
+      "title": "Preah Khan Reach Svay Rieng FC vs Tampines Rovers",
+      "slug": "preah-khan-reach-svay-rieng-fc-vs-tampines-rovers",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "AFC Champions League Two",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/668/image/dark",
+        "teamA": "Preah Khan Reach Svay Rieng FC",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/153474/image",
+        "teamB": "Tampines Rovers",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/3043/image",
+        "startTimeIST": "2026-11-05 17:45:00 IST",
+        "endTimeIST": "2026-11-05 20:05:00 IST"
+      },
+      "streams": []
     },
     {
       "id": "14584",
@@ -874,6 +875,46 @@
         "teamBFlag": "https://img.sofascore.com/api/v1/team/264619/image",
         "startTimeIST": "2026-11-06 01:30:00 IST",
         "endTimeIST": "2026-11-06 03:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14667",
+      "title": "Palmeiras vs Remo",
+      "slug": "palmeiras-vs-remo",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "Campeonato Brasileiro Série A",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/325/image/dark",
+        "teamA": "Palmeiras",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/1963/image",
+        "teamB": "Remo",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2012/image",
+        "startTimeIST": "2026-11-06 04:00:00 IST",
+        "endTimeIST": "2026-11-06 06:20:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14668",
+      "title": "Cruzeiro vs Bahia",
+      "slug": "cruzeiro-vs-bahia",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "Campeonato Brasileiro Série A",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/325/image/dark",
+        "teamA": "Cruzeiro",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/1954/image",
+        "teamB": "Bahia",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/1955/image",
+        "startTimeIST": "2026-11-06 06:00:00 IST",
+        "endTimeIST": "2026-11-06 08:20:00 IST"
       },
       "streams": []
     }
