@@ -1,91 +1,7 @@
 {
-  "last_updated": "11/5/2026, 6:58:44 PM IST",
+  "last_updated": "11/6/2026, 2:19:04 AM IST",
   "source": "AryanStreams Official Feed",
   "events": [
-    {
-      "id": "14072",
-      "title": "Afghanistan vs Zimbabwe",
-      "slug": "afghanistan-vs-zimbabwe",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "Test Championship",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11190/image",
-        "teamA": "Afghanistan",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/187575/image",
-        "teamB": "Zimbabwe",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/187745/image",
-        "startTimeIST": "2026-11-05 11:30:17 IST",
-        "endTimeIST": "2026-11-05 19:30:33 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "WILLOW - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/owwvfdrvyv/out/v1/f869fa34e09144a7961adf21ce46c323/cenc.mpd",
-          "api": "502b22d3cada61e1dd3c24e4dc37b128:edbeec19a62d033903fe6436abfb9fd6"
-        },
-        {
-          "id": 2,
-          "title": "WILLOW - ALT",
-          "type": "7",
-          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/owwvfdrvyv/out/v1/f869fa34e09144a7961adf21ce46c323/cenc.mpd",
-          "api": "502b22d3cada61e1dd3c24e4dc37b128:edbeec19a62d033903fe6436abfb9fd6"
-        },
-        {
-          "id": 3,
-          "title": "A SPORTS HD",
-          "type": "0",
-          "link": "https://live.msnetworks.net/a-sports/master.m3u8",
-          "api": ""
-        },
-        {
-          "id": 4,
-          "title": "FANCODE - IN ",
-          "type": "0",
-          "link": "https://dai-fancode.pages.dev/mumbai/4249772_english_hls_ea87fdf83410465_1ta-di_h264/index.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": "14261",
-      "title": "NPL Nepal Premier League",
-      "slug": "npl-nepal-premier-league",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "Nepal Premier League T20",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
-        "teamA": "NPL",
-        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
-        "teamB": "NPL",
-        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
-        "startTimeIST": "2026-11-05 16:45:20 IST",
-        "endTimeIST": "2026-11-05 20:45:20 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "NPL LIVE - AQ",
-          "type": "7",
-          "link": "https://ott-lb.nettv.com.np/npl/live_match/index.mpd",
-          "api": "82dfca238e8c4b430a3269db71965db9:a00b28caf4ac628e77a553d440c0ddca"
-        },
-        {
-          "id": 2,
-          "title": "FANCODE - IN",
-          "type": "0",
-          "link": "https://dai-fancode.pages.dev/mumbai/4250368_english_hls_7ea136c62c30127_1ta-di_h264/index.m3u8",
-          "api": ""
-        }
-      ]
-    },
     {
       "id": "14074",
       "title": "Bangladesh vs West Indies",
@@ -215,6 +131,90 @@
           "title": "CRICFy LIVE",
           "type": "0",
           "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+          "api": ""
+        }
+      ]
+    },
+    {
+      "id": "14072",
+      "title": "Afghanistan vs Zimbabwe",
+      "slug": "afghanistan-vs-zimbabwe",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "Test Championship",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11190/image",
+        "teamA": "Afghanistan",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/187575/image",
+        "teamB": "Zimbabwe",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/187745/image",
+        "startTimeIST": "2026-11-06 11:30:25 IST",
+        "endTimeIST": "2026-11-06 19:30:30 IST"
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/owwvfdrvyv/out/v1/f869fa34e09144a7961adf21ce46c323/cenc.mpd",
+          "api": "502b22d3cada61e1dd3c24e4dc37b128:edbeec19a62d033903fe6436abfb9fd6"
+        },
+        {
+          "id": 2,
+          "title": "WILLOW - ALT",
+          "type": "7",
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/owwvfdrvyv/out/v1/f869fa34e09144a7961adf21ce46c323/cenc.mpd",
+          "api": "502b22d3cada61e1dd3c24e4dc37b128:edbeec19a62d033903fe6436abfb9fd6"
+        },
+        {
+          "id": 3,
+          "title": "A SPORTS HD",
+          "type": "0",
+          "link": "https://live.msnetworks.net/a-sports/master.m3u8",
+          "api": ""
+        },
+        {
+          "id": 4,
+          "title": "FANCODE - IN ",
+          "type": "0",
+          "link": "https://dai-fancode.pages.dev/mumbai/4249772_english_hls_ea87fdf83410465_1ta-di_h264/index.m3u8",
+          "api": ""
+        }
+      ]
+    },
+    {
+      "id": "14261",
+      "title": "NPL Nepal Premier League",
+      "slug": "npl-nepal-premier-league",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "Nepal Premier League T20",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
+        "teamA": "NPL",
+        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
+        "teamB": "NPL",
+        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
+        "startTimeIST": "2026-11-06 12:15:41 IST",
+        "endTimeIST": "2026-11-06 21:30:48 IST"
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "NPL LIVE - AQ",
+          "type": "7",
+          "link": "https://ott-lb.nettv.com.np/npl/live_match/index.mpd",
+          "api": "82dfca238e8c4b430a3269db71965db9:a00b28caf4ac628e77a553d440c0ddca"
+        },
+        {
+          "id": 2,
+          "title": "FANCODE - IN",
+          "type": "0",
+          "link": "https://dai-fancode.pages.dev/mumbai/4250368_english_hls_7ea136c62c30127_1ta-di_h264/index.m3u8",
           "api": ""
         }
       ]
@@ -379,13 +379,13 @@
       ]
     },
     {
-      "id": "B0HP3SQFKP",
-      "title": "USA Seniors Cricket NPL 2026 - 4th Match - Mighty Dallas vs Seattle Moose",
-      "slug": "usa-seniors-cricket-npl-2026-4th-match-mighty-dallas-vs-seattle-moose",
+      "id": "B0HP6ZFFMQ",
+      "title": "USA Seniors Cricket NPL 2026 - 5th Match - Chicago Cavaliers vs Houston Saints",
+      "slug": "usa-seniors-cricket-npl-2026-5th-match-chicago-cavaliers-vs-houston-saints",
       "cat": "Live Events",
       "status": "live",
       "event": {
-        "name": "USA Seniors Cricket NPL 2026 - 4th Match - Mighty Dallas vs Seattle Moose",
+        "name": "USA Seniors Cricket NPL 2026 - 5th Match - Chicago Cavaliers vs Houston Saints",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",
