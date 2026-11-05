@@ -1,101 +1,13 @@
 {
-  "last_updated": "11/5/2026, 10:56:42 AM IST",
+  "last_updated": "11/5/2026, 6:58:44 PM IST",
   "source": "AryanStreams Official Feed",
   "events": [
-    {
-      "id": "14583",
-      "title": "Pakistan vs India",
-      "slug": "pakistan-vs-india",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "SAFF Championship",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/2354/image/dark",
-        "teamA": "Pakistan",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/6081/image",
-        "teamB": "India",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/4828/image",
-        "startTimeIST": "2026-11-05 15:00:00 IST",
-        "endTimeIST": "2026-11-05 17:20:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "CRICFy LIVE",
-          "type": "0",
-          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": "14661",
-      "title": "Kitchee SC vs Phnom Penh Crown",
-      "slug": "kitchee-sc-vs-phnom-penh-crown",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "AFC Champions League Two",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/668/image/dark",
-        "teamA": "Kitchee SC",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/42199/image",
-        "teamB": "Phnom Penh Crown",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/35605/image",
-        "startTimeIST": "2026-11-05 15:30:00 IST",
-        "endTimeIST": "2026-11-05 17:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14662",
-      "title": "Lion City Sailors vs Adelaide United",
-      "slug": "lion-city-sailors-vs-adelaide-united",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "AFC Champions League Two",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/668/image/dark",
-        "teamA": "Lion City Sailors",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/3041/image",
-        "teamB": "Adelaide United",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2946/image",
-        "startTimeIST": "2026-11-05 15:30:00 IST",
-        "endTimeIST": "2026-11-05 17:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14663",
-      "title": "Machida Zelvia vs Shanghai Shenhua",
-      "slug": "machida-zelvia-vs-shanghai-shenhua",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "AFC Champions League Two",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/668/image/dark",
-        "teamA": "Machida Zelvia",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/44409/image",
-        "teamB": "Shanghai Shenhua",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/3373/image",
-        "startTimeIST": "2026-11-05 15:30:00 IST",
-        "endTimeIST": "2026-11-05 17:50:00 IST"
-      },
-      "streams": []
-    },
     {
       "id": "14664",
       "title": "BG Pathum United vs Tai Po",
       "slug": "bg-pathum-united-vs-tai-po",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -108,14 +20,22 @@
         "startTimeIST": "2026-11-05 17:45:00 IST",
         "endTimeIST": "2026-11-05 20:05:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "CRICFy LIVE",
+          "type": "0",
+          "link": "https://live2.jorvakstreamcache.com/live/channel24.m3u8?",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14665",
       "title": "Kuching City vs Gangwon FC",
       "slug": "kuching-city-vs-gangwon-fc",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -128,14 +48,22 @@
         "startTimeIST": "2026-11-05 17:45:00 IST",
         "endTimeIST": "2026-11-05 20:05:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "CRICFy LIVE",
+          "type": "0",
+          "link": "https://live2.jorvakstreamcache.com/live/channel6.m3u8?",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14666",
       "title": "Preah Khan Reach Svay Rieng FC vs Tampines Rovers",
       "slug": "preah-khan-reach-svay-rieng-fc-vs-tampines-rovers",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -148,7 +76,15 @@
         "startTimeIST": "2026-11-05 17:45:00 IST",
         "endTimeIST": "2026-11-05 20:05:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "CRICFy LIVE",
+          "type": "0",
+          "link": "https://live2.jorvakstreamcache.com/live/channel2.m3u8?",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14584",
@@ -171,7 +107,7 @@
       "streams": [
         {
           "id": 1,
-          "title": "CRICFy LIVE",
+          "title": "LOW SERVER ",
           "type": "0",
           "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
           "api": ""
