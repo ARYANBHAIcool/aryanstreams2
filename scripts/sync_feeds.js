@@ -1097,7 +1097,42 @@ async function syncEvents() {
     return false;
 }
 
+async function syncVercelLive() {
+    console.log("🔄 Syncing live streams from Vercel API...");
+    try {
+        const text = await new Promise((resolve, reject) => {
+            const req = https.get("https://newwwwapiiiiii-self.vercel.app/main", {
+                headers: {
+                    "Referer": "https://grandprixgear.pages.dev/1?id=f1_atv",
+                    "Origin": "https://grandprixgear.pages.dev",
+                    "User-Agent": "Mozilla/5.0"
+                }
+            }, (res) => {
+                if (res.statusCode !== 200) {
+                    return reject(new Error("Status " + res.statusCode));
+                }
+                let data = "";
+                res.on("data", chunk => data += chunk);
+                res.on("end", () => resolve(data));
+            });
+            req.on("error", reject);
+            req.setTimeout(8000, () => req.destroy(new Error("Timeout")));
+        });
+
+        const list = JSON.parse(text);
+        if (Array.isArray(list) && list.length > 0) {
+            const targetPath = path.join(__dirname, "..", "data", "live_streams.json");
+            fs.writeFileSync(targetPath, JSON.stringify(list, null, 2), "utf8");
+            console.log(`✅ Saved ${list.length} dynamic streams to data/live_streams.json`);
+            return true;
+        }
+    } catch(err) {
+        console.warn("⚠️ syncVercelLive error:", err.message);
+    }
+    return false;
+}
 async function main() {
+    const vOk = await syncVercelLive();
     const sOk = await syncSports();
     const wOk = await syncWillow();
     const mOk = await syncSonyM3U8();

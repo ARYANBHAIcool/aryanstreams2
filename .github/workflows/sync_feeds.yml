@@ -42,7 +42,7 @@ jobs:
             git config --global user.email "mearyankumarsingh@gmail.com"
           fi
 
-          git add data/sports.json data/sports.m3u data/willow.json data/sony_m3u8.json data/events
+          git add data/sports.json data/live_streams.json data/sports.m3u data/willow.json data/sony_m3u8.json data/events
 
           if ! git diff --staged --quiet; then
             TIMESTAMP=$(date -u +"%d/%m/%Y, %I:%M:%S %p UTC")

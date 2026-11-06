@@ -618,9 +618,55 @@
             return channels;
         }
 
+        async function fetchLiveFeed(id) {
+            if (!id) return null;
+            var cleanId = String(id).toLowerCase().trim();
+            var endpoints = [
+                "/api/live?id=" + encodeURIComponent(cleanId),
+                "/live?id=" + encodeURIComponent(cleanId),
+                "data/live_streams.json"
+            ];
+            for (var i = 0; i < endpoints.length; i++) {
+                try {
+                    var res = await fetch(endpoints[i]);
+                    if (res.ok) {
+                        var data = await res.json();
+                        if (Array.isArray(data)) {
+                            data = data.find(function(item) {
+                                return item.id && item.id.toLowerCase() === cleanId;
+                            });
+                        }
+                        if (data && data.url) {
+                            var kid = (data.k1 || "").trim();
+                            var key = (data.k2 || "").trim();
+                            var clearKeys = {};
+                            if (kid && key) {
+                                clearKeys[kid.toLowerCase()] = key.toLowerCase();
+                            }
+                            return {
+                                name: data.name,
+                                stream_url: data.url,
+                                key_id: kid,
+                                key: key,
+                                clearKeys: clearKeys
+                            };
+                        }
+                    }
+                } catch(e) {}
+            }
+            return null;
+        }
         async function fetchChannelData(id) {
             var idStr = String(id).trim().toLowerCase();
             var mappedId = (ID_MAP[idStr] || idStr).toLowerCase();
+
+            // Dynamic auto-updater check for live feeds (F1, SAFF, TNT, beIN, etc.)
+            try {
+                var dynamicLive = await fetchLiveFeed(idStr) || await fetchLiveFeed(mappedId);
+                if (dynamicLive && dynamicLive.stream_url) {
+                    return dynamicLive;
+                }
+            } catch(e) {}
             var isSony = /sten|ten[1-5]|sony[1-5]|891|892|3514|1773|155|162|stent|stentu/i.test(idStr) || /sten|stent/i.test(mappedId);
 
             // Prioritize reliable CORS-enabled live Sony broadcast feeds for Sony channels, SonuJSON for Star Sports & others
