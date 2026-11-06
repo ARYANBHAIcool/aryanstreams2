@@ -377,8 +377,12 @@ body{width:100%;height:100%;min-height:100dvh;background:#000;overflow:hidden;fo
 
     function toProxyUrl(target) {
         if (!target) return '';
-        if (target.startsWith('/proxy') || target.includes('/proxy?url=')) return target;
-        return '/proxy?url=' + encodeURIComponent(target);
+        if (target.includes('akamaized.net') || target.includes('akamaihd.net') || 
+            target.includes('aiv-cdn.net') || target.includes('pv-cdn.net') || 
+            target.includes('lovable.app') || target.includes('workers.dev')) {
+            return target;
+        }
+        return 'https://stream-through-spark.lovable.app/api/proxy?u=' + encodeURIComponent(target);
     }
 
     const fitModes = [
@@ -537,7 +541,7 @@ body{width:100%;height:100%;min-height:100dvh;background:#000;overflow:hidden;fo
     $player.addEventListener('touchstart', showControls, { passive: true });
     showControls();
 
-    async function loadStreamWithShaka(url, fallbackUrls = []) {
+    async function loadStreamWithShaka(url, fallbackUrls = [], clearKeys = null) {
         shaka.polyfill.installAll();
         if (shakaPlayer) {
             try { await shakaPlayer.destroy(); } catch(e) {}
@@ -562,14 +566,18 @@ body{width:100%;height:100%;min-height:100dvh;background:#000;overflow:hidden;fo
                 try {
                     shakaPlayer = new shaka.Player();
                     await shakaPlayer.attach($vid);
-                    shakaPlayer.configure({
+                    const cfg = {
                         streaming: {
                             bufferingGoal: 20,
-                            rebufferingGoal: 3,
+                            rebufferingGoal: 0,
                             safeSeekOffset: 5,
                             lowLatencyMode: false
                         }
-                    });
+                    };
+                    if (clearKeys && Object.keys(clearKeys).length > 0) {
+                        cfg.drm = { clearKeys: clearKeys };
+                    }
+                    shakaPlayer.configure(cfg);
 
                     shakaPlayer.getNetworkingEngine().registerRequestFilter((type, req) => {
                         req.allowCrossSiteCredentials = true;
@@ -613,22 +621,71 @@ body{width:100%;height:100%;min-height:100dvh;background:#000;overflow:hidden;fo
         loadStreamWithShaka(streamMap[q], []);
     }
 
+    const F1_CLEAR_KEYS = {
+        '609d795905904705028ef54653019af7': '2c791eb611e57a7d7f203022bc1b9ba3',
+        '82dfca238e8c4b430a3269db71965db9': 'a00b28caf4ac628e77a553d440c0ddca',
+        '1994b1df7dfd2e8a8d7b9bf3fb900285': '22a1444b3da18e139191665b3d652835',
+        '5f7132d386a8e28c87e26e7c359ce61e': '75c6cd5fb14d015cd04832a0be1b203a',
+        'cb28f4ecfb8d245badf426c4460ee29b': 'c18fda1709871210d9a65914b48b5d1b'
+    };
+
+    const F1_FALLBACK_STREAMS = [
+        'https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/duqbirmk0d/out/v1/40f53c7cbc95498db3afd081c377d776/cenc.mpd',
+        'https://a96aivottlinear-a.akamaihd.net/OTTB/lhr-nitro/live/clients/dash/enc/b3b3fkmrbl/out/v1/1084d5c9a97a4c5b9f9554c88f486646/cenc.mpd',
+        'https://a96aivottlinear-a.akamaihd.net/OTTB/lhr-nitro/live/clients/dash/enc/avqlywnuzx/out/v1/aefca6420f944a9482e117f315de535f/cenc.mpd',
+        'https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/ydej7yrj3y/out/v1/100ee853b76a41f1ba6d329bc65a2711/cenc.mpd'
+    ];
+
     async function init() {
         resetLoading();
         if (!matchId) {
-            showError('Missing Match ID', 'URL format: ?id=MATCH_ID (e.g. ?id=4249138_eng)', false);
+            showError('Missing Match ID', 'URL format: ?id=MATCH_ID (e.g. ?id=4249138_eng or ?id=f1)', false);
+            return;
+        }
+
+        const isF1Match = /f1|formula|brazil|sao paulo|practice|fp2|13951[1-9]/i.test(rawId || matchId);
+
+        // Fast path for F1 / Brazil practice / qualifying
+        if (isF1Match) {
+            try {
+                $qlbl.textContent = '1080p Live';
+                $bq.style.display = 'inline-flex';
+                await loadStreamWithShaka(F1_FALLBACK_STREAMS[0], F1_FALLBACK_STREAMS.slice(1), F1_CLEAR_KEYS);
+                return;
+            } catch(e) {
+                console.warn('F1 primary load failed, trying standard fallback:', e);
+            }
+        }
+
+        const API_ENDPOINTS = [
+            'data/live_streams.json',
+            'https://raw.githubusercontent.com/drmlive/fancode-live-events/main/fancode.json',
+            'https://raw.githubusercontent.com/kajju027/Fancode-Events-Json/refs/heads/main/fancode.json'
+        ];
+
+        let match = null;
+        for (const ep of API_ENDPOINTS) {
+            try {
+                const res = await fetch(ep + '?t=' + Date.now());
+                if (!res.ok) continue;
+                const data = await res.json();
+                const matches = Array.isArray(data) ? data : (data.matches || data.events || []);
+                match = matches.find(m => String(m.id || m.match_id || m.event_id) === String(matchId) || (m.title && m.title.toLowerCase().includes(String(matchId).toLowerCase())));
+                if (match) break;
+            } catch(e) {}
+        }
+
+        if (!match && isF1Match) {
+            await loadStreamWithShaka(F1_FALLBACK_STREAMS[0], F1_FALLBACK_STREAMS.slice(1), F1_CLEAR_KEYS);
+            return;
+        }
+
+        if (!match) {
+            showError('Match Not Found', 'Match ' + matchId + ' is currently not active.', false);
             return;
         }
 
         try {
-            const res = await fetch(FANCODE_API);
-            if (!res.ok) throw new Error('HTTP ' + res.status);
-            const data = await res.json();
-            const matches = Array.isArray(data) ? data : (data.matches || data.events || []);
-            const match = matches.find(m => String(m.id || m.match_id || m.event_id) === String(matchId) || (m.title && m.title.toLowerCase().includes('nassr')));
-
-            if (!match) throw new Error(`Match ${matchId} not found in playlist.`);
-
             let targetStreams = {};
             const auto = match.auto_streams || {};
             const langKey = Object.keys(auto).find(k => k.toLowerCase().startsWith(langCode.toLowerCase())) || Object.keys(auto)[0];
@@ -640,7 +697,12 @@ body{width:100%;height:100%;min-height:100dvh;background:#000;overflow:hidden;fo
             }
 
             streamMap = targetStreams;
-            const primaryUrl = streamMap[defaultQuality] || streamMap['1080p'] || streamMap['720p'] || streamMap['480p'] || match.streams?.primary;
+            let primaryUrl = streamMap[defaultQuality] || streamMap['1080p'] || streamMap['720p'] || streamMap['480p'] || match.streams?.primary || match.url || match.stream_link;
+
+            if (!primaryUrl && isF1Match) {
+                await loadStreamWithShaka(F1_FALLBACK_STREAMS[0], F1_FALLBACK_STREAMS.slice(1), F1_CLEAR_KEYS);
+                return;
+            }
 
             if (!primaryUrl) throw new Error('No valid playable stream URL found.');
 
@@ -654,11 +716,21 @@ body{width:100%;height:100%;min-height:100dvh;background:#000;overflow:hidden;fo
                 match.streams?.fancode_bd_cdn
             ].filter(Boolean);
 
-            await loadStreamWithShaka(primaryUrl, fallbacks);
+            let ck = null;
+            if (match.k1 && match.k2) {
+                ck = {};
+                ck[match.k1] = match.k2;
+            }
+
+            await loadStreamWithShaka(primaryUrl, fallbacks, ck);
         } catch(err) {
             console.error('FanCode Init Error:', err);
-            showError('Connection Error', err.message, true);
-            retryTimer = setTimeout(init, 6000);
+            if (isF1Match) {
+                await loadStreamWithShaka(F1_FALLBACK_STREAMS[0], F1_FALLBACK_STREAMS.slice(1), F1_CLEAR_KEYS);
+            } else {
+                showError('Connection Error', err.message, true);
+                retryTimer = setTimeout(init, 6000);
+            }
         }
     }
 

@@ -5,6 +5,22 @@
  */
 
 const ID_ALIASES = {
+    'f1': 'f1tvamzn',
+  'f1tv': 'f1tvamzn',
+  'f1tvamzn': 'f1tvamzn',
+  'brazil': 'f1tvamzn',
+  'fp2': 'f1tvamzn',
+  'practice': 'f1tvamzn',
+  'practice2': 'f1tvamzn',
+  'practice3': 'f1tvamzn',
+  '139513': 'f1tvamzn',
+  '139514': 'f1tvamzn',
+  '139515': 'f1tvamzn',
+  'fc1': 'fc1',
+  'fc2': 'fc2',
+  'fancode': 'fc1',
+  'fancode1': 'fc1',
+  'fancode2': 'fc2',
   'f1apple': 'f1_atv',
   'f1_apple': 'f1_atv',
   'f1atv': 'f1_atv',

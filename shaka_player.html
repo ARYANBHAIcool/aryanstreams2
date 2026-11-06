@@ -259,16 +259,23 @@
         };
 
         var KNOWN_KEYS = {
-            // F1 Motorsports
+            // F1 Motorsports & FanCode
+            'f1tvamzn': { kid: '609d795905904705028ef54653019af7', key: '2c791eb611e57a7d7f203022bc1b9ba3' },
+            'f1tv': { kid: '609d795905904705028ef54653019af7', key: '2c791eb611e57a7d7f203022bc1b9ba3' },
+            'f1_tv': { kid: '609d795905904705028ef54653019af7', key: '2c791eb611e57a7d7f203022bc1b9ba3' },
+            'f1': { kid: '609d795905904705028ef54653019af7', key: '2c791eb611e57a7d7f203022bc1b9ba3' },
             'f1_atv_uhd': { kid: '8e95635a8a3d0f4fae2d1da930730d93', key: 'a2217b3f397502e5978bf9ab1d8fc610' },
             'f1_atv': { kid: 'cb28f4ecfb8d245badf426c4460ee29b', key: 'c18fda1709871210d9a65914b48b5d1b' },
-            'f1tv': { kid: 'cb28f4ecfb8d245badf426c4460ee29b', key: 'c18fda1709871210d9a65914b48b5d1b' },
             'f1apple': { kid: 'cb28f4ecfb8d245badf426c4460ee29b', key: 'c18fda1709871210d9a65914b48b5d1b' },
             'atv': { kid: 'cb28f4ecfb8d245badf426c4460ee29b', key: 'c18fda1709871210d9a65914b48b5d1b' },
             'f1_sky': { kid: '5f7132d386a8e28c87e26e7c359ce61e', key: '75c6cd5fb14d015cd04832a0be1b203a' },
             'skyf1': { kid: '5f7132d386a8e28c87e26e7c359ce61e', key: '75c6cd5fb14d015cd04832a0be1b203a' },
             'f1sky': { kid: '5f7132d386a8e28c87e26e7c359ce61e', key: '75c6cd5fb14d015cd04832a0be1b203a' },
             'f1skysports': { kid: '5f7132d386a8e28c87e26e7c359ce61e', key: '75c6cd5fb14d015cd04832a0be1b203a' },
+            'fc1': { kid: '82dfca238e8c4b430a3269db71965db9', key: 'a00b28caf4ac628e77a553d440c0ddca' },
+            'fc2': { kid: '1994b1df7dfd2e8a8d7b9bf3fb900285', key: '22a1444b3da18e139191665b3d652835' },
+            'fancode1': { kid: '82dfca238e8c4b430a3269db71965db9', key: 'a00b28caf4ac628e77a553d440c0ddca' },
+            'fancode2': { kid: '1994b1df7dfd2e8a8d7b9bf3fb900285', key: '22a1444b3da18e139191665b3d652835' },
             // Star Sports
             'h1hd': { kid: '11073b8f426e5092a2effada3bfaf721', key: '5d1c59a8052956bd056810f260161e5f' },
             'ss1h': { kid: '11073b8f426e5092a2effada3bfaf721', key: '5d1c59a8052956bd056810f260161e5f' },
@@ -982,6 +989,36 @@
                 } catch(loadErr) {
                     console.warn('Initial load failed for activeMpd, attempting live backup stream:', loadErr);
                     var targetKey = String(CH_ID || activeKid || '').toLowerCase();
+                    if (/f1|formula|atv|sky|fp2|practice|brazil/i.test(targetKey)) {
+                        try {
+                            var f1tvMpd = 'https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/duqbirmk0d/out/v1/40f53c7cbc95498db3afd081c377d776/cenc.mpd';
+                            var f1tvKid = '609d795905904705028ef54653019af7';
+                            var f1tvKey = '2c791eb611e57a7d7f203022bc1b9ba3';
+                            if (activeMpd !== f1tvMpd) {
+                                showToast('● Connecting active F1 TV stream...', 'warning');
+                                var ck = {};
+                                ck[f1tvKid] = f1tvKey;
+                                player.configure({ drm: { clearKeys: ck } });
+                                await player.load(f1tvMpd);
+                                return;
+                            }
+                        } catch(f1e) {}
+                    }
+                    if (/fancode|fc[12]?/i.test(targetKey)) {
+                        try {
+                            var fcMpd = 'https://a96aivottlinear-a.akamaihd.net/OTTB/lhr-nitro/live/clients/dash/enc/b3b3fkmrbl/out/v1/1084d5c9a97a4c5b9f9554c88f486646/cenc.mpd';
+                            var fcKid = '82dfca238e8c4b430a3269db71965db9';
+                            var fcKey = 'a00b28caf4ac628e77a553d440c0ddca';
+                            if (activeMpd !== fcMpd) {
+                                showToast('● Connecting live FanCode feed...', 'warning');
+                                var ck = {};
+                                ck[fcKid] = fcKey;
+                                player.configure({ drm: { clearKeys: ck } });
+                                await player.load(fcMpd);
+                                return;
+                            }
+                        } catch(fce) {}
+                    }
                     var m3uKey = '';
                     if (/ten3|892|sten3/i.test(targetKey)) m3uKey = 'ten3-hd';
                     else if (/ten4.*tamil|stent|3514/i.test(targetKey) || targetKey === 'ten4' || targetKey === 'ten4hd') m3uKey = 'ten4-hd';
@@ -1049,11 +1086,37 @@
                     if (err && err.severity === shaka.util.Error.Severity.RECOVERABLE) return;
                     console.error('Shaka error:', err && err.code, err && err.message);
 
-                    // Seamless automatic fallback to live M3U8 proxy stream if DASH fails
+                    // Seamless automatic fallback to live F1 TV or FanCode or M3U8 stream if error occurs
                     if (!m3uFallbackDone && (CH_ID || activeKid)) {
                         m3uFallbackDone = true;
                         try {
                             var targetKey = String(CH_ID || activeKid || '').toLowerCase();
+                            if (/f1|formula|atv|sky|fp2|practice|brazil/i.test(targetKey)) {
+                                var f1tvMpd = 'https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/duqbirmk0d/out/v1/40f53c7cbc95498db3afd081c377d776/cenc.mpd';
+                                var f1tvKid = '609d795905904705028ef54653019af7';
+                                var f1tvKey = '2c791eb611e57a7d7f203022bc1b9ba3';
+                                if (activeMpd !== f1tvMpd) {
+                                    showToast('● Switching to active F1 TV backup...', 'warning');
+                                    var ck = {};
+                                    ck[f1tvKid] = f1tvKey;
+                                    player.configure({ drm: { clearKeys: ck } });
+                                    await player.load(f1tvMpd);
+                                    return;
+                                }
+                            }
+                            if (/fancode|fc[12]?/i.test(targetKey)) {
+                                var fcMpd = 'https://a96aivottlinear-a.akamaihd.net/OTTB/lhr-nitro/live/clients/dash/enc/b3b3fkmrbl/out/v1/1084d5c9a97a4c5b9f9554c88f486646/cenc.mpd';
+                                var fcKid = '82dfca238e8c4b430a3269db71965db9';
+                                var fcKey = 'a00b28caf4ac628e77a553d440c0ddca';
+                                if (activeMpd !== fcMpd) {
+                                    showToast('● Switching to live FanCode backup...', 'warning');
+                                    var ck = {};
+                                    ck[fcKid] = fcKey;
+                                    player.configure({ drm: { clearKeys: ck } });
+                                    await player.load(fcMpd);
+                                    return;
+                                }
+                            }
                             var m3uKey = '';
                             if (/ten3|892|sten3/i.test(targetKey)) m3uKey = 'ten3-hd';
                             else if (/ten4|3514|stent|tamil/i.test(targetKey)) m3uKey = 'ten4-hd';
