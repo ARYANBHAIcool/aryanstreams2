@@ -1,6 +1,7 @@
 /**
  * Dynamic Live Feed & ClearKey Auto-Updater
  * Cloudflare Pages Function: /api/live?id=<stream_id>
+ * Edge-cached with Cloudflare Cache API to consume near-zero worker requests
  */
 
 const ID_ALIASES = {
@@ -56,6 +57,16 @@ export async function onRequest(context) {
     return new Response(null, { status: 204, headers: corsHeaders });
   }
 
+  // Check Cloudflare Edge Cache first (consumes 0 worker subrequests on hit)
+  const cacheKey = new Request(url.toString(), request);
+  const cache = (typeof caches !== 'undefined' && caches.default) ? caches.default : null;
+  if (cache) {
+    try {
+      const cached = await cache.match(cacheKey);
+      if (cached) return cached;
+    } catch(e) {}
+  }
+
   const upstreamUrl = id 
     ? `https://newwwwapiiiiii-self.vercel.app/main?id=${encodeURIComponent(id)}`
     : `https://newwwwapiiiiii-self.vercel.app/main`;
@@ -65,7 +76,7 @@ export async function onRequest(context) {
       headers: {
         "Referer": "https://grandprixgear.pages.dev/1?id=" + (id || "f1_atv"),
         "Origin": "https://grandprixgear.pages.dev",
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
       }
     });
 
@@ -80,14 +91,20 @@ export async function onRequest(context) {
     }
 
     const data = await res.json();
-    return new Response(JSON.stringify(data), {
+    const response = new Response(JSON.stringify(data), {
       status: 200,
       headers: {
         ...corsHeaders,
         "Content-Type": "application/json",
-        "Cache-Control": "public, max-age=60, s-maxage=60"
+        "Cache-Control": "public, max-age=120, s-maxage=120"
       }
     });
+
+    if (cache) {
+      context.waitUntil(cache.put(cacheKey, response.clone()));
+    }
+
+    return response;
   } catch (err) {
     return new Response(JSON.stringify({ error: err.message }), {
       status: 502,

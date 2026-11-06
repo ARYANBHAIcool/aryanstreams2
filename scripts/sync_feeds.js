@@ -954,7 +954,7 @@ async function syncSonyM3U8() {
                             name: name,
                             raw_url: streamUrl,
                             proxied_url: 'https://stream-through-spark.lovable.app/api/proxy?u=' + encodeURIComponent(streamUrl),
-                            backup_proxied_url: 'https://aryanstreams.pages.dev/api/public/px/sony?url=' + encodeURIComponent(streamUrl)
+                            backup_proxied_url: 'https://stream-through-spark.lovable.app/api/proxy?u=' + encodeURIComponent(streamUrl)
                         });
                     }
                 }

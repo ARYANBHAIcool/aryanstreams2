@@ -1873,26 +1873,25 @@
             // If already going through an edge relay (lovable.app, Cloudflare worker, papacito, etc.), play directly
             if (parsed.baseUrl.includes('lovable.app') || 
                 parsed.baseUrl.includes('workers.dev') || 
-                parsed.baseUrl.includes('pages.dev') || 
                 parsed.baseUrl.includes('papacito.cfd') ||
                 parsed.baseUrl.includes('miekgo.app')) {
+                return parsed.baseUrl;
+            }
+
+            // akamaized.net has open CORS and plays natively without any proxy
+            if (parsed.baseUrl.includes('akamaized.net')) {
                 return parsed.baseUrl;
             }
 
             const hasHeaders = Object.keys(parsed.headers).length > 0;
             const needsProxy = hasHeaders || 
                                parsed.baseUrl.includes('fancode.com') || 
-                               parsed.baseUrl.includes('akamaized.net');
+                               parsed.baseUrl.includes('slivcdn.com');
 
             if (needsProxy) {
-                // Determine proxy endpoint based on current page path
-                const proxyUrl = location.pathname.includes('/fancode/') ? '/fancode/proxy' : '/proxy';
-                const queryParams = new URLSearchParams();
-                queryParams.append('url', parsed.baseUrl);
-                for (const [k, v] of Object.entries(parsed.headers)) {
-                    queryParams.append(k, v);
-                }
-                return `${proxyUrl}?${queryParams.toString()}`;
+                // Route through external Lovable proxy so ZERO Cloudflare Worker requests are consumed
+                const proxyBase = 'https://stream-through-spark.lovable.app/api/proxy?u=';
+                return proxyBase + encodeURIComponent(parsed.baseUrl);
             }
             return parsed.baseUrl;
         }
@@ -2102,9 +2101,9 @@
                                     didFailover = true;
                                     var altUrl = null;
                                     if (playableUrl.includes('aryanstreams.pages.dev')) {
-                                        altUrl = playableUrl.replace('aryanstreams.pages.dev/api/public/px/sony?url=', 'corsproxy.io/?url=');
+                                        altUrl = playableUrl.replace('stream-through-spark.lovable.app/api/proxy?u=', 'corsproxy.io/?url=');
                                     } else if (playableUrl.includes('corsproxy.io')) {
-                                        altUrl = playableUrl.replace('corsproxy.io/?url=', 'aryanstreams.pages.dev/api/public/px/sony?url=');
+                                        altUrl = playableUrl.replace('corsproxy.io/?url=', 'stream-through-spark.lovable.app/api/proxy?u=');
                                     }
                                     if (altUrl) {
                                         console.log("Switching to alternate proxy:", altUrl);
