@@ -1,103 +1,15 @@
 {
-  "last_updated": "11/6/2026, 9:44:55 PM IST",
+  "last_updated": "11/7/2026, 3:06:16 AM IST",
   "source": "AryanStreams Official Feed",
-  "football_count": 15,
+  "football_count": 9,
   "cricket_count": 14,
   "events": [
-    {
-      "id": "14671",
-      "title": "Gaziantep FK vs Kasmpasa",
-      "slug": "gaziantep-fk-vs-kasmpasa",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "Trendyol Süper Lig",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/52/image/dark",
-        "teamA": "Gaziantep FK",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/5138/image",
-        "teamB": "Kasımpaşa",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/6063/image",
-        "startTimeIST": "2026-11-06 22:30:00 IST",
-        "endTimeIST": "2026-11-07 00:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "CRICFy LIVE",
-          "type": "0",
-          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": "14672",
-      "title": "SG Dynamo Dresden vs SpVgg Greuther Furth",
-      "slug": "sg-dynamo-dresden-vs-spvgg-greuther-furth",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "2. Bundesliga",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/44/image/dark",
-        "teamA": "SG Dynamo Dresden",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2595/image",
-        "teamB": "SpVgg Greuther Fürth",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2551/image",
-        "startTimeIST": "2026-11-06 23:00:00 IST",
-        "endTimeIST": "2026-11-07 01:20:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14673",
-      "title": "Eintracht Braunschweig vs Energie Cottbus",
-      "slug": "eintracht-braunschweig-vs-energie-cottbus",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "2. Bundesliga",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/44/image/dark",
-        "teamA": "Eintracht Braunschweig",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2557/image",
-        "teamB": "Energie Cottbus",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2532/image",
-        "startTimeIST": "2026-11-06 23:00:00 IST",
-        "endTimeIST": "2026-11-07 01:20:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14682",
-      "title": "Willem II Tilburg vs PEC Zwolle",
-      "slug": "willem-ii-tilburg-vs-pec-zwolle",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "VriendenLoterij Eredivisie",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/37/image/dark",
-        "teamA": "Willem II Tilburg",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2961/image",
-        "teamB": "PEC Zwolle",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2971/image",
-        "startTimeIST": "2026-11-07 00:30:00 IST",
-        "endTimeIST": "2026-11-07 02:50:00 IST"
-      },
-      "streams": []
-    },
     {
       "id": "14674",
       "title": "Hamburger SV vs Borussia Mgladbach",
       "slug": "hamburger-sv-vs-borussia-mgladbach",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -110,34 +22,36 @@
         "startTimeIST": "2026-11-07 01:00:00 IST",
         "endTimeIST": "2026-11-07 03:20:00 IST"
       },
-      "streams": []
-    },
-    {
-      "id": "14676",
-      "title": "Bristol Rovers vs Cambridge United",
-      "slug": "bristol-rovers-vs-cambridge-united",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "FA Cup",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/19/image/dark",
-        "teamA": "Bristol Rovers",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/76/image",
-        "teamB": "Cambridge United",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/63/image",
-        "startTimeIST": "2026-11-07 01:00:00 IST",
-        "endTimeIST": "2026-11-07 03:20:00 IST"
-      },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "SKY TOP EVENT - AQ",
+          "type": "7",
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/gjsukewpxp/out/v1/ef14aacf858248839b9867eec5caf563/cenc.mpd",
+          "api": "368bd4ebe301406897324bc777650411:69d27c2c2b7de927d67aacc973259901"
+        },
+        {
+          "id": 2,
+          "title": "CRICFy LIVE ",
+          "type": "0",
+          "link": "https://live.vivo155.com/live/hd-en-1-4566395.m3u8?txSecret=1127228d9fa6ff3fd378e6caea98d960&txTime=6AEE3F78",
+          "api": ""
+        },
+        {
+          "id": 3,
+          "title": "HD SERVER ",
+          "type": "0",
+          "link": "https://www.rtmpcdn.com/live/f02e1559-96a7-48c6-abe7-cc2a6abca702.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14684",
       "title": "CD Castellon vs Eibar",
       "slug": "cd-castellon-vs-eibar",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -150,14 +64,22 @@
         "startTimeIST": "2026-11-07 01:00:00 IST",
         "endTimeIST": "2026-11-07 03:20:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "LaLiga Hypermotion ",
+          "type": "7",
+          "link": "https://cache07.zapitv.com/live/eds_c2/HYPERMOTION1/dash_live_ez/HYPERMOTION1.mpd",
+          "api": "a88617e904504ee291f49f0e60a51d49:17f92d59fde3b6d2bf4ffb48e8ca720a"
+        }
+      ]
     },
     {
       "id": "14675",
       "title": "Oxford City vs Leicester City",
       "slug": "oxford-city-vs-leicester-city",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -170,14 +92,29 @@
         "startTimeIST": "2026-11-07 01:15:00 IST",
         "endTimeIST": "2026-11-07 03:35:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "TNT SPORTS - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/rhf2dwosdt/out/v1/ee550d2a68d846c797e6ce4de2e8b76d/cenc.mpd",
+          "api": "69a5aa835a061ce64a630d1046727e40:d02feac8a999bd06bf4059bf33411749"
+        },
+        {
+          "id": 2,
+          "title": "CRICFy LIVE ",
+          "type": "0",
+          "link": "https://live.vivo155.com/live/sd-1-4660323.m3u8?txSecret=041a022dc32a4a4ba0a49ce8348db5b1&txTime=6AEE4221",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14678",
       "title": "Venezia vs Udinese",
       "slug": "venezia-vs-udinese",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -190,14 +127,43 @@
         "startTimeIST": "2026-11-07 01:15:00 IST",
         "endTimeIST": "2026-11-07 03:35:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "beIN ENGLISH - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/8m8cd46i1t/out/v1/83985c68e4174e90a58a1f2c024be4c9/cenc.mpd?",
+          "api": "0b42be2664d7e811d04f3e504e0924c5:ae24090123b8c72ac5404dc152847cb8"
+        },
+        {
+          "id": 2,
+          "title": "SPORT 1 CZ - AQ",
+          "type": "7",
+          "link": "https://dash2.antik.sk/stream/nvidia_sport_1/playlist_cenc.mpd",
+          "api": "11223344556677889900112233445566:4b80724d0ef86bcb2c21f7999d67739d"
+        },
+        {
+          "id": 3,
+          "title": "PARAMOUNT+ HD",
+          "type": "0",
+          "link": "https://chatgpt.hereisman.net/playlist/59372/load-playlist-multi?",
+          "api": ""
+        },
+        {
+          "id": 4,
+          "title": "CRICFy LIVE ",
+          "type": "0",
+          "link": "https://live.vivo155.com/live/hd-en-1-4549051.m3u8?txSecret=6e55d6631ac9eba3639b92f8edcfef98&txTime=6AEE410A",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14680",
       "title": "Toulouse vs RC Strasbourg",
       "slug": "toulouse-vs-rc-strasbourg",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -210,14 +176,36 @@
         "startTimeIST": "2026-11-07 01:15:00 IST",
         "endTimeIST": "2026-11-07 03:35:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "beIN ENGLISH - AQ",
+          "type": "7",
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/n7hbpksb18/out/v1/be5403be4a674a7da8b3c81b1fe79692/cenc.mpd",
+          "api": "4fce30c060b7b0464ab765e24fee5ecc:65d612238736eec3794c7e75a6fd362c"
+        },
+        {
+          "id": 2,
+          "title": "CazéTV - AQ",
+          "type": "7",
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/ui54qo0g6h/out/v1/620e1448188d4bbe9a28d0dd52f45bb7/cenc.mpd",
+          "api": "ba6aca5a550163c38d06646bb50f04e7:516c3b471fce48a5b7a2e5ee7dd505f2"
+        },
+        {
+          "id": 3,
+          "title": "CRICFy LIVE ",
+          "type": "0",
+          "link": "https://live.vivo155.com/live/hd-en-1-4550930.m3u8?txSecret=c0671a44002b36cb834c478b7bf5d51a&txTime=6AEE41F9",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14677",
       "title": "Everton vs Coventry City",
       "slug": "everton-vs-coventry-city",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -230,14 +218,36 @@
         "startTimeIST": "2026-11-07 01:30:00 IST",
         "endTimeIST": "2026-11-07 03:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "SKY SPORT PL - AQ",
+          "type": "7",
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/qdbhkwig26/out/v1/c3a69dfec0434abea00756cd73e749ff/cenc.mpd",
+          "api": "1106fb025da5b31657618344099c6c14:788284538616a73b56214e90196a6e0f"
+        },
+        {
+          "id": 2,
+          "title": "FUBO SPORTS - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/dub-nitro/live/clients/dash/enc/1wlv9dr4vx/out/v1/632322be5f1047acb2472f90f8857182/cenc.mpd",
+          "api": "42f72c025dd53039244adc13b7e31dad:a7bd941a19f6dd14f3004a623a6ad3a1"
+        },
+        {
+          "id": 3,
+          "title": "CRICFy LIVE ",
+          "type": "0",
+          "link": "https://live.vivo155.com/live/hd-en-1-4558708.m3u8?txSecret=5a8043cb58d1ca84da85e62be9f5a614&txTime=6AEE4484",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14679",
       "title": "Sevilla vs Deportivo Alaves",
       "slug": "sevilla-vs-deportivo-alaves",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -250,14 +260,43 @@
         "startTimeIST": "2026-11-07 01:30:00 IST",
         "endTimeIST": "2026-11-07 03:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "PREMIER SPORTS - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/m6sqanvm2m/out/v1/f6beb46c6e9a4132ad739f3ca27df6aa/cenc.mpd",
+          "api": "1444f4235529f183f0a5a486befe9cdb:e5e3fec67a1bb3472a2089c8a0a2557f"
+        },
+        {
+          "id": 2,
+          "title": "FANCODE - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/b3b3fkmrbl/out/v1/1084d5c9a97a4c5b9f9554c88f486646/cenc.mpd",
+          "api": "82dfca238e8c4b430a3269db71965db9:a00b28caf4ac628e77a553d440c0ddca"
+        },
+        {
+          "id": 3,
+          "title": "CazéTV - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/3ynrpdanq2/out/v1/81fd4c26584044d2b1a1cc5b32fa9af0/cenc.mpd?",
+          "api": "34475edab991ad5e92548aebd710410a:501b209cccd323ac00bf5ac15b406cb4"
+        },
+        {
+          "id": 4,
+          "title": "CRICFy LIVE ",
+          "type": "0",
+          "link": "https://live.vivo155.com/live/hd-en-1-4565575.m3u8?txSecret=4a435355060547078b75c45226fbf76d&txTime=6AEE44B7",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14681",
       "title": "Derby County vs Bolton Wanderers",
       "slug": "derby-county-vs-bolton-wanderers",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -270,27 +309,22 @@
         "startTimeIST": "2026-11-07 01:30:00 IST",
         "endTimeIST": "2026-11-07 03:50:00 IST"
       },
-      "streams": []
-    },
-    {
-      "id": "14683",
-      "title": "Famalicao vs FC Arouca",
-      "slug": "famalicao-vs-fc-arouca",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "Liga Portugal Betclic",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/238/image/dark",
-        "teamA": "Famalicão",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/49531/image",
-        "teamB": "FC Arouca",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/25777/image",
-        "startTimeIST": "2026-11-07 02:15:00 IST",
-        "endTimeIST": "2026-11-07 04:35:00 IST"
-      },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "beIN ENGLISH - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/q4u5nwaogz/out/v1/18de6d3e65934f3a8de4358e69eab86c/cenc.mpd",
+          "api": "7995c724a13748ed970840a8ab5bb9b3:67bdaf1e2175b9ff682fcdf0e2354b1e"
+        },
+        {
+          "id": 2,
+          "title": "CRICFy LIVE ",
+          "type": "0",
+          "link": "https://live.vivo155.com/live/sd-1-4563675.m3u8?txSecret=e0bc0930a50439d4c5d7c3060ba98037&txTime=6AEE44EA",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14670",
@@ -593,13 +627,13 @@
       "streams": []
     },
     {
-      "id": "B0HJNHCVTZ",
-      "title": "USA Seniors Cricket NPL 2026 - 7th Match - Dallas Lions vs Austin Hunters",
-      "slug": "usa-seniors-cricket-npl-2026-7th-match-dallas-lions-vs-austin-hunters",
+      "id": "B0HP9V1R4V",
+      "title": "USA Seniors Cricket NPL 2026 - 8th Match - Washington Eagles vs NY X-Factor",
+      "slug": "usa-seniors-cricket-npl-2026-8th-match-washington-eagles-vs-ny-x-factor",
       "cat": "Live Events",
       "status": "live",
       "event": {
-        "name": "USA Seniors Cricket NPL 2026 - 7th Match - Dallas Lions vs Austin Hunters",
+        "name": "USA Seniors Cricket NPL 2026 - 8th Match - Washington Eagles vs NY X-Factor",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",
