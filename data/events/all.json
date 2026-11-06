@@ -1,8 +1,8 @@
 {
-  "last_updated": "11/6/2026, 1:59:49 PM IST",
+  "last_updated": "11/6/2026, 9:44:55 PM IST",
   "source": "AryanStreams Official Feed",
   "football_count": 15,
-  "cricket_count": 13,
+  "cricket_count": 14,
   "events": [
     {
       "id": "14671",
@@ -22,7 +22,15 @@
         "startTimeIST": "2026-11-06 22:30:00 IST",
         "endTimeIST": "2026-11-07 00:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "CRICFy LIVE",
+          "type": "0",
+          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14672",
@@ -305,11 +313,31 @@
       "streams": []
     },
     {
+      "id": "14009",
+      "title": "New Zealand vs India",
+      "slug": "new-zealand-vs-india",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "One Day International",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11190/image",
+        "teamA": "New Zealand",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/187755/image",
+        "teamB": "India",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/187765/image",
+        "startTimeIST": "2026-11-07 07:30:51 IST",
+        "endTimeIST": "2026-11-07 16:30:55 IST"
+      },
+      "streams": []
+    },
+    {
       "id": "14074",
       "title": "Bangladesh vs West Indies",
       "slug": "bangladesh-vs-west-indies",
       "cat": "Live Events",
-      "status": "live",
+      "status": "upcoming",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
@@ -319,8 +347,8 @@
         "teamAFlag": "https://img.sofascore.com/api/v1/team/187744/image",
         "teamB": "West Indies",
         "teamBFlag": "https://img.sofascore.com/api/v1/team/187760/image",
-        "startTimeIST": "2026-11-06 09:00:16 IST",
-        "endTimeIST": "2026-11-06 17:30:20 IST"
+        "startTimeIST": "2026-11-07 09:00:28 IST",
+        "endTimeIST": "2026-11-07 17:30:34 IST"
       },
       "streams": [
         {
@@ -361,130 +389,71 @@
       ]
     },
     {
-      "id": "14587",
-      "title": "Pakistan Under-19 vs United Arab Emirates Under-19",
-      "slug": "pakistan-under-19-vs-united-arab-emirates-under-19",
+      "id": "14685",
+      "title": "Melbourne Renegades Women vs Adelaide Strikers Women",
+      "slug": "melbourne-renegades-women-vs-adelaide-strikers-women",
       "cat": "Live Events",
-      "status": "live",
+      "status": "upcoming",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
-        "type": "U19 Asia Cup",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11486/image/dark",
-        "teamA": "Pakistan Under-19",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/213104/image",
-        "teamB": "United Arab Emirates Under-19",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/300266/image",
-        "startTimeIST": "2026-11-06 10:30:00 IST",
-        "endTimeIST": "2026-11-06 18:30:34 IST"
+        "type": "Women's Big Bash League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
+        "teamA": "Melbourne Renegades Women",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/274887/image",
+        "teamB": "Adelaide Strikers Women",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/274888/image",
+        "startTimeIST": "2026-11-07 10:10:00 IST",
+        "endTimeIST": "2026-11-07 14:10:00 IST"
       },
-      "streams": [
-        {
-          "id": 1,
-          "title": "WILLOW - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/quzxcdfmpz/out/v1/9e6286a4302b4f4eb0815473ae87ba8a/cenc.mpd",
-          "api": "1dcfabc6b441908d78cc7106e30e906f:8e086929f79491b9a2076d0d04eb7317"
-        },
-        {
-          "id": 2,
-          "title": "SonyLiv PRIME - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/fhmymymkrb/out/v1/63a3f37439d848cf828763d9a3104a61/cenc.mpd",
-          "api": "894a711509fd4cd9f746368eb6c5fd38:d77f5b857e3e1f1d53900ed6d586cb78"
-        },
-        {
-          "id": 3,
-          "title": "WILLOW - ALT",
-          "type": "7",
-          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/quzxcdfmpz/out/v1/9e6286a4302b4f4eb0815473ae87ba8a/cenc.mpd",
-          "api": "1dcfabc6b441908d78cc7106e30e906f:8e086929f79491b9a2076d0d04eb7317"
-        },
-        {
-          "id": 4,
-          "title": "PTV SPORTS HD",
-          "type": "0",
-          "link": "https://live.msnetworks.net/ptv-sports/master.m3u8",
-          "api": ""
-        },
-        {
-          "id": 5,
-          "title": "TEN SPORTS HD",
-          "type": "0",
-          "link": "https://live.msnetworks.net/ten-sports/master.m3u8",
-          "api": ""
-        }
-      ]
+      "streams": []
     },
     {
-      "id": "14588",
-      "title": "India Under-19 vs Nepal Under-19",
-      "slug": "india-under-19-vs-nepal-under-19",
+      "id": "14687",
+      "title": "Afghanistan Under-19 vs Malaysia Under-19",
+      "slug": "afghanistan-under-19-vs-malaysia-under-19",
       "cat": "Live Events",
-      "status": "live",
+      "status": "upcoming",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
         "type": "U19 Asia Cup",
         "logo": "https://img.sofascore.com/api/v1/unique-tournament/11486/image/dark",
-        "teamA": "India Under-19",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/213112/image",
-        "teamB": "Nepal Under-19",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/213113/image",
-        "startTimeIST": "2026-11-06 10:30:00 IST",
-        "endTimeIST": "2026-11-06 18:30:15 IST"
+        "teamA": "Afghanistan Under-19",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/213103/image",
+        "teamB": "Malaysia Under-19",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/505670/image",
+        "startTimeIST": "2026-11-07 10:30:00 IST",
+        "endTimeIST": "2026-11-07 18:30:13 IST"
       },
-      "streams": [
-        {
-          "id": 1,
-          "title": "WILLOW - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/q4skycp0em/out/v1/ff0967ee82ad427abee362dc40a4f60f/cenc.mpd",
-          "api": "5d52529b6ff19eca2315013244513b68:ba5c7dfad287aab538463d9da6811a8c"
-        },
-        {
-          "id": 2,
-          "title": "SonyLiv PRIME - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/evcwvvskwy/out/v1/646f7a7c35594dd4947ff7c030d20c39/cenc.mpd",
-          "api": "01e7554c8d5b1fb6c77f214754f37fde:cc17f51040f551dcbf45dea424c80fa3"
-        },
-        {
-          "id": 3,
-          "title": "WILLOW - ALT",
-          "type": "7",
-          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/q4skycp0em/out/v1/ff0967ee82ad427abee362dc40a4f60f/cenc.mpd",
-          "api": "5d52529b6ff19eca2315013244513b68:ba5c7dfad287aab538463d9da6811a8c"
-        },
-        {
-          "id": 4,
-          "title": "TEN SPORTS HD",
-          "type": "0",
-          "link": "https://app.uckingcrazy1.workers.dev/api/play/Ten%20Cricket.m3u8",
-          "api": ""
-        },
-        {
-          "id": 5,
-          "title": "SonyLiv - HIN",
-          "type": "0",
-          "link": "https://liveakmt-p-md.slivcdn.com/hls/live/2119921/cricodi_0611/HIN/master.m3u8?hdnea=exp=1793983710~acl=/*~id=62504402692044749223822986018599~hmac=bb3d6d4a8d8a8e6c7b7b63fc748aa3f221475cff8ba0df9382a56c850256ca6c",
-          "api": ""
-        },
-        {
-          "id": 6,
-          "title": "SonyLiv - TAM",
-          "type": "0",
-          "link": "https://dai.google.com/ssai/event/XpIbI0pTQX-9mvR458k9aw/master.m3u8",
-          "api": ""
-        }
-      ]
+      "streams": []
+    },
+    {
+      "id": "14688",
+      "title": "Sri Lanka Under-19 vs Bangladesh Under-19",
+      "slug": "sri-lanka-under-19-vs-bangladesh-under-19",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "U19 Asia Cup",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11486/image/dark",
+        "teamA": "Sri Lanka Under-19",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/213106/image",
+        "teamB": "Bangladesh Under-19",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/213099/image",
+        "startTimeIST": "2026-11-07 10:30:00 IST",
+        "endTimeIST": "2026-11-07 18:30:27 IST"
+      },
+      "streams": []
     },
     {
       "id": "14072",
       "title": "Afghanistan vs Zimbabwe",
       "slug": "afghanistan-vs-zimbabwe",
       "cat": "Live Events",
-      "status": "live",
+      "status": "upcoming",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
@@ -494,8 +463,8 @@
         "teamAFlag": "https://img.sofascore.com/api/v1/team/187575/image",
         "teamB": "Zimbabwe",
         "teamBFlag": "https://img.sofascore.com/api/v1/team/187745/image",
-        "startTimeIST": "2026-11-06 11:30:25 IST",
-        "endTimeIST": "2026-11-06 19:30:30 IST"
+        "startTimeIST": "2026-11-07 11:30:25 IST",
+        "endTimeIST": "2026-11-07 19:30:28 IST"
       },
       "streams": [
         {
@@ -529,11 +498,31 @@
       ]
     },
     {
+      "id": "14686",
+      "title": "Brisbane Heat Women vs Hobart Hurricanes Women",
+      "slug": "brisbane-heat-women-vs-hobart-hurricanes-women",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "Women's Big Bash League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
+        "teamA": "Brisbane Heat Women",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/274884/image",
+        "teamB": "Hobart Hurricanes Women",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/274885/image",
+        "startTimeIST": "2026-11-07 13:40:00 IST",
+        "endTimeIST": "2026-11-07 17:40:00 IST"
+      },
+      "streams": []
+    },
+    {
       "id": "14261",
       "title": "NPL Nepal Premier League",
       "slug": "npl-nepal-premier-league",
       "cat": "Live Events",
-      "status": "live",
+      "status": "upcoming",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
@@ -543,8 +532,8 @@
         "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
         "teamB": "NPL",
         "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
-        "startTimeIST": "2026-11-06 12:15:41 IST",
-        "endTimeIST": "2026-11-06 21:30:48 IST"
+        "startTimeIST": "2026-11-07 16:15:51 IST",
+        "endTimeIST": "2026-11-07 20:30:56 IST"
       },
       "streams": [
         {
@@ -558,79 +547,10 @@
           "id": 2,
           "title": "FANCODE - IN",
           "type": "0",
-          "link": "https://dai-fancode.pages.dev/mumbai/4250368_english_hls_7ea136c62c30127_1ta-di_h264/index.m3u8",
+          "link": "https://dai-fancode.pages.dev/mumbai/4250370_english_hls_3f2891c62258649_1ta-di_h264/index.m3u8",
           "api": ""
         }
       ]
-    },
-    {
-      "id": "14625",
-      "title": "Melbourne Stars Women vs Sydney Sixers Women",
-      "slug": "melbourne-stars-women-vs-sydney-sixers-women",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "Women's Big Bash League",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
-        "teamA": "Melbourne Stars Women",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/274886/image",
-        "teamB": "Sydney Sixers Women",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/274883/image",
-        "startTimeIST": "2026-11-06 13:40:00 IST",
-        "endTimeIST": "2026-11-06 17:40:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "WILLOW - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/vyjgbcddti/out/v1/afd9c25f5179456fb3caf61ccbde2652/cenc.mpd",
-          "api": "2fcc4db0b53bea0a25def717c67cfe57:71ba2e8f5ea6cd6ad995206b300f051a"
-        },
-        {
-          "id": 2,
-          "title": "SKY CRICKET - AQ",
-          "type": "0",
-          "link": "https://bl.rutube.ru/livestream/7c13a51576b9ff2601f08f5d57dd5169/index.m3u8?s=uiXES2ePt7xTpQnbJxn7Dg&e=2074684474&scheme=https",
-          "api": ""
-        },
-        {
-          "id": 3,
-          "title": "WILLOW - ALT",
-          "type": "7",
-          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/vyjgbcddti/out/v1/afd9c25f5179456fb3caf61ccbde2652/cenc.mpd",
-          "api": "2fcc4db0b53bea0a25def717c67cfe57:71ba2e8f5ea6cd6ad995206b300f051a"
-        },
-        {
-          "id": 4,
-          "title": "TAPMAD - AQ",
-          "type": "0",
-          "link": "https://tencent-cdn.tapmad.com/v1/01a14ab8af8915fc600b1e3e9683f0/01a14ab953dd1ea540a81c2b41b75f/main.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": "14009",
-      "title": "New Zealand vs India",
-      "slug": "new-zealand-vs-india",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "One Day International",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11190/image",
-        "teamA": "New Zealand",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/187755/image",
-        "teamB": "India",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/187765/image",
-        "startTimeIST": "2026-11-07 07:30:51 IST",
-        "endTimeIST": "2026-11-07 16:30:55 IST"
-      },
-      "streams": []
     },
     {
       "id": "14622",
@@ -673,36 +593,6 @@
       "streams": []
     },
     {
-      "id": "B0HQ7LCC1V",
-      "title": "ACC Mens U19 Asia Cup 2026 - 3rd Match - Pakistan U19 vs United Arab Emirates U19",
-      "slug": "acc-mens-u19-asia-cup-2026-3rd-match-pakistan-u19-vs-united-arab-emirates-u19",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "ACC Mens U19 Asia Cup 2026 - 3rd Match - Pakistan U19 vs United Arab Emirates U19",
-        "category": "Cricket",
-        "teamA": "Team A",
-        "teamB": "Team B",
-        "startTimeIST": ""
-      },
-      "dashStreams": []
-    },
-    {
-      "id": "B0HNFKC2SX",
-      "title": "Womens Big Bash League 2026 - 12th Match - Melbourne Stars Women vs Sydney Sixers Women",
-      "slug": "womens-big-bash-league-2026-12th-match-melbourne-stars-women-vs-sydney-sixers-women",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Womens Big Bash League 2026 - 12th Match - Melbourne Stars Women vs Sydney Sixers Women",
-        "category": "Cricket",
-        "teamA": "Team A",
-        "teamB": "Team B",
-        "startTimeIST": ""
-      },
-      "dashStreams": []
-    },
-    {
       "id": "B0HJNHCVTZ",
       "title": "USA Seniors Cricket NPL 2026 - 7th Match - Dallas Lions vs Austin Hunters",
       "slug": "usa-seniors-cricket-npl-2026-7th-match-dallas-lions-vs-austin-hunters",
@@ -725,6 +615,36 @@
       "status": "live",
       "event": {
         "name": "India tour of New Zealand 2026 - 2nd ODI - New Zealand vs India",
+        "category": "Cricket",
+        "teamA": "Team A",
+        "teamB": "Team B",
+        "startTimeIST": ""
+      },
+      "dashStreams": []
+    },
+    {
+      "id": "B0HLQ78QD4",
+      "title": "Womens Big Bash League 2026 - 13th Match - Melbourne Renegades Women vs Adelaide Strikers Women",
+      "slug": "womens-big-bash-league-2026-13th-match-melbourne-renegades-women-vs-adelaide-strikers-women",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "Womens Big Bash League 2026 - 13th Match - Melbourne Renegades Women vs Adelaide Strikers Women",
+        "category": "Cricket",
+        "teamA": "Team A",
+        "teamB": "Team B",
+        "startTimeIST": ""
+      },
+      "dashStreams": []
+    },
+    {
+      "id": "B0H96MRJVZ",
+      "title": "ACC Mens U19 Asia Cup 2026 - 5th Match - Afghanistan U19 vs Malaysia U19",
+      "slug": "acc-mens-u19-asia-cup-2026-5th-match-afghanistan-u19-vs-malaysia-u19",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "ACC Mens U19 Asia Cup 2026 - 5th Match - Afghanistan U19 vs Malaysia U19",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",

@@ -1,5 +1,5 @@
 {
-  "last_updated": "11/6/2026, 1:59:49 PM IST",
+  "last_updated": "11/6/2026, 9:44:55 PM IST",
   "source": "AryanStreams Official Feed",
   "events": [
     {
@@ -20,7 +20,15 @@
         "startTimeIST": "2026-11-06 22:30:00 IST",
         "endTimeIST": "2026-11-07 00:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "CRICFy LIVE",
+          "type": "0",
+          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14672",
