@@ -801,6 +801,8 @@
             const API_ENDPOINTS = [
                 "../data/willow.json",
                 "/data/willow.json",
+                "../data/live_streams.json",
+                "/data/live_streams.json",
                 "https://raw.githubusercontent.com/ARYANBHAIcool/aryanstreams2/main/data/willow.json",
                 "https://raw.githubusercontent.com/aryan-kumar-singh-cse/aryanstreams/main/data/willow.json",
                 "https://bintvjson.lovable.app/api/public/bintvjson",
@@ -1003,7 +1005,7 @@
                 let directStreams = Array.isArray(m.streams) ? m.streams.slice() : [];
 
                 // Clean out any legacy adware / popup links
-                directStreams = directStreams.filter(st => st && st.url && !st.url.includes('bintv-sources') && !st.url.includes('pages.dev'));
+                directStreams = directStreams.filter(st => st && st.url);
 
                 const title = m.event_name || m.title || '';
                 const isAusVsSa = /south africa.*australia|australia.*south africa/i.test(title);
@@ -1402,19 +1404,37 @@
 
                 shakaPlayerInstance.configure(config);
 
+                const isHls = directMpd.includes('.m3u8') || directMpd.includes('hls');
+                const mimeType = isHls ? 'application/vnd.apple.mpegurl' : 'application/dash+xml';
+                let loaded = false;
+
                 try {
-                    await shakaPlayerInstance.load(directMpd);
+                    await shakaPlayerInstance.load(directMpd, null, mimeType);
                     $video.muted = true;
                     $video.play().catch(() => {});
+                    loaded = true;
                 } catch (err) {
-                    console.warn('Direct MPD load failed, attempting proxy fallback:', err);
-                    try {
-                        const proxiedUrl = 'https://sportlinks10.lovable.app/api/proxy?u=' + encodeURIComponent(directMpd);
-                        await shakaPlayerInstance.load(proxiedUrl);
-                        $video.muted = true;
-                        $video.play().catch(() => {});
-                    } catch (err2) {
-                        console.error('Failed to load MPD:', err2);
+                    console.warn('Direct stream load failed, attempting multi-tier proxy fallback:', err);
+                    const proxyList = [
+                        'https://sportlinks10.lovable.app/api/proxy?u=',
+                        'https://stream-through-spark.lovable.app/api/proxy?u=',
+                        '/api/proxy?u='
+                    ];
+                    for (const px of proxyList) {
+                        try {
+                            const proxiedUrl = px + encodeURIComponent(directMpd);
+                            await shakaPlayerInstance.load(proxiedUrl, null, mimeType);
+                            $video.muted = true;
+                            $video.play().catch(() => {});
+                            loaded = true;
+                            console.log('Stream loaded via proxy:', px);
+                            break;
+                        } catch (pxErr) {
+                            console.warn('Failed on proxy ' + px, pxErr);
+                        }
+                    }
+                    if (!loaded) {
+                        console.error('All proxies failed to load stream');
                         showToast('Stream failed to load. Try another server.', 'error', 4000);
                     }
                 }
