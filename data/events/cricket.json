@@ -1,5 +1,5 @@
 {
-  "last_updated": "11/7/2026, 6:41:54 AM IST",
+  "last_updated": "11/7/2026, 11:07:25 AM IST",
   "source": "AryanStreams Official Feed",
   "events": [
     {
@@ -7,7 +7,7 @@
       "title": "New Zealand vs India",
       "slug": "new-zealand-vs-india",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
@@ -25,70 +25,70 @@
           "id": 1,
           "title": "PRIME ENG - AQ",
           "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/xnz2tp3cz2/out/v1/57dea44e09564aa7b769ebdc51f9a42f/cenc.mpd",
-          "api": "db4b3e1da015cf0f03c2a5f4b9ee8433:964bab777741f2b59adedcbbcd463374"
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/cqbd0spknz/out/v1/71f66b096687482b8139a87814657aee/cenc.mpd",
+          "api": "d6fa7afe010c5fd6a05338599da7158f:865584ea64ec125cd6524ab3fb7d0e80"
         },
         {
           "id": 2,
           "title": "WILLOW - AQ",
           "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/s3eotogzpl/out/v1/3a421da823214ef99571a137c1035f04/cenc.mpd",
-          "api": "7ef90352c28904be995275bc47f74c04:af5e36ddef7584474601c19b4ae5935a"
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/1xyi7lfzjb/out/v1/c2421551360249a1a4ea2ea8c8a7c1ad/cenc.mpd",
+          "api": "d1be89e5a60d67f753be9b35a803c8b9:f8e35aafae8c3f3dd92dac7be4642a8b"
         },
         {
           "id": 3,
           "title": "PRIME HINDI - AQ",
           "type": "7",
-          "link": "https://otte.live.fly.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/ppmrp8tlzz/out/v1/cf829370483b4212ac7d5e3009c514b1/cenc.mpd",
-          "api": "952fb91696308da86bee7cd24edf0b58:bf359214ab3ac848738bdf014ace21b3"
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/kuptqxvclu/out/v1/5f434a56da684ce58ef04a955faeb1d7/cenc.mpd",
+          "api": "8e3eef73bb953c9da96600b47e2190d1:f1dbf72267c0bb24aa5fa2ab61987df8"
         },
         {
           "id": 4,
           "title": "TNT SPORTS - AQ",
           "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/puehlftk5j/out/v1/f7f0da1ee112481ca0024e6d4dd97f4a/cenc.mpd",
-          "api": "f3df7843080ae743bf865dc5fdf64c68:567c863bc12eb74788ea74888c042e1b"
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/tdijwiga2k/out/v1/f5fde318678f4f7583bf27b7231bde1f/cenc.mpd",
+          "api": "fa34fa8c90336dd528c7a23871cad1fe:552a78d1aeb74f1650d68255c5749408"
         },
         {
           "id": 5,
           "title": "WILLOW - ALT",
           "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/4dwybz2taj/out/v1/c90ad7bb77af498083f47bf86b7999b7/cenc.mpd",
-          "api": "6a028d5592b0e81f9c4fd4de4df6d5c7:9378d2ddd738b2d0b7a85ba65b643a7f"
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/iukkxk78gp/out/v1/4f9f877fe4ff45e3b19e08b4eeee2f42/cenc.mpd",
+          "api": "5718f40a4901526a597012cc242b4c4a:6d47e18a26287fa2a4e641901f07e50f"
         },
         {
           "id": 6,
           "title": "SonyLiv - English",
           "type": "0",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119931/cricodi_0311/ENG/std_lrh-800300010.m3u8?hdnea=exp=1793796037~acl=/*~id=944eb554fe0d9d39204a057f1ae426e3-1793752837149~hmac=3f6ed50fb95858dc451bb75e5f83384c487dce331cf29ae361b3784bc545208d",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119931/Cricodi_0611/ENG/std_lrh-800300010.m3u8?hdnea=exp=1794059013~acl=/*~id=83811792052594563525528527295500~hmac=a6aca4506c1cb9a93f7b7b9e7333350ea129bee5f06cb50552b49b219a94c839",
           "api": ""
         },
         {
           "id": 7,
           "title": "SonyLiv - Hindi",
           "type": "0",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119921/cricodi_0311/HIN/std_lrh-800300010.m3u8?hdnea=exp=1793796037~acl=/*~id=944eb554fe0d9d39204a057f1ae426e3-1793752837149~hmac=3f6ed50fb95858dc451bb75e5f83384c487dce331cf29ae361b3784bc545208d",
+          "link": "https://liveakmt-p-md.slivcdn.com/hls/live/2119921/Cricodi_0611/HIN/std_lrh-800300010.m3u8?hdnea=exp=1794059013~acl=/*~id=83811792052594563525528527295500~hmac=a6aca4506c1cb9a93f7b7b9e7333350ea129bee5f06cb50552b49b219a94c839",
           "api": ""
         },
         {
           "id": 8,
           "title": "SonyLiv - TEL",
           "type": "0",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119941/cricodi_0311/TEL/std_lrh-800300010.m3u8?hdnea=exp=1793796155~acl=/*~id=9330fc4a2255cbf324394d7b5b191e90-1793752955164~hmac=1fd83137467b58c5eab840c4d951510eddecacd341e747518010c8de4e5e5aed",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119941/Cricodi_0611/TEL/std_lrh-800300010.m3u8?hdnea=exp=1794059013~acl=/*~id=83811792052594563525528527295500~hmac=a6aca4506c1cb9a93f7b7b9e7333350ea129bee5f06cb50552b49b219a94c839",
           "api": ""
         },
         {
           "id": 9,
           "title": "SonyLiv - TAM",
           "type": "0",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119951/cricodi_0311/TAM/std_lrh-800300010.m3u8?hdnea=exp=1793796155~acl=/*~id=9330fc4a2255cbf324394d7b5b191e90-1793752955164~hmac=1fd83137467b58c5eab840c4d951510eddecacd341e747518010c8de4e5e5aed",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119951/Cricodi_0611/TAM/std_lrh-800300010.m3u8?hdnea=exp=1794059013~acl=/*~id=83811792052594563525528527295500~hmac=a6aca4506c1cb9a93f7b7b9e7333350ea129bee5f06cb50552b49b219a94c839",
           "api": ""
         },
         {
           "id": 10,
           "title": "SonyLiv - KAN",
           "type": "0",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119782/cricodi_0311/KAN/std_lrh-800300010.m3u8?hdnea=exp=1793796155~acl=/*~id=9330fc4a2255cbf324394d7b5b191e90-1793752955164~hmac=1fd83137467b58c5eab840c4d951510eddecacd341e747518010c8de4e5e5aed",
+          "link": "https://liveakmt-p-md.slivcdn.com/hls/live/2119782/Cricodi_0611/KAN/std_lrh-800300010.m3u8?hdnea=exp=1794059013~acl=/*~id=83811792052594563525528527295500~hmac=a6aca4506c1cb9a93f7b7b9e7333350ea129bee5f06cb50552b49b219a94c839",
           "api": ""
         }
       ]
@@ -98,7 +98,7 @@
       "title": "Bangladesh vs West Indies",
       "slug": "bangladesh-vs-west-indies",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
@@ -146,6 +146,13 @@
           "type": "0",
           "link": "https://tvsen5.aynaott.com/TnMn5kZz8aLmjklkk/index.m3u8",
           "api": ""
+        },
+        {
+          "id": 6,
+          "title": "FANCODE - IN",
+          "type": "0",
+          "link": "https://dai-fancode.pages.dev/mumbai/4250527_english_hls_370c69458425280_1ta-di_h264/index.m3u8",
+          "api": ""
         }
       ]
     },
@@ -154,7 +161,7 @@
       "title": "Melbourne Renegades Women vs Adelaide Strikers Women",
       "slug": "melbourne-renegades-women-vs-adelaide-strikers-women",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
@@ -167,14 +174,36 @@
         "startTimeIST": "2026-11-07 10:10:00 IST",
         "endTimeIST": "2026-11-07 14:10:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/7u2cpvujin/out/v1/6f128c4eef0848ed8ea6b79faaa90fe6/cenc.mpd",
+          "api": "8034d996508ff5f2f3017d9e2a03d3e6:ce2d564ec40cf4a6423afcc93e28f2be"
+        },
+        {
+          "id": 2,
+          "title": "SKY CRICKET - AQ",
+          "type": "0",
+          "link": "https://bl.rutube.ru/livestream/7c13a51576b9ff2601f08f5d57dd5169/index.m3u8?s=uiXES2ePt7xTpQnbJxn7Dg&e=2074684474&scheme=https",
+          "api": ""
+        },
+        {
+          "id": 3,
+          "title": "WILLOW - ALT",
+          "type": "7",
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/7u2cpvujin/out/v1/6f128c4eef0848ed8ea6b79faaa90fe6/cenc.mpd",
+          "api": "8034d996508ff5f2f3017d9e2a03d3e6:ce2d564ec40cf4a6423afcc93e28f2be"
+        }
+      ]
     },
     {
       "id": "14687",
       "title": "Afghanistan Under-19 vs Malaysia Under-19",
       "slug": "afghanistan-under-19-vs-malaysia-under-19",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
@@ -187,14 +216,43 @@
         "startTimeIST": "2026-11-07 10:30:00 IST",
         "endTimeIST": "2026-11-07 18:30:13 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/2mmao0cgab/out/v1/90e706956b5f4d8eb0d93c5081ba6527/cenc.mpd",
+          "api": "6285784b996a420f16710da94ed83846:94f2f4d5dffb2097ce56a43289d76662"
+        },
+        {
+          "id": 2,
+          "title": "SonyLiv PRIME - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/rqq44fkslo/out/v1/6a680b9da5b945198a352e8eabdef769/cenc.mpd",
+          "api": "4d45a2704f4fed42bc2bb4efddeed7f9:1bf5276486e13685c9f654c0654c41a4"
+        },
+        {
+          "id": 3,
+          "title": "WILLOW - ALT",
+          "type": "7",
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/2mmao0cgab/out/v1/90e706956b5f4d8eb0d93c5081ba6527/cenc.mpd",
+          "api": "6285784b996a420f16710da94ed83846:94f2f4d5dffb2097ce56a43289d76662"
+        },
+        {
+          "id": 4,
+          "title": "SonyLiv",
+          "type": "0",
+          "link": "https://sonymtmnew-akamaized.pages.dev/hls/live/2120306/Criclive0711/ENG/std_lrh-800300010.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14688",
       "title": "Sri Lanka Under-19 vs Bangladesh Under-19",
       "slug": "sri-lanka-under-19-vs-bangladesh-under-19",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
@@ -207,7 +265,36 @@
         "startTimeIST": "2026-11-07 10:30:00 IST",
         "endTimeIST": "2026-11-07 18:30:27 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/0fwqahjstr/out/v1/2047669080944848be586e9a051a881e/cenc.mpd",
+          "api": "7c70292ec5aeeabfafcbb4443924d0a4:cc6f131f2ddb87f645d045586ce0ecb7"
+        },
+        {
+          "id": 2,
+          "title": "SonyLiv PRIME - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/dl1fffpemp/out/v1/1614fa801f50438792fcc1c8ca3938ef/cenc.mpd",
+          "api": "ba574d2f843814a52b478ede5f2d1801:075d45773a901e56cea8f12bc4e2e7f1"
+        },
+        {
+          "id": 3,
+          "title": "WILLOW - ALT",
+          "type": "7",
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/0fwqahjstr/out/v1/2047669080944848be586e9a051a881e/cenc.mpd",
+          "api": "7c70292ec5aeeabfafcbb4443924d0a4:cc6f131f2ddb87f645d045586ce0ecb7"
+        },
+        {
+          "id": 4,
+          "title": "SonyLiv",
+          "type": "0",
+          "link": "https://sonymtmnew-akamaized.pages.dev/hls/live/2120307/Criclive0711/ENG/std_lrh-800300010.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14072",
@@ -354,21 +441,6 @@
       "streams": []
     },
     {
-      "id": "B0HP6WQNNF",
-      "title": "USA Seniors Cricket NPL 2026 - 9th Match - Houston Saints vs Mighty Dallas",
-      "slug": "usa-seniors-cricket-npl-2026-9th-match-houston-saints-vs-mighty-dallas",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "USA Seniors Cricket NPL 2026 - 9th Match - Houston Saints vs Mighty Dallas",
-        "category": "Cricket",
-        "teamA": "Team A",
-        "teamB": "Team B",
-        "startTimeIST": ""
-      },
-      "dashStreams": []
-    },
-    {
       "id": "B0HNKB52ZX",
       "title": "India tour of New Zealand 2026 - 2nd ODI - New Zealand vs India",
       "slug": "india-tour-of-new-zealand-2026-2nd-odi-new-zealand-vs-india",
@@ -399,13 +471,28 @@
       "dashStreams": []
     },
     {
-      "id": "B0H96MRJVZ",
-      "title": "ACC Mens U19 Asia Cup 2026 - 5th Match - Afghanistan U19 vs Malaysia U19",
-      "slug": "acc-mens-u19-asia-cup-2026-5th-match-afghanistan-u19-vs-malaysia-u19",
+      "id": "B0HMJFFMFG",
+      "title": "ACC Mens U19 Asia Cup 2026 - 6th Match - Sri Lanka U19 vs Bangladesh U19",
+      "slug": "acc-mens-u19-asia-cup-2026-6th-match-sri-lanka-u19-vs-bangladesh-u19",
       "cat": "Live Events",
       "status": "live",
       "event": {
-        "name": "ACC Mens U19 Asia Cup 2026 - 5th Match - Afghanistan U19 vs Malaysia U19",
+        "name": "ACC Mens U19 Asia Cup 2026 - 6th Match - Sri Lanka U19 vs Bangladesh U19",
+        "category": "Cricket",
+        "teamA": "Team A",
+        "teamB": "Team B",
+        "startTimeIST": ""
+      },
+      "dashStreams": []
+    },
+    {
+      "id": "B0HLZW9JHH",
+      "title": "USA Seniors Cricket NPL 2026 - 10th Match - Austin Hunters vs NY X-Factor",
+      "slug": "usa-seniors-cricket-npl-2026-10th-match-austin-hunters-vs-ny-x-factor",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "USA Seniors Cricket NPL 2026 - 10th Match - Austin Hunters vs NY X-Factor",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",

@@ -3,7 +3,7 @@
     "id": "tnt1",
     "name": "TNT",
     "Bearer": null,
-    "url": "https://sportlinks10.lovable.app/api/proxy?u=https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/rhf2dwosdt/out/v1/ee550d2a68d846c797e6ce4de2e8b76d/cenc.mpd",
+    "url": "https://stream-relay-buddy.lovable.app/api/public/proxy?url=https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/rhf2dwosdt/out/v1/ee550d2a68d846c797e6ce4de2e8b76d/cenc.mpd",
     "k1": "69a5aa835a061ce64a630d1046727e40",
     "k2": "d02feac8a999bd06bf4059bf33411749"
   },
@@ -19,7 +19,7 @@
     "id": "TNT3",
     "name": "TNT",
     "Bearer": null,
-    "url": "https://sportlinks10.lovable.app/api/proxy?u=https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/dev1hjwzh9/out/v1/a5f0ee7ad7b24906b14f43bebbbe4678/cenc.mpd",
+    "url": "https://stream-relay-buddy.lovable.app/api/public/proxy?url=https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/dev1hjwzh9/out/v1/a5f0ee7ad7b24906b14f43bebbbe4678/cenc.mpd",
     "k1": "cc91508324ce9dcaf425a43d58f1d9d4",
     "k2": "643e5474d9edd87c7d9091c8c97994ca"
   },
@@ -411,7 +411,7 @@
     "id": "foxios",
     "name": "Fox",
     "Bearer": null,
-    "url": "https://customer-rqx2ncfj15h2he6q.cloudflarestream.com/6bbb3f01ec11e5b10e4369978f011941/manifest/video.m3u8",
+    "url": "https://tims-001.sytes.net/main/secure/4c246b473ee3e922c808f2d453daeff8fdba1ec197b1fee29228cba69f7e0d7f/1794036096/fox-sports-505.m3u8",
     "k1": null,
     "k2": null
   },
@@ -627,9 +627,9 @@
     "id": "willow_n",
     "name": "Willow",
     "Bearer": null,
-    "url": "https://a96aivottlinear-a.akamaihd.net/OTTB/lhr-nitro/live/clients/dash/enc/pkooyxhqmr/out/v1/4c8d0ecc7d704eb2935efde33b289d50/cenc.mpd",
-    "k1": "6a028d5592b0e81f9c4fd4de4df6d5c7",
-    "k2": "9378d2ddd738b2d0b7a85ba65b643a7f"
+    "url": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/1xyi7lfzjb/out/v1/c2421551360249a1a4ea2ea8c8a7c1ad/cenc.mpd",
+    "k1": "d1be89e5a60d67f753be9b35a803c8b9",
+    "k2": "f8e35aafae8c3f3dd92dac7be4642a8b"
   },
   {
     "id": "hls",
@@ -667,7 +667,7 @@
     "id": "ten1ios",
     "name": "Sony Ten 1 English iOS",
     "Bearer": null,
-    "url": "https://sportlinks10.lovable.app/api/proxy?u=https://sliv.tgaadi.workers.dev/ten3hd.m3u8",
+    "url": "https://sunny-relay-friend.lovable.app/api/public/px/sony?url=https://sliv.tgaadi.workers.dev/ten3hd.m3u8",
     "k1": null,
     "k2": null
   },
@@ -691,7 +691,7 @@
     "id": "ten3ios",
     "name": "Sony Ten 3 Hindi iOS",
     "Bearer": null,
-    "url": "https://sportlinks10.lovable.app/api/proxy?u=https://dishmt.slivcdn.com/hls/live/2020591/TEN3HD/master.m3u8?hdnea=st=1793512191~exp=1793512491~acl=*~id=22630ab9-93c0-49e7-9fed-5d5b7fddf656~hmac=ff13e21ad6f70456e107fb14222168c0868c1ca06f2c4a4e578a0e3f8744501d",
+    "url": "https://tims-001.sytes.net/main/secure/64c9362ba403bff6da6dd584b57890541532c0722a1d00dd4a4ec6961b3b2f2b/1794036012/sonysportsnetwork3-in.m3u8",
     "k1": null,
     "k2": null
   },
@@ -699,7 +699,7 @@
     "id": "ten5ios",
     "name": "Sony Ten 5 iOS",
     "Bearer": null,
-    "url": "https://sportlinks10.lovable.app/api/proxy?u=https://dishmt.slivcdn.com/hls/live/2020593/SONYSIXHD/master.m3u8?hdnea=st=1793512191~exp=1793512491~acl=*~id=22630ab9-93c0-49e7-9fed-5d5b7fddf656~hmac=ff13e21ad6f70456e107fb14222168c0868c1ca06f2c4a4e578a0e3f8744501d",
+    "url": "https://tims-001.sytes.net/main/secure/5bd6b31f3455b793763c7ec606ddb593cce1ed2de2e37d618fdf64bd04f24e82/1794036050/sonysportsnetwork5-in.m3u8",
     "k1": null,
     "k2": null
   },
@@ -707,17 +707,17 @@
     "id": "prime_eng",
     "name": "Prime English",
     "Bearer": null,
-    "url": "https://otte.live.fly.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/rtlq2she5l/out/v1/8965a8b295c4453eb5afd8706e65586a/cenc.mpd",
-    "k1": "db4b3e1da015cf0f03c2a5f4b9ee8433",
-    "k2": "964bab777741f2b59adedcbbcd463374"
+    "url": "https://otte.live.fly.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/cqbd0spknz/out/v1/71f66b096687482b8139a87814657aee/cenc.mpd",
+    "k1": "d6fa7afe010c5fd6a05338599da7158f",
+    "k2": "865584ea64ec125cd6524ab3fb7d0e80"
   },
   {
     "id": "prime_hin",
     "name": "Prime Hindi",
     "Bearer": null,
-    "url": "https://otte.live.fly.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/ppmrp8tlzz/out/v1/cf829370483b4212ac7d5e3009c514b1/cenc.mpd",
-    "k1": "952fb91696308da86bee7cd24edf0b58",
-    "k2": "bf359214ab3ac848738bdf014ace21b3"
+    "url": "https://otte.live.fly.ww.aiv-cdn.net/fra-nitro/live/clients/dash/enc/kuptqxvclu/out/v1/5f434a56da684ce58ef04a955faeb1d7/cenc.mpd",
+    "k1": "8e3eef73bb953c9da96600b47e2190d1",
+    "k2": "f1dbf72267c0bb24aa5fa2ab61987df8"
   },
   {
     "id": "iOS",
@@ -742,5 +742,13 @@
     "url": "https://irgjlk-veto.akamaized.net/f98c8ae68a354ab59a4e28e3dd700d4f/playlist.m3u8",
     "k1": null,
     "k2": null
+  },
+  {
+    "id": "indiaa",
+    "name": "India A",
+    "Bearer": null,
+    "url": "https://otte.live.fly.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/alq9jnh1n7/out/v1/4344d0ef248149ad82f33d8fbe849101/cenc.mpd",
+    "k1": "508623f921f12bfb5ff5af20e8cc4589",
+    "k2": "5f32d00b563e16b555294c896424702d"
   }
 ]
