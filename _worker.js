@@ -178,9 +178,20 @@ async function handleProxy(request) {
   }
 
   const requestUrl = new URL(request.url);
-  const targetUrl = requestUrl.searchParams.get("url") || requestUrl.searchParams.get("u");
+  let targetUrl = requestUrl.searchParams.get("url") || requestUrl.searchParams.get("u");
   if (!targetUrl) {
     return new Response("Missing target url parameter", { status: 400 });
+  }
+
+  // Unwrap any accidental double-wrapping (/api/proxy?u=... or /proxy?u=...)
+  while (targetUrl.includes("/proxy?u=") || targetUrl.includes("/proxy?url=")) {
+    try {
+      const splitKey = targetUrl.includes("?u=") ? "?u=" : "?url=";
+      const part = targetUrl.substring(targetUrl.indexOf(splitKey) + splitKey.length);
+      targetUrl = decodeURIComponent(part);
+    } catch (_e) {
+      break;
+    }
   }
 
   const proxyBase = `${requestUrl.origin}/api/proxy?u=`;

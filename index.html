@@ -1876,8 +1876,12 @@
         function getPlayableUrl(url) {
             const parsed = parseStreamUrl(url);
 
-            // If already going through an edge relay (lovable.app, Cloudflare worker, papacito, etc.), play directly
-            if (parsed.baseUrl.includes('lovable.app') || 
+            // If already going through an edge relay, worker proxy, or lovable, play directly
+            if (parsed.baseUrl.startsWith('/api/proxy') ||
+                parsed.baseUrl.startsWith('/proxy') ||
+                parsed.baseUrl.includes('/api/proxy') ||
+                parsed.baseUrl.includes('/proxy?u=') ||
+                parsed.baseUrl.includes('lovable.app') || 
                 parsed.baseUrl.includes('workers.dev') || 
                 parsed.baseUrl.includes('papacito.cfd') ||
                 parsed.baseUrl.includes('miekgo.app')) {
