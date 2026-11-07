@@ -1,84 +1,7 @@
 {
-  "last_updated": "11/7/2026, 7:40:03 PM IST",
+  "last_updated": "11/8/2026, 12:21:10 AM IST",
   "source": "AryanStreams Official Feed",
   "events": [
-    {
-      "id": "14261",
-      "title": "NPL Nepal Premier League",
-      "slug": "npl-nepal-premier-league",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "Nepal Premier League T20",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
-        "teamA": "NPL",
-        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
-        "teamB": "NPL",
-        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
-        "startTimeIST": "2026-11-07 16:15:51 IST",
-        "endTimeIST": "2026-11-07 20:30:56 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "NPL LIVE - AQ",
-          "type": "7",
-          "link": "https://ott-lb.nettv.com.np/npl/live_match/index.mpd",
-          "api": "82dfca238e8c4b430a3269db71965db9:a00b28caf4ac628e77a553d440c0ddca"
-        },
-        {
-          "id": 2,
-          "title": "FANCODE - IN",
-          "type": "0",
-          "link": "https://dai-fancode.pages.dev/mumbai/4249855_english_hls_62f97a03e897115_1ta-di_h264/index.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": "14622",
-      "title": "Abu Dhabi T10 League",
-      "slug": "abu-dhabi-t10-league",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "Abu Dhabi T10 League",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
-        "teamA": "Abu Dhabi T10",
-        "teamAFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
-        "teamB": "Abu Dhabi T10",
-        "teamBFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
-        "startTimeIST": "2026-11-07 19:15:54 IST",
-        "endTimeIST": "2026-11-07 23:25:24 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "WILLOW - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/egzixgijjb/out/v1/c4b8c2327e9c4e23986fe79829ee3daf/cenc.mpd",
-          "api": "e83ab9dc8f48a1c573c35fb8eca23423:4b67016b2e7b226d62d8e4d73694a598"
-        },
-        {
-          "id": 2,
-          "title": "WILLOW - ALT",
-          "type": "7",
-          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/egzixgijjb/out/v1/c4b8c2327e9c4e23986fe79829ee3daf/cenc.mpd",
-          "api": "e83ab9dc8f48a1c573c35fb8eca23423:4b67016b2e7b226d62d8e4d73694a598"
-        },
-        {
-          "id": 3,
-          "title": "A SPORTS HD",
-          "type": "0",
-          "link": "https://live.msnetworks.net/a-sports/master.m3u8",
-          "api": ""
-        }
-      ]
-    },
     {
       "id": "14750",
       "title": "Sydney Sixers Women vs Sydney Thunder Women",
@@ -292,6 +215,41 @@
       "streams": []
     },
     {
+      "id": "14261",
+      "title": "NPL Nepal Premier League",
+      "slug": "npl-nepal-premier-league",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "Nepal Premier League T20",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
+        "teamA": "NPL",
+        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
+        "teamB": "NPL",
+        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
+        "startTimeIST": "2026-11-09 12:15:25 IST",
+        "endTimeIST": "2026-11-09 20:45:35 IST"
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "NPL LIVE - AQ",
+          "type": "7",
+          "link": "https://ott-lb.nettv.com.np/npl/live_match/index.mpd",
+          "api": "82dfca238e8c4b430a3269db71965db9:a00b28caf4ac628e77a553d440c0ddca"
+        },
+        {
+          "id": 2,
+          "title": "FANCODE - IN",
+          "type": "0",
+          "link": "https://dai-fancode.pages.dev/mumbai/4249855_english_hls_62f97a03e897115_1ta-di_h264/index.m3u8",
+          "api": ""
+        }
+      ]
+    },
+    {
       "id": "14009",
       "title": "New Zealand vs India",
       "slug": "new-zealand-vs-india",
@@ -390,6 +348,21 @@
       "status": "live",
       "event": {
         "name": "USA Seniors Cricket NPL 2026 - 10th Match - Austin Hunters vs NY X-Factor",
+        "category": "Cricket",
+        "teamA": "Team A",
+        "teamB": "Team B",
+        "startTimeIST": ""
+      },
+      "dashStreams": []
+    },
+    {
+      "id": "B0HQHV53SF",
+      "title": "Abu Dhabi T10 League 2026 - 3rd Match - United Tigers vs Arabian Aces",
+      "slug": "abu-dhabi-t10-league-2026-3rd-match-united-tigers-vs-arabian-aces",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "Abu Dhabi T10 League 2026 - 3rd Match - United Tigers vs Arabian Aces",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",
