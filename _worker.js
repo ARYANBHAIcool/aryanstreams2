@@ -237,8 +237,8 @@ async function handleProxy(request) {
 
   // 2. Fallback to sportlinks10 with origin spoofing
   let sportlinksTarget = targetUrl;
-  if (!sportlinksTarget.startsWith("https://sportlinks10.lovable.app")) {
-    sportlinksTarget = "https://sportlinks10.lovable.app/api/proxy?u=" + encodeURIComponent(targetUrl);
+  if (!sportlinksTarget.startsWith("https://asp1.lovable.app")) {
+    sportlinksTarget = "https://asp1.lovable.app/api/proxy?u=" + encodeURIComponent(targetUrl);
   }
 
   try {
@@ -246,8 +246,8 @@ async function handleProxy(request) {
       method: request.method,
       headers: {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
-        "Origin": "https://sportlinks10.lovable.app",
-        "Referer": "https://sportlinks10.lovable.app/"
+        "Origin": "https://asp1.lovable.app",
+        "Referer": "https://asp1.lovable.app/"
       }
     });
 
@@ -265,7 +265,7 @@ async function handleProxy(request) {
         respHeaders.set("Content-Type", "application/vnd.apple.mpegurl");
         respHeaders.set("Cache-Control", "no-cache, no-store, must-revalidate, max-age=0");
         let text = await upstream.text();
-        text = text.replaceAll("https://sportlinks10.lovable.app/api/proxy?u=", proxyBase);
+        text = text.replaceAll("https://asp1.lovable.app/api/proxy?u=", proxyBase);
         return new Response(text, {
           status: upstream.status,
           headers: respHeaders
@@ -280,7 +280,7 @@ async function handleProxy(request) {
     }
   } catch (_e) {}
 
-  return Response.redirect("https://sportlinks10.lovable.app/api/proxy?u=" + encodeURIComponent(targetUrl), 302);
+  return Response.redirect("https://asp1.lovable.app/api/proxy?u=" + encodeURIComponent(targetUrl), 302);
 }
 
 const ID_ALIASES = {
