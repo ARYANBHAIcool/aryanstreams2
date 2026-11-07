@@ -205,6 +205,7 @@
             'ss1h': 'H1HD', 'ss1': 'E1HD', 'ss1tam': 'T1HD', 'ss1tel': 'TE1HD', 'ss1kan': 'KA1SD',
             'ss2': 'E2HD', 'ss2h': 'H2HD', 'ss2tam': 'S2HD', 'ss2tel': 'TE2HD', 'ss2kan': 'KA2SD',
             'ss3': 'SS3', 'ssselect1': 'SE1HD', 'ssselect2': 'SE2HD', 'select1': 'SE1HD', 'select2': 'SE2HD', 'sskhel': 'H1SD',
+            'st1hd': 'ST1HD', 'st1sd': 'ST1SD', 'st2hd': 'ST2HD', 'st2sd': 'ST2SD', 'star_select1': 'ST1HD', 'star_select2': 'ST2HD',
             'h1hd': 'H1HD', 'e1hd': 'E1HD', 'h2hd': 'H2HD', 'e2hd': 'E2HD',
             's2hd': 'S2HD', 'te2hd': 'TE2HD', 'ka1sd': 'KA1SD', 'ka2sd': 'KA2SD',
             'se1hd': 'SE1HD', 'se2hd': 'SE2HD', 'h1sd': 'H1SD',
@@ -223,8 +224,12 @@
         };
 
         var FALLBACK_MAP = {
-            'SE1HD': ['SE1', '460', 'select1', 'ssselect1'],
-            'SE2HD': ['SE2', '461', 'select2', 'ssselect2'],
+            'SE1HD': ['ST1HD', 'ST1SD', 'SE1', '460', 'select1', 'ssselect1'],
+            'SE2HD': ['ST2HD', 'ST2SD', 'SE2', '461', 'select2', 'ssselect2'],
+            'ST1HD': ['SE1HD', 'ST1SD', 'SE1', '460', 'select1', 'ssselect1'],
+            'ST1SD': ['ST1HD', 'SE1HD', 'SE1', '460', 'select1', 'ssselect1'],
+            'ST2HD': ['SE2HD', 'ST2SD', 'SE2', '461', 'select2', 'ssselect2'],
+            'ST2SD': ['ST2HD', 'SE2HD', 'SE2', '461', 'select2', 'ssselect2'],
             'STEN1': ['162', '3531', 'sony1', 'sten1', 'ten1-hd', 'ten1'],
             'STEN2': ['891', '3532', 'sony2', 'sten2', 'ten2-hd', 'ten2'],
             'STEN3': ['892', '3533', 'sony3', 'sten3', 'ten3-hd', 'ten3'],
@@ -321,6 +326,10 @@
             '1389': { kid: 'e4e8647eaf0659ac85f61765a5abcdc1', key: 'd749c9b27505beb0e1a8b6c30ca65de6' },
             'star3': { kid: 'e4e8647eaf0659ac85f61765a5abcdc1', key: 'd749c9b27505beb0e1a8b6c30ca65de6' },
 
+            'st1hd': { kid: 'cc04426ac28359a7b620934ddbbecb7c', key: '0074c460557b1f21a60fa0aada550e3a' },
+            'st1sd': { kid: 'df07fac4675a597f92cbe2edbffb7c23', key: '0d6b8e6559306e043bf26c7c8ffce7ae' },
+            'st2hd': { kid: '2c443dffefb256a5b7a1364cc4af3529', key: '1d78f35200eb5977a95de669788cf128' },
+            'st2sd': { kid: '2b307daa57a75698acfac3e85d4ff8c5', key: 'd3c17909d061caa2e0a9c75e195ae3d4' },
             'se1hd': { kid: 'cc04426ac28359a7b620934ddbbecb7c', key: '0074c460557b1f21a60fa0aada550e3a' },
             'select1': { kid: 'cc04426ac28359a7b620934ddbbecb7c', key: '0074c460557b1f21a60fa0aada550e3a' },
             'select_1': { kid: 'cc04426ac28359a7b620934ddbbecb7c', key: '0074c460557b1f21a60fa0aada550e3a' },
@@ -478,6 +487,7 @@
             'ss2tel': 'ss2tel', '3274': 'ss2tel',
             'ss1kan': 'ss1kan', 'ka1sd': 'ss1kan', '1650': 'ss1kan',
             'ss2kan': 'ss2kan', 'ka2sd': 'ss2kan', '1122': 'ss2kan',
+            'st1hd': 'se1hd', 'st1sd': 'se1hd', 'st2hd': 'se2hd', 'st2sd': 'se2hd',
             'se1hd': 'se1hd', 'se1': 'se1', 'select1': 'se1hd', '460': 'se1hd', 'ssselect1': 'se1hd',
             'se2hd': 'se2hd', 'se2': 'se2', 'select2': 'se2hd', '461': 'se2hd', 'ssselect2': 'se2hd'
         };
@@ -509,6 +519,8 @@
                         if ((normId === '155' || normId.includes('ten5') || normId === 'sten5' || workerKey === 'sten5') && (cId === 'sten5' || cNm.includes('sports 5') || cNm.includes('ten 5'))) return true;
                         if ((normId.includes('hindi') || normId === 'h1hd' || workerKey === 'ss1h') && (cId === 'h1hd' || cNm.includes('hindi'))) return true;
                         if ((normId.includes('eng') || normId === 'e1hd' || workerKey === 'ss1') && (cId === 'e1hd' || (cNm.includes('sports 1') && !cNm.includes('hindi')))) return true;
+                        if ((normId.includes('select1') || normId === 'se1hd' || normId === 'st1hd' || workerKey === 'se1hd') && (cId === 'st1hd' || cId === 'st1sd' || (cNm.includes('select') && (cNm.includes('1') || cNm.includes('one'))))) return true;
+                        if ((normId.includes('select2') || normId === 'se2hd' || normId === 'st2hd' || workerKey === 'se2hd') && (cId === 'st2hd' || cId === 'st2sd' || (cNm.includes('select') && (cNm.includes('2') || cNm.includes('two'))))) return true;
                         return false;
                     });
                     if (found && found.cookie && isCookieValid(found.cookie, found.cookie_expire)) {
@@ -745,9 +757,26 @@
                         var searchId = allSearchIds[s];
                         var target = list.find(function(c) {
                             var chId = String(c.id || c.channel_id || '').toLowerCase();
-                            var chName = String(c.name || c.channel_name || '').toLowerCase();
-                            return chId === searchId || chName === searchId;
+                            return chId === searchId;
                         });
+                        if (!target) {
+                            target = list.find(function(c) {
+                                var chId = String(c.id || c.channel_id || '').toLowerCase();
+                                var chName = String(c.name || c.channel_name || '').toLowerCase();
+                                if (chName === searchId) return true;
+                                if ((searchId.indexOf('se1') !== -1 || searchId.indexOf('st1') !== -1 || searchId === 'select1') &&
+                                    chName.indexOf('select') !== -1 && (chName.indexOf('1') !== -1 || chName.indexOf('one') !== -1)) {
+                                    if (searchId.indexOf('hd') !== -1) return chName.indexOf('hd') !== -1 || chId.indexOf('hd') !== -1;
+                                    return true;
+                                }
+                                if ((searchId.indexOf('se2') !== -1 || searchId.indexOf('st2') !== -1 || searchId === 'select2') &&
+                                    chName.indexOf('select') !== -1 && (chName.indexOf('2') !== -1 || chName.indexOf('two') !== -1)) {
+                                    if (searchId.indexOf('hd') !== -1) return chName.indexOf('hd') !== -1 || chId.indexOf('hd') !== -1;
+                                    return true;
+                                }
+                                return false;
+                            });
+                        }
 
                         if (target) {
                             var cookie = target.cookie || '';
