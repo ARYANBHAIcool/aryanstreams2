@@ -183,6 +183,48 @@ async function handleProxy(request) {
     return new Response("Missing target url parameter", { status: 400 });
   }
 
+  const proxyBase = `${requestUrl.origin}/api/proxy?u=`;
+
+  // 1. Try direct fetch with provider headers (SonyLiv, FanCode, Amazon Prime)
+  try {
+    const directHeaders = new Headers();
+    applyDefaultHeaders(targetUrl, directHeaders, request);
+    const directRes = await fetch(targetUrl, {
+      method: request.method,
+      headers: directHeaders,
+      redirect: "follow"
+    });
+
+    if (directRes.ok) {
+      const respHeaders = new Headers(directRes.headers);
+      respHeaders.set("Access-Control-Allow-Origin", "*");
+      respHeaders.set("Access-Control-Allow-Methods", "GET, HEAD, OPTIONS");
+      respHeaders.set("Access-Control-Allow-Headers", "*");
+      respHeaders.delete("x-frame-options");
+
+      const contentType = directRes.headers.get("content-type") || "";
+      const isM3U8 = contentType.includes("mpegurl") || contentType.includes("x-mpegurl") || targetUrl.includes(".m3u8");
+
+      if (isM3U8) {
+        respHeaders.set("Content-Type", "application/vnd.apple.mpegurl");
+        respHeaders.set("Cache-Control", "no-cache, no-store, must-revalidate, max-age=0");
+        const text = await directRes.text();
+        const rewritten = rewriteM3U8(text, directRes.url || targetUrl, proxyBase);
+        return new Response(rewritten, {
+          status: directRes.status,
+          headers: respHeaders
+        });
+      }
+
+      respHeaders.set("Cache-Control", "public, max-age=180, s-maxage=180");
+      return new Response(directRes.body, {
+        status: directRes.status,
+        headers: respHeaders
+      });
+    }
+  } catch (_directErr) {}
+
+  // 2. Fallback to sportlinks10 with origin spoofing
   let sportlinksTarget = targetUrl;
   if (!sportlinksTarget.startsWith("https://sportlinks10.lovable.app")) {
     sportlinksTarget = "https://sportlinks10.lovable.app/api/proxy?u=" + encodeURIComponent(targetUrl);
@@ -212,7 +254,6 @@ async function handleProxy(request) {
         respHeaders.set("Content-Type", "application/vnd.apple.mpegurl");
         respHeaders.set("Cache-Control", "no-cache, no-store, must-revalidate, max-age=0");
         let text = await upstream.text();
-        const proxyBase = `${requestUrl.origin}/api/proxy?u=`;
         text = text.replaceAll("https://sportlinks10.lovable.app/api/proxy?u=", proxyBase);
         return new Response(text, {
           status: upstream.status,
@@ -220,7 +261,6 @@ async function handleProxy(request) {
         });
       }
 
-      // Media chunks (.ts, .m4s, .key) - cache at edge for 180s
       respHeaders.set("Cache-Control", "public, max-age=180, s-maxage=180");
       return new Response(upstream.body, {
         status: upstream.status,

@@ -1,13 +1,15 @@
 {
   "version": 1,
   "include": [
-    "/api/live*",
-    "/api/proxy*",
-    "/proxy*"
+    "/api/*",
+    "/proxy*",
+    "/fancode/*"
   ],
   "exclude": [
     "/data/*",
     "/scripts/*",
-    "/*.*"
+    "/asworld/*",
+    "/asbuzz/*",
+    "/assets/*"
   ]
 }
