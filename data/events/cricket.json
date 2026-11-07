@@ -1,5 +1,5 @@
 {
-  "last_updated": "11/7/2026, 11:07:25 AM IST",
+  "last_updated": "11/7/2026, 12:46:46 PM IST",
   "source": "AryanStreams Official Feed",
   "events": [
     {
@@ -301,7 +301,7 @@
       "title": "Afghanistan vs Zimbabwe",
       "slug": "afghanistan-vs-zimbabwe",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
@@ -319,15 +319,15 @@
           "id": 1,
           "title": "WILLOW - AQ",
           "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/luldqqjdgc/out/v1/819f4b259e5248c089feb5934af92890/cenc.mpd",
-          "api": "cf6092dc6444b182d9ef6fde4152ff7d:2a868d1944e597930dde32f183a0c6bf"
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/uhx9dzy4rs/out/v1/5db830b25a6e428cbb15793518046968/cenc.mpd",
+          "api": "8e9af61f4a7f6d5a8f27cd3b85cc9a1d:bafb7bbc65820a0d0a5f77a990db7b76"
         },
         {
           "id": 2,
           "title": "WILLOW - ALT",
           "type": "7",
-          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/luldqqjdgc/out/v1/819f4b259e5248c089feb5934af92890/cenc.mpd",
-          "api": "cf6092dc6444b182d9ef6fde4152ff7d:2a868d1944e597930dde32f183a0c6bf"
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/uhx9dzy4rs/out/v1/5db830b25a6e428cbb15793518046968/cenc.mpd",
+          "api": "8e9af61f4a7f6d5a8f27cd3b85cc9a1d:bafb7bbc65820a0d0a5f77a990db7b76"
         },
         {
           "id": 3,
@@ -340,7 +340,7 @@
           "id": 4,
           "title": "FANCODE - IN ",
           "type": "0",
-          "link": "https://dai-fancode.pages.dev/mumbai/4249772_english_hls_ea87fdf83410465_1ta-di_h264/index.m3u8",
+          "link": "https://dai-fancode.pages.dev/mumbai/4249772_english_hls_ea87fdf83418752_1ta-di_h264/index.m3u8",
           "api": ""
         }
       ]
@@ -363,7 +363,15 @@
         "startTimeIST": "2026-11-07 13:40:00 IST",
         "endTimeIST": "2026-11-07 17:40:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "CRICFy LIVE",
+          "type": "0",
+          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14261",
