@@ -6,6 +6,6 @@ export async function onRequest(context) {
     return new Response("Missing target url parameter", { status: 400 });
   }
   // Redirect off Cloudflare completely to external Lovable proxy (0 Cloudflare Worker bandwidth & 0 CPU used)
-  const redirectTarget = "https://stream-through-spark.lovable.app/api/proxy?u=" + encodeURIComponent(targetUrl);
+  const redirectTarget = "https://sportlinks10.lovable.app/api/proxy?u=" + encodeURIComponent(targetUrl);
   return Response.redirect(redirectTarget, 302);
 }
