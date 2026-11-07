@@ -953,8 +953,8 @@ async function syncSonyM3U8() {
                             id: idMatch[1].trim(),
                             name: name,
                             raw_url: streamUrl,
-                            proxied_url: 'https://asp1.lovable.app/api/proxy?u=' + encodeURIComponent(streamUrl),
-                            backup_proxied_url: 'https://asp1.lovable.app/api/proxy?u=' + encodeURIComponent(streamUrl)
+                            proxied_url: 'https://sportlink10-sayan.lovable.app/api/proxy?u=' + encodeURIComponent(streamUrl),
+                            backup_proxied_url: 'https://sportlink10-sayan.lovable.app/api/proxy?u=' + encodeURIComponent(streamUrl)
                         });
                     }
                 }
