@@ -1,5 +1,5 @@
 {
-  "last_updated": "11/8/2026, 7:17:45 AM IST",
+  "last_updated": "11/8/2026, 2:10:11 PM IST",
   "source": "AryanStreams Official Feed",
   "events": [
     {
@@ -317,6 +317,26 @@
         "teamAFlag": "https://img.sofascore.com/api/v1/team/1658/image",
         "teamB": "LOSC Lille",
         "teamBFlag": "https://img.sofascore.com/api/v1/team/1643/image",
+        "startTimeIST": "2026-11-08 19:30:00 IST",
+        "endTimeIST": "2026-11-08 21:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14819",
+      "title": "Sri Lanka vs Bhutan",
+      "slug": "sri-lanka-vs-bhutan",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "SAFF Championship",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/2354/image/dark",
+        "teamA": "Sri Lanka",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/23487/image",
+        "teamB": "Bhutan",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/191564/image",
         "startTimeIST": "2026-11-08 19:30:00 IST",
         "endTimeIST": "2026-11-08 21:50:00 IST"
       },
