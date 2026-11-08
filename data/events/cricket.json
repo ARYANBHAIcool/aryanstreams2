@@ -1,49 +1,7 @@
 {
-  "last_updated": "11/8/2026, 9:06:18 PM IST",
+  "last_updated": "11/9/2026, 1:27:07 AM IST",
   "source": "AryanStreams Official Feed",
   "events": [
-    {
-      "id": "14622",
-      "title": "Abu Dhabi T10 League",
-      "slug": "abu-dhabi-t10-league",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "Abu Dhabi T10 League",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
-        "teamA": "Abu Dhabi T10",
-        "teamAFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
-        "teamB": "Abu Dhabi T10",
-        "teamBFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
-        "startTimeIST": "2026-11-08 19:15:34 IST",
-        "endTimeIST": "2026-11-08 23:25:38 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "WILLOW - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/tt7bt6wnxg/out/v1/865dd41533dc426eb8cd944c1454c6e7/cenc.mpd",
-          "api": "b107afb9c4f0fc911437a899bcccaf7c:56fb9ff0fd62018a100332cd35bdd207"
-        },
-        {
-          "id": 2,
-          "title": "WILLOW - ALT",
-          "type": "7",
-          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/tt7bt6wnxg/out/v1/865dd41533dc426eb8cd944c1454c6e7/cenc.mpd",
-          "api": "b107afb9c4f0fc911437a899bcccaf7c:56fb9ff0fd62018a100332cd35bdd207"
-        },
-        {
-          "id": 3,
-          "title": "A SPORTS HD",
-          "type": "0",
-          "link": "https://live.msnetworks.net/a-sports/master.m3u8",
-          "api": ""
-        }
-      ]
-    },
     {
       "id": "14074",
       "title": "Bangladesh vs West Indies",
@@ -243,6 +201,26 @@
           "api": ""
         }
       ]
+    },
+    {
+      "id": "14622",
+      "title": "Abu Dhabi T10 League",
+      "slug": "abu-dhabi-t10-league",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "Abu Dhabi T10 League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
+        "teamA": "Abu Dhabi T10",
+        "teamAFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
+        "teamB": "Abu Dhabi T10",
+        "teamBFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
+        "startTimeIST": "2026-11-09 19:15:15 IST",
+        "endTimeIST": "2026-11-09 23:27:20 IST"
+      },
+      "streams": []
     },
     {
       "id": "14009",
