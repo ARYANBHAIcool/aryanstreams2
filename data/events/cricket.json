@@ -1,5 +1,5 @@
 {
-  "last_updated": "11/8/2026, 4:00:02 AM IST",
+  "last_updated": "11/8/2026, 7:17:45 AM IST",
   "source": "AryanStreams Official Feed",
   "events": [
     {
@@ -20,7 +20,15 @@
         "startTimeIST": "2026-11-08 08:10:00 IST",
         "endTimeIST": "2026-11-08 12:10:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "CRICFy LIVE",
+          "type": "0",
+          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14074",
@@ -341,13 +349,13 @@
       ]
     },
     {
-      "id": "B0HP7FT9BH",
-      "title": "USA Seniors Cricket NPL 2026 - 11th Match - Dallas Lions vs Washington Eagles",
-      "slug": "usa-seniors-cricket-npl-2026-11th-match-dallas-lions-vs-washington-eagles",
+      "id": "B0HN95FFRR",
+      "title": "USA Seniors Cricket NPL 2026 - 12th Match - Chicago Cavaliers vs Seattle Moose",
+      "slug": "usa-seniors-cricket-npl-2026-12th-match-chicago-cavaliers-vs-seattle-moose",
       "cat": "Live Events",
       "status": "live",
       "event": {
-        "name": "USA Seniors Cricket NPL 2026 - 11th Match - Dallas Lions vs Washington Eagles",
+        "name": "USA Seniors Cricket NPL 2026 - 12th Match - Chicago Cavaliers vs Seattle Moose",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",
