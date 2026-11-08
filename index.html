@@ -1528,13 +1528,7 @@
             "barvsrlm_uhd":     { type: "iframe", name: "Barcelona vs Real Madrid (Sky UHD)", url: "https://trend48.st/live-tv?ch=skysportsmaineventuhd-uk" },
             "premier1":         { type: "iframe", name: "Premier Sports 1 HD", url: "https://trend48.st/live-tv?ch=premiersports1-ie" },
             "premiersports1":   { type: "iframe", name: "Premier Sports 1 HD", url: "https://trend48.st/live-tv?ch=premiersports1-ie" },
-            "daznlaliga":       { type: "iframe", name: "DAZN LaLiga Spain", url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvdHJlZm94eS9kYXpubGFsaWdhLWVz" },
-            "daznlaliga_web":   { type: "iframe", name: "DAZN LaLiga Spain", url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvdHJlZm94eS9kYXpubGFsaWdhLWVz" },
-            "movistarlaliga":   { type: "iframe", name: "Movistar LaLiga Spain", url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvdHJlZm94eS9tb3Zpc3RhcmxhbGlnYS1lcw==" },
-            "laliga":           { type: "iframe", name: "La Liga Live (DAZN / Movistar)", url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvdHJlZm94eS9kYXpubGFsaWdhLWVz" },
-            "la_liga":          { type: "iframe", name: "La Liga Live (DAZN / Movistar)", url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvdHJlZm94eS9kYXpubGFsaWdhLWVz" },
-            "laligatv":         { type: "iframe", name: "La Liga Live (DAZN / Movistar)", url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvdHJlZm94eS9kYXpubGFsaWdhLWVz" },
-            "laligaspain":      { type: "iframe", name: "La Liga Live (DAZN / Movistar)", url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvdHJlZm94eS9kYXpubGFsaWdhLWVz" },
+            "daznlaliga":       { type: "iframe", name: "DAZN LaLiga Spain", url: "https://trend48.st/live-tv?ch=daznlaliga-es" },
 
             // Mobile typo aliases
             "bavsrlm":          { type: "iframe", name: "Barcelona vs Real Madrid (Server 1)", url: "https://trend48.st/live-tv?ch=movistarlaliga-es" },
@@ -1555,8 +1549,8 @@
             "elclasico":        { type: "iframe", name: "Barcelona vs Real Madrid (Server 1)", url: "https://trend48.st/live-tv?ch=movistarlaliga-es" },
             "barca":            { type: "iframe", name: "Barcelona vs Real Madrid (Server 1)", url: "https://trend48.st/live-tv?ch=movistarlaliga-es" },
             "realmadrid":       { type: "iframe", name: "Barcelona vs Real Madrid (Server 1)", url: "https://trend48.st/live-tv?ch=movistarlaliga-es" },
-            "movistarlaliga_web": { type: "iframe", name: "Movistar LaLiga Spain", url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvdHJlZm94eS9tb3Zpc3RhcmxhbGlnYS1lcw==" },
-            "mliga_web":          { type: "iframe", name: "Movistar LaLiga Spain", url: "https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvdHJlZm94eS9tb3Zpc3RhcmxhbGlnYS1lcw==" },
+            "movistarlaliga_web": { type: "iframe", name: "Movistar LaLiga Spain (Trend48)", url: "https://trend48.st/live-tv?ch=movistarlaliga-es" },
+            "mliga_web":          { type: "iframe", name: "Movistar LaLiga Spain (Trend48)", url: "https://trend48.st/live-tv?ch=movistarlaliga-es" },
             "movistardeportes_web":{ type: "iframe",name: "Movistar Deportes Spain (Trend48)",url: "https://trend48.st/live-tv?ch=movistardeportes-es" },
             "canalsport_web":     { type: "iframe", name: "Canal+ Sport Poland (Trend48)",    url: "https://trend48.st/live-tv?ch=canalsport-pl" },
             "canalsport2_web":    { type: "iframe", name: "Canal+ Sport 2 Poland (Trend48)",  url: "https://trend48.st/live-tv?ch=canalsport2-pl" },
@@ -2356,11 +2350,8 @@
                                           : 'https://trend48.st/live-tv?ch=beinsports-usa';
                                 chName = 'Paris Saint-Germain (beIN Sports USA HD)';
                             } else if (/barca|barcelona|real|madrid|clasico|laliga/i.test(streamKey)) {
-                                targetUrl = (serParam === '2') ? 'https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvdHJlZm94eS9tb3Zpc3RhcmxhbGlnYS1lcw=='
-                                          : (serParam === '3') ? 'https://trend48.st/live-tv?ch=espndeportes-usa'
-                                          : (serParam === '4') ? 'https://trend48.st/live-tv?ch=premiersports1-ie'
-                                          : 'https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvdHJlZm94eS9kYXpubGFsaWdhLWVz';
-                                chName = 'La Liga Live (DAZN / Movistar)';
+                                targetUrl = 'https://trend48.st/live-tv?ch=movistarlaliga-es';
+                                chName = 'La Liga Live (Movistar)';
                             } else if (/arsenal|chelsea|liverpool|city|united|tnt|premier|epl/i.test(streamKey)) {
                                 targetUrl = 'https://trend48.st/live-tv?ch=tntsports1-uk';
                                 chName = 'Premier League Live (TNT Sports 1)';
@@ -2446,12 +2437,6 @@
                         else if (serParam === '4') ch = channels['aekvsrlm4'];
                         else if (serParam === '5') ch = channels['aekvsrlm5'];
                         else ch = channels['aekvsrlm1'] || channels['aekvsrlm'] || channels['cbs'];
-                    } else if (/laliga|la_liga|laligatv/i.test(streamKey)) {
-                        if (serParam === '2') ch = channels['movistarlaliga'] || channels['movistarlaliga_web'];
-                        else if (serParam === '3') ch = channels['barvsrlm3'] || channels['espndep_web'];
-                        else if (serParam === '4') ch = channels['premier1'];
-                        else if (serParam === '5') ch = channels['bein1fr_web'];
-                        else ch = channels['daznlaliga'] || channels['laliga'];
                     } else if (/barvsrlm|bavsrlm|barca|rlm|realmadrid|clasico/i.test(streamKey)) {
                         if (serParam === '2') ch = channels['barvsrlm2'];
                         else if (serParam === '3') ch = channels['barvsrlm3'];
@@ -2586,25 +2571,7 @@
                 'canelo': 'canelo', 'canelo alvarez': 'canelo',
                 'mbilli': 'mbilli', 'christian mbilli': 'mbilli',
                 'pak': 'pak', 'pakistan': 'pak',
-                'sl': 'sl', 'sri lanka': 'sl',
-                'real sociedad': 'sociedad', 'sociedad': 'sociedad',
-                'rayo vallecano': 'rayo', 'rayo': 'rayo',
-                'villarreal': 'villarreal', 'villarreal cf': 'villarreal',
-                'celta vigo': 'celta', 'rc celta': 'celta', 'celta': 'celta',
-                'levante': 'levante', 'levante ud': 'levante',
-                'sevilla': 'sevilla', 'sevilla fc': 'sevilla',
-                'athletic bilbao': 'bilbao', 'athletic club': 'bilbao', 'bilbao': 'bilbao',
-                'valencia': 'valencia', 'valencia cf': 'valencia',
-                'real betis': 'betis', 'betis': 'betis',
-                'girona': 'girona', 'girona fc': 'girona',
-                'getafe': 'getafe', 'getafe cf': 'getafe',
-                'mallorca': 'mallorca', 'rcd mallorca': 'mallorca',
-                'osasuna': 'osasuna', 'ca osasuna': 'osasuna',
-                'espanyol': 'espanyol', 'rcd espanyol': 'espanyol',
-                'alaves': 'alaves', 'deportivo alaves': 'alaves',
-                'leganes': 'leganes', 'cd leganes': 'leganes',
-                'valladolid': 'valladolid', 'real valladolid': 'valladolid',
-                'las palmas': 'laspalmas', 'ud las palmas': 'laspalmas'
+                'sl': 'sl', 'sri lanka': 'sl'
             };
 
             function cleanTeam(name) {
@@ -2750,26 +2717,17 @@
                         };
                         unified.push(target);
                     }
-                    var rawStreams = Array.isArray(ev.streams) ? ev.streams : (Array.isArray(ev.dashStreams) ? ev.dashStreams : []);
-                    var adilSources = [];
-                    rawStreams.forEach(function(ds) {
-                        var sUrl = ds.link || ds.url;
-                        if (!sUrl) return;
-                        var sKey = ds.api || ds.key || '';
-                        var isDash = ds.type === 'dash' || ds.type === '7' || sUrl.indexOf('.mpd') !== -1;
-                        adilSources.push({
-                            type: isDash ? 'dash' : 'video',
-                            name: 'Server ' + (adilSources.length + 1),
-                            detail: ds.title ? ds.title : (isDash ? 'Direct UHD' : 'Direct HD'),
-                            url: sUrl,
-                            key: sKey
-                        });
-                    });
-                    if (adilSources.length > 0) {
-                        // Prepend high-quality direct DASH feeds ahead of external links
-                        target.sources = adilSources.concat(target.sources);
-                        target.sources.forEach(function(s, idx) {
-                            s.name = 'Server ' + (idx + 1);
+                    if (Array.isArray(ev.dashStreams)) {
+                        ev.dashStreams.forEach(function(ds) {
+                            if (!ds.url) return;
+                            var isDash = ds.type === 'dash' || ds.url.indexOf('.mpd') !== -1;
+                            target.sources.push({
+                                type: isDash ? 'dash' : 'video',
+                                name: 'Server ' + (target.sources.length + 1),
+                                detail: ds.title ? ('AdilX ' + ds.title) : (isDash ? 'AdilX UHD' : 'AdilX HD'),
+                                url: ds.url,
+                                key: ds.key
+                            });
                         });
                     }
                 });
@@ -2849,13 +2807,6 @@
                     matched = unified.find(function(m) { return isSameMatch(m.teams, qTeams); });
                 }
 
-                if (!matched && (/laliga|la_liga|spain/i.test(rawKey) || query === 'laliga')) {
-                    matched = unified.find(function(m) {
-                        return (m.league && /laliga/i.test(m.league) && m.sources && m.sources.length > 0) ||
-                               (m.title && /sociedad|rayo|barca|madrid|villarreal|getafe|celta|levante|sevilla|bilbao|betis|girona|alaves|mallorca|osasuna|espanyol/i.test(m.title) && m.sources && m.sources.length > 0);
-                    });
-                }
-
                 if (matched && matched.sources.length > 0) {
                     var sIndex = parseInt(serParam || '1', 10);
                     var src = matched.sources[sIndex - 1] || matched.sources[0];
@@ -2925,14 +2876,6 @@
                         });
                     }
                 } else {
-                    if (/laliga|la_liga|barca|madrid|clasico|sociedad|rayo/i.test(rawKey)) {
-                        cb(channels['laliga'] || channels['daznlaliga'] || channels['movistarlaliga'] || {
-                            type: 'iframe',
-                            name: 'La Liga Live (DAZN / Movistar)',
-                            url: 'https://bintv-sources.pages.dev/?id=aHR0cHM6Ly9laGdlbWJ4ZS5jZmQvdHJlZm94eS9kYXpubGFsaWdhLWVz'
-                        });
-                        return;
-                    }
                     cb(null);
                 }
             }).catch(function() {
