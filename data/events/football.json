@@ -1,5 +1,5 @@
 {
-  "last_updated": "11/9/2026, 8:27:43 AM IST",
+  "last_updated": "11/9/2026, 4:44:36 PM IST",
   "source": "AryanStreams Official Feed",
   "events": [
     {
@@ -39,6 +39,426 @@
         "teamBFlag": "https://img.sofascore.com/api/v1/team/231/image",
         "startTimeIST": "2026-11-10 01:00:00 IST",
         "endTimeIST": "2026-11-10 03:20:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14826",
+      "title": "India vs Maldives",
+      "slug": "india-vs-maldives",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "SAFF Championship",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/2354/image/dark",
+        "teamA": "India",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4828/image",
+        "teamB": "Maldives",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/6911/image",
+        "startTimeIST": "2026-11-11 15:00:00 IST",
+        "endTimeIST": "2026-11-11 17:20:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14827",
+      "title": "Vietnam vs Chinese Taipei",
+      "slug": "vietnam-vs-chinese-taipei",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "International Friendly Games",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
+        "teamA": "Vietnam",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/7050/image",
+        "teamB": "Chinese Taipei",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/5937/image",
+        "startTimeIST": "2026-11-11 17:30:00 IST",
+        "endTimeIST": "2026-11-11 19:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14825",
+      "title": "Bangladesh vs Sri Lanka",
+      "slug": "bangladesh-vs-sri-lanka",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "SAFF Championship",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/2354/image/dark",
+        "teamA": "Bangladesh",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/6080/image",
+        "teamB": "Sri Lanka",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/23487/image",
+        "startTimeIST": "2026-11-11 19:30:00 IST",
+        "endTimeIST": "2026-11-11 21:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14828",
+      "title": "New Zealand vs India",
+      "slug": "new-zealand-vs-india",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "International Friendly Games",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
+        "teamA": "New Zealand",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4784/image",
+        "teamB": "India",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4828/image",
+        "startTimeIST": "2026-11-12 11:30:00 IST",
+        "endTimeIST": "2026-11-12 13:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14829",
+      "title": "Uzbekistan vs Russia",
+      "slug": "uzbekistan-vs-russia",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "International Friendly Games",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
+        "teamA": "Uzbekistan",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4723/image",
+        "teamB": "Russia",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4694/image",
+        "startTimeIST": "2026-11-12 20:30:00 IST",
+        "endTimeIST": "2026-11-12 22:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14832",
+      "title": "Ghana vs Somalia",
+      "slug": "ghana-vs-somalia",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "Africa Cup of Nations Qual.",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
+        "teamA": "Ghana",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4764/image",
+        "teamB": "Somalia",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/23472/image",
+        "startTimeIST": "2026-11-12 20:30:00 IST",
+        "endTimeIST": "2026-11-12 22:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14833",
+      "title": "DR Congo vs Sierra Leone",
+      "slug": "dr-congo-vs-sierra-leone",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "Africa Cup of Nations Qual.",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
+        "teamA": "DR Congo",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4823/image",
+        "teamB": "Sierra Leone",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4737/image",
+        "startTimeIST": "2026-11-12 21:30:00 IST",
+        "endTimeIST": "2026-11-12 23:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14834",
+      "title": "Madagascar vs Guinea-Bissau",
+      "slug": "madagascar-vs-guinea-bissau",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "Africa Cup of Nations Qual.",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
+        "teamA": "Madagascar",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/8035/image",
+        "teamB": "Guinea-Bissau",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/23478/image",
+        "startTimeIST": "2026-11-12 21:30:00 IST",
+        "endTimeIST": "2026-11-12 23:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14835",
+      "title": "Guinea vs Eritrea",
+      "slug": "guinea-vs-eritrea",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "Africa Cup of Nations Qual.",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
+        "teamA": "Guinea",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4826/image",
+        "teamB": "Eritrea",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/8041/image",
+        "startTimeIST": "2026-11-12 21:30:00 IST",
+        "endTimeIST": "2026-11-12 23:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14830",
+      "title": "Lithuania vs Suriname",
+      "slug": "lithuania-vs-suriname",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "International Friendly Games",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
+        "teamA": "Lithuania",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4776/image",
+        "teamB": "Suriname",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/21822/image",
+        "startTimeIST": "2026-11-12 22:30:00 IST",
+        "endTimeIST": "2026-11-13 00:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14836",
+      "title": "Turkiye vs Belgium",
+      "slug": "turkiye-vs-belgium",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Nations League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/10783/image/dark",
+        "teamA": "Türkiye",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4700/image",
+        "teamB": "Belgium",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4717/image",
+        "startTimeIST": "2026-11-12 22:30:00 IST",
+        "endTimeIST": "2026-11-13 00:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14840",
+      "title": "Armenia vs Cyprus",
+      "slug": "armenia-vs-cyprus",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Nations League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/10783/image/dark",
+        "teamA": "Armenia",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4740/image",
+        "teamB": "Cyprus",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4482/image",
+        "startTimeIST": "2026-11-12 22:30:00 IST",
+        "endTimeIST": "2026-11-13 00:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14831",
+      "title": "Malta vs Eswatini",
+      "slug": "malta-vs-eswatini",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "International Friendly Games",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
+        "teamA": "Malta",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4483/image",
+        "teamB": "Eswatini",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4733/image",
+        "startTimeIST": "2026-11-12 23:00:00 IST",
+        "endTimeIST": "2026-11-13 01:20:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14837",
+      "title": "Czechia vs Spain",
+      "slug": "czechia-vs-spain",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Nations League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/10783/image/dark",
+        "teamA": "Czechia",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4714/image",
+        "teamB": "Spain",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4698/image",
+        "startTimeIST": "2026-11-13 01:15:00 IST",
+        "endTimeIST": "2026-11-13 03:35:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14838",
+      "title": "England vs Croatia",
+      "slug": "england-vs-croatia",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Nations League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/10783/image/dark",
+        "teamA": "England",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4713/image",
+        "teamB": "Croatia",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4715/image",
+        "startTimeIST": "2026-11-13 01:15:00 IST",
+        "endTimeIST": "2026-11-13 03:35:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14839",
+      "title": "Italy vs France",
+      "slug": "italy-vs-france",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Nations League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/10783/image/dark",
+        "teamA": "Italy",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4707/image",
+        "teamB": "France",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4481/image",
+        "startTimeIST": "2026-11-13 01:15:00 IST",
+        "endTimeIST": "2026-11-13 03:35:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14841",
+      "title": "Albania vs Finland",
+      "slug": "albania-vs-finland",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Nations League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/10783/image/dark",
+        "teamA": "Albania",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4690/image",
+        "teamB": "Finland",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4712/image",
+        "startTimeIST": "2026-11-13 01:15:00 IST",
+        "endTimeIST": "2026-11-13 03:35:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14842",
+      "title": "San Marino vs Belarus",
+      "slug": "san-marino-vs-belarus",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Nations League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/10783/image/dark",
+        "teamA": "San Marino",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4833/image",
+        "teamB": "Belarus",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4743/image",
+        "startTimeIST": "2026-11-13 01:15:00 IST",
+        "endTimeIST": "2026-11-13 03:35:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14843",
+      "title": "Montenegro vs Latvia",
+      "slug": "montenegro-vs-latvia",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Nations League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/10783/image/dark",
+        "teamA": "Montenegro",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/7139/image",
+        "teamB": "Latvia",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4706/image",
+        "startTimeIST": "2026-11-13 01:15:00 IST",
+        "endTimeIST": "2026-11-13 03:35:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14845",
+      "title": "Argentina vs Uruguay",
+      "slug": "argentina-vs-uruguay",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "International Friendly Games",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
+        "teamA": "Argentina",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4819/image",
+        "teamB": "Uruguay",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4725/image",
+        "startTimeIST": "2026-11-14 04:30:00 IST",
+        "endTimeIST": "2026-11-14 06:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14844",
+      "title": "Japan vs Brazil",
+      "slug": "japan-vs-brazil",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "International Friendly Games",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
+        "teamA": "Japan",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4770/image",
+        "teamB": "Brazil",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4748/image",
+        "startTimeIST": "2026-11-14 15:45:00 IST",
+        "endTimeIST": "2026-11-14 18:05:00 IST"
       },
       "streams": []
     }
