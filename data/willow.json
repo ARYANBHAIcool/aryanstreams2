@@ -1,67 +1,20 @@
 {
-  "last_updated": "11/9/2026, 5:01:15 AM IST",
+  "last_updated": "11/9/2026, 8:27:42 AM IST",
   "sources_checked": 6,
   "sources_active": 6,
   "Matches": [
     {
-      "id": "B0HMKWVW1W",
-      "match_id": "B0HMKWVW1W",
-      "event_name": "USA Seniors Cricket NPL 2026 - Semi-Final 2 - Mighty Dallas vs Austin Hunters",
-      "title": "USA Seniors Cricket NPL 2026 - Semi-Final 2 - Mighty Dallas vs Austin Hunters",
-      "synopsis": "USA Seniors Cricket NPL 2026 - Semi-Final 2 - Mighty Dallas vs Austin Hunters",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.bb6ee4b1-dfc9-41ec-9fc0-78f82f13ffcc/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "cover_image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.bb6ee4b1-dfc9-41ec-9fc0-78f82f13ffcc/2/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "status": "LIVE",
-      "time": "2 AM BDT",
-      "sport": "Cricket",
-      "drm_key": "353d40acc20c736279d2d02ec760aed0:01e6af2e734174bcd93c8f92f073ee1e",
-      "streams": [
-        {
-          "name": "Sky Sports Main Event (Server 1)",
-          "url": "https://trend48.st/live-tv?ch=skysportsmainevent-uk"
-        },
-        {
-          "name": "TNT Sports 1 (Server 2)",
-          "url": "https://trend48.st/live-tv?ch=tntsports1-uk"
-        },
-        {
-          "name": "Willow Cricket HD (Server 3)",
-          "url": "https://trend48.st/live-tv?ch=willow-usa"
-        },
-        {
-          "name": "beIN Sports 1 FR (Server 4)",
-          "url": "https://trend48.st/live-tv?ch=beinsports1-fr"
-        },
-        {
-          "name": "Sony Sports Ten 1 HD (Server 5)",
-          "url": "https://trend48.st/live-tv?ch=sonyten1-in"
-        }
-      ],
-      "CnpTV": {
-        "fastly_server1": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/ccvyd4np4y/out/v1/9f17bdba92094f4fabb94e26520f3cea/cenc.mpd",
-        "amazon_server1": "https://otte.cache.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/ccvyd4np4y/out/v1/9f17bdba92094f4fabb94e26520f3cea/cenc.mpd",
-        "akamai_server1": "https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/ccvyd4np4y/out/v1/9f17bdba92094f4fabb94e26520f3cea/cenc.mpd",
-        "cloudfront_server1": "https://ss-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/ccvyd4np4y/out/v1/9f17bdba92094f4fabb94e26520f3cea/cenc.mpd",
-        "fastly_server2": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/zsdcom78dt/out/v1/2aa10ae9c3e8461dad1924b9a2169d5e/cenc.mpd",
-        "amazon_server2": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/zsdcom78dt/out/v1/2aa10ae9c3e8461dad1924b9a2169d5e/cenc.mpd",
-        "akamai_server2": "https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/zsdcom78dt/out/v1/2aa10ae9c3e8461dad1924b9a2169d5e/cenc.mpd",
-        "cloudfront_server2": "https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/zsdcom78dt/out/v1/2aa10ae9c3e8461dad1924b9a2169d5e/cenc.mpd"
-      },
-      "stream_url_alpha": {},
-      "stream_url_bravo": {}
-    },
-    {
       "id": "B0HQRL8916",
       "match_id": "B0HQRL8916",
-      "event_name": "USA Seniors Cricket NPL 2026 - Final - TBC vs TBC",
-      "title": "USA Seniors Cricket NPL 2026 - Final - TBC vs TBC",
-      "synopsis": "USA Seniors Cricket NPL 2026 - Final - TBC vs TBC",
-      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.fe82486f-c82d-4394-8cf3-a1c2502713ab/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
-      "cover_image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.fe82486f-c82d-4394-8cf3-a1c2502713ab/1/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "event_name": "USA Seniors Cricket NPL 2026 - Final - Washington Eagles vs Austin Hunters",
+      "title": "USA Seniors Cricket NPL 2026 - Final - Washington Eagles vs Austin Hunters",
+      "synopsis": "USA Seniors Cricket NPL 2026 - Final - Washington Eagles vs Austin Hunters",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.fe82486f-c82d-4394-8cf3-a1c2502713ab/3/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "cover_image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.fe82486f-c82d-4394-8cf3-a1c2502713ab/3/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "LIVE",
-      "time": "Live at 6:30 AM BDT",
+      "time": "6:25 AM BDT",
       "sport": "Cricket",
-      "drm_key": "",
+      "drm_key": "fd036a56727c3d94f2baeb8a338483f5:dc991f1c73cb6d1c5694889cafcac434",
       "streams": [
         {
           "name": "Sky Sports Main Event (Server 1)",
@@ -85,14 +38,14 @@
         }
       ],
       "CnpTV": {
-        "fastly_server1": "",
-        "amazon_server1": "",
-        "akamai_server1": "",
-        "cloudfront_server1": "",
-        "fastly_server2": "",
-        "amazon_server2": "",
-        "akamai_server2": "",
-        "cloudfront_server2": ""
+        "fastly_server1": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/1ov85gjlem/out/v1/4f8e34db6efe48f5927d851ae4304045/cenc.mpd",
+        "amazon_server1": "https://otte.cache.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/1ov85gjlem/out/v1/4f8e34db6efe48f5927d851ae4304045/cenc.mpd",
+        "akamai_server1": "https://a96aivottlinear-a.akamaihd.net/OTTB/pdx-nitro/live/clients/dash/enc/1ov85gjlem/out/v1/4f8e34db6efe48f5927d851ae4304045/cenc.mpd",
+        "cloudfront_server1": "https://ss-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/1ov85gjlem/out/v1/4f8e34db6efe48f5927d851ae4304045/cenc.mpd",
+        "fastly_server2": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/dugznzlytq/out/v1/7ed54636600a4c5386f45c7c1a6c1bff/cenc.mpd",
+        "amazon_server2": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/dugznzlytq/out/v1/7ed54636600a4c5386f45c7c1a6c1bff/cenc.mpd",
+        "akamai_server2": "https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/dugznzlytq/out/v1/7ed54636600a4c5386f45c7c1a6c1bff/cenc.mpd",
+        "cloudfront_server2": "https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/dugznzlytq/out/v1/7ed54636600a4c5386f45c7c1a6c1bff/cenc.mpd"
       },
       "stream_url_alpha": {},
       "stream_url_bravo": {}
@@ -940,17 +893,17 @@
       "stream_url_bravo": {}
     },
     {
-      "id": "B0HKVSN31B",
-      "match_id": "B0HKVSN31B",
-      "event_name": "PPA Tour: World Championships-2026: Championship Sunday",
-      "title": "PPA Tour: World Championships-2026: Championship Sunday",
-      "synopsis": "PPA Tour: World Championships-2026: Championship Sunday",
-      "image": "https://images-na.ssl-images-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/S/le-target-images-prod/amzn1.dv.gti.e2b8ae20-e5f2-4ddb-8e58-1b2558d80f0a/2/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpeg",
-      "cover_image": "https://images-na.ssl-images-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/S/le-target-images-prod/amzn1.dv.gti.e2b8ae20-e5f2-4ddb-8e58-1b2558d80f0a/2/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpeg",
+      "id": "B0HP83ZWBB",
+      "match_id": "B0HP83ZWBB",
+      "event_name": "Afghanistan vs Zimbabwe in UAE 2026 - 2nd Test - Afghanistan vs Zimbabwe",
+      "title": "Afghanistan vs Zimbabwe in UAE 2026 - 2nd Test - Afghanistan vs Zimbabwe",
+      "synopsis": "Afghanistan vs Zimbabwe in UAE 2026 - 2nd Test - Afghanistan vs Zimbabwe",
+      "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.c946453d-7025-4e95-9564-d2a336954242/3/BOXART-16X9/en-US._UR1920,1080_.jpeg",
+      "cover_image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.c946453d-7025-4e95-9564-d2a336954242/3/BOXART-16X9/en-US._UR1920,1080_.jpeg",
       "status": "LIVE",
-      "time": "LIVE NOW",
-      "sport": "Sports",
-      "drm_key": "2be100252a42be3a17d29c93e28eaacc:07c5e72df3602e9652dd06d839776e72",
+      "time": "Fri, Nov 13 11 AM BDT",
+      "sport": "Cricket",
+      "drm_key": "",
       "streams": [
         {
           "name": "Sky Sports Main Event (Server 1)",
@@ -987,17 +940,17 @@
       "stream_url_bravo": {}
     },
     {
-      "id": "B0HNYG9984",
-      "match_id": "B0HNYG9984",
-      "event_name": "SPHL Hockey: Huntsville Havoc vs Knoxville Ice Bears",
-      "title": "SPHL Hockey: Huntsville Havoc vs Knoxville Ice Bears",
-      "synopsis": "SPHL Hockey: Huntsville Havoc vs Knoxville Ice Bears",
-      "image": "https://images-na.ssl-images-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/S/le-target-images-prod/amzn1.dv.gti.590f182c-9f48-4dda-9e1a-1f2015ee2fb3/2/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpeg",
-      "cover_image": "https://images-na.ssl-images-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/S/le-target-images-prod/amzn1.dv.gti.590f182c-9f48-4dda-9e1a-1f2015ee2fb3/2/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpeg",
+      "id": "B0HNFK5JY7",
+      "match_id": "B0HNFK5JY7",
+      "event_name": "USA vs. Mexico",
+      "title": "USA vs. Mexico",
+      "synopsis": "USA vs. Mexico",
+      "image": "https://images-na.ssl-images-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/S/le-target-images-prod/amzn1.dv.gti.dc1e451b-e08f-4b71-acc8-871e257eea3f/9/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpeg",
+      "cover_image": "https://images-na.ssl-images-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/S/le-target-images-prod/amzn1.dv.gti.dc1e451b-e08f-4b71-acc8-871e257eea3f/9/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpeg",
       "status": "LIVE",
       "time": "LIVE NOW",
       "sport": "Football",
-      "drm_key": "b74568d74a6d7f5d2a07d903f820cdb1:ea92e2f4ec746aa5e64fd9c4fc6ed3e9",
+      "drm_key": "5d6c647cd1b56550bd34349b68ec8c82:09f952780ba5b30bc222439aaa3ac09b",
       "streams": [
         {
           "name": "Sky Sports Premier League (Server 1)",
@@ -1034,60 +987,13 @@
       "stream_url_bravo": {}
     },
     {
-      "id": "B0HQ7JYJLR",
-      "match_id": "B0HQ7JYJLR",
-      "event_name": "Cal State San Bernardino vs Cal State LA - CCAA Men's Soccer Championship",
-      "title": "Cal State San Bernardino vs Cal State LA - CCAA Men's Soccer Championship",
-      "synopsis": "Cal State San Bernardino vs Cal State LA - CCAA Men's Soccer Championship",
-      "image": "https://images-na.ssl-images-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/S/le-target-images-prod/amzn1.dv.gti.d10f3259-a426-43b1-9583-3660eba5b84d/2/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpeg",
-      "cover_image": "https://images-na.ssl-images-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/S/le-target-images-prod/amzn1.dv.gti.d10f3259-a426-43b1-9583-3660eba5b84d/2/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpeg",
-      "status": "LIVE",
-      "time": "LIVE NOW",
-      "sport": "Football",
-      "drm_key": "7b87c59bba50e62ca4fef8ba2f79b99a:417b7577df2477d1842a4bb9eee852bc",
-      "streams": [
-        {
-          "name": "Sky Sports Premier League (Server 1)",
-          "url": "https://trend48.st/live-tv?ch=skysportspremierleague-uk"
-        },
-        {
-          "name": "Sky Sports Main Event (Server 2)",
-          "url": "https://trend48.st/live-tv?ch=skysportsmainevent-uk"
-        },
-        {
-          "name": "TNT Sports 1 (Server 3)",
-          "url": "https://trend48.st/live-tv?ch=tntsports1-uk"
-        },
-        {
-          "name": "beIN Sports 1 FR (Server 4)",
-          "url": "https://trend48.st/live-tv?ch=beinsports1-fr"
-        },
-        {
-          "name": "Movistar LaLiga (Server 5)",
-          "url": "https://trend48.st/live-tv?ch=movistarlaliga-es"
-        }
-      ],
-      "CnpTV": {
-        "fastly_server1": "",
-        "amazon_server1": "",
-        "akamai_server1": "",
-        "cloudfront_server1": "",
-        "fastly_server2": "",
-        "amazon_server2": "",
-        "akamai_server2": "",
-        "cloudfront_server2": ""
-      },
-      "stream_url_alpha": {},
-      "stream_url_bravo": {}
-    },
-    {
-      "id": "B0HN4JDQHR",
-      "match_id": "B0HN4JDQHR",
-      "event_name": "USA Seniors Cricket NPL 2026:  Semi-Final 2",
-      "title": "USA Seniors Cricket NPL 2026:  Semi-Final 2",
-      "synopsis": "USA Seniors Cricket NPL 2026:  Semi-Final 2",
-      "image": "https://images-na.ssl-images-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/S/le-target-images-prod/amzn1.dv.gti.d3d3bd5d-9efe-4b38-bf2a-297e14bc1982/3/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpeg",
-      "cover_image": "https://images-na.ssl-images-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/S/le-target-images-prod/amzn1.dv.gti.d3d3bd5d-9efe-4b38-bf2a-297e14bc1982/3/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpeg",
+      "id": "B0HJJHS26X",
+      "match_id": "B0HJJHS26X",
+      "event_name": "USA Seniors Cricket NPL 2026: Final",
+      "title": "USA Seniors Cricket NPL 2026: Final",
+      "synopsis": "USA Seniors Cricket NPL 2026: Final",
+      "image": "https://images-na.ssl-images-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/S/le-target-images-prod/amzn1.dv.gti.664ae67a-5397-45a6-a167-937ab3ff625d/3/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpeg",
+      "cover_image": "https://images-na.ssl-images-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/S/le-target-images-prod/amzn1.dv.gti.664ae67a-5397-45a6-a167-937ab3ff625d/3/BOXART-16X9/en-US._UR1920,1080_CLs%7C1920,1080%7C/G/bundle/BottomRightCardGradient16x9.png,/G/01/digital/video/merch/subs/benefit-id/a-f/freewithads/logos/channels-logo-white.png%7C0,0,1920,1080+0,0,1920,1080+1578,847,263,156_kv053498f62d21803ffcbf28da234cfe9f_SX624_FMjpg_.jpeg",
       "status": "LIVE",
       "time": "LIVE NOW",
       "sport": "Cricket",
