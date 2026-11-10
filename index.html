@@ -1934,8 +1934,8 @@
 
             function isTokenExpired(u) {
                 if (!u) return true;
-                var m = String(u).match(/exp=(d+)/i);
-                if (!m) return false;
+                var m = String(u).match(/exp=(\d+)/i);
+                if (!m) return String(u).indexOf('slivcdn.com') !== -1;
                 // Expired if current time is past expiration or within 10 minutes of expiry
                 return (Date.now() / 1000) > (parseInt(m[1], 10) - 600);
             }
@@ -2019,7 +2019,7 @@
             }
             if (chMap['ten2-hd'] || chMap['ten2']) {
                 var u2 = chMap['ten2-hd'] || chMap['ten2'];
-                ['ten2m3u', 's2_m3u', 'ten2_m3u', 'ten2m3u8', 'm3u', 'm3u8'].forEach(function(k) { updateKey(k, u2, "Sony Sports Ten 2 HD (Universal M3U8)"); });
+                ['ten2m3u', 's2_m3u', 'ten2_m3u', 'ten2m3u8', 'm3u', 'm3u8', 'all', 'all_live'].forEach(function(k) { updateKey(k, u2, "Sony Sports Ten 2 HD (Universal M3U8)"); });
             }
             if (chMap['ten3-hd'] || chMap['ten3']) {
                 var u3 = chMap['ten3-hd'] || chMap['ten3'];
@@ -2195,10 +2195,10 @@
                                 if (!didFailover && playableUrl) {
                                     didFailover = true;
                                     var altUrl = null;
-                                    if (playableUrl.includes('aryanstreams.pages.dev')) {
-                                        altUrl = playableUrl.replace('asp1.lovable.apphttps://asp1.lovable.app/api/proxy?u=', 'corsproxy.io/?url=');
-                                    } else if (playableUrl.includes('corsproxy.io')) {
-                                        altUrl = playableUrl.replace('corsproxy.io/?url=', 'asp1.lovable.apphttps://asp1.lovable.app/api/proxy?u=');
+                                    if (playableUrl.includes('asp1.lovable.app/api/proxy?u=')) {
+                                        altUrl = playableUrl.replace('https://asp1.lovable.app/api/proxy?u=', 'https://stream-through-spark.lovable.app/api/proxy?u=');
+                                    } else if (playableUrl.includes('stream-through-spark.lovable.app/api/proxy?u=')) {
+                                        altUrl = playableUrl.replace('https://stream-through-spark.lovable.app/api/proxy?u=', 'https://asp1.lovable.app/api/proxy?u=');
                                     }
                                     if (altUrl) {
                                         console.log("Switching to alternate proxy:", altUrl);
@@ -2224,6 +2224,22 @@
             } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
                 // Safari & native HLS iOS
                 video.src = playableUrl;
+                if (playableUrl && playableUrl.includes('slivcdn.com')) {
+                    video.addEventListener('error', function onNativeError() {
+                        video.removeEventListener('error', onNativeError);
+                        if (!didFailover) {
+                            didFailover = true;
+                            showMainToast('● Refreshing live stream token...', 'warning');
+                            fetchLatestSonyStreams(true).then(function() {
+                                var fresh = (window.activeStreamKey && channels[window.activeStreamKey] && channels[window.activeStreamKey].url);
+                                if (fresh && fresh !== playableUrl) {
+                                    video.src = fresh;
+                                    video.play().catch(function(){});
+                                }
+                            });
+                        }
+                    });
+                }
                 if (spinner) {
                     spinner.style.opacity = '0';
                     setTimeout(() => spinner.style.display = 'none', 500);
