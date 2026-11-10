@@ -8,7 +8,6 @@ const SPORTS_SOURCES = [
 ];
 
 const WILLOW_SOURCES = [
-    'https://bintvjson.lovable.app/api/public/bintvjson',
     'https://raw.githubusercontent.com/srhady/willow-event/refs/heads/main/live_sports.json',
     'https://raw.githubusercontent.com/srhady/willow-event/refs/heads/main/primevideo_sports.json',
     'https://raw.githubusercontent.com/sportlive18/Willow-Cricbuzz-Prime-Video-Sport-Live-Event-Auto-Updated-Playlist/refs/heads/main/willow.json',
@@ -684,109 +683,15 @@ function normalizeWillowMatch(m) {
     const isCricket = isAusVsSa || isPakVsSl || isPakVsEng || isIndVsZim || isNzVsInd || isWbbl || /cricket|t20|odi|test/i.test(title);
     const isFootball = /vs.?|fc|united|city|everton|aston villa|arsenal|chelsea|liverpool|madrid|barcelona|premier league/i.test(title) && !isCricket;
 
-    // Filter out PPV.ST and old adware links
+    // Filter out PPV.ST and old adware / trend48 links
     rawStreams = rawStreams.filter(st => {
         if (!st || !st.url) return false;
-        if (st.url.includes('ppv.st') || st.url.includes('bintv-sources') || st.url.includes('pages.dev')) return false;
-        if (isWillow1Linear(st.url)) {
-            return isAusVsSa;
-        }
+        if (st.url.includes('ppv.st') || st.url.includes('bintv-sources') || st.url.includes('pages.dev') || st.url.includes('trend48')) return false;
         return true;
     });
 
-    if (isAusVsSa) {
-        const dedicated = [
-            CRICKET_CHANNELS.willow_usa,
-            CRICKET_CHANNELS.fox_cricket,
-            CRICKET_CHANNELS.supersport_cricket,
-            CRICKET_CHANNELS.sky_cricket,
-            CRICKET_CHANNELS.star_sports1
-        ];
-        dedicated.forEach(ds => {
-            if (!rawStreams.some(s => s.url === ds.url)) rawStreams.push(ds);
-        });
-    } else if (isPakVsSl) {
-        const dedicated = [
-            CRICKET_CHANNELS.willow2,
-            CRICKET_CHANNELS.asports,
-            CRICKET_CHANNELS.tensports_pk,
-            CRICKET_CHANNELS.sky_cricket,
-            CRICKET_CHANNELS.sony_sports,
-            CRICKET_CHANNELS.ptv_sports
-        ];
-        dedicated.forEach(ds => {
-            if (!rawStreams.some(s => s.url === ds.url)) rawStreams.push(ds);
-        });
-    } else if (isPakVsEng) {
-        const dedicated = [
-            CRICKET_CHANNELS.sky_cricket,
-            CRICKET_CHANNELS.willow_usa,
-            CRICKET_CHANNELS.asports,
-            CRICKET_CHANNELS.tensports_pk,
-            CRICKET_CHANNELS.sony_sports
-        ];
-        dedicated.forEach(ds => {
-            if (!rawStreams.some(s => s.url === ds.url)) rawStreams.push(ds);
-        });
-    } else if (isIndVsZim) {
-        const dedicated = [
-            CRICKET_CHANNELS.sony_sports,
-            CRICKET_CHANNELS.sony_sports_3,
-            CRICKET_CHANNELS.sony_sports_5,
-            CRICKET_CHANNELS.willow_usa
-        ];
-        dedicated.forEach(ds => {
-            if (!rawStreams.some(s => s.url === ds.url)) rawStreams.push(ds);
-        });
-    } else if (isNzVsInd) {
-        const dedicated = [
-            CRICKET_CHANNELS.willow_usa,
-            CRICKET_CHANNELS.sky_cricket,
-            CRICKET_CHANNELS.sony_sports,
-            CRICKET_CHANNELS.fox_cricket
-        ];
-        dedicated.forEach(ds => {
-            if (!rawStreams.some(s => s.url === ds.url)) rawStreams.push(ds);
-        });
-    } else if (isWbbl) {
-        const dedicated = [
-            CRICKET_CHANNELS.fox_cricket,
-            CRICKET_CHANNELS.sky_cricket,
-            CRICKET_CHANNELS.willow_usa,
-            CRICKET_CHANNELS.sony_sports,
-            CRICKET_CHANNELS.star_sports1
-        ];
-        dedicated.forEach(ds => {
-            if (!rawStreams.some(s => s.url === ds.url)) rawStreams.push(ds);
-        });
-    } else if (isFootball) {
-        const dedicated = [
-            FOOTBALL_CHANNELS.sky_pl,
-            FOOTBALL_CHANNELS.sky_main,
-            FOOTBALL_CHANNELS.tnt1,
-            FOOTBALL_CHANNELS.bein1fr,
-            FOOTBALL_CHANNELS.movistar_laliga
-        ];
-        dedicated.forEach(ds => {
-            if (!rawStreams.some(s => s.url === ds.url)) rawStreams.push(ds);
-        });
-    } else if (rawStreams.length === 0) {
-        // Generic fallback with 5 channels
-        const dedicated = [
-            GENERIC_CHANNELS.srv1,
-            GENERIC_CHANNELS.srv2,
-            GENERIC_CHANNELS.srv3,
-            GENERIC_CHANNELS.srv4,
-            GENERIC_CHANNELS.srv5
-        ];
-        dedicated.forEach(ds => {
-            if (!rawStreams.some(s => s.url === ds.url)) rawStreams.push(ds);
-        });
-    }
-
     const hasCnp = Object.values(cnp).some(v => typeof v === 'string' && v.trim().length > 0 && !v.includes('pages.dev'));
-    const isSeriesActive = isAusVsSa || isPakVsSl || isPakVsEng || isIndVsZim || isNzVsInd || isWbbl;
-    const isLive = isSeriesActive || hasCnp || rawStreams.length > 0;
+    const isLive = hasCnp || rawStreams.length > 0;
     const status = isLive ? 'LIVE' : (m.status ? m.status.toUpperCase() : 'UPCOMING');
 
     // Preserve exact match time from upstream (IST / UTC)
