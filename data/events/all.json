@@ -1,5 +1,5 @@
 {
-  "last_updated": "11/10/2026, 8:35:24 AM IST",
+  "last_updated": "11/10/2026, 9:18:31 AM IST",
   "source": "AryanStreams Official Feed",
   "football_count": 21,
   "cricket_count": 15,
@@ -533,7 +533,50 @@
         "startTimeIST": "2026-11-10 10:00:05 IST",
         "endTimeIST": "2026-11-10 18:30:11 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/6gtll9ffbu/out/v1/7519ba45d0cf43b09f4cfd42e76fc50c/cenc.mpd",
+          "api": "71de63b5c5236b41d3289458a0d3612e:91e5a59da86b054fef6a06ab6da82935"
+        },
+        {
+          "id": 2,
+          "title": "WILLOW - ALT",
+          "type": "7",
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/6gtll9ffbu/out/v1/7519ba45d0cf43b09f4cfd42e76fc50c/cenc.mpd",
+          "api": "71de63b5c5236b41d3289458a0d3612e:91e5a59da86b054fef6a06ab6da82935"
+        },
+        {
+          "id": 3,
+          "title": "TAPMAD - AQ",
+          "type": "0",
+          "link": "https://multiregion-asia-cdn.tapmad.com/v1/01a1456f124d15fc600b1e3e9683d7/01a145990eba15fc60e91e1786b054/main.m3u8",
+          "api": ""
+        },
+        {
+          "id": 4,
+          "title": "WILLOW HD",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/tll6uwepxa/out/v1/a7f67cbb33df46539312956427343886/cenc.mpd",
+          "api": "290e09c837da78d5cd961978d390515c:b748836c71e6a4ca68ef5b5652db6247"
+        },
+        {
+          "id": 5,
+          "title": "TAPMAD HD",
+          "type": "0",
+          "link": "https://tencent-cdn.tapmad.com/v1/01a1456f124d15fc600b1e3e9683d7/01a145990eba15fc60e91e1786b054/main.m3u8",
+          "api": ""
+        },
+        {
+          "id": 6,
+          "title": "PTV SPORTS HD",
+          "type": "0",
+          "link": "https://live.msnetworks.net/ptv-sports/master.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14849",
