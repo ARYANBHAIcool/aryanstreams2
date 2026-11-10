@@ -1,13 +1,283 @@
 {
-  "last_updated": "11/10/2026, 8:35:24 AM IST",
+  "last_updated": "11/10/2026, 1:38:17 PM IST",
   "source": "AryanStreams Official Feed",
   "events": [
+    {
+      "id": "14559",
+      "title": "Pakistan vs Sri Lanka",
+      "slug": "pakistan-vs-sri-lanka",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "ICC World Test Championship",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18833/image/dark",
+        "teamA": "Pakistan",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/187754/image",
+        "teamB": "Sri Lanka",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/187756/image",
+        "startTimeIST": "2026-11-10 10:00:05 IST",
+        "endTimeIST": "2026-11-10 18:30:11 IST"
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/5i8njab7h8/out/v1/7172ba9c42a34ba8937e5ee5586a3f34/cenc.mpd",
+          "api": "5a796c5da314d0f3f0eb841277c5fc1e:a33c04fb553da43641676c70cdf9a7f5"
+        },
+        {
+          "id": 2,
+          "title": "WILLOW - ALT",
+          "type": "7",
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/5i8njab7h8/out/v1/7172ba9c42a34ba8937e5ee5586a3f34/cenc.mpd",
+          "api": "5a796c5da314d0f3f0eb841277c5fc1e:a33c04fb553da43641676c70cdf9a7f5"
+        },
+        {
+          "id": 3,
+          "title": "TAPMAD - AQ",
+          "type": "0",
+          "link": "https://multiregion-asia-cdn.tapmad.com/v1/01a1456f124d15fc600b1e3e9683d7/01a145990eba15fc60e91e1786b054/main.m3u8",
+          "api": ""
+        },
+        {
+          "id": 4,
+          "title": "PTV SPORTS HD",
+          "type": "0",
+          "link": "https://live.msnetworks.net/ptv-sports/master.m3u8",
+          "api": ""
+        },
+        {
+          "id": 5,
+          "title": "TAPMAD HD",
+          "type": "0",
+          "link": "https://tencent-cdn.tapmad.com/v1/01a1456f124d15fc600b1e3e9683d7/01a145990eba15fc60e91e1786b054/main.m3u8",
+          "api": ""
+        }
+      ]
+    },
+    {
+      "id": "14849",
+      "title": "India Under-19 vs United Arab Emirates Under-19",
+      "slug": "india-under-19-vs-united-arab-emirates-under-19",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "U19 Asia Cup",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11486/image/dark",
+        "teamA": "India Under-19",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/213112/image",
+        "teamB": "United Arab Emirates Under-19",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/300266/image",
+        "startTimeIST": "2026-11-10 10:30:00 IST",
+        "endTimeIST": "2026-11-10 19:00:57 IST"
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/ukcvtgasgm/out/v1/e4cb351a93b14155916a5f6ef143e1c1/cenc.mpd",
+          "api": "4c4bd1aa8c9559ae04dda485adb5a3b1:ce2f7e3a60ef59cdc20a666d64f35506"
+        },
+        {
+          "id": 2,
+          "title": "SonyLiv PRIME - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/urj1hvt4lw/out/v1/e1cfb1743cb24e68a07ce860e9d73c06/cenc.mpd",
+          "api": "2e79bb5f16ad590344c8b64df4965c33:eb018c62af7d3e7fe1232d15be093f65"
+        },
+        {
+          "id": 3,
+          "title": "WILLOW - ALT",
+          "type": "7",
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/ukcvtgasgm/out/v1/e4cb351a93b14155916a5f6ef143e1c1/cenc.mpd",
+          "api": "4c4bd1aa8c9559ae04dda485adb5a3b1:ce2f7e3a60ef59cdc20a666d64f35506"
+        },
+        {
+          "id": 4,
+          "title": "SonyLiv",
+          "type": "0",
+          "link": "https://sonymtmnew-akamaized.pages.dev/out/v1/mpchgp431f/mpchde34/cricodi_1011-eng-1-ts-hls/std-lrh-800300010.m3u8",
+          "api": ""
+        }
+      ]
+    },
+    {
+      "id": "14850",
+      "title": "Pakistan Under-19 vs Nepal Under-19",
+      "slug": "pakistan-under-19-vs-nepal-under-19",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "U19 Asia Cup",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11486/image/dark",
+        "teamA": "Pakistan Under-19",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/213104/image",
+        "teamB": "Nepal Under-19",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/213113/image",
+        "startTimeIST": "2026-11-10 10:30:00 IST",
+        "endTimeIST": "2026-11-10 19:00:34 IST"
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/tt3fycpkbu/out/v1/63398f58da4d4c5bb99ef23b1bb43705/cenc.mpd",
+          "api": "7fecfb5bed7cce0cdc59d2994845c550:884386b71e0801635f4fa25175143ca7"
+        },
+        {
+          "id": 2,
+          "title": "SonyLiv PRIME - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/wdgqopibdc/out/v1/1584c8ffcbcd410fba52973e6708881e/cenc.mpd",
+          "api": "669809685da200703be719d5989ef338:95dce664c282da723ae39db410bafc74"
+        },
+        {
+          "id": 3,
+          "title": "WILLOW - ALT",
+          "type": "7",
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/tt3fycpkbu/out/v1/63398f58da4d4c5bb99ef23b1bb43705/cenc.mpd",
+          "api": "7fecfb5bed7cce0cdc59d2994845c550:884386b71e0801635f4fa25175143ca7"
+        },
+        {
+          "id": 4,
+          "title": "SonyLiv",
+          "type": "0",
+          "link": "https://sonymtmnew-akamaized.pages.dev/hls/live/2120300/Criclive1011/ENG/std_lrh-800300010.m3u8",
+          "api": ""
+        }
+      ]
+    },
+    {
+      "id": "14847",
+      "title": "Hobart Hurricanes Women vs Adelaide Strikers Women",
+      "slug": "hobart-hurricanes-women-vs-adelaide-strikers-women",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "Women's Big Bash League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
+        "teamA": "Hobart Hurricanes Women",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/274885/image",
+        "teamB": "Adelaide Strikers Women",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/274888/image",
+        "startTimeIST": "2026-11-10 13:40:00 IST",
+        "endTimeIST": "2026-11-10 17:40:00 IST"
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/sbxu1x8clv/out/v1/4d52c855ebce45dfbfef870bb8c13f59/cenc.mpd",
+          "api": "0a1682a8f89aa5ff24dce0370f43ef40:dc9bc4cfccf500ee22395bb3ffeff882"
+        },
+        {
+          "id": 2,
+          "title": "SKY CRICKET - AQ",
+          "type": "0",
+          "link": "https://bl.rutube.ru/livestream/7c13a51576b9ff2601f08f5d57dd5169/index.m3u8?s=uiXES2ePt7xTpQnbJxn7Dg&e=2074684474&scheme=https",
+          "api": ""
+        },
+        {
+          "id": 3,
+          "title": "WILLOW - ALT",
+          "type": "7",
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/sbxu1x8clv/out/v1/4d52c855ebce45dfbfef870bb8c13f59/cenc.mpd",
+          "api": "0a1682a8f89aa5ff24dce0370f43ef40:dc9bc4cfccf500ee22395bb3ffeff882"
+        },
+        {
+          "id": 4,
+          "title": "TAPMAD - AQ",
+          "type": "0",
+          "link": "https://tencent-cdn.tapmad.com/v1/01a14ab8af8915fc600b1e3e9683f0/01a14ab953dd1ea540a81c2b41b75f/main.m3u8",
+          "api": ""
+        },
+        {
+          "id": 5,
+          "title": "FANCODE - IN",
+          "type": "0",
+          "link": "https://dai-fancode.pages.dev/mumbai/4250387_english_hls_b7a3c2c35c92425_1ta-di_h264/index.m3u8",
+          "api": ""
+        }
+      ]
+    },
+    {
+      "id": "14261",
+      "title": "NPL Nepal Premier League",
+      "slug": "npl-nepal-premier-league",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "Nepal Premier League T20",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
+        "teamA": "NPL",
+        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
+        "teamB": "NPL",
+        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
+        "startTimeIST": "2026-11-10 16:45:29 IST",
+        "endTimeIST": "2026-11-10 20:45:33 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14622",
+      "title": "Abu Dhabi T10 League",
+      "slug": "abu-dhabi-t10-league",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "Abu Dhabi T10 League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
+        "teamA": "Abu Dhabi T10",
+        "teamAFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
+        "teamB": "Abu Dhabi T10",
+        "teamBFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
+        "startTimeIST": "2026-11-10 19:15:33 IST",
+        "endTimeIST": "2026-11-10 23:25:38 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14848",
+      "title": "Perth Scorchers Women vs Sydney Thunder Women",
+      "slug": "perth-scorchers-women-vs-sydney-thunder-women",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "Women's Big Bash League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
+        "teamA": "Perth Scorchers Women",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/274890/image",
+        "teamB": "Sydney Thunder Women",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/274889/image",
+        "startTimeIST": "2026-11-11 13:40:00 IST",
+        "endTimeIST": "2026-11-11 17:40:00 IST"
+      },
+      "streams": []
+    },
     {
       "id": "14009",
       "title": "New Zealand vs India",
       "slug": "new-zealand-vs-india",
       "cat": "Live Events",
-      "status": "live",
+      "status": "upcoming",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
@@ -17,8 +287,8 @@
         "teamAFlag": "https://img.sofascore.com/api/v1/team/187755/image",
         "teamB": "India",
         "teamBFlag": "https://img.sofascore.com/api/v1/team/187765/image",
-        "startTimeIST": "2026-11-10 07:30:40 IST",
-        "endTimeIST": "2026-11-10 16:30:22 IST"
+        "startTimeIST": "2026-11-13 07:30:51 IST",
+        "endTimeIST": "2026-11-13 16:30:55 IST"
       },
       "streams": [
         {
@@ -92,146 +362,6 @@
           "api": ""
         }
       ]
-    },
-    {
-      "id": "14559",
-      "title": "Pakistan vs Sri Lanka",
-      "slug": "pakistan-vs-sri-lanka",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "ICC World Test Championship",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18833/image/dark",
-        "teamA": "Pakistan",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/187754/image",
-        "teamB": "Sri Lanka",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/187756/image",
-        "startTimeIST": "2026-11-10 10:00:05 IST",
-        "endTimeIST": "2026-11-10 18:30:11 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14849",
-      "title": "India Under-19 vs United Arab Emirates Under-19",
-      "slug": "india-under-19-vs-united-arab-emirates-under-19",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "U19 Asia Cup",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11486/image/dark",
-        "teamA": "India Under-19",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/213112/image",
-        "teamB": "United Arab Emirates Under-19",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/300266/image",
-        "startTimeIST": "2026-11-10 10:30:00 IST",
-        "endTimeIST": "2026-11-10 19:00:57 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14850",
-      "title": "Pakistan Under-19 vs Nepal Under-19",
-      "slug": "pakistan-under-19-vs-nepal-under-19",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "U19 Asia Cup",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11486/image/dark",
-        "teamA": "Pakistan Under-19",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/213104/image",
-        "teamB": "Nepal Under-19",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/213113/image",
-        "startTimeIST": "2026-11-10 10:30:00 IST",
-        "endTimeIST": "2026-11-10 19:00:34 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14847",
-      "title": "Hobart Hurricanes Women vs Adelaide Strikers Women",
-      "slug": "hobart-hurricanes-women-vs-adelaide-strikers-women",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "Women's Big Bash League",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
-        "teamA": "Hobart Hurricanes Women",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/274885/image",
-        "teamB": "Adelaide Strikers Women",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/274888/image",
-        "startTimeIST": "2026-11-10 13:40:00 IST",
-        "endTimeIST": "2026-11-10 17:40:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14261",
-      "title": "NPL Nepal Premier League",
-      "slug": "npl-nepal-premier-league",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "Nepal Premier League T20",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
-        "teamA": "NPL",
-        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
-        "teamB": "NPL",
-        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
-        "startTimeIST": "2026-11-10 16:45:29 IST",
-        "endTimeIST": "2026-11-10 20:45:33 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14622",
-      "title": "Abu Dhabi T10 League",
-      "slug": "abu-dhabi-t10-league",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "Abu Dhabi T10 League",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
-        "teamA": "Abu Dhabi T10",
-        "teamAFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
-        "teamB": "Abu Dhabi T10",
-        "teamBFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
-        "startTimeIST": "2026-11-10 19:15:33 IST",
-        "endTimeIST": "2026-11-10 23:25:38 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14848",
-      "title": "Perth Scorchers Women vs Sydney Thunder Women",
-      "slug": "perth-scorchers-women-vs-sydney-thunder-women",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "Women's Big Bash League",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
-        "teamA": "Perth Scorchers Women",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/274890/image",
-        "teamB": "Sydney Thunder Women",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/274889/image",
-        "startTimeIST": "2026-11-11 13:40:00 IST",
-        "endTimeIST": "2026-11-11 17:40:00 IST"
-      },
-      "streams": []
     },
     {
       "id": "14822",
