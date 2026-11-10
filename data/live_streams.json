@@ -411,7 +411,7 @@
     "id": "foxios",
     "name": "Fox",
     "Bearer": null,
-    "url": "https://tims-001.sytes.net/main/secure/4c246b473ee3e922c808f2d453daeff8fdba1ec197b1fee29228cba69f7e0d7f/1794036096/fox-sports-505.m3u8",
+    "url": "https://tims-001.sytes.net/main/secure/9f60a1242e9de884dc5e3cd9caec84df6fcdd0a3cf8f2eb3da1d6f0f7af68f51/1794275796/fox-sports-503.m3u8",
     "k1": null,
     "k2": null
   },
@@ -627,9 +627,9 @@
     "id": "willow_n",
     "name": "Willow",
     "Bearer": null,
-    "url": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/1xyi7lfzjb/out/v1/c2421551360249a1a4ea2ea8c8a7c1ad/cenc.mpd",
-    "k1": "d1be89e5a60d67f753be9b35a803c8b9",
-    "k2": "f8e35aafae8c3f3dd92dac7be4642a8b"
+    "url": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/xhvkr4qrty/out/v1/488d3bc4cfcb4dd593a3114ff78f2298/cenc.mpd",
+    "k1": "e2026793de4d32b74ab50d192d21e812",
+    "k2": "5b019d29e099327378d606b8c29adb4f"
   },
   {
     "id": "hls",
@@ -691,7 +691,7 @@
     "id": "ten3ios",
     "name": "Sony Ten 3 Hindi iOS",
     "Bearer": null,
-    "url": "https://tims-001.sytes.net/main/secure/64c9362ba403bff6da6dd584b57890541532c0722a1d00dd4a4ec6961b3b2f2b/1794036012/sonysportsnetwork3-in.m3u8",
+    "url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020592%2FTEN3SD%2Fhdntl%3Dexp%3D1794361113~acl%3D%252f*~id%3D24433987772366848103317890849801~data%3Dhdntl~hmac%3D38c9160d3bf6dae9698715db368ae86e062a305d2209b030df1f485a703cd716%2Fmaster_3500.m3u8%3Faka_me_session_id%3DAAAAAAAAAAAZx%252fNqAAAAAJIHlNqueL62t5CNMXHhWgYjDPoQgPv%252f%2BBdGbS6f7ZsK4XFGTH86ie%252fOMq93qoq2yU3Qws%2B%2Bkhgn%26aka_media_format_type%3Dhls",
     "k1": null,
     "k2": null
   },
@@ -707,17 +707,17 @@
     "id": "prime_eng",
     "name": "Prime English",
     "Bearer": null,
-    "url": "https://otte.live.fly.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/cqbd0spknz/out/v1/71f66b096687482b8139a87814657aee/cenc.mpd",
-    "k1": "d6fa7afe010c5fd6a05338599da7158f",
-    "k2": "865584ea64ec125cd6524ab3fb7d0e80"
+    "url": "https://otte.live.fly.ww.aiv-cdn.net/fra-nitro/live/clients/dash/enc/9dalamxc1r/out/v1/8d1f34e547fb44c297c944279de38e11/cenc.mpd",
+    "k1": "c6872a6ce0112b3ef06eafa5d6fe16a3",
+    "k2": "c2285774921020dc71a7713f07a14e05"
   },
   {
     "id": "prime_hin",
     "name": "Prime Hindi",
     "Bearer": null,
-    "url": "https://otte.live.fly.ww.aiv-cdn.net/fra-nitro/live/clients/dash/enc/kuptqxvclu/out/v1/5f434a56da684ce58ef04a955faeb1d7/cenc.mpd",
-    "k1": "8e3eef73bb953c9da96600b47e2190d1",
-    "k2": "f1dbf72267c0bb24aa5fa2ab61987df8"
+    "url": "https://otte.live.fly.ww.aiv-cdn.net/fra-nitro/live/clients/dash/enc/vchrvkaifx/out/v1/5c21993871704a7b828c8960deeaa565/cenc.mpd",
+    "k1": "c44c74a35acb645f971988649c69617a",
+    "k2": "82ea35c848aafc18c7a2a8404b71edc1"
   },
   {
     "id": "iOS",
@@ -750,5 +750,13 @@
     "url": "https://otte.live.fly.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/alq9jnh1n7/out/v1/4344d0ef248149ad82f33d8fbe849101/cenc.mpd",
     "k1": "508623f921f12bfb5ff5af20e8cc4589",
     "k2": "5f32d00b563e16b555294c896424702d"
+  },
+  {
+    "id": "fox503",
+    "name": "fox503",
+    "Bearer": null,
+    "url": "https://trend8.st/live-tv?ch=fox-sports-503",
+    "k1": null,
+    "k2": null
   }
 ]

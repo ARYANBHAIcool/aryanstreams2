@@ -1,65 +1,9 @@
 {
-  "last_updated": "11/10/2026, 2:58:58 AM IST",
+  "last_updated": "11/10/2026, 7:56:48 AM IST",
   "source": "AryanStreams Official Feed",
-  "football_count": 23,
+  "football_count": 21,
   "cricket_count": 15,
   "events": [
-    {
-      "id": "14823",
-      "title": "CE Sabadell vs Real Sociedad B",
-      "slug": "ce-sabadell-vs-real-sociedad-b",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "LaLiga 2",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/54/image/dark",
-        "teamA": "CE Sabadell",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/24335/image",
-        "teamB": "Real Sociedad B",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/24360/image",
-        "startTimeIST": "2026-11-10 01:00:00 IST",
-        "endTimeIST": "2026-11-10 03:20:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "LaLiga Hypermotion ",
-          "type": "7",
-          "link": "https://cache07.zapitv.com/live/eds_c2/HYPERMOTION1/dash_live_ez/HYPERMOTION1.mpd",
-          "api": "a88617e904504ee291f49f0e60a51d49:17f92d59fde3b6d2bf4ffb48e8ca720a"
-        }
-      ]
-    },
-    {
-      "id": "14824",
-      "title": "Plymouth Parkway vs Berkhamsted Town",
-      "slug": "plymouth-parkway-vs-berkhamsted-town",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "FA Cup",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/19/image/dark",
-        "teamA": "Plymouth Parkway",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/80011/image",
-        "teamB": "Berkhamsted Town",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/231/image",
-        "startTimeIST": "2026-11-10 01:00:00 IST",
-        "endTimeIST": "2026-11-10 03:20:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "TNT SPORTS - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/rhf2dwosdt/out/v1/ee550d2a68d846c797e6ce4de2e8b76d/cenc.mpd",
-          "api": "69a5aa835a061ce64a630d1046727e40:d02feac8a999bd06bf4059bf33411749"
-        }
-      ]
-    },
     {
       "id": "14826",
       "title": "India vs Maldives",
@@ -485,7 +429,7 @@
       "title": "New Zealand vs India",
       "slug": "new-zealand-vs-india",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
@@ -495,10 +439,81 @@
         "teamAFlag": "https://img.sofascore.com/api/v1/team/187755/image",
         "teamB": "India",
         "teamBFlag": "https://img.sofascore.com/api/v1/team/187765/image",
-        "startTimeIST": "2026-11-10 07:30:17 IST",
+        "startTimeIST": "2026-11-10 07:30:40 IST",
         "endTimeIST": "2026-11-10 16:30:22 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "PRIME ENG - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/9dalamxc1r/out/v1/8d1f34e547fb44c297c944279de38e11/cenc.mpd",
+          "api": "c6872a6ce0112b3ef06eafa5d6fe16a3:c2285774921020dc71a7713f07a14e05"
+        },
+        {
+          "id": 2,
+          "title": "WILLOW - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/w816ft7qg1/out/v1/428ff6559f784a64b86af8aa5f58ee1f/cenc.mpd",
+          "api": "8055527c45bf2dec00ccbbc9a219ef8b:7fe859adbe404501d0df3ef25f63c7a4"
+        },
+        {
+          "id": 3,
+          "title": "PRIME HINDI - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/vchrvkaifx/out/v1/5c21993871704a7b828c8960deeaa565/cenc.mpd?",
+          "api": "c44c74a35acb645f971988649c69617a:82ea35c848aafc18c7a2a8404b71edc1"
+        },
+        {
+          "id": 4,
+          "title": "TNT SPORTS - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/rhf2dwosdt/out/v1/ee550d2a68d846c797e6ce4de2e8b76d/cenc.mpd?",
+          "api": "69a5aa835a061ce64a630d1046727e40:d02feac8a999bd06bf4059bf33411749"
+        },
+        {
+          "id": 5,
+          "title": "WILLOW - ALT",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/xhvkr4qrty/out/v1/488d3bc4cfcb4dd593a3114ff78f2298/cenc.mpd?",
+          "api": "e2026793de4d32b74ab50d192d21e812:5b019d29e099327378d606b8c29adb4f"
+        },
+        {
+          "id": 6,
+          "title": "SonyLiv - English",
+          "type": "0",
+          "link": "https://liveakmt-p-md.slivcdn.com/hls/live/2119931/cricodi_0911/ENG/master.m3u8?hdnea=exp=1794313824~acl=/*~id=097367e014f3b55a0de128a4c037b7ce-1794270624386~hmac=7353188d192c892aec363fe062e0e5ca2f71d3dab355f77c1a8157a07b8b7d81",
+          "api": ""
+        },
+        {
+          "id": 7,
+          "title": "SonyLiv - Hindi",
+          "type": "0",
+          "link": "https://liveakmt-p-md.slivcdn.com/hls/live/2119921/cricodi_0911/HIN/master.m3u8?hdnea=exp=1794313824~acl=/*~id=097367e014f3b55a0de128a4c037b7ce-1794270624386~hmac=7353188d192c892aec363fe062e0e5ca2f71d3dab355f77c1a8157a07b8b7d81",
+          "api": ""
+        },
+        {
+          "id": 8,
+          "title": "SonyLiv - TEL",
+          "type": "0",
+          "link": "https://liveakmt-p-md.slivcdn.com/hls/live/2119941/cricodi_0911/TEL/master.m3u8?hdnea=exp=1794313824~acl=/*~id=097367e014f3b55a0de128a4c037b7ce-1794270624386~hmac=7353188d192c892aec363fe062e0e5ca2f71d3dab355f77c1a8157a07b8b7d81",
+          "api": ""
+        },
+        {
+          "id": 9,
+          "title": "SonyLiv - TAM",
+          "type": "0",
+          "link": "https://liveakmt-p-md.slivcdn.com/hls/live/2119951/cricodi_0911/TAM/master.m3u8?hdnea=exp=1794313824~acl=/*~id=097367e014f3b55a0de128a4c037b7ce-1794270624386~hmac=7353188d192c892aec363fe062e0e5ca2f71d3dab355f77c1a8157a07b8b7d81",
+          "api": ""
+        },
+        {
+          "id": 10,
+          "title": "SonyLiv - KAN",
+          "type": "0",
+          "link": "https://liveakmt-p-md.slivcdn.com/hls/live/2119782/cricodi_0911/KAN/master.m3u8?hdnea=exp=1794313824~acl=/*~id=097367e014f3b55a0de128a4c037b7ce-1794270624386~hmac=7353188d192c892aec363fe062e0e5ca2f71d3dab355f77c1a8157a07b8b7d81",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14559",
@@ -601,6 +616,26 @@
       "streams": []
     },
     {
+      "id": "14622",
+      "title": "Abu Dhabi T10 League",
+      "slug": "abu-dhabi-t10-league",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "Abu Dhabi T10 League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
+        "teamA": "Abu Dhabi T10",
+        "teamAFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
+        "teamB": "Abu Dhabi T10",
+        "teamBFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
+        "startTimeIST": "2026-11-10 19:15:33 IST",
+        "endTimeIST": "2026-11-10 23:25:38 IST"
+      },
+      "streams": []
+    },
+    {
       "id": "14848",
       "title": "Perth Scorchers Women vs Sydney Thunder Women",
       "slug": "perth-scorchers-women-vs-sydney-thunder-women",
@@ -696,21 +731,6 @@
       "dashStreams": []
     },
     {
-      "id": "B0HKJV3KJQ",
-      "title": "ACC Mens U19 Asia Cup 2026 - 11th Match - India U19 vs United Arab Emirates U19",
-      "slug": "acc-mens-u19-asia-cup-2026-11th-match-india-u19-vs-united-arab-emirates-u19",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "ACC Mens U19 Asia Cup 2026 - 11th Match - India U19 vs United Arab Emirates U19",
-        "category": "Cricket",
-        "teamA": "Team A",
-        "teamB": "Team B",
-        "startTimeIST": ""
-      },
-      "dashStreams": []
-    },
-    {
       "id": "B0HLVY22CY",
       "title": "Sri Lanka tour of Pakistan 2026 - 1st Test - Pakistan vs Sri Lanka",
       "slug": "sri-lanka-tour-of-pakistan-2026-1st-test-pakistan-vs-sri-lanka",
@@ -726,13 +746,13 @@
       "dashStreams": []
     },
     {
-      "id": "B0HMWXH8YF",
-      "title": "Womens Big Bash League 2026 - 17th Match - Hobart Hurricanes Women vs Adelaide Strikers Women",
-      "slug": "womens-big-bash-league-2026-17th-match-hobart-hurricanes-women-vs-adelaide-strikers-women",
+      "id": "B0HKJV3KJQ",
+      "title": "ACC Mens U19 Asia Cup 2026 - 11th Match - India U19 vs United Arab Emirates U19",
+      "slug": "acc-mens-u19-asia-cup-2026-11th-match-india-u19-vs-united-arab-emirates-u19",
       "cat": "Live Events",
       "status": "live",
       "event": {
-        "name": "Womens Big Bash League 2026 - 17th Match - Hobart Hurricanes Women vs Adelaide Strikers Women",
+        "name": "ACC Mens U19 Asia Cup 2026 - 11th Match - India U19 vs United Arab Emirates U19",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",
@@ -741,13 +761,13 @@
       "dashStreams": []
     },
     {
-      "id": "B0HHQKGLKL",
-      "title": "Abu Dhabi T10 League 2026 - 9th Match - Yas Lions vs United Tigers",
-      "slug": "abu-dhabi-t10-league-2026-9th-match-yas-lions-vs-united-tigers",
+      "id": "B0HMWXH8YF",
+      "title": "Womens Big Bash League 2026 - 17th Match - Hobart Hurricanes Women vs Adelaide Strikers Women",
+      "slug": "womens-big-bash-league-2026-17th-match-hobart-hurricanes-women-vs-adelaide-strikers-women",
       "cat": "Live Events",
       "status": "live",
       "event": {
-        "name": "Abu Dhabi T10 League 2026 - 9th Match - Yas Lions vs United Tigers",
+        "name": "Womens Big Bash League 2026 - 17th Match - Hobart Hurricanes Women vs Adelaide Strikers Women",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",

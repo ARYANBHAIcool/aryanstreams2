@@ -1019,6 +1019,46 @@
                             }
                         } catch(fce) {}
                     }
+                    
+        async function getFreshSonyM3uUrl(m3uKey) {
+            var proxyBase = 'https://asp1.lovable.app/api/proxy?u=';
+            function isExpired(u) {
+                var m = String(u || '').match(/exp=(\d+)/i);
+                if (!m) return true;
+                return (Date.now() / 1000) > (parseInt(m[1], 10) - 600);
+            }
+            // 1. Try sony_m3u8.json
+            try {
+                var res = await fetch('data/sony_m3u8.json?_=' + Date.now());
+                if (res.ok) {
+                    var data = await res.json();
+                    var ch = (data.channels || []).find(function(c) { return c.id === m3uKey; });
+                    if (ch && !isExpired(ch.raw_url)) {
+                        return ch.proxied_url || (proxyBase + encodeURIComponent(ch.raw_url));
+                    }
+                }
+            } catch(e) {}
+            // 2. Fetch directly from Pastefy via Lovable proxy
+            try {
+                var pRes = await fetch(proxyBase + encodeURIComponent('https://pastefy.app/6wOwFjlG/raw'));
+                if (pRes.ok) {
+                    var text = await pRes.text();
+                    var lines = text.split('\n');
+                    for (var i = 0; i < lines.length; i++) {
+                        if (lines[i].includes('tvg-id="' + m3uKey + '"')) {
+                            for (var j = i + 1; j < lines.length; j++) {
+                                var trimmed = lines[j].trim();
+                                if (trimmed && !trimmed.startsWith('#') && trimmed.startsWith('http')) {
+                                    return proxyBase + encodeURIComponent(trimmed);
+                                }
+                            }
+                        }
+                    }
+                }
+            } catch(pe) {}
+            return null;
+        }
+
                     var m3uKey = '';
                     if (/ten3|892|sten3/i.test(targetKey)) m3uKey = 'ten3-hd';
                     else if (/ten4.*tamil|stent|3514/i.test(targetKey) || targetKey === 'ten4' || targetKey === 'ten4hd') m3uKey = 'ten4-hd';
@@ -1030,17 +1070,12 @@
                     var loadedFallback = false;
                     if (m3uKey) {
                         try {
-                            var sRes = await fetch('data/sony_m3u8.json?_=' + Date.now());
-                            if (sRes.ok) {
-                                var sData = await sRes.json();
-                                var sCh = (sData.channels || []).find(function(c) { return c.id === m3uKey; });
-                                if (sCh && (sCh.proxied_url || sCh.raw_url)) {
-                                    var fbUrl = sCh.proxied_url || sCh.raw_url;
-                                    player.configure({ drm: { clearKeys: {} } });
-                                    showToast('● Connecting backup stream...', 'warning');
-                                    await player.load(fbUrl);
-                                    loadedFallback = true;
-                                }
+                            var fbUrl = await getFreshSonyM3uUrl(m3uKey);
+                            if (fbUrl) {
+                                player.configure({ drm: { clearKeys: {} } });
+                                showToast('● Connecting backup stream...', 'warning');
+                                await player.load(fbUrl);
+                                loadedFallback = true;
                             }
                         } catch(innerErr) {
                             console.error('Backup load failed:', innerErr);
@@ -1126,17 +1161,12 @@
                             else if (/ten5|155|sten5/i.test(targetKey)) m3uKey = 'ten5-hd';
 
                             if (m3uKey) {
-                                var sRes = await fetch('data/sony_m3u8.json?_=' + Date.now());
-                                if (sRes.ok) {
-                                    var sData = await sRes.json();
-                                    var sCh = (sData.channels || []).find(function(c) { return c.id === m3uKey; });
-                                    if (sCh && (sCh.proxied_url || sCh.raw_url)) {
-                                        var fbUrl = sCh.proxied_url || sCh.raw_url;
-                                        player.configure({ drm: { clearKeys: {} } });
-                                        showToast('● Connecting backup stream...', 'warning');
-                                        await player.load(fbUrl);
-                                        return;
-                                    }
+                                var fbUrl = await getFreshSonyM3uUrl(m3uKey);
+                                if (fbUrl) {
+                                    player.configure({ drm: { clearKeys: {} } });
+                                    showToast('● Connecting backup stream...', 'warning');
+                                    await player.load(fbUrl);
+                                    return;
                                 }
                             }
                         } catch(fbErr) {
