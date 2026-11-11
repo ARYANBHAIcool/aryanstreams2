@@ -1,5 +1,5 @@
 {
-  "last_updated": "11/11/2026, 7:20:06 AM IST",
+  "last_updated": "11/11/2026, 2:34:43 PM IST",
   "source": "AryanStreams Official Feed",
   "events": [
     {
@@ -20,7 +20,15 @@
         "startTimeIST": "2026-11-11 15:00:00 IST",
         "endTimeIST": "2026-11-11 17:20:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "HD SERVER",
+          "type": "0",
+          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14827",
