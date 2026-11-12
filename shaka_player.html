@@ -206,10 +206,13 @@
             'ss2': 'E2HD', 'ss2h': 'H2HD', 'ss2tam': 'S2HD', 'ss2tel': 'TE2HD', 'ss2kan': 'KA2SD',
             'ss3': 'SS3', 'ssselect1': 'SE1HD', 'ssselect2': 'SE2HD', 'select1': 'SE1HD', 'select2': 'SE2HD', 'sskhel': 'H1SD',
             'h1hd': 'H1HD', 'e1hd': 'E1HD', 'h2hd': 'H2HD', 'e2hd': 'E2HD',
-            's2hd': 'S2HD', 'te2hd': 'TE2HD', 'ka1sd': 'KA1SD', 'ka2sd': 'KA2SD',
+            's2hd': 'S2HD', 'te1hd': 'TE1HD', 'te2hd': 'TE2HD', 'tu1hd': 'TE1HD', 'tu2hd': 'TE2HD',
+            'te1sd': 'TE1SD', 'tu1sd': 'TE1SD', 'te2sd': 'TE2SD', 'tu2sd': 'TE2SD',
+            'star1telugu': 'TE1HD', 'star1tel': 'TE1HD', 'star2telugu': 'TE2HD', 'star2tel': 'TE2HD',
+            'ka1sd': 'KA1SD', 'ka2sd': 'KA2SD',
             'se1hd': 'SE1HD', 'se2hd': 'SE2HD', 'h1sd': 'H1SD',
             '1108': 'H1HD', '1106': 'E1HD', '1984': 'H2HD', '1109': 'E2HD',
-            '3273': 'S2HD', '3274': 'TE2HD', '1650': 'KA1SD', '1122': 'KA2SD',
+            '3273': 'S2HD', '3278': 'TE1HD', '3274': 'TE2HD', '1651': 'TE1SD', '2852': 'TE2SD', '1650': 'KA1SD', '1122': 'KA2SD',
             '1389': 'SS3', '460': 'SE1HD', '461': 'SE2HD', '1998': 'H1SD',
 
             // Sony Sports Ten Direct TV Channel Feeds
@@ -246,9 +249,13 @@
             'H2SD': ['h2sd', 'h2hd', '1985'],
             'E2SD': ['e2sd', 'e2hd', '1141'],
             'S2HD': ['s2hd', '3273', '3277'],
-            'TE2HD': ['te2hd', '3274', '3278'],
+            'TE1HD': ['te1hd', 'tu1hd', '3278', 'ss1tel', 'star1telugu', '1651', 'te1sd', 'tu1sd'],
+            'TE1SD': ['te1sd', 'tu1sd', '1651', '3278', 'te1hd', 'tu1hd'],
+            'TE2HD': ['te2hd', 'tu2hd', '3274', 'ss2tel', 'star2telugu', '2852', 'te2sd', 'tu2sd'],
+            'TE2SD': ['te2sd', 'tu2sd', '2852', '3274', 'te2hd', 'tu2hd'],
+            'TU1HD': ['tu1hd', 'te1hd', '3278', 'ss1tel', 'star1telugu'],
+            'TU2HD': ['tu2hd', 'te2hd', '3274', 'ss2tel', 'star2telugu'],
             'T1HD': ['t1hd', '3277'],
-            'TE1HD': ['te1hd', '3278'],
             'KA1SD': ['ka1sd', '1650'],
             'KA2SD': ['ka2sd', '1122'],
             'EUROHD': ['875', '1294', 'eurosport'],
@@ -350,11 +357,13 @@
             '1124': { kid: 'a05f788e6082561fad5565ab7457c995', key: '5756af02f8923b1e8767ff375bafb4aa' },
 
             'te1hd': { kid: 'a56a509011675303900ead16165ba38f', key: 'c4c4c7aec0ff4a3fa0c6d8cb1ae56c30' },
+            'tu1hd': { kid: 'a56a509011675303900ead16165ba38f', key: 'c4c4c7aec0ff4a3fa0c6d8cb1ae56c30' },
             'ss1tel': { kid: 'a56a509011675303900ead16165ba38f', key: 'c4c4c7aec0ff4a3fa0c6d8cb1ae56c30' },
             'star1telugu': { kid: 'a56a509011675303900ead16165ba38f', key: 'c4c4c7aec0ff4a3fa0c6d8cb1ae56c30' },
             '3278': { kid: 'a56a509011675303900ead16165ba38f', key: 'c4c4c7aec0ff4a3fa0c6d8cb1ae56c30' },
 
             'te1sd': { kid: '8aa7da0842d65285b23e55619ab0f1c6', key: 'fe01e21ac81a19049d3ba82b5bd33dfa' },
+            'tu1sd': { kid: '8aa7da0842d65285b23e55619ab0f1c6', key: 'fe01e21ac81a19049d3ba82b5bd33dfa' },
             '1651': { kid: '8aa7da0842d65285b23e55619ab0f1c6', key: 'fe01e21ac81a19049d3ba82b5bd33dfa' },
 
             'ka1sd': { kid: 'bab01ce8ab695712a5fe390f1b4ffca2', key: '5685130a845e217080b84fc170b67f00' },
@@ -368,9 +377,13 @@
             '3273': { kid: '92cfd893ab8551d59a773afce91fc790', key: '906e0d6c4accf6bdaad9a6167f8ae53a' },
 
             'te2hd': { kid: '01fc3874f21058dcbf8204f07616ce81', key: '8ba560fb1fcdfeaddfc254965e3a42f6' },
+            'tu2hd': { kid: '01fc3874f21058dcbf8204f07616ce81', key: '8ba560fb1fcdfeaddfc254965e3a42f6' },
             'ss2tel': { kid: '01fc3874f21058dcbf8204f07616ce81', key: '8ba560fb1fcdfeaddfc254965e3a42f6' },
             'star2telugu': { kid: '01fc3874f21058dcbf8204f07616ce81', key: '8ba560fb1fcdfeaddfc254965e3a42f6' },
             '3274': { kid: '01fc3874f21058dcbf8204f07616ce81', key: '8ba560fb1fcdfeaddfc254965e3a42f6' },
+            'te2sd': { kid: 'e85ffc940cfc5c5790a24b714acef1cd', key: 'fda416daac7608bfd608ab4c5b724a84' },
+            'tu2sd': { kid: 'e85ffc940cfc5c5790a24b714acef1cd', key: 'fda416daac7608bfd608ab4c5b724a84' },
+            '2852': { kid: 'e85ffc940cfc5c5790a24b714acef1cd', key: 'fda416daac7608bfd608ab4c5b724a84' },
 
             'ka2sd': { kid: '7af2add2968a56309519ac2680c18f25', key: 'f992a14e0def17ccdfe16f58c4ce56c5' },
             'ss2kan': { kid: '7af2add2968a56309519ac2680c18f25', key: 'f992a14e0def17ccdfe16f58c4ce56c5' },
@@ -474,8 +487,8 @@
             'ss2h': 'ss2h', 'h2hd': 'ss2h', '1984': 'ss2h', 'star2hindihd': 'ss2h',
             'ss1tam': 'ss1tam', 's2hd': 'ss1tam', 't1hd': 'ss1tam', '3277': 'ss1tam',
             'ss2tam': 'ss2tam', '3273': 'ss2tam',
-            'ss1tel': 'ss1tel', 'te1hd': 'ss1tel', 'te2hd': 'ss1tel', '3278': 'ss1tel',
-            'ss2tel': 'ss2tel', '3274': 'ss2tel',
+            'ss1tel': 'ss1tel', 'te1hd': 'ss1tel', 'tu1hd': 'ss1tel', '3278': 'ss1tel', '1651': 'ss1tel', 'te1sd': 'ss1tel', 'tu1sd': 'ss1tel', 'star1telugu': 'ss1tel', 'star1tel': 'ss1tel',
+            'ss2tel': 'ss2tel', 'te2hd': 'ss2tel', 'tu2hd': 'ss2tel', '3274': 'ss2tel', '2852': 'ss2tel', 'te2sd': 'ss2tel', 'tu2sd': 'ss2tel', 'star2telugu': 'ss2tel', 'star2tel': 'ss2tel',
             'ss1kan': 'ss1kan', 'ka1sd': 'ss1kan', '1650': 'ss1kan',
             'ss2kan': 'ss2kan', 'ka2sd': 'ss2kan', '1122': 'ss2kan',
             'se1hd': 'se1hd', 'se1': 'se1', 'select1': 'se1hd', '460': 'se1hd', 'ssselect1': 'se1hd',
@@ -505,7 +518,9 @@
                         if ((normId === '891' || normId.includes('ten2') || normId === 'sten2' || workerKey === 'sten2') && (cId === 'sten2' || cNm.includes('sports 2') || cNm.includes('ten 2'))) return true;
                         if ((normId === '162' || normId.includes('ten1') || normId === 'sten1' || workerKey === 'sten1') && (cId === 'sten1' || cNm.includes('sports 1') || cNm.includes('ten 1'))) return true;
                         if ((normId === '3514' || normId.includes('ten4') || normId === 'stent' || workerKey === 'stent') && (cId === 'stent' || cNm.includes('sports 4') || cNm.includes('ten 4') || cNm.includes('tamil'))) return true;
-                        if ((normId === '1773' || normId === 'stentu' || workerKey === 'stentu') && (cId === 'stentu' || cNm.includes('telugu'))) return true;
+                        if ((normId === '1773' || normId === 'stentu' || workerKey === 'stentu') && (cId === 'stentu' || (cNm.includes('telugu') && cNm.includes('sony')))) return true;
+                        if (workerKey === 'ss1tel' && (cId === 'tu1hd' || cId === 'te1hd' || cId === '3278' || cId === 'tu1sd' || (cNm.includes('star') && cNm.includes('telugu') && !cNm.includes(' 2 ')))) return true;
+                        if (workerKey === 'ss2tel' && (cId === 'tu2hd' || cId === 'te2hd' || cId === '3274' || cId === 'tu2sd' || (cNm.includes('star') && cNm.includes('telugu') && (cNm.includes(' 2 ') || cNm.includes('2 telugu'))))) return true;
                         if ((normId === '155' || normId.includes('ten5') || normId === 'sten5' || workerKey === 'sten5') && (cId === 'sten5' || cNm.includes('sports 5') || cNm.includes('ten 5'))) return true;
                         if ((normId.includes('hindi') || normId === 'h1hd' || workerKey === 'ss1h') && (cId === 'h1hd' || cNm.includes('hindi'))) return true;
                         if ((normId.includes('eng') || normId === 'e1hd' || workerKey === 'ss1') && (cId === 'e1hd' || (cNm.includes('sports 1') && !cNm.includes('hindi')))) return true;
@@ -513,6 +528,26 @@
                     });
                     if (found && found.cookie && isCookieValid(found.cookie, found.cookie_expire)) {
                         return found.cookie.trim();
+                    }
+                }
+            } catch(e) {}
+
+            // 2. Live Jio M3U Real-time Token Sync (Direct from sportlink-playlist zio.m3u)
+            try {
+                var rZio = await fetch('https://sportlink-playlist.pages.dev/zio.m3u', { cache: 'no-store' });
+                if (rZio.ok) {
+                    var tZio = await rZio.text();
+                    var listZio = parseM3uChannels(tZio);
+                    var zFound = listZio.find(function(c) {
+                        var zId = String(c.id || c.channel_id || '').toLowerCase();
+                        var zNm = String(c.name || '').toLowerCase();
+                        if (workerKey === 'ss1tel' && (zId === '3278' || zId === '1651' || (zNm.includes('star') && zNm.includes('telugu') && !zNm.includes(' 2 ')))) return true;
+                        if (workerKey === 'ss2tel' && (zId === '3274' || zId === '2852' || (zNm.includes('star') && zNm.includes('telugu') && zNm.includes('2')))) return true;
+                        if (zId === normId || (workerKey && zId === workerKey)) return true;
+                        return false;
+                    });
+                    if (zFound && zFound.cookie && isCookieValid(zFound.cookie, zFound.cookie_expire)) {
+                        return zFound.cookie.trim();
                     }
                 }
             } catch(e) {}
@@ -568,7 +603,7 @@
                     licenseKeyLine = '';
                 } else if (line.indexOf('license_key=') !== -1) {
                     licenseKeyLine = line;
-                } else if (line.indexOf('Cookie=') !== -1) {
+                } else if (line.indexOf('Cookie=') !== -1 || line.indexOf('#EXTHTTP:') !== -1 || line.toLowerCase().indexOf('cookie') !== -1) {
                     headersLine = line;
                 } else if (line.startsWith('http') && currentInf) {
                     var streamUrl = line;
@@ -580,7 +615,7 @@
                     var cookie = '';
                     var expire = 0;
                     if (headersLine) {
-                        var cookieMatch = headersLine.match(/Cookie=([^\r\n&]+)/);
+                        var cookieMatch = headersLine.match(/Cookie=([^\r\n&]+)/i) || headersLine.match(/["']cookie["']\s*:\s*["']([^"']+)["']/i);
                         if (cookieMatch) {
                             cookie = cookieMatch[1].trim();
                             var expMatch = cookie.match(/exp=(\d+)/);

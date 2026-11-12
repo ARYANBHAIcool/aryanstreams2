@@ -36,12 +36,13 @@ const JIO_MAP = {
     '1114': ['SE2', '1114'],
     '3277': ['T1HD', 'star1tamil', 'ss1tam', '3277'],
     '1124': ['T1SD', '1124'],
-    '3278': ['TE1HD', 'star1telugu', 'ss1tel', '3278'],
-    '1651': ['TE1SD', '1651'],
+    '3278': ['TE1HD', 'star1telugu', 'ss1tel', '3278', 'TU1HD', 'tu1hd'],
+    '1651': ['TE1SD', '1651', 'TU1SD', 'tu1sd'],
     '1650': ['KA1SD', 'star1kannada', 'ss1kan', '1650'],
     '1122': ['KA2SD', 'star2kannada', 'ss2kan', '1122'],
     '3273': ['S2HD', 'star2tamil', 'ss2tam', '3273'],
-    '3274': ['TE2HD', 'star2telugu', 'ss2tel', '3274'],
+    '3274': ['TE2HD', 'star2telugu', 'ss2tel', '3274', 'TU2HD', 'tu2hd'],
+    '2852': ['TE2SD', '2852', 'TU2SD', 'tu2sd'],
 
     // Sony Sports
     '162':  ['162', 'STEN1', 'ten1hd', 'ten1', 'sony1', 'sony_ten1_hd', 's6hd'],
@@ -283,7 +284,7 @@ function parseZioM3U(m3uContent) {
             licenseKeyLine = '';
         } else if (line.includes('license_key=')) {
             licenseKeyLine = line;
-        } else if (line.includes('Cookie=')) {
+        } else if (line.includes('Cookie=') || line.includes('#EXTHTTP:') || line.toLowerCase().includes('cookie')) {
             headersLine = line;
         } else if (line.startsWith('http') && currentInf) {
             const streamUrl = line;
@@ -297,7 +298,7 @@ function parseZioM3U(m3uContent) {
             let cookie = '';
             let expire = 0;
             if (headersLine) {
-                const cookieMatch = headersLine.match(/Cookie=([^\r\n&]+)/);
+                const cookieMatch = headersLine.match(/Cookie=([^\r\n&]+)/i) || headersLine.match(/["']cookie["']\s*:\s*["']([^"']+)["']/i);
                 if (cookieMatch) {
                     cookie = cookieMatch[1].trim();
                     const expMatch = cookie.match(/exp=(\d+)/);

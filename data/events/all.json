@@ -1,189 +1,9 @@
 {
-  "last_updated": "11/12/2026, 6:26:55 PM IST",
+  "last_updated": "11/13/2026, 1:11:23 AM IST",
   "source": "AryanStreams Official Feed",
-  "football_count": 27,
+  "football_count": 15,
   "cricket_count": 15,
   "events": [
-    {
-      "id": "14829",
-      "title": "Uzbekistan vs Russia",
-      "slug": "uzbekistan-vs-russia",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "International Friendly Games",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
-        "teamA": "Uzbekistan",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4723/image",
-        "teamB": "Russia",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/4694/image",
-        "startTimeIST": "2026-11-12 20:30:00 IST",
-        "endTimeIST": "2026-11-12 22:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14832",
-      "title": "Ghana vs Somalia",
-      "slug": "ghana-vs-somalia",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "Africa Cup of Nations Qual.",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
-        "teamA": "Ghana",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4764/image",
-        "teamB": "Somalia",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/23472/image",
-        "startTimeIST": "2026-11-12 20:30:00 IST",
-        "endTimeIST": "2026-11-12 22:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14833",
-      "title": "DR Congo vs Sierra Leone",
-      "slug": "dr-congo-vs-sierra-leone",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "Africa Cup of Nations Qual.",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
-        "teamA": "DR Congo",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4823/image",
-        "teamB": "Sierra Leone",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/4737/image",
-        "startTimeIST": "2026-11-12 21:30:00 IST",
-        "endTimeIST": "2026-11-12 23:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14834",
-      "title": "Madagascar vs Guinea-Bissau",
-      "slug": "madagascar-vs-guinea-bissau",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "Africa Cup of Nations Qual.",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
-        "teamA": "Madagascar",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/8035/image",
-        "teamB": "Guinea-Bissau",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/23478/image",
-        "startTimeIST": "2026-11-12 21:30:00 IST",
-        "endTimeIST": "2026-11-12 23:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14835",
-      "title": "Guinea vs Eritrea",
-      "slug": "guinea-vs-eritrea",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "Africa Cup of Nations Qual.",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
-        "teamA": "Guinea",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4826/image",
-        "teamB": "Eritrea",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/8041/image",
-        "startTimeIST": "2026-11-12 21:30:00 IST",
-        "endTimeIST": "2026-11-12 23:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14875",
-      "title": "Equatorial Guinea vs Zimbabwe",
-      "slug": "equatorial-guinea-vs-zimbabwe",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "Africa Cup of Nations Qual.",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
-        "teamA": "Equatorial Guinea",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/8032/image",
-        "teamB": "Zimbabwe",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/4719/image",
-        "startTimeIST": "2026-11-12 21:30:00 IST",
-        "endTimeIST": "2026-11-12 23:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14830",
-      "title": "Lithuania vs Suriname",
-      "slug": "lithuania-vs-suriname",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "International Friendly Games",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
-        "teamA": "Lithuania",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4776/image",
-        "teamB": "Suriname",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/21822/image",
-        "startTimeIST": "2026-11-12 22:30:00 IST",
-        "endTimeIST": "2026-11-13 00:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14836",
-      "title": "Turkiye vs Belgium",
-      "slug": "turkiye-vs-belgium",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "UEFA Nations League",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/10783/image/dark",
-        "teamA": "Türkiye",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4700/image",
-        "teamB": "Belgium",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/4717/image",
-        "startTimeIST": "2026-11-12 22:30:00 IST",
-        "endTimeIST": "2026-11-13 00:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14840",
-      "title": "Armenia vs Cyprus",
-      "slug": "armenia-vs-cyprus",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "UEFA Nations League",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/10783/image/dark",
-        "teamA": "Armenia",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4740/image",
-        "teamB": "Cyprus",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/4482/image",
-        "startTimeIST": "2026-11-12 22:30:00 IST",
-        "endTimeIST": "2026-11-13 00:50:00 IST"
-      },
-      "streams": []
-    },
     {
       "id": "14831",
       "title": "Malta vs Eswatini",
@@ -322,7 +142,29 @@
         "startTimeIST": "2026-11-13 00:30:00 IST",
         "endTimeIST": "2026-11-13 02:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "beIN SPORTS HD",
+          "type": "0",
+          "link": "https://bl.rutube.ru/livestream/05550e441b09aeec53e60de66b6c47bf/index.m3u8?s=jJ8GHzeJIzYZUoWBKmzdFw&e=2094509894&scheme=https",
+          "api": ""
+        },
+        {
+          "id": 2,
+          "title": "CRICFy LIVE ",
+          "type": "0",
+          "link": "https://live.vivo155.com/live/sd-1-4642734.m3u8?txSecret=5bb62af7123df454b5b8ee1c25011a58&txTime=6AF62217",
+          "api": ""
+        },
+        {
+          "id": 3,
+          "title": "HD SERVER ",
+          "type": "0",
+          "link": "https://live2.jorvakstreamcache.com/live/channel7.m3u8?",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14878",
@@ -342,7 +184,29 @@
         "startTimeIST": "2026-11-13 00:30:00 IST",
         "endTimeIST": "2026-11-13 02:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "beIN SPORTS - AQ",
+          "type": "7",
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/e3ozww2yny/out/v1/3a16d07c2cc0444bb8ea10d0483d1ced/cenc.mpd?",
+          "api": "74cbe15488783fab07ff8c702fabafcd:bb607803a49c2d6104f845e7886c971c"
+        },
+        {
+          "id": 2,
+          "title": "CRICFy LIVE ",
+          "type": "0",
+          "link": "https://live.vivo155.com/live/sd-1-4642721.m3u8?txSecret=b84e257c746659b30e113c4011d3eb27&txTime=6AF6223F",
+          "api": ""
+        },
+        {
+          "id": 3,
+          "title": "HD SERVER ",
+          "type": "0",
+          "link": "https://live2.jorvakstreamcache.com/live/channel20.m3u8?",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14879",
@@ -362,7 +226,29 @@
         "startTimeIST": "2026-11-13 00:30:00 IST",
         "endTimeIST": "2026-11-13 02:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "beIN SPORTS - AQ",
+          "type": "7",
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/katdnhkzqv/out/v1/2469724fa7754a4da6861d8ba80de958/cenc.mpd?",
+          "api": "27759a440e8ad821b800b3de00cd5851:1b8743adee559f27845f55e8b4d639fe"
+        },
+        {
+          "id": 2,
+          "title": "CRICFy LIVE ",
+          "type": "0",
+          "link": "https://live.vivo155.com/live/sd-1-4642732.m3u8?txSecret=8b82d7e6f069cf478f97be0eef7203a1&txTime=6AF6226D",
+          "api": ""
+        },
+        {
+          "id": 3,
+          "title": "HD SERVER ",
+          "type": "0",
+          "link": "https://live2.jorvakstreamcache.com/live/channel10.m3u8?",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14837",
@@ -442,7 +328,15 @@
         "startTimeIST": "2026-11-13 01:15:00 IST",
         "endTimeIST": "2026-11-13 03:35:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "CRICFy LIVE",
+          "type": "0",
+          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14842",
@@ -462,7 +356,15 @@
         "startTimeIST": "2026-11-13 01:15:00 IST",
         "endTimeIST": "2026-11-13 03:35:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "CRICFy LIVE",
+          "type": "0",
+          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14843",
@@ -482,7 +384,15 @@
         "startTimeIST": "2026-11-13 01:15:00 IST",
         "endTimeIST": "2026-11-13 03:35:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "CRICFy LIVE",
+          "type": "0",
+          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14881",
