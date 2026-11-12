@@ -1,5 +1,5 @@
 {
-  "last_updated": "11/12/2026, 5:01:48 AM IST",
+  "last_updated": "11/12/2026, 9:44:29 AM IST",
   "source": "AryanStreams Official Feed",
   "events": [
     {
@@ -123,6 +123,26 @@
       "streams": []
     },
     {
+      "id": "14875",
+      "title": "Equatorial Guinea vs Zimbabwe",
+      "slug": "equatorial-guinea-vs-zimbabwe",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "Africa Cup of Nations Qual.",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
+        "teamA": "Equatorial Guinea",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/8032/image",
+        "teamB": "Zimbabwe",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4719/image",
+        "startTimeIST": "2026-11-12 21:30:00 IST",
+        "endTimeIST": "2026-11-12 23:50:00 IST"
+      },
+      "streams": []
+    },
+    {
       "id": "14830",
       "title": "Lithuania vs Suriname",
       "slug": "lithuania-vs-suriname",
@@ -199,6 +219,166 @@
         "teamBFlag": "https://img.sofascore.com/api/v1/team/4733/image",
         "startTimeIST": "2026-11-12 23:00:00 IST",
         "endTimeIST": "2026-11-13 01:20:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14872",
+      "title": "Calvo Sotelo Puertollano vs Albacete Balompie",
+      "slug": "calvo-sotelo-puertollano-vs-albacete-balompie",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "Copa del Rey",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/329/image/dark",
+        "teamA": "Calvo Sotelo Puertollano",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/295639/image",
+        "teamB": "Albacete Balompié",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2848/image",
+        "startTimeIST": "2026-11-12 23:00:00 IST",
+        "endTimeIST": "2026-11-13 01:20:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14880",
+      "title": "Futbol Club Barcelona vs Arsenal",
+      "slug": "futbol-club-barcelona-vs-arsenal",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Women's Champions League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/696/image/dark",
+        "teamA": "Fútbol Club Barcelona",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/77889/image",
+        "teamB": "Arsenal",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/26243/image",
+        "startTimeIST": "2026-11-12 23:15:00 IST",
+        "endTimeIST": "2026-11-13 01:35:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14873",
+      "title": "CD Tarancon vs Levante UD",
+      "slug": "cd-tarancon-vs-levante-ud",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "Copa del Rey",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/329/image/dark",
+        "teamA": "CD Tarancón",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/293881/image",
+        "teamB": "Levante UD",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2849/image",
+        "startTimeIST": "2026-11-12 23:30:00 IST",
+        "endTimeIST": "2026-11-13 01:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14874",
+      "title": "CDA Navalcarnero vs Real Betis",
+      "slug": "cda-navalcarnero-vs-real-betis",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "Copa del Rey",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/329/image/dark",
+        "teamA": "CDA Navalcarnero",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/24352/image",
+        "teamB": "Real Betis",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2816/image",
+        "startTimeIST": "2026-11-12 23:30:00 IST",
+        "endTimeIST": "2026-11-13 01:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14876",
+      "title": "Benin vs Central African Republic",
+      "slug": "benin-vs-central-african-republic",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "Africa Cup of Nations Qual.",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
+        "teamA": "Benin",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4744/image",
+        "teamB": "Central African Republic",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/23470/image",
+        "startTimeIST": "2026-11-13 00:30:00 IST",
+        "endTimeIST": "2026-11-13 02:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14877",
+      "title": "Cameroon vs Namibia",
+      "slug": "cameroon-vs-namibia",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "Africa Cup of Nations Qual.",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
+        "teamA": "Cameroon",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4751/image",
+        "teamB": "Namibia",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4832/image",
+        "startTimeIST": "2026-11-13 00:30:00 IST",
+        "endTimeIST": "2026-11-13 02:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14878",
+      "title": "Cote dIvoire vs Gambia",
+      "slug": "cote-divoire-vs-gambia",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "Africa Cup of Nations Qual.",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
+        "teamA": "Côte d'Ivoire",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4768/image",
+        "teamB": "Gambia",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4762/image",
+        "startTimeIST": "2026-11-13 00:30:00 IST",
+        "endTimeIST": "2026-11-13 02:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14879",
+      "title": "Senegal vs Sudan",
+      "slug": "senegal-vs-sudan",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "Africa Cup of Nations Qual.",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
+        "teamA": "Senegal",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4739/image",
+        "teamB": "Sudan",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4734/image",
+        "startTimeIST": "2026-11-13 00:30:00 IST",
+        "endTimeIST": "2026-11-13 02:50:00 IST"
       },
       "streams": []
     },
@@ -319,6 +499,26 @@
         "teamBFlag": "https://img.sofascore.com/api/v1/team/4706/image",
         "startTimeIST": "2026-11-13 01:15:00 IST",
         "endTimeIST": "2026-11-13 03:35:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14881",
+      "title": "Benfica vs FK Austria Wien",
+      "slug": "benfica-vs-fk-austria-wien",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "UEFA Women's Champions League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/696/image/dark",
+        "teamA": "Benfica",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/297853/image",
+        "teamB": "FK Austria Wien",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/229911/image",
+        "startTimeIST": "2026-11-13 01:30:00 IST",
+        "endTimeIST": "2026-11-13 03:50:00 IST"
       },
       "streams": []
     },

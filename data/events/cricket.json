@@ -1,5 +1,5 @@
 {
-  "last_updated": "11/12/2026, 5:01:48 AM IST",
+  "last_updated": "11/12/2026, 9:44:29 AM IST",
   "source": "AryanStreams Official Feed",
   "events": [
     {
@@ -59,6 +59,34 @@
       ]
     },
     {
+      "id": "14882",
+      "title": "Melbourne Stars Women vs Brisbane Heat Women",
+      "slug": "melbourne-stars-women-vs-brisbane-heat-women",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "Women's Big Bash League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
+        "teamA": "Melbourne Stars Women",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/274886/image",
+        "teamB": "Brisbane Heat Women",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/274884/image",
+        "startTimeIST": "2026-11-12 10:10:00 IST",
+        "endTimeIST": "2026-11-12 14:10:00 IST"
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "CRICFy LIVE",
+          "type": "0",
+          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+          "api": ""
+        }
+      ]
+    },
+    {
       "id": "14870",
       "title": "Afghanistan Under-19 vs India Under-19",
       "slug": "afghanistan-under-19-vs-india-under-19",
@@ -76,7 +104,15 @@
         "startTimeIST": "2026-11-12 10:30:00 IST",
         "endTimeIST": "2026-11-12 14:30:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "CRICFy LIVE",
+          "type": "0",
+          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14871",
@@ -96,7 +132,71 @@
         "startTimeIST": "2026-11-12 10:30:00 IST",
         "endTimeIST": "2026-11-12 14:30:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "CRICFy LIVE",
+          "type": "0",
+          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+          "api": ""
+        }
+      ]
+    },
+    {
+      "id": "14884",
+      "title": "Sri Lanka Women vs Ireland Women",
+      "slug": "sri-lanka-women-vs-ireland-women",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "Womens Emerging Nations Trophy",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/30714/image/dark",
+        "teamA": "Sri Lanka Women",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/187806/image",
+        "teamB": "Ireland Women",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/213116/image",
+        "startTimeIST": "2026-11-12 10:30:00 IST",
+        "endTimeIST": "2026-11-12 14:30:00 IST"
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "CRICFy LIVE",
+          "type": "0",
+          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+          "api": ""
+        }
+      ]
+    },
+    {
+      "id": "14885",
+      "title": "Papua New Guinea Women vs Scotland Women",
+      "slug": "papua-new-guinea-women-vs-scotland-women",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "Womens Emerging Nations Trophy",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/30714/image/dark",
+        "teamA": "Papua New Guinea Women",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/453165/image",
+        "teamB": "Scotland Women",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/453162/image",
+        "startTimeIST": "2026-11-12 10:30:00 IST",
+        "endTimeIST": "2026-11-12 14:30:00 IST"
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "CRICFy LIVE",
+          "type": "0",
+          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14261",
@@ -139,6 +239,66 @@
           "api": ""
         }
       ]
+    },
+    {
+      "id": "14883",
+      "title": "Melbourne Renegades Women vs Sydney Sixers Women",
+      "slug": "melbourne-renegades-women-vs-sydney-sixers-women",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "Women's Big Bash League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
+        "teamA": "Melbourne Renegades Women",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/274887/image",
+        "teamB": "Sydney Sixers Women",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/274883/image",
+        "startTimeIST": "2026-11-12 13:40:00 IST",
+        "endTimeIST": "2026-11-12 17:40:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14886",
+      "title": "Netherlands Women vs Thailand Women",
+      "slug": "netherlands-women-vs-thailand-women",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "Womens Emerging Nations Trophy",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/30714/image/dark",
+        "teamA": "Netherlands Women",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/417753/image",
+        "teamB": "Thailand Women",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/446070/image",
+        "startTimeIST": "2026-11-12 14:45:00 IST",
+        "endTimeIST": "2026-11-12 18:45:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14887",
+      "title": "Pakistan Women vs Bangladesh Women",
+      "slug": "pakistan-women-vs-bangladesh-women",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "Womens Emerging Nations Trophy",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/30714/image/dark",
+        "teamA": "Pakistan Women",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/187808/image",
+        "teamB": "Bangladesh Women",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/187809/image",
+        "startTimeIST": "2026-11-12 14:45:00 IST",
+        "endTimeIST": "2026-11-12 18:45:00 IST"
+      },
+      "streams": []
     },
     {
       "id": "14009",
@@ -312,13 +472,13 @@
       "streams": []
     },
     {
-      "id": "B0HLVY22CY",
-      "title": "Sri Lanka tour of Pakistan 2026 - 1st Test - Pakistan vs Sri Lanka",
-      "slug": "sri-lanka-tour-of-pakistan-2026-1st-test-pakistan-vs-sri-lanka",
+      "id": "B0HL26CQLC",
+      "title": "Womens Big Bash League 2026 - 19th Match - Melbourne Stars Women vs Brisbane Heat Women",
+      "slug": "womens-big-bash-league-2026-19th-match-melbourne-stars-women-vs-brisbane-heat-women",
       "cat": "Live Events",
       "status": "live",
       "event": {
-        "name": "Sri Lanka tour of Pakistan 2026 - 1st Test - Pakistan vs Sri Lanka",
+        "name": "Womens Big Bash League 2026 - 19th Match - Melbourne Stars Women vs Brisbane Heat Women",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",
@@ -327,13 +487,13 @@
       "dashStreams": []
     },
     {
-      "id": "B0HL26CQLC",
-      "title": "Womens Big Bash League 2026 - 19th Match - Melbourne Stars Women vs Brisbane Heat Women",
-      "slug": "womens-big-bash-league-2026-19th-match-melbourne-stars-women-vs-brisbane-heat-women",
+      "id": "B0HMBL7QDV",
+      "title": "ACC Mens U19 Asia Cup 2026 - 2nd Semi-Final - Afghanistan U19 vs India U19",
+      "slug": "acc-mens-u19-asia-cup-2026-2nd-semi-final-afghanistan-u19-vs-india-u19",
       "cat": "Live Events",
       "status": "live",
       "event": {
-        "name": "Womens Big Bash League 2026 - 19th Match - Melbourne Stars Women vs Brisbane Heat Women",
+        "name": "ACC Mens U19 Asia Cup 2026 - 2nd Semi-Final - Afghanistan U19 vs India U19",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",
