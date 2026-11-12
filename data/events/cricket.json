@@ -1,42 +1,7 @@
 {
-  "last_updated": "11/13/2026, 1:11:23 AM IST",
+  "last_updated": "11/13/2026, 2:14:30 AM IST",
   "source": "AryanStreams Official Feed",
   "events": [
-    {
-      "id": "14261",
-      "title": "NPL Nepal Premier League",
-      "slug": "npl-nepal-premier-league",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "Nepal Premier League T20",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
-        "teamA": "NPL",
-        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
-        "teamB": "NPL",
-        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
-        "startTimeIST": "2026-11-12 16:45:38 IST",
-        "endTimeIST": "2026-11-12 20:45:14 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "FANCODE - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/b3b3fkmrbl/out/v1/1084d5c9a97a4c5b9f9554c88f486646/cenc.mpd",
-          "api": "82dfca238e8c4b430a3269db71965db9:a00b28caf4ac628e77a553d440c0ddca"
-        },
-        {
-          "id": 2,
-          "title": "FANCODE - IN",
-          "type": "0",
-          "link": "https://in-mc-flive.fancode.com/mumbai/4250376_english_hls_06f8df790c25388_1ta-di_h264/1080p.m3u8?hdntl=Expires=1794551600~_GO=Generated~acl=/mumbai/4250376_english_hls_06f8df790c25388_1ta-di_h264/*~SessionID=20fde653298ae09b1231e2c94877ae9f_playbox_845100cd-5fdc-46~Signature=AbO9BjgfyL-FpZ7spkiG2wk2QQTC6UB2OHU7ZKlNcQy4HU3FoWFjTUucHLaPgIbX7QFpbRGK2lYv32eBx3NUFzpDLlIG",
-          "api": ""
-        }
-      ]
-    },
     {
       "id": "14888",
       "title": "New Zealand vs India",
@@ -194,6 +159,41 @@
       "streams": []
     },
     {
+      "id": "14261",
+      "title": "NPL Nepal Premier League",
+      "slug": "npl-nepal-premier-league",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "Nepal Premier League T20",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
+        "teamA": "NPL",
+        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
+        "teamB": "NPL",
+        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
+        "startTimeIST": "2026-11-13 12:15:19 IST",
+        "endTimeIST": "2026-11-13 20:45:12 IST"
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "FANCODE - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/b3b3fkmrbl/out/v1/1084d5c9a97a4c5b9f9554c88f486646/cenc.mpd",
+          "api": "82dfca238e8c4b430a3269db71965db9:a00b28caf4ac628e77a553d440c0ddca"
+        },
+        {
+          "id": 2,
+          "title": "FANCODE - IN",
+          "type": "0",
+          "link": "https://in-mc-flive.fancode.com/mumbai/4250376_english_hls_06f8df790c25388_1ta-di_h264/1080p.m3u8?hdntl=Expires=1794551600~_GO=Generated~acl=/mumbai/4250376_english_hls_06f8df790c25388_1ta-di_h264/*~SessionID=20fde653298ae09b1231e2c94877ae9f_playbox_845100cd-5fdc-46~Signature=AbO9BjgfyL-FpZ7spkiG2wk2QQTC6UB2OHU7ZKlNcQy4HU3FoWFjTUucHLaPgIbX7QFpbRGK2lYv32eBx3NUFzpDLlIG",
+          "api": ""
+        }
+      ]
+    },
+    {
       "id": "14891",
       "title": "Zimbabwe Women vs Bangladesh Women",
       "slug": "zimbabwe-women-vs-bangladesh-women",
@@ -330,13 +330,13 @@
       "streams": []
     },
     {
-      "id": "B0HKHKVS63",
-      "title": "Womens Big Bash League 2026 - 20th Match - Melbourne Renegades Women vs Sydney Sixers Women",
-      "slug": "womens-big-bash-league-2026-20th-match-melbourne-renegades-women-vs-sydney-sixers-women",
+      "id": "B0HNH5B25Z",
+      "title": "India tour of New Zealand 2026 - 4th ODI - New Zealand vs India",
+      "slug": "india-tour-of-new-zealand-2026-4th-odi-new-zealand-vs-india",
       "cat": "Live Events",
       "status": "live",
       "event": {
-        "name": "Womens Big Bash League 2026 - 20th Match - Melbourne Renegades Women vs Sydney Sixers Women",
+        "name": "India tour of New Zealand 2026 - 4th ODI - New Zealand vs India",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",
@@ -345,13 +345,13 @@
       "dashStreams": []
     },
     {
-      "id": "B0HNH5B25Z",
-      "title": "India tour of New Zealand 2026 - 4th ODI - New Zealand vs India",
-      "slug": "india-tour-of-new-zealand-2026-4th-odi-new-zealand-vs-india",
+      "id": "B0HMGJT9PV",
+      "title": "Womens Big Bash League 2026 - 21st Match - Hobart Hurricanes Women vs Brisbane Heat Women",
+      "slug": "womens-big-bash-league-2026-21st-match-hobart-hurricanes-women-vs-brisbane-heat-women",
       "cat": "Live Events",
       "status": "live",
       "event": {
-        "name": "India tour of New Zealand 2026 - 4th ODI - New Zealand vs India",
+        "name": "Womens Big Bash League 2026 - 21st Match - Hobart Hurricanes Women vs Brisbane Heat Women",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",
