@@ -1,266 +1,7 @@
 {
-  "last_updated": "11/13/2026, 12:36:48 AM IST",
+  "last_updated": "11/13/2026, 1:11:23 AM IST",
   "source": "AryanStreams Official Feed",
   "events": [
-    {
-      "id": "14830",
-      "title": "Lithuania vs Suriname",
-      "slug": "lithuania-vs-suriname",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "International Friendly Games",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
-        "teamA": "Lithuania",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4776/image",
-        "teamB": "Suriname",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/21822/image",
-        "startTimeIST": "2026-11-12 22:30:00 IST",
-        "endTimeIST": "2026-11-13 00:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "DAZN SPORTS - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/17txp12eq1/out/v1/aef4dd042384415697255059ecce4897/cenc.mpd",
-          "api": "72fe7d3d699cc3cfa46e403efc2dbd4e:a4fa5671beff9f6b1d3b66320fc23897"
-        },
-        {
-          "id": 2,
-          "title": "CRICFy LIVE ",
-          "type": "0",
-          "link": "https://live.vivo155.com/live/sd-1-4667164.m3u8?txSecret=c2c9cfb381ff232fb3552908db707961&txTime=6AF609DB",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": "14836",
-      "title": "Turkiye vs Belgium",
-      "slug": "turkiye-vs-belgium",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "UEFA Nations League",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/10783/image/dark",
-        "teamA": "Türkiye",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4700/image",
-        "teamB": "Belgium",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/4717/image",
-        "startTimeIST": "2026-11-12 22:30:00 IST",
-        "endTimeIST": "2026-11-13 00:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "DAZN SPORTS - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/af78moxwel/out/v1/412cee2767ed4c4a9bccc22f950ce86c/cenc.mpd",
-          "api": "a59ccf4a670e13932b4bd5972b2be7d1:de96de2f353e2922634e7e1b34befee0"
-        },
-        {
-          "id": 2,
-          "title": "SonyLiv PRIME - AQ",
-          "type": "7",
-          "link": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/td0oga2768/out/v1/a45152e1f3204d6aa040ea44742c838e/cenc.mpd",
-          "api": "af5adf2f9aebfbce439fd9de4d6f6111:bd962ed1dc6391f707b93c9385d9b54c"
-        },
-        {
-          "id": 3,
-          "title": "FOX SPORTS - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/fsu3wl2rwb/out/v1/be61206c04e643349d53fb22301f3b50/cenc.mpd",
-          "api": "5466ebd70704bdeb657f0abf3c5ca4ef:bdd79b72d8e48ed483aa623cc38a8a16"
-        },
-        {
-          "id": 4,
-          "title": "VIX SPANISH - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/0pkxlhb5ji/out/v1/d2f281563daa4c8da8e2fd168552b757/cenc.mpd",
-          "api": "c4df001be8b4bf02ebb396f1ef9aba4f:ab259ee18cef520f319cdea61ddfa293"
-        },
-        {
-          "id": 5,
-          "title": "beIN ENGLISH - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/q4u5nwaogz/out/v1/18de6d3e65934f3a8de4358e69eab86c/cenc.mpd",
-          "api": "7995c724a13748ed970840a8ab5bb9b3:67bdaf1e2175b9ff682fcdf0e2354b1e"
-        },
-        {
-          "id": 6,
-          "title": "SPORT 1 CZ - AQ",
-          "type": "7",
-          "link": "https://dash2.antik.sk/stream/nvidia_sport_1/playlist_cenc.mpd",
-          "api": "11223344556677889900112233445566:4b80724d0ef86bcb2c21f7999d67739d"
-        },
-        {
-          "id": 7,
-          "title": "FOX SPORTS HD",
-          "type": "0",
-          "link": "https://chatgpt.hereisman.net/playlist/59876/load-playlist-multi?",
-          "api": ""
-        },
-        {
-          "id": 8,
-          "title": "TAPMAD - AQ",
-          "type": "0",
-          "link": "https://saseries.akamaized.net/hls/live/2110097/28593jkiL-tapmad/master.m3u8?",
-          "api": ""
-        },
-        {
-          "id": 9,
-          "title": "SonyLiv ",
-          "type": "0",
-          "link": "https://sonymtmnew-akamaized.pages.dev/hls/live/2120303/Footlive1211/ENG/std_lrh-800300010.m3u8",
-          "api": ""
-        },
-        {
-          "id": 10,
-          "title": "CRICFy LIVE ",
-          "type": "0",
-          "link": "https://live.vivo155.com/live/hd-en-1-4518077.m3u8?txSecret=0885f45a94cfd1ca9e4ccd745aadc7fe&txTime=6AF60774",
-          "api": ""
-        },
-        {
-          "id": 11,
-          "title": "HD SERVER ",
-          "type": "0",
-          "link": "https://www.rtmpcdn.com/live/177f579d-a5a2-4aa9-a3a9-0bd2e41fdcd3.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": "14840",
-      "title": "Armenia vs Cyprus",
-      "slug": "armenia-vs-cyprus",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "UEFA Nations League",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/10783/image/dark",
-        "teamA": "Armenia",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4740/image",
-        "teamB": "Cyprus",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/4482/image",
-        "startTimeIST": "2026-11-12 22:30:00 IST",
-        "endTimeIST": "2026-11-13 00:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "DAZN SPORTS - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/rsmrmcmdzb/out/v1/fa673d18f36e4b999c3e8a3f79721ee9/cenc.mpd",
-          "api": "aa030376eae4a60c422a069784a0b221:f18ac2a2d72a87ffe66b62740336907a"
-        },
-        {
-          "id": 2,
-          "title": "SonyLiv PRIME - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/yi7ehwmaqx/out/v1/b544273aaf66429a8892963d8fbdd086/cenc.mpd",
-          "api": "8a8998a833ad2d041de7cacd95c3f685:8256d9686b0c3dde63f205614c0772a5"
-        },
-        {
-          "id": 3,
-          "title": "beIN ENGLISH - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/8m8cd46i1t/out/v1/83985c68e4174e90a58a1f2c024be4c9/cenc.mpd?",
-          "api": "0b42be2664d7e811d04f3e504e0924c5:ae24090123b8c72ac5404dc152847cb8"
-        },
-        {
-          "id": 4,
-          "title": "VIX SPANISH - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/82oqikb16e/out/v1/5edd423d949e412c98bf34042cb95d4e/cenc.mpd",
-          "api": "fb2f6053cd382eb138d7c8f0dfa461e2:94eae87ba9e0eb456dcb0a3f2debd0df"
-        },
-        {
-          "id": 5,
-          "title": "SPORT 2 CZ - AQ",
-          "type": "7",
-          "link": "https://dash2.antik.sk/stream/nvidia_sport2/playlist_cenc.mpd",
-          "api": "11223344556677889900112233445566:4b80724d0ef86bcb2c21f7999d67739d"
-        },
-        {
-          "id": 6,
-          "title": "FOX SOCCER+ HD",
-          "type": "0",
-          "link": "https://chatgpt.hereisman.net/playlist/59877/load-playlist-multi?",
-          "api": ""
-        },
-        {
-          "id": 7,
-          "title": "TAPMAD - AQ",
-          "type": "0",
-          "link": "https://tencent-cdn.tapmad.com/v1/01a14abbcff31ea540a81c2b41b760/01a14abc06421567ee931e109fa577/main.m3u8?",
-          "api": ""
-        },
-        {
-          "id": 8,
-          "title": "SonyLiv",
-          "type": "0",
-          "link": "https://sonymtmnew-akamaized.pages.dev/hls/live/2120302/Footlive1211/ENG/std_lrh-800300010.m3u8",
-          "api": ""
-        },
-        {
-          "id": 9,
-          "title": "CRICFy LIVE ",
-          "type": "0",
-          "link": "https://live.vivo155.com/live/hd-en-1-4518083.m3u8?txSecret=9d8db7dd11a2cb8d7edc6d74f311861e&txTime=6AF60823",
-          "api": ""
-        },
-        {
-          "id": 10,
-          "title": "HD SERVER ",
-          "type": "0",
-          "link": "https://www.rtmpcdn.com/live/805fb1e1-c171-469e-9cd0-659b98ca4547.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": "14835",
-      "title": "Guinea vs Eritrea",
-      "slug": "guinea-vs-eritrea",
-      "cat": "Live Events",
-      "status": "ended",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "Africa Cup of Nations Qual.",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
-        "teamA": "Guinea",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4826/image",
-        "teamB": "Eritrea",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/8041/image",
-        "startTimeIST": "2026-11-12 22:30:01 IST",
-        "endTimeIST": "2026-11-13 00:30:07 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "CRICFy LIVE ",
-          "type": "0",
-          "link": "https://live.vivo155.com/live/sd-1-4642737.m3u8?txSecret=137499192f6d400dd8bf072328e9be6d&txTime=6AF5F7AC",
-          "api": ""
-        },
-        {
-          "id": 2,
-          "title": "HD SERVER ",
-          "type": "0",
-          "link": "https://live2.jorvakstreamcache.com/live/channel24.m3u8?",
-          "api": ""
-        }
-      ]
-    },
     {
       "id": "14831",
       "title": "Malta vs Eswatini",
@@ -380,6 +121,20 @@
       "streams": [
         {
           "id": 1,
+          "title": "beIN SPORTS HD",
+          "type": "0",
+          "link": "https://bl.rutube.ru/livestream/05550e441b09aeec53e60de66b6c47bf/index.m3u8?s=jJ8GHzeJIzYZUoWBKmzdFw&e=2094509894&scheme=https",
+          "api": ""
+        },
+        {
+          "id": 2,
+          "title": "CRICFy LIVE ",
+          "type": "0",
+          "link": "https://live.vivo155.com/live/sd-1-4642734.m3u8?txSecret=5bb62af7123df454b5b8ee1c25011a58&txTime=6AF62217",
+          "api": ""
+        },
+        {
+          "id": 3,
           "title": "HD SERVER ",
           "type": "0",
           "link": "https://live2.jorvakstreamcache.com/live/channel7.m3u8?",
@@ -415,6 +170,13 @@
         },
         {
           "id": 2,
+          "title": "CRICFy LIVE ",
+          "type": "0",
+          "link": "https://live.vivo155.com/live/sd-1-4642721.m3u8?txSecret=b84e257c746659b30e113c4011d3eb27&txTime=6AF6223F",
+          "api": ""
+        },
+        {
+          "id": 3,
           "title": "HD SERVER ",
           "type": "0",
           "link": "https://live2.jorvakstreamcache.com/live/channel20.m3u8?",
@@ -450,6 +212,13 @@
         },
         {
           "id": 2,
+          "title": "CRICFy LIVE ",
+          "type": "0",
+          "link": "https://live.vivo155.com/live/sd-1-4642732.m3u8?txSecret=8b82d7e6f069cf478f97be0eef7203a1&txTime=6AF6226D",
+          "api": ""
+        },
+        {
+          "id": 3,
           "title": "HD SERVER ",
           "type": "0",
           "link": "https://live2.jorvakstreamcache.com/live/channel10.m3u8?",
@@ -559,7 +328,15 @@
         "startTimeIST": "2026-11-13 01:15:00 IST",
         "endTimeIST": "2026-11-13 03:35:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "CRICFy LIVE",
+          "type": "0",
+          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14842",
@@ -579,7 +356,15 @@
         "startTimeIST": "2026-11-13 01:15:00 IST",
         "endTimeIST": "2026-11-13 03:35:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "CRICFy LIVE",
+          "type": "0",
+          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14843",
@@ -599,7 +384,15 @@
         "startTimeIST": "2026-11-13 01:15:00 IST",
         "endTimeIST": "2026-11-13 03:35:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "CRICFy LIVE",
+          "type": "0",
+          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14881",
