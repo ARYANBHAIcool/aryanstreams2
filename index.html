@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Ad-Isolation Guard: prevents popunder/smartlink listeners from firing inside Stake Affiliate section -->
+    <script>
+        (function() {
+            var guardEvents = ['click', 'mousedown', 'mouseup', 'pointerdown', 'pointerup', 'touchstart', 'touchend', 'auxclick'];
+            for (var i = 0; i < guardEvents.length; i++) {
+                window.addEventListener(guardEvents[i], function(e) {
+                    if (e && e.target && e.target.closest && e.target.closest('#stake-promo-section, .stake-no-ads')) {
+                        e.stopImmediatePropagation();
+                    }
+                }, true);
+            }
+        })();
+    </script>
     <!-- Popunder Ad Tag -->
     <script data-cfasync="false" src="https://capitalhospitals.org/1/ec8caf215d92bd77dfa766d702a1ec0f"></script>
     <meta charset="UTF-8">
@@ -519,6 +532,155 @@
             }
         }
 
+        /* Stake Affiliate Showcase (Strictly Ad-Free) */
+        #stake-promo-section {
+            margin-top: 0.9rem;
+            position: relative;
+            z-index: 30;
+            isolation: isolate;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 231, 1, 0.24);
+            background: linear-gradient(180deg, rgba(20, 23, 31, 0.98) 0%, rgba(12, 14, 18, 0.98) 100%);
+            overflow: hidden;
+            box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.75), 0 0 28px -10px rgba(0, 231, 1, 0.2);
+        }
+        .stake-banner-link {
+            display: block;
+            width: 100%;
+            text-decoration: none;
+            overflow: hidden;
+            cursor: pointer;
+            background: #070b14;
+        }
+        .stake-banner-img {
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+        }
+        .stake-banner-link:hover .stake-banner-img {
+            transform: scale(1.012);
+            filter: brightness(1.05);
+        }
+        .stake-actions-bar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            padding: 0.9rem 1.1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            background: linear-gradient(135deg, rgba(16, 24, 39, 0.95) 0%, rgba(15, 20, 30, 0.98) 100%);
+        }
+        .stake-cta-btn {
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.55rem;
+            flex: 1 1 260px;
+            padding: 0.88rem 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(134, 239, 172, 0.55);
+            background: linear-gradient(135deg, #00e701 0%, #10b981 55%, #059669 100%);
+            color: #031d0c;
+            font-family: var(--font-family);
+            font-size: 0.98rem;
+            font-weight: 800;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            text-transform: uppercase;
+            box-shadow: 0 8px 24px -6px rgba(0, 231, 1, 0.52), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+            cursor: pointer;
+        }
+        .stake-cta-btn::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -120%;
+            width: 65%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+            transform: skewX(-22deg);
+            animation: stake-shine 3.4s infinite ease-in-out;
+        }
+        @keyframes stake-shine {
+            0%, 60% { left: -120%; }
+            100% { left: 160%; }
+        }
+        .stake-cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px -6px rgba(0, 231, 1, 0.68), inset 0 1px 0 rgba(255, 255, 255, 0.55);
+            filter: brightness(1.06);
+        }
+        .stake-cta-btn svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+        .stake-domains-group {
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+            flex-wrap: wrap;
+        }
+        .stake-domain-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            padding: 0.62rem 0.95rem;
+            border-radius: 7px;
+            border: 1px solid rgba(59, 130, 246, 0.35);
+            background: rgba(30, 41, 59, 0.72);
+            color: #e2e8f0;
+            font-family: var(--font-family);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .stake-domain-btn:hover {
+            border-color: #38bdf8;
+            background: rgba(56, 189, 248, 0.16);
+            color: #ffffff;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px -4px rgba(56, 189, 248, 0.35);
+        }
+        .stake-domain-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #00e701;
+            box-shadow: 0 0 8px rgba(0, 231, 1, 0.8);
+            flex-shrink: 0;
+        }
+        @media (max-width: 640px) {
+            .stake-actions-bar {
+                padding: 0.75rem;
+                gap: 0.6rem;
+            }
+            .stake-cta-btn {
+                width: 100%;
+                flex: 1 1 100%;
+                font-size: 0.9rem;
+                padding: 0.82rem 1rem;
+            }
+            .stake-domains-group {
+                width: 100%;
+            }
+            .stake-domain-btn {
+                flex: 1 1 calc(50% - 0.3rem);
+                padding: 0.58rem 0.75rem;
+                font-size: 0.76rem;
+            }
+        }
+
         /* Plyr CSS Overrides & Responsive Fullscreen */
         :root {
             --plyr-color-main: var(--signal);
@@ -763,6 +925,29 @@
                     <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </div>
             </a>
+
+            <!-- Stake Affiliate Banner & Action Bar (Ad-Free / Direct Affiliate Redirect Only) -->
+            <section id="stake-promo-section" class="rise stake-no-ads" aria-label="Stake Welcome Bonus">
+                <a href="http://stake.mba/?c=AryanStreams&offer=AryanStreams" target="_blank" rel="noopener noreferrer" class="stake-banner-link stake-no-ads" title="Register on Stake with Code AryanStreams">
+                    <img src="assets/stake-banner.jpg" alt="Stake Welcome Bonus - Register with code AryanStreams to claim your bonus" class="stake-banner-img" loading="eager">
+                </a>
+                <div class="stake-actions-bar stake-no-ads">
+                    <a href="http://stake.mba/?c=AryanStreams&offer=AryanStreams" target="_blank" rel="noopener noreferrer" class="stake-cta-btn stake-no-ads">
+                        <span>Register and Claim Now</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                    <div class="stake-domains-group stake-no-ads">
+                        <a href="http://stake.pet/?c=AryanStreams&offer=AryanStreams" target="_blank" rel="noopener noreferrer" class="stake-domain-btn stake-no-ads" title="Open Stake Domain 2">
+                            <span class="stake-domain-dot"></span>
+                            <span>Stake Domain 2</span>
+                        </a>
+                        <a href="http://stake.ac/?c=AryanStreams&offer=AryanStreams" target="_blank" rel="noopener noreferrer" class="stake-domain-btn stake-no-ads" title="Open Stake Domain 3">
+                            <span class="stake-domain-dot"></span>
+                            <span>Stake Domain 3</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
         </div>
 
         <div id="error-view" class="hidden">
