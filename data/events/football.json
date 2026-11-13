@@ -1,153 +1,13 @@
 {
-  "last_updated": "11/13/2026, 2:49:10 PM IST",
+  "last_updated": "11/13/2026, 10:47:20 PM IST",
   "source": "AryanStreams Official Feed",
   "events": [
-    {
-      "id": "14904",
-      "title": "Chinese Taipei vs Kyrgyzstan",
-      "slug": "chinese-taipei-vs-kyrgyzstan",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "International Friendly Games",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
-        "teamA": "Chinese Taipei",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/5937/image",
-        "teamB": "Kyrgyzstan",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/7930/image",
-        "startTimeIST": "2026-11-13 17:30:00 IST",
-        "endTimeIST": "2026-11-13 19:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14905",
-      "title": "Singapore vs Paraguay",
-      "slug": "singapore-vs-paraguay",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "International Friendly Games",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
-        "teamA": "Singapore",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4738/image",
-        "teamB": "Paraguay",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/4789/image",
-        "startTimeIST": "2026-11-13 17:30:00 IST",
-        "endTimeIST": "2026-11-13 19:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14914",
-      "title": "Mozambique vs Ethiopia",
-      "slug": "mozambique-vs-ethiopia",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "Africa Cup of Nations Qual.",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
-        "teamA": "Mozambique",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4783/image",
-        "teamB": "Ethiopia",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/8036/image",
-        "startTimeIST": "2026-11-13 18:30:00 IST",
-        "endTimeIST": "2026-11-13 20:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14915",
-      "title": "Comoros vs Congo Republic",
-      "slug": "comoros-vs-congo-republic",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "Africa Cup of Nations Qual.",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
-        "teamA": "Comoros",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/23494/image",
-        "teamB": "Congo Republic",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/8040/image",
-        "startTimeIST": "2026-11-13 18:30:00 IST",
-        "endTimeIST": "2026-11-13 20:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14917",
-      "title": "Zambia vs Burundi",
-      "slug": "zambia-vs-burundi",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "Africa Cup of Nations Qual.",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
-        "teamA": "Zambia",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4720/image",
-        "teamB": "Burundi",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/4750/image",
-        "startTimeIST": "2026-11-13 18:30:00 IST",
-        "endTimeIST": "2026-11-13 20:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14910",
-      "title": "Kuwait vs Syria",
-      "slug": "kuwait-vs-syria",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "International Friendly Games",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
-        "teamA": "Kuwait",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/5368/image",
-        "teamB": "Syria",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/4731/image",
-        "startTimeIST": "2026-11-13 19:30:00 IST",
-        "endTimeIST": "2026-11-13 21:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14909",
-      "title": "United Arab Emirates vs Honduras",
-      "slug": "united-arab-emirates-vs-honduras",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "International Friendly Games",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
-        "teamA": "United Arab Emirates",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4727/image",
-        "teamB": "Honduras",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/4827/image",
-        "startTimeIST": "2026-11-13 19:40:00 IST",
-        "endTimeIST": "2026-11-13 22:00:00 IST"
-      },
-      "streams": []
-    },
     {
       "id": "14906",
       "title": "Saudi Arabia vs South Korea",
       "slug": "saudi-arabia-vs-south-korea",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "ended",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -160,54 +20,22 @@
         "startTimeIST": "2026-11-13 20:00:00 IST",
         "endTimeIST": "2026-11-13 22:20:00 IST"
       },
-      "streams": []
-    },
-    {
-      "id": "14907",
-      "title": "Qatar vs Australia",
-      "slug": "qatar-vs-australia",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "International Friendly Games",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
-        "teamA": "Qatar",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4792/image",
-        "teamB": "Australia",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/4741/image",
-        "startTimeIST": "2026-11-13 20:15:00 IST",
-        "endTimeIST": "2026-11-13 22:35:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14908",
-      "title": "Iraq vs Lebanon",
-      "slug": "iraq-vs-lebanon",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "International Friendly Games",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
-        "teamA": "Iraq",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4767/image",
-        "teamB": "Lebanon",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/4774/image",
-        "startTimeIST": "2026-11-13 20:30:00 IST",
-        "endTimeIST": "2026-11-13 22:50:00 IST"
-      },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "HD SERVER",
+          "type": "0",
+          "link": "https://live2.jorvakstreamcache.com/live/channel1.m3u8?",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14916",
       "title": "Burkina Faso vs Mauritania",
       "slug": "burkina-faso-vs-mauritania",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -220,14 +48,22 @@
         "startTimeIST": "2026-11-13 21:30:00 IST",
         "endTimeIST": "2026-11-13 23:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "HD SERVER ",
+          "type": "0",
+          "link": "https://live2.jorvakstreamcache.com/live/channel6.m3u8?",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14918",
       "title": "Cabo Verde vs Liberia",
       "slug": "cabo-verde-vs-liberia",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -240,14 +76,22 @@
         "startTimeIST": "2026-11-13 21:30:00 IST",
         "endTimeIST": "2026-11-13 23:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "HD SERVER",
+          "type": "0",
+          "link": "https://live2.jorvakstreamcache.com/live/channel6.m3u8?",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14919",
       "title": "Gabon vs Lesotho",
       "slug": "gabon-vs-lesotho",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -260,14 +104,22 @@
         "startTimeIST": "2026-11-13 21:30:00 IST",
         "endTimeIST": "2026-11-13 23:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "HD SERVER ",
+          "type": "0",
+          "link": "https://live2.jorvakstreamcache.com/live/channel11.m3u8?",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14920",
       "title": "Nigeria vs Tanzania",
       "slug": "nigeria-vs-tanzania",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -280,14 +132,29 @@
         "startTimeIST": "2026-11-13 21:30:00 IST",
         "endTimeIST": "2026-11-13 23:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "beIN SPORTS - AQ",
+          "type": "7",
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/katdnhkzqv/out/v1/2469724fa7754a4da6861d8ba80de958/cenc.mpd?",
+          "api": "27759a440e8ad821b800b3de00cd5851:1b8743adee559f27845f55e8b4d639fe"
+        },
+        {
+          "id": 2,
+          "title": "beIN ENGLISH - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/8m8cd46i1t/out/v1/83985c68e4174e90a58a1f2c024be4c9/cenc.mpd?",
+          "api": "0b42be2664d7e811d04f3e504e0924c5:ae24090123b8c72ac5404dc152847cb8"
+        }
+      ]
     },
     {
       "id": "14921",
       "title": "South Africa vs Kenya",
       "slug": "south-africa-vs-kenya",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -300,14 +167,22 @@
         "startTimeIST": "2026-11-13 21:30:00 IST",
         "endTimeIST": "2026-11-13 23:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "beIN SPORTS - AQ",
+          "type": "7",
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/e3ozww2yny/out/v1/3a16d07c2cc0444bb8ea10d0483d1ced/cenc.mpd?",
+          "api": "74cbe15488783fab07ff8c702fabafcd:bb607803a49c2d6104f845e7886c971c"
+        }
+      ]
     },
     {
       "id": "14922",
       "title": "Tunisia vs Libya",
       "slug": "tunisia-vs-libya",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -320,14 +195,50 @@
         "startTimeIST": "2026-11-13 21:30:00 IST",
         "endTimeIST": "2026-11-13 23:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "beIN SPORTS - AQ",
+          "type": "0",
+          "link": "https://bl.rutube.ru/livestream/05550e441b09aeec53e60de66b6c47bf/index.m3u8?s=lLi8AB39t1Leqsc4dCjaew&e=2094539414&scheme=https",
+          "api": ""
+        }
+      ]
+    },
+    {
+      "id": "14910",
+      "title": "Kuwait vs Syria",
+      "slug": "kuwait-vs-syria",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "International Friendly Games",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
+        "teamA": "Kuwait",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/5368/image",
+        "teamB": "Syria",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4731/image",
+        "startTimeIST": "2026-11-13 22:00:05 IST",
+        "endTimeIST": "2026-11-14 00:00:10 IST"
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "HD SERVER ",
+          "type": "0",
+          "link": "https://live2.jorvakstreamcache.com/live/channel23.m3u8?",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14900",
       "title": "Moldova vs Kazakhstan",
       "slug": "moldova-vs-kazakhstan",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -340,7 +251,36 @@
         "startTimeIST": "2026-11-13 22:30:00 IST",
         "endTimeIST": "2026-11-14 00:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "beIN ENGLISH - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/q4u5nwaogz/out/v1/18de6d3e65934f3a8de4358e69eab86c/cenc.mpd",
+          "api": "7995c724a13748ed970840a8ab5bb9b3:67bdaf1e2175b9ff682fcdf0e2354b1e"
+        },
+        {
+          "id": 2,
+          "title": "FOX SOCCER+ HD",
+          "type": "0",
+          "link": "https://chatgpt.hereisman.net/playlist/59938/load-playlist-multi?",
+          "api": ""
+        },
+        {
+          "id": 3,
+          "title": "SonyLiv ",
+          "type": "0",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2120299/Footlive1311/ENG/std_lrh-800300010.m3u8?hdnea=exp=1794631572~acl=/*~id=47260986229254277328438290907585~hmac=a579be06592098bfaa39a315c2265f55ef1ffc30cd9b01e513354ab4eb39d154",
+          "api": ""
+        },
+        {
+          "id": 4,
+          "title": "HD SERVER ",
+          "type": "0",
+          "link": "https://www.rtmpcdn.com/live/d351739b-0801-4292-a255-8e0d3d82a701.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14923",
