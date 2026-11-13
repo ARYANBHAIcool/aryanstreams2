@@ -1,9 +1,329 @@
 {
-  "last_updated": "11/13/2026, 7:14:05 AM IST",
+  "last_updated": "11/13/2026, 2:49:10 PM IST",
   "source": "AryanStreams Official Feed",
-  "football_count": 12,
-  "cricket_count": 15,
+  "football_count": 38,
+  "cricket_count": 16,
   "events": [
+    {
+      "id": "14904",
+      "title": "Chinese Taipei vs Kyrgyzstan",
+      "slug": "chinese-taipei-vs-kyrgyzstan",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "International Friendly Games",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
+        "teamA": "Chinese Taipei",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/5937/image",
+        "teamB": "Kyrgyzstan",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/7930/image",
+        "startTimeIST": "2026-11-13 17:30:00 IST",
+        "endTimeIST": "2026-11-13 19:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14905",
+      "title": "Singapore vs Paraguay",
+      "slug": "singapore-vs-paraguay",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "International Friendly Games",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
+        "teamA": "Singapore",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4738/image",
+        "teamB": "Paraguay",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4789/image",
+        "startTimeIST": "2026-11-13 17:30:00 IST",
+        "endTimeIST": "2026-11-13 19:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14914",
+      "title": "Mozambique vs Ethiopia",
+      "slug": "mozambique-vs-ethiopia",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "Africa Cup of Nations Qual.",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
+        "teamA": "Mozambique",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4783/image",
+        "teamB": "Ethiopia",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/8036/image",
+        "startTimeIST": "2026-11-13 18:30:00 IST",
+        "endTimeIST": "2026-11-13 20:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14915",
+      "title": "Comoros vs Congo Republic",
+      "slug": "comoros-vs-congo-republic",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "Africa Cup of Nations Qual.",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
+        "teamA": "Comoros",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/23494/image",
+        "teamB": "Congo Republic",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/8040/image",
+        "startTimeIST": "2026-11-13 18:30:00 IST",
+        "endTimeIST": "2026-11-13 20:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14917",
+      "title": "Zambia vs Burundi",
+      "slug": "zambia-vs-burundi",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "Africa Cup of Nations Qual.",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
+        "teamA": "Zambia",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4720/image",
+        "teamB": "Burundi",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4750/image",
+        "startTimeIST": "2026-11-13 18:30:00 IST",
+        "endTimeIST": "2026-11-13 20:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14910",
+      "title": "Kuwait vs Syria",
+      "slug": "kuwait-vs-syria",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "International Friendly Games",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
+        "teamA": "Kuwait",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/5368/image",
+        "teamB": "Syria",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4731/image",
+        "startTimeIST": "2026-11-13 19:30:00 IST",
+        "endTimeIST": "2026-11-13 21:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14909",
+      "title": "United Arab Emirates vs Honduras",
+      "slug": "united-arab-emirates-vs-honduras",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "International Friendly Games",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
+        "teamA": "United Arab Emirates",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4727/image",
+        "teamB": "Honduras",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4827/image",
+        "startTimeIST": "2026-11-13 19:40:00 IST",
+        "endTimeIST": "2026-11-13 22:00:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14906",
+      "title": "Saudi Arabia vs South Korea",
+      "slug": "saudi-arabia-vs-south-korea",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "International Friendly Games",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
+        "teamA": "Saudi Arabia",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4834/image",
+        "teamB": "South Korea",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4735/image",
+        "startTimeIST": "2026-11-13 20:00:00 IST",
+        "endTimeIST": "2026-11-13 22:20:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14907",
+      "title": "Qatar vs Australia",
+      "slug": "qatar-vs-australia",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "International Friendly Games",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
+        "teamA": "Qatar",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4792/image",
+        "teamB": "Australia",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4741/image",
+        "startTimeIST": "2026-11-13 20:15:00 IST",
+        "endTimeIST": "2026-11-13 22:35:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14908",
+      "title": "Iraq vs Lebanon",
+      "slug": "iraq-vs-lebanon",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "International Friendly Games",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
+        "teamA": "Iraq",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4767/image",
+        "teamB": "Lebanon",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4774/image",
+        "startTimeIST": "2026-11-13 20:30:00 IST",
+        "endTimeIST": "2026-11-13 22:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14916",
+      "title": "Burkina Faso vs Mauritania",
+      "slug": "burkina-faso-vs-mauritania",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "Africa Cup of Nations Qual.",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
+        "teamA": "Burkina Faso",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4749/image",
+        "teamB": "Mauritania",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4779/image",
+        "startTimeIST": "2026-11-13 21:30:00 IST",
+        "endTimeIST": "2026-11-13 23:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14918",
+      "title": "Cabo Verde vs Liberia",
+      "slug": "cabo-verde-vs-liberia",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "Africa Cup of Nations Qual.",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
+        "teamA": "Cabo Verde",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4753/image",
+        "teamB": "Liberia",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/8034/image",
+        "startTimeIST": "2026-11-13 21:30:00 IST",
+        "endTimeIST": "2026-11-13 23:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14919",
+      "title": "Gabon vs Lesotho",
+      "slug": "gabon-vs-lesotho",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "Africa Cup of Nations Qual.",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
+        "teamA": "Gabon",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4761/image",
+        "teamB": "Lesotho",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/8033/image",
+        "startTimeIST": "2026-11-13 21:30:00 IST",
+        "endTimeIST": "2026-11-13 23:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14920",
+      "title": "Nigeria vs Tanzania",
+      "slug": "nigeria-vs-tanzania",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "Africa Cup of Nations Qual.",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
+        "teamA": "Nigeria",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4785/image",
+        "teamB": "Tanzania",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4835/image",
+        "startTimeIST": "2026-11-13 21:30:00 IST",
+        "endTimeIST": "2026-11-13 23:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14921",
+      "title": "South Africa vs Kenya",
+      "slug": "south-africa-vs-kenya",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "Africa Cup of Nations Qual.",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
+        "teamA": "South Africa",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4736/image",
+        "teamB": "Kenya",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4773/image",
+        "startTimeIST": "2026-11-13 21:30:00 IST",
+        "endTimeIST": "2026-11-13 23:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14922",
+      "title": "Tunisia vs Libya",
+      "slug": "tunisia-vs-libya",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "Africa Cup of Nations Qual.",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
+        "teamA": "Tunisia",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4729/image",
+        "teamB": "Libya",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4775/image",
+        "startTimeIST": "2026-11-13 21:30:00 IST",
+        "endTimeIST": "2026-11-13 23:50:00 IST"
+      },
+      "streams": []
+    },
     {
       "id": "14900",
       "title": "Moldova vs Kazakhstan",
@@ -21,6 +341,66 @@
         "teamBFlag": "https://img.sofascore.com/api/v1/team/4772/image",
         "startTimeIST": "2026-11-13 22:30:00 IST",
         "endTimeIST": "2026-11-14 00:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14923",
+      "title": "Egypt vs Malawi",
+      "slug": "egypt-vs-malawi",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "Africa Cup of Nations Qual.",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
+        "teamA": "Egypt",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4758/image",
+        "teamB": "Malawi",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/8043/image",
+        "startTimeIST": "2026-11-14 00:30:00 IST",
+        "endTimeIST": "2026-11-14 02:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14924",
+      "title": "Mali vs Rwanda",
+      "slug": "mali-vs-rwanda",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "Africa Cup of Nations Qual.",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
+        "teamA": "Mali",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4831/image",
+        "teamB": "Rwanda",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/8037/image",
+        "startTimeIST": "2026-11-14 00:30:00 IST",
+        "endTimeIST": "2026-11-14 02:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14927",
+      "title": "Leganes vs Burgos Club de Futbol",
+      "slug": "leganes-vs-burgos-club-de-futbol",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "LaLiga 2",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/54/image/dark",
+        "teamA": "Leganés",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2845/image",
+        "teamB": "Burgos Club de Fútbol",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2854/image",
+        "startTimeIST": "2026-11-14 01:00:00 IST",
+        "endTimeIST": "2026-11-14 03:20:00 IST"
       },
       "streams": []
     },
@@ -205,6 +585,46 @@
       "streams": []
     },
     {
+      "id": "14925",
+      "title": "Morocco vs Niger",
+      "slug": "morocco-vs-niger",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "Africa Cup of Nations Qual.",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
+        "teamA": "Morocco",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4778/image",
+        "teamB": "Niger",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/8031/image",
+        "startTimeIST": "2026-11-14 01:30:00 IST",
+        "endTimeIST": "2026-11-14 03:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14926",
+      "title": "Salamanca UDS vs Celta Vigo",
+      "slug": "salamanca-uds-vs-celta-vigo",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "Copa del Rey",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/329/image/dark",
+        "teamA": "Salamanca UDS",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/263916/image",
+        "teamB": "Celta Vigo",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2821/image",
+        "startTimeIST": "2026-11-14 01:30:00 IST",
+        "endTimeIST": "2026-11-14 03:50:00 IST"
+      },
+      "streams": []
+    },
+    {
       "id": "14845",
       "title": "Argentina vs Uruguay",
       "slug": "argentina-vs-uruguay",
@@ -221,6 +641,86 @@
         "teamBFlag": "https://img.sofascore.com/api/v1/team/4725/image",
         "startTimeIST": "2026-11-14 04:30:00 IST",
         "endTimeIST": "2026-11-14 06:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14911",
+      "title": "Colombia vs Chile",
+      "slug": "colombia-vs-chile",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "International Friendly Games",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
+        "teamA": "Colombia",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4820/image",
+        "teamB": "Chile",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4754/image",
+        "startTimeIST": "2026-11-14 05:30:00 IST",
+        "endTimeIST": "2026-11-14 07:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14912",
+      "title": "Ecuador vs Costa Rica",
+      "slug": "ecuador-vs-costa-rica",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "International Friendly Games",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
+        "teamA": "Ecuador",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4757/image",
+        "teamB": "Costa Rica",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4756/image",
+        "startTimeIST": "2026-11-14 05:30:00 IST",
+        "endTimeIST": "2026-11-14 07:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14913",
+      "title": "Peru vs Bolivia",
+      "slug": "peru-vs-bolivia",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "International Friendly Games",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
+        "teamA": "Peru",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4790/image",
+        "teamB": "Bolivia",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4746/image",
+        "startTimeIST": "2026-11-14 06:30:00 IST",
+        "endTimeIST": "2026-11-14 08:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14929",
+      "title": "India vs Bhutan",
+      "slug": "india-vs-bhutan",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "SAFF Championship",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/2354/image/dark",
+        "teamA": "India",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4828/image",
+        "teamB": "Bhutan",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/191564/image",
+        "startTimeIST": "2026-11-14 14:30:00 IST",
+        "endTimeIST": "2026-11-14 16:50:00 IST"
       },
       "streams": []
     },
@@ -245,92 +745,22 @@
       "streams": []
     },
     {
-      "id": "14888",
-      "title": "New Zealand vs India",
-      "slug": "new-zealand-vs-india",
+      "id": "14928",
+      "title": "Bangladesh vs Pakistan",
+      "slug": "bangladesh-vs-pakistan",
       "cat": "Live Events",
       "status": "upcoming",
       "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "One Day International",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11190/image/dark",
-        "teamA": "New Zealand",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/187755/image",
-        "teamB": "India",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/187765/image",
-        "startTimeIST": "2026-11-13 07:30:00 IST",
-        "endTimeIST": "2026-11-13 16:30:19 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "PRIME ENG - AQ",
-          "type": "0",
-          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-          "api": ""
-        },
-        {
-          "id": 2,
-          "title": "TNT SPORTS - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/rhf2dwosdt/out/v1/ee550d2a68d846c797e6ce4de2e8b76d/cenc.mpd?",
-          "api": "69a5aa835a061ce64a630d1046727e40:d02feac8a999bd06bf4059bf33411749"
-        },
-        {
-          "id": 3,
-          "title": "SonyLiv - ENG",
-          "type": "0",
-          "link": "https://sonymtmnew-akamaized.pages.dev/out/v1/mpchgp431f/mpcha075/cricodi_1211-eng-1-ts-hls/std-lrh-800300010.m3u8",
-          "api": ""
-        },
-        {
-          "id": 4,
-          "title": "SonyLiv - HIN",
-          "type": "0",
-          "link": "https://sonymtmnew-akamaized.pages.dev/out/v1/mpchgp431f/mpchc857/cricodi_1211-hin-1-ts-hls/std-lrh-800300010.m3u8",
-          "api": ""
-        },
-        {
-          "id": 5,
-          "title": "SonyLiv - TAM",
-          "type": "0",
-          "link": "https://sonymtmnew-akamaized.pages.dev/out/v1/mpchgp431f/mpchb9e7/cricodi_1211-tam-1-ts-hls/std-lrh-800300010.m3u8",
-          "api": ""
-        },
-        {
-          "id": 6,
-          "title": "SonyLiv - TEL",
-          "type": "0",
-          "link": "https://sonymtmnew-akamaized.pages.dev/out/v1/mpchgp431f/mpch8872/cricodi_1211-tel-1-ts-hls/std-lrh-800300010.m3u8",
-          "api": ""
-        },
-        {
-          "id": 7,
-          "title": "SonyLiv - KAN",
-          "type": "0",
-          "link": "https://sonymtmnew-akamaized.pages.dev/out/v1/mpchgp431f/mpche169/cricodi_1211-kan-1-ts-hls/std-lrh-800300010.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": "14822",
-      "title": "Australia vs England",
-      "slug": "australia-vs-england",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "One Day International",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11190/image/dark",
-        "teamA": "Australia",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/187746/image",
-        "teamB": "England",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/187757/image",
-        "startTimeIST": "2026-11-13 09:00:00 IST",
-        "endTimeIST": "2026-11-13 17:30:35 IST"
+        "name": "Football",
+        "category": "Football",
+        "type": "SAFF Championship",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/2354/image/dark",
+        "teamA": "Bangladesh",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/6080/image",
+        "teamB": "Pakistan",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/6081/image",
+        "startTimeIST": "2026-11-14 20:00:00 IST",
+        "endTimeIST": "2026-11-14 22:20:00 IST"
       },
       "streams": []
     },
@@ -339,7 +769,7 @@
       "title": "Pakistan vs Sri Lanka",
       "slug": "pakistan-vs-sri-lanka",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
@@ -357,15 +787,15 @@
           "id": 1,
           "title": "WILLOW - AQ",
           "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/7fuqfzj1fx/out/v1/2ac35d6ec3424f39b61a131dccfb75b4/cenc.mpd",
-          "api": "e148b70d1a84524c6ef092f6d7e2c10a:c1f3cc38fbff104bfdacd0dcd07d0900"
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/mg8j8enrjm/out/v1/709854ce369042edb21bbc912f26c2e3/cenc.mpd",
+          "api": "5e8ebd9181946fbaa6e3dbf57be1e08c:7ac65a50bd9833f40eb8d383a5bf2beb"
         },
         {
           "id": 2,
           "title": "WILLOW - ALT",
           "type": "7",
-          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/7fuqfzj1fx/out/v1/2ac35d6ec3424f39b61a131dccfb75b4/cenc.mpd",
-          "api": "e148b70d1a84524c6ef092f6d7e2c10a:c1f3cc38fbff104bfdacd0dcd07d0900"
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/mg8j8enrjm/out/v1/709854ce369042edb21bbc912f26c2e3/cenc.mpd",
+          "api": "5e8ebd9181946fbaa6e3dbf57be1e08c:7ac65a50bd9833f40eb8d383a5bf2beb"
         },
         {
           "id": 3,
@@ -391,51 +821,11 @@
       ]
     },
     {
-      "id": "14889",
-      "title": "Scotland Women vs Sri Lanka Women",
-      "slug": "scotland-women-vs-sri-lanka-women",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "Womens Emerging Nations Trophy",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/30714/image/dark",
-        "teamA": "Scotland Women",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/453162/image",
-        "teamB": "Sri Lanka Women",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/187806/image",
-        "startTimeIST": "2026-11-13 10:30:00 IST",
-        "endTimeIST": "2026-11-13 14:30:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14890",
-      "title": "United Arab Emirates Women vs Ireland Women",
-      "slug": "united-arab-emirates-women-vs-ireland-women",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "Womens Emerging Nations Trophy",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/30714/image/dark",
-        "teamA": "United Arab Emirates Women",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/291494/image",
-        "teamB": "Ireland Women",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/213116/image",
-        "startTimeIST": "2026-11-13 10:30:00 IST",
-        "endTimeIST": "2026-11-13 14:30:00 IST"
-      },
-      "streams": []
-    },
-    {
       "id": "14072",
       "title": "Afghanistan vs Zimbabwe",
       "slug": "afghanistan-vs-zimbabwe",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
@@ -448,14 +838,43 @@
         "startTimeIST": "2026-11-13 10:30:36 IST",
         "endTimeIST": "2026-11-13 19:30:40 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/j7kojz9zjq/out/v1/364b343c25d549ebade260951e5ae871/cenc.mpd",
+          "api": "b21487d48dba161df1dbcb2709e78ac5:495d4dfd655791c39933461c3751bde3"
+        },
+        {
+          "id": 2,
+          "title": "WILLOW - ALT",
+          "type": "7",
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/j7kojz9zjq/out/v1/364b343c25d549ebade260951e5ae871/cenc.mpd",
+          "api": "b21487d48dba161df1dbcb2709e78ac5:495d4dfd655791c39933461c3751bde3"
+        },
+        {
+          "id": 3,
+          "title": "A SPORTS HD",
+          "type": "0",
+          "link": "https://live.msnetworks.net/a-sports/master.m3u8",
+          "api": ""
+        },
+        {
+          "id": 4,
+          "title": "FANCODE - IN ",
+          "type": "0",
+          "link": "https://dai-fancode.pages.dev/mumbai/4249772_english_hls_ea87fdf83461346_1ta-di_h264/index.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14261",
       "title": "NPL Nepal Premier League",
       "slug": "npl-nepal-premier-league",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
@@ -490,7 +909,7 @@
       "title": "Zimbabwe Women vs Bangladesh Women",
       "slug": "zimbabwe-women-vs-bangladesh-women",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
@@ -503,7 +922,78 @@
         "startTimeIST": "2026-11-13 14:45:00 IST",
         "endTimeIST": "2026-11-13 18:45:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "ICC TV - AQ",
+          "type": "7",
+          "link": "https://live-d-01-icc-we.akamaized.net/variant/v1blackout/vcg-01-d/DASH_DASH/Live/channel(vcg-01-ch-hd-07)/hdntl=exp=1794589384~acl=*%2fchannel(vcg-01-ch-hd-07)%2f*~id=df636eee-0529-4299-91da-e8ce8c8790f0~data=hdntl,QjtNWCxDUixTVixHVCxITixOSSxQQSxBUixCTyxCUixDTCxDTyxFQyxQWSxQRSxVWSxWRSxDVSxETyxIVCxDQSxVUyxJTixQSyxMSyxBTyxCSixCVyxCRixCSSxDVixDTSxDRixURCxLTSxDRyxDRCxDSSxESixHUSxFUixFVCxHQSxHTSxHSCxHTixHVyxLRSxMUyxMUixNRyxNVyxNVSxNUixNWixOQSxORSxORyxSVyxTVCxTTixTQyxTTCxTTyxaQSxTUyxTRCxUWixURyxVRyxaTSxaVyxTWixNTA%3d%3d~hmac=6e9b89ed3891607678596995263356104ae07d9b14fb763adbcfd44a98763925/manifest.mpd?vcfilter=64cee3c3-d133-4603-8993-f9108a5f90cb",
+          "api": "39bd302cdeed3710a89fb004d232ab67:9869f804ba18d7e508cbff781829221c"
+        },
+        {
+          "id": 2,
+          "title": "ICC TV - ALT",
+          "type": "7",
+          "link": "https://live-d-01-icc-we.akamaized.net/variant/v1blackout/vcg-01-d/DASH_DASH/Live/channel(vcg-01-ch-hd-07)/hdntl=exp=1794589384~acl=*%2fchannel(vcg-01-ch-hd-07)%2f*~id=df636eee-0529-4299-91da-e8ce8c8790f0~data=hdntl,QjtNWCxDUixTVixHVCxITixOSSxQQSxBUixCTyxCUixDTCxDTyxFQyxQWSxQRSxVWSxWRSxDVSxETyxIVCxDQSxVUyxJTixQSyxMSyxBTyxCSixCVyxCRixCSSxDVixDTSxDRixURCxLTSxDRyxDRCxDSSxESixHUSxFUixFVCxHQSxHTSxHSCxHTixHVyxLRSxMUyxMUixNRyxNVyxNVSxNUixNWixOQSxORSxORyxSVyxTVCxTTixTQyxTTCxTTyxaQSxTUyxTRCxUWixURyxVRyxaTSxaVyxTWixNTA%3d%3d~hmac=6e9b89ed3891607678596995263356104ae07d9b14fb763adbcfd44a98763925/manifest.mpd?vcfilter=64cee3c3-d133-4603-8993-f9108a5f90cb",
+          "api": "39bd302cdeed3710a89fb004d232ab67:9869f804ba18d7e508cbff781829221c"
+        },
+        {
+          "id": 3,
+          "title": "MyCO - AQ",
+          "type": "0",
+          "link": "https://ml-pull-rtmp-pk1.myco.io/Feed2/hls/index.m3u8",
+          "api": ""
+        }
+      ]
+    },
+    {
+      "id": "14930",
+      "title": "Thailand Women vs Pakistan Women",
+      "slug": "thailand-women-vs-pakistan-women",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "Womens Emerging Nations Trophy",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/30714/image/dark",
+        "teamA": "Thailand Women",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/446070/image",
+        "teamB": "Pakistan Women",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/187808/image",
+        "startTimeIST": "2026-11-13 14:45:00 IST",
+        "endTimeIST": "2026-11-13 18:45:00 IST"
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "ICC TV - AQ",
+          "type": "7",
+          "link": "https://live-d-01-icc-we.akamaized.net/variant/v1blackout/vcg-01-d/DASH_DASH/Live/channel(vcg-01-ch-hd-06)/hdntl=exp=1794589451~acl=*%2fchannel(vcg-01-ch-hd-06)%2f*~id=df636eee-0529-4299-91da-e8ce8c8790f0~data=hdntl,QjtNWCxDUixTVixHVCxITixOSSxQQSxBUixCTyxCUixDTCxDTyxFQyxQWSxQRSxVWSxWRSxDVSxETyxIVCxDQSxVUyxJTixQSyxMSyxBTyxCSixCVyxCRixCSSxDVixDTSxDRixURCxLTSxDRyxDRCxDSSxESixHUSxFUixFVCxHQSxHTSxHSCxHTixHVyxLRSxMUyxMUixNRyxNVyxNVSxNUixNWixOQSxORSxORyxSVyxTVCxTTixTQyxTTCxTTyxaQSxTUyxTRCxUWixURyxVRyxaTSxaVyxTWixNTA%3d%3d~hmac=57a51c091cbec36963af2eb166712d9178c81abbbb7f6d1af9f5d7c044562088/manifest.mpd?vcfilter=1b53d98b-6b74-4ebf-aab9-b5a80542c7ae",
+          "api": "39bd302cdeed3710a89fb004d232ab67:9869f804ba18d7e508cbff781829221c"
+        },
+        {
+          "id": 2,
+          "title": "ICC TV - AQ",
+          "type": "7",
+          "link": "https://live-d-01-icc-we.akamaized.net/variant/v1blackout/vcg-01-d/DASH_DASH/Live/channel(vcg-01-ch-hd-06)/hdntl=exp=1794589451~acl=*%2fchannel(vcg-01-ch-hd-06)%2f*~id=df636eee-0529-4299-91da-e8ce8c8790f0~data=hdntl,QjtNWCxDUixTVixHVCxITixOSSxQQSxBUixCTyxCUixDTCxDTyxFQyxQWSxQRSxVWSxWRSxDVSxETyxIVCxDQSxVUyxJTixQSyxMSyxBTyxCSixCVyxCRixCSSxDVixDTSxDRixURCxLTSxDRyxDRCxDSSxESixHUSxFUixFVCxHQSxHTSxHSCxHTixHVyxLRSxMUyxMUixNRyxNVyxNVSxNUixNWixOQSxORSxORyxSVyxTVCxTTixTQyxTTCxTTyxaQSxTUyxTRCxUWixURyxVRyxaTSxaVyxTWixNTA%3d%3d~hmac=57a51c091cbec36963af2eb166712d9178c81abbbb7f6d1af9f5d7c044562088/manifest.mpd?vcfilter=1b53d98b-6b74-4ebf-aab9-b5a80542c7ae",
+          "api": "39bd302cdeed3710a89fb004d232ab67:9869f804ba18d7e508cbff781829221c"
+        },
+        {
+          "id": 3,
+          "title": "MyCO - AQ",
+          "type": "0",
+          "link": "https://ml-pull-rtmp-pk1.myco.io/Feed1/hls/index.m3u8",
+          "api": ""
+        },
+        {
+          "id": 4,
+          "title": "TAMASHA - AQ",
+          "type": "0",
+          "link": "https://cdn01lhr-n.tamashaweb.com:8087/appcast/ICC-women-NT2026-svod-B-abr/playlist.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14622",
@@ -602,6 +1092,202 @@
       "streams": []
     },
     {
+      "id": "14888",
+      "title": "New Zealand vs India",
+      "slug": "new-zealand-vs-india",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "One Day International",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11190/image/dark",
+        "teamA": "New Zealand",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/187755/image",
+        "teamB": "India",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/187765/image",
+        "startTimeIST": "2026-11-15 07:30:07 IST",
+        "endTimeIST": "2026-11-15 16:30:14 IST"
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "PRIME ENG - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/dcu7rpwyvi/out/v1/05f98d7430fd4ceeb3317fe61cc536b0/cenc.mpd",
+          "api": "2a074c6c1178670701cbfeca48c0abe5:d7d84ab8144591ba0a49e443c571bf10"
+        },
+        {
+          "id": 2,
+          "title": "WILLOW - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/6learkrmkk/out/v1/ea7695de219f46d1bf645bd975854712/cenc.mpd",
+          "api": "9daab9f2057ca46ae108997a0886b434:220b4c0284b9a045c49c8cf1ddbb49a8"
+        },
+        {
+          "id": 3,
+          "title": "PRIME HINDI - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/x9rbps3nff/out/v1/737eb86856de4824b26f7af699a34b56/cenc.mpd",
+          "api": "4ccabc091fc06e2c983228d547530c5d:0dad1a9082f3e94f66b3b38864ff0f08"
+        },
+        {
+          "id": 4,
+          "title": "TNT SPORTS - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/puehlftk5j/out/v1/f7f0da1ee112481ca0024e6d4dd97f4a/cenc.mpd",
+          "api": "f3df7843080ae743bf865dc5fdf64c68:567c863bc12eb74788ea74888c042e1b"
+        },
+        {
+          "id": 5,
+          "title": "WILLOW - ALT",
+          "type": "7",
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/6learkrmkk/out/v1/ea7695de219f46d1bf645bd975854712/cenc.mpd",
+          "api": "9daab9f2057ca46ae108997a0886b434:220b4c0284b9a045c49c8cf1ddbb49a8"
+        },
+        {
+          "id": 6,
+          "title": "SonyLiv - ENG",
+          "type": "0",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2022321/DAI17-INDNZ/master.m3u8?hdnea=exp=1794577851~acl=/*~id=96293672809354845535538746530706~hmac=8bbbc88d5f85682228d9b734d907fd897180f44db2af882b15a81b06ec12c5fa",
+          "api": ""
+        },
+        {
+          "id": 7,
+          "title": "SonyLiv - HIN",
+          "type": "0",
+          "link": "https://liveakmt-p-md.slivcdn.com/hls/live/2119921/cricodi_1211/HIN/master.m3u8?hdnea=exp=1794573596~acl=/*~id=44345d3f28b0710f8ac67b5f7a254851-1794530395621~hmac=d0589a612cc90b2e61388a2000dac6f50a4872e6917e1a76167d31d3c4fc95b5",
+          "api": ""
+        },
+        {
+          "id": 8,
+          "title": "SonyLiv - TAM",
+          "type": "0",
+          "link": "https://liveakmt-p-md.slivcdn.com/hls/live/2119951/cricodi_1211/TAM/master.m3u8?hdnea=exp=1794573596~acl=/*~id=44345d3f28b0710f8ac67b5f7a254851-1794530395621~hmac=d0589a612cc90b2e61388a2000dac6f50a4872e6917e1a76167d31d3c4fc95b5",
+          "api": ""
+        },
+        {
+          "id": 9,
+          "title": "SonyLiv - TEL",
+          "type": "0",
+          "link": "https://liveakmt-p-md.slivcdn.com/hls/live/2119941/cricodi_1211/TEL/master.m3u8?hdnea=exp=1794573596~acl=/*~id=44345d3f28b0710f8ac67b5f7a254851-1794530395621~hmac=d0589a612cc90b2e61388a2000dac6f50a4872e6917e1a76167d31d3c4fc95b5",
+          "api": ""
+        },
+        {
+          "id": 10,
+          "title": "SonyLiv - KAN",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/7vhf8r60nl/out/v1/5d0ce0e49c454459a1f6c58562ce4884/cenc.mpd",
+          "api": "2848e6ec50f63a4a5ed5e0c0bb94c870:c6d49139023938d6a73f6a3141b2ff5e"
+        },
+        {
+          "id": 11,
+          "title": "SONY TEN 1 - IN",
+          "type": "0",
+          "link": "https://sony247channels.akamaized.net/hls/live/2011747/TEN1HD/hdntl=exp=1794599360~acl=%2f*~id=604ae0099f5c31fa16beacf7fc54ca00-1794512959613~data=hdntl~hmac=5e50939d3a3c88a2fe492f884252c6a6b488cfdafee0aa37946249f73ae60228/master_3500.m3u8",
+          "api": ""
+        },
+        {
+          "id": 12,
+          "title": "SONY TEN 2 - IN",
+          "type": "0",
+          "link": "https://sony247channels.akamaized.net/hls/live/2020434/TEN2HD/hdntl=exp=1794599360~acl=%2f*~id=604ae0099f5c31fa16beacf7fc54ca00-1794512959613~data=hdntl~hmac=5e50939d3a3c88a2fe492f884252c6a6b488cfdafee0aa37946249f73ae60228/master_3500.m3u8",
+          "api": ""
+        },
+        {
+          "id": 13,
+          "title": "SONY TEN 3 - IN",
+          "type": "0",
+          "link": "https://sony247channels.akamaized.net/hls/live/2020591/TEN3HD/hdntl=exp=1794599360~acl=%2f*~id=604ae0099f5c31fa16beacf7fc54ca00-1794512959613~data=hdntl~hmac=5e50939d3a3c88a2fe492f884252c6a6b488cfdafee0aa37946249f73ae60228/master_3500.m3u8",
+          "api": ""
+        },
+        {
+          "id": 14,
+          "title": "SONY TEN 4 - IN",
+          "type": "0",
+          "link": "https://sony247channels.akamaized.net/hls/live/2020589/ten4kannada/hdntl=exp=1794599360~acl=%2f*~id=604ae0099f5c31fa16beacf7fc54ca00-1794512959613~data=hdntl~hmac=5e50939d3a3c88a2fe492f884252c6a6b488cfdafee0aa37946249f73ae60228/master_3500.m3u8",
+          "api": ""
+        }
+      ]
+    },
+    {
+      "id": "14822",
+      "title": "Australia vs England",
+      "slug": "australia-vs-england",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "One Day International",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11190/image/dark",
+        "teamA": "Australia",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/187746/image",
+        "teamB": "England",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/187757/image",
+        "startTimeIST": "2026-11-15 09:00:50 IST",
+        "endTimeIST": "2026-11-15 17:30:56 IST"
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/zvm8yfmf1x/out/v1/5996ed4075494e359d7a1b5e66cc0547/cenc.mpd",
+          "api": "134ce834d4de77fd458c8b131c9e3986:f68411936eaaba7ffc6a0111c75292bb"
+        },
+        {
+          "id": 2,
+          "title": "FANCODE - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/b3b3fkmrbl/out/v1/1084d5c9a97a4c5b9f9554c88f486646/cenc.mpd",
+          "api": "82dfca238e8c4b430a3269db71965db9:a00b28caf4ac628e77a553d440c0ddca"
+        },
+        {
+          "id": 3,
+          "title": "WILLOW - ALT",
+          "type": "7",
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/zvm8yfmf1x/out/v1/5996ed4075494e359d7a1b5e66cc0547/cenc.mpd",
+          "api": "134ce834d4de77fd458c8b131c9e3986:f68411936eaaba7ffc6a0111c75292bb"
+        },
+        {
+          "id": 4,
+          "title": "EUROSPORT - AQ",
+          "type": "7",
+          "link": "https://wbd.skandha.tv/EuroSport_HD/EuroSport_HD.isml/.mpd",
+          "api": "12ed56d780abcfebcd23aa27e4ac5015:6784567890abcfebcd23aa27e4ac2814"
+        },
+        {
+          "id": 5,
+          "title": "TAPMAD - AQ",
+          "type": "0",
+          "link": "https://tencent-cdn.tapmad.com/v1/01a14a9fb90c15fc60e91e1786b061/01a14a9feb881ea540a81c2b41b75e/main.m3u8?",
+          "api": ""
+        },
+        {
+          "id": 6,
+          "title": "TEN SPORTS HD",
+          "type": "0",
+          "link": "https://live.msnetworks.net/ten-sports/master.m3u8",
+          "api": ""
+        },
+        {
+          "id": 7,
+          "title": "WILLOW HD",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/0bftapixow/out/v1/a435ed7a00f947deb4369b46d8f2fb70/cenc.mpd",
+          "api": "290e09c837da78d5cd961978d390515c:b748836c71e6a4ca68ef5b5652db6247"
+        },
+        {
+          "id": 8,
+          "title": "FANCODE - IN",
+          "type": "0",
+          "link": "https://in-mc-flive.fancode.com/mumbai/4250640_english_hls_531bf4661e7063_1ta-di_h264/1080p.m3u8?hdntl=Expires=1794628546~_GO=Generated~acl=/mumbai/4250640_english_hls_531bf4661e7063_1ta-di_h264/*~SessionID=330387595_fc-web_e17f533d-0cb8-4f~Signature=AbO9BjhOYLd1GmMfhOhHHklnPOfhTKBOpq8RY94K5cvEs32zsfobefwN_2FtsFC-VmxLp67-63kmnIeMKq08MmKZpgcO",
+          "api": ""
+        }
+      ]
+    },
+    {
       "id": "14851",
       "title": "South Africa vs Bangladesh",
       "slug": "south-africa-vs-bangladesh",
@@ -637,6 +1323,21 @@
       "dashStreams": []
     },
     {
+      "id": "B0HLVY22CY",
+      "title": "Sri Lanka tour of Pakistan 2026 - 1st Test - Pakistan vs Sri Lanka",
+      "slug": "sri-lanka-tour-of-pakistan-2026-1st-test-pakistan-vs-sri-lanka",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "Sri Lanka tour of Pakistan 2026 - 1st Test - Pakistan vs Sri Lanka",
+        "category": "Cricket",
+        "teamA": "Team A",
+        "teamB": "Team B",
+        "startTimeIST": ""
+      },
+      "dashStreams": []
+    },
+    {
       "id": "B0HMGJT9PV",
       "title": "Womens Big Bash League 2026 - 21st Match - Hobart Hurricanes Women vs Brisbane Heat Women",
       "slug": "womens-big-bash-league-2026-21st-match-hobart-hurricanes-women-vs-brisbane-heat-women",
@@ -644,6 +1345,21 @@
       "status": "live",
       "event": {
         "name": "Womens Big Bash League 2026 - 21st Match - Hobart Hurricanes Women vs Brisbane Heat Women",
+        "category": "Cricket",
+        "teamA": "Team A",
+        "teamB": "Team B",
+        "startTimeIST": ""
+      },
+      "dashStreams": []
+    },
+    {
+      "id": "B0HPTVJM1M",
+      "title": "ACC Mens U19 Asia Cup 2026 - Final - Pakistan U19 vs India U19",
+      "slug": "acc-mens-u19-asia-cup-2026-final-pakistan-u19-vs-india-u19",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "ACC Mens U19 Asia Cup 2026 - Final - Pakistan U19 vs India U19",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",
