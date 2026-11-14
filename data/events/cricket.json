@@ -1,63 +1,7 @@
 {
-  "last_updated": "11/14/2026, 10:08:52 PM IST",
+  "last_updated": "11/15/2026, 2:26:49 AM IST",
   "source": "AryanStreams Official Feed",
   "events": [
-    {
-      "id": "14622",
-      "title": "Abu Dhabi T10 League",
-      "slug": "abu-dhabi-t10-league",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "Abu Dhabi T10 League",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
-        "teamA": "Abu Dhabi T10",
-        "teamAFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
-        "teamB": "Abu Dhabi T10",
-        "teamBFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
-        "startTimeIST": "2026-11-14 21:30:54 IST",
-        "endTimeIST": "2026-11-14 23:25:56 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "WILLOW - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/yooa0wvxcv/out/v1/53f82e2b94514842bf43719b50613549/cenc.mpd",
-          "api": "ab5b5cecc72d2468a6bb0cb095549adf:498bea5d3276c0fdbb38e8b10703c44c"
-        },
-        {
-          "id": 2,
-          "title": "PREMIER SPORTS - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/bcj3iscpd6/out/v1/fcd137b391214f7cb99dd4d7be90ca87/cenc.mpd",
-          "api": "1a5df53609ebc9857898c490f4724918:77f62980d582ec541280796acf8b2d19"
-        },
-        {
-          "id": 3,
-          "title": "WILLOW - ALT",
-          "type": "7",
-          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/yooa0wvxcv/out/v1/53f82e2b94514842bf43719b50613549/cenc.mpd",
-          "api": "ab5b5cecc72d2468a6bb0cb095549adf:498bea5d3276c0fdbb38e8b10703c44c"
-        },
-        {
-          "id": 4,
-          "title": "A SPORTS HD",
-          "type": "0",
-          "link": "https://live.msnetworks.net/a-sports/master.m3u8",
-          "api": ""
-        },
-        {
-          "id": 5,
-          "title": "MYCO HD",
-          "type": "0",
-          "link": "https://ml-pull-rtmp-pk1.myco.io/SRT/hls/index.m3u8",
-          "api": ""
-        }
-      ]
-    },
     {
       "id": "14882",
       "title": "WBBL Women Big Bash League",
@@ -335,6 +279,26 @@
         "teamBFlag": "https://img.sofascore.com/api/v1/team/453165/image",
         "startTimeIST": "2026-11-15 14:45:00 IST",
         "endTimeIST": "2026-11-15 18:45:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14622",
+      "title": "Abu Dhabi T10 League",
+      "slug": "abu-dhabi-t10-league",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "Abu Dhabi T10 League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
+        "teamA": "Abu Dhabi T10",
+        "teamAFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
+        "teamB": "Abu Dhabi T10",
+        "teamBFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
+        "startTimeIST": "2026-11-15 17:00:45 IST",
+        "endTimeIST": "2026-11-15 23:25:49 IST"
       },
       "streams": []
     },
