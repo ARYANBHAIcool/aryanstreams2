@@ -1,43 +1,15 @@
 {
-  "last_updated": "11/14/2026, 8:27:50 AM IST",
+  "last_updated": "11/14/2026, 3:35:54 PM IST",
   "source": "AryanStreams Official Feed",
-  "football_count": 25,
+  "football_count": 24,
   "cricket_count": 17,
   "events": [
-    {
-      "id": "14913",
-      "title": "Peru vs Bolivia",
-      "slug": "peru-vs-bolivia",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "International Friendly Games",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
-        "teamA": "Peru",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4790/image",
-        "teamB": "Bolivia",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/4746/image",
-        "startTimeIST": "2026-11-14 06:30:00 IST",
-        "endTimeIST": "2026-11-14 08:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "HD SERVER ",
-          "type": "0",
-          "link": "https://live2.jorvakstreamcache.com/live/channel7.m3u8?",
-          "api": ""
-        }
-      ]
-    },
     {
       "id": "14929",
       "title": "India vs Bhutan",
       "slug": "india-vs-bhutan",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -50,7 +22,43 @@
         "startTimeIST": "2026-11-14 14:30:00 IST",
         "endTimeIST": "2026-11-14 16:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "BTV BD - AQ",
+          "type": "0",
+          "link": "https://nkafmbewiff.gpcdn.net/tile_2/master.m3u8",
+          "api": ""
+        },
+        {
+          "id": 2,
+          "title": "HD SERVER",
+          "type": "0",
+          "link": "https://live2.jorvakstreamcache.com/live/channel7.m3u8?",
+          "api": ""
+        },
+        {
+          "id": 3,
+          "title": "MyCO - AQ",
+          "type": "0",
+          "link": "https://ml-pull-rtmp-pk1.myco.io/SAFF2026/hls/26113.m3u8",
+          "api": ""
+        },
+        {
+          "id": 4,
+          "title": "T SPORTS HD",
+          "type": "0",
+          "link": "https://tvsen5.aynaott.com/TnMn5kZz8aLmjklkk/index.m3u8",
+          "api": ""
+        },
+        {
+          "id": 5,
+          "title": "VETO TV - IN",
+          "type": "0",
+          "link": "https://vetointv.akamaized.net/Dreamboat-CH01/master.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14844",
@@ -70,7 +78,29 @@
         "startTimeIST": "2026-11-14 15:45:00 IST",
         "endTimeIST": "2026-11-14 18:05:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "SporTV BR - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/w8kwdfmlgs/out/v1/3aa321e477504937a439b602e078eb18/cenc.mpd",
+          "api": "51c0ef23b17297e5c01cd7f36dd0a6ce:8823f713ba6fdb9bbe0a2ad82d309a4b"
+        },
+        {
+          "id": 2,
+          "title": "SporTV BR - ALT",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/w8kwdfmlgs/out/v1/3aa321e477504937a439b602e078eb18/cenc.mpd",
+          "api": "51c0ef23b17297e5c01cd7f36dd0a6ce:8823f713ba6fdb9bbe0a2ad82d309a4b"
+        },
+        {
+          "id": 3,
+          "title": "HD SERVER",
+          "type": "0",
+          "link": "https://live2.jorvakstreamcache.com/live/channel11.m3u8?",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14948",
@@ -513,31 +543,11 @@
       "streams": []
     },
     {
-      "id": "14882",
-      "title": "WBBL Women Big Bash League",
-      "slug": "bbl-women-big-bash-league",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "Women's Big Bash League",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
-        "teamA": "WBBL",
-        "teamAFlag": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
-        "teamB": "WBBL",
-        "teamBFlag": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
-        "startTimeIST": "2026-11-14 10:10:07 IST",
-        "endTimeIST": "2026-11-14 17:30:17 IST"
-      },
-      "streams": []
-    },
-    {
       "id": "14892",
       "title": "Pakistan Under-19 vs India Under-19",
       "slug": "pakistan-under-19-vs-india-under-19",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
@@ -548,16 +558,73 @@
         "teamB": "India Under-19",
         "teamBFlag": "https://img.sofascore.com/api/v1/team/213112/image",
         "startTimeIST": "2026-11-14 10:30:00 IST",
-        "endTimeIST": "2026-11-14 14:30:00 IST"
+        "endTimeIST": "2026-11-14 19:30:40 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/jqiewsbcdo/out/v1/c61fbf5480da4d94a2cd238d8be4b227/cenc.mpd",
+          "api": "6d9898b922c715df238b810032f99e04:24ce2fd66d77c73540f129ae83c967d7"
+        },
+        {
+          "id": 2,
+          "title": "SonyLiv PRIME - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/2fqqd9w1dv/out/v1/640bbe357b4e4656a3a25ef401b40943/cenc.mpd",
+          "api": "c32f4ea1b4dd4e4736ee667ee02aa8bb:3ae921b11d3dcabb54a7433f065c2efa"
+        },
+        {
+          "id": 3,
+          "title": "WILLOW - ALT",
+          "type": "7",
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/jqiewsbcdo/out/v1/c61fbf5480da4d94a2cd238d8be4b227/cenc.mpd",
+          "api": "6d9898b922c715df238b810032f99e04:24ce2fd66d77c73540f129ae83c967d7"
+        },
+        {
+          "id": 4,
+          "title": "SonyLiv - ENG",
+          "type": "0",
+          "link": "https://liveakmt-p-md.slivcdn.com/hls/live/2119931/cricodi_1411/ENG/master.m3u8?hdnea=exp=1794673149~acl=/*~id=e6958b3fa9c6adb54b9b7c7165114305-1794629947688~hmac=8be2c871aef155e1da992eb579fa793449bc6ada3cfe46494bed3469bf79e598",
+          "api": ""
+        },
+        {
+          "id": 5,
+          "title": "SonyLiv - HIN",
+          "type": "0",
+          "link": "https://liveakmt-p-md.slivcdn.com/hls/live/2119921/cricodi_1411/HIN/master.m3u8?hdnea=exp=1794673149~acl=/*~id=e6958b3fa9c6adb54b9b7c7165114305-1794629947688~hmac=8be2c871aef155e1da992eb579fa793449bc6ada3cfe46494bed3469bf79e598",
+          "api": ""
+        },
+        {
+          "id": 6,
+          "title": "SonyLiv - TAM",
+          "type": "0",
+          "link": "https://liveakmt-p-md.slivcdn.com/hls/live/2119951/cricodi_1411/TAM/master.m3u8?hdnea=exp=1794673149~acl=/*~id=e6958b3fa9c6adb54b9b7c7165114305-1794629947688~hmac=8be2c871aef155e1da992eb579fa793449bc6ada3cfe46494bed3469bf79e598",
+          "api": ""
+        },
+        {
+          "id": 7,
+          "title": "SonyLiv - TEL",
+          "type": "0",
+          "link": "https://liveakmt-p-md.slivcdn.com/hls/live/2119941/cricodi_1411/TEL/master.m3u8?hdnea=exp=1794673149~acl=/*~id=e6958b3fa9c6adb54b9b7c7165114305-1794629947688~hmac=8be2c871aef155e1da992eb579fa793449bc6ada3cfe46494bed3469bf79e598",
+          "api": ""
+        },
+        {
+          "id": 8,
+          "title": "SonyLiv - KAN",
+          "type": "0",
+          "link": "https://liveakmt-p-md.slivcdn.com/hls/live/2119782/cricodi_1411/KAN/master.m3u8?hdnea=exp=1794673149~acl=/*~id=e6958b3fa9c6adb54b9b7c7165114305-1794629947688~hmac=8be2c871aef155e1da992eb579fa793449bc6ada3cfe46494bed3469bf79e598",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14072",
       "title": "Afghanistan vs Zimbabwe",
       "slug": "afghanistan-vs-zimbabwe",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
@@ -570,7 +637,92 @@
         "startTimeIST": "2026-11-14 11:30:52 IST",
         "endTimeIST": "2026-11-14 19:30:54 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/x8iyqzo7wh/out/v1/8c628f2f334e46a683092f62d2659733/cenc.mpd",
+          "api": "9373c3f08c6578544e0ea1999e95418b:10a7f6e8177486dfca9bb5696779dd02"
+        },
+        {
+          "id": 2,
+          "title": "WILLOW - ALT",
+          "type": "7",
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/x8iyqzo7wh/out/v1/8c628f2f334e46a683092f62d2659733/cenc.mpd",
+          "api": "9373c3f08c6578544e0ea1999e95418b:10a7f6e8177486dfca9bb5696779dd02"
+        },
+        {
+          "id": 3,
+          "title": "A SPORTS HD",
+          "type": "0",
+          "link": "https://live.msnetworks.net/a-sports/master.m3u8",
+          "api": ""
+        },
+        {
+          "id": 4,
+          "title": "FANCODE - IN ",
+          "type": "0",
+          "link": "https://dai-fancode.pages.dev/mumbai/4249772_english_hls_ea87fdf83461346_1ta-di_h264/index.m3u8",
+          "api": ""
+        }
+      ]
+    },
+    {
+      "id": "14882",
+      "title": "WBBL Women Big Bash League",
+      "slug": "bbl-women-big-bash-league",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "Women's Big Bash League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
+        "teamA": "WBBL",
+        "teamAFlag": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
+        "teamB": "WBBL",
+        "teamBFlag": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
+        "startTimeIST": "2026-11-14 13:40:54 IST",
+        "endTimeIST": "2026-11-14 17:30:17 IST"
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/hvu7hcu7jb/out/v1/7b0a48f368404321a8ce552b7a092d91/cenc.mpd",
+          "api": "fc4968fb4dec837fa5be62f9c463cf04:0b7d70bbf114543bc92193021ccc0b23"
+        },
+        {
+          "id": 2,
+          "title": "SKY CRICKET - AQ",
+          "type": "0",
+          "link": "https://bl.rutube.ru/livestream/7c13a51576b9ff2601f08f5d57dd5169/index.m3u8?s=uiXES2ePt7xTpQnbJxn7Dg&e=2074684474&scheme=https",
+          "api": ""
+        },
+        {
+          "id": 3,
+          "title": "WILLOW - ALT",
+          "type": "7",
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/hvu7hcu7jb/out/v1/7b0a48f368404321a8ce552b7a092d91/cenc.mpd",
+          "api": "fc4968fb4dec837fa5be62f9c463cf04:0b7d70bbf114543bc92193021ccc0b23"
+        },
+        {
+          "id": 4,
+          "title": "TAPMAD - AQ",
+          "type": "0",
+          "link": "https://tencent-cdn.tapmad.com/v1/01a14ab8af8915fc600b1e3e9683f0/01a14ab953dd1ea540a81c2b41b75f/main.m3u8?",
+          "api": ""
+        },
+        {
+          "id": 5,
+          "title": "WILLOW HD",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/tll6uwepxa/out/v1/a7f67cbb33df46539312956427343886/cenc.mpd",
+          "api": "290e09c837da78d5cd961978d390515c:b748836c71e6a4ca68ef5b5652db6247"
+        }
+      ]
     },
     {
       "id": "14261",
@@ -773,13 +925,13 @@
       "streams": []
     },
     {
-      "id": "B0HMGJT9PV",
-      "title": "Womens Big Bash League 2026 - 21st Match - Hobart Hurricanes Women vs Brisbane Heat Women",
-      "slug": "womens-big-bash-league-2026-21st-match-hobart-hurricanes-women-vs-brisbane-heat-women",
+      "id": "B0HPTVJM1M",
+      "title": "ACC Mens U19 Asia Cup 2026 - Final - Pakistan U19 vs India U19",
+      "slug": "acc-mens-u19-asia-cup-2026-final-pakistan-u19-vs-india-u19",
       "cat": "Live Events",
       "status": "live",
       "event": {
-        "name": "Womens Big Bash League 2026 - 21st Match - Hobart Hurricanes Women vs Brisbane Heat Women",
+        "name": "ACC Mens U19 Asia Cup 2026 - Final - Pakistan U19 vs India U19",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",
@@ -788,13 +940,13 @@
       "dashStreams": []
     },
     {
-      "id": "B0HPTVJM1M",
-      "title": "ACC Mens U19 Asia Cup 2026 - Final - Pakistan U19 vs India U19",
-      "slug": "acc-mens-u19-asia-cup-2026-final-pakistan-u19-vs-india-u19",
+      "id": "B0HMX2K2Y2",
+      "title": "Womens Big Bash League 2026 - 22nd Match - Perth Scorchers Women vs Adelaide Strikers Women",
+      "slug": "womens-big-bash-league-2026-22nd-match-perth-scorchers-women-vs-adelaide-strikers-women",
       "cat": "Live Events",
       "status": "live",
       "event": {
-        "name": "ACC Mens U19 Asia Cup 2026 - Final - Pakistan U19 vs India U19",
+        "name": "Womens Big Bash League 2026 - 22nd Match - Perth Scorchers Women vs Adelaide Strikers Women",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",

@@ -1,41 +1,13 @@
 {
-  "last_updated": "11/14/2026, 8:27:50 AM IST",
+  "last_updated": "11/14/2026, 3:35:54 PM IST",
   "source": "AryanStreams Official Feed",
   "events": [
-    {
-      "id": "14913",
-      "title": "Peru vs Bolivia",
-      "slug": "peru-vs-bolivia",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "International Friendly Games",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
-        "teamA": "Peru",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4790/image",
-        "teamB": "Bolivia",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/4746/image",
-        "startTimeIST": "2026-11-14 06:30:00 IST",
-        "endTimeIST": "2026-11-14 08:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "HD SERVER ",
-          "type": "0",
-          "link": "https://live2.jorvakstreamcache.com/live/channel7.m3u8?",
-          "api": ""
-        }
-      ]
-    },
     {
       "id": "14929",
       "title": "India vs Bhutan",
       "slug": "india-vs-bhutan",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -48,7 +20,43 @@
         "startTimeIST": "2026-11-14 14:30:00 IST",
         "endTimeIST": "2026-11-14 16:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "BTV BD - AQ",
+          "type": "0",
+          "link": "https://nkafmbewiff.gpcdn.net/tile_2/master.m3u8",
+          "api": ""
+        },
+        {
+          "id": 2,
+          "title": "HD SERVER",
+          "type": "0",
+          "link": "https://live2.jorvakstreamcache.com/live/channel7.m3u8?",
+          "api": ""
+        },
+        {
+          "id": 3,
+          "title": "MyCO - AQ",
+          "type": "0",
+          "link": "https://ml-pull-rtmp-pk1.myco.io/SAFF2026/hls/26113.m3u8",
+          "api": ""
+        },
+        {
+          "id": 4,
+          "title": "T SPORTS HD",
+          "type": "0",
+          "link": "https://tvsen5.aynaott.com/TnMn5kZz8aLmjklkk/index.m3u8",
+          "api": ""
+        },
+        {
+          "id": 5,
+          "title": "VETO TV - IN",
+          "type": "0",
+          "link": "https://vetointv.akamaized.net/Dreamboat-CH01/master.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14844",
@@ -68,7 +76,29 @@
         "startTimeIST": "2026-11-14 15:45:00 IST",
         "endTimeIST": "2026-11-14 18:05:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "SporTV BR - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/w8kwdfmlgs/out/v1/3aa321e477504937a439b602e078eb18/cenc.mpd",
+          "api": "51c0ef23b17297e5c01cd7f36dd0a6ce:8823f713ba6fdb9bbe0a2ad82d309a4b"
+        },
+        {
+          "id": 2,
+          "title": "SporTV BR - ALT",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/w8kwdfmlgs/out/v1/3aa321e477504937a439b602e078eb18/cenc.mpd",
+          "api": "51c0ef23b17297e5c01cd7f36dd0a6ce:8823f713ba6fdb9bbe0a2ad82d309a4b"
+        },
+        {
+          "id": 3,
+          "title": "HD SERVER",
+          "type": "0",
+          "link": "https://live2.jorvakstreamcache.com/live/channel11.m3u8?",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14948",
