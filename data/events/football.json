@@ -1,151 +1,13 @@
 {
-  "last_updated": "11/14/2026, 3:35:54 PM IST",
+  "last_updated": "11/14/2026, 10:08:52 PM IST",
   "source": "AryanStreams Official Feed",
   "events": [
-    {
-      "id": "14929",
-      "title": "India vs Bhutan",
-      "slug": "india-vs-bhutan",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "SAFF Championship",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/2354/image/dark",
-        "teamA": "India",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4828/image",
-        "teamB": "Bhutan",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/191564/image",
-        "startTimeIST": "2026-11-14 14:30:00 IST",
-        "endTimeIST": "2026-11-14 16:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "BTV BD - AQ",
-          "type": "0",
-          "link": "https://nkafmbewiff.gpcdn.net/tile_2/master.m3u8",
-          "api": ""
-        },
-        {
-          "id": 2,
-          "title": "HD SERVER",
-          "type": "0",
-          "link": "https://live2.jorvakstreamcache.com/live/channel7.m3u8?",
-          "api": ""
-        },
-        {
-          "id": 3,
-          "title": "MyCO - AQ",
-          "type": "0",
-          "link": "https://ml-pull-rtmp-pk1.myco.io/SAFF2026/hls/26113.m3u8",
-          "api": ""
-        },
-        {
-          "id": 4,
-          "title": "T SPORTS HD",
-          "type": "0",
-          "link": "https://tvsen5.aynaott.com/TnMn5kZz8aLmjklkk/index.m3u8",
-          "api": ""
-        },
-        {
-          "id": 5,
-          "title": "VETO TV - IN",
-          "type": "0",
-          "link": "https://vetointv.akamaized.net/Dreamboat-CH01/master.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": "14844",
-      "title": "Japan vs Brazil",
-      "slug": "japan-vs-brazil",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "International Friendly Games",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
-        "teamA": "Japan",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4770/image",
-        "teamB": "Brazil",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/4748/image",
-        "startTimeIST": "2026-11-14 15:45:00 IST",
-        "endTimeIST": "2026-11-14 18:05:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "SporTV BR - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/w8kwdfmlgs/out/v1/3aa321e477504937a439b602e078eb18/cenc.mpd",
-          "api": "51c0ef23b17297e5c01cd7f36dd0a6ce:8823f713ba6fdb9bbe0a2ad82d309a4b"
-        },
-        {
-          "id": 2,
-          "title": "SporTV BR - ALT",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/w8kwdfmlgs/out/v1/3aa321e477504937a439b602e078eb18/cenc.mpd",
-          "api": "51c0ef23b17297e5c01cd7f36dd0a6ce:8823f713ba6fdb9bbe0a2ad82d309a4b"
-        },
-        {
-          "id": 3,
-          "title": "HD SERVER",
-          "type": "0",
-          "link": "https://live2.jorvakstreamcache.com/live/channel11.m3u8?",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": "14948",
-      "title": "Real Valladolid vs CD Castellon",
-      "slug": "real-valladolid-vs-cd-castellon",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "LaLiga 2",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/54/image/dark",
-        "teamA": "Real Valladolid",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2831/image",
-        "teamB": "CD Castellón",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/5067/image",
-        "startTimeIST": "2026-11-14 18:30:00 IST",
-        "endTimeIST": "2026-11-14 20:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14937",
-      "title": "Kosovo vs Israel",
-      "slug": "kosovo-vs-israel",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "UEFA Nations League",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/10783/image/dark",
-        "teamA": "Kosovo",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/154426/image",
-        "teamB": "Israel",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/4480/image",
-        "startTimeIST": "2026-11-14 19:30:00 IST",
-        "endTimeIST": "2026-11-14 21:50:00 IST"
-      },
-      "streams": []
-    },
     {
       "id": "14928",
       "title": "Bangladesh vs Pakistan",
       "slug": "bangladesh-vs-pakistan",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -158,14 +20,64 @@
         "startTimeIST": "2026-11-14 20:00:00 IST",
         "endTimeIST": "2026-11-14 22:20:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "BTV BD - AQ",
+          "type": "0",
+          "link": "https://nkafmbewiff.gpcdn.net/tile_2/master.m3u8",
+          "api": ""
+        },
+        {
+          "id": 2,
+          "title": "HD SERVER ",
+          "type": "0",
+          "link": "https://live2.jorvakstreamcache.com/live/channel19.m3u8?",
+          "api": ""
+        },
+        {
+          "id": 3,
+          "title": "T SPORTS HD",
+          "type": "0",
+          "link": "https://tvsen5.aynaott.com/TnMn5kZz8aLmjklkk/index.m3u8",
+          "api": ""
+        },
+        {
+          "id": 4,
+          "title": "CRICFy FAST",
+          "type": "0",
+          "link": "https://live05.yefpwmc.app/live/18812304.m3u8?_t=1794666280950",
+          "api": ""
+        },
+        {
+          "id": 5,
+          "title": "BACKUP HD",
+          "type": "0",
+          "link": "https://pull.niur.live/live/stream-9912132_lhd.m3u8?txSecret=56c20834d52717b7eab6af5fe033b236&txTime=6af8c3a6",
+          "api": ""
+        },
+        {
+          "id": 6,
+          "title": "MYCO - PAK",
+          "type": "0",
+          "link": "https://ml-pull-rtmp-pk1.myco.io/SAFF2026/hls/26113.m3u8",
+          "api": ""
+        },
+        {
+          "id": 7,
+          "title": "VETO TV - IN",
+          "type": "0",
+          "link": "https://vetointv.akamaized.net/Dreamboat-CH01/master.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14943",
       "title": "Swindon Town vs Grimsby Town",
       "slug": "swindon-town-vs-grimsby-town",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -178,94 +90,22 @@
         "startTimeIST": "2026-11-14 20:30:00 IST",
         "endTimeIST": "2026-11-14 22:50:00 IST"
       },
-      "streams": []
-    },
-    {
-      "id": "14944",
-      "title": "Milton Keynes Dons vs Burton Albion",
-      "slug": "milton-keynes-dons-vs-burton-albion",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "League One",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/24/image/dark",
-        "teamA": "Milton Keynes Dons",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4/image",
-        "teamB": "Burton Albion",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/134/image",
-        "startTimeIST": "2026-11-14 20:30:00 IST",
-        "endTimeIST": "2026-11-14 22:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14945",
-      "title": "Sheffield Wednesday vs Plymouth Argyle",
-      "slug": "sheffield-wednesday-vs-plymouth-argyle",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "League One",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/24/image/dark",
-        "teamA": "Sheffield Wednesday",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/12/image",
-        "teamB": "Plymouth Argyle",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/71/image",
-        "startTimeIST": "2026-11-14 20:30:00 IST",
-        "endTimeIST": "2026-11-14 22:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14946",
-      "title": "Stockport County vs Reading",
-      "slug": "stockport-county-vs-reading",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "League One",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/24/image/dark",
-        "teamA": "Stockport County",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/10/image",
-        "teamB": "Reading",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/28/image",
-        "startTimeIST": "2026-11-14 20:30:00 IST",
-        "endTimeIST": "2026-11-14 22:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14947",
-      "title": "Wigan Athletic vs Barnsley",
-      "slug": "wigan-athletic-vs-barnsley",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "League One",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/24/image/dark",
-        "teamA": "Wigan Athletic",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/49/image",
-        "teamB": "Barnsley",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/23/image",
-        "startTimeIST": "2026-11-14 20:30:00 IST",
-        "endTimeIST": "2026-11-14 22:50:00 IST"
-      },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "CRICFy LIVE",
+          "type": "0",
+          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14949",
       "title": "Real Sociedad B vs Sporting Gijon",
       "slug": "real-sociedad-b-vs-sporting-gijon",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -278,14 +118,22 @@
         "startTimeIST": "2026-11-14 20:45:00 IST",
         "endTimeIST": "2026-11-14 23:05:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "LaLiga Hypermotion ",
+          "type": "7",
+          "link": "https://cache07.zapitv.com/live/eds_c2/HYPERMOTION1/dash_live_ez/HYPERMOTION1.mpd",
+          "api": "a88617e904504ee291f49f0e60a51d49:17f92d59fde3b6d2bf4ffb48e8ca720a"
+        }
+      ]
     },
     {
       "id": "14953",
       "title": "Uganda vs Botswana",
       "slug": "uganda-vs-botswana",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -298,7 +146,22 @@
         "startTimeIST": "2026-11-14 21:30:00 IST",
         "endTimeIST": "2026-11-14 23:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "beIN SPORTS - AQ",
+          "type": "7",
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/katdnhkzqv/out/v1/2469724fa7754a4da6861d8ba80de958/cenc.mpd?",
+          "api": "27759a440e8ad821b800b3de00cd5851:1b8743adee559f27845f55e8b4d639fe"
+        },
+        {
+          "id": 2,
+          "title": "beIN SPANISH - AQ",
+          "type": "7",
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/e3ozww2yny/out/v1/3a16d07c2cc0444bb8ea10d0483d1ced/cenc.mpd?",
+          "api": "74cbe15488783fab07ff8c702fabafcd:bb607803a49c2d6104f845e7886c971c"
+        }
+      ]
     },
     {
       "id": "14935",
@@ -318,7 +181,29 @@
         "startTimeIST": "2026-11-14 22:30:00 IST",
         "endTimeIST": "2026-11-15 00:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "FOX SPORTS - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/awxnrqkbo5/out/v1/716529a4091947b0877e6cb80dbd6ccb/cenc.mpd",
+          "api": "09453ce820d65fbc675de3185f9e454c:98cff9600995fa381c76fdacf3c7edae"
+        },
+        {
+          "id": 2,
+          "title": "beIN ENGLISH - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/q4u5nwaogz/out/v1/18de6d3e65934f3a8de4358e69eab86c/cenc.mpd",
+          "api": "7995c724a13748ed970840a8ab5bb9b3:67bdaf1e2175b9ff682fcdf0e2354b1e"
+        },
+        {
+          "id": 3,
+          "title": "SPORT 1 CZ - AQ",
+          "type": "7",
+          "link": "https://dash2.antik.sk/stream/nvidia_sport_1/playlist_cenc.mpd",
+          "api": "11223344556677889900112233445566:4b80724d0ef86bcb2c21f7999d67739d"
+        }
+      ]
     },
     {
       "id": "14938",
@@ -338,7 +223,22 @@
         "startTimeIST": "2026-11-14 22:30:00 IST",
         "endTimeIST": "2026-11-15 00:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "beIN ENGLISH - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/8m8cd46i1t/out/v1/83985c68e4174e90a58a1f2c024be4c9/cenc.mpd?",
+          "api": "0b42be2664d7e811d04f3e504e0924c5:ae24090123b8c72ac5404dc152847cb8"
+        },
+        {
+          "id": 2,
+          "title": "SporTV BR - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/w8kwdfmlgs/out/v1/3aa321e477504937a439b602e078eb18/cenc.mpd",
+          "api": "51c0ef23b17297e5c01cd7f36dd0a6ce:8823f713ba6fdb9bbe0a2ad82d309a4b"
+        }
+      ]
     },
     {
       "id": "14950",
@@ -358,7 +258,15 @@
         "startTimeIST": "2026-11-14 23:00:00 IST",
         "endTimeIST": "2026-11-15 01:20:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "CRICFy LIVE",
+          "type": "0",
+          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14951",
@@ -378,7 +286,15 @@
         "startTimeIST": "2026-11-14 23:00:00 IST",
         "endTimeIST": "2026-11-15 01:20:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "LaLiga Hypermotion ",
+          "type": "7",
+          "link": "https://cache07.zapitv.com/live/eds_c2/HYPERMOTION1/dash_live_ez/HYPERMOTION1.mpd",
+          "api": "a88617e904504ee291f49f0e60a51d49:17f92d59fde3b6d2bf4ffb48e8ca720a"
+        }
+      ]
     },
     {
       "id": "14954",
@@ -537,6 +453,26 @@
         "teamBFlag": "https://img.sofascore.com/api/v1/team/24264/image",
         "startTimeIST": "2026-11-15 01:30:00 IST",
         "endTimeIST": "2026-11-15 03:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14958",
+      "title": "New Zealand vs India Football",
+      "slug": "new-zealand-vs-india-football",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "International Friendly Games",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
+        "teamA": "New Zealand",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4784/image",
+        "teamB": "India",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4828/image",
+        "startTimeIST": "2026-11-15 08:30:00 IST",
+        "endTimeIST": "2026-11-15 10:50:00 IST"
       },
       "streams": []
     }
