@@ -1,118 +1,15 @@
 {
-  "last_updated": "11/14/2026, 4:12:59 AM IST",
+  "last_updated": "11/14/2026, 8:27:50 AM IST",
   "source": "AryanStreams Official Feed",
-  "football_count": 29,
+  "football_count": 25,
   "cricket_count": 17,
   "events": [
-    {
-      "id": "14925",
-      "title": "Morocco vs Niger",
-      "slug": "morocco-vs-niger",
-      "cat": "Live Events",
-      "status": "ended",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "Africa Cup of Nations Qual.",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1848/image/dark",
-        "teamA": "Morocco",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4778/image",
-        "teamB": "Niger",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/8031/image",
-        "startTimeIST": "2026-11-14 01:30:00 IST",
-        "endTimeIST": "2026-11-14 03:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "beIN SPORTS - AQ",
-          "type": "7",
-          "link": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/e3ozww2yny/out/v1/3a16d07c2cc0444bb8ea10d0483d1ced/cenc.mpd?",
-          "api": "74cbe15488783fab07ff8c702fabafcd:bb607803a49c2d6104f845e7886c971c"
-        },
-        {
-          "id": 2,
-          "title": "HD SERVER ",
-          "type": "0",
-          "link": "https://live2.jorvakstreamcache.com/live/channel22.m3u8?",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": "14845",
-      "title": "Argentina vs Uruguay",
-      "slug": "argentina-vs-uruguay",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "International Friendly Games",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
-        "teamA": "Argentina",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4819/image",
-        "teamB": "Uruguay",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/4725/image",
-        "startTimeIST": "2026-11-14 04:30:00 IST",
-        "endTimeIST": "2026-11-14 06:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "CRICFy LIVE",
-          "type": "7",
-          "link": "https://primevideo.com.playfytvboss.online/ottb/live/vix/B0HNYXBJMF.mpd",
-          "api": "https://primevideo.com.playfytvboss.online/license/vix/?asin=B0HNYXBJMF"
-        }
-      ]
-    },
-    {
-      "id": "14911",
-      "title": "Colombia vs Chile",
-      "slug": "colombia-vs-chile",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "International Friendly Games",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
-        "teamA": "Colombia",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4820/image",
-        "teamB": "Chile",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/4754/image",
-        "startTimeIST": "2026-11-14 05:30:00 IST",
-        "endTimeIST": "2026-11-14 07:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14912",
-      "title": "Ecuador vs Costa Rica",
-      "slug": "ecuador-vs-costa-rica",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "International Friendly Games",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
-        "teamA": "Ecuador",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4757/image",
-        "teamB": "Costa Rica",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/4756/image",
-        "startTimeIST": "2026-11-14 05:30:00 IST",
-        "endTimeIST": "2026-11-14 07:50:00 IST"
-      },
-      "streams": []
-    },
     {
       "id": "14913",
       "title": "Peru vs Bolivia",
       "slug": "peru-vs-bolivia",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -125,7 +22,15 @@
         "startTimeIST": "2026-11-14 06:30:00 IST",
         "endTimeIST": "2026-11-14 08:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "HD SERVER ",
+          "type": "0",
+          "link": "https://live2.jorvakstreamcache.com/live/channel7.m3u8?",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14929",
