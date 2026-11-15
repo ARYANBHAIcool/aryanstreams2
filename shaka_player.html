@@ -400,11 +400,12 @@
             'ten1hd': { kid: '3cd96ce073bb51428a454251943143b8', key: '9cf359bd8e323b05248caacc2b4da6c9' },
             't1hd': { kid: '3cd96ce073bb51428a454251943143b8', key: '9cf359bd8e323b05248caacc2b4da6c9' },
 
-            'sten2': { kid: 'bc3eb526f6125a33a8f44658daeb03f5', key: '511554c790f7bd575bd0aa1e9c17f34c' },
-            '891': { kid: 'bc3eb526f6125a33a8f44658daeb03f5', key: '511554c790f7bd575bd0aa1e9c17f34c' },
-            'ten2': { kid: 'bc3eb526f6125a33a8f44658daeb03f5', key: '511554c790f7bd575bd0aa1e9c17f34c' },
-            'ten2hd': { kid: 'bc3eb526f6125a33a8f44658daeb03f5', key: '511554c790f7bd575bd0aa1e9c17f34c' },
-            't2hd': { kid: 'bc3eb526f6125a33a8f44658daeb03f5', key: '511554c790f7bd575bd0aa1e9c17f34c' },
+            'sten2': { kid: '91fce77f2f8056f084ed961c7ebe86ed', key: '8214bd5eb6c21444e8ea644824affd79' },
+            '891': { kid: '91fce77f2f8056f084ed961c7ebe86ed', key: '8214bd5eb6c21444e8ea644824affd79' },
+            'ten2': { kid: '91fce77f2f8056f084ed961c7ebe86ed', key: '8214bd5eb6c21444e8ea644824affd79' },
+            'ten2hd': { kid: '91fce77f2f8056f084ed961c7ebe86ed', key: '8214bd5eb6c21444e8ea644824affd79' },
+            'sony2': { kid: '91fce77f2f8056f084ed961c7ebe86ed', key: '8214bd5eb6c21444e8ea644824affd79' },
+            't2hd': { kid: '91fce77f2f8056f084ed961c7ebe86ed', key: '8214bd5eb6c21444e8ea644824affd79' },
 
             'sten3': { kid: 'c20ba4e9d0635bab9f17b177f0d91039', key: 'fcb4a266539ac7b03ef02c5600c5598d' },
             '892': { kid: 'c20ba4e9d0635bab9f17b177f0d91039', key: 'fcb4a266539ac7b03ef02c5600c5598d' },
@@ -750,10 +751,26 @@
             var idStr = String(id).trim().toLowerCase();
             var mappedId = (ID_MAP[idStr] || idStr).toLowerCase();
 
+            // High-reliability feed for Sony Ten 2 HD (uses active Ten2_HD_MOB with matching KID 91FCE77F)
+            if (idStr === '891' || idStr === 'sten2' || idStr === 'ten2' || idStr === 'ten2hd' || idStr === 'sony2' || idStr === 't2hd' || mappedId === 'sten2') {
+                return {
+                    id: idStr,
+                    name: 'Sony Sports Ten 2 HD',
+                    stream_url: 'https://jiotvmblive.cdn.jio.com/bpk-tv/Ten2_HD_MOB/WDVLive/index.mpd',
+                    key_id: '91fce77f2f8056f084ed961c7ebe86ed',
+                    key: '8214bd5eb6c21444e8ea644824affd79',
+                    clearKeys: {
+                        '91fce77f2f8056f084ed961c7ebe86ed': '8214bd5eb6c21444e8ea644824affd79',
+                        'bc3eb526f6125a33a8f44658daeb03f5': '511554c790f7bd575bd0aa1e9c17f34c'
+                    },
+                    cookie: '__hdnea__=st=1794758416~exp=1794844816~acl=/*~hmac=3e89d09bd5484305e7c6d85f1a92c7ee23c92ba8e514b052fe3c2f1484ed3b65',
+                    cookie_expire: 1794844816
+                };
+            }
+
             // Real-time CTV Provider Feed for Sony Ten 1-5, Star 1 HD, Star 1 Hindi HD
             var ctvLookup = {
                 '162': 'T1HD', 'sten1': 'T1HD', 'ten1': 'T1HD', 'ten1hd': 'T1HD', 'sony1': 'T1HD', 't1hd': 'T1HD',
-                '891': 'T2HD', 'sten2': 'T2HD', 'ten2': 'T2HD', 'ten2hd': 'T2HD', 'sony2': 'T2HD', 't2hd': 'T2HD',
                 '892': 'T3HD', 'sten3': 'T3HD', 'ten3': 'T3HD', 'ten3hd': 'T3HD', 'sony3': 'T3HD', 't3hd': 'T3HD',
                 '3514': 'T4TAMIL', '3397': 'T4TAMIL', 'stent': 'T4TAMIL', 'ten4': 'T4TAMIL', 'ten4hd': 'T4TAMIL', 's4tamil': 'T4TAMIL', 't4tamil': 'T4TAMIL',
                 '1773': 'T4TELUGU', '3398': 'T4TELUGU', 'stentu': 'T4TELUGU', 'ten4telugu': 'T4TELUGU', 's4telugu': 'T4TELUGU', 't4telugu': 'T4TELUGU',
@@ -1151,35 +1168,49 @@
                 if (!m) return true;
                 return (Date.now() / 1000) > (parseInt(m[1], 10) - 600);
             }
-            // 1. Try sony_m3u8.json
+            // 1. Try local data/sony_m3u8.json
             try {
                 var res = await fetch('data/sony_m3u8.json?_=' + Date.now());
                 if (res.ok) {
                     var data = await res.json();
-                    var ch = (data.channels || []).find(function(c) { return c.id === m3uKey; });
+                    var ch = (data.channels || []).find(function(c) { return c.id === m3uKey || c.id === (m3uKey + '-hd'); });
                     if (ch && !isExpired(ch.raw_url)) {
                         return ch.proxied_url || (proxyBase + encodeURIComponent(ch.raw_url));
                     }
                 }
             } catch(e) {}
-            // 2. Fetch directly from Pastefy via Lovable proxy
-            try {
-                var pRes = await fetch(proxyBase + encodeURIComponent('https://pastefy.app/6wOwFjlG/raw'));
-                if (pRes.ok) {
-                    var text = await pRes.text();
-                    var lines = text.split('\n');
-                    for (var i = 0; i < lines.length; i++) {
-                        if (lines[i].includes('tvg-id="' + m3uKey + '"')) {
-                            for (var j = i + 1; j < lines.length; j++) {
-                                var trimmed = lines[j].trim();
-                                if (trimmed && !trimmed.startsWith('#') && trimmed.startsWith('http')) {
-                                    return proxyBase + encodeURIComponent(trimmed);
+            // 2. Fetch directly from GitHub autoupdate playlist
+            var sources = [
+                'https://raw.githubusercontent.com/sportlive18/Sonyliv-Playlist-Autoupdate/main/sony.m3u',
+                proxyBase + encodeURIComponent('https://raw.githubusercontent.com/sportlive18/Sonyliv-Playlist-Autoupdate/main/sony.m3u'),
+                proxyBase + encodeURIComponent('https://pastefy.app/6wOwFjlG/raw')
+            ];
+            for (var sIdx = 0; sIdx < sources.length; sIdx++) {
+                try {
+                    var pRes = await fetch(sources[sIdx]);
+                    if (pRes.ok) {
+                        var text = await pRes.text();
+                        var lines = text.split('\n');
+                        for (var i = 0; i < lines.length; i++) {
+                            if (lines[i].startsWith('#EXTINF:')) {
+                                var matches = lines[i].includes('tvg-id="' + m3uKey + '"') ||
+                                              lines[i].toLowerCase().includes(m3uKey.replace(/-/g, ' '));
+                                if (matches) {
+                                    for (var j = i + 1; j < lines.length; j++) {
+                                        var trimmed = lines[j].trim();
+                                        if (trimmed && !trimmed.startsWith('#') && trimmed.startsWith('http')) {
+                                            if (m3uKey === 'ten5-hd' && trimmed.includes('2020593/TEN5HD/')) {
+                                                trimmed = trimmed.replace('2020593/TEN5HD/', '2020593/SONYSIXHD/');
+                                            }
+                                            return proxyBase + encodeURIComponent(trimmed);
+                                        }
+                                    }
                                 }
                             }
                         }
                     }
-                }
-            } catch(pe) {}
+                } catch(pe) {}
+            }
             return null;
         }
 
