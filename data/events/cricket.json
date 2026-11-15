@@ -1,69 +1,13 @@
 {
-  "last_updated": "11/15/2026, 5:28:27 AM IST",
+  "last_updated": "11/15/2026, 11:38:47 AM IST",
   "source": "AryanStreams Official Feed",
   "events": [
-    {
-      "id": "14882",
-      "title": "WBBL Women Big Bash League",
-      "slug": "bbl-women-big-bash-league",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "Women's Big Bash League",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
-        "teamA": "WBBL",
-        "teamAFlag": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
-        "teamB": "WBBL",
-        "teamBFlag": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
-        "startTimeIST": "2026-11-15 05:30:31 IST",
-        "endTimeIST": "2026-11-15 09:30:35 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "WILLOW - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/tll6uwepxa/out/v1/a7f67cbb33df46539312956427343886/cenc.mpd",
-          "api": "290e09c837da78d5cd961978d390515c:b748836c71e6a4ca68ef5b5652db6247"
-        },
-        {
-          "id": 2,
-          "title": "SKY CRICKET - AQ",
-          "type": "0",
-          "link": "https://bl.rutube.ru/livestream/7c13a51576b9ff2601f08f5d57dd5169/index.m3u8?s=uiXES2ePt7xTpQnbJxn7Dg&e=2074684474&scheme=https",
-          "api": ""
-        },
-        {
-          "id": 3,
-          "title": "WILLOW - ALT",
-          "type": "7",
-          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/tll6uwepxa/out/v1/a7f67cbb33df46539312956427343886/cenc.mpd",
-          "api": "290e09c837da78d5cd961978d390515c:b748836c71e6a4ca68ef5b5652db6247"
-        },
-        {
-          "id": 4,
-          "title": "TAPMAD - AQ",
-          "type": "0",
-          "link": "https://tencent-cdn.tapmad.com/v1/01a14ab8af8915fc600b1e3e9683f0/01a14ab953dd1ea540a81c2b41b75f/main.m3u8?",
-          "api": ""
-        },
-        {
-          "id": 5,
-          "title": "WILLOW HD",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/tll6uwepxa/out/v1/a7f67cbb33df46539312956427343886/cenc.mpd",
-          "api": "290e09c837da78d5cd961978d390515c:b748836c71e6a4ca68ef5b5652db6247"
-        }
-      ]
-    },
     {
       "id": "14888",
       "title": "New Zealand vs India",
       "slug": "new-zealand-vs-india",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
@@ -76,14 +20,106 @@
         "startTimeIST": "2026-11-15 07:30:07 IST",
         "endTimeIST": "2026-11-15 16:30:14 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "PRIME ENG - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/yqqst5pqux/out/v1/073a062a7b0847ce932d5eadcebc0ac4/cenc.mpd",
+          "api": "d2cc5711d3688fa4b639af9c7d0f11f1:dfd6faef548d25c8e4e8bd0c81e10cae"
+        },
+        {
+          "id": 2,
+          "title": "WILLOW - AQ",
+          "type": "7",
+          "link": "https://dash-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/kun3tuq8ds/out/v1/2888a4861ca042d1a01fc66e65c44981/cenc.mpd",
+          "api": "1f64db3174349a969b3f9686b28fa2ec:9a24a60537b3628ce17fc07404520d16"
+        },
+        {
+          "id": 3,
+          "title": "PRIME HINDI - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/urcccugwau/out/v1/a9db6d34fd7c475892f37f566feb5d14/cenc.mpd?",
+          "api": "be1f10aeaca62da127a95ce24f9ca1c8:19afcfb83c9fbac9b3b6717776474356"
+        },
+        {
+          "id": 4,
+          "title": "TNT SPORTS - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/dev1hjwzh9/out/v1/a5f0ee7ad7b24906b14f43bebbbe4678/cenc.mpd",
+          "api": "cc91508324ce9dcaf425a43d58f1d9d4:643e5474d9edd87c7d9091c8c97994ca"
+        },
+        {
+          "id": 5,
+          "title": "WILLOW - ALT",
+          "type": "7",
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/azerlw3rnq/out/v1/d8655060ec4447548120f9322101963b/cenc.mpd",
+          "api": "3a4e1c0452e8620aa47a64c82b81f90d:f11223850b04db47d8815871e6b77d05"
+        },
+        {
+          "id": 6,
+          "title": "SonyLiv - ENG",
+          "type": "0",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119931/cricodi_1411/ENG/std_lrh-800300010.m3u8?hdnea=exp=1794747596~acl=/*~id=96519495444179254654194417123549~hmac=5eb0fb6944aec6acc464198628e5289a2fb267ea5711b80b77e7d134030f47bb",
+          "api": ""
+        },
+        {
+          "id": 7,
+          "title": "SonyLiv - HIN",
+          "type": "0",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119921/cricodi_1411/HIN/std_lrh-800300010.m3u8?hdnea=exp=1794747596~acl=/*~id=96519495444179254654194417123549~hmac=5eb0fb6944aec6acc464198628e5289a2fb267ea5711b80b77e7d134030f47bb",
+          "api": ""
+        },
+        {
+          "id": 8,
+          "title": "SonyLiv - TAM",
+          "type": "0",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119951/cricodi_1411/TAM/std_lrh-800300010.m3u8?hdnea=exp=1794747596~acl=/*~id=96519495444179254654194417123549~hmac=5eb0fb6944aec6acc464198628e5289a2fb267ea5711b80b77e7d134030f47bb",
+          "api": ""
+        },
+        {
+          "id": 9,
+          "title": "SonyLiv - TEL",
+          "type": "0",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119941/cricodi_1411/TEL/std_lrh-800300010.m3u8?hdnea=exp=1794747596~acl=/*~id=96519495444179254654194417123549~hmac=5eb0fb6944aec6acc464198628e5289a2fb267ea5711b80b77e7d134030f47bb",
+          "api": ""
+        },
+        {
+          "id": 10,
+          "title": "SonyLiv - KAN",
+          "type": "0",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119782/cricodi_1411/KAN/std_lrh-800300010.m3u8?hdnea=exp=1794747596~acl=/*~id=96519495444179254654194417123549~hmac=5eb0fb6944aec6acc464198628e5289a2fb267ea5711b80b77e7d134030f47bb",
+          "api": ""
+        },
+        {
+          "id": 11,
+          "title": "TAPMAD BD - AQ",
+          "type": "0",
+          "link": "https://serieAleague.akamaized.net/hls/live/2107107/tap-BK-PSL-D1-E/master.m3u8",
+          "api": ""
+        },
+        {
+          "id": 12,
+          "title": "SONYLIV BD - AQ",
+          "type": "0",
+          "link": "https://liveakmt-p-md.slivcdn.com/hls/live/2119931/cricodi_1411/ENG/std_lrh-800300010.m3u8?hdnea=exp=1794747596~acl=/*~id=96519495444179254654194417123549~hmac=5eb0fb6944aec6acc464198628e5289a2fb267ea5711b80b77e7d134030f47bb",
+          "api": ""
+        },
+        {
+          "id": 13,
+          "title": "SONY GLOBAL",
+          "type": "0",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2022321/DAI17-INDNZ/master.m3u8?hdnea=exp=1794750655~acl=/*~id=45577059795063177253236564546996~hmac=b42a889d2ecc0257653da73fdff76e700727ea5be1aa165a20877b8e09094342",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14822",
       "title": "Australia vs England",
       "slug": "australia-vs-england",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
@@ -96,14 +132,57 @@
         "startTimeIST": "2026-11-15 09:00:50 IST",
         "endTimeIST": "2026-11-15 17:30:56 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/cs4bb976aa/out/v1/18bfdac2326c4055b5be76a41172ff9c/cenc.mpd",
+          "api": "ec7e146b29b33caca854620c0fb05bea:e895d427078bb109a0f6b8fd690dd105"
+        },
+        {
+          "id": 2,
+          "title": "FANCODE - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/b3b3fkmrbl/out/v1/1084d5c9a97a4c5b9f9554c88f486646/cenc.mpd",
+          "api": "82dfca238e8c4b430a3269db71965db9:a00b28caf4ac628e77a553d440c0ddca"
+        },
+        {
+          "id": 3,
+          "title": "WILLOW - ALT",
+          "type": "7",
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/cs4bb976aa/out/v1/18bfdac2326c4055b5be76a41172ff9c/cenc.mpd",
+          "api": "ec7e146b29b33caca854620c0fb05bea:e895d427078bb109a0f6b8fd690dd105"
+        },
+        {
+          "id": 4,
+          "title": "TAPMAD - AQ",
+          "type": "0",
+          "link": "https://tencent-cdn.tapmad.com/v1/01a14a9fb90c15fc60e91e1786b061/01a14a9feb881ea540a81c2b41b75e/main.m3u8?",
+          "api": ""
+        },
+        {
+          "id": 5,
+          "title": "TEN SPORTS HD",
+          "type": "0",
+          "link": "https://live.msnetworks.net/ten-sports/master.m3u8",
+          "api": ""
+        },
+        {
+          "id": 6,
+          "title": "FANCODE - IN",
+          "type": "0",
+          "link": "https://in-mc-flive.fancode.com/mumbai/4250640_english_hls_531bf4661e7063_1ta-di_h264/1080p.m3u8?hdntl=Expires=1794628546~_GO=Generated~acl=/mumbai/4250640_english_hls_531bf4661e7063_1ta-di_h264/*~SessionID=330387595_fc-web_e17f533d-0cb8-4f~Signature=AbO9BjhOYLd1GmMfhOhHHklnPOfhTKBOpq8RY94K5cvEs32zsfobefwN_2FtsFC-VmxLp67-63kmnIeMKq08MmKZpgcO",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14931",
       "title": "Pakistan Women vs Netherlands Women",
       "slug": "pakistan-women-vs-netherlands-women",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
@@ -116,14 +195,29 @@
         "startTimeIST": "2026-11-15 10:30:00 IST",
         "endTimeIST": "2026-11-15 14:30:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "ICC TV - AQ",
+          "type": "7",
+          "link": "https://live-d-01-icc-we.akamaized.net/variant/v1blackout/vcg-01-d/DASH_DASH/Live/channel(vcg-01-ch-hd-07)/hdntl=exp=1794746954~acl=*%2fchannel(vcg-01-ch-hd-07)%2f*~id=df636eee-0529-4299-91da-e8ce8c8790f0~data=hdntl,QjtNWCxDUixTVixHVCxITixOSSxQQSxBUixCTyxCUixDTCxDTyxFQyxQWSxQRSxVWSxWRSxDVSxETyxIVCxDQSxVUyxJTixQSyxMSyxBTyxCSixCVyxCRixCSSxDVixDTSxDRixURCxLTSxDRyxDRCxDSSxESixHUSxFUixFVCxHQSxHTSxHSCxHTixHVyxLRSxMUyxMUixNRyxNVyxNVSxNUixNWixOQSxORSxORyxSVyxTVCxTTixTQyxTTCxTTyxaQSxTUyxTRCxUWixURyxVRyxaTSxaVyxTWixNTA%3d%3d~hmac=1bbefebe7c8bfa5924713a1f017cea6a4aca1d11982804278024ba67d7f7327f/manifest.mpd?vcfilter=4db2fe0f-df2f-4bd1-a899-32148564ef76",
+          "api": "39bd302cdeed3710a89fb004d232ab67:9869f804ba18d7e508cbff781829221c"
+        },
+        {
+          "id": 2,
+          "title": "TAMASHA HD",
+          "type": "0",
+          "link": "https://cdn08khi-n.tamashaweb.com:8087/jazzauth/ICC-women-NT2026-abr/live/Wome-emerging-promo/chunks.m3u8?nimblesessionid=6161332&wmsAuthSign=c2VydmVyX3RpbWU9MTEvMTUvMjAyNiA0OjQ2OjUzIEFNJmhhc2hfdmFsdWU9N1poQklFN0FacjVLTzIrVW9HeUNxQT09JnZhbGlkbWludXRlcz02MA==",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14932",
       "title": "Thailand Women vs Zimbabwe Women",
       "slug": "thailand-women-vs-zimbabwe-women",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
@@ -136,14 +230,22 @@
         "startTimeIST": "2026-11-15 10:30:00 IST",
         "endTimeIST": "2026-11-15 14:30:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "CRICFy LIVE",
+          "type": "7",
+          "link": "https://live-d-01-icc-we.akamaized.net/variant/v1blackout/vcg-01-d/DASH_DASH/Live/channel(vcg-01-ch-hd-06)/hdntl=exp=1794747162~acl=*%2fchannel(vcg-01-ch-hd-06)%2f*~id=df636eee-0529-4299-91da-e8ce8c8790f0~data=hdntl,QjtNWCxDUixTVixHVCxITixOSSxQQSxBUixCTyxCUixDTCxDTyxFQyxQWSxQRSxVWSxWRSxDVSxETyxIVCxDQSxVUyxJTixQSyxMSyxBTyxCSixCVyxCRixCSSxDVixDTSxDRixURCxLTSxDRyxDRCxDSSxESixHUSxFUixFVCxHQSxHTSxHSCxHTixHVyxLRSxMUyxMUixNRyxNVyxNVSxNUixNWixOQSxORSxORyxSVyxTVCxTTixTQyxTTCxTTyxaQSxTUyxTRCxUWixURyxVRyxaTSxaVyxTWixNTA%3d%3d~hmac=703533e15aacdfe118bb0670a65b1bd8cb4a1fc5b474e004a57b98c852359c01/manifest.mpd?vcfilter=faf519ce-04cb-42eb-a76d-37a2444c8315",
+          "api": "39bd302cdeed3710a89fb004d232ab67:9869f804ba18d7e508cbff781829221c"
+        }
+      ]
     },
     {
       "id": "14072",
       "title": "Afghanistan vs Zimbabwe",
       "slug": "afghanistan-vs-zimbabwe",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
@@ -161,15 +263,15 @@
           "id": 1,
           "title": "WILLOW - AQ",
           "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/x8iyqzo7wh/out/v1/8c628f2f334e46a683092f62d2659733/cenc.mpd",
-          "api": "9373c3f08c6578544e0ea1999e95418b:10a7f6e8177486dfca9bb5696779dd02"
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/6yweffzpen/out/v1/197dbda9339c436c95282a80d109cbd6/cenc.mpd",
+          "api": "5c58e89e55b6ca6b7155cc78c8e2300d:949c2c45b7bbfab1d09f7c9bb96e2e4c"
         },
         {
           "id": 2,
           "title": "WILLOW - ALT",
           "type": "7",
-          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/x8iyqzo7wh/out/v1/8c628f2f334e46a683092f62d2659733/cenc.mpd",
-          "api": "9373c3f08c6578544e0ea1999e95418b:10a7f6e8177486dfca9bb5696779dd02"
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/6yweffzpen/out/v1/197dbda9339c436c95282a80d109cbd6/cenc.mpd",
+          "api": "5c58e89e55b6ca6b7155cc78c8e2300d:949c2c45b7bbfab1d09f7c9bb96e2e4c"
         },
         {
           "id": 3,
@@ -303,6 +405,62 @@
       "streams": []
     },
     {
+      "id": "14882",
+      "title": "WBBL Women Big Bash League",
+      "slug": "bbl-women-big-bash-league",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "Women's Big Bash League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
+        "teamA": "WBBL",
+        "teamAFlag": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
+        "teamB": "WBBL",
+        "teamBFlag": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
+        "startTimeIST": "2026-11-16 13:40:29 IST",
+        "endTimeIST": "2026-11-16 17:30:34 IST"
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/mysvg9964s/out/v1/b7761cc505e84787832b2b55e90bbbf0/cenc.mpd",
+          "api": "b1f8a6b81514e5243cc85d00effcf384:697893a5e9dbc7916aedd1ac857737b2"
+        },
+        {
+          "id": 2,
+          "title": "SKY CRICKET - AQ",
+          "type": "0",
+          "link": "https://bl.rutube.ru/livestream/7c13a51576b9ff2601f08f5d57dd5169/index.m3u8?s=uiXES2ePt7xTpQnbJxn7Dg&e=2074684474&scheme=https",
+          "api": ""
+        },
+        {
+          "id": 3,
+          "title": "WILLOW - ALT",
+          "type": "7",
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/mysvg9964s/out/v1/b7761cc505e84787832b2b55e90bbbf0/cenc.mpd",
+          "api": "b1f8a6b81514e5243cc85d00effcf384:697893a5e9dbc7916aedd1ac857737b2"
+        },
+        {
+          "id": 4,
+          "title": "TAPMAD - AQ",
+          "type": "0",
+          "link": "https://tencent-cdn.tapmad.com/v1/01a14ab8af8915fc600b1e3e9683f0/01a14ab953dd1ea540a81c2b41b75f/main.m3u8?",
+          "api": ""
+        },
+        {
+          "id": 5,
+          "title": "WILLOW HD",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/tll6uwepxa/out/v1/a7f67cbb33df46539312956427343886/cenc.mpd",
+          "api": "290e09c837da78d5cd961978d390515c:b748836c71e6a4ca68ef5b5652db6247"
+        }
+      ]
+    },
+    {
       "id": "14559",
       "title": "Pakistan vs Sri Lanka",
       "slug": "pakistan-vs-sri-lanka",
@@ -323,13 +481,13 @@
       "streams": []
     },
     {
-      "id": "B0HKFYV7MD",
-      "title": "Womens Big Bash League 2026 - 23rd Match -Sydney Sixers Women vs Melbourne Renegades Women",
-      "slug": "womens-big-bash-league-2026-23rd-match-sydney-sixers-women-vs-melbourne-renegades-women",
+      "id": "B0HMLW19GT",
+      "title": "India tour of New Zealand 2026 - 5th ODI - New Zealand vs India",
+      "slug": "india-tour-of-new-zealand-2026-5th-odi-new-zealand-vs-india",
       "cat": "Live Events",
       "status": "live",
       "event": {
-        "name": "Womens Big Bash League 2026 - 23rd Match -Sydney Sixers Women vs Melbourne Renegades Women",
+        "name": "India tour of New Zealand 2026 - 5th ODI - New Zealand vs India",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",
@@ -338,13 +496,13 @@
       "dashStreams": []
     },
     {
-      "id": "B0HMLW19GT",
-      "title": "India tour of New Zealand 2026 - 5th ODI - New Zealand vs India",
-      "slug": "india-tour-of-new-zealand-2026-5th-odi-new-zealand-vs-india",
+      "id": "B0HMNYSGP8",
+      "title": "Womens Big Bash League 2026 - 24th Match - Sydney Thunder Women vs Melbourne Stars Women",
+      "slug": "womens-big-bash-league-2026-24th-match-sydney-thunder-women-vs-melbourne-stars-women",
       "cat": "Live Events",
       "status": "live",
       "event": {
-        "name": "India tour of New Zealand 2026 - 5th ODI - New Zealand vs India",
+        "name": "Womens Big Bash League 2026 - 24th Match - Sydney Thunder Women vs Melbourne Stars Women",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",
