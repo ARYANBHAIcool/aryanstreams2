@@ -202,6 +202,7 @@
             'star_sports_2_hd': 'E2HD', 'star_sports_2_hindi_hd': 'H2HD',
             'star1hindihd': 'H1HD', 'star1hindi': 'H1SD',
             'star2hindihd': 'H2HD', 'star2hindi': 'H2SD',
+            'npl': 'npl', 'npl1': 'npl',
             'ss1h': 'H1HD', 'ss1': 'E1HD', 'ss1tam': 'T1HD', 'ss1tel': 'TE1HD', 'ss1kan': 'KA1SD',
             'ss2': 'E2HD', 'ss2h': 'H2HD', 'ss2tam': 'S2HD', 'ss2tel': 'TE2HD', 'ss2kan': 'KA2SD',
             'ss3': 'SS3', 'ssselect1': 'SE1HD', 'ssselect2': 'SE2HD', 'select1': 'SE1HD', 'select2': 'SE2HD', 'sskhel': 'H1SD',
@@ -266,6 +267,8 @@
         };
 
         var KNOWN_KEYS = {
+            'npl': { kid: 'b4d7fc89103597185058cc4c81a1800d', key: '17062472ba2a3f1db709d3bb7761c936' },
+            'npl1': { kid: 'b4d7fc89103597185058cc4c81a1800d', key: '17062472ba2a3f1db709d3bb7761c936' },
             // F1 Motorsports & FanCode
             'f1tvamzn': { kid: '609d795905904705028ef54653019af7', key: '2c791eb611e57a7d7f203022bc1b9ba3' },
             'f1tv': { kid: '609d795905904705028ef54653019af7', key: '2c791eb611e57a7d7f203022bc1b9ba3' },
@@ -663,6 +666,17 @@
         async function fetchLiveFeed(id) {
             if (!id) return null;
             var cleanId = String(id).toLowerCase().trim();
+            if (cleanId === 'npl' || cleanId === 'npl1') {
+                return {
+                    name: 'Nepal Premier League Live',
+                    stream_url: 'https://soft-water-8070.sphub-tech.workers.dev/npl/npl-live.mpd',
+                    key_id: 'b4d7fc89103597185058cc4c81a1800d',
+                    key: '17062472ba2a3f1db709d3bb7761c936',
+                    clearKeys: {
+                        'b4d7fc89103597185058cc4c81a1800d': '17062472ba2a3f1db709d3bb7761c936'
+                    }
+                };
+            }
             var endpoints = [
                 "/api/live?id=" + encodeURIComponent(cleanId),
                 "/live?id=" + encodeURIComponent(cleanId),
