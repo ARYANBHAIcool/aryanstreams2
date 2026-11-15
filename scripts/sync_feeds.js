@@ -439,6 +439,46 @@ async function syncSports() {
                     console.log('Note: sonujson live token merge skipped:', e.message);
                 }
 
+                // Sync fresh tokens from ctvlive (Sony Ten 1-5, Star 1 HD, Star 1 Hindi HD)
+                try {
+                    console.log('Fetching live tokens from https://ctvlive.pages.dev/n?id=T1HD ...');
+                    const ctvRaw = await fetchEndpoint('https://ctvlive.pages.dev/n?id=T1HD');
+                    const ctvMatch = ctvRaw.match(/const CHANNELS\s*=\s*(\{[\s\S]*?\});\s*(?:let|const|var|function)/);
+                    if (ctvMatch) {
+                        const ctvChannels = (new Function('return ' + ctvMatch[1]))();
+                        const ctvMap = {
+                            '162': 'T1HD', 'sten1': 'T1HD', 'ten1': 'T1HD', 'ten1hd': 'T1HD', 't1hd': 'T1HD',
+                            '891': 'T2HD', 'sten2': 'T2HD', 'ten2': 'T2HD', 'ten2hd': 'T2HD', 't2hd': 'T2HD',
+                            '892': 'T3HD', 'sten3': 'T3HD', 'ten3': 'T3HD', 'ten3hd': 'T3HD', 't3hd': 'T3HD',
+                            '3514': 'T4TAMIL', '3397': 'T4TAMIL', 'stent': 'T4TAMIL', 'ten4': 'T4TAMIL', 'ten4hd': 'T4TAMIL', 's4tamil': 'T4TAMIL', 't4tamil': 'T4TAMIL',
+                            '1773': 'T4TELUGU', '3398': 'T4TELUGU', 'stentu': 'T4TELUGU', 'ten4telugu': 'T4TELUGU', 's4telugu': 'T4TELUGU', 't4telugu': 'T4TELUGU',
+                            '155': 'T5HD', '3399': 'T5HD', 'sten5': 'T5HD', 'ten5': 'T5HD', 'ten5hd': 'T5HD', 'sony5': 'T5HD', 't5hd': 'T5HD',
+                            '1106': 'E1HD', 'e1hd': 'E1HD',
+                            '1108': 'H1HD', 'h1hd': 'H1HD'
+                        };
+                        for (const ch of channels) {
+                            const id = String(ch.id || ch.channel_id || '').toLowerCase();
+                            const ctvKey = ctvMap[id];
+                            if (ctvKey && ctvChannels[ctvKey]) {
+                                const live = ctvChannels[ctvKey];
+                                ch.cookie = live.cookie;
+                                const expMatch = live.cookie.match(/exp=(\d+)/);
+                                ch.cookie_expire = expMatch ? parseInt(expMatch[1], 10) : (nowSec + 21600);
+                                ch.stream_url = live.streamUrl;
+                                ch.sonuxs = live.keys;
+                                if (live.keys && live.keys[0]) {
+                                    const parts = live.keys[0].split(':');
+                                    ch.key_id = parts[0];
+                                    ch.key = parts[1];
+                                }
+                                refreshedCookiesCount++;
+                            }
+                        }
+                    }
+                } catch(e) {
+                    console.log('Note: ctvlive live token merge skipped:', e.message);
+                }
+
 
                 for (const ch of channels) {
                     const id = String(ch.id || ch.channel_id || '').toLowerCase();
