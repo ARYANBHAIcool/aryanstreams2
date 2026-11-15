@@ -1,5 +1,5 @@
 {
-  "last_updated": "11/15/2026, 11:38:47 AM IST",
+  "last_updated": "11/15/2026, 7:35:15 PM IST",
   "source": "AryanStreams Official Feed",
   "events": [
     {
@@ -7,7 +7,7 @@
       "title": "CD Tenerife vs AD Ceuta",
       "slug": "cd-tenerife-vs-ad-ceuta",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -20,14 +20,22 @@
         "startTimeIST": "2026-11-15 18:30:00 IST",
         "endTimeIST": "2026-11-15 20:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "LaLiga Hypermotion ",
+          "type": "7",
+          "link": "https://cache07.zapitv.com/live/eds_c2/HYPERMOTION1/dash_live_ez/HYPERMOTION1.mpd",
+          "api": "a88617e904504ee291f49f0e60a51d49:17f92d59fde3b6d2bf4ffb48e8ca720a"
+        }
+      ]
     },
     {
       "id": "14960",
       "title": "Cyprus vs Montenegro",
       "slug": "cyprus-vs-montenegro",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -40,14 +48,57 @@
         "startTimeIST": "2026-11-15 19:30:00 IST",
         "endTimeIST": "2026-11-15 21:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "DAZN SPORTS - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/wefdfonlnc/out/v1/4bd2d041433b4b58861d63df0b1677c6/cenc.mpd",
+          "api": "a431dd45ed2508b47290213500617f23:b6363b41b5807dcb1f568f4f64718691"
+        },
+        {
+          "id": 2,
+          "title": "PRIME VIDEO - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/aghlyfvogt/out/v1/4d5a657a11624b12856887453a15b612/cenc.mpd",
+          "api": "9bf7c61f3ce6a153280dab88b23f3057:5fd57e93bb680d530ac999f7c217a87a"
+        },
+        {
+          "id": 3,
+          "title": "FOX SPORTS - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/awxnrqkbo5/out/v1/716529a4091947b0877e6cb80dbd6ccb/cenc.mpd",
+          "api": "09453ce820d65fbc675de3185f9e454c:98cff9600995fa381c76fdacf3c7edae"
+        },
+        {
+          "id": 4,
+          "title": "beIN ENGLISH - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/q4u5nwaogz/out/v1/18de6d3e65934f3a8de4358e69eab86c/cenc.mpd",
+          "api": "7995c724a13748ed970840a8ab5bb9b3:67bdaf1e2175b9ff682fcdf0e2354b1e"
+        },
+        {
+          "id": 5,
+          "title": "VIX SPANISH - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/khw3chre2o/out/v1/d2f281563daa4c8da8e2fd168552b757/cenc.mpd",
+          "api": "7bc4236304752eaeab92f844412eebe8:2610dfd2072192991a8b66283d5840aa"
+        },
+        {
+          "id": 6,
+          "title": "CRICFy LIVE ",
+          "type": "0",
+          "link": "https://chatgpt.hereisman.net/playlist/60149/load-playlist-multi?",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14961",
       "title": "Latvia vs Armenia",
       "slug": "latvia-vs-armenia",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -60,7 +111,43 @@
         "startTimeIST": "2026-11-15 19:30:00 IST",
         "endTimeIST": "2026-11-15 21:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "DAZN SPORTS - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/zfvwrztx8j/out/v1/f1c6c8f0ca414b70b148bedd0f394213/cenc.mpd",
+          "api": "d8d8c5f233f0bdd4439dfb26a58c355f:6899e04bd16a60638c9e5fd0a5b5d4d9"
+        },
+        {
+          "id": 2,
+          "title": "PRIME VIDEO - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/te0xlcvi8o/out/v1/d5cd6d7f35c9452bbf7f2b88cf1f50fa/cenc.mpd",
+          "api": "e0c256a38e47c7c19ee0d8503bfdfe17:bed1c37c30e103e66e64e562b9b32833"
+        },
+        {
+          "id": 3,
+          "title": "beIN ENGLISH - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/8m8cd46i1t/out/v1/83985c68e4174e90a58a1f2c024be4c9/cenc.mpd?",
+          "api": "0b42be2664d7e811d04f3e504e0924c5:ae24090123b8c72ac5404dc152847cb8"
+        },
+        {
+          "id": 4,
+          "title": "VIX SPANISH - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/hwjlmyb59s/out/v1/c8dfa6294cb34255a3a6ba81fbf286f7/cenc.mpd",
+          "api": "e3f9cc220f9e73b355ae62bb40ba90fb:6e5f24e4e845e5d552a28787ff470d9d"
+        },
+        {
+          "id": 5,
+          "title": "FOX SOCCER+ HD",
+          "type": "0",
+          "link": "https://chatgpt.hereisman.net/playlist/60148/load-playlist-multi?",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14969",
