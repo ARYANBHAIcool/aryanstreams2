@@ -1,55 +1,7 @@
 {
-  "last_updated": "11/15/2026, 6:27:55 AM IST",
+  "last_updated": "11/15/2026, 1:15:33 PM IST",
   "source": "AryanStreams Official Feed",
   "events": [
-    {
-      "id": "14973",
-      "title": "Chapecoense vs Vasco da Gama",
-      "slug": "chapecoense-vs-vasco-da-gama",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "Campeonato Brasileiro Série A",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/325/image/dark",
-        "teamA": "Chapecoense",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/21845/image",
-        "teamB": "Vasco da Gama",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/1974/image",
-        "startTimeIST": "2026-11-15 05:00:00 IST",
-        "endTimeIST": "2026-11-15 07:20:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "CRICFy LIVE",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/nelfyucw9a/out/v1/6ffb2c365ad14f88b154591beb43d1f6/cenc.mpd?",
-          "api": "56b79c1782b30e6b6fc973b0e8fd4104:fa38aaa865a57eda7c77444697ba8ed3"
-        }
-      ]
-    },
-    {
-      "id": "14958",
-      "title": "New Zealand vs India Football",
-      "slug": "new-zealand-vs-india-football",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "International Friendly Games",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
-        "teamA": "New Zealand",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4784/image",
-        "teamB": "India",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/4828/image",
-        "startTimeIST": "2026-11-15 08:30:00 IST",
-        "endTimeIST": "2026-11-15 10:50:00 IST"
-      },
-      "streams": []
-    },
     {
       "id": "14968",
       "title": "CD Tenerife vs AD Ceuta",
