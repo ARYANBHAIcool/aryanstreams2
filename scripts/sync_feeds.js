@@ -16,6 +16,7 @@ const WILLOW_SOURCES = [
 ];
 
 const SONY_M3U8_SOURCES = [
+    'https://raw.githubusercontent.com/sportlive18/Sonyliv-Playlist-Autoupdate/main/sony.m3u',
     'https://pastefy.app/6wOwFjlG/raw'
 ];
 
@@ -884,8 +885,9 @@ async function syncSonyM3U8() {
             for (let i = 0; i < lines.length; i++) {
                 if (lines[i].startsWith('#EXTINF:')) {
                     const idMatch = lines[i].match(/tvg-id="([^"]+)"/);
+                    const nameMatch = lines[i].match(/tvg-name="([^"]+)"/);
                     const nameParts = lines[i].split(',');
-                    const name = nameParts.length > 1 ? nameParts[1].trim() : '';
+                    const rawName = nameParts.length > 1 ? nameParts[1].trim() : (nameMatch ? nameMatch[1].trim() : '');
                     let streamUrl = '';
                     for (let j = i + 1; j < lines.length; j++) {
                         const trimmed = lines[j].trim();
@@ -894,13 +896,45 @@ async function syncSonyM3U8() {
                             break;
                         }
                     }
-                    if (idMatch && streamUrl) {
+                    if (!streamUrl) continue;
+
+                    let id = idMatch ? idMatch[1].trim() : '';
+                    const cName = ((nameMatch ? nameMatch[1] : '') + ' ' + rawName).toLowerCase();
+                    if (!id) {
+                        if (cName.includes('sports 1') || cName.includes('ten 1') || cName.includes('ten1')) id = cName.includes('hd') ? 'ten1-hd' : 'ten1';
+                        else if (cName.includes('sports 2') || cName.includes('ten 2') || cName.includes('ten2')) id = cName.includes('hd') ? 'ten2-hd' : 'ten2';
+                        else if (cName.includes('sports 3') || cName.includes('ten 3') || cName.includes('ten3')) id = cName.includes('hd') ? 'ten3-hd' : 'ten3';
+                        else if (cName.includes('sports 4') || cName.includes('ten 4') || cName.includes('ten4')) {
+                            if (cName.includes('telugu')) id = 'ten4';
+                            else if (cName.includes('tamil')) id = 'ten4-tamil';
+                            else id = 'ten4-hd';
+                        }
+                        else if (cName.includes('sports 5') || cName.includes('ten 5') || cName.includes('six')) id = cName.includes('hd') ? 'ten5-hd' : 'ten5';
+                        else if (cName.includes('entertainment') || cName.includes('set')) id = cName.includes('hd') ? 'set-hd' : 'set';
+                        else if (cName.includes('sab')) id = cName.includes('hd') ? 'sab-hd' : 'sab';
+                        else if (cName.includes('max 2')) id = 'max2';
+                        else if (cName.includes('max')) id = cName.includes('hd') ? 'max-hd' : 'max';
+                        else if (cName.includes('pix')) id = cName.includes('hd') ? 'pix-hd' : 'pix';
+                        else if (cName.includes('marathi')) id = 'marathi';
+                        else if (cName.includes('pal')) id = 'pal';
+                        else if (cName.includes('aath')) id = 'aath';
+                        else if (cName.includes('yay')) id = 'yay';
+                        else if (cName.includes('earth')) id = 'earth-hd';
+                        else if (cName.includes('wah')) id = 'wah';
+                    }
+
+                    // Fix Ten 5 HD Akamai CDN failover path if needed
+                    if (id === 'ten5-hd' && streamUrl.includes('2020593/TEN5HD/')) {
+                        streamUrl = streamUrl.replace('2020593/TEN5HD/', '2020593/SONYSIXHD/');
+                    }
+
+                    if (id && streamUrl) {
                         channels.push({
-                            id: idMatch[1].trim(),
-                            name: name,
+                            id: id,
+                            name: rawName || (nameMatch ? nameMatch[1] : id),
                             raw_url: streamUrl,
                             proxied_url: 'https://asp1.lovable.app/api/proxy?u=' + encodeURIComponent(streamUrl),
-                            backup_proxied_url: 'https://asp1.lovable.app/api/proxy?u=' + encodeURIComponent(streamUrl)
+                            backup_proxied_url: 'https://stream-through-spark.lovable.app/api/proxy?u=' + encodeURIComponent(streamUrl)
                         });
                     }
                 }
