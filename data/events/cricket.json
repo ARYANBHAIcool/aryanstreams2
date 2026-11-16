@@ -1,13 +1,33 @@
 {
-  "last_updated": "11/16/2026, 7:16:43 PM IST",
+  "last_updated": "11/17/2026, 4:44:04 AM IST",
   "source": "AryanStreams Official Feed",
   "events": [
+    {
+      "id": "14559",
+      "title": "Pakistan vs Sri Lanka",
+      "slug": "pakistan-vs-sri-lanka",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "ICC World Test Championship",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18833/image/dark",
+        "teamA": "Pakistan",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/187754/image",
+        "teamB": "Sri Lanka",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/187756/image",
+        "startTimeIST": "2026-11-17 10:00:53 IST",
+        "endTimeIST": "2026-11-17 18:30:58 IST"
+      },
+      "streams": []
+    },
     {
       "id": "14072",
       "title": "Afghanistan vs Zimbabwe",
       "slug": "afghanistan-vs-zimbabwe",
       "cat": "Live Events",
-      "status": "live",
+      "status": "upcoming",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
@@ -17,8 +37,8 @@
         "teamAFlag": "https://img.sofascore.com/api/v1/team/187575/image",
         "teamB": "Zimbabwe",
         "teamBFlag": "https://img.sofascore.com/api/v1/team/187745/image",
-        "startTimeIST": "2026-11-16 11:30:57 IST",
-        "endTimeIST": "2026-11-16 19:30:01 IST"
+        "startTimeIST": "2026-11-17 11:30:48 IST",
+        "endTimeIST": "2026-11-17 19:30:51 IST"
       },
       "streams": [
         {
@@ -52,11 +72,46 @@
       ]
     },
     {
+      "id": "14261",
+      "title": "NPL Nepal Premier League",
+      "slug": "npl-nepal-premier-league",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "Nepal Premier League T20",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
+        "teamA": "NPL",
+        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
+        "teamB": "NPL",
+        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
+        "startTimeIST": "2026-11-17 12:15:36 IST",
+        "endTimeIST": "2026-11-17 16:30:40 IST"
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "FANCODE - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/b3b3fkmrbl/out/v1/1084d5c9a97a4c5b9f9554c88f486646/cenc.mpd",
+          "api": "82dfca238e8c4b430a3269db71965db9:a00b28caf4ac628e77a553d440c0ddca"
+        },
+        {
+          "id": 2,
+          "title": "FANCODE - IN",
+          "type": "0",
+          "link": "https://in-mc-flive.fancode.com/mumbai/4250376_english_hls_06f8df790c25388_1ta-di_h264/1080p.m3u8?hdntl=Expires=1794551600~_GO=Generated~acl=/mumbai/4250376_english_hls_06f8df790c25388_1ta-di_h264/*~SessionID=20fde653298ae09b1231e2c94877ae9f_playbox_845100cd-5fdc-46~Signature=AbO9BjgfyL-FpZ7spkiG2wk2QQTC6UB2OHU7ZKlNcQy4HU3FoWFjTUucHLaPgIbX7QFpbRGK2lYv32eBx3NUFzpDLlIG",
+          "api": ""
+        }
+      ]
+    },
+    {
       "id": "14851",
       "title": "South Africa vs Bangladesh",
       "slug": "south-africa-vs-bangladesh",
       "cat": "Live Events",
-      "status": "live",
+      "status": "upcoming",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
@@ -66,8 +121,8 @@
         "teamAFlag": "https://img.sofascore.com/api/v1/team/187747/image",
         "teamB": "Bangladesh",
         "teamBFlag": "https://img.sofascore.com/api/v1/team/187744/image",
-        "startTimeIST": "2026-11-16 13:30:54 IST",
-        "endTimeIST": "2026-11-16 21:30:58 IST"
+        "startTimeIST": "2026-11-17 13:30:07 IST",
+        "endTimeIST": "2026-11-17 21:30:12 IST"
       },
       "streams": [
         {
@@ -110,117 +165,6 @@
           "title": "T SPORTS HD ",
           "type": "0",
           "link": "https://tvsen5.aynaott.com/TnMn5kZz8aLmjklkk/index.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": "14622",
-      "title": "Abu Dhabi T10 League",
-      "slug": "abu-dhabi-t10-league",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "Abu Dhabi T10 League",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
-        "teamA": "Abu Dhabi T10",
-        "teamAFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
-        "teamB": "Abu Dhabi T10",
-        "teamBFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
-        "startTimeIST": "2026-11-16 19:15:42 IST",
-        "endTimeIST": "2026-11-16 23:25:46 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "WILLOW - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/a80vkhambt/out/v1/6e7ce96f23d14ebba16e2f54aac8323d/cenc.mpd",
-          "api": "8f6af65e6fd5fe9b2fa7510de69e492a:61921d1e73c2f0870d3f3e7d09f8bbb6"
-        },
-        {
-          "id": 2,
-          "title": "PREMIER SPORTS - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/bcj3iscpd6/out/v1/fcd137b391214f7cb99dd4d7be90ca87/cenc.mpd",
-          "api": "1a5df53609ebc9857898c490f4724918:77f62980d582ec541280796acf8b2d19"
-        },
-        {
-          "id": 3,
-          "title": "WILLOW - ALT",
-          "type": "7",
-          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/a80vkhambt/out/v1/6e7ce96f23d14ebba16e2f54aac8323d/cenc.mpd",
-          "api": "8f6af65e6fd5fe9b2fa7510de69e492a:61921d1e73c2f0870d3f3e7d09f8bbb6"
-        },
-        {
-          "id": 4,
-          "title": "A SPORTS HD",
-          "type": "0",
-          "link": "https://live.msnetworks.net/a-sports/master.m3u8",
-          "api": ""
-        },
-        {
-          "id": 5,
-          "title": "MYCO HD",
-          "type": "0",
-          "link": "https://ml-pull-rtmp-pk1.myco.io/SRT/hls/index.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": "14559",
-      "title": "Pakistan vs Sri Lanka",
-      "slug": "pakistan-vs-sri-lanka",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "ICC World Test Championship",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18833/image/dark",
-        "teamA": "Pakistan",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/187754/image",
-        "teamB": "Sri Lanka",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/187756/image",
-        "startTimeIST": "2026-11-17 10:00:53 IST",
-        "endTimeIST": "2026-11-17 18:30:58 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "14261",
-      "title": "NPL Nepal Premier League",
-      "slug": "npl-nepal-premier-league",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "Nepal Premier League T20",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
-        "teamA": "NPL",
-        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
-        "teamB": "NPL",
-        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0kwOfn0swttbdChYr5KGVFVY-XuUO6nrYQ&s",
-        "startTimeIST": "2026-11-17 12:15:36 IST",
-        "endTimeIST": "2026-11-17 16:30:40 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "FANCODE - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/b3b3fkmrbl/out/v1/1084d5c9a97a4c5b9f9554c88f486646/cenc.mpd",
-          "api": "82dfca238e8c4b430a3269db71965db9:a00b28caf4ac628e77a553d440c0ddca"
-        },
-        {
-          "id": 2,
-          "title": "FANCODE - IN",
-          "type": "0",
-          "link": "https://in-mc-flive.fancode.com/mumbai/4250376_english_hls_06f8df790c25388_1ta-di_h264/1080p.m3u8?hdntl=Expires=1794551600~_GO=Generated~acl=/mumbai/4250376_english_hls_06f8df790c25388_1ta-di_h264/*~SessionID=20fde653298ae09b1231e2c94877ae9f_playbox_845100cd-5fdc-46~Signature=AbO9BjgfyL-FpZ7spkiG2wk2QQTC6UB2OHU7ZKlNcQy4HU3FoWFjTUucHLaPgIbX7QFpbRGK2lYv32eBx3NUFzpDLlIG",
           "api": ""
         }
       ]
@@ -480,6 +424,21 @@
       "dashStreams": []
     },
     {
+      "id": "B0HN4YZC61",
+      "title": "Abu Dhabi T10 League 2026 - 24th Match - Yas Lions vs Arabian Aces",
+      "slug": "abu-dhabi-t10-league-2026-24th-match-yas-lions-vs-arabian-aces",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "Abu Dhabi T10 League 2026 - 24th Match - Yas Lions vs Arabian Aces",
+        "category": "Cricket",
+        "teamA": "Team A",
+        "teamB": "Team B",
+        "startTimeIST": ""
+      },
+      "dashStreams": []
+    },
+    {
       "id": "B0HM4ZHT1F",
       "title": "India tour of New Zealand 2026 - 1st Test - New Zealand vs India",
       "slug": "india-tour-of-new-zealand-2026-1st-test-new-zealand-vs-india",
@@ -502,6 +461,21 @@
       "status": "live",
       "event": {
         "name": "ACC Mens Asia Cup Rising Stars 2026 - 1st Match - Bangladesh A vs Hong Kong, China",
+        "category": "Cricket",
+        "teamA": "Team A",
+        "teamB": "Team B",
+        "startTimeIST": ""
+      },
+      "dashStreams": []
+    },
+    {
+      "id": "B0HQZR6RMB",
+      "title": "England tour of Australia 2026 - 2nd T20I - Australia vs England",
+      "slug": "england-tour-of-australia-2026-2nd-t20i-australia-vs-england",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "England tour of Australia 2026 - 2nd T20I - Australia vs England",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",
