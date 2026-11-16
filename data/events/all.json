@@ -1,5 +1,5 @@
 {
-  "last_updated": "11/16/2026, 5:51:38 AM IST",
+  "last_updated": "11/16/2026, 12:46:06 PM IST",
   "source": "AryanStreams Official Feed",
   "football_count": 18,
   "cricket_count": 12,
@@ -369,7 +369,7 @@
       "title": "Afghanistan vs Zimbabwe",
       "slug": "afghanistan-vs-zimbabwe",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
@@ -387,15 +387,15 @@
           "id": 1,
           "title": "WILLOW - AQ",
           "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/6yweffzpen/out/v1/197dbda9339c436c95282a80d109cbd6/cenc.mpd",
-          "api": "5c58e89e55b6ca6b7155cc78c8e2300d:949c2c45b7bbfab1d09f7c9bb96e2e4c"
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/obarp6nvg5/out/v1/99d085ed0a6e40c58b53a53d7b823278/cenc.mpd",
+          "api": "b6745cf86849992016a18fa701bbe4c7:1868048f6a964c749f14fb2fc26788f4"
         },
         {
           "id": 2,
           "title": "WILLOW - ALT",
           "type": "7",
-          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/6yweffzpen/out/v1/197dbda9339c436c95282a80d109cbd6/cenc.mpd",
-          "api": "5c58e89e55b6ca6b7155cc78c8e2300d:949c2c45b7bbfab1d09f7c9bb96e2e4c"
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/obarp6nvg5/out/v1/99d085ed0a6e40c58b53a53d7b823278/cenc.mpd",
+          "api": "b6745cf86849992016a18fa701bbe4c7:1868048f6a964c749f14fb2fc26788f4"
         },
         {
           "id": 3,
@@ -499,8 +499,8 @@
           "id": 1,
           "title": "WILLOW - AQ",
           "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/mysvg9964s/out/v1/b7761cc505e84787832b2b55e90bbbf0/cenc.mpd",
-          "api": "b1f8a6b81514e5243cc85d00effcf384:697893a5e9dbc7916aedd1ac857737b2"
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/tll6uwepxa/out/v1/a7f67cbb33df46539312956427343886/cenc.mpd",
+          "api": "290e09c837da78d5cd961978d390515c:b748836c71e6a4ca68ef5b5652db6247"
         },
         {
           "id": 2,
@@ -531,6 +531,26 @@
           "api": "290e09c837da78d5cd961978d390515c:b748836c71e6a4ca68ef5b5652db6247"
         }
       ]
+    },
+    {
+      "id": "14622",
+      "title": "Abu Dhabi T10 League",
+      "slug": "abu-dhabi-t10-league",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "Abu Dhabi T10 League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
+        "teamA": "Abu Dhabi T10",
+        "teamAFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
+        "teamB": "Abu Dhabi T10",
+        "teamBFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
+        "startTimeIST": "2026-11-16 19:15:42 IST",
+        "endTimeIST": "2026-11-16 23:25:46 IST"
+      },
+      "streams": []
     },
     {
       "id": "14559",
@@ -770,21 +790,6 @@
       "status": "live",
       "event": {
         "name": "Womens Big Bash League 2026 - 24th Match - Sydney Thunder Women vs Melbourne Stars Women",
-        "category": "Cricket",
-        "teamA": "Team A",
-        "teamB": "Team B",
-        "startTimeIST": ""
-      },
-      "dashStreams": []
-    },
-    {
-      "id": "B0HQSL9QP7",
-      "title": "Abu Dhabi T10 League 2026 - 22nd Match - Arabian Aces vs United Tigers",
-      "slug": "abu-dhabi-t10-league-2026-22nd-match-arabian-aces-vs-united-tigers",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Abu Dhabi T10 League 2026 - 22nd Match - Arabian Aces vs United Tigers",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",
