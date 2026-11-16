@@ -1,8 +1,8 @@
 {
-  "last_updated": "11/16/2026, 5:16:49 AM IST",
+  "last_updated": "11/16/2026, 10:32:27 AM IST",
   "source": "AryanStreams Official Feed",
   "football_count": 18,
-  "cricket_count": 12,
+  "cricket_count": 15,
   "events": [
     {
       "id": "14988",
@@ -365,6 +365,62 @@
       "streams": []
     },
     {
+      "id": "15006",
+      "title": "Bangladesh Women vs Netherlands Women",
+      "slug": "bangladesh-women-vs-netherlands-women",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "Womens Emerging Nations Trophy",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/30714/image/dark",
+        "teamA": "Bangladesh Women",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/187809/image",
+        "teamB": "Netherlands Women",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/417753/image",
+        "startTimeIST": "2026-11-16 10:30:00 IST",
+        "endTimeIST": "2026-11-16 14:30:00 IST"
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "CRICFy LIVE",
+          "type": "0",
+          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+          "api": ""
+        }
+      ]
+    },
+    {
+      "id": "15007",
+      "title": "Zimbabwe Women vs Pakistan Women",
+      "slug": "zimbabwe-women-vs-pakistan-women",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "Womens Emerging Nations Trophy",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/30714/image/dark",
+        "teamA": "Zimbabwe Women",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/417062/image",
+        "teamB": "Pakistan Women",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/187808/image",
+        "startTimeIST": "2026-11-16 10:30:00 IST",
+        "endTimeIST": "2026-11-16 14:30:00 IST"
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "CRICFy LIVE",
+          "type": "0",
+          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+          "api": ""
+        }
+      ]
+    },
+    {
       "id": "14072",
       "title": "Afghanistan vs Zimbabwe",
       "slug": "afghanistan-vs-zimbabwe",
@@ -531,6 +587,66 @@
           "api": "290e09c837da78d5cd961978d390515c:b748836c71e6a4ca68ef5b5652db6247"
         }
       ]
+    },
+    {
+      "id": "15008",
+      "title": "Ireland Women vs Papua New Guinea Women",
+      "slug": "ireland-women-vs-papua-new-guinea-women",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "Womens Emerging Nations Trophy",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/30714/image/dark",
+        "teamA": "Ireland Women",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/213116/image",
+        "teamB": "Papua New Guinea Women",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/453165/image",
+        "startTimeIST": "2026-11-16 14:45:00 IST",
+        "endTimeIST": "2026-11-16 18:45:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "15009",
+      "title": "United Arab Emirates Women vs Sri Lanka Women",
+      "slug": "united-arab-emirates-women-vs-sri-lanka-women",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "Womens Emerging Nations Trophy",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/30714/image/dark",
+        "teamA": "United Arab Emirates Women",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/291494/image",
+        "teamB": "Sri Lanka Women",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/187806/image",
+        "startTimeIST": "2026-11-16 14:45:00 IST",
+        "endTimeIST": "2026-11-16 18:45:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": "14622",
+      "title": "Abu Dhabi T10 League",
+      "slug": "abu-dhabi-t10-league",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "Abu Dhabi T10 League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
+        "teamA": "Abu Dhabi T10",
+        "teamAFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
+        "teamB": "Abu Dhabi T10",
+        "teamBFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
+        "startTimeIST": "2026-11-16 19:15:42 IST",
+        "endTimeIST": "2026-11-16 23:25:46 IST"
+      },
+      "streams": []
     },
     {
       "id": "14559",
@@ -770,36 +886,6 @@
       "status": "live",
       "event": {
         "name": "Womens Big Bash League 2026 - 24th Match - Sydney Thunder Women vs Melbourne Stars Women",
-        "category": "Cricket",
-        "teamA": "Team A",
-        "teamB": "Team B",
-        "startTimeIST": ""
-      },
-      "dashStreams": []
-    },
-    {
-      "id": "B0HQSL9QP7",
-      "title": "Abu Dhabi T10 League 2026 - 22nd Match - Arabian Aces vs United Tigers",
-      "slug": "abu-dhabi-t10-league-2026-22nd-match-arabian-aces-vs-united-tigers",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Abu Dhabi T10 League 2026 - 22nd Match - Arabian Aces vs United Tigers",
-        "category": "Cricket",
-        "teamA": "Team A",
-        "teamB": "Team B",
-        "startTimeIST": ""
-      },
-      "dashStreams": []
-    },
-    {
-      "id": "B0HKZY847Z",
-      "title": "Sri Lanka tour of Pakistan 2026 - 2nd Test - Pakistan vs Sri Lanka",
-      "slug": "sri-lanka-tour-of-pakistan-2026-2nd-test-pakistan-vs-sri-lanka",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Sri Lanka tour of Pakistan 2026 - 2nd Test - Pakistan vs Sri Lanka",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",
