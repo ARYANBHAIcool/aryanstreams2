@@ -1,15 +1,15 @@
 {
-  "last_updated": "11/16/2026, 10:32:27 AM IST",
+  "last_updated": "11/16/2026, 7:16:43 PM IST",
   "source": "AryanStreams Official Feed",
-  "football_count": 18,
-  "cricket_count": 15,
+  "football_count": 19,
+  "cricket_count": 12,
   "events": [
     {
       "id": "14988",
       "title": "Namibia vs Cameroon",
       "slug": "namibia-vs-cameroon",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -22,14 +22,50 @@
         "startTimeIST": "2026-11-16 18:30:00 IST",
         "endTimeIST": "2026-11-16 20:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "beIN ENGLISH - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/8m8cd46i1t/out/v1/83985c68e4174e90a58a1f2c024be4c9/cenc.mpd?",
+          "api": "0b42be2664d7e811d04f3e504e0924c5:ae24090123b8c72ac5404dc152847cb8"
+        },
+        {
+          "id": 2,
+          "title": "beIN SPANISH - AQ",
+          "type": "7",
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/e3ozww2yny/out/v1/3a16d07c2cc0444bb8ea10d0483d1ced/cenc.mpd?",
+          "api": "74cbe15488783fab07ff8c702fabafcd:bb607803a49c2d6104f845e7886c971c"
+        },
+        {
+          "id": 3,
+          "title": "CRICFy LIVE ",
+          "type": "0",
+          "link": "https://live.vivo155.com/live/sd-1-4642753.m3u8?txSecret=00b587ac33c841d2722a2386a8c4797d&txTime=6AFB0F38",
+          "api": ""
+        },
+        {
+          "id": 4,
+          "title": "HD SERVER",
+          "type": "0",
+          "link": "https://pulltx.cqsycw.com/live/sd-6MxjZAMSg74BfakUkv.m3u8?txSecret=b2a4f7f1f89b139fc80b137e85f9b1ce&txTime=6AFB02C4&sid=0Jli-uEPe4n1ebmY4AcQiOi4X6ovPV-g11VLSs_q9Ca0fLEXiLhmb08tCZO8CP7F",
+          "api": ""
+        },
+        {
+          "id": 5,
+          "title": "CRICFy FAST",
+          "type": "0",
+          "link": "https://www.rtmpcdn.com/live/3687a186-2d01-489c-8886-91214acf5d08.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14989",
       "title": "Sudan vs Senegal",
       "slug": "sudan-vs-senegal",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -42,14 +78,50 @@
         "startTimeIST": "2026-11-16 18:30:00 IST",
         "endTimeIST": "2026-11-16 20:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "beIN ENGLISH - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/q4u5nwaogz/out/v1/18de6d3e65934f3a8de4358e69eab86c/cenc.mpd",
+          "api": "7995c724a13748ed970840a8ab5bb9b3:67bdaf1e2175b9ff682fcdf0e2354b1e"
+        },
+        {
+          "id": 2,
+          "title": "beIN SPORTS - AQ",
+          "type": "7",
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/katdnhkzqv/out/v1/2469724fa7754a4da6861d8ba80de958/cenc.mpd?",
+          "api": "27759a440e8ad821b800b3de00cd5851:1b8743adee559f27845f55e8b4d639fe"
+        },
+        {
+          "id": 3,
+          "title": "CRICFy LIVE ",
+          "type": "0",
+          "link": "https://live.vivo155.com/live/sd-1-4642756.m3u8?txSecret=6f2c96c763cfae8803e1c997e01da3aa&txTime=6AFB0F04",
+          "api": ""
+        },
+        {
+          "id": 4,
+          "title": "HD SERVER ",
+          "type": "0",
+          "link": "https://pulltx.cqsycw.com/live/sd-6MxjZAMSgJ3b1yt4XQ.m3u8?txSecret=08089cd70fa8adcbd893300259b44897&txTime=6AFB0288&sid=0Jli-uEPe4n1ebmY4AcQiBBFeyByUsFd0T-athKIktdLVF4PhrSDNvjKyD3aDsLL",
+          "api": ""
+        },
+        {
+          "id": 5,
+          "title": "CRICFy FAST",
+          "type": "0",
+          "link": "https://www.rtmpcdn.com/live/c5adcd15-1fdd-49eb-8740-c521addb78db.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14990",
       "title": "Zimbabwe vs Equatorial Guinea",
       "slug": "zimbabwe-vs-equatorial-guinea",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Football",
         "category": "Football",
@@ -62,7 +134,29 @@
         "startTimeIST": "2026-11-16 18:30:00 IST",
         "endTimeIST": "2026-11-16 20:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "beIN SPORTS - AQ",
+          "type": "7",
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/n7hbpksb18/out/v1/be5403be4a674a7da8b3c81b1fe79692/cenc.mpd?",
+          "api": "4fce30c060b7b0464ab765e24fee5ecc:65d612238736eec3794c7e75a6fd362c"
+        },
+        {
+          "id": 2,
+          "title": "CRICFy LIVE",
+          "type": "0",
+          "link": "https://live.vivo155.com/live/sd-1-4642764.m3u8?txSecret=504fd65c5964a252965887e5696c5aee&txTime=6AFB0F59",
+          "api": ""
+        },
+        {
+          "id": 3,
+          "title": "HD SERVER",
+          "type": "0",
+          "link": "https://www.rtmpcdn.com/live/7006e7e6-d7d5-4606-919e-5eac410b4fd1.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14991",
@@ -325,6 +419,26 @@
       "streams": []
     },
     {
+      "id": "15010",
+      "title": "Canada vs Guatemala",
+      "slug": "canada-vs-guatemala",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Football",
+        "category": "Football",
+        "type": "CONCACAF Nations League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/14100/image/dark",
+        "teamA": "Canada",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4752/image",
+        "teamB": "Guatemala",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/5163/image",
+        "startTimeIST": "2026-11-17 06:30:00 IST",
+        "endTimeIST": "2026-11-17 08:50:00 IST"
+      },
+      "streams": []
+    },
+    {
       "id": "15004",
       "title": "Singapore vs Brazil",
       "slug": "singapore-vs-brazil",
@@ -365,67 +479,11 @@
       "streams": []
     },
     {
-      "id": "15006",
-      "title": "Bangladesh Women vs Netherlands Women",
-      "slug": "bangladesh-women-vs-netherlands-women",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "Womens Emerging Nations Trophy",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/30714/image/dark",
-        "teamA": "Bangladesh Women",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/187809/image",
-        "teamB": "Netherlands Women",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/417753/image",
-        "startTimeIST": "2026-11-16 10:30:00 IST",
-        "endTimeIST": "2026-11-16 14:30:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "CRICFy LIVE",
-          "type": "0",
-          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": "15007",
-      "title": "Zimbabwe Women vs Pakistan Women",
-      "slug": "zimbabwe-women-vs-pakistan-women",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "Womens Emerging Nations Trophy",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/30714/image/dark",
-        "teamA": "Zimbabwe Women",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/417062/image",
-        "teamB": "Pakistan Women",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/187808/image",
-        "startTimeIST": "2026-11-16 10:30:00 IST",
-        "endTimeIST": "2026-11-16 14:30:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "CRICFy LIVE",
-          "type": "0",
-          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
       "id": "14072",
       "title": "Afghanistan vs Zimbabwe",
       "slug": "afghanistan-vs-zimbabwe",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
@@ -443,15 +501,15 @@
           "id": 1,
           "title": "WILLOW - AQ",
           "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/6yweffzpen/out/v1/197dbda9339c436c95282a80d109cbd6/cenc.mpd",
-          "api": "5c58e89e55b6ca6b7155cc78c8e2300d:949c2c45b7bbfab1d09f7c9bb96e2e4c"
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/obarp6nvg5/out/v1/99d085ed0a6e40c58b53a53d7b823278/cenc.mpd",
+          "api": "b6745cf86849992016a18fa701bbe4c7:1868048f6a964c749f14fb2fc26788f4"
         },
         {
           "id": 2,
           "title": "WILLOW - ALT",
           "type": "7",
-          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/6yweffzpen/out/v1/197dbda9339c436c95282a80d109cbd6/cenc.mpd",
-          "api": "5c58e89e55b6ca6b7155cc78c8e2300d:949c2c45b7bbfab1d09f7c9bb96e2e4c"
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/obarp6nvg5/out/v1/99d085ed0a6e40c58b53a53d7b823278/cenc.mpd",
+          "api": "b6745cf86849992016a18fa701bbe4c7:1868048f6a964c749f14fb2fc26788f4"
         },
         {
           "id": 3,
@@ -474,7 +532,7 @@
       "title": "South Africa vs Bangladesh",
       "slug": "south-africa-vs-bangladesh",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
@@ -492,8 +550,8 @@
           "id": 1,
           "title": "WILLOW - AQ",
           "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/vmsojksiyc/out/v1/5d915e7f388946c09ed9d07fd40f9f96/cenc.mpd",
-          "api": "3d872367d3ff927c4abf0198dfeb01d2:47945393588cf479b728df327f3bef53"
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/wuqectjbqg/out/v1/55f113daf3c1409eb2623e1f921d421c/cenc.mpd",
+          "api": "6597902f04582f5e30cf281d4d86cecb:85d06b34717eae4d10f7a52abdeafe97"
         },
         {
           "id": 2,
@@ -513,8 +571,8 @@
           "id": 4,
           "title": "WILLOW - ALT",
           "type": "7",
-          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/vmsojksiyc/out/v1/5d915e7f388946c09ed9d07fd40f9f96/cenc.mpd",
-          "api": "3d872367d3ff927c4abf0198dfeb01d2:47945393588cf479b728df327f3bef53"
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/wuqectjbqg/out/v1/55f113daf3c1409eb2623e1f921d421c/cenc.mpd",
+          "api": "6597902f04582f5e30cf281d4d86cecb:85d06b34717eae4d10f7a52abdeafe97"
         },
         {
           "id": 5,
@@ -533,107 +591,11 @@
       ]
     },
     {
-      "id": "14882",
-      "title": "WBBL Women Big Bash League",
-      "slug": "bbl-women-big-bash-league",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "Women's Big Bash League",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
-        "teamA": "WBBL",
-        "teamAFlag": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
-        "teamB": "WBBL",
-        "teamBFlag": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
-        "startTimeIST": "2026-11-16 13:40:29 IST",
-        "endTimeIST": "2026-11-16 17:30:34 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "WILLOW - AQ",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/mysvg9964s/out/v1/b7761cc505e84787832b2b55e90bbbf0/cenc.mpd",
-          "api": "b1f8a6b81514e5243cc85d00effcf384:697893a5e9dbc7916aedd1ac857737b2"
-        },
-        {
-          "id": 2,
-          "title": "SKY CRICKET - AQ",
-          "type": "0",
-          "link": "https://bl.rutube.ru/livestream/7c13a51576b9ff2601f08f5d57dd5169/index.m3u8?s=uiXES2ePt7xTpQnbJxn7Dg&e=2074684474&scheme=https",
-          "api": ""
-        },
-        {
-          "id": 3,
-          "title": "WILLOW - ALT",
-          "type": "7",
-          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/mysvg9964s/out/v1/b7761cc505e84787832b2b55e90bbbf0/cenc.mpd",
-          "api": "b1f8a6b81514e5243cc85d00effcf384:697893a5e9dbc7916aedd1ac857737b2"
-        },
-        {
-          "id": 4,
-          "title": "TAPMAD - AQ",
-          "type": "0",
-          "link": "https://tencent-cdn.tapmad.com/v1/01a14ab8af8915fc600b1e3e9683f0/01a14ab953dd1ea540a81c2b41b75f/main.m3u8?",
-          "api": ""
-        },
-        {
-          "id": 5,
-          "title": "WILLOW HD",
-          "type": "7",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/tll6uwepxa/out/v1/a7f67cbb33df46539312956427343886/cenc.mpd",
-          "api": "290e09c837da78d5cd961978d390515c:b748836c71e6a4ca68ef5b5652db6247"
-        }
-      ]
-    },
-    {
-      "id": "15008",
-      "title": "Ireland Women vs Papua New Guinea Women",
-      "slug": "ireland-women-vs-papua-new-guinea-women",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "Womens Emerging Nations Trophy",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/30714/image/dark",
-        "teamA": "Ireland Women",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/213116/image",
-        "teamB": "Papua New Guinea Women",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/453165/image",
-        "startTimeIST": "2026-11-16 14:45:00 IST",
-        "endTimeIST": "2026-11-16 18:45:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": "15009",
-      "title": "United Arab Emirates Women vs Sri Lanka Women",
-      "slug": "united-arab-emirates-women-vs-sri-lanka-women",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Cricket",
-        "category": "Cricket",
-        "type": "Womens Emerging Nations Trophy",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/30714/image/dark",
-        "teamA": "United Arab Emirates Women",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/291494/image",
-        "teamB": "Sri Lanka Women",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/187806/image",
-        "startTimeIST": "2026-11-16 14:45:00 IST",
-        "endTimeIST": "2026-11-16 18:45:00 IST"
-      },
-      "streams": []
-    },
-    {
       "id": "14622",
       "title": "Abu Dhabi T10 League",
       "slug": "abu-dhabi-t10-league",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
@@ -646,7 +608,43 @@
         "startTimeIST": "2026-11-16 19:15:42 IST",
         "endTimeIST": "2026-11-16 23:25:46 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/a80vkhambt/out/v1/6e7ce96f23d14ebba16e2f54aac8323d/cenc.mpd",
+          "api": "8f6af65e6fd5fe9b2fa7510de69e492a:61921d1e73c2f0870d3f3e7d09f8bbb6"
+        },
+        {
+          "id": 2,
+          "title": "PREMIER SPORTS - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/bcj3iscpd6/out/v1/fcd137b391214f7cb99dd4d7be90ca87/cenc.mpd",
+          "api": "1a5df53609ebc9857898c490f4724918:77f62980d582ec541280796acf8b2d19"
+        },
+        {
+          "id": 3,
+          "title": "WILLOW - ALT",
+          "type": "7",
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/a80vkhambt/out/v1/6e7ce96f23d14ebba16e2f54aac8323d/cenc.mpd",
+          "api": "8f6af65e6fd5fe9b2fa7510de69e492a:61921d1e73c2f0870d3f3e7d09f8bbb6"
+        },
+        {
+          "id": 4,
+          "title": "A SPORTS HD",
+          "type": "0",
+          "link": "https://live.msnetworks.net/a-sports/master.m3u8",
+          "api": ""
+        },
+        {
+          "id": 5,
+          "title": "MYCO HD",
+          "type": "0",
+          "link": "https://ml-pull-rtmp-pk1.myco.io/SRT/hls/index.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14559",
@@ -700,6 +698,55 @@
           "type": "0",
           "link": "https://in-mc-flive.fancode.com/mumbai/4250376_english_hls_06f8df790c25388_1ta-di_h264/1080p.m3u8?hdntl=Expires=1794551600~_GO=Generated~acl=/mumbai/4250376_english_hls_06f8df790c25388_1ta-di_h264/*~SessionID=20fde653298ae09b1231e2c94877ae9f_playbox_845100cd-5fdc-46~Signature=AbO9BjgfyL-FpZ7spkiG2wk2QQTC6UB2OHU7ZKlNcQy4HU3FoWFjTUucHLaPgIbX7QFpbRGK2lYv32eBx3NUFzpDLlIG",
           "api": ""
+        }
+      ]
+    },
+    {
+      "id": "14882",
+      "title": "WBBL Women Big Bash League",
+      "slug": "bbl-women-big-bash-league",
+      "cat": "Live Events",
+      "status": "upcoming",
+      "event": {
+        "name": "Cricket",
+        "category": "Cricket",
+        "type": "Women's Big Bash League",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
+        "teamA": "WBBL",
+        "teamAFlag": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
+        "teamB": "WBBL",
+        "teamBFlag": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
+        "startTimeIST": "2026-11-17 13:40:39 IST",
+        "endTimeIST": "2026-11-17 17:30:43 IST"
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/ybyaz2dp7v/out/v1/e662810efd6a41689af68291d4c318c4/cenc.mpd",
+          "api": "93e19c6b590f07c3b9ba8fed76a01b61:f893d5d988d7649ba856dfc1269710ba"
+        },
+        {
+          "id": 2,
+          "title": "WILLOW - ALT",
+          "type": "7",
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/ybyaz2dp7v/out/v1/e662810efd6a41689af68291d4c318c4/cenc.mpd",
+          "api": "93e19c6b590f07c3b9ba8fed76a01b61:f893d5d988d7649ba856dfc1269710ba"
+        },
+        {
+          "id": 3,
+          "title": "TAPMAD - AQ",
+          "type": "0",
+          "link": "https://tencent-cdn.tapmad.com/v1/01a14ab8af8915fc600b1e3e9683f0/01a14ab953dd1ea540a81c2b41b75f/main.m3u8?",
+          "api": ""
+        },
+        {
+          "id": 4,
+          "title": "WILLOW HD",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/tll6uwepxa/out/v1/a7f67cbb33df46539312956427343886/cenc.mpd",
+          "api": "290e09c837da78d5cd961978d390515c:b748836c71e6a4ca68ef5b5652db6247"
         }
       ]
     },
@@ -879,13 +926,28 @@
       ]
     },
     {
-      "id": "B0HMNYSGP8",
-      "title": "Womens Big Bash League 2026 - 24th Match - Sydney Thunder Women vs Melbourne Stars Women",
-      "slug": "womens-big-bash-league-2026-24th-match-sydney-thunder-women-vs-melbourne-stars-women",
+      "id": "B0HKZY847Z",
+      "title": "Sri Lanka tour of Pakistan 2026 - 2nd Test - Pakistan vs Sri Lanka",
+      "slug": "sri-lanka-tour-of-pakistan-2026-2nd-test-pakistan-vs-sri-lanka",
       "cat": "Live Events",
       "status": "live",
       "event": {
-        "name": "Womens Big Bash League 2026 - 24th Match - Sydney Thunder Women vs Melbourne Stars Women",
+        "name": "Sri Lanka tour of Pakistan 2026 - 2nd Test - Pakistan vs Sri Lanka",
+        "category": "Cricket",
+        "teamA": "Team A",
+        "teamB": "Team B",
+        "startTimeIST": ""
+      },
+      "dashStreams": []
+    },
+    {
+      "id": "B0HKV1DFSC",
+      "title": "Womens Big Bash League 2026 - 25th Match - Adelaide Strikers Women vs Sydney Sixers Women",
+      "slug": "womens-big-bash-league-2026-25th-match-adelaide-strikers-women-vs-sydney-sixers-women",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "Womens Big Bash League 2026 - 25th Match - Adelaide Strikers Women vs Sydney Sixers Women",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",
