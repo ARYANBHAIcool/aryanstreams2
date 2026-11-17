@@ -1161,12 +1161,43 @@
                         } catch(fce) {}
                     }
                     
+        var SONY_CHANNEL_BASES = {
+            'ten1-hd': 'https://dishmt.slivcdn.com/hls/live/2011747/TEN1HD/master.m3u8',
+            'ten1':    'https://dishmt.slivcdn.com/hls/live/2011739/TEN1SD/master.m3u8',
+            'ten2-hd': 'https://dishmt.slivcdn.com/hls/live/2020434/TEN2HD/master.m3u8',
+            'ten2':    'https://dishmt.slivcdn.com/hls/live/2020590/TEN2SD/master.m3u8',
+            'ten3-hd': 'https://dishmt.slivcdn.com/hls/live/2020591/TEN3HD/master.m3u8',
+            'ten3':    'https://dishmt.slivcdn.com/hls/live/2020592/TEN3SD/master.m3u8',
+            'ten4-hd': 'https://dishmt.slivcdn.com/hls/live/2020589/ten4hd/master.m3u8',
+            'ten4':    'https://dishmt.slivcdn.com/hls/live/2020589/ten4hd/master.m3u8',
+            'ten4-tamil': 'https://dishmt.slivcdn.com/hls/live/2020437/ten4sd/master.m3u8',
+            'ten5-hd': 'https://dishmt.slivcdn.com/hls/live/2020593/SONYSIXHD/master.m3u8',
+            'ten5':    'https://dishmt.slivcdn.com/hls/live/2020594/SONYSIXSD/master.m3u8',
+            'set-hd':  'https://dishmt.slivcdn.com/hls/live/2011671/SETHD/master.m3u8',
+            'set':     'https://dishmt.slivcdn.com/hls/live/2011671/SETHD/master.m3u8',
+            'sab-hd':  'https://dishmt.slivcdn.com/hls/live/2011749/SABHD/master.m3u8',
+            'sab':     'https://dishmt.slivcdn.com/hls/live/2011749/SABHD/master.m3u8',
+            'max-hd':  'https://dishmt.slivcdn.com/hls/live/2011670/SonyMaxhd/master.m3u8',
+            'max':     'https://dishmt.slivcdn.com/hls/live/2011745/SonyMaxSD/master.m3u8',
+            'pix-hd':  'https://dishmt.slivcdn.com/hls/live/2011748/PIXHD/master.m3u8',
+            'pix':     'https://dishmt.slivcdn.com/hls/live/2011748/PIXHD/master.m3u8'
+        };
+
         async function getFreshSonyM3uUrl(m3uKey) {
             var proxyBase = 'https://asp1.lovable.app/api/proxy?u=';
             function isExpired(u) {
                 var m = String(u || '').match(/exp=(\d+)/i);
                 if (!m) return true;
-                return (Date.now() / 1000) > (parseInt(m[1], 10) - 600);
+                return (Date.now() / 1000) > (parseInt(m[1], 10) - 300);
+            }
+            function extractLiveToken(str) {
+                if (!str) return null;
+                var m = str.match(/(hdnea=exp=(\d+)[^"'\s&<>]+)/i) ||
+                        str.match(/(__hdnea__=st=\d+~exp=(\d+)[^"'\s&<>]+)/i);
+                if (!m) return null;
+                var exp = parseInt(m[2], 10);
+                if ((Date.now() / 1000) > (exp - 300)) return null;
+                return m[1];
             }
             // 1. Try local data/sony_m3u8.json
             try {
@@ -1179,34 +1210,23 @@
                     }
                 }
             } catch(e) {}
-            // 2. Fetch directly from GitHub autoupdate playlist
+            // 2. Fetch directly from multiple live JSON/M3U sources
             var sources = [
+                'https://raw.githubusercontent.com/sportlive18/Sonyliv-Playlist-Autoupdate/main/sonyliv.json',
+                'https://raw.githubusercontent.com/sportlive18/Sonyliv-Playlist-Autoupdate/main/sonyliv.m3u',
+                'https://raw.githubusercontent.com/sayanpal514-hue/SONYLIV-AUTO-UPDATED-PLAYLIST/main/sonyliv.json',
                 'https://raw.githubusercontent.com/sportlive18/Sonyliv-Playlist-Autoupdate/main/sony.m3u',
-                proxyBase + encodeURIComponent('https://raw.githubusercontent.com/sportlive18/Sonyliv-Playlist-Autoupdate/main/sony.m3u'),
-                proxyBase + encodeURIComponent('https://pastefy.app/6wOwFjlG/raw')
+                proxyBase + encodeURIComponent('https://raw.githubusercontent.com/sportlive18/Sonyliv-Playlist-Autoupdate/main/sonyliv.json')
             ];
             for (var sIdx = 0; sIdx < sources.length; sIdx++) {
                 try {
-                    var pRes = await fetch(sources[sIdx]);
+                    var pRes = await fetch(sources[sIdx], { cache: 'no-store' });
                     if (pRes.ok) {
                         var text = await pRes.text();
-                        var lines = text.split('\n');
-                        for (var i = 0; i < lines.length; i++) {
-                            if (lines[i].startsWith('#EXTINF:')) {
-                                var matches = lines[i].includes('tvg-id="' + m3uKey + '"') ||
-                                              lines[i].toLowerCase().includes(m3uKey.replace(/-/g, ' '));
-                                if (matches) {
-                                    for (var j = i + 1; j < lines.length; j++) {
-                                        var trimmed = lines[j].trim();
-                                        if (trimmed && !trimmed.startsWith('#') && trimmed.startsWith('http')) {
-                                            if (m3uKey === 'ten5-hd' && trimmed.includes('2020593/TEN5HD/')) {
-                                                trimmed = trimmed.replace('2020593/TEN5HD/', '2020593/SONYSIXHD/');
-                                            }
-                                            return proxyBase + encodeURIComponent(trimmed);
-                                        }
-                                    }
-                                }
-                            }
+                        var liveTok = extractLiveToken(text);
+                        if (liveTok) {
+                            var base = SONY_CHANNEL_BASES[m3uKey] || SONY_CHANNEL_BASES[m3uKey + '-hd'] || SONY_CHANNEL_BASES['ten1-hd'];
+                            return proxyBase + encodeURIComponent(base + '?' + liveTok);
                         }
                     }
                 } catch(pe) {}

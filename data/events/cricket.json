@@ -1,5 +1,5 @@
 {
-  "last_updated": "11/17/2026, 11:54:37 PM IST",
+  "last_updated": "11/18/2026, 2:14:32 AM IST",
   "source": "AryanStreams Official Feed",
   "events": [
     {
@@ -178,21 +178,6 @@
       ]
     },
     {
-      "id": "B0HLLR5WZX",
-      "title": "Abu Dhabi T10 League 2026 - 25th Match - UAE Bulls vs Royal Desert Champions",
-      "slug": "abu-dhabi-t10-league-2026-25th-match-uae-bulls-vs-royal-desert-champions",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Abu Dhabi T10 League 2026 - 25th Match - UAE Bulls vs Royal Desert Champions",
-        "category": "Cricket",
-        "teamA": "Team A",
-        "teamB": "Team B",
-        "startTimeIST": ""
-      },
-      "dashStreams": []
-    },
-    {
       "id": "B0HKZY847Z",
       "title": "Sri Lanka tour of Pakistan 2026 - 2nd Test - Pakistan vs Sri Lanka",
       "slug": "sri-lanka-tour-of-pakistan-2026-2nd-test-pakistan-vs-sri-lanka",
@@ -215,6 +200,21 @@
       "status": "live",
       "event": {
         "name": "Bangladesh tour of South Africa 2026 - 1st Test - South Africa vs Bangladesh",
+        "category": "Cricket",
+        "teamA": "Team A",
+        "teamB": "Team B",
+        "startTimeIST": ""
+      },
+      "dashStreams": []
+    },
+    {
+      "id": "B0HR1NL3KS",
+      "title": "Abu Dhabi T10 League 2026 - 26th Match - UAE Bulls vs United Tigers",
+      "slug": "abu-dhabi-t10-league-2026-26th-match-uae-bulls-vs-united-tigers",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "Abu Dhabi T10 League 2026 - 26th Match - UAE Bulls vs United Tigers",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",

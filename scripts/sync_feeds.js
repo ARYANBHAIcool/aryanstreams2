@@ -16,8 +16,39 @@ const WILLOW_SOURCES = [
 ];
 
 const SONY_M3U8_SOURCES = [
-    'https://raw.githubusercontent.com/sportlive18/Sonyliv-Playlist-Autoupdate/main/sony.m3u',
-    'https://pastefy.app/6wOwFjlG/raw'
+    'https://raw.githubusercontent.com/sportlive18/Sonyliv-Playlist-Autoupdate/main/sonyliv.json',
+    'https://raw.githubusercontent.com/sportlive18/Sonyliv-Playlist-Autoupdate/main/sonyliv.m3u',
+    'https://raw.githubusercontent.com/sayanpal514-hue/SONYLIV-AUTO-UPDATED-PLAYLIST/main/sonyliv.json',
+    'https://raw.githubusercontent.com/sayanpal514-hue/SONYLIV-AUTO-UPDATED-PLAYLIST/main/sonyliv.m3u',
+    'https://raw.githubusercontent.com/sportlive18/Sonyliv-Playlist-Autoupdate/main/sony.m3u'
+];
+
+const SONY_DISHMT_CHANNELS = [
+    { id: 'ten1-hd', name: 'Sony Sports 1 HD', base: 'https://dishmt.slivcdn.com/hls/live/2011747/TEN1HD/master.m3u8' },
+    { id: 'ten1',    name: 'Sony Sports 1',    base: 'https://dishmt.slivcdn.com/hls/live/2011739/TEN1SD/master.m3u8' },
+    { id: 'ten2-hd', name: 'Sony Sports 2 HD', base: 'https://dishmt.slivcdn.com/hls/live/2020434/TEN2HD/master.m3u8' },
+    { id: 'ten2',    name: 'Sony Sports 2',    base: 'https://dishmt.slivcdn.com/hls/live/2020590/TEN2SD/master.m3u8' },
+    { id: 'ten3-hd', name: 'Sony Sports 3 Hindi HD', base: 'https://dishmt.slivcdn.com/hls/live/2020591/TEN3HD/master.m3u8' },
+    { id: 'ten3',    name: 'Sony Sports 3 Hindi', base: 'https://dishmt.slivcdn.com/hls/live/2020592/TEN3SD/master.m3u8' },
+    { id: 'ten4-hd', name: 'Sony Sports 4 HD', base: 'https://dishmt.slivcdn.com/hls/live/2020589/ten4hd/master.m3u8' },
+    { id: 'ten4',    name: 'Sony Sports 4 Telugu', base: 'https://dishmt.slivcdn.com/hls/live/2020589/ten4hd/master.m3u8' },
+    { id: 'ten4-tamil', name: 'Sony Sports 4 Tamil', base: 'https://dishmt.slivcdn.com/hls/live/2020437/ten4sd/master.m3u8' },
+    { id: 'ten5-hd', name: 'Sony Sports 5 HD', base: 'https://dishmt.slivcdn.com/hls/live/2020593/SONYSIXHD/master.m3u8' },
+    { id: 'ten5',    name: 'Sony Sports 5', base: 'https://dishmt.slivcdn.com/hls/live/2020594/SONYSIXSD/master.m3u8' },
+    { id: 'set-hd',  name: 'Sony Entertainment Television HD', base: 'https://dishmt.slivcdn.com/hls/live/2011671/SETHD/master.m3u8' },
+    { id: 'set',     name: 'Sony Entertainment Television', base: 'https://dishmt.slivcdn.com/hls/live/2011671/SETHD/master.m3u8' },
+    { id: 'sab-hd',  name: 'Sony SAB HD', base: 'https://dishmt.slivcdn.com/hls/live/2011749/SABHD/master.m3u8' },
+    { id: 'sab',     name: 'Sony SAB', base: 'https://dishmt.slivcdn.com/hls/live/2011749/SABHD/master.m3u8' },
+    { id: 'max-hd',  name: 'Sony MAX HD', base: 'https://dishmt.slivcdn.com/hls/live/2011670/SonyMaxhd/master.m3u8' },
+    { id: 'max',     name: 'Sony MAX', base: 'https://dishmt.slivcdn.com/hls/live/2011745/SonyMaxSD/master.m3u8' },
+    { id: 'max2',    name: 'Sony MAX 2', base: 'https://dishmt.slivcdn.com/hls/live/2011908/MAX2/master.m3u8' },
+    { id: 'pix-hd',  name: 'Sony PIX HD', base: 'https://dishmt.slivcdn.com/hls/live/2011748/PIXHD/master.m3u8' },
+    { id: 'earth-hd',name: 'Sony BBC Earth HD', base: 'https://dishmt.slivcdn.com/hls/live/2011907/SonyBBCEarthHD/master.m3u8' },
+    { id: 'pal',     name: 'Sony PAL', base: 'https://dishmt.slivcdn.com/hls/live/2011741/SonyPalSD/master.m3u8' },
+    { id: 'wah',     name: 'Sony WAH', base: 'https://dishmt.slivcdn.com/hls/live/2011906/SonyWah/master.m3u8' },
+    { id: 'yay',     name: 'Sony YAY !!', base: 'https://dishmt.slivcdn.com/hls/live/2011746/SonyYaySD/master.m3u8' },
+    { id: 'marathi', name: 'Sony Marathi !!', base: 'https://dishmt.slivcdn.com/hls/live/2011740/SonyMarathi/master.m3u8' },
+    { id: 'aath',    name: 'Sony AATH', base: 'https://dishmt.slivcdn.com/hls/live/2011641/SonyAathSD/master.m3u8' }
 ];
 
 const JIO_MAP = {
@@ -875,72 +906,113 @@ async function syncWillow() {
 
 async function syncSonyM3U8() {
     console.log('🔄 Syncing Sony Liv Direct M3U8 Feeds (Universal iOS & PC)...');
+
+    function extractLiveToken(str) {
+        if (!str) return null;
+        const m = String(str).match(/(hdnea=exp=(\d+)[^"'\s&<>]+)/i);
+        if (m && m[2]) {
+            const expSec = parseInt(m[2], 10);
+            if ((Date.now() / 1000) < (expSec - 300)) {
+                return m[1];
+            }
+        }
+        return null;
+    }
+
     for (const src of SONY_M3U8_SOURCES) {
         try {
             console.log(`Fetching Sony M3U8 from: ${src}`);
             const body = await fetchEndpoint(src);
-            const lines = body.split('\n');
+            const liveToken = extractLiveToken(body);
             const channels = [];
-            
-            for (let i = 0; i < lines.length; i++) {
-                if (lines[i].startsWith('#EXTINF:')) {
-                    const idMatch = lines[i].match(/tvg-id="([^"]+)"/);
-                    const nameMatch = lines[i].match(/tvg-name="([^"]+)"/);
-                    const nameParts = lines[i].split(',');
-                    const rawName = nameParts.length > 1 ? nameParts[1].trim() : (nameMatch ? nameMatch[1].trim() : '');
-                    let streamUrl = '';
-                    for (let j = i + 1; j < lines.length; j++) {
-                        const trimmed = lines[j].trim();
-                        if (trimmed && !trimmed.startsWith('#')) {
-                            streamUrl = trimmed;
-                            break;
+
+            if (src.endsWith('.m3u')) {
+                const lines = body.split('\n');
+                for (let i = 0; i < lines.length; i++) {
+                    if (lines[i].startsWith('#EXTINF:')) {
+                        const idMatch = lines[i].match(/tvg-id="([^"]+)"/);
+                        const nameMatch = lines[i].match(/tvg-name="([^"]+)"/);
+                        const nameParts = lines[i].split(',');
+                        const rawName = nameParts.length > 1 ? nameParts[1].trim() : (nameMatch ? nameMatch[1].trim() : '');
+                        let streamUrl = '';
+                        for (let j = i + 1; j < lines.length; j++) {
+                            const trimmed = lines[j].trim();
+                            if (trimmed && !trimmed.startsWith('#')) {
+                                streamUrl = trimmed;
+                                break;
+                            }
                         }
-                    }
-                    if (!streamUrl) continue;
+                        if (!streamUrl) continue;
 
-                    let id = idMatch ? idMatch[1].trim() : '';
-                    const cName = ((nameMatch ? nameMatch[1] : '') + ' ' + rawName).toLowerCase();
-                    if (!id) {
-                        if (cName.includes('sports 1') || cName.includes('ten 1') || cName.includes('ten1')) id = cName.includes('hd') ? 'ten1-hd' : 'ten1';
-                        else if (cName.includes('sports 2') || cName.includes('ten 2') || cName.includes('ten2')) id = cName.includes('hd') ? 'ten2-hd' : 'ten2';
-                        else if (cName.includes('sports 3') || cName.includes('ten 3') || cName.includes('ten3')) id = cName.includes('hd') ? 'ten3-hd' : 'ten3';
-                        else if (cName.includes('sports 4') || cName.includes('ten 4') || cName.includes('ten4')) {
-                            if (cName.includes('telugu')) id = 'ten4';
-                            else if (cName.includes('tamil')) id = 'ten4-tamil';
-                            else id = 'ten4-hd';
+                        let id = idMatch ? idMatch[1].trim() : '';
+                        const cName = ((nameMatch ? nameMatch[1] : '') + ' ' + rawName).toLowerCase();
+                        if (!id) {
+                            if (cName.includes('sports 1') || cName.includes('ten 1') || cName.includes('ten1')) id = cName.includes('hd') ? 'ten1-hd' : 'ten1';
+                            else if (cName.includes('sports 2') || cName.includes('ten 2') || cName.includes('ten2')) id = cName.includes('hd') ? 'ten2-hd' : 'ten2';
+                            else if (cName.includes('sports 3') || cName.includes('ten 3') || cName.includes('ten3')) id = cName.includes('hd') ? 'ten3-hd' : 'ten3';
+                            else if (cName.includes('sports 4') || cName.includes('ten 4') || cName.includes('ten4')) {
+                                if (cName.includes('telugu')) id = 'ten4';
+                                else if (cName.includes('tamil')) id = 'ten4-tamil';
+                                else id = 'ten4-hd';
+                            }
+                            else if (cName.includes('sports 5') || cName.includes('ten 5') || cName.includes('six')) id = cName.includes('hd') ? 'ten5-hd' : 'ten5';
+                            else if (cName.includes('entertainment') || cName.includes('set')) id = cName.includes('hd') ? 'set-hd' : 'set';
+                            else if (cName.includes('sab')) id = cName.includes('hd') ? 'sab-hd' : 'sab';
+                            else if (cName.includes('max 2')) id = 'max2';
+                            else if (cName.includes('max')) id = cName.includes('hd') ? 'max-hd' : 'max';
+                            else if (cName.includes('pix')) id = cName.includes('hd') ? 'pix-hd' : 'pix';
+                            else if (cName.includes('marathi')) id = 'marathi';
+                            else if (cName.includes('pal')) id = 'pal';
+                            else if (cName.includes('aath')) id = 'aath';
+                            else if (cName.includes('yay')) id = 'yay';
+                            else if (cName.includes('earth')) id = 'earth-hd';
+                            else if (cName.includes('wah')) id = 'wah';
                         }
-                        else if (cName.includes('sports 5') || cName.includes('ten 5') || cName.includes('six')) id = cName.includes('hd') ? 'ten5-hd' : 'ten5';
-                        else if (cName.includes('entertainment') || cName.includes('set')) id = cName.includes('hd') ? 'set-hd' : 'set';
-                        else if (cName.includes('sab')) id = cName.includes('hd') ? 'sab-hd' : 'sab';
-                        else if (cName.includes('max 2')) id = 'max2';
-                        else if (cName.includes('max')) id = cName.includes('hd') ? 'max-hd' : 'max';
-                        else if (cName.includes('pix')) id = cName.includes('hd') ? 'pix-hd' : 'pix';
-                        else if (cName.includes('marathi')) id = 'marathi';
-                        else if (cName.includes('pal')) id = 'pal';
-                        else if (cName.includes('aath')) id = 'aath';
-                        else if (cName.includes('yay')) id = 'yay';
-                        else if (cName.includes('earth')) id = 'earth-hd';
-                        else if (cName.includes('wah')) id = 'wah';
-                    }
 
-                    // Fix Ten 5 HD Akamai CDN failover path if needed
-                    if (id === 'ten5-hd' && streamUrl.includes('2020593/TEN5HD/')) {
-                        streamUrl = streamUrl.replace('2020593/TEN5HD/', '2020593/SONYSIXHD/');
-                    }
+                        // Fix Ten 5 HD Akamai CDN failover path if needed
+                        if (id === 'ten5-hd' && streamUrl.includes('2020593/TEN5HD/')) {
+                            streamUrl = streamUrl.replace('2020593/TEN5HD/', '2020593/SONYSIXHD/');
+                        }
 
-                    if (id && streamUrl) {
-                        channels.push({
-                            id: id,
-                            name: rawName || (nameMatch ? nameMatch[1] : id),
-                            raw_url: streamUrl,
-                            proxied_url: 'https://asp1.lovable.app/api/proxy?u=' + encodeURIComponent(streamUrl),
-                            backup_proxied_url: 'https://stream-through-spark.lovable.app/api/proxy?u=' + encodeURIComponent(streamUrl)
-                        });
+                        // Refresh expired token with live token if available
+                        if (liveToken && (!streamUrl.includes('hdnea=exp=') || extractLiveToken(streamUrl) === null)) {
+                            streamUrl = streamUrl.split('?')[0] + '?' + liveToken;
+                        }
+
+                        if (id && streamUrl) {
+                            channels.push({
+                                id: id,
+                                name: rawName || (nameMatch ? nameMatch[1] : id),
+                                raw_url: streamUrl,
+                                proxied_url: 'https://asp1.lovable.app/api/proxy?u=' + encodeURIComponent(streamUrl),
+                                backup_proxied_url: 'https://stream-through-spark.lovable.app/api/proxy?u=' + encodeURIComponent(streamUrl)
+                            });
+                        }
                     }
                 }
             }
 
+            // If no channels parsed from M3U or JSON source, synthesize using universal liveToken & base map
+            if (channels.length === 0 && liveToken) {
+                for (const def of SONY_DISHMT_CHANNELS) {
+                    const fullUrl = def.base + '?' + liveToken;
+                    channels.push({
+                        id: def.id,
+                        name: def.name,
+                        raw_url: fullUrl,
+                        proxied_url: 'https://asp1.lovable.app/api/proxy?u=' + encodeURIComponent(fullUrl),
+                        backup_proxied_url: 'https://stream-through-spark.lovable.app/api/proxy?u=' + encodeURIComponent(fullUrl)
+                    });
+                }
+            }
+
             if (channels.length > 0) {
+                const sample = channels[0];
+                if (sample && extractLiveToken(sample.raw_url) === null && !liveToken) {
+                    console.log(`⚠️ Tokens in ${src} are expired. Trying next source...`);
+                    continue;
+                }
+
                 const dataDir = path.join(__dirname, '..', 'data');
                 if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
                 const filePath = path.join(dataDir, 'sony_m3u8.json');
