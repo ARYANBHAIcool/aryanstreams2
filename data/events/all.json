@@ -1,29 +1,9 @@
 {
-  "last_updated": "11/17/2026, 4:44:04 AM IST",
+  "last_updated": "11/17/2026, 10:37:31 AM IST",
   "source": "AryanStreams Official Feed",
-  "football_count": 3,
+  "football_count": 2,
   "cricket_count": 13,
   "events": [
-    {
-      "id": "15010",
-      "title": "Canada vs Guatemala",
-      "slug": "canada-vs-guatemala",
-      "cat": "Live Events",
-      "status": "upcoming",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "CONCACAF Nations League",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/14100/image/dark",
-        "teamA": "Canada",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4752/image",
-        "teamB": "Guatemala",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/5163/image",
-        "startTimeIST": "2026-11-17 06:30:00 IST",
-        "endTimeIST": "2026-11-17 08:50:00 IST"
-      },
-      "streams": []
-    },
     {
       "id": "15004",
       "title": "Singapore vs Brazil",
@@ -69,7 +49,7 @@
       "title": "Pakistan vs Sri Lanka",
       "slug": "pakistan-vs-sri-lanka",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
@@ -82,7 +62,43 @@
         "startTimeIST": "2026-11-17 10:00:53 IST",
         "endTimeIST": "2026-11-17 18:30:58 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW - AQ",
+          "type": "7",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/mg8j8enrjm/out/v1/709854ce369042edb21bbc912f26c2e3/cenc.mpd",
+          "api": "5e8ebd9181946fbaa6e3dbf57be1e08c:7ac65a50bd9833f40eb8d383a5bf2beb"
+        },
+        {
+          "id": 2,
+          "title": "WILLOW - ALT",
+          "type": "7",
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/mg8j8enrjm/out/v1/709854ce369042edb21bbc912f26c2e3/cenc.mpd",
+          "api": "5e8ebd9181946fbaa6e3dbf57be1e08c:7ac65a50bd9833f40eb8d383a5bf2beb"
+        },
+        {
+          "id": 3,
+          "title": "TAPMAD - AQ",
+          "type": "0",
+          "link": "https://multiregion-asia-cdn.tapmad.com/v1/01a1456f124d15fc600b1e3e9683d7/01a145990eba15fc60e91e1786b054/main.m3u8",
+          "api": ""
+        },
+        {
+          "id": 4,
+          "title": "PTV SPORTS HD",
+          "type": "0",
+          "link": "https://live.msnetworks.net/ptv-sports/master.m3u8",
+          "api": ""
+        },
+        {
+          "id": 5,
+          "title": "TAPMAD HD",
+          "type": "0",
+          "link": "https://tencent-cdn.tapmad.com/v1/01a1456f124d15fc600b1e3e9683d7/01a145990eba15fc60e91e1786b054/main.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": "14072",
