@@ -1,113 +1,13 @@
 {
-  "last_updated": "11/18/2026, 6:12:55 PM IST",
+  "last_updated": "11/19/2026, 2:37:38 AM IST",
   "source": "AryanStreams Official Feed",
   "events": [
-    {
-      "id": 1222,
-      "title": "BK Häcken FF vs Manchester City",
-      "slug": "BK-Häcken-FF-vs-Manchester-City",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "UEFA Women's Champions League",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/696/image/dark",
-        "teamA": "BK Häcken FF",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/1889/image",
-        "teamB": "Manchester City",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/142658/image",
-        "startTimeIST": "2026-11-18 23:15:00 IST",
-        "endTimeIST": "2026-11-19 01:35:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1223,
-      "title": "Real Madrid vs Inter",
-      "slug": "Real-Madrid-vs-Inter",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "UEFA Women's Champions League",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/696/image/dark",
-        "teamA": "Real Madrid",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/305051/image",
-        "teamB": "Inter",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/325685/image",
-        "startTimeIST": "2026-11-18 23:15:00 IST",
-        "endTimeIST": "2026-11-19 01:35:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1224,
-      "title": "Club Portugalete vs Real Unión Club",
-      "slug": "Club-Portugalete-vs-Real-Unión-Club",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "Copa del Rey",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/329/image/dark",
-        "teamA": "Club Portugalete",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/25403/image",
-        "teamB": "Real Unión Club",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2881/image",
-        "startTimeIST": "2026-11-18 23:30:00 IST",
-        "endTimeIST": "2026-11-19 01:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1225,
-      "title": "Utebo FC vs CE Sabadell",
-      "slug": "Utebo-FC-vs-CE-Sabadell",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "Copa del Rey",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/329/image/dark",
-        "teamA": "Utebo FC",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/212294/image",
-        "teamB": "CE Sabadell",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/24335/image",
-        "startTimeIST": "2026-11-18 23:30:00 IST",
-        "endTimeIST": "2026-11-19 01:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1229,
-      "title": "CD Alcoyano vs Mallorca",
-      "slug": "CD-Alcoyano-vs-Mallorca",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "Copa del Rey",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/329/image/dark",
-        "teamA": "CD Alcoyano",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/6585/image",
-        "teamB": "Mallorca",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2826/image",
-        "startTimeIST": "2026-11-19 00:30:00 IST",
-        "endTimeIST": "2026-11-19 02:50:00 IST"
-      },
-      "streams": []
-    },
     {
       "id": 1231,
       "title": "Deportiva Minera vs FC Cartagena",
       "slug": "Deportiva-Minera-vs-FC-Cartagena",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Copa del Rey",
         "category": "Football",
@@ -127,7 +27,7 @@
       "title": "Reus FC Reddis vs Barakaldo CF",
       "slug": "Reus-FC-Reddis-vs-Barakaldo-CF",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Copa del Rey",
         "category": "Football",
@@ -147,7 +47,7 @@
       "title": "Chelsea FC vs Paris Saint-Germain",
       "slug": "Chelsea-FC-vs-Paris-Saint-Germain",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "UEFA Women's Champions League",
         "category": "Football",
@@ -160,14 +60,36 @@
         "startTimeIST": "2026-11-19 01:30:00 IST",
         "endTimeIST": "2026-11-19 03:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "FANCODE FHD",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/b3b3fkmrbl/out/v1/1084d5c9a97a4c5b9f9554c88f486646/cenc.mpd",
+          "api": "82dfca238e8c4b430a3269db71965db9:a00b28caf4ac628e77a553d440c0ddca"
+        },
+        {
+          "id": 2,
+          "title": "CBS SPORTS - AQ",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/rbem8rorcw/out/v1/5318821e2c3c44c2a439681b9aa86e9b/cenc.mpd",
+          "api": "d9623774ac5c8c351aafe97c5fe70267:5164e6d05164a2d65fa8fcc962aa4861"
+        },
+        {
+          "id": 3,
+          "title": "PlayZ TV Live",
+          "type": "m3u8",
+          "link": "https://live.vivo155.com/live/sd-1-4646543.m3u8?txSecret=82a56e649ca8c48ed293f95c2231abc6&txTime=6AFE1369",
+          "api": ""
+        }
+      ]
     },
     {
       "id": 1235,
       "title": "Juventus vs Oud-Heverlee Leuven",
       "slug": "Juventus-vs-Oud-Heverlee-Leuven",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "UEFA Women's Champions League",
         "category": "Football",
@@ -180,7 +102,29 @@
         "startTimeIST": "2026-11-19 01:30:00 IST",
         "endTimeIST": "2026-11-19 03:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "FANCODE FHD",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/avqlywnuzx/out/v1/aefca6420f944a9482e117f315de535f/cenc.mpd",
+          "api": "1994b1df7dfd2e8a8d7b9bf3fb900285:22a1444b3da18e139191665b3d652835"
+        },
+        {
+          "id": 2,
+          "title": "CBS SPORTS",
+          "type": "m3u8",
+          "link": "https://live2.jorvakstreamcache.com/live/channel11.m3u8?",
+          "api": ""
+        },
+        {
+          "id": 3,
+          "title": "PlayZ TV Live",
+          "type": "m3u8",
+          "link": "https://live.vivo155.com/live/sd-1-4646544.m3u8?txSecret=82a29280eaca9b985e606f0b5495226c&txTime=6AFE139D",
+          "api": ""
+        }
+      ]
     },
     {
       "id": 1237,
