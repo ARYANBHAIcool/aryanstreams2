@@ -1,43 +1,15 @@
 {
-  "last_updated": "11/18/2026, 4:09:10 AM IST",
+  "last_updated": "11/18/2026, 9:22:23 AM IST",
   "source": "AryanStreams Official Feed",
-  "football_count": 1,
+  "football_count": 0,
   "cricket_count": 9,
   "events": [
-    {
-      "id": "15005",
-      "title": "Argentina vs Costa Rica",
-      "slug": "argentina-vs-costa-rica",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Football",
-        "category": "Football",
-        "type": "International Friendly Games",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
-        "teamA": "Argentina",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4819/image",
-        "teamB": "Costa Rica",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/4756/image",
-        "startTimeIST": "2026-11-18 02:30:00 IST",
-        "endTimeIST": "2026-11-18 04:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "CRICFy LIVE",
-          "type": "0",
-          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-          "api": ""
-        }
-      ]
-    },
     {
       "id": "14822",
       "title": "Australia vs England",
       "slug": "australia-vs-england",
       "cat": "Live Events",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Cricket",
         "category": "Cricket",
