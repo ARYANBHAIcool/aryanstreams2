@@ -1,34 +1,306 @@
 {
-  "last_updated": "11/18/2026, 4:09:10 AM IST",
+  "last_updated": "11/18/2026, 6:12:55 PM IST",
   "source": "AryanStreams Official Feed",
   "events": [
     {
-      "id": "15005",
-      "title": "Argentina vs Costa Rica",
-      "slug": "argentina-vs-costa-rica",
-      "cat": "Live Events",
-      "status": "live",
+      "id": 1222,
+      "title": "BK Häcken FF vs Manchester City",
+      "slug": "BK-Häcken-FF-vs-Manchester-City",
+      "cat": "Football",
+      "status": "upcoming",
       "event": {
-        "name": "Football",
+        "name": "UEFA Women's Champions League",
         "category": "Football",
-        "type": "International Friendly Games",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/851/image/dark",
-        "teamA": "Argentina",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4819/image",
-        "teamB": "Costa Rica",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/4756/image",
-        "startTimeIST": "2026-11-18 02:30:00 IST",
-        "endTimeIST": "2026-11-18 04:50:00 IST"
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/696/image/dark",
+        "teamA": "BK Häcken FF",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/1889/image",
+        "teamB": "Manchester City",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/142658/image",
+        "startTimeIST": "2026-11-18 23:15:00 IST",
+        "endTimeIST": "2026-11-19 01:35:00 IST"
       },
-      "streams": [
-        {
-          "id": 1,
-          "title": "CRICFy LIVE",
-          "type": "0",
-          "link": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-          "api": ""
-        }
-      ]
+      "streams": []
+    },
+    {
+      "id": 1223,
+      "title": "Real Madrid vs Inter",
+      "slug": "Real-Madrid-vs-Inter",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "UEFA Women's Champions League",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/696/image/dark",
+        "teamA": "Real Madrid",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/305051/image",
+        "teamB": "Inter",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/325685/image",
+        "startTimeIST": "2026-11-18 23:15:00 IST",
+        "endTimeIST": "2026-11-19 01:35:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": 1224,
+      "title": "Club Portugalete vs Real Unión Club",
+      "slug": "Club-Portugalete-vs-Real-Unión-Club",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "Copa del Rey",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/329/image/dark",
+        "teamA": "Club Portugalete",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/25403/image",
+        "teamB": "Real Unión Club",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2881/image",
+        "startTimeIST": "2026-11-18 23:30:00 IST",
+        "endTimeIST": "2026-11-19 01:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": 1225,
+      "title": "Utebo FC vs CE Sabadell",
+      "slug": "Utebo-FC-vs-CE-Sabadell",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "Copa del Rey",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/329/image/dark",
+        "teamA": "Utebo FC",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/212294/image",
+        "teamB": "CE Sabadell",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/24335/image",
+        "startTimeIST": "2026-11-18 23:30:00 IST",
+        "endTimeIST": "2026-11-19 01:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": 1229,
+      "title": "CD Alcoyano vs Mallorca",
+      "slug": "CD-Alcoyano-vs-Mallorca",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "Copa del Rey",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/329/image/dark",
+        "teamA": "CD Alcoyano",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/6585/image",
+        "teamB": "Mallorca",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2826/image",
+        "startTimeIST": "2026-11-19 00:30:00 IST",
+        "endTimeIST": "2026-11-19 02:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": 1231,
+      "title": "Deportiva Minera vs FC Cartagena",
+      "slug": "Deportiva-Minera-vs-FC-Cartagena",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "Copa del Rey",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/329/image/dark",
+        "teamA": "Deportiva Minera",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/189948/image",
+        "teamB": "FC Cartagena",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/24329/image",
+        "startTimeIST": "2026-11-19 01:00:00 IST",
+        "endTimeIST": "2026-11-19 03:20:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": 1233,
+      "title": "Reus FC Reddis vs Barakaldo CF",
+      "slug": "Reus-FC-Reddis-vs-Barakaldo-CF",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "Copa del Rey",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/329/image/dark",
+        "teamA": "Reus FC Reddis",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/486292/image",
+        "teamB": "Barakaldo CF",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2879/image",
+        "startTimeIST": "2026-11-19 01:00:00 IST",
+        "endTimeIST": "2026-11-19 03:20:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": 1234,
+      "title": "Chelsea FC vs Paris Saint-Germain",
+      "slug": "Chelsea-FC-vs-Paris-Saint-Germain",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "UEFA Women's Champions League",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/696/image/dark",
+        "teamA": "Chelsea FC",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/66768/image",
+        "teamB": "Paris Saint-Germain",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/55505/image",
+        "startTimeIST": "2026-11-19 01:30:00 IST",
+        "endTimeIST": "2026-11-19 03:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": 1235,
+      "title": "Juventus vs Oud-Heverlee Leuven",
+      "slug": "Juventus-vs-Oud-Heverlee-Leuven",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "UEFA Women's Champions League",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/696/image/dark",
+        "teamA": "Juventus",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/269824/image",
+        "teamB": "Oud-Heverlee Leuven",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/178246/image",
+        "startTimeIST": "2026-11-19 01:30:00 IST",
+        "endTimeIST": "2026-11-19 03:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": 1237,
+      "title": "Coritiba vs Santos",
+      "slug": "Coritiba-vs-Santos",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "Campeonato Brasileiro Série A",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/325/image/dark",
+        "teamA": "Coritiba",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/1982/image",
+        "teamB": "Santos",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/1968/image",
+        "startTimeIST": "2026-11-19 04:00:00 IST",
+        "endTimeIST": "2026-11-19 06:20:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": 1238,
+      "title": "Remo vs Chapecoense",
+      "slug": "Remo-vs-Chapecoense",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "Campeonato Brasileiro Série A",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/325/image/dark",
+        "teamA": "Remo",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2012/image",
+        "teamB": "Chapecoense",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/21845/image",
+        "startTimeIST": "2026-11-19 04:30:00 IST",
+        "endTimeIST": "2026-11-19 06:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": 1239,
+      "title": "Cruzeiro vs Palmeiras",
+      "slug": "Cruzeiro-vs-Palmeiras",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "Campeonato Brasileiro Série A",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/325/image/dark",
+        "teamA": "Cruzeiro",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/1954/image",
+        "teamB": "Palmeiras",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/1963/image",
+        "startTimeIST": "2026-11-19 05:00:00 IST",
+        "endTimeIST": "2026-11-19 07:20:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": 1240,
+      "title": "Flamengo vs Athletico",
+      "slug": "Flamengo-vs-Athletico",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "Campeonato Brasileiro Série A",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/325/image/dark",
+        "teamA": "Flamengo",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/5981/image",
+        "teamB": "Athletico",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/1967/image",
+        "startTimeIST": "2026-11-19 05:00:00 IST",
+        "endTimeIST": "2026-11-19 07:20:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": 1243,
+      "title": "Corinthians vs Botafogo",
+      "slug": "Corinthians-vs-Botafogo",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "Campeonato Brasileiro Série A",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/325/image/dark",
+        "teamA": "Corinthians",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/1957/image",
+        "teamB": "Botafogo",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/1958/image",
+        "startTimeIST": "2026-11-19 06:00:00 IST",
+        "endTimeIST": "2026-11-19 08:20:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": 1242,
+      "title": "Grêmio vs Bahia",
+      "slug": "Grêmio-vs-Bahia",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "Campeonato Brasileiro Série A",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/325/image/dark",
+        "teamA": "Grêmio",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/5926/image",
+        "teamB": "Bahia",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/1955/image",
+        "startTimeIST": "2026-11-19 06:00:00 IST",
+        "endTimeIST": "2026-11-19 08:20:00 IST"
+      },
+      "streams": []
     }
   ]
 }
