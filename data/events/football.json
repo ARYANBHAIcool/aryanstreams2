@@ -1,201 +1,13 @@
 {
-  "last_updated": "11/18/2026, 11:06:23 PM IST",
+  "last_updated": "11/19/2026, 5:05:49 AM IST",
   "source": "AryanStreams Official Feed",
   "events": [
-    {
-      "id": 1222,
-      "title": "BK Häcken FF vs Manchester City",
-      "slug": "BK-Häcken-FF-vs-Manchester-City",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "UEFA Women's Champions League",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/696/image/dark",
-        "teamA": "BK Häcken FF",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/1889/image",
-        "teamB": "Manchester City",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/142658/image",
-        "startTimeIST": "2026-11-18 23:15:00 IST",
-        "endTimeIST": "2026-11-19 01:35:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1223,
-      "title": "Real Madrid vs Inter",
-      "slug": "Real-Madrid-vs-Inter",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "UEFA Women's Champions League",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/696/image/dark",
-        "teamA": "Real Madrid",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/305051/image",
-        "teamB": "Inter",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/325685/image",
-        "startTimeIST": "2026-11-18 23:15:00 IST",
-        "endTimeIST": "2026-11-19 01:35:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "HD STREAM",
-          "type": "m3u8",
-          "link": "https://live2.jorvakstreamcache.com/live/channel1.m3u8?",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 1224,
-      "title": "Club Portugalete vs Real Unión Club",
-      "slug": "Club-Portugalete-vs-Real-Unión-Club",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "Copa del Rey",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/329/image/dark",
-        "teamA": "Club Portugalete",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/25403/image",
-        "teamB": "Real Unión Club",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2881/image",
-        "startTimeIST": "2026-11-18 23:30:00 IST",
-        "endTimeIST": "2026-11-19 01:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1225,
-      "title": "Utebo FC vs CE Sabadell",
-      "slug": "Utebo-FC-vs-CE-Sabadell",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "Copa del Rey",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/329/image/dark",
-        "teamA": "Utebo FC",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/212294/image",
-        "teamB": "CE Sabadell",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/24335/image",
-        "startTimeIST": "2026-11-18 23:30:00 IST",
-        "endTimeIST": "2026-11-19 01:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1229,
-      "title": "CD Alcoyano vs Mallorca",
-      "slug": "CD-Alcoyano-vs-Mallorca",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "Copa del Rey",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/329/image/dark",
-        "teamA": "CD Alcoyano",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/6585/image",
-        "teamB": "Mallorca",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2826/image",
-        "startTimeIST": "2026-11-19 00:30:00 IST",
-        "endTimeIST": "2026-11-19 02:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1231,
-      "title": "Deportiva Minera vs FC Cartagena",
-      "slug": "Deportiva-Minera-vs-FC-Cartagena",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "Copa del Rey",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/329/image/dark",
-        "teamA": "Deportiva Minera",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/189948/image",
-        "teamB": "FC Cartagena",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/24329/image",
-        "startTimeIST": "2026-11-19 01:00:00 IST",
-        "endTimeIST": "2026-11-19 03:20:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1233,
-      "title": "Reus FC Reddis vs Barakaldo CF",
-      "slug": "Reus-FC-Reddis-vs-Barakaldo-CF",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "Copa del Rey",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/329/image/dark",
-        "teamA": "Reus FC Reddis",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/486292/image",
-        "teamB": "Barakaldo CF",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2879/image",
-        "startTimeIST": "2026-11-19 01:00:00 IST",
-        "endTimeIST": "2026-11-19 03:20:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1234,
-      "title": "Chelsea FC vs Paris Saint-Germain",
-      "slug": "Chelsea-FC-vs-Paris-Saint-Germain",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "UEFA Women's Champions League",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/696/image/dark",
-        "teamA": "Chelsea FC",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/66768/image",
-        "teamB": "Paris Saint-Germain",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/55505/image",
-        "startTimeIST": "2026-11-19 01:30:00 IST",
-        "endTimeIST": "2026-11-19 03:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1235,
-      "title": "Juventus vs Oud-Heverlee Leuven",
-      "slug": "Juventus-vs-Oud-Heverlee-Leuven",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "UEFA Women's Champions League",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/696/image/dark",
-        "teamA": "Juventus",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/269824/image",
-        "teamB": "Oud-Heverlee Leuven",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/178246/image",
-        "startTimeIST": "2026-11-19 01:30:00 IST",
-        "endTimeIST": "2026-11-19 03:50:00 IST"
-      },
-      "streams": []
-    },
     {
       "id": 1237,
       "title": "Coritiba vs Santos",
       "slug": "Coritiba-vs-Santos",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Campeonato Brasileiro Série A",
         "category": "Football",
@@ -208,14 +20,22 @@
         "startTimeIST": "2026-11-19 04:00:00 IST",
         "endTimeIST": "2026-11-19 06:20:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "PREMIERER BR HD",
+          "type": "mpd",
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/gru-nitro/live/clients/dash-sd/enc/kqftwsvdgz/out/v1/9f866bc326d241aa9d470c52654a7bf9/cenc-sd.mpd?",
+          "api": "9ee352aac7ed8ee1cb42cfdf322b1cb0:053d635fc90e175881bef26cd29f371e"
+        }
+      ]
     },
     {
       "id": 1238,
       "title": "Remo vs Chapecoense",
       "slug": "Remo-vs-Chapecoense",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Campeonato Brasileiro Série A",
         "category": "Football",
@@ -228,14 +48,22 @@
         "startTimeIST": "2026-11-19 04:30:00 IST",
         "endTimeIST": "2026-11-19 06:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "PREMIERER BR FHD",
+          "type": "mpd",
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/gru-nitro/live/clients/dash/enc/0bmtb2fxcj/out/v1/b5f50c3632264d32bf857652f631b0fb/cenc.mpd?",
+          "api": "8bf16a4ba05bcc97e6259297e50be63d:8dd97d486cbdd15cc47ea8c41b264ebb"
+        }
+      ]
     },
     {
       "id": 1239,
       "title": "Cruzeiro vs Palmeiras",
       "slug": "Cruzeiro-vs-Palmeiras",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Campeonato Brasileiro Série A",
         "category": "Football",
@@ -248,14 +76,36 @@
         "startTimeIST": "2026-11-19 05:00:00 IST",
         "endTimeIST": "2026-11-19 07:20:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "PREMIER SPORTS",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/bcj3iscpd6/out/v1/fcd137b391214f7cb99dd4d7be90ca87/cenc.mpd",
+          "api": "1a5df53609ebc9857898c490f4724918:77f62980d582ec541280796acf8b2d19"
+        },
+        {
+          "id": 2,
+          "title": "PREMIERER BR",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/oy6rp0jwmf/out/v1/580ecf12bad24979baf8dd993dce053e/cenc.mpd",
+          "api": "9dc40460c93087aea84d6315f08ecb64:f69c8d4624fddff4ca89bd0b31bdc4a7"
+        },
+        {
+          "id": 3,
+          "title": "SportDigital Fussball",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/ssdefyhkkr/out/v1/cf01290cb7f64525bdf861580a016ca8/cenc.mpd?",
+          "api": "0ad4080cdff8c60b1233b22087f0b340:285f129c5eca01dd08a5d5a14ad801c8"
+        }
+      ]
     },
     {
       "id": 1240,
       "title": "Flamengo vs Athletico",
       "slug": "Flamengo-vs-Athletico",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Campeonato Brasileiro Série A",
         "category": "Football",
@@ -268,7 +118,22 @@
         "startTimeIST": "2026-11-19 05:00:00 IST",
         "endTimeIST": "2026-11-19 07:20:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "SporTV BR FHD",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/w8kwdfmlgs/out/v1/3aa321e477504937a439b602e078eb18/cenc.mpd",
+          "api": "51c0ef23b17297e5c01cd7f36dd0a6ce:8823f713ba6fdb9bbe0a2ad82d309a4b"
+        },
+        {
+          "id": 2,
+          "title": "PREMIERER BR",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/nelfyucw9a/out/v1/6ffb2c365ad14f88b154591beb43d1f6/cenc.mpd",
+          "api": "56b79c1782b30e6b6fc973b0e8fd4104:fa38aaa865a57eda7c77444697ba8ed3"
+        }
+      ]
     },
     {
       "id": 1243,
@@ -288,7 +153,15 @@
         "startTimeIST": "2026-11-19 06:00:00 IST",
         "endTimeIST": "2026-11-19 08:20:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "PREMIERER BR",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/1obktrybht/out/v1/08265453c8f64d9fbeb3cf43764403a8/cenc.mpd",
+          "api": "332f62eb3cae824e98a4124da29a7d31:d1698cda3d040f9051125a61745b596b"
+        }
+      ]
     },
     {
       "id": 1242,
@@ -308,7 +181,15 @@
         "startTimeIST": "2026-11-19 06:00:00 IST",
         "endTimeIST": "2026-11-19 08:20:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "PREMIERER BR",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/6onrfniyry/out/v1/f23069c61dbf4e00890a40b705a84079/cenc.mpd",
+          "api": "d23f7433798a652a7d4f6791d9e1036c:4942eebd598b5727c5cc484cc62b52e8"
+        }
+      ]
     }
   ]
 }
