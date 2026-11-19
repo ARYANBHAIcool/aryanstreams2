@@ -1,53 +1,13 @@
 {
-  "last_updated": "11/19/2026, 7:23:38 PM IST",
+  "last_updated": "11/20/2026, 3:32:00 AM IST",
   "source": "AryanStreams Official Feed",
   "events": [
-    {
-      "id": 1282,
-      "title": "FK Austria Wien vs FC Bayern München",
-      "slug": "FK-Austria-Wien-vs-FC-Bayern-München",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "UEFA Women's Champions League",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/696/image/dark",
-        "teamA": "FK Austria Wien",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/229911/image",
-        "teamB": "FC Bayern München",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/5543/image",
-        "startTimeIST": "2026-11-19 23:15:00 IST",
-        "endTimeIST": "2026-11-20 01:35:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1283,
-      "title": "Paris FC vs HB Køge",
-      "slug": "Paris-FC-vs-HB-Køge",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "UEFA Women's Champions League",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/696/image/dark",
-        "teamA": "Paris FC",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/264964/image",
-        "teamB": "HB Køge",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/333128/image",
-        "startTimeIST": "2026-11-19 23:15:00 IST",
-        "endTimeIST": "2026-11-20 01:35:00 IST"
-      },
-      "streams": []
-    },
     {
       "id": 1284,
       "title": "Arsenal vs OL Lyonnes",
       "slug": "Arsenal-vs-OL-Lyonnes",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "UEFA Women's Champions League",
         "category": "Football",
@@ -60,14 +20,43 @@
         "startTimeIST": "2026-11-20 01:30:00 IST",
         "endTimeIST": "2026-11-20 03:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "FANCODE - AQ",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/avqlywnuzx/out/v1/aefca6420f944a9482e117f315de535f/cenc.mpd",
+          "api": "1994b1df7dfd2e8a8d7b9bf3fb900285:22a1444b3da18e139191665b3d652835"
+        },
+        {
+          "id": 2,
+          "title": "CBS NETWORK FHD",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/5qz8wmdome/out/v1/b9323e853dce427eac214b77bd48a204/cenc.mpd",
+          "api": "d9623774ac5c8c351aafe97c5fe70267:5164e6d05164a2d65fa8fcc962aa4861"
+        },
+        {
+          "id": 3,
+          "title": "HD STREAM",
+          "type": "m3u8",
+          "link": "https://live2.jorvakstreamcache.com/live/channel6.m3u8",
+          "api": ""
+        },
+        {
+          "id": 4,
+          "title": "PlayZ TV Live",
+          "type": "m3u8",
+          "link": "https://live.vivo155.com/live/hd-en-1-4646547.m3u8?txSecret=d4fbe4a566bec8f396eea490cb1d5285&txTime=6AFF65EF",
+          "api": ""
+        }
+      ]
     },
     {
       "id": 1285,
       "title": "Benfica vs AS Roma",
       "slug": "Benfica-vs-AS-Roma",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "UEFA Women's Champions League",
         "category": "Football",
@@ -80,14 +69,22 @@
         "startTimeIST": "2026-11-20 01:30:00 IST",
         "endTimeIST": "2026-11-20 03:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "HD STREAM",
+          "type": "m3u8",
+          "link": "https://live2.jorvakstreamcache.com/live/channel9.m3u8?",
+          "api": ""
+        }
+      ]
     },
     {
       "id": 1286,
       "title": "Fútbol Club Barcelona vs Servette FC Chênois Féminin",
       "slug": "Fútbol-Club-Barcelona-vs-Servette-FC-Chênois-Féminin",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "UEFA Women's Champions League",
         "category": "Football",
@@ -100,7 +97,36 @@
         "startTimeIST": "2026-11-20 01:30:00 IST",
         "endTimeIST": "2026-11-20 03:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "FANCODE - FHD",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/b3b3fkmrbl/out/v1/1084d5c9a97a4c5b9f9554c88f486646/cenc.mpd",
+          "api": "82dfca238e8c4b430a3269db71965db9:a00b28caf4ac628e77a553d440c0ddca"
+        },
+        {
+          "id": 2,
+          "title": "FANCODE - SD",
+          "type": "mpd",
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash-sd/enc/v8g0dlo4z8/out/v1/946019f85dc64ae99ff9ce64a9727a62/cenc-sd.mpd",
+          "api": "5689304538fa9f3bb3da99c939a2ad4f:6907c88ed8ebdd35a2fa80b9684715e1"
+        },
+        {
+          "id": 3,
+          "title": "PlayZ TV Live",
+          "type": "m3u8",
+          "link": "https://live.vivo155.com/live/hd-en-1-4646548.m3u8?txSecret=9a374acb09e460a132379c28818023ac&txTime=6AFF65CF",
+          "api": ""
+        },
+        {
+          "id": 4,
+          "title": "HD STREAM",
+          "type": "m3u8",
+          "link": "https://live2.jorvakstreamcache.com/live/channel21.m3u8?",
+          "api": ""
+        }
+      ]
     },
     {
       "id": 1287,
@@ -323,7 +349,7 @@
       "streams": []
     },
     {
-      "id": 1415,
+      "id": 1618,
       "title": "FC Bayern München vs 1. FC Köln",
       "slug": "FC-Bayern-München-vs-1.-FC-Köln",
       "cat": "Football",
@@ -343,7 +369,7 @@
       "streams": []
     },
     {
-      "id": 1417,
+      "id": 1620,
       "title": "FC Bayern München vs 1. FC Köln",
       "slug": "FC-Bayern-München-vs-1.-FC-Köln",
       "cat": "Football",
@@ -363,7 +389,7 @@
       "streams": []
     },
     {
-      "id": 1416,
+      "id": 1619,
       "title": "Troyes vs Le Havre",
       "slug": "Troyes-vs-Le-Havre",
       "cat": "Football",
@@ -383,7 +409,7 @@
       "streams": []
     },
     {
-      "id": 1418,
+      "id": 1621,
       "title": "Troyes vs Le Havre",
       "slug": "Troyes-vs-Le-Havre",
       "cat": "Football",
