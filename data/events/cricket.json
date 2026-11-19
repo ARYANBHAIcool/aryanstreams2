@@ -1,13 +1,230 @@
 {
-  "last_updated": "11/19/2026, 10:00:41 AM IST",
+  "last_updated": "11/19/2026, 7:23:38 PM IST",
   "source": "AryanStreams Official Feed",
   "events": [
+    {
+      "id": 1280,
+      "title": "Bangladesh A vs hong Kong",
+      "slug": "Bangladesh-A-vs-hong-Kong",
+      "cat": "Cricket",
+      "status": "live",
+      "event": {
+        "name": "Asia Cup Rising Stars",
+        "category": "Cricket",
+        "type": "",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn2rCtrI68Agu71aIWID9YxzlqXN-3c88k4cwPQQhwEA&s=10",
+        "teamA": "Bangladesh A",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/187809/image",
+        "teamB": "hong Kong",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/4765/image",
+        "startTimeIST": "2026-11-19 11:30:00 IST",
+        "endTimeIST": ""
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "PRIME VIDEO",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/m6re2sw5cd/out/v1/8e8f93ec4fe2435c885a283151852080/cenc.mpd",
+          "api": "6300bd600d0c9e459bd1a3d023e2270d:edf53fad044c43f8aae91ad2576cccfd"
+        },
+        {
+          "id": 2,
+          "title": "TAMASHA AQ",
+          "type": "m3u8",
+          "link": "https://cdn06khi-n.tamashaweb.com:8087/appcast/ACC-men-AC26-abr/playlist.m3u8",
+          "api": ""
+        },
+        {
+          "id": 3,
+          "title": "SONYLIV (Asia)",
+          "type": "m3u8",
+          "link": "https://sonymtmnew-akamaized.pages.dev/hls/live/2120300/criclive1911/ENG/std_lrh-800300010.m3u8",
+          "api": ""
+        },
+        {
+          "id": 4,
+          "title": "HD QUALITY",
+          "type": "m3u8",
+          "link": "https://dai.google.com/linear/hls/event/7cIN-VbvRemT_Gc-OWNing/master.m3u8",
+          "api": ""
+        },
+        {
+          "id": 5,
+          "title": "SONY",
+          "type": "m3u8",
+          "link": "https://sonymtmnew-akamaized.pages.dev/hls/live/2120300/criclive1911/ENG/std_lrh-800300010.m3u8",
+          "api": ""
+        }
+      ]
+    },
+    {
+      "id": 1281,
+      "title": "Afghanistan A vs Sri Lanka A",
+      "slug": "Afghanistan-A-vs-Sri-Lanka-A",
+      "cat": "Cricket",
+      "status": "live",
+      "event": {
+        "name": "Men's Asia Cup Rising Stars",
+        "category": "Cricket",
+        "type": "",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn2rCtrI68Agu71aIWID9YxzlqXN-3c88k4cwPQQhwEA&s=10",
+        "teamA": "Afghanistan A",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/187575/image",
+        "teamB": "Sri Lanka A",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/187756/image",
+        "startTimeIST": "2026-11-19 15:30:00 IST",
+        "endTimeIST": ""
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW - AQ",
+          "type": "mpd",
+          "link": "https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/cix65j0fhp/out/v1/40e83e3831354f46aa6c4f7f33b22606/cenc.mpd",
+          "api": "964c4b09d34aec26004af58468df3f63:33241077e9b7604e876d6b23c1fcf8ac"
+        },
+        {
+          "id": 2,
+          "title": "PRIME VIDEO FHD",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/x0igehpu1l/out/v1/a22fcedcc6fd47e19b5ae642a935c1d0/cenc.mpd",
+          "api": "a483403980e885c7c448950500139b07:181c08c0de1ef25e8f893a81909304c1"
+        },
+        {
+          "id": 3,
+          "title": "STARZPLAY FHD",
+          "type": "mpd",
+          "link": "https://d1ifzl5cnhi7bu.cloudfront.net/out/v1/45ba30e075ad455a8767d3f33e67ea3d/index.mpd",
+          "api": "0ae4f162eec3e6f2b580a5bf0f4a64d4:03483335db81cba5bbcf51b6d31196d9"
+        },
+        {
+          "id": 4,
+          "title": "TAMASHA AQ",
+          "type": "m3u8",
+          "link": "https://cdn06khi-n.tamashaweb.com:8087/appcast/ACC-men-AC26-b-abr/playlist.m3u8",
+          "api": ""
+        },
+        {
+          "id": 5,
+          "title": "WILLOW ALT",
+          "type": "mpd",
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/q8kzxra130/out/v1/f2f42de8b095422eb0f84d301d0b69a5/cenc.mpd",
+          "api": "964c4b09d34aec26004af58468df3f63:33241077e9b7604e876d6b23c1fcf8ac"
+        },
+        {
+          "id": 6,
+          "title": "SONYLIV ENG - AQ",
+          "type": "m3u8",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2120301/criclive1911/ENG/std_lrh-800300010.m3u8?hdnea=exp=1795124926~acl=/*~id=84117785468934185076631080120857~hmac=5c6ce4f7b8eb18e33439171995937341f4af30e5b366d33d7268e4bb95e34ed8",
+          "api": ""
+        },
+        {
+          "id": 7,
+          "title": "TEN SPORTS HD",
+          "type": "m3u8",
+          "link": "https://live.msnetworks.net/ten-sports/master.m3u8",
+          "api": ""
+        }
+      ]
+    },
+    {
+      "id": 1384,
+      "title": "Nepal Premier League",
+      "slug": "Nepal-Premier-League",
+      "cat": "Cricket",
+      "status": "live",
+      "event": {
+        "name": "Nepal Premier League",
+        "category": "Cricket",
+        "type": "",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4kb18PjjNzQILyDESk2XOhaXZ6mIZ9tsTkyKwzjpoIw&s=10",
+        "teamA": "NPL",
+        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4kb18PjjNzQILyDESk2XOhaXZ6mIZ9tsTkyKwzjpoIw&s=10",
+        "teamB": "NPL",
+        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4kb18PjjNzQILyDESk2XOhaXZ6mIZ9tsTkyKwzjpoIw&s=10",
+        "startTimeIST": "2026-11-19 16:45:00 IST",
+        "endTimeIST": ""
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "NPL LIVE FHD",
+          "type": "mpd",
+          "link": "https://ott-edge-mtdc.nettv.com.np/npl/live_match3/index.mpd?",
+          "api": "b4d7fc89103597185058cc4c81a1800d:17062472ba2a3f1db709d3bb7761c936"
+        },
+        {
+          "id": 2,
+          "title": "FANCODE - AQ",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/avqlywnuzx/out/v1/aefca6420f944a9482e117f315de535f/cenc.mpd",
+          "api": "1994b1df7dfd2e8a8d7b9bf3fb900285:22a1444b3da18e139191665b3d652835"
+        }
+      ]
+    },
+    {
+      "id": 1221,
+      "title": "Abu Dhabi T10 League",
+      "slug": "UAE-Bulls-vs-Yas-Lions",
+      "cat": "Cricket",
+      "status": "live",
+      "event": {
+        "name": "Abu Dhabi T10 League",
+        "category": "Cricket",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
+        "teamA": "Abu Dhabi T10",
+        "teamAFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
+        "teamB": "Abu Dhabi T10",
+        "teamBFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
+        "startTimeIST": "2026-11-19 17:00:00 IST",
+        "endTimeIST": ""
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW - AQ",
+          "type": "mpd",
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/oxdfwbm9bd/out/v1/58ee6ff8cf414cd0ac3bf08b8859d811/cenc.mpd",
+          "api": "b51f981b4a44e1b874a7958276b765d6:bc42638f3ec4d015524143a6d40ebfd5"
+        },
+        {
+          "id": 2,
+          "title": "PREMIERE SPORTS - AQ",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/bcj3iscpd6/out/v1/fcd137b391214f7cb99dd4d7be90ca87/cenc.mpd",
+          "api": "1a5df53609ebc9857898c490f4724918:77f62980d582ec541280796acf8b2d19"
+        },
+        {
+          "id": 3,
+          "title": "TAMASHA PRO AQ",
+          "type": "m3u8",
+          "link": "https://cdn04khi-n.tamashaweb.com:8087/appcast/abudhabi-t10-adfree-2026-abr/playlist.m3u8",
+          "api": ""
+        },
+        {
+          "id": 4,
+          "title": "MYCO AQ",
+          "type": "m3u8",
+          "link": "https://ml-pull-rtmp-pk1.myco.io/SRT/hls/index.m3u8",
+          "api": ""
+        },
+        {
+          "id": 5,
+          "title": "A SPORTS HD",
+          "type": "m3u8",
+          "link": "https://live.msnetworks.net/a-sports/master.m3u8",
+          "api": ""
+        }
+      ]
+    },
     {
       "id": 1236,
       "title": "New Zealand vs India",
       "slug": "New-Zealand-vs-India",
       "cat": "Cricket",
-      "status": "live",
+      "status": "upcoming",
       "event": {
         "name": "ICC World Test Championship",
         "category": "Cricket",
@@ -17,7 +234,7 @@
         "teamAFlag": "https://img.sofascore.com/api/v1/team/187755/image",
         "teamB": "India",
         "teamBFlag": "https://img.sofascore.com/api/v1/team/187765/image",
-        "startTimeIST": "2026-11-19 03:30:00 IST",
+        "startTimeIST": "2026-11-20 03:30:00 IST",
         "endTimeIST": ""
       },
       "streams": [
@@ -136,7 +353,7 @@
         "teamAFlag": "https://img.sofascore.com/api/v1/team/187754/image",
         "teamB": "Sri Lanka",
         "teamBFlag": "https://img.sofascore.com/api/v1/team/187756/image",
-        "startTimeIST": "2026-11-19 10:00:00 IST",
+        "startTimeIST": "2026-11-20 10:00:00 IST",
         "endTimeIST": ""
       },
       "streams": [
@@ -173,194 +390,6 @@
           "title": "PTV SPORTS HD",
           "type": "m3u8",
           "link": "https://live.msnetworks.net/ptv-sports/master.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 1275,
-      "title": "Hobart Hurricanes Women vs Perth Scorchers Women",
-      "slug": "Hobart-Hurricanes-Women-vs-Perth-Scorchers-Women",
-      "cat": "Cricket",
-      "status": "upcoming",
-      "event": {
-        "name": "Women's Big Bash League",
-        "category": "Cricket",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
-        "teamA": "Hobart Hurricanes Women",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/274885/image",
-        "teamB": "Perth Scorchers Women",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/274890/image",
-        "startTimeIST": "2026-11-19 10:10:00 IST",
-        "endTimeIST": ""
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "WILLOW - AQ",
-          "type": "mpd",
-          "link": "https://dash-ott.bia-cf.live.pv-cdn.net/pdx-nitro/live/clients/dash/enc/vpayuuzjup/out/v1/bc0a550c2e694ee1ae017a247ab05e49/cenc.mpd",
-          "api": "82ea980c6b72eb9d845d3bb239330c30:e205798bb1646f1e0ab0ee3459b084bf"
-        },
-        {
-          "id": 2,
-          "title": "SKY CRICKET - AQ",
-          "type": "m3u8",
-          "link": "https://bl.rutube.ru/livestream/7c13a51576b9ff2601f08f5d57dd5169/index.m3u8?s=uiXES2ePt7xTpQnbJxn7Dg&e=2074684474&scheme=https",
-          "api": ""
-        },
-        {
-          "id": 3,
-          "title": "WILLOW HD",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/tll6uwepxa/out/v1/a7f67cbb33df46539312956427343886/cenc.mpd",
-          "api": "290e09c837da78d5cd961978d390515c:b748836c71e6a4ca68ef5b5652db6247"
-        },
-        {
-          "id": 4,
-          "title": "TAPMAD - AQ",
-          "type": "m3u8",
-          "link": "https://tencent-cdn.tapmad.com/v1/01a14a9fb90c15fc60e91e1786b061/01a14a9feb881ea540a81c2b41b75e/main.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 1218,
-      "title": "South Africa vs Bangladesh",
-      "slug": "South-Africa-vs-Bangladesh",
-      "cat": "Cricket",
-      "status": "upcoming",
-      "event": {
-        "name": "ICC World Test Championship",
-        "category": "Cricket",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18833/image/dark",
-        "teamA": "South Africa",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/187747/image",
-        "teamB": "Bangladesh",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/187744/image",
-        "startTimeIST": "2026-11-19 13:30:00 IST",
-        "endTimeIST": ""
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "WILLOW - AQ",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/o4wthc9din/out/v1/dc45941651d84183a56e699e697fd33c/cenc.mpd",
-          "api": "6de0d161884e8b45e47f4edc5e9db94d:bfaccd3662dfb1d046887ecc050a576e"
-        },
-        {
-          "id": 2,
-          "title": "FANCODE FHD",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/avqlywnuzx/out/v1/aefca6420f944a9482e117f315de535f/cenc.mpd",
-          "api": "1994b1df7dfd2e8a8d7b9bf3fb900285:22a1444b3da18e139191665b3d652835"
-        },
-        {
-          "id": 3,
-          "title": "SKY SPORTS CRICKET",
-          "type": "m3u8",
-          "link": "https://bl.rutube.ru/livestream/7c13a51576b9ff2601f08f5d57dd5169/index.m3u8?s=uiXES2ePt7xTpQnbJxn7Dg&e=2074684474&scheme=https",
-          "api": ""
-        },
-        {
-          "id": 4,
-          "title": "WILLOW S2 - AQ",
-          "type": "mpd",
-          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/o4wthc9din/out/v1/dc45941651d84183a56e699e697fd33c/cenc.mpd",
-          "api": "6de0d161884e8b45e47f4edc5e9db94d:bfaccd3662dfb1d046887ecc050a576e"
-        },
-        {
-          "id": 5,
-          "title": "FANCODE - SD",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash-sd/enc/eayjamsonn/out/v1/6c25cddab58043a6ace0ac64d97983f0/cenc-sd.mpd?",
-          "api": "5318e462b9e0677487cb87837f0bbdb1:4fa0fb973b95738306005f2e8591bf8e"
-        },
-        {
-          "id": 6,
-          "title": "T Sports HD",
-          "type": "m3u8",
-          "link": "https://tvsen5.aynaott.com/TnMn5kZz8aLmjklkk/index.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 1276,
-      "title": "Brisbane Heat Women vs Sydney Thunder Women",
-      "slug": "Brisbane-Heat-Women-vs-Sydney-Thunder-Women",
-      "cat": "Cricket",
-      "status": "upcoming",
-      "event": {
-        "name": "Women's Big Bash League",
-        "category": "Cricket",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
-        "teamA": "Brisbane Heat Women",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/274884/image",
-        "teamB": "Sydney Thunder Women",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/274889/image",
-        "startTimeIST": "2026-11-19 13:40:00 IST",
-        "endTimeIST": ""
-      },
-      "streams": []
-    },
-    {
-      "id": 1221,
-      "title": "Abu Dhabi T10 League",
-      "slug": "UAE-Bulls-vs-Yas-Lions",
-      "cat": "Cricket",
-      "status": "upcoming",
-      "event": {
-        "name": "Abu Dhabi T10 League",
-        "category": "Cricket",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
-        "teamA": "Abu Dhabi T10",
-        "teamAFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
-        "teamB": "Abu Dhabi T10",
-        "teamBFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
-        "startTimeIST": "2026-11-19 19:15:00 IST",
-        "endTimeIST": ""
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "WILLOW - AQ",
-          "type": "mpd",
-          "link": "https://dash-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/0l2pj0gnuu/out/v1/5cdb31bc933d4e81aeb2c2f1e7c88fcb/cenc.mpd",
-          "api": "f57608d741bd9eeb53fee59e054a318d:9ff99be42923aa8fbe6dcadbc399f3a1"
-        },
-        {
-          "id": 2,
-          "title": "PREMIERE SPORTS - AQ",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/bcj3iscpd6/out/v1/fcd137b391214f7cb99dd4d7be90ca87/cenc.mpd",
-          "api": "1a5df53609ebc9857898c490f4724918:77f62980d582ec541280796acf8b2d19"
-        },
-        {
-          "id": 3,
-          "title": "TAMASHA PRO AQ",
-          "type": "m3u8",
-          "link": "https://cdn04khi-n.tamashaweb.com:8087/appcast/abudhabi-t10-adfree-2026-abr/playlist.m3u8",
-          "api": ""
-        },
-        {
-          "id": 4,
-          "title": "MYCO AQ",
-          "type": "m3u8",
-          "link": "https://ml-pull-rtmp-pk1.myco.io/SRT/hls/index.m3u8",
-          "api": ""
-        },
-        {
-          "id": 5,
-          "title": "A SPORTS HD",
-          "type": "m3u8",
-          "link": "https://live.msnetworks.net/a-sports/master.m3u8",
           "api": ""
         }
       ]
@@ -429,6 +458,84 @@
       ]
     },
     {
+      "id": 1218,
+      "title": "South Africa vs Bangladesh",
+      "slug": "South-Africa-vs-Bangladesh",
+      "cat": "Cricket",
+      "status": "upcoming",
+      "event": {
+        "name": "ICC World Test Championship",
+        "category": "Cricket",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18833/image/dark",
+        "teamA": "South Africa",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/187747/image",
+        "teamB": "Bangladesh",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/187744/image",
+        "startTimeIST": "2026-11-23 13:30:00 IST",
+        "endTimeIST": ""
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW - AQ",
+          "type": "mpd",
+          "link": "https://dash-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/sibenka6zx/out/v1/a813485385a34d57a9d1b60430370533/cenc.mpd",
+          "api": "ade0d3679d401d18ec4c96eb65344148:a7a659a01bf2ec21e1c406ae96dc5298"
+        },
+        {
+          "id": 2,
+          "title": "FANCODE FHD",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/avqlywnuzx/out/v1/aefca6420f944a9482e117f315de535f/cenc.mpd",
+          "api": "1994b1df7dfd2e8a8d7b9bf3fb900285:22a1444b3da18e139191665b3d652835"
+        },
+        {
+          "id": 3,
+          "title": "SKY SPORTS CRICKET",
+          "type": "m3u8",
+          "link": "https://bl.rutube.ru/livestream/7c13a51576b9ff2601f08f5d57dd5169/index.m3u8?s=uiXES2ePt7xTpQnbJxn7Dg&e=2074684474&scheme=https",
+          "api": ""
+        },
+        {
+          "id": 4,
+          "title": "WILLOW S2 - AQ",
+          "type": "mpd",
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/sibenka6zx/out/v1/a813485385a34d57a9d1b60430370533/cenc.mpd",
+          "api": "ade0d3679d401d18ec4c96eb65344148:a7a659a01bf2ec21e1c406ae96dc5298"
+        },
+        {
+          "id": 5,
+          "title": "FANCODE - SD",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash-sd/enc/eayjamsonn/out/v1/6c25cddab58043a6ace0ac64d97983f0/cenc-sd.mpd?",
+          "api": "5318e462b9e0677487cb87837f0bbdb1:4fa0fb973b95738306005f2e8591bf8e"
+        },
+        {
+          "id": 6,
+          "title": "T Sports HD",
+          "type": "m3u8",
+          "link": "https://tvsen5.aynaott.com/TnMn5kZz8aLmjklkk/index.m3u8",
+          "api": ""
+        }
+      ]
+    },
+    {
+      "id": "B0HQ8BWTDG",
+      "title": "ACC Mens Asia Cup Rising Stars 2026 - 2nd Match - Sri Lanka A vs Afghanistan A",
+      "slug": "acc-mens-asia-cup-rising-stars-2026-2nd-match-sri-lanka-a-vs-afghanistan-a",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "ACC Mens Asia Cup Rising Stars 2026 - 2nd Match - Sri Lanka A vs Afghanistan A",
+        "category": "Cricket",
+        "teamA": "Team A",
+        "teamB": "Team B",
+        "startTimeIST": ""
+      },
+      "dashStreams": []
+    },
+    {
       "id": "B0HM4ZHT1F",
       "title": "India tour of New Zealand 2026 - 1st Test - New Zealand vs India",
       "slug": "india-tour-of-new-zealand-2026-1st-test-new-zealand-vs-india",
@@ -444,43 +551,13 @@
       "dashStreams": []
     },
     {
-      "id": "B0HKZY847Z",
-      "title": "Sri Lanka tour of Pakistan 2026 - 2nd Test - Pakistan vs Sri Lanka",
-      "slug": "sri-lanka-tour-of-pakistan-2026-2nd-test-pakistan-vs-sri-lanka",
+      "id": "B0HHDC1FDW",
+      "title": "Womens Big Bash League 2026 - 28th Match - Adelaide Strikers Women vs Melbourne Renegades Women",
+      "slug": "womens-big-bash-league-2026-28th-match-adelaide-strikers-women-vs-melbourne-renegades-women",
       "cat": "Live Events",
       "status": "live",
       "event": {
-        "name": "Sri Lanka tour of Pakistan 2026 - 2nd Test - Pakistan vs Sri Lanka",
-        "category": "Cricket",
-        "teamA": "Team A",
-        "teamB": "Team B",
-        "startTimeIST": ""
-      },
-      "dashStreams": []
-    },
-    {
-      "id": "B0HN8QF19X",
-      "title": "Womens Big Bash League 2026 - 26th Match - Hobart Hurricanes Women vs Perth Scorchers Women",
-      "slug": "womens-big-bash-league-2026-26th-match-hobart-hurricanes-women-vs-perth-scorchers-women",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Womens Big Bash League 2026 - 26th Match - Hobart Hurricanes Women vs Perth Scorchers Women",
-        "category": "Cricket",
-        "teamA": "Team A",
-        "teamB": "Team B",
-        "startTimeIST": ""
-      },
-      "dashStreams": []
-    },
-    {
-      "id": "B0HQ8BWTDG",
-      "title": "ACC Mens Asia Cup Rising Stars 2026 - 2nd Match - Sri Lanka A vs Afghanistan A",
-      "slug": "acc-mens-asia-cup-rising-stars-2026-2nd-match-sri-lanka-a-vs-afghanistan-a",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "ACC Mens Asia Cup Rising Stars 2026 - 2nd Match - Sri Lanka A vs Afghanistan A",
+        "name": "Womens Big Bash League 2026 - 28th Match - Adelaide Strikers Women vs Melbourne Renegades Women",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",
