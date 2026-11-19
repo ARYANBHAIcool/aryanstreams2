@@ -1,217 +1,13 @@
 {
-  "last_updated": "11/19/2026, 2:37:38 AM IST",
+  "last_updated": "11/19/2026, 8:09:11 AM IST",
   "source": "AryanStreams Official Feed",
   "events": [
-    {
-      "id": 1231,
-      "title": "Deportiva Minera vs FC Cartagena",
-      "slug": "Deportiva-Minera-vs-FC-Cartagena",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "Copa del Rey",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/329/image/dark",
-        "teamA": "Deportiva Minera",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/189948/image",
-        "teamB": "FC Cartagena",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/24329/image",
-        "startTimeIST": "2026-11-19 01:00:00 IST",
-        "endTimeIST": "2026-11-19 03:20:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1233,
-      "title": "Reus FC Reddis vs Barakaldo CF",
-      "slug": "Reus-FC-Reddis-vs-Barakaldo-CF",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "Copa del Rey",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/329/image/dark",
-        "teamA": "Reus FC Reddis",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/486292/image",
-        "teamB": "Barakaldo CF",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2879/image",
-        "startTimeIST": "2026-11-19 01:00:00 IST",
-        "endTimeIST": "2026-11-19 03:20:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1234,
-      "title": "Chelsea FC vs Paris Saint-Germain",
-      "slug": "Chelsea-FC-vs-Paris-Saint-Germain",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "UEFA Women's Champions League",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/696/image/dark",
-        "teamA": "Chelsea FC",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/66768/image",
-        "teamB": "Paris Saint-Germain",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/55505/image",
-        "startTimeIST": "2026-11-19 01:30:00 IST",
-        "endTimeIST": "2026-11-19 03:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "FANCODE FHD",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/b3b3fkmrbl/out/v1/1084d5c9a97a4c5b9f9554c88f486646/cenc.mpd",
-          "api": "82dfca238e8c4b430a3269db71965db9:a00b28caf4ac628e77a553d440c0ddca"
-        },
-        {
-          "id": 2,
-          "title": "CBS SPORTS - AQ",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/rbem8rorcw/out/v1/5318821e2c3c44c2a439681b9aa86e9b/cenc.mpd",
-          "api": "d9623774ac5c8c351aafe97c5fe70267:5164e6d05164a2d65fa8fcc962aa4861"
-        },
-        {
-          "id": 3,
-          "title": "PlayZ TV Live",
-          "type": "m3u8",
-          "link": "https://live.vivo155.com/live/sd-1-4646543.m3u8?txSecret=82a56e649ca8c48ed293f95c2231abc6&txTime=6AFE1369",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 1235,
-      "title": "Juventus vs Oud-Heverlee Leuven",
-      "slug": "Juventus-vs-Oud-Heverlee-Leuven",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "UEFA Women's Champions League",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/696/image/dark",
-        "teamA": "Juventus",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/269824/image",
-        "teamB": "Oud-Heverlee Leuven",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/178246/image",
-        "startTimeIST": "2026-11-19 01:30:00 IST",
-        "endTimeIST": "2026-11-19 03:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "FANCODE FHD",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/avqlywnuzx/out/v1/aefca6420f944a9482e117f315de535f/cenc.mpd",
-          "api": "1994b1df7dfd2e8a8d7b9bf3fb900285:22a1444b3da18e139191665b3d652835"
-        },
-        {
-          "id": 2,
-          "title": "CBS SPORTS",
-          "type": "m3u8",
-          "link": "https://live2.jorvakstreamcache.com/live/channel11.m3u8?",
-          "api": ""
-        },
-        {
-          "id": 3,
-          "title": "PlayZ TV Live",
-          "type": "m3u8",
-          "link": "https://live.vivo155.com/live/sd-1-4646544.m3u8?txSecret=82a29280eaca9b985e606f0b5495226c&txTime=6AFE139D",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 1237,
-      "title": "Coritiba vs Santos",
-      "slug": "Coritiba-vs-Santos",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "Campeonato Brasileiro Série A",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/325/image/dark",
-        "teamA": "Coritiba",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/1982/image",
-        "teamB": "Santos",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/1968/image",
-        "startTimeIST": "2026-11-19 04:00:00 IST",
-        "endTimeIST": "2026-11-19 06:20:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1238,
-      "title": "Remo vs Chapecoense",
-      "slug": "Remo-vs-Chapecoense",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "Campeonato Brasileiro Série A",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/325/image/dark",
-        "teamA": "Remo",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2012/image",
-        "teamB": "Chapecoense",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/21845/image",
-        "startTimeIST": "2026-11-19 04:30:00 IST",
-        "endTimeIST": "2026-11-19 06:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1239,
-      "title": "Cruzeiro vs Palmeiras",
-      "slug": "Cruzeiro-vs-Palmeiras",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "Campeonato Brasileiro Série A",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/325/image/dark",
-        "teamA": "Cruzeiro",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/1954/image",
-        "teamB": "Palmeiras",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/1963/image",
-        "startTimeIST": "2026-11-19 05:00:00 IST",
-        "endTimeIST": "2026-11-19 07:20:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1240,
-      "title": "Flamengo vs Athletico",
-      "slug": "Flamengo-vs-Athletico",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "Campeonato Brasileiro Série A",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/325/image/dark",
-        "teamA": "Flamengo",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/5981/image",
-        "teamB": "Athletico",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/1967/image",
-        "startTimeIST": "2026-11-19 05:00:00 IST",
-        "endTimeIST": "2026-11-19 07:20:00 IST"
-      },
-      "streams": []
-    },
     {
       "id": 1243,
       "title": "Corinthians vs Botafogo",
       "slug": "Corinthians-vs-Botafogo",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Campeonato Brasileiro Série A",
         "category": "Football",
@@ -224,14 +20,22 @@
         "startTimeIST": "2026-11-19 06:00:00 IST",
         "endTimeIST": "2026-11-19 08:20:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "PREMIERER BR",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/1obktrybht/out/v1/08265453c8f64d9fbeb3cf43764403a8/cenc.mpd",
+          "api": "332f62eb3cae824e98a4124da29a7d31:d1698cda3d040f9051125a61745b596b"
+        }
+      ]
     },
     {
       "id": 1242,
       "title": "Grêmio vs Bahia",
       "slug": "Grêmio-vs-Bahia",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Campeonato Brasileiro Série A",
         "category": "Football",
@@ -244,7 +48,15 @@
         "startTimeIST": "2026-11-19 06:00:00 IST",
         "endTimeIST": "2026-11-19 08:20:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "PREMIERER BR",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/6onrfniyry/out/v1/f23069c61dbf4e00890a40b705a84079/cenc.mpd",
+          "api": "d23f7433798a652a7d4f6791d9e1036c:4942eebd598b5727c5cc484cc62b52e8"
+        }
+      ]
     }
   ]
 }
