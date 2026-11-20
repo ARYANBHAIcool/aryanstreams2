@@ -1,5 +1,5 @@
 {
-  "last_updated": "11/20/2026, 5:40:27 PM IST",
+  "last_updated": "11/21/2026, 2:02:30 AM IST",
   "source": "AryanStreams Official Feed",
   "events": [
     {
@@ -77,7 +77,7 @@
       "title": "Belgium U17 vs Vietnam U17",
       "slug": "Belgium-U17-vs-Vietnam-U17",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "U17 World Championship",
         "category": "Football",
@@ -90,14 +90,29 @@
         "startTimeIST": "2026-11-20 18:30:00 IST",
         "endTimeIST": "2026-11-20 20:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "FOX SPORTS FHD",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/awxnrqkbo5/out/v1/716529a4091947b0877e6cb80dbd6ccb/cenc.mpd",
+          "api": "09453ce820d65fbc675de3185f9e454c:98cff9600995fa381c76fdacf3c7edae"
+        },
+        {
+          "id": 2,
+          "title": "AUVIO SPORTS - AQ",
+          "type": "mpd",
+          "link": "https://C9851Ec-rbm-hilv-fsly.cdn.redbee.live/L3/fc35c395/00db2870.isml/.mpd?t=2026-11-20T12:45:00.000",
+          "api": "5b632e0760a74b58b61fc928fadc4e73:7b5732f1a96af852ee2b0c47daa02f5f"
+        }
+      ]
     },
     {
       "id": 1970,
       "title": "Cuba U17 vs Tajikistan U17",
       "slug": "Cuba-U17-vs-Tajikistan-U17",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "U17 World Championship",
         "category": "Football",
@@ -110,14 +125,22 @@
         "startTimeIST": "2026-11-20 18:30:00 IST",
         "endTimeIST": "2026-11-20 20:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "HD STREAM",
+          "type": "m3u8",
+          "link": "https://live2.jorvakstreamcache.com/live/channel20.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": 1971,
       "title": "Mali U17 vs New Zealand U17",
       "slug": "Mali-U17-vs-New-Zealand-U17",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "U17 World Championship",
         "category": "Football",
