@@ -1,177 +1,13 @@
 {
-  "last_updated": "11/20/2026, 12:52:35 AM IST",
+  "last_updated": "11/20/2026, 6:56:12 AM IST",
   "source": "AryanStreams Official Feed",
   "events": [
-    {
-      "id": 1282,
-      "title": "FK Austria Wien vs FC Bayern München",
-      "slug": "FK-Austria-Wien-vs-FC-Bayern-München",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "UEFA Women's Champions League",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/696/image/dark",
-        "teamA": "FK Austria Wien",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/229911/image",
-        "teamB": "FC Bayern München",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/5543/image",
-        "startTimeIST": "2026-11-19 23:15:00 IST",
-        "endTimeIST": "2026-11-20 01:35:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "PlayZ TV",
-          "type": "m3u8",
-          "link": "https://live2.jorvakstreamcache.com/live/channel1.m3u8?",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 1283,
-      "title": "Paris FC vs HB Køge",
-      "slug": "Paris-FC-vs-HB-Køge",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "UEFA Women's Champions League",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/696/image/dark",
-        "teamA": "Paris FC",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/264964/image",
-        "teamB": "HB Køge",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/333128/image",
-        "startTimeIST": "2026-11-19 23:15:00 IST",
-        "endTimeIST": "2026-11-20 01:35:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "HD STREAM",
-          "type": "m3u8",
-          "link": "https://live2.jorvakstreamcache.com/live/channel16.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 1284,
-      "title": "Arsenal vs OL Lyonnes",
-      "slug": "Arsenal-vs-OL-Lyonnes",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "UEFA Women's Champions League",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/696/image/dark",
-        "teamA": "Arsenal",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/26243/image",
-        "teamB": "OL Lyonnes",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/26245/image",
-        "startTimeIST": "2026-11-20 01:30:00 IST",
-        "endTimeIST": "2026-11-20 03:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "HD STREAM",
-          "type": "m3u8",
-          "link": "https://live2.jorvakstreamcache.com/live/channel6.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 1285,
-      "title": "Benfica vs AS Roma",
-      "slug": "Benfica-vs-AS-Roma",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "UEFA Women's Champions League",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/696/image/dark",
-        "teamA": "Benfica",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/297853/image",
-        "teamB": "AS Roma",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/301414/image",
-        "startTimeIST": "2026-11-20 01:30:00 IST",
-        "endTimeIST": "2026-11-20 03:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1286,
-      "title": "Fútbol Club Barcelona vs Servette FC Chênois Féminin",
-      "slug": "Fútbol-Club-Barcelona-vs-Servette-FC-Chênois-Féminin",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "UEFA Women's Champions League",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/696/image/dark",
-        "teamA": "Fútbol Club Barcelona",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/77889/image",
-        "teamB": "Servette FC Chênois Féminin",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/305811/image",
-        "startTimeIST": "2026-11-20 01:30:00 IST",
-        "endTimeIST": "2026-11-20 03:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1287,
-      "title": "Vasco da Gama vs Internacional",
-      "slug": "Vasco-da-Gama-vs-Internacional",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "Campeonato Brasileiro Série A",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/325/image/dark",
-        "teamA": "Vasco da Gama",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/1974/image",
-        "teamB": "Internacional",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/1966/image",
-        "startTimeIST": "2026-11-20 04:00:00 IST",
-        "endTimeIST": "2026-11-20 06:20:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1288,
-      "title": "Vitória vs Red Bull Bragantino",
-      "slug": "Vitória-vs-Red-Bull-Bragantino",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "Campeonato Brasileiro Série A",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/325/image/dark",
-        "teamA": "Vitória",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/1962/image",
-        "teamB": "Red Bull Bragantino",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/1999/image",
-        "startTimeIST": "2026-11-20 04:00:00 IST",
-        "endTimeIST": "2026-11-20 06:20:00 IST"
-      },
-      "streams": []
-    },
     {
       "id": 1295,
       "title": "Orlando City SC vs FC Cincinnati",
       "slug": "Orlando-City-SC-vs-FC-Cincinnati",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "MLS",
         "category": "Football",
@@ -184,14 +20,22 @@
         "startTimeIST": "2026-11-20 06:00:00 IST",
         "endTimeIST": "2026-11-20 08:20:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "HD STREAM",
+          "type": "m3u8",
+          "link": "https://live2.jorvakstreamcache.com/live/channel5.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": 1296,
       "title": "São Paulo vs Fluminense",
       "slug": "São-Paulo-vs-Fluminense",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Campeonato Brasileiro Série A",
         "category": "Football",
@@ -204,7 +48,22 @@
         "startTimeIST": "2026-11-20 06:00:00 IST",
         "endTimeIST": "2026-11-20 08:20:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "PREMIERER BR",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/oy6rp0jwmf/out/v1/580ecf12bad24979baf8dd993dce053e/cenc.mpd",
+          "api": "9dc40460c93087aea84d6315f08ecb64:f69c8d4624fddff4ca89bd0b31bdc4a7"
+        },
+        {
+          "id": 2,
+          "title": "PlayZ TV LIVE",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/6onrfniyry/out/v1/f23069c61dbf4e00890a40b705a84079/cenc.mpd",
+          "api": "d23f7433798a652a7d4f6791d9e1036c:4942eebd598b5727c5cc484cc62b52e8"
+        }
+      ]
     },
     {
       "id": 1307,
@@ -347,7 +206,7 @@
       "streams": []
     },
     {
-      "id": 1555,
+      "id": 1698,
       "title": "FC Bayern München vs 1. FC Köln",
       "slug": "FC-Bayern-München-vs-1.-FC-Köln",
       "cat": "Football",
@@ -367,7 +226,7 @@
       "streams": []
     },
     {
-      "id": 1558,
+      "id": 1700,
       "title": "FC Bayern München vs 1. FC Köln",
       "slug": "FC-Bayern-München-vs-1.-FC-Köln",
       "cat": "Football",
@@ -387,7 +246,7 @@
       "streams": []
     },
     {
-      "id": 1556,
+      "id": 1699,
       "title": "Troyes vs Le Havre",
       "slug": "Troyes-vs-Le-Havre",
       "cat": "Football",
@@ -407,7 +266,7 @@
       "streams": []
     },
     {
-      "id": 1559,
+      "id": 1701,
       "title": "Troyes vs Le Havre",
       "slug": "Troyes-vs-Le-Havre",
       "cat": "Football",
