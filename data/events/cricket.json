@@ -1,5 +1,5 @@
 {
-  "last_updated": "11/20/2026, 3:32:00 AM IST",
+  "last_updated": "11/20/2026, 9:01:21 AM IST",
   "source": "AryanStreams Official Feed",
   "events": [
     {
@@ -7,7 +7,7 @@
       "title": "New Zealand vs India",
       "slug": "New-Zealand-vs-India",
       "cat": "Cricket",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "ICC World Test Championship",
         "category": "Cricket",
@@ -23,76 +23,90 @@
       "streams": [
         {
           "id": 1,
+          "title": "PRIME VIDEO - AQ",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/2crmhngewx/out/v1/7005e762d047462aa11136773a136dfa/cenc.mpd",
+          "api": "ebc640cb03dbdf8677190f7e4b2e96b0:7ab2c0204d41d1eefeca0cc04622c4cc"
+        },
+        {
+          "id": 2,
           "title": "WILLOW - AQ [Ad Free]",
           "type": "mpd",
           "link": "https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/cq1jp64r6p/out/v1/c500a59e5a174e4681c5c88d8d8b3b4d/cenc.mpd",
           "api": "766c7943cfc3e9d982ff49ca5e16bb90:f715c4b43971ca6990af7eff70f021b0"
         },
         {
-          "id": 2,
+          "id": 3,
+          "title": "PRIME HINDI - AQ",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/m0edrlrm8n/out/v1/769e4d71dfec4c4cb8189a0bf5051266/cenc.mpd?",
+          "api": "080deb5f5141f1274093066904865667:af9d012f808345520ac2d3b2cc9026de"
+        },
+        {
+          "id": 4,
           "title": "TNT SPORTS - AQ",
           "type": "mpd",
           "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/rhf2dwosdt/out/v1/ee550d2a68d846c797e6ce4de2e8b76d/cenc.mpd",
           "api": "69a5aa835a061ce64a630d1046727e40:d02feac8a999bd06bf4059bf33411749"
         },
         {
-          "id": 3,
+          "id": 5,
           "title": "SONYLIV ENG - AQ",
           "type": "m3u8",
           "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119931/cricodi_1911/ENG/std_lrh-800300010.m3u8?hdnea=exp=1795166753~acl=/*~id=50462297768724841353182942139935~hmac=12f635daf8cf9a5ab0a3727e9e8765a326d38006fdc3c109375afef08afac2fc",
           "api": ""
         },
         {
-          "id": 4,
+          "id": 6,
           "title": "SONYLIV HIN - AQ",
           "type": "m3u8",
           "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119921/cricodi_1911/HIN/std_lrh-800300010.m3u8?hdnea=exp=1795166753~acl=/*~id=50462297768724841353182942139935~hmac=12f635daf8cf9a5ab0a3727e9e8765a326d38006fdc3c109375afef08afac2fc",
           "api": ""
         },
         {
-          "id": 5,
+          "id": 7,
           "title": "TAPMAD - AQ",
           "type": "m3u8",
           "link": "https://tencent-cdn.tapmad.com/v1/01a14ab8af8915fc600b1e3e9683f0/01a14ab953dd1ea540a81c2b41b75f/main.m3u8",
           "api": ""
         },
         {
-          "id": 6,
+          "id": 8,
           "title": "WILLOW S2 - AQ",
           "type": "mpd",
           "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/cq1jp64r6p/out/v1/c500a59e5a174e4681c5c88d8d8b3b4d/cenc.mpd",
           "api": "766c7943cfc3e9d982ff49ca5e16bb90:f715c4b43971ca6990af7eff70f021b0"
         },
         {
-          "id": 7,
+          "id": 9,
           "title": "SONYLIV TAM - AQ",
           "type": "m3u8",
           "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119951/cricodi_1911/TAM/std_lrh-800300010.m3u8?hdnea=exp=1795166753~acl=/*~id=50462297768724841353182942139935~hmac=12f635daf8cf9a5ab0a3727e9e8765a326d38006fdc3c109375afef08afac2fc",
           "api": ""
         },
         {
-          "id": 8,
+          "id": 10,
           "title": "SONYLIV TEL - AQ",
           "type": "m3u8",
           "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119941/cricodi_1911/TEL/std_lrh-800300010.m3u8?hdnea=exp=1795166753~acl=/*~id=50462297768724841353182942139935~hmac=12f635daf8cf9a5ab0a3727e9e8765a326d38006fdc3c109375afef08afac2fc",
           "api": ""
         },
         {
-          "id": 9,
+          "id": 11,
           "title": "SONYLIV KAN - AQ",
           "type": "m3u8",
           "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119782/cricodi_1911/KAN/std_lrh-800300010.m3u8?hdnea=exp=1795166753~acl=/*~id=50462297768724841353182942139935~hmac=12f635daf8cf9a5ab0a3727e9e8765a326d38006fdc3c109375afef08afac2fc",
           "api": ""
         },
         {
-          "id": 10,
+          "id": 12,
           "title": "SONYLIV BD - AQ",
           "type": "m3u8",
           "link": "https://liveakmt-p-md.slivcdn.com/hls/live/2119931/cricodi_1911/ENG/std_lrh-800300010.m3u8?hdnea=exp=1795166753~acl=/*~id=50462297768724841353182942139935~hmac=12f635daf8cf9a5ab0a3727e9e8765a326d38006fdc3c109375afef08afac2fc",
           "api": ""
         },
         {
-          "id": 11,
+          "id": 13,
           "title": "TEN SPORTS HD",
           "type": "m3u8",
           "link": "https://live.msnetworks.net/ten-sports/master.m3u8",
