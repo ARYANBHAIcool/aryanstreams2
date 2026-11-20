@@ -1,5 +1,5 @@
 {
-  "last_updated": "11/20/2026, 2:39:42 PM IST",
+  "last_updated": "11/20/2026, 11:22:53 PM IST",
   "source": "AryanStreams Official Feed",
   "events": [
     {
@@ -80,80 +80,11 @@
       ]
     },
     {
-      "id": 1839,
-      "title": "Adelaide Strikers Women vs Melbourne Renegades Women",
-      "slug": "Adelaide-Strikers-Women-vs-Melbourne-Renegades-Women",
-      "cat": "Cricket",
-      "status": "live",
-      "event": {
-        "name": "Women's Big Bash League",
-        "category": "Cricket",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
-        "teamA": "Adelaide Strikers Women",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/274888/image",
-        "teamB": "Melbourne Renegades Women",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/274887/image",
-        "startTimeIST": "2026-11-20 13:40:00 IST",
-        "endTimeIST": ""
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "WILLOW - AQ",
-          "type": "mpd",
-          "link": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/7swiykissa/out/v1/c2fd1d13622f41d89738e5e52fa874df/cenc.mpd",
-          "api": "4db2612086ed985ae029fe71a3b56439:a7e45930ba4fbcf51cb12522ac433ca1"
-        },
-        {
-          "id": 2,
-          "title": "SKY CRICKET - AQ",
-          "type": "m3u8",
-          "link": "https://bl.rutube.ru/livestream/7c13a51576b9ff2601f08f5d57dd5169/index.m3u8?s=uiXES2ePt7xTpQnbJxn7Dg&e=2074684474&scheme=https",
-          "api": ""
-        },
-        {
-          "id": 3,
-          "title": "WILLOW HD",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/tll6uwepxa/out/v1/a7f67cbb33df46539312956427343886/cenc.mpd",
-          "api": "290e09c837da78d5cd961978d390515c:b748836c71e6a4ca68ef5b5652db6247"
-        },
-        {
-          "id": 4,
-          "title": "TAPMAD - AQ",
-          "type": "m3u8",
-          "link": "https://tencent-cdn.tapmad.com/v1/01a1456f124d15fc600b1e3e9683d7/01a145990eba15fc60e91e1786b054/main.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 1840,
-      "title": "Pakistan Women vs Ireland Women",
-      "slug": "Pakistan-Women-vs-Ireland-Women",
-      "cat": "Cricket",
-      "status": "upcoming",
-      "event": {
-        "name": "Womens Emerging Nations Trophy",
-        "category": "Cricket",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/30714/image/dark",
-        "teamA": "Pakistan Women",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/187808/image",
-        "teamB": "Ireland Women",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/213116/image",
-        "startTimeIST": "2026-11-20 14:45:00 IST",
-        "endTimeIST": ""
-      },
-      "streams": []
-    },
-    {
       "id": 1434,
       "title": "India A vs Nepal",
       "slug": "India-A-vs-Nepal",
       "cat": "Cricket",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Men's Asia Cup Rising Stars",
         "category": "Cricket",
@@ -171,49 +102,140 @@
           "id": 1,
           "title": "WILLOW - AQ",
           "type": "mpd",
-          "link": "https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/cix65j0fhp/out/v1/40e83e3831354f46aa6c4f7f33b22606/cenc.mpd",
-          "api": "964c4b09d34aec26004af58468df3f63:33241077e9b7604e876d6b23c1fcf8ac"
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/myvotpnueo/out/v1/31f5a50cbd8041308c560355044e0b03/cenc.mpd",
+          "api": "91ffd985da527c7d77ecc801128d11cc:3bb5d51b2fef3b50c43d0cc12455eaf7"
         },
         {
           "id": 2,
-          "title": "PRIME VIDEO FHD",
+          "title": "PRIME MULTI AUDIO",
           "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/x0igehpu1l/out/v1/a22fcedcc6fd47e19b5ae642a935c1d0/cenc.mpd",
-          "api": "a483403980e885c7c448950500139b07:181c08c0de1ef25e8f893a81909304c1"
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/xpbyju7ycf/out/v1/01a540649ada43b5a8830cfe656316b6/cenc.mpd",
+          "api": "5b78f639f1bd17fe9859bf92ade8a9d0:00694c720f2afdb0160302bdb1ff209e"
         },
         {
           "id": 3,
-          "title": "STARZPLAY FHD",
-          "type": "mpd",
-          "link": "https://d1ifzl5cnhi7bu.cloudfront.net/out/v1/45ba30e075ad455a8767d3f33e67ea3d/index.mpd",
-          "api": "0ae4f162eec3e6f2b580a5bf0f4a64d4:03483335db81cba5bbcf51b6d31196d9"
+          "title": "SONYLIV ENG - AQ",
+          "type": "m3u8",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119931/cricodi_2011/ENG/std_lrh-800300010.m3u8?hdnea=exp=1795211773~acl=/*~id=76948268902062468843895461111021~hmac=d949091fecf4c22fd2ca351f4d9da867d84b54d858155007fa953d08dddf3b2f",
+          "api": ""
         },
         {
           "id": 4,
-          "title": "TAMASHA AQ",
+          "title": "SONYLIV HIN - AQ",
           "type": "m3u8",
-          "link": "https://cdn06khi-n.tamashaweb.com:8087/appcast/ACC-men-AC26-b-abr/playlist.m3u8",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119921/cricodi_2011/HIN/std_lrh-800300010.m3u8?hdnea=exp=1795211773~acl=/*~id=76948268902062468843895461111021~hmac=d949091fecf4c22fd2ca351f4d9da867d84b54d858155007fa953d08dddf3b2f",
           "api": ""
         },
         {
           "id": 5,
-          "title": "WILLOW ALT",
-          "type": "mpd",
-          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/q8kzxra130/out/v1/f2f42de8b095422eb0f84d301d0b69a5/cenc.mpd",
-          "api": "964c4b09d34aec26004af58468df3f63:33241077e9b7604e876d6b23c1fcf8ac"
+          "title": "SONYLIV TAM - AQ",
+          "type": "m3u8",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119951/cricodi_2011/TAM/std_lrh-800300010.m3u8?hdnea=exp=1795211773~acl=/*~id=76948268902062468843895461111021~hmac=d949091fecf4c22fd2ca351f4d9da867d84b54d858155007fa953d08dddf3b2f",
+          "api": ""
         },
         {
           "id": 6,
-          "title": "SONYLIV ENG - AQ",
+          "title": "SONYLIV TEL - AQ",
           "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2120301/criclive1911/ENG/std_lrh-800300010.m3u8?hdnea=exp=1795124926~acl=/*~id=84117785468934185076631080120857~hmac=5c6ce4f7b8eb18e33439171995937341f4af30e5b366d33d7268e4bb95e34ed8",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119941/cricodi_2011/TEL/std_lrh-800300010.m3u8?hdnea=exp=1795211773~acl=/*~id=76948268902062468843895461111021~hmac=d949091fecf4c22fd2ca351f4d9da867d84b54d858155007fa953d08dddf3b2f",
           "api": ""
         },
         {
           "id": 7,
-          "title": "TEN SPORTS HD",
+          "title": "SONYLIV KAN - AQ",
           "type": "m3u8",
-          "link": "https://live.msnetworks.net/ten-sports/master.m3u8",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119782/cricodi_2011/KAN/std_lrh-800300010.m3u8?hdnea=exp=1795211773~acl=/*~id=76948268902062468843895461111021~hmac=d949091fecf4c22fd2ca351f4d9da867d84b54d858155007fa953d08dddf3b2f",
+          "api": ""
+        },
+        {
+          "id": 8,
+          "title": "TAMASHA AQ",
+          "type": "m3u8",
+          "link": "https://cdn06khi-n.tamashaweb.com:8087/appcast/ACC-men-AC26-b-abr/playlist.m3u8",
+          "api": ""
+        }
+      ]
+    },
+    {
+      "id": 1997,
+      "title": "Italia T10 2026",
+      "slug": "Italia-T10-vs-Italia-T",
+      "cat": "Cricket",
+      "status": "live",
+      "event": {
+        "name": "Italia T10 2026",
+        "category": "Cricket",
+        "type": "",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBTK9sfDCFhv5T2jEH3nkh9cPngwVXMaQFV9uNCn66zg&s=10",
+        "teamA": "Italia T10",
+        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBTK9sfDCFhv5T2jEH3nkh9cPngwVXMaQFV9uNCn66zg&s=10",
+        "teamB": "Italia T10",
+        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBTK9sfDCFhv5T2jEH3nkh9cPngwVXMaQFV9uNCn66zg&s=10",
+        "startTimeIST": "2026-11-20 18:30:00 IST",
+        "endTimeIST": ""
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "PlayZ TV",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/m6sqanvm2m/out/v1/f6beb46c6e9a4132ad739f3ca27df6aa/cenc.mpd",
+          "api": "1444f4235529f183f0a5a486befe9cdb:e5e3fec67a1bb3472a2089c8a0a2557f"
+        }
+      ]
+    },
+    {
+      "id": 1221,
+      "title": "Abu Dhabi T10 League",
+      "slug": "UAE-Bulls-vs-Yas-Lions",
+      "cat": "Cricket",
+      "status": "live",
+      "event": {
+        "name": "Abu Dhabi T10 League",
+        "category": "Cricket",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
+        "teamA": "Abu Dhabi T10",
+        "teamAFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
+        "teamB": "Abu Dhabi T10",
+        "teamBFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
+        "startTimeIST": "2026-11-20 19:00:00 IST",
+        "endTimeIST": ""
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW - AQ",
+          "type": "mpd",
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/ciluyzixht/out/v1/b3ec24213f4b40be9c5644b6eed1774b/cenc.mpd",
+          "api": "b523235faf497e1ce0967946ba01a9c3:1697e8dd99cd9cd940f463f4fdc7385f"
+        },
+        {
+          "id": 2,
+          "title": "PREMIERE SPORTS - AQ",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/bcj3iscpd6/out/v1/fcd137b391214f7cb99dd4d7be90ca87/cenc.mpd",
+          "api": "1a5df53609ebc9857898c490f4724918:77f62980d582ec541280796acf8b2d19"
+        },
+        {
+          "id": 3,
+          "title": "TAMASHA PRO AQ",
+          "type": "m3u8",
+          "link": "https://cdn04khi-n.tamashaweb.com:8087/appcast/abudhabi-t10-adfree-2026-abr/playlist.m3u8",
+          "api": ""
+        },
+        {
+          "id": 4,
+          "title": "MYCO AQ",
+          "type": "m3u8",
+          "link": "https://ml-pull-rtmp-pk1.myco.io/SRT/hls/index.m3u8",
+          "api": ""
+        },
+        {
+          "id": 5,
+          "title": "A SPORTS HD",
+          "type": "m3u8",
+          "link": "https://live.msnetworks.net/a-sports/master.m3u8",
           "api": ""
         }
       ]
@@ -454,62 +476,6 @@
       "streams": []
     },
     {
-      "id": 1221,
-      "title": "Abu Dhabi T10 League",
-      "slug": "UAE-Bulls-vs-Yas-Lions",
-      "cat": "Cricket",
-      "status": "upcoming",
-      "event": {
-        "name": "Abu Dhabi T10 League",
-        "category": "Cricket",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
-        "teamA": "Abu Dhabi T10",
-        "teamAFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
-        "teamB": "Abu Dhabi T10",
-        "teamBFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
-        "startTimeIST": "2026-11-21 19:00:00 IST",
-        "endTimeIST": ""
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "WILLOW - AQ",
-          "type": "mpd",
-          "link": "https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/31bn2pivmp/out/v1/08c3aa15efe64750912c5fd5f87392aa/cenc.mpd",
-          "api": "1e1eb151be522900a4bcbce463f764d4:49b4c6df12c9459d6d7641341270d890"
-        },
-        {
-          "id": 2,
-          "title": "PREMIERE SPORTS - AQ",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/bcj3iscpd6/out/v1/fcd137b391214f7cb99dd4d7be90ca87/cenc.mpd",
-          "api": "1a5df53609ebc9857898c490f4724918:77f62980d582ec541280796acf8b2d19"
-        },
-        {
-          "id": 3,
-          "title": "TAMASHA PRO AQ",
-          "type": "m3u8",
-          "link": "https://cdn04khi-n.tamashaweb.com:8087/appcast/abudhabi-t10-adfree-2026-abr/playlist.m3u8",
-          "api": ""
-        },
-        {
-          "id": 4,
-          "title": "MYCO AQ",
-          "type": "m3u8",
-          "link": "https://ml-pull-rtmp-pk1.myco.io/SRT/hls/index.m3u8",
-          "api": ""
-        },
-        {
-          "id": 5,
-          "title": "A SPORTS HD",
-          "type": "m3u8",
-          "link": "https://live.msnetworks.net/a-sports/master.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
       "id": 1884,
       "title": "International League T20",
       "slug": "ILT-T20-vs-ILT-T",
@@ -593,28 +559,13 @@
       ]
     },
     {
-      "id": "B0HML8LTDL",
-      "title": "ACC Mens Asia Cup Rising Stars 2026 - 3rd Match - Pakistan A vs United Arab Emirates",
-      "slug": "acc-mens-asia-cup-rising-stars-2026-3rd-match-pakistan-a-vs-united-arab-emirates",
+      "id": "B0HHN8W74B",
+      "title": "ACC Mens Asia Cup Rising Stars 2026 - 4th Match - India A vs Nepal",
+      "slug": "acc-mens-asia-cup-rising-stars-2026-4th-match-india-a-vs-nepal",
       "cat": "Live Events",
       "status": "live",
       "event": {
-        "name": "ACC Mens Asia Cup Rising Stars 2026 - 3rd Match - Pakistan A vs United Arab Emirates",
-        "category": "Cricket",
-        "teamA": "Team A",
-        "teamB": "Team B",
-        "startTimeIST": ""
-      },
-      "dashStreams": []
-    },
-    {
-      "id": "B0HHDC1FDW",
-      "title": "Womens Big Bash League 2026 - 28th Match - Adelaide Strikers Women vs Melbourne Renegades Women",
-      "slug": "womens-big-bash-league-2026-28th-match-adelaide-strikers-women-vs-melbourne-renegades-women",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Womens Big Bash League 2026 - 28th Match - Adelaide Strikers Women vs Melbourne Renegades Women",
+        "name": "ACC Mens Asia Cup Rising Stars 2026 - 4th Match - India A vs Nepal",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",
@@ -630,6 +581,21 @@
       "status": "live",
       "event": {
         "name": "India tour of New Zealand 2026 - 1st Test - New Zealand vs India",
+        "category": "Cricket",
+        "teamA": "Team A",
+        "teamB": "Team B",
+        "startTimeIST": ""
+      },
+      "dashStreams": []
+    },
+    {
+      "id": "B0HMYH4TNM",
+      "title": "Womens Big Bash League 2026 - 29th Match - Hobart Hurricanes Women vs Sydney Thunder Women",
+      "slug": "womens-big-bash-league-2026-29th-match-hobart-hurricanes-women-vs-sydney-thunder-women",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "Womens Big Bash League 2026 - 29th Match - Hobart Hurricanes Women vs Sydney Thunder Women",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",
