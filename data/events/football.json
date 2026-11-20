@@ -1,90 +1,7 @@
 {
-  "last_updated": "11/20/2026, 6:56:12 AM IST",
+  "last_updated": "11/20/2026, 2:39:42 PM IST",
   "source": "AryanStreams Official Feed",
   "events": [
-    {
-      "id": 1295,
-      "title": "Orlando City SC vs FC Cincinnati",
-      "slug": "Orlando-City-SC-vs-FC-Cincinnati",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "MLS",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/242/image/dark",
-        "teamA": "Orlando City SC",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/52237/image",
-        "teamB": "FC Cincinnati",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/215167/image",
-        "startTimeIST": "2026-11-20 06:00:00 IST",
-        "endTimeIST": "2026-11-20 08:20:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "HD STREAM",
-          "type": "m3u8",
-          "link": "https://live2.jorvakstreamcache.com/live/channel5.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 1296,
-      "title": "São Paulo vs Fluminense",
-      "slug": "São-Paulo-vs-Fluminense",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "Campeonato Brasileiro Série A",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/325/image/dark",
-        "teamA": "São Paulo",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/1981/image",
-        "teamB": "Fluminense",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/1961/image",
-        "startTimeIST": "2026-11-20 06:00:00 IST",
-        "endTimeIST": "2026-11-20 08:20:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "PREMIERER BR",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/oy6rp0jwmf/out/v1/580ecf12bad24979baf8dd993dce053e/cenc.mpd",
-          "api": "9dc40460c93087aea84d6315f08ecb64:f69c8d4624fddff4ca89bd0b31bdc4a7"
-        },
-        {
-          "id": 2,
-          "title": "PlayZ TV LIVE",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/6onrfniyry/out/v1/f23069c61dbf4e00890a40b705a84079/cenc.mpd",
-          "api": "d23f7433798a652a7d4f6791d9e1036c:4942eebd598b5727c5cc484cc62b52e8"
-        }
-      ]
-    },
-    {
-      "id": 1307,
-      "title": "Seattle Sounders FC vs Real Salt Lake",
-      "slug": "Seattle-Sounders-FC-vs-Real-Salt-Lake",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "MLS",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/242/image/dark",
-        "teamA": "Seattle Sounders FC",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/22009/image",
-        "teamB": "Real Salt Lake",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/5133/image",
-        "startTimeIST": "2026-11-20 08:30:00 IST",
-        "endTimeIST": "2026-11-20 10:50:00 IST"
-      },
-      "streams": []
-    },
     {
       "id": 1310,
       "title": "East Bengal FC vs Sporting Delhi",
@@ -106,6 +23,66 @@
       "streams": []
     },
     {
+      "id": 1969,
+      "title": "Belgium U17 vs Vietnam U17",
+      "slug": "Belgium-U17-vs-Vietnam-U17",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "U17 World Championship",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/279/image/dark",
+        "teamA": "Belgium U17",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/22583/image",
+        "teamB": "Vietnam U17",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/468404/image",
+        "startTimeIST": "2026-11-20 18:30:00 IST",
+        "endTimeIST": "2026-11-20 20:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": 1970,
+      "title": "Cuba U17 vs Tajikistan U17",
+      "slug": "Cuba-U17-vs-Tajikistan-U17",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "U17 World Championship",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/279/image/dark",
+        "teamA": "Cuba U17",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/190704/image",
+        "teamB": "Tajikistan U17",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/229664/image",
+        "startTimeIST": "2026-11-20 18:30:00 IST",
+        "endTimeIST": "2026-11-20 20:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": 1971,
+      "title": "Mali U17 vs New Zealand U17",
+      "slug": "Mali-U17-vs-New-Zealand-U17",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "U17 World Championship",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/279/image/dark",
+        "teamA": "Mali U17",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/203876/image",
+        "teamB": "New Zealand U17",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/22634/image",
+        "startTimeIST": "2026-11-20 19:00:00 IST",
+        "endTimeIST": "2026-11-20 21:20:00 IST"
+      },
+      "streams": []
+    },
+    {
       "id": 1311,
       "title": "Bengaluru FC vs Mumbai City FC",
       "slug": "Bengaluru-FC-vs-Mumbai-City-FC",
@@ -122,6 +99,106 @@
         "teamBFlag": "https://img.sofascore.com/api/v1/team/174600/image",
         "startTimeIST": "2026-11-20 19:30:00 IST",
         "endTimeIST": "2026-11-20 21:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": 1973,
+      "title": "Spain U17 vs China U17",
+      "slug": "Spain-U17-vs-China-U17",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "U17 World Championship",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/279/image/dark",
+        "teamA": "Spain U17",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/22479/image",
+        "teamB": "China U17",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/468402/image",
+        "startTimeIST": "2026-11-20 19:30:00 IST",
+        "endTimeIST": "2026-11-20 21:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": 1975,
+      "title": "Italy U17 vs Jamaica U17",
+      "slug": "Italy-U17-vs-Jamaica-U17",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "U17 World Championship",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/279/image/dark",
+        "teamA": "Italy U17",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/22616/image",
+        "teamB": "Jamaica U17",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/22617/image",
+        "startTimeIST": "2026-11-20 20:30:00 IST",
+        "endTimeIST": "2026-11-20 22:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": 1976,
+      "title": "Senegal U17 vs Croatia U17",
+      "slug": "Senegal-U17-vs-Croatia-U17",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "U17 World Championship",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/279/image/dark",
+        "teamA": "Senegal U17",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/323076/image",
+        "teamB": "Croatia U17",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/22594/image",
+        "startTimeIST": "2026-11-20 21:00:00 IST",
+        "endTimeIST": "2026-11-20 23:20:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": 1978,
+      "title": "Côte d'Ivoire U17 vs Uzbekistan U17",
+      "slug": "Côte-d'Ivoire-U17-vs-Uzbekistan-U17",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "U17 World Championship",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/279/image/dark",
+        "teamA": "Côte d'Ivoire U17",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/48857/image",
+        "teamB": "Uzbekistan U17",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/22662/image",
+        "startTimeIST": "2026-11-20 21:30:00 IST",
+        "endTimeIST": "2026-11-20 23:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": 1980,
+      "title": "Fiji U17 vs Morocco U17",
+      "slug": "Fiji-U17-vs-Morocco-U17",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "U17 World Championship",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/279/image/dark",
+        "teamA": "Fiji U17",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/1096685/image",
+        "teamB": "Morocco U17",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/48862/image",
+        "startTimeIST": "2026-11-20 21:30:00 IST",
+        "endTimeIST": "2026-11-20 23:50:00 IST"
       },
       "streams": []
     },
@@ -206,7 +283,7 @@
       "streams": []
     },
     {
-      "id": 1698,
+      "id": 1835,
       "title": "FC Bayern München vs 1. FC Köln",
       "slug": "FC-Bayern-München-vs-1.-FC-Köln",
       "cat": "Football",
@@ -226,47 +303,7 @@
       "streams": []
     },
     {
-      "id": 1700,
-      "title": "FC Bayern München vs 1. FC Köln",
-      "slug": "FC-Bayern-München-vs-1.-FC-Köln",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "Bundesliga",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
-        "teamA": "FC Bayern München",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2672/image",
-        "teamB": "1. FC Köln",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2671/image",
-        "startTimeIST": "2026-11-21 01:00:00 IST",
-        "endTimeIST": "2026-11-21 03:20:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1699,
-      "title": "Troyes vs Le Havre",
-      "slug": "Troyes-vs-Le-Havre",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "Ligue 1",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/34/image/dark",
-        "teamA": "Troyes",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/1652/image",
-        "teamB": "Le Havre",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/1662/image",
-        "startTimeIST": "2026-11-21 01:15:00 IST",
-        "endTimeIST": "2026-11-21 03:35:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1701,
+      "id": 1847,
       "title": "Troyes vs Le Havre",
       "slug": "Troyes-vs-Le-Havre",
       "cat": "Football",
@@ -322,6 +359,46 @@
         "teamBFlag": "https://img.sofascore.com/api/v1/team/12/image",
         "startTimeIST": "2026-11-21 01:30:00 IST",
         "endTimeIST": "2026-11-21 03:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": 1868,
+      "title": "FC Porto vs USC Paredes",
+      "slug": "FC-Porto-vs-USC-Paredes",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "Taça de Portugal",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/336/image/dark",
+        "teamA": "FC Porto",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/3002/image",
+        "teamB": "USC Paredes",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/231591/image",
+        "startTimeIST": "2026-11-21 02:15:00 IST",
+        "endTimeIST": "2026-11-21 04:35:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": 1870,
+      "title": "Atletico CP vs Casa Pia",
+      "slug": "Atletico-CP-vs-Casa-Pia",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "Taça de Portugal",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/336/image/dark",
+        "teamA": "Atletico CP",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/35177/image",
+        "teamB": "Casa Pia",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/36365/image",
+        "startTimeIST": "2026-11-21 16:30:00 IST",
+        "endTimeIST": "2026-11-21 18:50:00 IST"
       },
       "streams": []
     },
