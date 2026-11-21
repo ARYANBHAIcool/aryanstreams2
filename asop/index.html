@@ -312,6 +312,10 @@
             'leeds': 'leeds', 'leeds united': 'leeds',
             'bournemouth': 'bournemouth', 'afc bournemouth': 'bournemouth',
             'brighton': 'brighton', 'brighton & hove albion': 'brighton', 'brighton and hove albion': 'brighton',
+            'nottingham forest': 'nottingham', 'nottingham': 'nottingham', 'forest': 'nottingham',
+            'sunderland': 'sunderland',
+            'ipswich town': 'ipswich', 'ipswich': 'ipswich',
+            'aston villa': 'astonvilla', 'villa': 'astonvilla',
             'wolves': 'wolves', 'wolverhampton': 'wolves', 'wolverhampton wanderers': 'wolves',
             'west ham': 'westham', 'west ham united': 'westham',
             'canelo': 'canelo', 'canelo alvarez': 'canelo',
@@ -352,6 +356,82 @@
                 if (m1 && m2) return true;
             }
             return false;
+        }
+
+        // Generate full array of HD broadcaster servers directly from Trendy48 master network
+        function getTrendyMasterServers(m) {
+            var servers = [];
+            var title = (m.title || '').toLowerCase();
+            var cat = (m.category || 'football').toLowerCase();
+            var eventSlug = m.id || '';
+
+            // Server 1: Primary Event Live Stream
+            var pUrl = m.watch_url || ('https://pijirege.st/event/' + eventSlug);
+            servers.push({
+                index: 1,
+                name: 'Server 1',
+                detail: 'Trendy48 HD',
+                type: 'iframe',
+                url: pUrl,
+                playerUrl: pUrl
+            });
+
+            // Server 2: Alternate Web Direct
+            var webUrl = 'https://trendy48.online/event/' + eventSlug;
+            servers.push({
+                index: 2,
+                name: 'Server 2',
+                detail: 'Trendy48 Web',
+                type: 'iframe',
+                url: webUrl,
+                playerUrl: webUrl
+            });
+
+            // Add master broadcaster servers from Trendy48's live network
+            if (cat === 'football') {
+                if (/arsenal|chelsea|city|united|liverpool|tottenham|newcastle|aston|villa|bournemouth|forest|sunderland|leeds|fulham|brighton|wolves|everton|crystal|west ham|brentford|leicester|ipswich|premier league/i.test(title)) {
+                    servers.push({ name: 'Server 3', detail: 'Sky Sport Select NZ', type: 'iframe', url: 'https://pijirege.st/live-tv?ch=skysportselect-nz', playerUrl: 'https://pijirege.st/live-tv?ch=skysportselect-nz' });
+                    servers.push({ name: 'Server 4', detail: 'beIN Sports 1 MENA', type: 'iframe', url: 'https://pijirege.st/live-tv?ch=beinsports1-sa', playerUrl: 'https://pijirege.st/live-tv?ch=beinsports1-sa' });
+                    servers.push({ name: 'Server 5', detail: 'USA Network HD', type: 'iframe', url: 'https://pijirege.st/live-tv?ch=usanetwork-usa', playerUrl: 'https://pijirege.st/live-tv?ch=usanetwork-usa' });
+                    servers.push({ name: 'Server 6', detail: 'Premier Sports 1', type: 'iframe', url: 'https://pijirege.st/live-tv?ch=nf1skh2l', playerUrl: 'https://pijirege.st/live-tv?ch=nf1skh2l' });
+                    servers.push({ name: 'Server 7', detail: 'SuperSport Premier League', type: 'iframe', url: 'https://pijirege.st/live-tv?ch=ozdaxj35', playerUrl: 'https://pijirege.st/live-tv?ch=ozdaxj35' });
+                    servers.push({ name: 'Server 8', detail: 'DAZN 1 Portugal', type: 'iframe', url: 'https://pijirege.st/live-tv?ch=dazn1-pt', playerUrl: 'https://pijirege.st/live-tv?ch=dazn1-pt' });
+                } else if (/madrid|barcelona|atletico|sevilla|valencia|villarreal|betis|bilbao|sociedad|la liga|laliga/i.test(title)) {
+                    servers.push({ name: 'Server 3', detail: 'DAZN LaLiga', type: 'iframe', url: 'https://pijirege.st/live-tv?ch=daznlaliga-es', playerUrl: 'https://pijirege.st/live-tv?ch=daznlaliga-es' });
+                    servers.push({ name: 'Server 4', detail: 'beIN Sports 1 MENA', type: 'iframe', url: 'https://pijirege.st/live-tv?ch=beinsports1-sa', playerUrl: 'https://pijirege.st/live-tv?ch=beinsports1-sa' });
+                    servers.push({ name: 'Server 5', detail: 'Premier Sports 1', type: 'iframe', url: 'https://pijirege.st/live-tv?ch=nf1skh2l', playerUrl: 'https://pijirege.st/live-tv?ch=nf1skh2l' });
+                    servers.push({ name: 'Server 6', detail: 'beIN Sports 3 MENA', type: 'iframe', url: 'https://pijirege.st/live-tv?ch=beinsports3-sa', playerUrl: 'https://pijirege.st/live-tv?ch=beinsports3-sa' });
+                } else if (/milan|inter|juventus|roma|napoli|lazio|atalanta|fiorentina|serie a/i.test(title)) {
+                    servers.push({ name: 'Server 3', detail: 'DAZN 1 Italia', type: 'iframe', url: 'https://pijirege.st/live-tv?ch=dazn1-it', playerUrl: 'https://pijirege.st/live-tv?ch=dazn1-it' });
+                    servers.push({ name: 'Server 4', detail: 'TNT Sports 1 UK', type: 'iframe', url: 'https://pijirege.st/live-tv?ch=tntsports1-uk', playerUrl: 'https://pijirege.st/live-tv?ch=tntsports1-uk' });
+                    servers.push({ name: 'Server 5', detail: 'beIN Sports 2 MENA', type: 'iframe', url: 'https://pijirege.st/live-tv?ch=beinsports2-sa', playerUrl: 'https://pijirege.st/live-tv?ch=beinsports2-sa' });
+                } else if (/psg|paris|monaco|lyon|marseille|lille|rennes|ligue 1/i.test(title)) {
+                    servers.push({ name: 'Server 3', detail: 'beIN Sports USA HD', type: 'iframe', url: 'https://pijirege.st/live-tv?ch=beinsports-usa', playerUrl: 'https://pijirege.st/live-tv?ch=beinsports-usa' });
+                    servers.push({ name: 'Server 4', detail: 'beIN Sports 1 France', type: 'iframe', url: 'https://pijirege.st/live-tv?ch=beinsports1-fr', playerUrl: 'https://pijirege.st/live-tv?ch=beinsports1-fr' });
+                    servers.push({ name: 'Server 5', detail: 'beIN Sports 1 MENA', type: 'iframe', url: 'https://pijirege.st/live-tv?ch=beinsports1-sa', playerUrl: 'https://pijirege.st/live-tv?ch=beinsports1-sa' });
+                } else {
+                    servers.push({ name: 'Server 3', detail: 'beIN Sports 1 MENA', type: 'iframe', url: 'https://pijirege.st/live-tv?ch=beinsports1-sa', playerUrl: 'https://pijirege.st/live-tv?ch=beinsports1-sa' });
+                    servers.push({ name: 'Server 4', detail: 'beIN Sports 2 MENA', type: 'iframe', url: 'https://pijirege.st/live-tv?ch=beinsports2-sa', playerUrl: 'https://pijirege.st/live-tv?ch=beinsports2-sa' });
+                    servers.push({ name: 'Server 5', detail: 'SuperSport Premier League', type: 'iframe', url: 'https://pijirege.st/live-tv?ch=ozdaxj35', playerUrl: 'https://pijirege.st/live-tv?ch=ozdaxj35' });
+                }
+            } else if (cat === 'american-football' || cat === 'ncaaf') {
+                servers.push({ name: 'Server 3', detail: 'NFL Network', type: 'iframe', url: 'https://pijirege.st/live-tv?ch=nfl-network-m', playerUrl: 'https://pijirege.st/live-tv?ch=nfl-network-m' });
+                servers.push({ name: 'Server 4', detail: 'CBS Sports Network', type: 'iframe', url: 'https://pijirege.st/live-tv?ch=cbssn-usa', playerUrl: 'https://pijirege.st/live-tv?ch=cbssn-usa' });
+                servers.push({ name: 'Server 5', detail: 'ESPN USA', type: 'iframe', url: 'https://pijirege.st/live-tv?ch=espn-usa', playerUrl: 'https://pijirege.st/live-tv?ch=espn-usa' });
+            } else if (cat === 'basketball' || cat === 'ncaab') {
+                servers.push({ name: 'Server 3', detail: 'ESPN USA', type: 'iframe', url: 'https://pijirege.st/live-tv?ch=espn-usa', playerUrl: 'https://pijirege.st/live-tv?ch=espn-usa' });
+                servers.push({ name: 'Server 4', detail: 'NBA TV Live', type: 'iframe', url: 'https://pijirege.st/live-tv?ch=nba-tv-m', playerUrl: 'https://pijirege.st/live-tv?ch=nba-tv-m' });
+            } else if (cat === 'motor-sports' || /f1|formula/i.test(title)) {
+                servers.push({ name: 'Server 3', detail: 'DAZN F1', type: 'iframe', url: 'https://pijirege.st/live-tv?ch=daznf1-es', playerUrl: 'https://pijirege.st/live-tv?ch=daznf1-es' });
+                servers.push({ name: 'Server 4', detail: 'Sky Sports F1', type: 'iframe', url: 'https://pijirege.st/live-tv?ch=skysportsf1', playerUrl: 'https://pijirege.st/live-tv?ch=skysportsf1' });
+            }
+
+            // Renumber all cleanly
+            return servers.map(function(s, idx) {
+                s.index = idx + 1;
+                s.name = 'Server ' + (idx + 1);
+                return s;
+            });
         }
 
         // Fetch matches from Trendy48, AdilX, and Futbol-X in parallel
@@ -395,7 +475,7 @@
 
                 var unified = [];
 
-                // 1. Ingest Trendy48
+                // 1. Ingest Trendy48 with All Master Broadcaster Servers
                 tToday.forEach(function(m) {
                     if (!m || !m.title) return;
                     var teams = extractTeams(m.title);
@@ -406,65 +486,8 @@
                         date: m.date || 0,
                         isLive: liveMatchesMap[m.id] === true,
                         teams: teams,
-                        sources: []
+                        sources: getTrendyMasterServers(m)
                     };
-
-                    var primaryUrl = m.watch_url || ('https://trendy48.online/event/' + m.id);
-                    var isPsgMatch = /psg|paris/i.test(m.title);
-                    if (isPsgMatch) {
-                        matchObj.sources.push({
-                            index: 1,
-                            name: 'Server 1',
-                            detail: 'beIN Sports USA HD',
-                            type: 'iframe',
-                            url: 'https://trend48.st/live-tv?ch=beinsports-usa',
-                            playerUrl: 'https://trend48.st/live-tv?ch=beinsports-usa'
-                        });
-                        matchObj.sources.push({
-                            index: 2,
-                            name: 'Server 2',
-                            detail: 'beIN Sports USA Web',
-                            type: 'iframe',
-                            url: 'https://trend48.st/live-tv?ch=beinsports-usa',
-                            playerUrl: 'https://trend48.st/live-tv?ch=beinsports-usa'
-                        });
-                    } else {
-                        matchObj.sources.push({
-                            index: 1,
-                            name: 'Server 1',
-                            detail: 'Trendy48 Live',
-                            type: 'iframe',
-                            url: primaryUrl,
-                            playerUrl: primaryUrl
-                        });
-                    }
-
-                    if (Array.isArray(m.sources) && m.sources.length > 1) {
-                        for (var i = 1; i < m.sources.length; i++) {
-                            var s = m.sources[i];
-                            var sUrl = s.url || (s.id ? 'https://trendy48.online/event/' + s.id : primaryUrl);
-                            matchObj.sources.push({
-                                index: matchObj.sources.length + 1,
-                                name: 'Server ' + (matchObj.sources.length + 1),
-                                detail: s.name || s.source || 'Alternative',
-                                type: 'iframe',
-                                url: sUrl,
-                                playerUrl: sUrl
-                            });
-                        }
-                    }
-
-                    if (knownDirectEmbeds[m.id]) {
-                        var embed = knownDirectEmbeds[m.id];
-                        matchObj.sources.push({
-                            index: matchObj.sources.length + 1,
-                            name: 'Server ' + (matchObj.sources.length + 1),
-                            detail: embed.name || 'Direct HD',
-                            type: 'iframe',
-                            url: embed.url,
-                            playerUrl: embed.url
-                        });
-                    }
 
                     unified.push(matchObj);
                 });
