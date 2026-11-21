@@ -774,42 +774,45 @@
             // Server buttons HTML (if 1 then Server 1, if multiple then Server 1, Server 2...)
             var serverBtnsHtml = sources.map(function(s, idx) {
                 var btnClass = s.index === 1 
-                    ? 'bg-orange-500 hover:bg-orange-600 text-black font-extrabold'
-                    : 'bg-neutral-800 hover:bg-neutral-700 text-neutral-200 border border-neutral-700 font-bold';
+                    ? 'bg-orange-500 hover:bg-orange-600 text-black font-extrabold shadow-sm'
+                    : 'bg-neutral-800 hover:bg-neutral-700 text-neutral-200 border border-neutral-700/80 font-bold';
 
-                return '<button onclick="openPlayerWithSource(\'' + m.id + '\', ' + idx + ', event)" class="server-btn ' + btnClass + ' text-[11px] px-2.5 py-1 rounded-md shadow-sm whitespace-nowrap">' +
+                return '<button onclick="openPlayerWithSource(\'' + m.id + '\', ' + idx + ', event)" title="' + (s.detail || s.name) + '" class="server-btn ' + btnClass + ' text-[11px] px-2.5 py-1 rounded-md whitespace-nowrap transition cursor-pointer">' +
                        s.name +
                        '</button>';
             }).join('');
 
-            return '<div onclick="openPlayerWithSource(\'' + m.id + '\', 0, event)" class="match-card text-white/90 w-full min-h-16 rounded-xl grid grid-cols-12 gap-3 sm:gap-4 text-sm p-3 items-center border border-neutral-800/80 cursor-pointer">' +
-                // Col 1: Status & Time Indicator (Footy4u style)
-                '<div class="col-span-4 sm:col-span-3 flex items-center gap-2.5 sm:gap-3">' +
-                    '<div class="' + (isLive ? 'bg-orange-500 shadow-[0_0_10px_rgba(249,115,22,0.8)]' : 'bg-neutral-600') + ' min-h-12 w-1.5 rounded-e-xl shrink-0"></div>' +
-                    '<div class="flex flex-col">' +
-                        (isLive 
-                            ? '<div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-orange-500 pulse-live"></span><span class="text-xs font-black text-orange-400 tracking-wide uppercase">Live Now!</span></div>' 
-                            : '<div class="text-xs font-bold text-neutral-200">' + timeText + '</div>'
-                        ) +
-                        '<span class="text-[11px] text-neutral-400 capitalize">' + (m.category || 'Sports') + '</span>' +
+            return '<div onclick="openPlayerWithSource(\'' + m.id + '\', 0, event)" class="match-card text-white/90 w-full min-h-16 rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-3 text-sm p-3.5 border border-neutral-800/80 cursor-pointer">' +
+                // Left: Status, Category, Teams
+                '<div class="flex items-center gap-3 sm:gap-4 min-w-0 flex-1">' +
+                    // Status Indicator
+                    '<div class="flex items-center gap-2.5 shrink-0 min-w-[95px]">' +
+                        '<div class="' + (isLive ? 'bg-orange-500 shadow-[0_0_10px_rgba(249,115,22,0.8)]' : 'bg-neutral-600') + ' min-h-11 w-1.5 rounded-e-xl shrink-0"></div>' +
+                        '<div class="flex flex-col">' +
+                            (isLive 
+                                ? '<div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-orange-500 pulse-live"></span><span class="text-xs font-black text-orange-400 tracking-wide uppercase">Live Now!</span></div>' 
+                                : '<div class="text-xs font-bold text-neutral-200">' + timeText + '</div>'
+                            ) +
+                            '<span class="text-[11px] text-neutral-400 capitalize">' + (m.category || 'Sports') + '</span>' +
+                        '</div>' +
+                    '</div>' +
+
+                    // Teams
+                    '<div class="flex flex-col justify-center gap-1 overflow-hidden min-w-0">' +
+                        '<div class="flex items-center gap-2 font-medium truncate">' +
+                            '<span class="w-5 h-5 rounded-full bg-neutral-800 flex items-center justify-center text-xs shrink-0">' + icon + '</span>' +
+                            '<span class="truncate text-sm font-semibold text-neutral-100">' + escapeHtml(teams.t1) + '</span>' +
+                        '</div>' +
+                        (teams.t2 ? 
+                        '<div class="flex items-center gap-2 font-medium truncate">' +
+                            '<span class="w-5 h-5 rounded-full bg-neutral-800 flex items-center justify-center text-xs shrink-0">' + icon + '</span>' +
+                            '<span class="truncate text-sm font-semibold text-neutral-100">' + escapeHtml(teams.t2) + '</span>' +
+                        '</div>' : '') +
                     '</div>' +
                 '</div>' +
 
-                // Col 2: Teams
-                '<div class="col-span-5 sm:col-span-6 flex flex-col justify-center gap-1.5 overflow-hidden">' +
-                    '<div class="flex items-center gap-2 font-medium truncate">' +
-                        '<span class="w-5 h-5 rounded-full bg-neutral-800 flex items-center justify-center text-xs shrink-0">' + icon + '</span>' +
-                        '<span class="truncate text-sm font-semibold text-neutral-100">' + escapeHtml(teams.t1) + '</span>' +
-                    '</div>' +
-                    (teams.t2 ? 
-                    '<div class="flex items-center gap-2 font-medium truncate">' +
-                        '<span class="w-5 h-5 rounded-full bg-neutral-800 flex items-center justify-center text-xs shrink-0">' + icon + '</span>' +
-                        '<span class="truncate text-sm font-semibold text-neutral-100">' + escapeHtml(teams.t2) + '</span>' +
-                    '</div>' : '') +
-                '</div>' +
-
-                // Col 3: Available Sources / Servers Buttons
-                '<div class="col-span-3 sm:col-span-4 flex items-center justify-end gap-1.5 flex-wrap">' +
+                // Right: Available Sources / Servers Buttons
+                '<div class="flex items-center md:justify-end gap-1.5 flex-wrap shrink-0 pt-1 md:pt-0 border-t border-neutral-800/60 md:border-t-0">' +
                     serverBtnsHtml +
                 '</div>' +
             '</div>';
