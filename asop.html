@@ -312,6 +312,10 @@
             'leeds': 'leeds', 'leeds united': 'leeds',
             'bournemouth': 'bournemouth', 'afc bournemouth': 'bournemouth',
             'brighton': 'brighton', 'brighton & hove albion': 'brighton', 'brighton and hove albion': 'brighton',
+            'nottingham forest': 'nottingham', 'nottingham': 'nottingham', 'forest': 'nottingham',
+            'sunderland': 'sunderland',
+            'ipswich town': 'ipswich', 'ipswich': 'ipswich',
+            'aston villa': 'astonvilla', 'villa': 'astonvilla',
             'wolves': 'wolves', 'wolverhampton': 'wolves', 'wolverhampton wanderers': 'wolves',
             'west ham': 'westham', 'west ham united': 'westham',
             'canelo': 'canelo', 'canelo alvarez': 'canelo',
@@ -373,11 +377,13 @@
             var pFutxFights = fetch('https://www.futbol-x.xyz/api/fights.json').then(function(r) { return r.json(); }).catch(function() { return { streams: [] }; });
             var pFutxBasket = fetch('https://www.futbol-x.xyz/api/basketball.json').then(function(r) { return r.json(); }).catch(function() { return { streams: [] }; });
             var pFutxMotor = fetch('https://www.futbol-x.xyz/api/motorsports.json').then(function(r) { return r.json(); }).catch(function() { return { streams: [] }; });
+            var pKickoffZone = fetch('https://live.kickoffzone.in/api/matches').then(function(r) { return r.json(); }).catch(function() { return { matches: [] }; });
 
             return Promise.all([
                 pTrendyToday, pTrendyLive,
                 pAdilFootball, pAdilCricket,
-                pFutxFootball, pFutxFights, pFutxBasket, pFutxMotor
+                pFutxFootball, pFutxFights, pFutxBasket, pFutxMotor,
+                pKickoffZone
             ]).then(function(results) {
                 var tToday = Array.isArray(results[0]) ? results[0] : [];
                 var tLive = Array.isArray(results[1]) ? results[1] : [];
@@ -387,6 +393,7 @@
                 var fFights = results[5] || { streams: [] };
                 var fBasket = results[6] || { streams: [] };
                 var fMotor = results[7] || { streams: [] };
+                var kZone = (results[8] && results[8].matches) || [];
 
                 liveMatchesMap = {};
                 tLive.forEach(function(m) {
@@ -600,6 +607,54 @@
                             }
                         });
                     });
+                });
+
+                // 4. Ingest KickOffZone Live Matches & Extra Servers
+                kZone.forEach(function(km) {
+                    if (!km || !km.name || km.ended) return;
+                    var teams = extractTeams(km.name);
+                    var target = unified.find(function(m) { return isSameMatch(m.teams, teams); });
+
+                    var matchDate = km.matchAt ? new Date(km.matchAt).getTime() : 0;
+                    var isLive = (km.status === 'published' && !km.ended) || (matchDate > 0 && Math.abs(Date.now() - matchDate) < 180 * 60 * 1000);
+
+                    if (!target) {
+                        target = {
+                            id: 'koz-' + (km.id || Math.random().toString(36).substring(7)),
+                            title: km.name,
+                            category: (km.sport || 'football').toLowerCase(),
+                            competition: km.competition || '',
+                            date: matchDate,
+                            isLive: isLive,
+                            poster: km.poster || '',
+                            teams: teams,
+                            sources: []
+                        };
+                        unified.push(target);
+                    } else if (isLive) {
+                        target.isLive = true;
+                    }
+
+                    if (Array.isArray(km.servers)) {
+                        km.servers.forEach(function(s) {
+                            if (!s || !s.url) return;
+                            var alreadyHas = target.sources.some(function(src) {
+                                return src.url === s.url || (src.playerUrl && src.playerUrl === s.url);
+                            });
+                            if (!alreadyHas) {
+                                var sIndex = target.sources.length + 1;
+                                var sDetail = s.label ? ('KOZ · ' + s.label) : 'KickOffZone HD';
+                                target.sources.push({
+                                    index: sIndex,
+                                    name: 'Server ' + sIndex,
+                                    detail: sDetail,
+                                    type: s.type || 'iframe',
+                                    url: s.url,
+                                    playerUrl: s.url
+                                });
+                            }
+                        });
+                    }
                 });
 
                 allMatches = unified;

@@ -2935,6 +2935,10 @@
                 'leeds': 'leeds', 'leeds united': 'leeds',
                 'bournemouth': 'bournemouth', 'afc bournemouth': 'bournemouth',
                 'brighton': 'brighton', 'brighton & hove albion': 'brighton', 'brighton and hove albion': 'brighton',
+                'nottingham forest': 'nottingham', 'nottingham': 'nottingham', 'forest': 'nottingham',
+                'sunderland': 'sunderland',
+                'ipswich town': 'ipswich', 'ipswich': 'ipswich',
+                'aston villa': 'astonvilla', 'villa': 'astonvilla',
                 'wolves': 'wolves', 'wolverhampton': 'wolves', 'wolverhampton wanderers': 'wolves',
                 'west ham': 'westham', 'west ham united': 'westham',
                 'canelo': 'canelo', 'canelo alvarez': 'canelo',
@@ -2986,14 +2990,16 @@
             }).catch(function() { return { events: [] }; });
             var p4 = fetch('https://www.futbol-x.xyz/api/football.json', { signal: controller ? controller.signal : undefined }).then(function(r) { return r.json(); }).catch(function() { return { streams: [] }; });
             var p5 = fetch('https://www.futbol-x.xyz/api/fights.json', { signal: controller ? controller.signal : undefined }).then(function(r) { return r.json(); }).catch(function() { return { streams: [] }; });
+            var p6 = fetch('https://live.kickoffzone.in/api/matches', { signal: controller ? controller.signal : undefined }).then(function(r) { return r.json(); }).catch(function() { return { matches: [] }; });
 
-            Promise.all([p1, p2, p3, p4, p5]).then(function(results) {
+            Promise.all([p1, p2, p3, p4, p5, p6]).then(function(results) {
                 clearTimeout(timer);
                 var tToday = Array.isArray(results[0]) ? results[0] : [];
                 var aFootball = results[1] || { events: [] };
                 var aCricket = results[2] || { events: [] };
                 var fFootball = results[3] || { streams: [] };
                 var fFights = results[4] || { streams: [] };
+                var kZone = (results[5] && results[5].matches) || [];
 
                 var unified = [];
 
@@ -3150,6 +3156,36 @@
                             }
                         });
                     });
+                });
+
+                // 4. KickOffZone
+                kZone.forEach(function(km) {
+                    if (!km || !km.name || km.ended) return;
+                    var teams = extractTeams(km.name);
+                    var target = unified.find(function(m) { return isSameMatch(m.teams, teams); });
+                    if (!target) {
+                        target = {
+                            id: 'koz-' + (km.id || Math.random().toString(36).substring(7)),
+                            title: km.name,
+                            teams: teams,
+                            sources: []
+                        };
+                        unified.push(target);
+                    }
+                    if (Array.isArray(km.servers)) {
+                        km.servers.forEach(function(s) {
+                            if (!s || !s.url) return;
+                            var alreadyHas = target.sources.some(function(src) { return src.url === s.url; });
+                            if (!alreadyHas) {
+                                target.sources.push({
+                                    type: s.type || 'iframe',
+                                    name: 'Server ' + (target.sources.length + 1),
+                                    detail: s.label ? ('KOZ ' + s.label) : 'KickOffZone HD',
+                                    url: s.url
+                                });
+                            }
+                        });
+                    }
                 });
 
                 // Search matching match

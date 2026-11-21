@@ -1,328 +1,15 @@
 {
-  "last_updated": "11/21/2026, 7:48:09 PM IST",
+  "last_updated": "11/21/2026, 9:15:58 PM IST",
   "source": "AryanStreams Official Feed",
-  "football_count": 79,
+  "football_count": 70,
   "cricket_count": 14,
   "events": [
-    {
-      "id": 1320,
-      "title": "Chennaiyin FC vs Punjab FC",
-      "slug": "Chennaiyin-FC-vs-Punjab-FC",
-      "cat": "Football",
-      "status": "ended",
-      "event": {
-        "name": "Indian Super League",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1900/image/dark",
-        "teamA": "Chennaiyin FC",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/174590/image",
-        "teamB": "Punjab FC",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/230661/image",
-        "startTimeIST": "2026-11-21 17:00:00 IST",
-        "endTimeIST": "2026-11-21 19:20:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "SONYLIV ENG - AQ",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2120301/Footlive2111/ENG/std_lrh-800300010.m3u8?hdnea=exp=1795302946~acl=/*~id=46114367580473181498541421739547~hmac=9637822c1179bcd86258900f13e07b115a1239b743b628c0c48b35e14333b300",
-          "api": ""
-        },
-        {
-          "id": 2,
-          "title": "SONYLIV HIN - AQ",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2120301/Footlive2111/HIN/std_lrh-800300010.m3u8?hdnea=exp=1795302946~acl=/*~id=46114367580473181498541421739547~hmac=9637822c1179bcd86258900f13e07b115a1239b743b628c0c48b35e14333b300",
-          "api": ""
-        },
-        {
-          "id": 3,
-          "title": "SONYLIV - AQ",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2120301/Footlive2111/TAM/std_lrh-800300010.m3u8?hdnea=exp=1795302946~acl=/*~id=46114367580473181498541421739547~hmac=9637822c1179bcd86258900f13e07b115a1239b743b628c0c48b35e14333b300",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 1322,
-      "title": "Hannover 96 vs SpVgg Greuther Fürth",
-      "slug": "Hannover-96-vs-SpVgg-Greuther-Fürth",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "2. Bundesliga",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/44/image/dark",
-        "teamA": "Hannover 96",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2541/image",
-        "teamB": "SpVgg Greuther Fürth",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2551/image",
-        "startTimeIST": "2026-11-21 17:30:00 IST",
-        "endTimeIST": "2026-11-21 19:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 2027,
-      "title": "Japan U17 vs Colombia U17",
-      "slug": "Japan-U17-vs-Colombia-U17",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "U17 World Championship",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/279/image/dark",
-        "teamA": "Japan U17",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/22618/image",
-        "teamB": "Colombia U17",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/22592/image",
-        "startTimeIST": "2026-11-21 18:00:00 IST",
-        "endTimeIST": "2026-11-21 20:20:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "FOX SPORTS",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/awxnrqkbo5/out/v1/716529a4091947b0877e6cb80dbd6ccb/cenc.mpd",
-          "api": "09453ce820d65fbc675de3185f9e454c:98cff9600995fa381c76fdacf3c7edae"
-        },
-        {
-          "id": 2,
-          "title": "HD SERVER",
-          "type": "m3u8",
-          "link": "https://live2.jorvakstreamcache.com/live/channel28.m3u8?",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 1325,
-      "title": "Manchester City vs Fulham",
-      "slug": "Manchester-City-vs-Fulham",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "Premier League",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/17/image/dark",
-        "teamA": "Manchester City",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/17/image",
-        "teamB": "Fulham",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/43/image",
-        "startTimeIST": "2026-11-21 18:00:00 IST",
-        "endTimeIST": "2026-11-21 20:20:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "FUBO SPORTS FHD",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/4zomejgnew/out/v1/aaaab12c95924d80a77f87f7c745782a/cenc.mpd",
-          "api": "65f9ed4580a4af3c117a339c44cdfe3b:3e7d40c4b2ca331fe48bd65acae439d7"
-        },
-        {
-          "id": 2,
-          "title": "TNT SPORTS - AQ",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/rhf2dwosdt/out/v1/ee550d2a68d846c797e6ce4de2e8b76d/cenc.mpd",
-          "api": "69a5aa835a061ce64a630d1046727e40:d02feac8a999bd06bf4059bf33411749"
-        },
-        {
-          "id": 3,
-          "title": "FUBO SPORTS FHD",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/dub-nitro/live/clients/dash/enc/1wlv9dr4vx/out/v1/632322be5f1047acb2472f90f8857182/cenc.mpd",
-          "api": "42f72c025dd53039244adc13b7e31dad:a7bd941a19f6dd14f3004a623a6ad3a1"
-        },
-        {
-          "id": 4,
-          "title": "SKY SPORTS EPL",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/qdbhkwig26/out/v1/c3a69dfec0434abea00756cd73e749ff/cenc.mpd?",
-          "api": "1106fb025da5b31657618344099c6c14:788284538616a73b56214e90196a6e0f"
-        },
-        {
-          "id": 5,
-          "title": "beIN ARABIC FHD",
-          "type": "m3u8",
-          "link": "https://live-cdn.ryazanslah3.space/hls/bein1.m3u8?",
-          "api": ""
-        },
-        {
-          "id": 6,
-          "title": "PLAYZ TV LIVE",
-          "type": "m3u8",
-          "link": "https://live.vivo155.com/live/hd-en-1-4558489.m3u8?txSecret=4b178d5136886b00aeb93effe05b134c&txTime=6B01A1F1",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 2028,
-      "title": "Millwall vs Queens Park Rangers",
-      "slug": "Millwall-vs-Queens-Park-Rangers",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "Championship",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18/image/dark",
-        "teamA": "Millwall",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/25/image",
-        "teamB": "Queens Park Rangers",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/1/image",
-        "startTimeIST": "2026-11-21 18:00:00 IST",
-        "endTimeIST": "2026-11-21 20:20:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "beIN SPORTS - AQ",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/q4u5nwaogz/out/v1/18de6d3e65934f3a8de4358e69eab86c/cenc.mpd",
-          "api": "7995c724a13748ed970840a8ab5bb9b3:67bdaf1e2175b9ff682fcdf0e2354b1e"
-        },
-        {
-          "id": 2,
-          "title": "HD QUALITY",
-          "type": "m3u8",
-          "link": "https://live2.jorvakstreamcache.com/live/channel4.m3u8?",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 2029,
-      "title": "Norwich City vs Cardiff City",
-      "slug": "Norwich-City-vs-Cardiff-City",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "Championship",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18/image/dark",
-        "teamA": "Norwich City",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/263/image",
-        "teamB": "Cardiff City",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/61/image",
-        "startTimeIST": "2026-11-21 18:00:00 IST",
-        "endTimeIST": "2026-11-21 20:20:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "PlayZ TV Live",
-          "type": "m3u8",
-          "link": "https://live.vivo155.com/live/sd-1-4563694.m3u8?txSecret=0e52e9ba02bb86af93ebdbb677089fa8&txTime=6B01A2C5",
-          "api": ""
-        },
-        {
-          "id": 2,
-          "title": "HD QUALITY",
-          "type": "m3u8",
-          "link": "https://live2.jorvakstreamcache.com/live/channel11.m3u8?",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 2030,
-      "title": "Serbia U17 vs Honduras U17",
-      "slug": "Serbia-U17-vs-Honduras-U17",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "U17 World Championship",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/279/image/dark",
-        "teamA": "Serbia U17",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/22478/image",
-        "teamB": "Honduras U17",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/7764/image",
-        "startTimeIST": "2026-11-21 18:00:00 IST",
-        "endTimeIST": "2026-11-21 20:20:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 2031,
-      "title": "Southampton vs Derby County",
-      "slug": "Southampton-vs-Derby-County",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "Championship",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18/image/dark",
-        "teamA": "Southampton",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/45/image",
-        "teamB": "Derby County",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/27/image",
-        "startTimeIST": "2026-11-21 18:00:00 IST",
-        "endTimeIST": "2026-11-21 20:20:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "PlayZ TV Live",
-          "type": "m3u8",
-          "link": "https://live.vivo155.com/live/sd-1-4563689.m3u8?txSecret=e9017120f45d1d0f281a9d82e9fae255&txTime=6B01A2A7",
-          "api": ""
-        },
-        {
-          "id": 2,
-          "title": "HD QUALITY",
-          "type": "m3u8",
-          "link": "https://live2.jorvakstreamcache.com/live/channel16.m3u8?",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 2016,
-      "title": "CE Sabadell vs Granada",
-      "slug": "CE-Sabadell-vs-Granada",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "LaLiga 2",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/54/image/dark",
-        "teamA": "CE Sabadell",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/24335/image",
-        "teamB": "Granada",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/33779/image",
-        "startTimeIST": "2026-11-21 18:30:00 IST",
-        "endTimeIST": "2026-11-21 20:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "Laliga Hypermotion ES",
-          "type": "mpd",
-          "link": "https://cache07.zapitv.com/live/eds_c2/HYPERMOTION1/dash_live_ez/HYPERMOTION1.mpd",
-          "api": "a88617e904504ee291f49f0e60a51d49:17f92d59fde3b6d2bf4ffb48e8ca720a"
-        }
-      ]
-    },
     {
       "id": 2064,
       "title": "Deportivo Alavés vs Deportivo de A Coruña",
       "slug": "Deportivo-Alavés-vs-Deportivo-de-A-Coruña",
       "cat": "Football",
-      "status": "live",
+      "status": "ended",
       "event": {
         "name": "LaLiga",
         "category": "Football",
@@ -367,24 +54,46 @@
       ]
     },
     {
-      "id": 2032,
-      "title": "Tanzania U17 vs Costa Rica U17",
-      "slug": "Tanzania-U17-vs-Costa-Rica-U17",
+      "id": 2078,
+      "title": "Galatasaray vs Samsunspor",
+      "slug": "Galatasaray-vs-Samsunspor",
       "cat": "Football",
-      "status": "live",
+      "status": "ended",
       "event": {
-        "name": "U17 World Championship",
+        "name": "Trendyol Süper Lig",
         "category": "Football",
         "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/279/image/dark",
-        "teamA": "Tanzania U17",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/1231931/image",
-        "teamB": "Costa Rica U17",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/22593/image",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/52/image/dark",
+        "teamA": "Galatasaray",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/3061/image",
+        "teamB": "Samsunspor",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/3053/image",
         "startTimeIST": "2026-11-21 18:30:00 IST",
         "endTimeIST": "2026-11-21 20:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "beIN SPORTS 1 FHD",
+          "type": "mpd",
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/katdnhkzqv/out/v1/2469724fa7754a4da6861d8ba80de958/cenc.mpd?",
+          "api": "27759a440e8ad821b800b3de00cd5851:1b8743adee559f27845f55e8b4d639fe"
+        },
+        {
+          "id": 2,
+          "title": "beIN SPORTS 3 FHD",
+          "type": "mpd",
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/n7hbpksb18/out/v1/be5403be4a674a7da8b3c81b1fe79692/cenc.mpd",
+          "api": "4fce30c060b7b0464ab765e24fee5ecc:65d612238736eec3794c7e75a6fd362c"
+        },
+        {
+          "id": 3,
+          "title": "PlayZ TV Live",
+          "type": "m3u8",
+          "link": "https://live.vivo155.com/live/sd-1-4581371.m3u8?txSecret=6d15b0d80a44fcff63fd7a2e400ef6f5&txTime=6B01A6E0",
+          "api": ""
+        }
+      ]
     },
     {
       "id": 2033,
@@ -467,7 +176,36 @@
         "startTimeIST": "2026-11-21 19:30:00 IST",
         "endTimeIST": "2026-11-21 21:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "PARAMOUNT+ FHD",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/y0e3cmoce8/out/v1/d404acdf0ee642b6afc34cb2e5518309/cenc.mpd",
+          "api": "e600ac1bc9a80cc70eb71e13117760ba:58845ef2c2226ed83ab789bda7daec15"
+        },
+        {
+          "id": 2,
+          "title": "beIN SPORTS - AQ",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/8m8cd46i1t/out/v1/83985c68e4174e90a58a1f2c024be4c9/cenc.mpd",
+          "api": "0b42be2664d7e811d04f3e504e0924c5:ae24090123b8c72ac5404dc152847cb8"
+        },
+        {
+          "id": 3,
+          "title": "SPORT 1 CZ AQ",
+          "type": "mpd",
+          "link": "https://dash2.antik.sk/stream/nvidia_sport_1/playlist_cenc.mpd",
+          "api": "11223344556677889900112233445566:4b80724d0ef86bcb2c21f7999d67739d"
+        },
+        {
+          "id": 4,
+          "title": "PlayZ TV TV+ HD",
+          "type": "m3u8",
+          "link": "https://live.vivo155.com/live/hd-en-1-4549125.m3u8?txSecret=ff934b404e6569353ff4856b2d8e8011&txTime=6B01B6AE",
+          "api": ""
+        }
+      ]
     },
     {
       "id": 2024,
@@ -487,14 +225,29 @@
         "startTimeIST": "2026-11-21 19:30:00 IST",
         "endTimeIST": "2026-11-21 21:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "SONYLIV ENG - AQ",
+          "type": "m3u8",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2094589/Footlive2111/ENG/std_lrh-800300010.m3u8?hdnea=exp=1795312042~acl=/*~id=76373596300239529656423995071774~hmac=f4ac458aa3cec909fdb36afa3d9af2bf2d309ab4800d4175a5cf43b21f8dad2f",
+          "api": ""
+        },
+        {
+          "id": 2,
+          "title": "SONYLIV HIN - AQ",
+          "type": "m3u8",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2094588/Footlive2111/HIN/std_lrh-800300010.m3u8?hdnea=exp=1795312042~acl=/*~id=76373596300239529656423995071774~hmac=f4ac458aa3cec909fdb36afa3d9af2bf2d309ab4800d4175a5cf43b21f8dad2f",
+          "api": ""
+        }
+      ]
     },
     {
       "id": 2017,
       "title": "1. FC Union Berlin vs RB Leipzig",
       "slug": "1.-FC-Union-Berlin-vs-RB-Leipzig",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Bundesliga",
         "category": "Football",
@@ -507,14 +260,29 @@
         "startTimeIST": "2026-11-21 20:00:00 IST",
         "endTimeIST": "2026-11-21 22:20:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "SHAHID EN/AR - AQ",
+          "type": "mpd",
+          "link": "https://shahid-sports-4-enc.edgenextcdn.net/out/v1/f813ab47644d4c41a99285513f6c7409/index.mpd",
+          "api": "6477160076644679af1028534f03f67e:1267f99705113a62c7782c4d5281a7eb"
+        },
+        {
+          "id": 2,
+          "title": "PlayZ TV HD",
+          "type": "m3u8",
+          "link": "https://live.vivo155.com/live/hd-en-1-4566409.m3u8?txSecret=ffa99c544fc5ed93ec871a545479bb3c&txTime=6B01B7E9",
+          "api": ""
+        }
+      ]
     },
     {
       "id": 1372,
       "title": "Bayer 04 Leverkusen vs SC Paderborn 07",
       "slug": "Bayer-04-Leverkusen-vs-SC-Paderborn-07",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Bundesliga",
         "category": "Football",
@@ -527,14 +295,22 @@
         "startTimeIST": "2026-11-21 20:00:00 IST",
         "endTimeIST": "2026-11-21 22:20:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "PlayZ TV HD",
+          "type": "m3u8",
+          "link": "https://live.vivo155.com/live/hd-en-1-4566402.m3u8?txSecret=0cab6466c4e908e707fcc85037917e62&txTime=6B01B73C",
+          "api": ""
+        }
+      ]
     },
     {
       "id": 2018,
       "title": "Borussia M'gladbach vs Borussia Dortmund",
       "slug": "Borussia-M'gladbach-vs-Borussia-Dortmund",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Bundesliga",
         "category": "Football",
@@ -547,14 +323,29 @@
         "startTimeIST": "2026-11-21 20:00:00 IST",
         "endTimeIST": "2026-11-21 22:20:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "SKY TOP EVENT FHD",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/gjsukewpxp/out/v1/ef14aacf858248839b9867eec5caf563/cenc.mpd",
+          "api": "368bd4ebe301406897324bc777650411:69d27c2c2b7de927d67aacc973259901"
+        },
+        {
+          "id": 2,
+          "title": "PlayZ TV HD",
+          "type": "m3u8",
+          "link": "https://live.vivo155.com/live/hd-en-1-4566411.m3u8?txSecret=32fdb9b5598b831629a9d30030fb5743&txTime=6B01B7BB",
+          "api": ""
+        }
+      ]
     },
     {
       "id": 2034,
       "title": "Dominican Republic U17 vs Montenegro U17",
       "slug": "Dominican-Republic-U17-vs-Montenegro-U17",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "U17 World Championship",
         "category": "Football",
@@ -567,14 +358,22 @@
         "startTimeIST": "2026-11-21 20:00:00 IST",
         "endTimeIST": "2026-11-21 22:20:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "FOX SPORTS FHD",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/awxnrqkbo5/out/v1/716529a4091947b0877e6cb80dbd6ccb/cenc.mpd",
+          "api": "09453ce820d65fbc675de3185f9e454c:98cff9600995fa381c76fdacf3c7edae"
+        }
+      ]
     },
     {
       "id": 2019,
       "title": "Eintracht Frankfurt vs TSG Hoffenheim",
       "slug": "Eintracht-Frankfurt-vs-TSG-Hoffenheim",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Bundesliga",
         "category": "Football",
@@ -587,14 +386,29 @@
         "startTimeIST": "2026-11-21 20:00:00 IST",
         "endTimeIST": "2026-11-21 22:20:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "SHAHID EN/AR - AQ",
+          "type": "mpd",
+          "link": "https://shahid-sports-3-enc.edgenextcdn.net/out/v1/2658c96bbfa54f339e357fe36361587e/index.mpd",
+          "api": "2b6f6b340aa8467785e4e82f9320fb5a:8889701d704078c4d910ed1409413d9b"
+        },
+        {
+          "id": 2,
+          "title": "PlayZ TV HD",
+          "type": "m3u8",
+          "link": "https://live.vivo155.com/live/hd-en-1-4566405.m3u8?txSecret=ee441f837a69173e9927d0db7aa5455e&txTime=6B01B7D4",
+          "api": ""
+        }
+      ]
     },
     {
       "id": 1373,
       "title": "SV 07 Elversberg vs SC Freiburg",
       "slug": "SV-07-Elversberg-vs-SC-Freiburg",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Bundesliga",
         "category": "Football",
@@ -607,14 +421,29 @@
         "startTimeIST": "2026-11-21 20:00:00 IST",
         "endTimeIST": "2026-11-21 22:20:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "BUNDESALIGA 2",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/hrejffyflm/out/v1/ad9a8d717bfc45d095f23a92925d7b1f/cenc.mpd",
+          "api": "5e0ee93e86d783f011561f18ff8f34e6:b570eceee332c7e50f87fca1f51e0966"
+        },
+        {
+          "id": 2,
+          "title": "PlayZ TV TV HD",
+          "type": "m3u8",
+          "link": "https://live.vivo155.com/live/hd-en-1-4566523.m3u8?txSecret=0ee1753c0b31ded541af2cb3eb69512a&txTime=6B01B766",
+          "api": ""
+        }
+      ]
     },
     {
       "id": 1348,
       "title": "Aston Villa vs Sunderland",
       "slug": "Aston-Villa-vs-Sunderland",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Premier League",
         "category": "Football",
@@ -627,14 +456,29 @@
         "startTimeIST": "2026-11-21 20:30:00 IST",
         "endTimeIST": "2026-11-21 22:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "KOZ Sky Sport 9 NZ",
+          "type": "iframe",
+          "link": "https://pijirege.st/live-tv?ch=skysport9-nz",
+          "api": ""
+        }
+      ],
+      "dashStreams": [
+        {
+          "title": "KOZ Sky Sport 9 NZ",
+          "type": "iframe",
+          "url": "https://pijirege.st/live-tv?ch=skysport9-nz"
+        }
+      ]
     },
     {
       "id": 2035,
       "title": "Bolton Wanderers vs Portsmouth",
       "slug": "Bolton-Wanderers-vs-Portsmouth",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Championship",
         "category": "Football",
@@ -654,7 +498,7 @@
       "title": "Bournemouth vs Nottingham Forest",
       "slug": "Bournemouth-vs-Nottingham-Forest",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Premier League",
         "category": "Football",
@@ -674,7 +518,7 @@
       "title": "Brazil U17 vs Ireland U17",
       "slug": "Brazil-U17-vs-Ireland-U17",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "U17 World Championship",
         "category": "Football",
@@ -694,7 +538,7 @@
       "title": "Celtic vs St. Mirren",
       "slug": "Celtic-vs-St.-Mirren",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Scottish Premiership",
         "category": "Football",
@@ -714,7 +558,7 @@
       "title": "Chelsea vs Leeds United",
       "slug": "Chelsea-vs-Leeds-United",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Premier League",
         "category": "Football",
@@ -727,14 +571,65 @@
         "startTimeIST": "2026-11-21 20:30:00 IST",
         "endTimeIST": "2026-11-21 22:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "KOZ Premier Sports 1 ",
+          "type": "iframe",
+          "link": "https://pijirege.st/live-tv?ch=nf1skh2l",
+          "api": ""
+        },
+        {
+          "id": 2,
+          "title": "KOZ beIN ARABIC",
+          "type": "iframe",
+          "link": "https://pijirege.st/live-tv?ch=beinsports1-sa",
+          "api": ""
+        },
+        {
+          "id": 3,
+          "title": "KOZ DAZN 1 Portugal",
+          "type": "iframe",
+          "link": "https://pijirege.st/live-tv?ch=dazn1-pt",
+          "api": ""
+        },
+        {
+          "id": 4,
+          "title": "KOZ SuperSport Premier League",
+          "type": "iframe",
+          "link": "https://pijirege.st/live-tv?ch=ozdaxj35",
+          "api": ""
+        }
+      ],
+      "dashStreams": [
+        {
+          "title": "KOZ Premier Sports 1 ",
+          "type": "iframe",
+          "url": "https://pijirege.st/live-tv?ch=nf1skh2l"
+        },
+        {
+          "title": "KOZ beIN ARABIC",
+          "type": "iframe",
+          "url": "https://pijirege.st/live-tv?ch=beinsports1-sa"
+        },
+        {
+          "title": "KOZ DAZN 1 Portugal",
+          "type": "iframe",
+          "url": "https://pijirege.st/live-tv?ch=dazn1-pt"
+        },
+        {
+          "title": "KOZ SuperSport Premier League",
+          "type": "iframe",
+          "url": "https://pijirege.st/live-tv?ch=ozdaxj35"
+        }
+      ]
     },
     {
       "id": 1351,
       "title": "Coventry City vs Crystal Palace",
       "slug": "Coventry-City-vs-Crystal-Palace",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Premier League",
         "category": "Football",
@@ -747,74 +642,50 @@
         "startTimeIST": "2026-11-21 20:30:00 IST",
         "endTimeIST": "2026-11-21 22:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "PlayZ TV Live",
+          "type": "m3u8",
+          "link": "https://live.vivo155.com/live/hd-en-1-4558513.m3u8?txSecret=e20a57db07f81d105bb36719cb0988ed&txTime=6B01C421",
+          "api": ""
+        }
+      ]
     },
     {
-      "id": 2048,
-      "title": "Falkirk FC vs St. Johnstone",
-      "slug": "Falkirk-FC-vs-St.-Johnstone",
+      "id": 2080,
+      "title": "EPL | Premier League Goals Rush",
+      "slug": "EPL-|-Premier-League-Goals-Rush",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
-        "name": "Scottish Premiership",
+        "name": "EPL | Premier League Goals Rush",
         "category": "Football",
         "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/36/image/dark",
-        "teamA": "Falkirk FC",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2363/image",
-        "teamB": "St. Johnstone",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2348/image",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/17/image",
+        "teamA": "EPL Goals Rush",
+        "teamAFlag": "https://img.sofascore.com/api/v1/unique-tournament/17/image",
+        "teamB": "EPL Goals Rush",
+        "teamBFlag": "https://img.sofascore.com/api/v1/unique-tournament/17/image",
         "startTimeIST": "2026-11-21 20:30:00 IST",
-        "endTimeIST": "2026-11-21 22:50:00 IST"
+        "endTimeIST": ""
       },
-      "streams": []
-    },
-    {
-      "id": 2049,
-      "title": "Hibernian vs Dundee United",
-      "slug": "Hibernian-vs-Dundee-United",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "Scottish Premiership",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/36/image/dark",
-        "teamA": "Hibernian",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2354/image",
-        "teamB": "Dundee United",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2349/image",
-        "startTimeIST": "2026-11-21 20:30:00 IST",
-        "endTimeIST": "2026-11-21 22:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 2050,
-      "title": "Kilmarnock vs Aberdeen",
-      "slug": "Kilmarnock-vs-Aberdeen",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "Scottish Premiership",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/36/image/dark",
-        "teamA": "Kilmarnock",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2347/image",
-        "teamB": "Aberdeen",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2355/image",
-        "startTimeIST": "2026-11-21 20:30:00 IST",
-        "endTimeIST": "2026-11-21 22:50:00 IST"
-      },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "SKY SPORTS FHD",
+          "type": "mpd",
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/qdbhkwig26/out/v1/c3a69dfec0434abea00756cd73e749ff/cenc.mpd?",
+          "api": "1106fb025da5b31657618344099c6c14:788284538616a73b56214e90196a6e0f"
+        }
+      ]
     },
     {
       "id": 2037,
       "title": "Lincoln City vs Wrexham",
       "slug": "Lincoln-City-vs-Wrexham",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Championship",
         "category": "Football",
@@ -834,7 +705,7 @@
       "title": "Middlesbrough vs Bristol City",
       "slug": "Middlesbrough-vs-Bristol-City",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Championship",
         "category": "Football",
@@ -854,7 +725,7 @@
       "title": "Sheffield United vs Watford",
       "slug": "Sheffield-United-vs-Watford",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Championship",
         "category": "Football",
@@ -874,7 +745,7 @@
       "title": "Stoke City vs Birmingham City",
       "slug": "Stoke-City-vs-Birmingham-City",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Championship",
         "category": "Football",
@@ -894,7 +765,7 @@
       "title": "Swansea City vs West Bromwich Albion",
       "slug": "Swansea-City-vs-West-Bromwich-Albion",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Championship",
         "category": "Football",
@@ -914,7 +785,7 @@
       "title": "Tottenham Hotspur vs Ipswich Town",
       "slug": "Tottenham-Hotspur-vs-Ipswich-Town",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Premier League",
         "category": "Football",
@@ -927,14 +798,41 @@
         "startTimeIST": "2026-11-21 20:30:00 IST",
         "endTimeIST": "2026-11-21 22:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "KOZ USA Network",
+          "type": "iframe",
+          "link": "https://pijirege.st/live-tv?ch=usanetwork-usa",
+          "api": ""
+        },
+        {
+          "id": 2,
+          "title": "KOZ Sky Sport 6 NZ",
+          "type": "iframe",
+          "link": "https://pijirege.st/live-tv?ch=skysport6-nz",
+          "api": ""
+        }
+      ],
+      "dashStreams": [
+        {
+          "title": "KOZ USA Network",
+          "type": "iframe",
+          "url": "https://pijirege.st/live-tv?ch=usanetwork-usa"
+        },
+        {
+          "title": "KOZ Sky Sport 6 NZ",
+          "type": "iframe",
+          "url": "https://pijirege.st/live-tv?ch=skysport6-nz"
+        }
+      ]
     },
     {
       "id": 2042,
       "title": "West Ham United vs Preston North End",
       "slug": "West-Ham-United-vs-Preston-North-End",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Championship",
         "category": "Football",
@@ -954,7 +852,7 @@
       "title": "Wolverhampton vs Charlton Athletic",
       "slug": "Wolverhampton-vs-Charlton-Athletic",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Championship",
         "category": "Football",
@@ -974,7 +872,7 @@
       "title": "Rayo Vallecano vs Valencia",
       "slug": "Rayo-Vallecano-vs-Valencia",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "LaLiga",
         "category": "Football",
@@ -994,7 +892,7 @@
       "title": "Real Sociedad B vs Cádiz",
       "slug": "Real-Sociedad-B-vs-Cádiz",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "LaLiga 2",
         "category": "Football",
@@ -1014,7 +912,7 @@
       "title": "Chile U17 vs Algeria U17",
       "slug": "Chile-U17-vs-Algeria-U17",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "U17 World Championship",
         "category": "Football",
@@ -1034,7 +932,7 @@
       "title": "Mexico U17 vs Romania U17",
       "slug": "Mexico-U17-vs-Romania-U17",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "U17 World Championship",
         "category": "Football",
@@ -1044,6 +942,26 @@
         "teamAFlag": "https://img.sofascore.com/api/v1/team/22629/image",
         "teamB": "Romania U17",
         "teamBFlag": "https://img.sofascore.com/api/v1/team/22645/image",
+        "startTimeIST": "2026-11-21 21:00:00 IST",
+        "endTimeIST": "2026-11-21 23:20:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": 2079,
+      "title": "NEC Nijmegen vs PSV Eindhoven",
+      "slug": "NEC-Nijmegen-vs-PSV-Eindhoven",
+      "cat": "Football",
+      "status": "live",
+      "event": {
+        "name": "VriendenLoterij Eredivisie",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/37/image/dark",
+        "teamA": "NEC Nijmegen",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2962/image",
+        "teamB": "PSV Eindhoven",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2952/image",
         "startTimeIST": "2026-11-21 21:00:00 IST",
         "endTimeIST": "2026-11-21 23:20:00 IST"
       },
@@ -1770,58 +1688,46 @@
       "streams": []
     },
     {
-      "id": 1999,
-      "title": "hong Kong vs Sri Lanka A",
-      "slug": "hong-Kong-vs-Sri-Lanka-A",
-      "cat": "Cricket",
+      "id": "cbe28f2a-15b8-46e0-be91-39d89a9e191f",
+      "title": "AFC Bournemouth vs Nottingham Forest",
+      "slug": "afc-bournemouth-vs-nottingham-forest",
+      "cat": "Live Events",
       "status": "live",
       "event": {
-        "name": "Asia Cup Rising Stars",
-        "category": "Cricket",
-        "type": "",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn2rCtrI68Agu71aIWID9YxzlqXN-3c88k4cwPQQhwEA&s=10",
-        "teamA": "hong Kong",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/4765/image",
-        "teamB": "Sri Lanka A",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/187756/image",
-        "startTimeIST": "2026-11-21 11:30:00 IST",
-        "endTimeIST": ""
+        "name": "AFC Bournemouth vs Nottingham Forest",
+        "category": "Football",
+        "type": "Premier League",
+        "logo": "https://images.now-tv.com/shares/vod_images/vi_vodproduct_desc_t/202510/en_us/original_horizontal2/202510082071232#mshero=background",
+        "teamA": "AFC Bournemouth",
+        "teamB": "Nottingham Forest",
+        "startTimeIST": "2026-11-21T15:00:00+00:00"
       },
       "streams": [
         {
           "id": 1,
-          "title": "STARZPLAY FHD",
-          "type": "mpd",
-          "link": "https://d1ifzl5cnhi7bu.cloudfront.net/out/v1/45ba30e075ad455a8767d3f33e67ea3d/index.mpd",
-          "api": "0ae4f162eec3e6f2b580a5bf0f4a64d4:03483335db81cba5bbcf51b6d31196d9"
+          "title": "Sky Sport Select NZ",
+          "type": "iframe",
+          "link": "https://pijirege.st/live-tv?ch=skysportselect-nz",
+          "api": ""
         },
         {
           "id": 2,
-          "title": "SONYLIV ENG - AQ",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2120299/criclive2111/ENG/std_lrh-800300010.m3u8?hdnea=exp=1795282335~acl=/*~id=62149777860658370208685505764532~hmac=f1208fc027d34823a2ecb8f71321e8d9418978f4c0bcbbe5552e47232aac243a",
+          "title": "beIN ARABIC",
+          "type": "iframe",
+          "link": "https://pijirege.st/live-tv?ch=59b89cub",
           "api": ""
+        }
+      ],
+      "dashStreams": [
+        {
+          "title": "Sky Sport Select NZ",
+          "type": "iframe",
+          "url": "https://pijirege.st/live-tv?ch=skysportselect-nz"
         },
         {
-          "id": 3,
-          "title": "TAMASHA AQ",
-          "type": "m3u8",
-          "link": "https://cdn06khi-n.tamashaweb.com:8087/appcast/ACC-men-AC26-abr/playlist.m3u8",
-          "api": ""
-        },
-        {
-          "id": 4,
-          "title": "TEN SPORTS HD",
-          "type": "m3u8",
-          "link": "https://live.msnetworks.net/ten-sports/master.m3u8",
-          "api": ""
-        },
-        {
-          "id": 5,
-          "title": "HD SERVER",
-          "type": "m3u8",
-          "link": "https://dai.google.com/linear/hls/event/yaROyE-bScOVYZWWXQoBdQ/master.m3u8",
-          "api": ""
+          "title": "beIN ARABIC",
+          "type": "iframe",
+          "url": "https://pijirege.st/live-tv?ch=59b89cub"
         }
       ]
     },
@@ -1921,7 +1827,7 @@
       "title": "International League T20",
       "slug": "ILT-T20-vs-ILT-T",
       "cat": "Cricket",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "International League T20",
         "category": "Cricket",
@@ -1934,7 +1840,29 @@
         "startTimeIST": "2026-11-21 20:00:00 IST",
         "endTimeIST": ""
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW - AQ",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/u7thf3dqfv/out/v1/b6a0f070688648ac849771947211a8fb/cenc.mpd",
+          "api": "61403ba13e0032108b86ec3078314ec9:ec2ac53d37954d51dd4d9eb11ecf322b"
+        },
+        {
+          "id": 2,
+          "title": "TNT SPORTS - AQ",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/dev1hjwzh9/out/v1/a5f0ee7ad7b24906b14f43bebbbe4678/cenc.mpd?",
+          "api": "cc91508324ce9dcaf425a43d58f1d9d4:643e5474d9edd87c7d9091c8c97994ca"
+        },
+        {
+          "id": 3,
+          "title": "FANCODE FHD",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/avqlywnuzx/out/v1/aefca6420f944a9482e117f315de535f/cenc.mpd",
+          "api": "1994b1df7dfd2e8a8d7b9bf3fb900285:22a1444b3da18e139191665b3d652835"
+        }
+      ]
     },
     {
       "id": 1236,
@@ -2078,6 +2006,26 @@
         "teamB": "Adelaide Strikers Women",
         "teamBFlag": "https://img.sofascore.com/api/v1/team/274888/image",
         "startTimeIST": "2026-11-22 10:10:00 IST",
+        "endTimeIST": ""
+      },
+      "streams": []
+    },
+    {
+      "id": 2077,
+      "title": "UAE vs Nepal",
+      "slug": "UAE-vs-Nepal",
+      "cat": "Cricket",
+      "status": "upcoming",
+      "event": {
+        "name": "Asia Cup Rising Stars",
+        "category": "Cricket",
+        "type": "",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn2rCtrI68Agu71aIWID9YxzlqXN-3c88k4cwPQQhwEA&s=10",
+        "teamA": "UAE",
+        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-f8WXHBnZ_I--KDLmDvYm3nSTtxI9z9hepaQhpPg_RQ&s=10",
+        "teamB": "Nepal",
+        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsQBkn_ivaBSXmyE1lnMzIkvPX7BMXMj-BuVRGJQPqYA&s=10",
+        "startTimeIST": "2026-11-22 11:30:00 IST",
         "endTimeIST": ""
       },
       "streams": []
