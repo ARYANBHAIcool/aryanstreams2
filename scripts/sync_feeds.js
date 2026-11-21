@@ -1070,13 +1070,12 @@ async function syncEvents() {
             }
         };
 
-        const [fbV6, fbV5, crV6, crV5, srhadyWillow, kickoffZone] = await Promise.all([
+        const [fbV6, fbV5, crV6, crV5, srhadyWillow] = await Promise.all([
             fetchJson('https://sonujson-v6.pages.dev/Data/events/football.json'),
             fetchJson('https://sonujson-v5.pages.dev/Data/events/football.json'),
             fetchJson('https://sonujson-v6.pages.dev/Data/events/cricket.json'),
             fetchJson('https://sonujson-v5.pages.dev/Data/events/cricket.json'),
-            fetchJson('https://raw.githubusercontent.com/srhady/willow-event/refs/heads/main/live_sports.json'),
-            fetchJson('https://live.kickoffzone.in/api/matches')
+            fetchJson('https://raw.githubusercontent.com/srhady/willow-event/refs/heads/main/live_sports.json')
         ]);
 
         const footballEvents = (fbV6 && fbV6.events && fbV6.events.length > 0) ? fbV6.events : ((fbV5 && fbV5.events) || []);
@@ -1104,97 +1103,6 @@ async function syncEvents() {
                             type: ch.type || (ch.url && ch.url.includes('.mpd') ? 'dash' : 'hls'),
                             url: ch.url,
                             key: ch.key
-                        }))
-                    });
-                }
-            });
-        }
-
-        function cleanEventTeam(name) {
-            if (!name) return '';
-            let s = name.toLowerCase().trim();
-            s = s.replace(/^(fc|afc|cf|sc|rc|vfb|ss|as)\s+/i, '');
-            s = s.replace(/\s+(fc|cf|sc|club|athletic)$/i, '');
-            s = s.replace(/[^a-z0-9\s]/g, '').trim();
-            if (s.includes('bournemouth')) return 'bournemouth';
-            if (s.includes('nottingham')) return 'nottingham';
-            if (s.includes('sunderland')) return 'sunderland';
-            if (s.includes('ipswich')) return 'ipswich';
-            if (s.includes('aston') || s.includes('villa')) return 'astonvilla';
-            if (s.includes('chelsea')) return 'chelsea';
-            if (s.includes('leeds')) return 'leeds';
-            if (s.includes('tottenham')) return 'tottenham';
-            return s.replace(/\s+/g, '');
-        }
-
-        function extractEventTeams(title) {
-            if (!title) return { t1: '', t2: '' };
-            const parts = title.split(/\s+vs\.?\s+|\s+v\.?\s+|\s+-\s+/i);
-            if (parts.length >= 2) return { t1: cleanEventTeam(parts[0]), t2: cleanEventTeam(parts[1]) };
-            return { t1: cleanEventTeam(title), t2: '' };
-        }
-
-        if (kickoffZone && kickoffZone.matches && Array.isArray(kickoffZone.matches)) {
-            kickoffZone.matches.forEach(km => {
-                if (!km || !km.name || km.ended) return;
-                const kmTeams = extractEventTeams(km.name);
-                const fe = footballEvents.find(f => {
-                    const fTeams = extractEventTeams(f.title || (f.event && f.event.name) || '');
-                    if (fTeams.t1 && kmTeams.t1 && fTeams.t2 && kmTeams.t2) {
-                        return (fTeams.t1 === kmTeams.t1 && fTeams.t2 === kmTeams.t2) ||
-                               (fTeams.t1 === kmTeams.t2 && fTeams.t2 === kmTeams.t1);
-                    }
-                    return false;
-                });
-                if (fe) {
-                    if (!fe.dashStreams) fe.dashStreams = [];
-                    if (!fe.streams) fe.streams = [];
-                    (km.servers || []).forEach(s => {
-                        if (!fe.dashStreams.some(ds => ds.url === s.url)) {
-                            fe.dashStreams.push({
-                                title: s.label ? ('KOZ ' + s.label) : 'KickOffZone HD',
-                                type: s.type || 'iframe',
-                                url: s.url
-                            });
-                        }
-                        if (!fe.streams.some(st => st.link === s.url)) {
-                            fe.streams.push({
-                                id: fe.streams.length + 1,
-                                title: s.label ? ('KOZ ' + s.label) : `Server ${fe.streams.length + 1}`,
-                                type: s.type || 'iframe',
-                                link: s.url,
-                                api: ''
-                            });
-                        }
-                    });
-                } else {
-                    const teams = km.name.split(/\s+vs\.?\s+|\s+-\s+/i);
-                    footballEvents.push({
-                        id: km.id || String(Date.now()),
-                        title: km.name,
-                        slug: (km.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-'),
-                        cat: 'Live Events',
-                        status: (km.status === 'published' && !km.ended) ? 'live' : 'upcoming',
-                        event: {
-                            name: km.name,
-                            category: km.sport || 'Football',
-                            type: km.competition || 'Football',
-                            logo: km.poster || '',
-                            teamA: teams[0] ? teams[0].trim() : 'Team A',
-                            teamB: teams[1] ? teams[1].trim() : 'Team B',
-                            startTimeIST: km.matchAt || ''
-                        },
-                        streams: (km.servers || []).map((s, idx) => ({
-                            id: idx + 1,
-                            title: s.label || `Server ${idx + 1}`,
-                            type: s.type || 'iframe',
-                            link: s.url,
-                            api: ''
-                        })),
-                        dashStreams: (km.servers || []).map(s => ({
-                            title: s.label || 'KickOffZone HD',
-                            type: s.type || 'iframe',
-                            url: s.url
                         }))
                     });
                 }
@@ -1275,17 +1183,51 @@ async function syncVercelLive() {
     }
     return false;
 }
+
+async function syncTrendyChannels() {
+    console.log("🔄 Syncing Trendy48 Master Live TV Channels...");
+    try {
+        const res = await fetch('https://trendy48.online/live-tv');
+        const text = await res.text();
+        const regex = /data-slug=["']([^"']+)["']\s+data-name=["']([^"']+)["']/gi;
+        let match;
+        const channels = [];
+        while ((match = regex.exec(text)) !== null) {
+            channels.push({
+                slug: match[1],
+                name: match[2],
+                url: 'https://pijirege.st/live-tv?ch=' + match[1],
+                embed_url: 'https://trendy48.site/embed/' + match[1]
+            });
+        }
+        if (channels.length > 0) {
+            const targetPath = path.join(__dirname, "..", "data", "trendy_channels.json");
+            fs.writeFileSync(targetPath, JSON.stringify({
+                updated_at: new Date().toISOString(),
+                total: channels.length,
+                channels: channels
+            }, null, 2), "utf8");
+            console.log(`✅ Saved ${channels.length} Trendy48 master live TV channels to data/trendy_channels.json`);
+            return true;
+        }
+    } catch(e) {
+        console.warn("⚠️ syncTrendyChannels error:", e.message);
+    }
+    return false;
+}
+
 async function main() {
     const vOk = await syncVercelLive();
     const sOk = await syncSports();
     const wOk = await syncWillow();
     const mOk = await syncSonyM3U8();
+    const tOk = await syncTrendyChannels();
     const eOk = await syncEvents();
-    if (!sOk && !wOk && !mOk && !eOk) {
+    if (!sOk && !wOk && !mOk && !eOk && !tOk) {
         console.error('❌ Failed to sync any feeds');
         process.exit(1);
     }
-    console.log('🎉 All live feeds (Sports, Willow, Sony M3U8 & Own Events) successfully synchronized!');
+    console.log('🎉 All live feeds (Sports, Willow, Sony M3U8, Trendy Master & Own Events) successfully synchronized!');
 }
 
 main();

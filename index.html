@@ -2990,20 +2990,18 @@
             }).catch(function() { return { events: [] }; });
             var p4 = fetch('https://www.futbol-x.xyz/api/football.json', { signal: controller ? controller.signal : undefined }).then(function(r) { return r.json(); }).catch(function() { return { streams: [] }; });
             var p5 = fetch('https://www.futbol-x.xyz/api/fights.json', { signal: controller ? controller.signal : undefined }).then(function(r) { return r.json(); }).catch(function() { return { streams: [] }; });
-            var p6 = fetch('https://live.kickoffzone.in/api/matches', { signal: controller ? controller.signal : undefined }).then(function(r) { return r.json(); }).catch(function() { return { matches: [] }; });
 
-            Promise.all([p1, p2, p3, p4, p5, p6]).then(function(results) {
+            Promise.all([p1, p2, p3, p4, p5]).then(function(results) {
                 clearTimeout(timer);
                 var tToday = Array.isArray(results[0]) ? results[0] : [];
                 var aFootball = results[1] || { events: [] };
                 var aCricket = results[2] || { events: [] };
                 var fFootball = results[3] || { streams: [] };
                 var fFights = results[4] || { streams: [] };
-                var kZone = (results[5] && results[5].matches) || [];
 
                 var unified = [];
 
-                // 1. Trendy48
+                // 1. Trendy48 with All Master Broadcaster Servers
                 tToday.forEach(function(m) {
                     if (!m || !m.title) return;
                     var teams = extractTeams(m.title);
@@ -3014,39 +3012,45 @@
                         sources: []
                     };
                     var primaryUrl = m.watch_url || ('https://trendy48.online/event/' + m.id);
-                    var isPsgMatch = /psg|paris/i.test(m.title);
-                    if (isPsgMatch) {
-                        matchObj.sources.push({
-                            type: 'iframe',
-                            name: 'Server 1',
-                            detail: 'beIN Sports USA HD',
-                            url: 'https://trend48.st/live-tv?ch=beinsports-usa'
-                        });
-                        matchObj.sources.push({
-                            type: 'iframe',
-                            name: 'Server 2',
-                            detail: 'beIN Sports 1 France',
-                            url: 'https://trend48.st/live-tv?ch=beinsports1-fr'
-                        });
-                        matchObj.sources.push({
-                            type: 'iframe',
-                            name: 'Server 3',
-                            detail: 'beIN Sports 1 MENA',
-                            url: 'https://trend48.st/live-tv?ch=beinsports1-sa'
-                        });
-                        matchObj.sources.push({
-                            type: 'iframe',
-                            name: 'Server 4',
-                            detail: 'beIN Sports 2 France',
-                            url: 'https://trend48.st/live-tv?ch=beinsports2-fr'
-                        });
+
+                    matchObj.sources.push({
+                        type: 'iframe',
+                        name: 'Server 1',
+                        detail: 'Trendy48 HD',
+                        url: primaryUrl
+                    });
+                    matchObj.sources.push({
+                        type: 'iframe',
+                        name: 'Server 2',
+                        detail: 'Trendy48 Web',
+                        url: 'https://trendy48.online/event/' + m.id
+                    });
+
+                    var tLower = (m.title || '').toLowerCase();
+                    if (/arsenal|chelsea|city|united|liverpool|tottenham|newcastle|aston|villa|bournemouth|forest|sunderland|leeds|fulham|brighton|wolves|everton|crystal|west ham|brentford|leicester|ipswich|premier league/i.test(tLower)) {
+                        matchObj.sources.push({ type: 'iframe', name: 'Server ' + (matchObj.sources.length + 1), detail: 'Sky Sport Select NZ', url: 'https://pijirege.st/live-tv?ch=skysportselect-nz' });
+                        matchObj.sources.push({ type: 'iframe', name: 'Server ' + (matchObj.sources.length + 1), detail: 'beIN Sports 1 MENA', url: 'https://pijirege.st/live-tv?ch=beinsports1-sa' });
+                        matchObj.sources.push({ type: 'iframe', name: 'Server ' + (matchObj.sources.length + 1), detail: 'USA Network HD', url: 'https://pijirege.st/live-tv?ch=usanetwork-usa' });
+                        matchObj.sources.push({ type: 'iframe', name: 'Server ' + (matchObj.sources.length + 1), detail: 'Premier Sports 1', url: 'https://pijirege.st/live-tv?ch=nf1skh2l' });
+                        matchObj.sources.push({ type: 'iframe', name: 'Server ' + (matchObj.sources.length + 1), detail: 'SuperSport Premier League', url: 'https://pijirege.st/live-tv?ch=ozdaxj35' });
+                        matchObj.sources.push({ type: 'iframe', name: 'Server ' + (matchObj.sources.length + 1), detail: 'DAZN 1 Portugal', url: 'https://pijirege.st/live-tv?ch=dazn1-pt' });
+                    } else if (/madrid|barcelona|atletico|sevilla|valencia|villarreal|betis|bilbao|sociedad|la liga|laliga/i.test(tLower)) {
+                        matchObj.sources.push({ type: 'iframe', name: 'Server ' + (matchObj.sources.length + 1), detail: 'DAZN LaLiga', url: 'https://pijirege.st/live-tv?ch=daznlaliga-es' });
+                        matchObj.sources.push({ type: 'iframe', name: 'Server ' + (matchObj.sources.length + 1), detail: 'beIN Sports 1 MENA', url: 'https://pijirege.st/live-tv?ch=beinsports1-sa' });
+                        matchObj.sources.push({ type: 'iframe', name: 'Server ' + (matchObj.sources.length + 1), detail: 'Premier Sports 1', url: 'https://pijirege.st/live-tv?ch=nf1skh2l' });
+                        matchObj.sources.push({ type: 'iframe', name: 'Server ' + (matchObj.sources.length + 1), detail: 'beIN Sports 3 MENA', url: 'https://pijirege.st/live-tv?ch=beinsports3-sa' });
+                    } else if (/milan|inter|juventus|roma|napoli|lazio|atalanta|fiorentina|serie a/i.test(tLower)) {
+                        matchObj.sources.push({ type: 'iframe', name: 'Server ' + (matchObj.sources.length + 1), detail: 'DAZN 1 Italia', url: 'https://pijirege.st/live-tv?ch=dazn1-it' });
+                        matchObj.sources.push({ type: 'iframe', name: 'Server ' + (matchObj.sources.length + 1), detail: 'TNT Sports 1 UK', url: 'https://pijirege.st/live-tv?ch=tntsports1-uk' });
+                        matchObj.sources.push({ type: 'iframe', name: 'Server ' + (matchObj.sources.length + 1), detail: 'beIN Sports 2 MENA', url: 'https://pijirege.st/live-tv?ch=beinsports2-sa' });
+                    } else if (/psg|paris|monaco|lyon|marseille|lille|rennes|ligue 1/i.test(tLower)) {
+                        matchObj.sources.push({ type: 'iframe', name: 'Server ' + (matchObj.sources.length + 1), detail: 'beIN Sports USA HD', url: 'https://pijirege.st/live-tv?ch=beinsports-usa' });
+                        matchObj.sources.push({ type: 'iframe', name: 'Server ' + (matchObj.sources.length + 1), detail: 'beIN Sports 1 France', url: 'https://pijirege.st/live-tv?ch=beinsports1-fr' });
+                        matchObj.sources.push({ type: 'iframe', name: 'Server ' + (matchObj.sources.length + 1), detail: 'beIN Sports 1 MENA', url: 'https://pijirege.st/live-tv?ch=beinsports1-sa' });
                     } else {
-                        matchObj.sources.push({
-                            type: 'iframe',
-                            name: 'Server 1',
-                            detail: 'Trendy48 Live',
-                            url: primaryUrl
-                        });
+                        matchObj.sources.push({ type: 'iframe', name: 'Server ' + (matchObj.sources.length + 1), detail: 'beIN Sports 1 MENA', url: 'https://pijirege.st/live-tv?ch=beinsports1-sa' });
+                        matchObj.sources.push({ type: 'iframe', name: 'Server ' + (matchObj.sources.length + 1), detail: 'beIN Sports 2 MENA', url: 'https://pijirege.st/live-tv?ch=beinsports2-sa' });
+                        matchObj.sources.push({ type: 'iframe', name: 'Server ' + (matchObj.sources.length + 1), detail: 'SuperSport Premier League', url: 'https://pijirege.st/live-tv?ch=ozdaxj35' });
                     }
                     if (Array.isArray(m.sources) && m.sources.length > 1) {
                         for (var i = 1; i < m.sources.length; i++) {
@@ -3156,36 +3160,6 @@
                             }
                         });
                     });
-                });
-
-                // 4. KickOffZone
-                kZone.forEach(function(km) {
-                    if (!km || !km.name || km.ended) return;
-                    var teams = extractTeams(km.name);
-                    var target = unified.find(function(m) { return isSameMatch(m.teams, teams); });
-                    if (!target) {
-                        target = {
-                            id: 'koz-' + (km.id || Math.random().toString(36).substring(7)),
-                            title: km.name,
-                            teams: teams,
-                            sources: []
-                        };
-                        unified.push(target);
-                    }
-                    if (Array.isArray(km.servers)) {
-                        km.servers.forEach(function(s) {
-                            if (!s || !s.url) return;
-                            var alreadyHas = target.sources.some(function(src) { return src.url === s.url; });
-                            if (!alreadyHas) {
-                                target.sources.push({
-                                    type: s.type || 'iframe',
-                                    name: 'Server ' + (target.sources.length + 1),
-                                    detail: s.label ? ('KOZ ' + s.label) : 'KickOffZone HD',
-                                    url: s.url
-                                });
-                            }
-                        });
-                    }
                 });
 
                 // Search matching match
