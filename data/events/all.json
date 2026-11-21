@@ -1,482 +1,9 @@
 {
-  "last_updated": "11/21/2026, 2:02:30 AM IST",
+  "last_updated": "11/21/2026, 7:14:27 AM IST",
   "source": "AryanStreams Official Feed",
-  "football_count": 57,
-  "cricket_count": 17,
+  "football_count": 36,
+  "cricket_count": 15,
   "events": [
-    {
-      "id": 1981,
-      "title": "UEFA Nations League - Play Off Draw",
-      "slug": "UEFA-Nations-League-Play-Off-Draw",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "UEFA Nations League - Play Off Draw",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/10783/image",
-        "teamA": "UEFA Nations League",
-        "teamAFlag": "https://img.sofascore.com/api/v1/unique-tournament/10783/image",
-        "teamB": "UEFA Nations League",
-        "teamBFlag": "https://img.sofascore.com/api/v1/unique-tournament/10783/image/dark",
-        "startTimeIST": "2026-11-20 16:30:00 IST",
-        "endTimeIST": ""
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "FOX SPORTS",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/fsu3wl2rwb/out/v1/be61206c04e643349d53fb22301f3b50/cenc.mpd",
-          "api": "5466ebd70704bdeb657f0abf3c5ca4ef:bdd79b72d8e48ed483aa623cc38a8a16"
-        }
-      ]
-    },
-    {
-      "id": 1310,
-      "title": "East Bengal FC vs Sporting Delhi",
-      "slug": "East-Bengal-FC-vs-Sporting-Delhi",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "Indian Super League",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1900/image/dark",
-        "teamA": "East Bengal FC",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/40655/image",
-        "teamB": "Sporting Delhi",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/331840/image",
-        "startTimeIST": "2026-11-20 17:00:00 IST",
-        "endTimeIST": "2026-11-20 19:20:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "SONYLIV ENG - AQ",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2120303/Footlive2011/ENG/std_lrh-800300010.m3u8?hdnea=exp=1795216650~acl=/*~id=32116311024737107652264609695631~hmac=0a2bae1e3a3637e36361e6fc9c5f43509006d01aa542e741099d68f28f8a2edc",
-          "api": ""
-        },
-        {
-          "id": 2,
-          "title": "SONYLIV HIN - AQ",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2120302/Footlive2011/HIN/std_lrh-800300010.m3u8?hdnea=exp=1795216650~acl=/*~id=32116311024737107652264609695631~hmac=0a2bae1e3a3637e36361e6fc9c5f43509006d01aa542e741099d68f28f8a2edc",
-          "api": ""
-        },
-        {
-          "id": 3,
-          "title": "SONYLIV BEN - AQ",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2120299/Footlive2011/BEN/std_lrh-800300010.m3u8?hdnea=exp=1795216650~acl=/*~id=32116311024737107652264609695631~hmac=0a2bae1e3a3637e36361e6fc9c5f43509006d01aa542e741099d68f28f8a2edc",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 1969,
-      "title": "Belgium U17 vs Vietnam U17",
-      "slug": "Belgium-U17-vs-Vietnam-U17",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "U17 World Championship",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/279/image/dark",
-        "teamA": "Belgium U17",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/22583/image",
-        "teamB": "Vietnam U17",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/468404/image",
-        "startTimeIST": "2026-11-20 18:30:00 IST",
-        "endTimeIST": "2026-11-20 20:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "FOX SPORTS FHD",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/awxnrqkbo5/out/v1/716529a4091947b0877e6cb80dbd6ccb/cenc.mpd",
-          "api": "09453ce820d65fbc675de3185f9e454c:98cff9600995fa381c76fdacf3c7edae"
-        },
-        {
-          "id": 2,
-          "title": "AUVIO SPORTS - AQ",
-          "type": "mpd",
-          "link": "https://C9851Ec-rbm-hilv-fsly.cdn.redbee.live/L3/fc35c395/00db2870.isml/.mpd?t=2026-11-20T12:45:00.000",
-          "api": "5b632e0760a74b58b61fc928fadc4e73:7b5732f1a96af852ee2b0c47daa02f5f"
-        }
-      ]
-    },
-    {
-      "id": 1970,
-      "title": "Cuba U17 vs Tajikistan U17",
-      "slug": "Cuba-U17-vs-Tajikistan-U17",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "U17 World Championship",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/279/image/dark",
-        "teamA": "Cuba U17",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/190704/image",
-        "teamB": "Tajikistan U17",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/229664/image",
-        "startTimeIST": "2026-11-20 18:30:00 IST",
-        "endTimeIST": "2026-11-20 20:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "HD STREAM",
-          "type": "m3u8",
-          "link": "https://live2.jorvakstreamcache.com/live/channel20.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 1971,
-      "title": "Mali U17 vs New Zealand U17",
-      "slug": "Mali-U17-vs-New-Zealand-U17",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "U17 World Championship",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/279/image/dark",
-        "teamA": "Mali U17",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/203876/image",
-        "teamB": "New Zealand U17",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/22634/image",
-        "startTimeIST": "2026-11-20 19:00:00 IST",
-        "endTimeIST": "2026-11-20 21:20:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1311,
-      "title": "Bengaluru FC vs Mumbai City FC",
-      "slug": "Bengaluru-FC-vs-Mumbai-City-FC",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "Indian Super League",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1900/image/dark",
-        "teamA": "Bengaluru FC",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/118670/image",
-        "teamB": "Mumbai City FC",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/174600/image",
-        "startTimeIST": "2026-11-20 19:30:00 IST",
-        "endTimeIST": "2026-11-20 21:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1973,
-      "title": "Spain U17 vs China U17",
-      "slug": "Spain-U17-vs-China-U17",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "U17 World Championship",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/279/image/dark",
-        "teamA": "Spain U17",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/22479/image",
-        "teamB": "China U17",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/468402/image",
-        "startTimeIST": "2026-11-20 19:30:00 IST",
-        "endTimeIST": "2026-11-20 21:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1975,
-      "title": "Italy U17 vs Jamaica U17",
-      "slug": "Italy-U17-vs-Jamaica-U17",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "U17 World Championship",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/279/image/dark",
-        "teamA": "Italy U17",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/22616/image",
-        "teamB": "Jamaica U17",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/22617/image",
-        "startTimeIST": "2026-11-20 20:30:00 IST",
-        "endTimeIST": "2026-11-20 22:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1976,
-      "title": "Senegal U17 vs Croatia U17",
-      "slug": "Senegal-U17-vs-Croatia-U17",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "U17 World Championship",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/279/image/dark",
-        "teamA": "Senegal U17",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/323076/image",
-        "teamB": "Croatia U17",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/22594/image",
-        "startTimeIST": "2026-11-20 21:00:00 IST",
-        "endTimeIST": "2026-11-20 23:20:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1978,
-      "title": "Côte d'Ivoire U17 vs Uzbekistan U17",
-      "slug": "Côte-d'Ivoire-U17-vs-Uzbekistan-U17",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "U17 World Championship",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/279/image/dark",
-        "teamA": "Côte d'Ivoire U17",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/48857/image",
-        "teamB": "Uzbekistan U17",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/22662/image",
-        "startTimeIST": "2026-11-20 21:30:00 IST",
-        "endTimeIST": "2026-11-20 23:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1980,
-      "title": "Fiji U17 vs Morocco U17",
-      "slug": "Fiji-U17-vs-Morocco-U17",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "U17 World Championship",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/279/image/dark",
-        "teamA": "Fiji U17",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/1096685/image",
-        "teamB": "Morocco U17",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/48862/image",
-        "startTimeIST": "2026-11-20 21:30:00 IST",
-        "endTimeIST": "2026-11-20 23:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1312,
-      "title": "Al-Ahli vs Al-Nassr",
-      "slug": "Al-Ahli-vs-Al-Nassr",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "Saudi Pro League",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/955/image/dark",
-        "teamA": "Al-Ahli",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/34469/image",
-        "teamB": "Al-Nassr",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/23400/image",
-        "startTimeIST": "2026-11-20 23:00:00 IST",
-        "endTimeIST": "2026-11-21 01:20:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1313,
-      "title": "Arminia Bielefeld vs 1. FC Magdeburg",
-      "slug": "Arminia-Bielefeld-vs-1.-FC-Magdeburg",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "2. Bundesliga",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/44/image/dark",
-        "teamA": "Arminia Bielefeld",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2540/image",
-        "teamB": "1. FC Magdeburg",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2591/image",
-        "startTimeIST": "2026-11-20 23:00:00 IST",
-        "endTimeIST": "2026-11-21 01:20:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1314,
-      "title": "Darmstadt 98 vs 1. FC Heidenheim",
-      "slug": "Darmstadt-98-vs-1.-FC-Heidenheim",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "2. Bundesliga",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/44/image/dark",
-        "teamA": "Darmstadt 98",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2576/image",
-        "teamB": "1. FC Heidenheim",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/5885/image",
-        "startTimeIST": "2026-11-20 23:00:00 IST",
-        "endTimeIST": "2026-11-21 01:20:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1315,
-      "title": "FC Andorra vs Leganés",
-      "slug": "FC-Andorra-vs-Leganés",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "LaLiga 2",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/54/image/dark",
-        "teamA": "FC Andorra",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/324871/image",
-        "teamB": "Leganés",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2845/image",
-        "startTimeIST": "2026-11-21 01:00:00 IST",
-        "endTimeIST": "2026-11-21 03:20:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1835,
-      "title": "FC Bayern München vs 1. FC Köln",
-      "slug": "FC-Bayern-München-vs-1.-FC-Köln",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "Bundesliga",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/35/image/dark",
-        "teamA": "FC Bayern München",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2672/image",
-        "teamB": "1. FC Köln",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2671/image",
-        "startTimeIST": "2026-11-21 01:00:00 IST",
-        "endTimeIST": "2026-11-21 03:20:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1847,
-      "title": "Troyes vs Le Havre",
-      "slug": "Troyes-vs-Le-Havre",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "Ligue 1",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/34/image/dark",
-        "teamA": "Troyes",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/1652/image",
-        "teamB": "Le Havre",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/1662/image",
-        "startTimeIST": "2026-11-21 01:15:00 IST",
-        "endTimeIST": "2026-11-21 03:35:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1318,
-      "title": "Athletic Club vs Espanyol",
-      "slug": "Athletic-Club-vs-Espanyol",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "LaLiga",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/8/image/dark",
-        "teamA": "Athletic Club",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2825/image",
-        "teamB": "Espanyol",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2814/image",
-        "startTimeIST": "2026-11-21 01:30:00 IST",
-        "endTimeIST": "2026-11-21 03:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1319,
-      "title": "Barnsley vs Sheffield Wednesday",
-      "slug": "Barnsley-vs-Sheffield-Wednesday",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "League One",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/24/image/dark",
-        "teamA": "Barnsley",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/23/image",
-        "teamB": "Sheffield Wednesday",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/12/image",
-        "startTimeIST": "2026-11-21 01:30:00 IST",
-        "endTimeIST": "2026-11-21 03:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1868,
-      "title": "FC Porto vs USC Paredes",
-      "slug": "FC-Porto-vs-USC-Paredes",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "Taça de Portugal",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/336/image/dark",
-        "teamA": "FC Porto",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/3002/image",
-        "teamB": "USC Paredes",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/231591/image",
-        "startTimeIST": "2026-11-21 02:15:00 IST",
-        "endTimeIST": "2026-11-21 04:35:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1870,
-      "title": "Atletico CP vs Casa Pia",
-      "slug": "Atletico-CP-vs-Casa-Pia",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "Taça de Portugal",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/336/image/dark",
-        "teamA": "Atletico CP",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/35177/image",
-        "teamB": "Casa Pia",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/36365/image",
-        "startTimeIST": "2026-11-21 16:30:00 IST",
-        "endTimeIST": "2026-11-21 18:50:00 IST"
-      },
-      "streams": []
-    },
     {
       "id": 1320,
       "title": "Chennaiyin FC vs Punjab FC",
@@ -1198,249 +725,11 @@
       "streams": []
     },
     {
-      "id": 1433,
-      "title": "Pakistan A vs UAE",
-      "slug": "Pakistan-A-vs-UAE",
-      "cat": "Cricket",
-      "status": "live",
-      "event": {
-        "name": "Asia Cup Rising Stars",
-        "category": "Cricket",
-        "type": "",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn2rCtrI68Agu71aIWID9YxzlqXN-3c88k4cwPQQhwEA&s=10",
-        "teamA": "Pakistan A",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/213104/image",
-        "teamB": "UAE",
-        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-f8WXHBnZ_I--KDLmDvYm3nSTtxI9z9hepaQhpPg_RQ&s=10",
-        "startTimeIST": "2026-11-20 11:30:00 IST",
-        "endTimeIST": ""
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "WILLOW - AQ",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/yiibkf8ifo/out/v1/4f2e6d2fb906490e910c22a4dfbfbd82/cenc.mpd",
-          "api": "c180edac009ec2b3ddc9822f3ae814c3:b94d327fd81dd7a5a43a0a7bd737dd8a"
-        },
-        {
-          "id": 2,
-          "title": "PRIME VIDEO FHD",
-          "type": "mpd",
-          "link": "https://abn7ylpaaaaaaaame77ehqq2geew7.ta.bia-cf.live.pv-cdn.net/bom-nitro/live/clients/dash/enc/w38waynbjz/out/v1/c8d5a418fc14440eb143b6add6b0af66/cenc.mpd",
-          "api": "2ca5224cf3b5604c216670133f47b34c:9c0cf6c1c33edbcb63508c4b237b7e79"
-        },
-        {
-          "id": 3,
-          "title": "STARZPLAY FHD",
-          "type": "mpd",
-          "link": "https://d1ifzl5cnhi7bu.cloudfront.net/out/v1/45ba30e075ad455a8767d3f33e67ea3d/index.mpd",
-          "api": "0ae4f162eec3e6f2b580a5bf0f4a64d4:03483335db81cba5bbcf51b6d31196d9"
-        },
-        {
-          "id": 4,
-          "title": "WILLOW ALT",
-          "type": "mpd",
-          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/abgihi0eu1/out/v1/aecf943a889740d190b355d7bc80b51a/cenc.mpd",
-          "api": "c180edac009ec2b3ddc9822f3ae814c3:b94d327fd81dd7a5a43a0a7bd737dd8a"
-        },
-        {
-          "id": 5,
-          "title": "TAMASHA AQ",
-          "type": "m3u8",
-          "link": "https://cdn06khi-n.tamashaweb.com:8087/appcast/ACC-men-AC26-abr/playlist.m3u8",
-          "api": ""
-        },
-        {
-          "id": 6,
-          "title": "SONYLIV (Asia)",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2120306/Criclive2011/ENG/std_lrh-800300010.m3u8?hdnea=exp=1795195986~acl=/*~id=32385250455894596018551937938511~hmac=ef41163e4f8a27bafd051dcb0026e1fca2e8145200b1c4c636a0a88c142c75ec",
-          "api": ""
-        },
-        {
-          "id": 7,
-          "title": "TEN SPORTS HD",
-          "type": "m3u8",
-          "link": "https://live.msnetworks.net/ten-sports/master.m3u8",
-          "api": ""
-        },
-        {
-          "id": 8,
-          "title": "SONY TEN HD",
-          "type": "m3u8",
-          "link": "https://toffee.aliflaila.live/channel/3.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 1434,
-      "title": "India A vs Nepal",
-      "slug": "India-A-vs-Nepal",
-      "cat": "Cricket",
-      "status": "live",
-      "event": {
-        "name": "Men's Asia Cup Rising Stars",
-        "category": "Cricket",
-        "type": "",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn2rCtrI68Agu71aIWID9YxzlqXN-3c88k4cwPQQhwEA&s=10",
-        "teamA": "India A",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/187765/image",
-        "teamB": "Nepal",
-        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsQBkn_ivaBSXmyE1lnMzIkvPX7BMXMj-BuVRGJQPqYA&s=10",
-        "startTimeIST": "2026-11-20 15:30:00 IST",
-        "endTimeIST": ""
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "WILLOW - AQ",
-          "type": "mpd",
-          "link": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/myvotpnueo/out/v1/31f5a50cbd8041308c560355044e0b03/cenc.mpd",
-          "api": "91ffd985da527c7d77ecc801128d11cc:3bb5d51b2fef3b50c43d0cc12455eaf7"
-        },
-        {
-          "id": 2,
-          "title": "PRIME MULTI AUDIO",
-          "type": "mpd",
-          "link": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/xpbyju7ycf/out/v1/01a540649ada43b5a8830cfe656316b6/cenc.mpd",
-          "api": "5b78f639f1bd17fe9859bf92ade8a9d0:00694c720f2afdb0160302bdb1ff209e"
-        },
-        {
-          "id": 3,
-          "title": "SONYLIV ENG - AQ",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119931/cricodi_2011/ENG/std_lrh-800300010.m3u8?hdnea=exp=1795211773~acl=/*~id=76948268902062468843895461111021~hmac=d949091fecf4c22fd2ca351f4d9da867d84b54d858155007fa953d08dddf3b2f",
-          "api": ""
-        },
-        {
-          "id": 4,
-          "title": "SONYLIV HIN - AQ",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119921/cricodi_2011/HIN/std_lrh-800300010.m3u8?hdnea=exp=1795211773~acl=/*~id=76948268902062468843895461111021~hmac=d949091fecf4c22fd2ca351f4d9da867d84b54d858155007fa953d08dddf3b2f",
-          "api": ""
-        },
-        {
-          "id": 5,
-          "title": "SONYLIV TAM - AQ",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119951/cricodi_2011/TAM/std_lrh-800300010.m3u8?hdnea=exp=1795211773~acl=/*~id=76948268902062468843895461111021~hmac=d949091fecf4c22fd2ca351f4d9da867d84b54d858155007fa953d08dddf3b2f",
-          "api": ""
-        },
-        {
-          "id": 6,
-          "title": "SONYLIV TEL - AQ",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119941/cricodi_2011/TEL/std_lrh-800300010.m3u8?hdnea=exp=1795211773~acl=/*~id=76948268902062468843895461111021~hmac=d949091fecf4c22fd2ca351f4d9da867d84b54d858155007fa953d08dddf3b2f",
-          "api": ""
-        },
-        {
-          "id": 7,
-          "title": "SONYLIV KAN - AQ",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119782/cricodi_2011/KAN/std_lrh-800300010.m3u8?hdnea=exp=1795211773~acl=/*~id=76948268902062468843895461111021~hmac=d949091fecf4c22fd2ca351f4d9da867d84b54d858155007fa953d08dddf3b2f",
-          "api": ""
-        },
-        {
-          "id": 8,
-          "title": "TAMASHA AQ",
-          "type": "m3u8",
-          "link": "https://cdn06khi-n.tamashaweb.com:8087/appcast/ACC-men-AC26-b-abr/playlist.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 1997,
-      "title": "Italia T10 2026",
-      "slug": "Italia-T10-vs-Italia-T",
-      "cat": "Cricket",
-      "status": "live",
-      "event": {
-        "name": "Italia T10 2026",
-        "category": "Cricket",
-        "type": "",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBTK9sfDCFhv5T2jEH3nkh9cPngwVXMaQFV9uNCn66zg&s=10",
-        "teamA": "Italia T10",
-        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBTK9sfDCFhv5T2jEH3nkh9cPngwVXMaQFV9uNCn66zg&s=10",
-        "teamB": "Italia T10",
-        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBTK9sfDCFhv5T2jEH3nkh9cPngwVXMaQFV9uNCn66zg&s=10",
-        "startTimeIST": "2026-11-20 18:30:00 IST",
-        "endTimeIST": ""
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "PlayZ TV",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/m6sqanvm2m/out/v1/f6beb46c6e9a4132ad739f3ca27df6aa/cenc.mpd",
-          "api": "1444f4235529f183f0a5a486befe9cdb:e5e3fec67a1bb3472a2089c8a0a2557f"
-        }
-      ]
-    },
-    {
-      "id": 1221,
-      "title": "Abu Dhabi T10 League",
-      "slug": "UAE-Bulls-vs-Yas-Lions",
-      "cat": "Cricket",
-      "status": "live",
-      "event": {
-        "name": "Abu Dhabi T10 League",
-        "category": "Cricket",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
-        "teamA": "Abu Dhabi T10",
-        "teamAFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
-        "teamB": "Abu Dhabi T10",
-        "teamBFlag": "https://img.sofascore.com/api/v1/unique-tournament/18292/image/dark",
-        "startTimeIST": "2026-11-20 19:00:00 IST",
-        "endTimeIST": ""
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "WILLOW - AQ",
-          "type": "mpd",
-          "link": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/ciluyzixht/out/v1/b3ec24213f4b40be9c5644b6eed1774b/cenc.mpd",
-          "api": "b523235faf497e1ce0967946ba01a9c3:1697e8dd99cd9cd940f463f4fdc7385f"
-        },
-        {
-          "id": 2,
-          "title": "PREMIERE SPORTS - AQ",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/bcj3iscpd6/out/v1/fcd137b391214f7cb99dd4d7be90ca87/cenc.mpd",
-          "api": "1a5df53609ebc9857898c490f4724918:77f62980d582ec541280796acf8b2d19"
-        },
-        {
-          "id": 3,
-          "title": "TAMASHA PRO AQ",
-          "type": "m3u8",
-          "link": "https://cdn04khi-n.tamashaweb.com:8087/appcast/abudhabi-t10-adfree-2026-abr/playlist.m3u8",
-          "api": ""
-        },
-        {
-          "id": 4,
-          "title": "MYCO AQ",
-          "type": "m3u8",
-          "link": "https://ml-pull-rtmp-pk1.myco.io/SRT/hls/index.m3u8",
-          "api": ""
-        },
-        {
-          "id": 5,
-          "title": "A SPORTS HD",
-          "type": "m3u8",
-          "link": "https://live.msnetworks.net/a-sports/master.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
       "id": 1236,
       "title": "New Zealand vs India",
       "slug": "New-Zealand-vs-India",
       "cat": "Cricket",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "ICC World Test Championship",
         "category": "Cricket",
@@ -1458,22 +747,22 @@
           "id": 1,
           "title": "PRIME VIDEO - AQ",
           "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/2crmhngewx/out/v1/7005e762d047462aa11136773a136dfa/cenc.mpd",
-          "api": "ebc640cb03dbdf8677190f7e4b2e96b0:7ab2c0204d41d1eefeca0cc04622c4cc"
+          "link": "https://abn7ylpaaaaaaaame77ehqq2geew7.ta.bia-cf.live.pv-cdn.net/bom-nitro/live/clients/dash/enc/mebvsdzu7s/out/v1/563c92c11fff4290a160e365f6996c34/cenc.mpd",
+          "api": "fda7a391d6346eb3176d0379fdc094d0:1ee285d5bec7f6855d51e3e5f630ad1f"
         },
         {
           "id": 2,
-          "title": "WILLOW - AQ [Ad Free]",
+          "title": "PRIME HINDI - AQ",
           "type": "mpd",
-          "link": "https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/cq1jp64r6p/out/v1/c500a59e5a174e4681c5c88d8d8b3b4d/cenc.mpd",
-          "api": "766c7943cfc3e9d982ff49ca5e16bb90:f715c4b43971ca6990af7eff70f021b0"
+          "link": "https://abn7nivaaaaaaaamlzr65eai5t3fs.ta.bia-cf.live.pv-cdn.net/sin-nitro/live/clients/dash/enc/szeafaauqf/out/v1/6b31170c3b5749928bff04fc71f02b06/cenc.mpd",
+          "api": "424a04fa4464fdb9d5f3d61ddf48776a:85a5da47db9f57cdccdbac01c980aece"
         },
         {
           "id": 3,
-          "title": "PRIME HINDI - AQ",
+          "title": "WILLOW - AQ [Ad Free]",
           "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/m0edrlrm8n/out/v1/769e4d71dfec4c4cb8189a0bf5051266/cenc.mpd?",
-          "api": "080deb5f5141f1274093066904865667:af9d012f808345520ac2d3b2cc9026de"
+          "link": "https://dash-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/roxefgx3by/out/v1/626d780fa151471cab6d83b9fcb731e8/cenc.mpd",
+          "api": "a478f5af8b826d44778571031c84e257:ceabaa285b51b50a60cf5240715a6f28"
         },
         {
           "id": 4,
@@ -1484,65 +773,79 @@
         },
         {
           "id": 5,
-          "title": "SONYLIV ENG - AQ",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119931/cricodi_1911/ENG/std_lrh-800300010.m3u8?hdnea=exp=1795166753~acl=/*~id=50462297768724841353182942139935~hmac=12f635daf8cf9a5ab0a3727e9e8765a326d38006fdc3c109375afef08afac2fc",
-          "api": ""
-        },
-        {
-          "id": 6,
-          "title": "SONYLIV HIN - AQ",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119921/cricodi_1911/HIN/std_lrh-800300010.m3u8?hdnea=exp=1795166753~acl=/*~id=50462297768724841353182942139935~hmac=12f635daf8cf9a5ab0a3727e9e8765a326d38006fdc3c109375afef08afac2fc",
-          "api": ""
-        },
-        {
-          "id": 7,
           "title": "TAPMAD - AQ",
           "type": "m3u8",
           "link": "https://tencent-cdn.tapmad.com/v1/01a14ab8af8915fc600b1e3e9683f0/01a14ab953dd1ea540a81c2b41b75f/main.m3u8",
           "api": ""
         },
         {
-          "id": 8,
+          "id": 6,
           "title": "WILLOW S2 - AQ",
           "type": "mpd",
-          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/cq1jp64r6p/out/v1/c500a59e5a174e4681c5c88d8d8b3b4d/cenc.mpd",
-          "api": "766c7943cfc3e9d982ff49ca5e16bb90:f715c4b43971ca6990af7eff70f021b0"
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/roxefgx3by/out/v1/626d780fa151471cab6d83b9fcb731e8/cenc.mpd",
+          "api": "a478f5af8b826d44778571031c84e257:ceabaa285b51b50a60cf5240715a6f28"
+        },
+        {
+          "id": 7,
+          "title": "SONYLIV ENG - AQ",
+          "type": "m3u8",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119931/cricodi_2011/ENG/std_lrh-800300010.m3u8?hdnea=exp=1795253149~acl=/*~id=51003257100776422741635385242824~hmac=dda1b63279f359c8aa67d45e3bccfe8ed2c3e9c032636b2bdec9c78d9446e06f",
+          "api": ""
+        },
+        {
+          "id": 8,
+          "title": "SONYLIV HIN - AQ",
+          "type": "m3u8",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119921/cricodi_2011/HIN/std_lrh-800300010.m3u8?hdnea=exp=1795253149~acl=/*~id=51003257100776422741635385242824~hmac=dda1b63279f359c8aa67d45e3bccfe8ed2c3e9c032636b2bdec9c78d9446e06f",
+          "api": ""
         },
         {
           "id": 9,
           "title": "SONYLIV TAM - AQ",
           "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119951/cricodi_1911/TAM/std_lrh-800300010.m3u8?hdnea=exp=1795166753~acl=/*~id=50462297768724841353182942139935~hmac=12f635daf8cf9a5ab0a3727e9e8765a326d38006fdc3c109375afef08afac2fc",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119951/cricodi_2011/TAM/std_lrh-800300010.m3u8?hdnea=exp=1795253149~acl=/*~id=51003257100776422741635385242824~hmac=dda1b63279f359c8aa67d45e3bccfe8ed2c3e9c032636b2bdec9c78d9446e06f",
           "api": ""
         },
         {
           "id": 10,
           "title": "SONYLIV TEL - AQ",
           "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119941/cricodi_1911/TEL/std_lrh-800300010.m3u8?hdnea=exp=1795166753~acl=/*~id=50462297768724841353182942139935~hmac=12f635daf8cf9a5ab0a3727e9e8765a326d38006fdc3c109375afef08afac2fc",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119941/cricodi_2011/TEL/std_lrh-800300010.m3u8?hdnea=exp=1795253149~acl=/*~id=51003257100776422741635385242824~hmac=dda1b63279f359c8aa67d45e3bccfe8ed2c3e9c032636b2bdec9c78d9446e06f",
           "api": ""
         },
         {
           "id": 11,
           "title": "SONYLIV KAN - AQ",
           "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119782/cricodi_1911/KAN/std_lrh-800300010.m3u8?hdnea=exp=1795166753~acl=/*~id=50462297768724841353182942139935~hmac=12f635daf8cf9a5ab0a3727e9e8765a326d38006fdc3c109375afef08afac2fc",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119782/cricodi_2011/KAN/std_lrh-800300010.m3u8?hdnea=exp=1795253149~acl=/*~id=51003257100776422741635385242824~hmac=dda1b63279f359c8aa67d45e3bccfe8ed2c3e9c032636b2bdec9c78d9446e06f",
           "api": ""
         },
         {
           "id": 12,
           "title": "SONYLIV BD - AQ",
           "type": "m3u8",
-          "link": "https://liveakmt-p-md.slivcdn.com/hls/live/2119931/cricodi_1911/ENG/std_lrh-800300010.m3u8?hdnea=exp=1795166753~acl=/*~id=50462297768724841353182942139935~hmac=12f635daf8cf9a5ab0a3727e9e8765a326d38006fdc3c109375afef08afac2fc",
+          "link": "https://liveakmt-p-md.slivcdn.com/hls/live/2119931/cricodi_2011/ENG/std_lrh-800300010.m3u8?hdnea=exp=1795253149~acl=/*~id=51003257100776422741635385242824~hmac=dda1b63279f359c8aa67d45e3bccfe8ed2c3e9c032636b2bdec9c78d9446e06f",
           "api": ""
         },
         {
           "id": 13,
+          "title": "TNT SPORTSS2 - AQ",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/puehlftk5j/out/v1/f7f0da1ee112481ca0024e6d4dd97f4a/cenc.mpd",
+          "api": "f3df7843080ae743bf865dc5fdf64c68:567c863bc12eb74788ea74888c042e1b"
+        },
+        {
+          "id": 14,
           "title": "TEN SPORTS HD",
           "type": "m3u8",
           "link": "https://live.msnetworks.net/ten-sports/master.m3u8",
+          "api": ""
+        },
+        {
+          "id": 15,
+          "title": "CRICBUZZ - IN",
+          "type": "m3u8",
+          "link": "https://dai.google.com/linear/hls/event/HVE4ffO0R5CLFalgAF7QtQ/master.m3u8",
           "api": ""
         }
       ]
@@ -1552,7 +855,7 @@
       "title": "Hobart Hurricanes Women vs Sydney Thunder Women",
       "slug": "Hobart-Hurricanes-Women-vs-Sydney-Thunder-Women",
       "cat": "Cricket",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Women's Big Bash League",
         "category": "Cricket",
@@ -1565,7 +868,43 @@
         "startTimeIST": "2026-11-21 06:30:00 IST",
         "endTimeIST": ""
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW AQ",
+          "type": "mpd",
+          "link": "https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/suaftkmidi/out/v1/f2b9479cc026404b986f0362efa396f3/cenc.mpd",
+          "api": "8510078edc672022eb6d665d1e524890:ab17b294c875ba2eda6ec8e5a8545c5b"
+        },
+        {
+          "id": 2,
+          "title": "SKY CRICKET FHD",
+          "type": "m3u8",
+          "link": "https://bl.rutube.ru/livestream/7c13a51576b9ff2601f08f5d57dd5169/index.m3u8?s=uiXES2ePt7xTpQnbJxn7Dg&e=2074684474&scheme=https",
+          "api": ""
+        },
+        {
+          "id": 3,
+          "title": "TAPMAD FHD",
+          "type": "m3u8",
+          "link": "https://serieAleague.akamaized.net/hls/live/2107107/A1@25853-tapmad/master.m3u8",
+          "api": ""
+        },
+        {
+          "id": 4,
+          "title": "WILLOW HD",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/0bftapixow/out/v1/a435ed7a00f947deb4369b46d8f2fb70/cenc.mpd",
+          "api": "290e09c837da78d5cd961978d390515c:b748836c71e6a4ca68ef5b5652db6247"
+        },
+        {
+          "id": 5,
+          "title": "TAPMAD HD",
+          "type": "m3u8",
+          "link": "https://tencent-cdn.tapmad.com/v1/01a14a80166b1ea557841e1612cf55/01a14a8047211ea557841e1612cf58/main.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": 1843,
@@ -1583,6 +922,26 @@
         "teamB": "Perth Scorchers Women",
         "teamBFlag": "https://img.sofascore.com/api/v1/team/274890/image",
         "startTimeIST": "2026-11-21 10:00:00 IST",
+        "endTimeIST": ""
+      },
+      "streams": []
+    },
+    {
+      "id": 1999,
+      "title": "hong Kong vs Sri Lanka A",
+      "slug": "hong-Kong-vs-Sri-Lanka-A",
+      "cat": "Cricket",
+      "status": "upcoming",
+      "event": {
+        "name": "Asia Cup Rising Stars",
+        "category": "Cricket",
+        "type": "",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn2rCtrI68Agu71aIWID9YxzlqXN-3c88k4cwPQQhwEA&s=10",
+        "teamA": "hong Kong",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/4765/image",
+        "teamB": "Sri Lanka A",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/187756/image",
+        "startTimeIST": "2026-11-21 11:30:00 IST",
         "endTimeIST": ""
       },
       "streams": []
@@ -1647,6 +1006,54 @@
           "type": "m3u8",
           "link": "https://serieAleague.akamaized.net/hls/live/2107107/A1@25853-tapmad/master.m3u8",
           "api": ""
+        }
+      ]
+    },
+    {
+      "id": 2001,
+      "title": "Bangladesh A vs Afghanistan A",
+      "slug": "Bangladesh-A-vs-Afghanistan-A",
+      "cat": "Cricket",
+      "status": "upcoming",
+      "event": {
+        "name": "Asia Cup Rising Stars",
+        "category": "Cricket",
+        "type": "",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn2rCtrI68Agu71aIWID9YxzlqXN-3c88k4cwPQQhwEA&s=10",
+        "teamA": "Bangladesh A",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/187809/image",
+        "teamB": "Afghanistan A",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/187575/image",
+        "startTimeIST": "2026-11-21 15:30:00 IST",
+        "endTimeIST": ""
+      },
+      "streams": []
+    },
+    {
+      "id": 1997,
+      "title": "Italia T10 2026",
+      "slug": "Italia-T10-vs-Italia-T",
+      "cat": "Cricket",
+      "status": "upcoming",
+      "event": {
+        "name": "Italia T10 2026",
+        "category": "Cricket",
+        "type": "",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBTK9sfDCFhv5T2jEH3nkh9cPngwVXMaQFV9uNCn66zg&s=10",
+        "teamA": "Italia T10",
+        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBTK9sfDCFhv5T2jEH3nkh9cPngwVXMaQFV9uNCn66zg&s=10",
+        "teamB": "Italia T10",
+        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBTK9sfDCFhv5T2jEH3nkh9cPngwVXMaQFV9uNCn66zg&s=10",
+        "startTimeIST": "2026-11-21 16:30:00 IST",
+        "endTimeIST": ""
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "PlayZ TV",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/m6sqanvm2m/out/v1/f6beb46c6e9a4132ad739f3ca27df6aa/cenc.mpd",
+          "api": "1444f4235529f183f0a5a486befe9cdb:e5e3fec67a1bb3472a2089c8a0a2557f"
         }
       ]
     },
@@ -1776,21 +1183,6 @@
       "status": "live",
       "event": {
         "name": "Womens Big Bash League 2026 - 29th Match - Hobart Hurricanes Women vs Sydney Thunder Women",
-        "category": "Cricket",
-        "teamA": "Team A",
-        "teamB": "Team B",
-        "startTimeIST": ""
-      },
-      "dashStreams": []
-    },
-    {
-      "id": "B0HKZY847Z",
-      "title": "Sri Lanka tour of Pakistan 2026 - 2nd Test - Pakistan vs Sri Lanka",
-      "slug": "sri-lanka-tour-of-pakistan-2026-2nd-test-pakistan-vs-sri-lanka",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "Sri Lanka tour of Pakistan 2026 - 2nd Test - Pakistan vs Sri Lanka",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",
