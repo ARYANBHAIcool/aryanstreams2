@@ -1343,13 +1343,13 @@
             "460":                    { type: "iframe", name: "Star Sports Select 1 HD (MDTV 460)", url: "shaka_player.html?chid=SE1HD" },
             "ssselect2":              { type: "iframe", name: "Star Sports Select 2 HD (MDTV)", url: "shaka_player.html?chid=SE2HD" },
             "461":                    { type: "iframe", name: "Star Sports Select 2 HD (MDTV 461)", url: "shaka_player.html?chid=SE2HD" },
-            "sskhel":                 { type: "iframe", name: "Star Sports Khel (SMAT / TSLinks)", url: "https://tslinks.pages.dev/?id=SMAT" },
-            "skhel":                  { type: "iframe", name: "Star Sports Khel (SMAT / TSLinks)", url: "https://tslinks.pages.dev/?id=SMAT" },
-            "skhel_ts":               { type: "iframe", name: "Star Sports Khel (TSLinks)",        url: "https://tslinks.pages.dev/?id=SMAT" },
-            "skhel_jio":              { type: "iframe", name: "Star Sports Khel (Direct Live)",    url: "https://matcheslinkz.pages.dev/jio?id=SSK" },
-            "skhel_shaka":            { type: "iframe", name: "Star Sports Khel (Shaka HD)",      url: "shaka_player.html?chid=SSK" },
-            "smat":                   { type: "iframe", name: "Star Sports Khel (SMAT)",           url: "https://tslinks.pages.dev/?id=SMAT" },
-            "ssk":                    { type: "iframe", name: "Star Sports Khel (Direct Live)",    url: "https://matcheslinkz.pages.dev/jio?id=SSK" },
+            "sskhel":                 { type: "iframe", name: "Star Sports Khel (DASH HD)",     url: "shaka_player.html?chid=SSK" },
+            "skhel":                  { type: "iframe", name: "Star Sports Khel (DASH HD)",     url: "shaka_player.html?chid=SSK" },
+            "skhel_dash":             { type: "iframe", name: "Star Sports Khel (DASH HD)",     url: "shaka_player.html?chid=SSK" },
+            "skhel_mpd":              { type: "iframe", name: "Star Sports Khel (Direct MPD)",  url: "shaka_player.html?mpd=https%3A%2F%2Fjiotvpllive.cdn.jio.com%2Fbpk-tv%2FStarSportsKhel_BTS%2FWDVLive%2Findex.mpd&kid=906cc35528ca58348e7fed58f8796687&key=3a1eaff9da6a0083567fb1ea1eaa21f5&chid=SSK" },
+            "smat":                   { type: "iframe", name: "Star Sports Khel (SMAT DASH)",   url: "shaka_player.html?chid=SSK" },
+            "smat_dash":              { type: "iframe", name: "Star Sports Khel (SMAT DASH)",   url: "shaka_player.html?chid=SSK" },
+            "ssk":                    { type: "iframe", name: "Star Sports Khel (DASH HD)",     url: "shaka_player.html?chid=SSK" },
             "1998":                   { type: "iframe", name: "Star Sports Khel (MDTV 1998)",   url: "shaka_player.html?chid=SSK" },
 
             // ── DD Sports, Eurosport & Additional MDTV Channels ───────────────
@@ -2025,8 +2025,8 @@
             "star2tamil":      { type: "iframe", name: "Star Sports 2 HD (Tamil)",       url: "shaka_player.html?chid=S2HD" },
             "star2telugu":     { type: "iframe", name: "Star Sports 2 HD (Telugu)",      url: "shaka_player.html?chid=TE2HD" },
             "star2kannada":    { type: "iframe", name: "Star Sports 2 SD (Kannada)",     url: "shaka_player.html?chid=KA2SD" },
-            "skhel":           { type: "iframe", name: "Star Sports Khel (SMAT / TSLinks)", url: "https://tslinks.pages.dev/?id=SMAT" },
-            "smat":            { type: "iframe", name: "Star Sports Khel (SMAT / TSLinks)", url: "https://tslinks.pages.dev/?id=SMAT" },
+            "skhel":           { type: "iframe", name: "Star Sports Khel (DASH HD)",     url: "shaka_player.html?chid=SSK" },
+            "smat":            { type: "iframe", name: "Star Sports Khel (SMAT DASH)",   url: "shaka_player.html?chid=SSK" },
 
             // ── Kids ─────────────────────────────────────────────────────────
             "disney":          { type: "iframe", name: "Disney Channel",                 url: "shaka_player.html?chid=DISNEY" },
@@ -2860,9 +2860,9 @@
                         else if (serParam === '4') ch = channels['premier1_web'];
                         else if (serParam === '5') ch = channels['premier2_web'];
                     } else if (/skhel|smat|sskhel/i.test(streamKey)) {
-                        if (serParam === '2') ch = channels['skhel_jio'] || channels['ssk'];
-                        else if (serParam === '3') ch = channels['skhel_shaka'];
-                        else ch = channels['skhel'] || channels['smat'] || channels['skhel_ts'];
+                        if (serParam === '2') ch = channels['skhel_mpd'] || channels['skhel_dash'];
+                        else if (serParam === '3') ch = channels['smat_dash'] || channels['skhel'];
+                        else ch = channels['skhel'] || channels['smat'] || channels['ssk'];
                     }
                 }
 

@@ -268,6 +268,10 @@
         };
 
         var KNOWN_KEYS = {
+            'ssk': { kid: '906cc35528ca58348e7fed58f8796687', key: '3a1eaff9da6a0083567fb1ea1eaa21f5' },
+            'skhel': { kid: '906cc35528ca58348e7fed58f8796687', key: '3a1eaff9da6a0083567fb1ea1eaa21f5' },
+            'sskhel': { kid: '906cc35528ca58348e7fed58f8796687', key: '3a1eaff9da6a0083567fb1ea1eaa21f5' },
+            'smat': { kid: '906cc35528ca58348e7fed58f8796687', key: '3a1eaff9da6a0083567fb1ea1eaa21f5' },
             'npl': { kid: 'b4d7fc89103597185058cc4c81a1800d', key: '17062472ba2a3f1db709d3bb7761c936' },
             'npl1': { kid: 'b4d7fc89103597185058cc4c81a1800d', key: '17062472ba2a3f1db709d3bb7761c936' },
             // F1 Motorsports & FanCode
@@ -544,7 +548,8 @@
 
             // 1. Live Sports JSON Real-time Token Sync (SonuJSON provides live valid cookies with channel ACLs)
             try {
-                var rSonu = await fetch('https://sonujson-v5.pages.dev/Data/sports.json?_=' + Date.now(), { cache: 'no-store' });
+                var rSonu = await fetch('https://sonujson-v7.pages.dev/Data/sports.json?_=' + Date.now(), { cache: 'no-store' });
+                if (!rSonu.ok) rSonu = await fetch('https://sonujson-v5.pages.dev/Data/sports.json?_=' + Date.now(), { cache: 'no-store' });
                 if (rSonu.ok) {
                     var dSonu = await rSonu.json();
                     var listSonu = (dSonu && dSonu.channels) || (Array.isArray(dSonu) ? dSonu : []);
@@ -826,6 +831,7 @@
             // Prioritize reliable CORS-enabled live broadcast feeds: sports.json, SonuJSON, zio.m3u
             var endpoints = [
                 'data/sports.json',
+                'https://sonujson-v7.pages.dev/Data/sports.json',
                 'https://sonujson-v5.pages.dev/Data/sports.json',
                 'https://sportlink-playlist.pages.dev/zio.m3u',
                 'data/sony_m3u8.json'
