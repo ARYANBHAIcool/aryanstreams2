@@ -1,720 +1,15 @@
 {
-  "last_updated": "11/22/2026, 2:06:23 AM IST",
+  "last_updated": "11/22/2026, 6:10:10 AM IST",
   "source": "AryanStreams Official Feed",
-  "football_count": 54,
+  "football_count": 36,
   "cricket_count": 20,
   "events": [
-    {
-      "id": 2056,
-      "title": "Sporting CP vs União Desportiva da Serra",
-      "slug": "Sporting-CP-vs-União-Desportiva-da-Serra",
-      "cat": "Football",
-      "status": "ended",
-      "event": {
-        "name": "Taça de Portugal",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/336/image/dark",
-        "teamA": "Sporting CP",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/3001/image",
-        "teamB": "União Desportiva da Serra",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/371617/image",
-        "startTimeIST": "2026-11-21 23:30:00 IST",
-        "endTimeIST": "2026-11-22 01:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "PlayZ TV Live",
-          "type": "m3u8",
-          "link": "https://live2.jorvakstreamcache.com/live/channel20.m3u8",
-          "api": ""
-        },
-        {
-          "id": 2,
-          "title": "SBS SPORTS AQ",
-          "type": "m3u8",
-          "link": "https://thebest.selina2.workers.dev/https://sbs-live-prod-01.akamaized.net/Content/HLS_AES_TS/live/geo/channel(adhoc1)/master.m3u8?hdnea=st%3D1795283425~exp%3D1795301425~acl%3D%2FContent%2FHLS_AES_TS%2Flive%2Fgeo%2Fchannel%28adhoc1%29%2F%2A~hmac%3D3368164a9209109c2e58c261272c28d3a03c83f6c12f20eefd8e793df14a1a92",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 1374,
-      "title": "New England Revolution vs Philadelphia Union",
-      "slug": "New-England-Revolution-vs-Philadelphia-Union",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "MLS",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/242/image/dark",
-        "teamA": "New England Revolution",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2511/image",
-        "teamB": "Philadelphia Union",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/39833/image",
-        "startTimeIST": "2026-11-22 00:30:00 IST",
-        "endTimeIST": "2026-11-22 02:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "PLAYZ TV LIVE",
-          "type": "m3u8",
-          "link": "https://chatgpt.hereisman.net/playlist/60643/load-playlist-multi?&.m3u8",
-          "api": ""
-        },
-        {
-          "id": 2,
-          "title": "HD STREAM",
-          "type": "m3u8",
-          "link": "https://live2.jorvakstreamcache.com/live/channel28.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 1375,
-      "title": "FC St. Pauli vs VfL Bochum 1848",
-      "slug": "FC-St.-Pauli-vs-VfL-Bochum-1848",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "2. Bundesliga",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/44/image/dark",
-        "teamA": "FC St. Pauli",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2526/image",
-        "teamB": "VfL Bochum 1848",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2542/image",
-        "startTimeIST": "2026-11-22 01:00:00 IST",
-        "endTimeIST": "2026-11-22 03:20:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "SKY TOP EVENT",
-          "type": "mpd",
-          "link": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/gjsukewpxp/out/v1/ef14aacf858248839b9867eec5caf563/cenc.mpd",
-          "api": "368bd4ebe301406897324bc777650411:69d27c2c2b7de927d67aacc973259901"
-        }
-      ]
-    },
-    {
-      "id": 2005,
-      "title": "Palmeiras vs Flamengo",
-      "slug": "Palmeiras-vs-Flamengo",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "Campeonato Brasileiro Série A",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/325/image/dark",
-        "teamA": "Palmeiras",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/1963/image",
-        "teamB": "Flamengo",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/5981/image",
-        "startTimeIST": "2026-11-22 01:00:00 IST",
-        "endTimeIST": "2026-11-22 03:20:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "PREMIER SPORTS",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/bcj3iscpd6/out/v1/fcd137b391214f7cb99dd4d7be90ca87/cenc.mpd",
-          "api": "1a5df53609ebc9857898c490f4724918:77f62980d582ec541280796acf8b2d19"
-        }
-      ]
-    },
-    {
-      "id": 1358,
-      "title": "AS Monaco vs AJ Auxerre",
-      "slug": "AS-Monaco-vs-AJ-Auxerre",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "Ligue 1",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/34/image/dark",
-        "teamA": "AS Monaco",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/1653/image",
-        "teamB": "AJ Auxerre",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/1646/image",
-        "startTimeIST": "2026-11-22 01:15:00 IST",
-        "endTimeIST": "2026-11-22 03:35:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "beIN SPORTS FHD",
-          "type": "mpd",
-          "link": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/katdnhkzqv/out/v1/2469724fa7754a4da6861d8ba80de958/cenc.mpd?",
-          "api": "27759a440e8ad821b800b3de00cd5851:1b8743adee559f27845f55e8b4d639fe"
-        },
-        {
-          "id": 2,
-          "title": "Ligue1+ HD",
-          "type": "m3u8",
-          "link": "https://chatgpt.hereisman.net/playlist/60648/load-playlist-multi?&.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 1359,
-      "title": "LOSC Lille vs Olympique Lyonnais",
-      "slug": "LOSC-Lille-vs-Olympique-Lyonnais",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "Ligue 1",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/34/image/dark",
-        "teamA": "LOSC Lille",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/1643/image",
-        "teamB": "Olympique Lyonnais",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/1649/image",
-        "startTimeIST": "2026-11-22 01:15:00 IST",
-        "endTimeIST": "2026-11-22 03:35:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "DAZN SPORTS FHD",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/glplwvtpjd/out/v1/3053bf6ead1941efbf0899ec31db8909/cenc.mpd",
-          "api": "c475f3ab920f2dae14f5249ef15d6fbb:a5718875f4271ce91e9e766880383efe"
-        },
-        {
-          "id": 2,
-          "title": "beIN ESPNAOL FHD",
-          "type": "mpd",
-          "link": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/e3ozww2yny/out/v1/3a16d07c2cc0444bb8ea10d0483d1ced/cenc.mpd?",
-          "api": "74cbe15488783fab07ff8c702fabafcd:bb607803a49c2d6104f845e7886c971c"
-        },
-        {
-          "id": 3,
-          "title": "TAPMAD - AQ",
-          "type": "m3u8",
-          "link": "https://tencent-cdn.tapmad.com/v1/01a145d823d515fc600b1e3e9683de/01a145dc15751ea540a81c2b41b754/main.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 1360,
-      "title": "RC Lens vs Toulouse",
-      "slug": "RC-Lens-vs-Toulouse",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "Ligue 1",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/34/image/dark",
-        "teamA": "RC Lens",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/1648/image",
-        "teamB": "Toulouse",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/1681/image",
-        "startTimeIST": "2026-11-22 01:15:00 IST",
-        "endTimeIST": "2026-11-22 03:35:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "DAZN SPORTS FHD",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/o2cneoufx4/out/v1/09dd9597d3c54acdbae86cacf59502c9/cenc.mpd",
-          "api": "0a761732df703365a5d0258b44ad1894:a2e838f43b0cee0830ef5fe641d55361"
-        },
-        {
-          "id": 2,
-          "title": "beIN SPORTS FHD",
-          "type": "mpd",
-          "link": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/n7hbpksb18/out/v1/be5403be4a674a7da8b3c81b1fe79692/cenc.mpd",
-          "api": "4fce30c060b7b0464ab765e24fee5ecc:65d612238736eec3794c7e75a6fd362c"
-        },
-        {
-          "id": 3,
-          "title": "BeIN XTRA - AQ",
-          "type": "m3u8",
-          "link": "https://amg01334-beinsportsllc-beinxtra-localnow-kcy6r.amagi.tv/playlist.m3u8",
-          "api": ""
-        },
-        {
-          "id": 4,
-          "title": "TAPMAD - AQ",
-          "type": "m3u8",
-          "link": "https://tencent-cdn.tapmad.com/v1/01a145b15ce115fc600b1e3e9683db/01a145b24db11ea557841e1612cf4c/main.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 1361,
-      "title": "RC Strasbourg vs Stade Brestois",
-      "slug": "RC-Strasbourg-vs-Stade-Brestois",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "Ligue 1",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/34/image/dark",
-        "teamA": "RC Strasbourg",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/1659/image",
-        "teamB": "Stade Brestois",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/1715/image",
-        "startTimeIST": "2026-11-22 01:15:00 IST",
-        "endTimeIST": "2026-11-22 03:35:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "DAZN SPORTS FHD",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/oerbkn0tok/out/v1/eb00c2b15ef14fc7b9ff0bce51444730/cenc.mpd",
-          "api": "99ca0c50b50665df756c6a7914dd1372:74e059086af754143cd293db918a6072"
-        },
-        {
-          "id": 2,
-          "title": "TAPMAD - AQ",
-          "type": "m3u8",
-          "link": "https://tencent-cdn.tapmad.com/v1/01a14a5b5bd11ea540a81c2b41b75b/01a14a5b94ea15fc600b1e3e9683eb/main.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 1362,
-      "title": "SSC Napoli vs Torino",
-      "slug": "SSC-Napoli-vs-Torino",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "Serie A",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/23/image/dark",
-        "teamA": "SSC Napoli",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2714/image",
-        "teamB": "Torino",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2696/image",
-        "startTimeIST": "2026-11-22 01:15:00 IST",
-        "endTimeIST": "2026-11-22 03:35:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "DAZN SPORTS FHD",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/k0htndw4gg/out/v1/7a55fff9057a43c1bf6f0321891ebf33/cenc.mpd",
-          "api": "c351d227f7b7593ed063d963ba7e5198:fcebd03613e889d9a93e73b9179daea2"
-        },
-        {
-          "id": 2,
-          "title": "PARAMOUNT+ FHD",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/v8low1gvld/out/v1/15e82e92b0104e468a37ab86400b272f/cenc.mpd",
-          "api": "525541be55e5583610bea04c73d9d176:90089172b16d6b7a81606f658ec1bbd0"
-        },
-        {
-          "id": 3,
-          "title": "FUBO SPORTS FHD",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/8qrpfzdtql/out/v1/9a5e5a9e5cef4b169a965a19a925f135/cenc.mpd",
-          "api": "fabf521bb61b883f21ec1b16d886782f:9d3324b56eaeb651e889f485d3ffcc69"
-        },
-        {
-          "id": 4,
-          "title": "PEACOCK FHD",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/40nvdm1fb1/out/v1/aa2c58c9bac7416c8b76a0407b2ddae2/cenc.mpd",
-          "api": "525541be55e5583610bea04c73d9d176:90089172b16d6b7a81606f658ec1bbd0"
-        },
-        {
-          "id": 5,
-          "title": "beIN SPORTS - AQ",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/8m8cd46i1t/out/v1/83985c68e4174e90a58a1f2c024be4c9/cenc.mpd",
-          "api": "0b42be2664d7e811d04f3e504e0924c5:ae24090123b8c72ac5404dc152847cb8"
-        },
-        {
-          "id": 6,
-          "title": "Sport CZ - AQ",
-          "type": "mpd",
-          "link": "https://dash2.antik.sk/stream/nvidia_sport_1/playlist_cenc.mpd",
-          "api": "11223344556677889900112233445566:4b80724d0ef86bcb2c21f7999d67739d"
-        },
-        {
-          "id": 7,
-          "title": "PARAMOUNT+ HD",
-          "type": "m3u8",
-          "link": "https://chatgpt.hereisman.net/playlist/60647/load-playlist-multi?&.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 2103,
-      "title": "Cavalry FC vs Atlético Ottawa",
-      "slug": "Cavalry-FC-vs-Atlético-Ottawa",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "Canadian Premier League",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/13470/image/dark",
-        "teamA": "Cavalry FC",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/309889/image",
-        "teamB": "Atlético Ottawa",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/342076/image",
-        "startTimeIST": "2026-11-22 01:30:00 IST",
-        "endTimeIST": "2026-11-22 03:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "TSN SPORTS - AQ",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/ihys8nw4wv/out/v1/fde190f369484bc6b6117cc16cd82a9f/cenc.mpd",
-          "api": "abc5b2883121012850ebda05b528c5ec:e5250924f4b738905f7163a0134587a7"
-        },
-        {
-          "id": 2,
-          "title": "TSN SPORTS S2 - AQ",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/lsibpqruq1/out/v1/748887d614a84913ba8bcdf3c82823e6/cenc.mpd",
-          "api": "d3250252765347a0c2603c6cb4869f8c:0c19319460da7e9ed816db46ce839b37"
-        }
-      ]
-    },
-    {
-      "id": 1363,
-      "title": "CD Tenerife vs Mallorca",
-      "slug": "CD-Tenerife-vs-Mallorca",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "LaLiga 2",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/54/image/dark",
-        "teamA": "CD Tenerife",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2822/image",
-        "teamB": "Mallorca",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2826/image",
-        "startTimeIST": "2026-11-22 01:30:00 IST",
-        "endTimeIST": "2026-11-22 03:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "LALIGA HYPEMOTION ES - AQ",
-          "type": "mpd",
-          "link": "https://cache4.zapitv.com/live/eds_c2/HYPERMOTION1/dash_live_ez/HYPERMOTION1.mpd",
-          "api": "a88617e904504ee291f49f0e60a51d49:17f92d59fde3b6d2bf4ffb48e8ca720a"
-        }
-      ]
-    },
-    {
-      "id": 2021,
-      "title": "FC Groningen vs SC Heerenveen",
-      "slug": "FC-Groningen-vs-SC-Heerenveen",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "VriendenLoterij Eredivisie",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/37/image/dark",
-        "teamA": "FC Groningen",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2951/image",
-        "teamB": "SC Heerenveen",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2964/image",
-        "startTimeIST": "2026-11-22 01:30:00 IST",
-        "endTimeIST": "2026-11-22 03:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "PlayZ TV Live",
-          "type": "m3u8",
-          "link": "https://live.vivo155.com/live/sd-1-4552258.m3u8?txSecret=37bfea3abf52b84727fea8b487b91441&txTime=6B020A7A",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 2054,
-      "title": "Motherwell vs Rangers",
-      "slug": "Motherwell-vs-Rangers",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "Scottish Premiership",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/36/image/dark",
-        "teamA": "Motherwell",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2346/image",
-        "teamB": "Rangers",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2351/image",
-        "startTimeIST": "2026-11-22 01:30:00 IST",
-        "endTimeIST": "2026-11-22 03:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "Sportdigital FUSSBALL 2",
-          "type": "m3u8",
-          "link": "https://sdn-global-live-streaming-packager-cache.3qsdn.com/77693/77693_264_live.m3u8",
-          "api": ""
-        },
-        {
-          "id": 2,
-          "title": "HD",
-          "type": "m3u8",
-          "link": "https://chatgpt.hereisman.net/playlist/60590/load-playlist-multi?&.m3u8",
-          "api": ""
-        },
-        {
-          "id": 3,
-          "title": "PlayZ TV Live",
-          "type": "m3u8",
-          "link": "https://live.vivo155.com/live/sd-1-4557637.m3u8?txSecret=a0dcc8db274a2fbdc05ed7cc231d7bc8&txTime=6B020AB9",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 1364,
-      "title": "Real Madrid vs Celta Vigo",
-      "slug": "Real-Madrid-vs-Celta-Vigo",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "LaLiga",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/8/image/dark",
-        "teamA": "Real Madrid",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2829/image",
-        "teamB": "Celta Vigo",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2821/image",
-        "startTimeIST": "2026-11-22 01:30:00 IST",
-        "endTimeIST": "2026-11-22 03:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "DAZN [MULTI AUDIO]",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/tdz8ybetqz/out/v1/3a083821fa7a4627b33d08184a5ac239/cenc.mpd?",
-          "api": "1a46f72c07e31297e1af73e4ebe79f9b:8e83464feebbff9477b4e79f29487fe1"
-        },
-        {
-          "id": 2,
-          "title": "BEIN SPORTS - AQ",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/q4u5nwaogz/out/v1/18de6d3e65934f3a8de4358e69eab86c/cenc.mpd?",
-          "api": "7995c724a13748ed970840a8ab5bb9b3:67bdaf1e2175b9ff682fcdf0e2354b1e"
-        },
-        {
-          "id": 3,
-          "title": "FANCODE - AQ",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/b3b3fkmrbl/out/v1/1084d5c9a97a4c5b9f9554c88f486646/cenc.mpd",
-          "api": "82dfca238e8c4b430a3269db71965db9:a00b28caf4ac628e77a553d440c0ddca"
-        },
-        {
-          "id": 4,
-          "title": "CAZE TV BR - AQ",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/3ynrpdanq2/out/v1/81fd4c26584044d2b1a1cc5b32fa9af0/cenc.mpd?",
-          "api": "34475edab991ad5e92548aebd710410a:501b209cccd323ac00bf5ac15b406cb4"
-        },
-        {
-          "id": 5,
-          "title": "ESPN DEPORTES HD",
-          "type": "m3u8",
-          "link": "https://chatgpt.hereisman.net/playlist/60653/load-playlist-multi?&.m3u8",
-          "api": ""
-        },
-        {
-          "id": 6,
-          "title": "TAPMAD - AQ",
-          "type": "m3u8",
-          "link": "https://tencent-cdn.tapmad.com/v1/01a145abfb3a1ea540a81c2b41b751/01a145ae0ac115fc600b1e3e9683da/main.m3u8",
-          "api": ""
-        },
-        {
-          "id": 7,
-          "title": "beIN ARABIC FHD",
-          "type": "m3u8",
-          "link": "https://live-cdn.ryazanslah3.space/hls/Aren1.m3u8?",
-          "api": ""
-        },
-        {
-          "id": 8,
-          "title": "FHD STREAM",
-          "type": "m3u8",
-          "link": "https://live01-cn-ali.xqnbu.com/live/19780545_tsc.m3u8",
-          "api": ""
-        },
-        {
-          "id": 9,
-          "title": "HD STREAM",
-          "type": "m3u8",
-          "link": "https://www.rtmpcdn.com/live/8e80e3e4-436c-4bac-a3a2-ada7266334cb.m3u8",
-          "api": ""
-        },
-        {
-          "id": 10,
-          "title": "BeIN ARABIC HD",
-          "type": "m3u8",
-          "link": "https://yll7.akbarnews.store/cdn/native/live1/index-timed.m3u8",
-          "api": ""
-        },
-        {
-          "id": 11,
-          "title": "BeIN ARABIC SD",
-          "type": "m3u8",
-          "link": "https://ec.koooracity.press/youz1.m3u8",
-          "api": ""
-        },
-        {
-          "id": 12,
-          "title": "BeIN AR HD",
-          "type": "m3u8",
-          "link": "https://yll7.akbarnews.store/cdn/master.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 2022,
-      "title": "SC Telstar vs PEC Zwolle",
-      "slug": "SC-Telstar-vs-PEC-Zwolle",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "VriendenLoterij Eredivisie",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/37/image/dark",
-        "teamA": "SC Telstar",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2972/image",
-        "teamB": "PEC Zwolle",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2971/image",
-        "startTimeIST": "2026-11-22 01:30:00 IST",
-        "endTimeIST": "2026-11-22 03:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "PlayZ TV Live",
-          "type": "m3u8",
-          "link": "https://live.vivo155.com/live/sd-1-4552261.m3u8?txSecret=f7907285127215c05ec687ea2ee2a4f6&txTime=6B020A9E",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 2006,
-      "title": "Bahia vs Coritiba",
-      "slug": "Bahia-vs-Coritiba",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "Campeonato Brasileiro Série A",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/325/image/dark",
-        "teamA": "Bahia",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/1955/image",
-        "teamB": "Coritiba",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/1982/image",
-        "startTimeIST": "2026-11-22 02:00:00 IST",
-        "endTimeIST": "2026-11-22 04:20:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "PREMIERER BR",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/nelfyucw9a/out/v1/6ffb2c365ad14f88b154591beb43d1f6/cenc.mpd",
-          "api": "56b79c1782b30e6b6fc973b0e8fd4104:fa38aaa865a57eda7c77444697ba8ed3"
-        },
-        {
-          "id": 2,
-          "title": "SporTV BR FHD",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/w8kwdfmlgs/out/v1/3aa321e477504937a439b602e078eb18/cenc.mpd",
-          "api": "51c0ef23b17297e5c01cd7f36dd0a6ce:8823f713ba6fdb9bbe0a2ad82d309a4b"
-        },
-        {
-          "id": 3,
-          "title": "SportDigital Fussball",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/ssdefyhkkr/out/v1/cf01290cb7f64525bdf861580a016ca8/cenc.mpd?",
-          "api": "0ad4080cdff8c60b1233b22087f0b340:285f129c5eca01dd08a5d5a14ad801c8"
-        }
-      ]
-    },
-    {
-      "id": 2057,
-      "title": "Vitória SC vs Sporting Braga",
-      "slug": "Vitória-SC-vs-Sporting-Braga",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "Taça de Portugal",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/336/image/dark",
-        "teamA": "Vitória SC",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/3009/image",
-        "teamB": "Sporting Braga",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2999/image",
-        "startTimeIST": "2026-11-22 02:00:00 IST",
-        "endTimeIST": "2026-11-22 04:20:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 1376,
-      "title": "FC Dallas vs Portland Timbers",
-      "slug": "FC-Dallas-vs-Portland-Timbers",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "MLS",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/242/image/dark",
-        "teamA": "FC Dallas",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2512/image",
-        "teamB": "Portland Timbers",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/22007/image",
-        "startTimeIST": "2026-11-22 02:30:00 IST",
-        "endTimeIST": "2026-11-22 04:50:00 IST"
-      },
-      "streams": []
-    },
     {
       "id": 2058,
       "title": "Atlético Mineiro vs Boca Juniors",
       "slug": "Atlético-Mineiro-vs-Boca-Juniors",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "CONMEBOL Sudamericana",
         "category": "Football",
@@ -727,14 +22,43 @@
         "startTimeIST": "2026-11-22 04:00:00 IST",
         "endTimeIST": "2026-11-22 06:20:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "beIN ESPNAOL FHD",
+          "type": "mpd",
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/e3ozww2yny/out/v1/3a16d07c2cc0444bb8ea10d0483d1ced/cenc.mpd?",
+          "api": "74cbe15488783fab07ff8c702fabafcd:bb607803a49c2d6104f845e7886c971c"
+        },
+        {
+          "id": 2,
+          "title": "PLAYZ TV LIVE",
+          "type": "m3u8",
+          "link": "https://sdn-global-live-streaming-packager-cache.3qsdn.com/76321/76321_264_live.m3u8",
+          "api": ""
+        },
+        {
+          "id": 3,
+          "title": "beIN SPORTS EN",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/q4u5nwaogz/out/v1/18de6d3e65934f3a8de4358e69eab86c/cenc.mpd",
+          "api": "7995c724a13748ed970840a8ab5bb9b3:67bdaf1e2175b9ff682fcdf0e2354b1e"
+        },
+        {
+          "id": 4,
+          "title": "beIN SPORTS FHD",
+          "type": "mpd",
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/katdnhkzqv/out/v1/2469724fa7754a4da6861d8ba80de958/cenc.mpd?",
+          "api": "\u000227759a440e8ad821b800b3de00cd5851:1b8743adee559f27845f55e8b4d639fe"
+        }
+      ]
     },
     {
       "id": 2081,
       "title": "Inter Vice City [Inter Miami CF] vs Columbus Crew",
       "slug": "Inter-Vice-City-[Inter-Miami-CF]-vs-Columbus-Crew",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "MLS",
         "category": "Football",
@@ -747,14 +71,22 @@
         "startTimeIST": "2026-11-22 04:30:00 IST",
         "endTimeIST": "2026-11-22 06:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "HD STREAM",
+          "type": "m3u8",
+          "link": "https://live2.jorvakstreamcache.com/live/channel12.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": 2008,
       "title": "Chapecoense vs Cruzeiro",
       "slug": "Chapecoense-vs-Cruzeiro",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Campeonato Brasileiro Série A",
         "category": "Football",
@@ -767,7 +99,15 @@
         "startTimeIST": "2026-11-22 05:30:00 IST",
         "endTimeIST": "2026-11-22 07:50:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "PREMIERER BR",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/6onrfniyry/out/v1/f23069c61dbf4e00890a40b705a84079/cenc.mpd",
+          "api": "d23f7433798a652a7d4f6791d9e1036c:4942eebd598b5727c5cc484cc62b52e8"
+        }
+      ]
     },
     {
       "id": 2060,
@@ -890,7 +230,7 @@
       "streams": []
     },
     {
-      "id": 2251,
+      "id": 2299,
       "title": "Córdoba vs Real Oviedo",
       "slug": "Córdoba-vs-Real-Oviedo",
       "cat": "Football",
@@ -910,7 +250,7 @@
       "streams": []
     },
     {
-      "id": 2252,
+      "id": 2300,
       "title": "Córdoba vs Real Oviedo",
       "slug": "Córdoba-vs-Real-Oviedo",
       "cat": "Football",
@@ -1434,7 +774,7 @@
       "title": "New Zealand vs India",
       "slug": "New-Zealand-vs-India",
       "cat": "Cricket",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "ICC World Test Championship",
         "category": "Cricket",
@@ -1450,107 +790,79 @@
       "streams": [
         {
           "id": 1,
-          "title": "PRIME VIDEO - AQ",
+          "title": "WILLOW - AQ [Ad Free]",
           "type": "mpd",
-          "link": "https://abn7ylpaaaaaaaame77ehqq2geew7.ta.bia-cf.live.pv-cdn.net/bom-nitro/live/clients/dash/enc/mebvsdzu7s/out/v1/563c92c11fff4290a160e365f6996c34/cenc.mpd",
-          "api": "fda7a391d6346eb3176d0379fdc094d0:1ee285d5bec7f6855d51e3e5f630ad1f"
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/fkipghexfw/out/v1/b9c7bdeeb3324a67829355fbadde5f64/cenc.mpd",
+          "api": "9a79865ad099bcc92fc555a1014310a6:0f79fed08b0fa0db9c08989d40f7ba73"
         },
         {
           "id": 2,
-          "title": "PRIME HINDI - AQ",
-          "type": "mpd",
-          "link": "https://abn7nivaaaaaaaamlzr65eai5t3fs.ta.bia-cf.live.pv-cdn.net/sin-nitro/live/clients/dash/enc/szeafaauqf/out/v1/6b31170c3b5749928bff04fc71f02b06/cenc.mpd",
-          "api": "424a04fa4464fdb9d5f3d61ddf48776a:85a5da47db9f57cdccdbac01c980aece"
-        },
-        {
-          "id": 3,
-          "title": "WILLOW - AQ [Ad Free]",
-          "type": "mpd",
-          "link": "https://dash-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/roxefgx3by/out/v1/626d780fa151471cab6d83b9fcb731e8/cenc.mpd",
-          "api": "a478f5af8b826d44778571031c84e257:ceabaa285b51b50a60cf5240715a6f28"
-        },
-        {
-          "id": 4,
           "title": "TNT SPORTS - AQ",
           "type": "mpd",
           "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/rhf2dwosdt/out/v1/ee550d2a68d846c797e6ce4de2e8b76d/cenc.mpd",
           "api": "69a5aa835a061ce64a630d1046727e40:d02feac8a999bd06bf4059bf33411749"
         },
         {
-          "id": 5,
+          "id": 3,
           "title": "TAPMAD - AQ",
           "type": "m3u8",
           "link": "https://tencent-cdn.tapmad.com/v1/01a14ab8af8915fc600b1e3e9683f0/01a14ab953dd1ea540a81c2b41b75f/main.m3u8",
           "api": ""
         },
         {
-          "id": 6,
+          "id": 4,
           "title": "WILLOW S2 - AQ",
           "type": "mpd",
-          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/roxefgx3by/out/v1/626d780fa151471cab6d83b9fcb731e8/cenc.mpd",
-          "api": "a478f5af8b826d44778571031c84e257:ceabaa285b51b50a60cf5240715a6f28"
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/fkipghexfw/out/v1/b9c7bdeeb3324a67829355fbadde5f64/cenc.mpd",
+          "api": "9a79865ad099bcc92fc555a1014310a6:0f79fed08b0fa0db9c08989d40f7ba73"
         },
         {
-          "id": 7,
-          "title": "SONYLIV ENG - AQ",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119931/cricodi_2011/ENG/std_lrh-800300010.m3u8?hdnea=exp=1795253149~acl=/*~id=51003257100776422741635385242824~hmac=dda1b63279f359c8aa67d45e3bccfe8ed2c3e9c032636b2bdec9c78d9446e06f",
-          "api": ""
-        },
-        {
-          "id": 8,
-          "title": "SONYLIV HIN - AQ",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119921/cricodi_2011/HIN/std_lrh-800300010.m3u8?hdnea=exp=1795253149~acl=/*~id=51003257100776422741635385242824~hmac=dda1b63279f359c8aa67d45e3bccfe8ed2c3e9c032636b2bdec9c78d9446e06f",
-          "api": ""
-        },
-        {
-          "id": 9,
-          "title": "SONYLIV TAM - AQ",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119951/cricodi_2011/TAM/std_lrh-800300010.m3u8?hdnea=exp=1795253149~acl=/*~id=51003257100776422741635385242824~hmac=dda1b63279f359c8aa67d45e3bccfe8ed2c3e9c032636b2bdec9c78d9446e06f",
-          "api": ""
-        },
-        {
-          "id": 10,
-          "title": "SONYLIV TEL - AQ",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119941/cricodi_2011/TEL/std_lrh-800300010.m3u8?hdnea=exp=1795253149~acl=/*~id=51003257100776422741635385242824~hmac=dda1b63279f359c8aa67d45e3bccfe8ed2c3e9c032636b2bdec9c78d9446e06f",
-          "api": ""
-        },
-        {
-          "id": 11,
-          "title": "SONYLIV KAN - AQ",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119782/cricodi_2011/KAN/std_lrh-800300010.m3u8?hdnea=exp=1795253149~acl=/*~id=51003257100776422741635385242824~hmac=dda1b63279f359c8aa67d45e3bccfe8ed2c3e9c032636b2bdec9c78d9446e06f",
-          "api": ""
-        },
-        {
-          "id": 12,
-          "title": "SONYLIV BD - AQ",
-          "type": "m3u8",
-          "link": "https://liveakmt-p-md.slivcdn.com/hls/live/2119931/cricodi_2011/ENG/std_lrh-800300010.m3u8?hdnea=exp=1795253149~acl=/*~id=51003257100776422741635385242824~hmac=dda1b63279f359c8aa67d45e3bccfe8ed2c3e9c032636b2bdec9c78d9446e06f",
-          "api": ""
-        },
-        {
-          "id": 13,
-          "title": "TNT SPORTSS2 - AQ",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/puehlftk5j/out/v1/f7f0da1ee112481ca0024e6d4dd97f4a/cenc.mpd",
-          "api": "f3df7843080ae743bf865dc5fdf64c68:567c863bc12eb74788ea74888c042e1b"
-        },
-        {
-          "id": 14,
+          "id": 5,
           "title": "TEN SPORTS HD",
           "type": "m3u8",
           "link": "https://live.msnetworks.net/ten-sports/master.m3u8",
           "api": ""
         },
         {
-          "id": 15,
-          "title": "CRICBUZZ - IN",
+          "id": 6,
+          "title": "SONYLIV ENG - AQ",
           "type": "m3u8",
-          "link": "https://dai.google.com/linear/hls/event/HVE4ffO0R5CLFalgAF7QtQ/master.m3u8",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119931/cricodi_2111/ENG/std_lrh-800300010.m3u8?hdnea=exp=1795339937~acl=/*~id=57033487110644542361717385028134~hmac=54ff19a9d17d906df5df2800bde8edc997de61602f2235ea7e0d5ae08d4728bc",
+          "api": ""
+        },
+        {
+          "id": 7,
+          "title": "SONYLIV HIN - AQ",
+          "type": "m3u8",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119921/cricodi_2111/HIN/std_lrh-800300010.m3u8?hdnea=exp=1795339937~acl=/*~id=57033487110644542361717385028134~hmac=54ff19a9d17d906df5df2800bde8edc997de61602f2235ea7e0d5ae08d4728bc",
+          "api": ""
+        },
+        {
+          "id": 8,
+          "title": "SONYLIV TEL - AQ",
+          "type": "m3u8",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119951/cricodi_2111/TAM/std_lrh-800300010.m3u8?hdnea=exp=1795339937~acl=/*~id=57033487110644542361717385028134~hmac=54ff19a9d17d906df5df2800bde8edc997de61602f2235ea7e0d5ae08d4728bc",
+          "api": ""
+        },
+        {
+          "id": 9,
+          "title": "SONYLIV TEL - AQ",
+          "type": "m3u8",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119941/cricodi_2111/TEL/std_lrh-800300010.m3u8?hdnea=exp=1795339937~acl=/*~id=57033487110644542361717385028134~hmac=54ff19a9d17d906df5df2800bde8edc997de61602f2235ea7e0d5ae08d4728bc",
+          "api": ""
+        },
+        {
+          "id": 10,
+          "title": "SONYLIV KAN - AQ",
+          "type": "m3u8",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119782/cricodi_2111/KAN/std_lrh-800300010.m3u8?hdnea=exp=1795339937~acl=/*~id=57033487110644542361717385028134~hmac=54ff19a9d17d906df5df2800bde8edc997de61602f2235ea7e0d5ae08d4728bc",
+          "api": ""
+        },
+        {
+          "id": 11,
+          "title": "CRICBUZZ [IND]",
+          "type": "m3u8",
+          "link": "https://dai.google.com/linear/hls/event/cNE9Z_P5TsuAQ5jxVJ1ADg/master.m3u8",
           "api": ""
         }
       ]
