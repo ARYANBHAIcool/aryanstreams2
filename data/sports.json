@@ -22486,6 +22486,29 @@
       "cookie": "",
       "cookie_expire": 0,
       "logo": "https://jiotv.catchup.cdn.jio.com/dare_images/images/UIPMPentathlonWC.png"
+    },
+    {
+      "id": "SSK",
+      "name": "Star Sports Khel",
+      "stream_url": "https://jiotvpllive.cdn.jio.com/bpk-tv/StarSportsKhel_BTS/WDVLive/index.mpd",
+      "cookie": "__hdnea__=st=1795328100~exp=1795349700~acl=/bpk-tv/StarSportsKhel_BTS/WDVLive/*~hmac=87b8462b3a78df8d05efe65fb0a1e958ae2a32d35ad4bf5937c259570140b9e9",
+      "cookie_expire": 1795349700,
+      "cookie_expire_ist": "22 Nov 2026, 05:45:00 PM IST",
+      "key_id": null,
+      "key": null,
+      "sonuxs": [
+        "906cc35528ca58348e7fed58f8796687:3a1eaff9da6a0083567fb1ea1eaa21f5",
+        "1dfe1c29b8f15ab3a158bb27eb5b8d3f:432ff00824d61ff1da1348cc53e0968c",
+        "942646c32cde5325a7c33b137cf7d46e:ebb1edf4d1ca69738d8cf378a00ad35d",
+        "2898824f2440509698d04f0109f1d285:58e2fbc4e5ae22f973c21c402340debc",
+        "1eb81f72a86d56c3bdfe905c2e987d1d:4720e2ac970828d2befb2cf838d486fb"
+      ],
+      "aliases": [
+        "skhel",
+        "smat",
+        "sskhel",
+        "ssk"
+      ]
     }
   ]
 }
