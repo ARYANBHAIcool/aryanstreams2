@@ -85,7 +85,7 @@
                         </div>
                     </a>
                     <span class="hidden md:inline-block ml-4 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-neutral-800 text-neutral-300 border border-neutral-700">
-                        Trend48 Direct Hub
+                        Multi-Server Hub (Trendy48 + TimStreams + FutbolX)
                     </span>
                 </div>
 
@@ -250,7 +250,7 @@
                 <span class="font-black text-orange-500">ASOP</span>
                 <span>• Live Sports Aggregator & Multi-Source Index</span>
             </div>
-            <div>Synced directly with Trendy48 API • Auto-Refreshes every 45s</div>
+            <div>Synced directly with Trendy48 + TimStreams + FutbolX + AdilX • Auto-Refreshes every 45s</div>
         </div>
     </footer>
 
@@ -339,11 +339,41 @@
 
         function extractTeams(title) {
             if (!title) return { t1: '', t2: '' };
-            var parts = title.split(/\s+vs\.?\s+|\s+v\.?\s+|\s+-\s+/i);
+            var parts = title.split(/\s+vs\.?\s+|\s+v\.?\s+|\s+-\s+|\s+@\s+/i);
             if (parts.length >= 2) {
                 return { t1: cleanTeam(parts[0]), t2: cleanTeam(parts[1]) };
             }
             return { t1: cleanTeam(title), t2: '' };
+        }
+
+        // Parse TimStreams America/New_York (EST) time string to UTC timestamp
+        function parseEstTime(str) {
+            if (!str) return 0;
+            var match = String(str).match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})(?::(\d{2}))?/);
+            if (!match) return new Date(str).getTime() || 0;
+            var y = match[1], m = match[2], d = match[3], h = match[4], min = match[5], s = match[6] || '00';
+            return new Date(y + '-' + m + '-' + d + 'T' + h + ':' + min + ':' + s + '-05:00').getTime();
+        }
+
+        // Map TimStreams genre IDs to ASOP category pills
+        function mapTimGenre(genreId) {
+            var map = {
+                1: 'football',
+                2: 'f1',
+                3: 'fights',
+                6: 'fights',
+                7: 'basketball',
+                8: 'american-football',
+                9: 'baseball',
+                10: 'tennis',
+                11: 'hockey',
+                12: 'darts',
+                13: 'cricket',
+                14: 'cycling',
+                15: 'rugby',
+                16: 'rugby'
+            };
+            return map[genreId] || 'football';
         }
 
         function isSameMatch(tA, tB) {
@@ -434,13 +464,16 @@
             });
         }
 
-        // Fetch matches from Trendy48, AdilX, and Futbol-X in parallel
+        // Fetch matches from Trendy48, TimStreams, AdilX, and Futbol-X in parallel
         function fetchMatches() {
             var isSubDir = window.location.pathname.indexOf('/asop') !== -1 && !window.location.pathname.endsWith('asop.html');
             var shakaBase = isSubDir ? '../shaka_player.html' : './shaka_player.html';
 
             var pTrendyToday = fetch('https://trendy48.online/api/matches/all-today').then(function(r) { return r.json(); }).catch(function() { return []; });
             var pTrendyLive = fetch('https://trendy48.online/api/matches/live').then(function(r) { return r.json(); }).catch(function() { return []; });
+            var pTimStreams = fetch('https://tim-streams.com/api/live-upcoming').then(function(r) { return r.json(); }).catch(function() {
+                return fetch('https://timst.top/api/live-upcoming').then(function(r) { return r.json(); });
+            }).catch(function() { return { events: [] }; });
             var ownFootball = isSubDir ? '../data/events/football.json' : './data/events/football.json';
             var ownCricket = isSubDir ? '../data/events/cricket.json' : './data/events/cricket.json';
             var pAdilFootball = fetch(ownFootball).then(function(r) { return r.ok ? r.json() : Promise.reject(); }).catch(function() {
@@ -455,18 +488,19 @@
             var pFutxMotor = fetch('https://www.futbol-x.xyz/api/motorsports.json').then(function(r) { return r.json(); }).catch(function() { return { streams: [] }; });
 
             return Promise.all([
-                pTrendyToday, pTrendyLive,
+                pTrendyToday, pTrendyLive, pTimStreams,
                 pAdilFootball, pAdilCricket,
                 pFutxFootball, pFutxFights, pFutxBasket, pFutxMotor
             ]).then(function(results) {
                 var tToday = Array.isArray(results[0]) ? results[0] : [];
                 var tLive = Array.isArray(results[1]) ? results[1] : [];
-                var aFootball = results[2] || { events: [] };
-                var aCricket = results[3] || { events: [] };
-                var fFootball = results[4] || { streams: [] };
-                var fFights = results[5] || { streams: [] };
-                var fBasket = results[6] || { streams: [] };
-                var fMotor = results[7] || { streams: [] };
+                var timData = results[2] || { events: [] };
+                var aFootball = results[3] || { events: [] };
+                var aCricket = results[4] || { events: [] };
+                var fFootball = results[5] || { streams: [] };
+                var fFights = results[6] || { streams: [] };
+                var fBasket = results[7] || { streams: [] };
+                var fMotor = results[8] || { streams: [] };
 
                 liveMatchesMap = {};
                 tLive.forEach(function(m) {
@@ -490,6 +524,63 @@
                     };
 
                     unified.push(matchObj);
+                });
+
+                // 2. Ingest TimStreams (Multi-Broadcaster Feeds with Clean Embed Player)
+                var timEvents = (timData && Array.isArray(timData.events)) ? timData.events : [];
+                timEvents.forEach(function(te) {
+                    if (!te || !te.name) return;
+                    var teams = extractTeams(te.name);
+                    var target = unified.find(function(m) { return isSameMatch(m.teams, teams); });
+
+                    var startTime = parseEstTime(te.time);
+                    var now = Date.now();
+                    var isLive = (startTime > 0 && now >= (startTime - 5 * 60 * 1000) && now <= (startTime + 150 * 60 * 1000));
+
+                    if (!target) {
+                        var cleanTitle = te.name;
+                        var atParts = te.name.split(/\s+@\s+/i);
+                        if (atParts.length === 2) {
+                            cleanTitle = atParts[1].trim() + ' vs ' + atParts[0].trim();
+                        }
+                        target = {
+                            id: 'tim-' + (te.url || Math.random().toString(36).substring(7)),
+                            title: cleanTitle,
+                            category: mapTimGenre(te.genre),
+                            date: startTime,
+                            isLive: isLive,
+                            teams: teams,
+                            sources: []
+                        };
+                        unified.push(target);
+                    } else if (isLive) {
+                        target.isLive = true;
+                    }
+
+                    if (Array.isArray(te.streams)) {
+                        te.streams.forEach(function(st) {
+                            if (!st || !st.url) return;
+                            var slugMatch = st.url.match(/shoewiki\.click\/(?:trefoxy\/)?([a-z0-9\-]+)/i);
+                            var slug = slugMatch ? slugMatch[1] : '';
+                            // Strip "Copy Embed" button by routing through trendy48 clean embed gateway
+                            var cleanPlayerUrl = slug ? ('https://trendy48.site/embed/' + slug) : st.url;
+
+                            var alreadyExists = target.sources.some(function(s) {
+                                return (slug && s.url && s.url.indexOf(slug) !== -1) || (s.playerUrl && s.playerUrl === cleanPlayerUrl);
+                            });
+                            if (alreadyExists) return;
+
+                            var serverNum = target.sources.length + 1;
+                            target.sources.push({
+                                index: serverNum,
+                                name: 'Server ' + serverNum,
+                                detail: 'TimStreams · ' + (st.name || 'HD'),
+                                type: 'iframe',
+                                url: st.url,
+                                playerUrl: cleanPlayerUrl
+                            });
+                        });
+                    }
                 });
 
                 // 2. Ingest AdilX (Football & Cricket)
@@ -623,6 +714,16 @@
                             }
                         });
                     });
+                });
+
+                // Renumber and finalize server indexes sequentially for every match
+                unified.forEach(function(m) {
+                    if (Array.isArray(m.sources)) {
+                        m.sources.forEach(function(s, idx) {
+                            s.index = idx + 1;
+                            s.name = 'Server ' + (idx + 1);
+                        });
+                    }
                 });
 
                 allMatches = unified;
