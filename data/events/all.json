@@ -1,134 +1,9 @@
 {
-  "last_updated": "11/22/2026, 6:10:10 AM IST",
+  "last_updated": "11/22/2026, 12:58:52 PM IST",
   "source": "AryanStreams Official Feed",
-  "football_count": 36,
+  "football_count": 34,
   "cricket_count": 20,
   "events": [
-    {
-      "id": 2058,
-      "title": "Atlético Mineiro vs Boca Juniors",
-      "slug": "Atlético-Mineiro-vs-Boca-Juniors",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "CONMEBOL Sudamericana",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/480/image/dark",
-        "teamA": "Atlético Mineiro",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/1977/image",
-        "teamB": "Boca Juniors",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/3202/image",
-        "startTimeIST": "2026-11-22 04:00:00 IST",
-        "endTimeIST": "2026-11-22 06:20:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "beIN ESPNAOL FHD",
-          "type": "mpd",
-          "link": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/e3ozww2yny/out/v1/3a16d07c2cc0444bb8ea10d0483d1ced/cenc.mpd?",
-          "api": "74cbe15488783fab07ff8c702fabafcd:bb607803a49c2d6104f845e7886c971c"
-        },
-        {
-          "id": 2,
-          "title": "PLAYZ TV LIVE",
-          "type": "m3u8",
-          "link": "https://sdn-global-live-streaming-packager-cache.3qsdn.com/76321/76321_264_live.m3u8",
-          "api": ""
-        },
-        {
-          "id": 3,
-          "title": "beIN SPORTS EN",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/q4u5nwaogz/out/v1/18de6d3e65934f3a8de4358e69eab86c/cenc.mpd",
-          "api": "7995c724a13748ed970840a8ab5bb9b3:67bdaf1e2175b9ff682fcdf0e2354b1e"
-        },
-        {
-          "id": 4,
-          "title": "beIN SPORTS FHD",
-          "type": "mpd",
-          "link": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/katdnhkzqv/out/v1/2469724fa7754a4da6861d8ba80de958/cenc.mpd?",
-          "api": "\u000227759a440e8ad821b800b3de00cd5851:1b8743adee559f27845f55e8b4d639fe"
-        }
-      ]
-    },
-    {
-      "id": 2081,
-      "title": "Inter Vice City [Inter Miami CF] vs Columbus Crew",
-      "slug": "Inter-Vice-City-[Inter-Miami-CF]-vs-Columbus-Crew",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "MLS",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/242/image/dark",
-        "teamA": "Inter Vice City [Inter Miami CF]",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/337602/image",
-        "teamB": "Columbus Crew",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2504/image",
-        "startTimeIST": "2026-11-22 04:30:00 IST",
-        "endTimeIST": "2026-11-22 06:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "HD STREAM",
-          "type": "m3u8",
-          "link": "https://live2.jorvakstreamcache.com/live/channel12.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 2008,
-      "title": "Chapecoense vs Cruzeiro",
-      "slug": "Chapecoense-vs-Cruzeiro",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "Campeonato Brasileiro Série A",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/325/image/dark",
-        "teamA": "Chapecoense",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/21845/image",
-        "teamB": "Cruzeiro",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/1954/image",
-        "startTimeIST": "2026-11-22 05:30:00 IST",
-        "endTimeIST": "2026-11-22 07:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "PREMIERER BR",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/6onrfniyry/out/v1/f23069c61dbf4e00890a40b705a84079/cenc.mpd",
-          "api": "d23f7433798a652a7d4f6791d9e1036c:4942eebd598b5727c5cc484cc62b52e8"
-        }
-      ]
-    },
-    {
-      "id": 2060,
-      "title": "Wellington Phoenix vs Macarthur FC",
-      "slug": "Wellington-Phoenix-vs-Macarthur-FC",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "A-League Men",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/136/image/dark",
-        "teamA": "Wellington Phoenix",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/7568/image",
-        "teamB": "Macarthur FC",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/371682/image",
-        "startTimeIST": "2026-11-22 07:30:00 IST",
-        "endTimeIST": "2026-11-22 09:50:00 IST"
-      },
-      "streams": []
-    },
     {
       "id": 2249,
       "title": "Juventus vs Venezia",
@@ -230,7 +105,7 @@
       "streams": []
     },
     {
-      "id": 2299,
+      "id": 2384,
       "title": "Córdoba vs Real Oviedo",
       "slug": "Córdoba-vs-Real-Oviedo",
       "cat": "Football",
@@ -250,7 +125,7 @@
       "streams": []
     },
     {
-      "id": 2300,
+      "id": 2385,
       "title": "Córdoba vs Real Oviedo",
       "slug": "Córdoba-vs-Real-Oviedo",
       "cat": "Football",
@@ -310,6 +185,26 @@
       "streams": []
     },
     {
+      "id": 2354,
+      "title": "AFC Ajax vs ADO Den Haag",
+      "slug": "AFC-Ajax-vs-ADO-Den-Haag",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "VriendenLoterij Eredivisie",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/37/image/dark",
+        "teamA": "AFC Ajax",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2953/image",
+        "teamB": "ADO Den Haag",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2966/image",
+        "startTimeIST": "2026-11-22 19:00:00 IST",
+        "endTimeIST": "2026-11-22 21:20:00 IST"
+      },
+      "streams": []
+    },
+    {
       "id": 2112,
       "title": "France U17 vs Saudi Arabia U17",
       "slug": "France-U17-vs-Saudi-Arabia-U17",
@@ -324,6 +219,26 @@
         "teamAFlag": "https://img.sofascore.com/api/v1/team/22474/image",
         "teamB": "Saudi Arabia U17",
         "teamBFlag": "https://img.sofascore.com/api/v1/team/468403/image",
+        "startTimeIST": "2026-11-22 19:00:00 IST",
+        "endTimeIST": "2026-11-22 21:20:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": 2355,
+      "title": "Sparta Rotterdam vs AZ Alkmaar",
+      "slug": "Sparta-Rotterdam-vs-AZ-Alkmaar",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "VriendenLoterij Eredivisie",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/37/image/dark",
+        "teamA": "Sparta Rotterdam",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2960/image",
+        "teamB": "AZ Alkmaar",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2950/image",
         "startTimeIST": "2026-11-22 19:00:00 IST",
         "endTimeIST": "2026-11-22 21:20:00 IST"
       },
@@ -770,109 +685,11 @@
       "streams": []
     },
     {
-      "id": 1236,
-      "title": "New Zealand vs India",
-      "slug": "New-Zealand-vs-India",
-      "cat": "Cricket",
-      "status": "live",
-      "event": {
-        "name": "ICC World Test Championship",
-        "category": "Cricket",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18833/image/dark",
-        "teamA": "New Zealand",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/187755/image",
-        "teamB": "India",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/187765/image",
-        "startTimeIST": "2026-11-22 03:30:00 IST",
-        "endTimeIST": ""
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "WILLOW - AQ [Ad Free]",
-          "type": "mpd",
-          "link": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/fkipghexfw/out/v1/b9c7bdeeb3324a67829355fbadde5f64/cenc.mpd",
-          "api": "9a79865ad099bcc92fc555a1014310a6:0f79fed08b0fa0db9c08989d40f7ba73"
-        },
-        {
-          "id": 2,
-          "title": "TNT SPORTS - AQ",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/rhf2dwosdt/out/v1/ee550d2a68d846c797e6ce4de2e8b76d/cenc.mpd",
-          "api": "69a5aa835a061ce64a630d1046727e40:d02feac8a999bd06bf4059bf33411749"
-        },
-        {
-          "id": 3,
-          "title": "TAPMAD - AQ",
-          "type": "m3u8",
-          "link": "https://tencent-cdn.tapmad.com/v1/01a14ab8af8915fc600b1e3e9683f0/01a14ab953dd1ea540a81c2b41b75f/main.m3u8",
-          "api": ""
-        },
-        {
-          "id": 4,
-          "title": "WILLOW S2 - AQ",
-          "type": "mpd",
-          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/fkipghexfw/out/v1/b9c7bdeeb3324a67829355fbadde5f64/cenc.mpd",
-          "api": "9a79865ad099bcc92fc555a1014310a6:0f79fed08b0fa0db9c08989d40f7ba73"
-        },
-        {
-          "id": 5,
-          "title": "TEN SPORTS HD",
-          "type": "m3u8",
-          "link": "https://live.msnetworks.net/ten-sports/master.m3u8",
-          "api": ""
-        },
-        {
-          "id": 6,
-          "title": "SONYLIV ENG - AQ",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119931/cricodi_2111/ENG/std_lrh-800300010.m3u8?hdnea=exp=1795339937~acl=/*~id=57033487110644542361717385028134~hmac=54ff19a9d17d906df5df2800bde8edc997de61602f2235ea7e0d5ae08d4728bc",
-          "api": ""
-        },
-        {
-          "id": 7,
-          "title": "SONYLIV HIN - AQ",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119921/cricodi_2111/HIN/std_lrh-800300010.m3u8?hdnea=exp=1795339937~acl=/*~id=57033487110644542361717385028134~hmac=54ff19a9d17d906df5df2800bde8edc997de61602f2235ea7e0d5ae08d4728bc",
-          "api": ""
-        },
-        {
-          "id": 8,
-          "title": "SONYLIV TEL - AQ",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119951/cricodi_2111/TAM/std_lrh-800300010.m3u8?hdnea=exp=1795339937~acl=/*~id=57033487110644542361717385028134~hmac=54ff19a9d17d906df5df2800bde8edc997de61602f2235ea7e0d5ae08d4728bc",
-          "api": ""
-        },
-        {
-          "id": 9,
-          "title": "SONYLIV TEL - AQ",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119941/cricodi_2111/TEL/std_lrh-800300010.m3u8?hdnea=exp=1795339937~acl=/*~id=57033487110644542361717385028134~hmac=54ff19a9d17d906df5df2800bde8edc997de61602f2235ea7e0d5ae08d4728bc",
-          "api": ""
-        },
-        {
-          "id": 10,
-          "title": "SONYLIV KAN - AQ",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119782/cricodi_2111/KAN/std_lrh-800300010.m3u8?hdnea=exp=1795339937~acl=/*~id=57033487110644542361717385028134~hmac=54ff19a9d17d906df5df2800bde8edc997de61602f2235ea7e0d5ae08d4728bc",
-          "api": ""
-        },
-        {
-          "id": 11,
-          "title": "CRICBUZZ [IND]",
-          "type": "m3u8",
-          "link": "https://dai.google.com/linear/hls/event/cNE9Z_P5TsuAQ5jxVJ1ADg/master.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
       "id": 2247,
       "title": "Brisbane Heat Women vs Adelaide Strikers Women",
       "slug": "Brisbane-Heat-Women-vs-Adelaide-Strikers-Women",
       "cat": "Cricket",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Women's Big Bash League",
         "category": "Cricket",
@@ -885,14 +702,50 @@
         "startTimeIST": "2026-11-22 10:10:00 IST",
         "endTimeIST": ""
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW - AQ",
+          "type": "mpd",
+          "link": "https://dash-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/ilhybzuiyi/out/v1/04f4624f561f4dd69467e1e219f03568/cenc.mpd",
+          "api": "f91b8bf06f3e791e41238b4190311c9e:eff5b8fafef1f8b3d988be38ff7e539e"
+        },
+        {
+          "id": 2,
+          "title": "SKY CRICKET FHD",
+          "type": "m3u8",
+          "link": "https://bl.rutube.ru/livestream/7c13a51576b9ff2601f08f5d57dd5169/index.m3u8?s=uiXES2ePt7xTpQnbJxn7Dg&e=2074684474&scheme=https",
+          "api": ""
+        },
+        {
+          "id": 3,
+          "title": "TAPMAD FHD",
+          "type": "m3u8",
+          "link": "https://tencent-cdn.tapmad.com/v1/01a14ab8af8915fc600b1e3e9683f0/01a14ab953dd1ea540a81c2b41b75f/main.m3u8",
+          "api": ""
+        },
+        {
+          "id": 4,
+          "title": "WILLOW HD",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/0bftapixow/out/v1/a435ed7a00f947deb4369b46d8f2fb70/cenc.mpd",
+          "api": "290e09c837da78d5cd961978d390515c:b748836c71e6a4ca68ef5b5652db6247"
+        },
+        {
+          "id": 5,
+          "title": "TAPMAD HD",
+          "type": "m3u8",
+          "link": "https://tencent-cdn.tapmad.com/v1/01a14a80166b1ea557841e1612cf55/01a14a8047211ea557841e1612cf58/main.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": 2083,
       "title": "Netherlands Women vs Sri Lanka Women",
       "slug": "Netherlands-Women-vs-Sri-Lanka-Women",
       "cat": "Cricket",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Womens Emerging Nations Trophy",
         "category": "Cricket",
@@ -905,14 +758,36 @@
         "startTimeIST": "2026-11-22 10:30:00 IST",
         "endTimeIST": ""
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "PlayZ TV Live",
+          "type": "mpd",
+          "link": "https://live-d-01-icc-we.akamaized.net/variant/v1blackout/vcg-01-d/DASH_DASH/Live/channel(vcg-01-ch-hd-06)/hdntl=exp=1795352061~acl=*%2fchannel(vcg-01-ch-hd-06)%2f*~id=df636eee-0529-4299-91da-e8ce8c8790f0~data=hdntl,QjtNWCxDUixTVixHVCxITixOSSxQQSxBUixCTyxCUixDTCxDTyxFQyxQWSxQRSxVWSxWRSxDVSxETyxIVCxDQSxVUyxJTixQSyxMSyxBTyxCSixCVyxCRixCSSxDVixDTSxDRixURCxLTSxDRyxDRCxDSSxESixHUSxFUixFVCxHQSxHTSxHSCxHTixHVyxLRSxMUyxMUixNRyxNVyxNVSxNUixNWixOQSxORSxORyxSVyxTVCxTTixTQyxTTCxTTyxaQSxTUyxTRCxUWixURyxVRyxaTSxaVyxTWixNTA%3d%3d~hmac=ee99b7976ad338f649b416ef5debe9d7b8f799fc63b7d93396749ecd145c4f6a/manifest.mpd?vcfilter=b9ee83ad-6fd6-4d0d-aee5-44376958030f",
+          "api": "39bd302cdeed3710a89fb004d232ab67:9869f804ba18d7e508cbff781829221c"
+        },
+        {
+          "id": 2,
+          "title": "TAMASHA - AQ [PK]",
+          "type": "m3u8",
+          "link": "https://cdn01lhr-n.tamashaweb.com:8087/appcast/ICC-women-NT2026-svod-B-abr/playlist.m3u8",
+          "api": ""
+        },
+        {
+          "id": 3,
+          "title": "MYCO AQ (PK)",
+          "type": "m3u8",
+          "link": "https://ml-pull-rtmp-pk1.myco.io/Feed1/hls/index.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": 2084,
       "title": "Pakistan Women vs Scotland Women",
       "slug": "Pakistan-Women-vs-Scotland-Women",
       "cat": "Cricket",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Womens Emerging Nations Trophy",
         "category": "Cricket",
@@ -925,14 +800,36 @@
         "startTimeIST": "2026-11-22 10:30:00 IST",
         "endTimeIST": ""
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "PLAYZ TV FHD",
+          "type": "mpd",
+          "link": "https://live-d-01-icc-we.akamaized.net/variant/v1blackout/vcg-01-d/DASH_DASH/Live/channel(vcg-01-ch-hd-07)/hdntl=exp=1795352006~acl=*%2fchannel(vcg-01-ch-hd-07)%2f*~id=df636eee-0529-4299-91da-e8ce8c8790f0~data=hdntl,QjtNWCxDUixTVixHVCxITixOSSxQQSxBUixCTyxCUixDTCxDTyxFQyxQWSxQRSxVWSxWRSxDVSxETyxIVCxDQSxVUyxJTixQSyxMSyxBTyxCSixCVyxCRixCSSxDVixDTSxDRixURCxLTSxDRyxDRCxDSSxESixHUSxFUixFVCxHQSxHTSxHSCxHTixHVyxLRSxMUyxMUixNRyxNVyxNVSxNUixNWixOQSxORSxORyxSVyxTVCxTTixTQyxTTCxTTyxaQSxTUyxTRCxUWixURyxVRyxaTSxaVyxTWixNTA%3d%3d~hmac=e6891a1d215e1fca8ecc00ccf81260124bfa3fbc547063b0071583ba9899e65e/manifest.mpd?vcfilter=1670a3ba-9286-47db-9bd9-7a5143994e24",
+          "api": "39bd302cdeed3710a89fb004d232ab67:9869f804ba18d7e508cbff781829221c"
+        },
+        {
+          "id": 2,
+          "title": "MYCO PK",
+          "type": "m3u8",
+          "link": "https://ml-pull-rtmp-pk1.myco.io/Feed2/hls/index.m3u8",
+          "api": ""
+        },
+        {
+          "id": 3,
+          "title": "TAMASHA - AQ [PK]",
+          "type": "m3u8",
+          "link": "https://cdn01lhr-n.tamashaweb.com:8087/appcast/ICC-women-NT2026-svod-abr/playlist.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": 2077,
       "title": "UAE vs Nepal",
       "slug": "UAE-vs-Nepal",
       "cat": "Cricket",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Asia Cup Rising Stars",
         "category": "Cricket",
@@ -945,7 +842,50 @@
         "startTimeIST": "2026-11-22 11:30:00 IST",
         "endTimeIST": ""
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW AQ",
+          "type": "mpd",
+          "link": "https://hls-ott.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/dav1vsvipu/out/v1/7811f403d7ea475d9b5b86b60ef4b677/cenc.mpd",
+          "api": "7341f16081ecb92ed172ef9df6f443ce:566b8cf0a31255d55785b24ade0a999c"
+        },
+        {
+          "id": 2,
+          "title": "STARZPLAY FHD",
+          "type": "mpd",
+          "link": "https://d1ifzl5cnhi7bu.cloudfront.net/out/v1/45ba30e075ad455a8767d3f33e67ea3d/index.mpd",
+          "api": "0ae4f162eec3e6f2b580a5bf0f4a64d4:03483335db81cba5bbcf51b6d31196d9"
+        },
+        {
+          "id": 3,
+          "title": "SONYLIV ENG - AQ",
+          "type": "m3u8",
+          "link": "https://sonydaimenew.akamaized.net/hls/live/2018457/criclive2211/ENG/master.m3u8?hdnea=exp=1795369829~acl=/*~id=36174367699410305724247024336931~hmac=48585ca95e46e6fb786953efff169aa47ab584b94a7fa8858442153a01e9d040",
+          "api": ""
+        },
+        {
+          "id": 4,
+          "title": "TAMASHA AQ",
+          "type": "m3u8",
+          "link": "https://cdn06khi-n.tamashaweb.com:8087/appcast/ACC-men-AC26-abr/playlist.m3u8",
+          "api": ""
+        },
+        {
+          "id": 5,
+          "title": "TEN SPORTS HD",
+          "type": "m3u8",
+          "link": "https://live.msnetworks.net/ten-sports/master.m3u8",
+          "api": ""
+        },
+        {
+          "id": 6,
+          "title": "HD SERVER",
+          "type": "m3u8",
+          "link": "https://dai.google.com/linear/hls/event/yaROyE-bScOVYZWWXQoBdQ/master.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": 2248,
@@ -965,7 +905,43 @@
         "startTimeIST": "2026-11-22 13:40:00 IST",
         "endTimeIST": ""
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW AQ",
+          "type": "mpd",
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/xzhvi2grfc/out/v1/0c7ba1d749ea465c8caac7e84fc34891/cenc.mpd",
+          "api": "6012ce4af4cad526b730a7dc830bb35d:80280163cc6aad3985a22ebf2f082e76"
+        },
+        {
+          "id": 2,
+          "title": "SKY CRICKET FHD",
+          "type": "m3u8",
+          "link": "https://bl.rutube.ru/livestream/7c13a51576b9ff2601f08f5d57dd5169/index.m3u8?s=uiXES2ePt7xTpQnbJxn7Dg&e=2074684474&scheme=https",
+          "api": ""
+        },
+        {
+          "id": 3,
+          "title": "TAPMAD FHD",
+          "type": "m3u8",
+          "link": "https://serieAleague.akamaized.net/hls/live/2107107/A1@25853-tapmad/master.m3u8",
+          "api": ""
+        },
+        {
+          "id": 4,
+          "title": "WILLOW HD",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/0bftapixow/out/v1/a435ed7a00f947deb4369b46d8f2fb70/cenc.mpd",
+          "api": "290e09c837da78d5cd961978d390515c:b748836c71e6a4ca68ef5b5652db6247"
+        },
+        {
+          "id": 5,
+          "title": "TAPMAD HD",
+          "type": "m3u8",
+          "link": "https://tencent-cdn.tapmad.com/v1/01a14a80166b1ea557841e1612cf55/01a14a8047211ea557841e1612cf58/main.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": 2086,
@@ -1087,6 +1063,104 @@
           "title": "PLAYZ TV LIVE",
           "type": "m3u8",
           "link": "https://amssandbrix.sandbrix.live/sandbrix/streams/mk139q1Mi9bHznBA775016895861.m3u8",
+          "api": ""
+        }
+      ]
+    },
+    {
+      "id": 1236,
+      "title": "New Zealand vs India",
+      "slug": "New-Zealand-vs-India",
+      "cat": "Cricket",
+      "status": "upcoming",
+      "event": {
+        "name": "ICC World Test Championship",
+        "category": "Cricket",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18833/image/dark",
+        "teamA": "New Zealand",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/187755/image",
+        "teamB": "India",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/187765/image",
+        "startTimeIST": "2026-11-23 03:30:00 IST",
+        "endTimeIST": ""
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW - AQ [Ad Free]",
+          "type": "mpd",
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/fkipghexfw/out/v1/b9c7bdeeb3324a67829355fbadde5f64/cenc.mpd",
+          "api": "9a79865ad099bcc92fc555a1014310a6:0f79fed08b0fa0db9c08989d40f7ba73"
+        },
+        {
+          "id": 2,
+          "title": "TNT SPORTS - AQ",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/rhf2dwosdt/out/v1/ee550d2a68d846c797e6ce4de2e8b76d/cenc.mpd",
+          "api": "69a5aa835a061ce64a630d1046727e40:d02feac8a999bd06bf4059bf33411749"
+        },
+        {
+          "id": 3,
+          "title": "TAPMAD - AQ",
+          "type": "m3u8",
+          "link": "https://serieAleague.akamaized.net/hls/live/2107107/A1@25853-tapmad/master.m3u8",
+          "api": ""
+        },
+        {
+          "id": 4,
+          "title": "WILLOW S2 - AQ",
+          "type": "mpd",
+          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/xhvkr4qrty/out/v1/488d3bc4cfcb4dd593a3114ff78f2298/cenc.mpd",
+          "api": "e2026793de4d32b74ab50d192d21e812:5b019d29e099327378d606b8c29adb4f"
+        },
+        {
+          "id": 5,
+          "title": "TEN SPORTS HD",
+          "type": "m3u8",
+          "link": "https://live.msnetworks.net/ten-sports/master.m3u8",
+          "api": ""
+        },
+        {
+          "id": 6,
+          "title": "SONYLIV ENG - AQ",
+          "type": "m3u8",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119931/cricodi_2111/ENG/std_lrh-800300010.m3u8?hdnea=exp=1795339937~acl=/*~id=57033487110644542361717385028134~hmac=54ff19a9d17d906df5df2800bde8edc997de61602f2235ea7e0d5ae08d4728bc",
+          "api": ""
+        },
+        {
+          "id": 7,
+          "title": "SONYLIV HIN - AQ",
+          "type": "m3u8",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119921/cricodi_2111/HIN/std_lrh-800300010.m3u8?hdnea=exp=1795339937~acl=/*~id=57033487110644542361717385028134~hmac=54ff19a9d17d906df5df2800bde8edc997de61602f2235ea7e0d5ae08d4728bc",
+          "api": ""
+        },
+        {
+          "id": 8,
+          "title": "SONYLIV TEL - AQ",
+          "type": "m3u8",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119951/cricodi_2111/TAM/std_lrh-800300010.m3u8?hdnea=exp=1795339937~acl=/*~id=57033487110644542361717385028134~hmac=54ff19a9d17d906df5df2800bde8edc997de61602f2235ea7e0d5ae08d4728bc",
+          "api": ""
+        },
+        {
+          "id": 9,
+          "title": "SONYLIV TEL - AQ",
+          "type": "m3u8",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119941/cricodi_2111/TEL/std_lrh-800300010.m3u8?hdnea=exp=1795339937~acl=/*~id=57033487110644542361717385028134~hmac=54ff19a9d17d906df5df2800bde8edc997de61602f2235ea7e0d5ae08d4728bc",
+          "api": ""
+        },
+        {
+          "id": 10,
+          "title": "SONYLIV KAN - AQ",
+          "type": "m3u8",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119782/cricodi_2111/KAN/std_lrh-800300010.m3u8?hdnea=exp=1795339937~acl=/*~id=57033487110644542361717385028134~hmac=54ff19a9d17d906df5df2800bde8edc997de61602f2235ea7e0d5ae08d4728bc",
+          "api": ""
+        },
+        {
+          "id": 11,
+          "title": "CRICBUZZ [IND]",
+          "type": "m3u8",
+          "link": "https://dai.google.com/linear/hls/event/cNE9Z_P5TsuAQ5jxVJ1ADg/master.m3u8",
           "api": ""
         }
       ]
@@ -1285,21 +1359,6 @@
       ]
     },
     {
-      "id": "B0HM4ZHT1F",
-      "title": "India tour of New Zealand 2026 - 1st Test - New Zealand vs India",
-      "slug": "india-tour-of-new-zealand-2026-1st-test-new-zealand-vs-india",
-      "cat": "Live Events",
-      "status": "live",
-      "event": {
-        "name": "India tour of New Zealand 2026 - 1st Test - New Zealand vs India",
-        "category": "Cricket",
-        "teamA": "Team A",
-        "teamB": "Team B",
-        "startTimeIST": ""
-      },
-      "dashStreams": []
-    },
-    {
       "id": "B0HNPCVCZ2",
       "title": "Womens Big Bash League 2026 - 31st Match - Brisbane Heat Women vs Adelaide Strikers Women",
       "slug": "womens-big-bash-league-2026-31st-match-brisbane-heat-women-vs-adelaide-strikers-women",
@@ -1337,6 +1396,21 @@
       "status": "live",
       "event": {
         "name": "T20 Gold Clash 2026 - Team Footy vs Team Cricket",
+        "category": "Cricket",
+        "teamA": "Team A",
+        "teamB": "Team B",
+        "startTimeIST": ""
+      },
+      "dashStreams": []
+    },
+    {
+      "id": "B0HM4ZHT1F",
+      "title": "India tour of New Zealand 2026 - 1st Test - New Zealand vs India",
+      "slug": "india-tour-of-new-zealand-2026-1st-test-new-zealand-vs-india",
+      "cat": "Live Events",
+      "status": "live",
+      "event": {
+        "name": "India tour of New Zealand 2026 - 1st Test - New Zealand vs India",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",

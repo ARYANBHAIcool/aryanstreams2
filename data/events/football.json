@@ -1,132 +1,7 @@
 {
-  "last_updated": "11/22/2026, 6:10:10 AM IST",
+  "last_updated": "11/22/2026, 12:58:52 PM IST",
   "source": "AryanStreams Official Feed",
   "events": [
-    {
-      "id": 2058,
-      "title": "Atlético Mineiro vs Boca Juniors",
-      "slug": "Atlético-Mineiro-vs-Boca-Juniors",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "CONMEBOL Sudamericana",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/480/image/dark",
-        "teamA": "Atlético Mineiro",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/1977/image",
-        "teamB": "Boca Juniors",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/3202/image",
-        "startTimeIST": "2026-11-22 04:00:00 IST",
-        "endTimeIST": "2026-11-22 06:20:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "beIN ESPNAOL FHD",
-          "type": "mpd",
-          "link": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/e3ozww2yny/out/v1/3a16d07c2cc0444bb8ea10d0483d1ced/cenc.mpd?",
-          "api": "74cbe15488783fab07ff8c702fabafcd:bb607803a49c2d6104f845e7886c971c"
-        },
-        {
-          "id": 2,
-          "title": "PLAYZ TV LIVE",
-          "type": "m3u8",
-          "link": "https://sdn-global-live-streaming-packager-cache.3qsdn.com/76321/76321_264_live.m3u8",
-          "api": ""
-        },
-        {
-          "id": 3,
-          "title": "beIN SPORTS EN",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/q4u5nwaogz/out/v1/18de6d3e65934f3a8de4358e69eab86c/cenc.mpd",
-          "api": "7995c724a13748ed970840a8ab5bb9b3:67bdaf1e2175b9ff682fcdf0e2354b1e"
-        },
-        {
-          "id": 4,
-          "title": "beIN SPORTS FHD",
-          "type": "mpd",
-          "link": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/katdnhkzqv/out/v1/2469724fa7754a4da6861d8ba80de958/cenc.mpd?",
-          "api": "\u000227759a440e8ad821b800b3de00cd5851:1b8743adee559f27845f55e8b4d639fe"
-        }
-      ]
-    },
-    {
-      "id": 2081,
-      "title": "Inter Vice City [Inter Miami CF] vs Columbus Crew",
-      "slug": "Inter-Vice-City-[Inter-Miami-CF]-vs-Columbus-Crew",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "MLS",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/242/image/dark",
-        "teamA": "Inter Vice City [Inter Miami CF]",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/337602/image",
-        "teamB": "Columbus Crew",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2504/image",
-        "startTimeIST": "2026-11-22 04:30:00 IST",
-        "endTimeIST": "2026-11-22 06:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "HD STREAM",
-          "type": "m3u8",
-          "link": "https://live2.jorvakstreamcache.com/live/channel12.m3u8",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 2008,
-      "title": "Chapecoense vs Cruzeiro",
-      "slug": "Chapecoense-vs-Cruzeiro",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "Campeonato Brasileiro Série A",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/325/image/dark",
-        "teamA": "Chapecoense",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/21845/image",
-        "teamB": "Cruzeiro",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/1954/image",
-        "startTimeIST": "2026-11-22 05:30:00 IST",
-        "endTimeIST": "2026-11-22 07:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "PREMIERER BR",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/6onrfniyry/out/v1/f23069c61dbf4e00890a40b705a84079/cenc.mpd",
-          "api": "d23f7433798a652a7d4f6791d9e1036c:4942eebd598b5727c5cc484cc62b52e8"
-        }
-      ]
-    },
-    {
-      "id": 2060,
-      "title": "Wellington Phoenix vs Macarthur FC",
-      "slug": "Wellington-Phoenix-vs-Macarthur-FC",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "A-League Men",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/136/image/dark",
-        "teamA": "Wellington Phoenix",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/7568/image",
-        "teamB": "Macarthur FC",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/371682/image",
-        "startTimeIST": "2026-11-22 07:30:00 IST",
-        "endTimeIST": "2026-11-22 09:50:00 IST"
-      },
-      "streams": []
-    },
     {
       "id": 2249,
       "title": "Juventus vs Venezia",
@@ -228,7 +103,7 @@
       "streams": []
     },
     {
-      "id": 2299,
+      "id": 2384,
       "title": "Córdoba vs Real Oviedo",
       "slug": "Córdoba-vs-Real-Oviedo",
       "cat": "Football",
@@ -248,7 +123,7 @@
       "streams": []
     },
     {
-      "id": 2300,
+      "id": 2385,
       "title": "Córdoba vs Real Oviedo",
       "slug": "Córdoba-vs-Real-Oviedo",
       "cat": "Football",
@@ -308,6 +183,26 @@
       "streams": []
     },
     {
+      "id": 2354,
+      "title": "AFC Ajax vs ADO Den Haag",
+      "slug": "AFC-Ajax-vs-ADO-Den-Haag",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "VriendenLoterij Eredivisie",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/37/image/dark",
+        "teamA": "AFC Ajax",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2953/image",
+        "teamB": "ADO Den Haag",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2966/image",
+        "startTimeIST": "2026-11-22 19:00:00 IST",
+        "endTimeIST": "2026-11-22 21:20:00 IST"
+      },
+      "streams": []
+    },
+    {
       "id": 2112,
       "title": "France U17 vs Saudi Arabia U17",
       "slug": "France-U17-vs-Saudi-Arabia-U17",
@@ -322,6 +217,26 @@
         "teamAFlag": "https://img.sofascore.com/api/v1/team/22474/image",
         "teamB": "Saudi Arabia U17",
         "teamBFlag": "https://img.sofascore.com/api/v1/team/468403/image",
+        "startTimeIST": "2026-11-22 19:00:00 IST",
+        "endTimeIST": "2026-11-22 21:20:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": 2355,
+      "title": "Sparta Rotterdam vs AZ Alkmaar",
+      "slug": "Sparta-Rotterdam-vs-AZ-Alkmaar",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "VriendenLoterij Eredivisie",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/37/image/dark",
+        "teamA": "Sparta Rotterdam",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/2960/image",
+        "teamB": "AZ Alkmaar",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/2950/image",
         "startTimeIST": "2026-11-22 19:00:00 IST",
         "endTimeIST": "2026-11-22 21:20:00 IST"
       },
