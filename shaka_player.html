@@ -205,16 +205,16 @@
             'npl': 'npl', 'npl1': 'npl',
             'ss1h': 'H1HD', 'ss1': 'E1HD', 'ss1tam': 'T1HD', 'ss1tel': 'TE1HD', 'ss1kan': 'KA1SD',
             'ss2': 'E2HD', 'ss2h': 'H2HD', 'ss2tam': 'S2HD', 'ss2tel': 'TE2HD', 'ss2kan': 'KA2SD',
-            'ss3': 'SS3', 'ssselect1': 'SE1HD', 'ssselect2': 'SE2HD', 'select1': 'SE1HD', 'select2': 'SE2HD', 'sskhel': 'SSK', 'skhel': 'SSK', 'smat': 'SSK', 'ssk': 'SSK',
+            'ss3': 'SS3', 'ssselect1': 'ST1HD', 'ssselect2': 'ST2HD', 'select1': 'ST1HD', 'select2': 'ST2HD', 'starselect1': 'ST1HD', 'starselect2': 'ST2HD', 'star_select_1': 'ST1HD', 'star_select_2': 'ST2HD', 'sskhel': 'SSK', 'skhel': 'SSK', 'smat': 'SSK', 'ssk': 'SSK',
             'h1hd': 'H1HD', 'e1hd': 'E1HD', 'h2hd': 'H2HD', 'e2hd': 'E2HD',
             's2hd': 'S2HD', 'te1hd': 'TE1HD', 'te2hd': 'TE2HD', 'tu1hd': 'TE1HD', 'tu2hd': 'TE2HD',
             'te1sd': 'TE1SD', 'tu1sd': 'TE1SD', 'te2sd': 'TE2SD', 'tu2sd': 'TE2SD',
             'star1telugu': 'TE1HD', 'star1tel': 'TE1HD', 'star2telugu': 'TE2HD', 'star2tel': 'TE2HD',
             'ka1sd': 'KA1SD', 'ka2sd': 'KA2SD',
-            'se1hd': 'SE1HD', 'se2hd': 'SE2HD', 'h1sd': 'H1SD',
+            'se1hd': 'ST1HD', 'se2hd': 'ST2HD', 'st1hd': 'ST1HD', 'st2hd': 'ST2HD', 'st1sd': 'ST1SD', 'st2sd': 'ST2SD', 'h1sd': 'H1SD',
             '1108': 'H1HD', '1106': 'E1HD', '1984': 'H2HD', '1109': 'E2HD',
             '3273': 'S2HD', '3278': 'TE1HD', '3274': 'TE2HD', '1651': 'TE1SD', '2852': 'TE2SD', '1650': 'KA1SD', '1122': 'KA2SD',
-            '1389': 'SS3', '460': 'SE1HD', '461': 'SE2HD', '1998': 'H1SD',
+            '1389': 'SS3', '460': 'ST1HD', '461': 'ST2HD', '1123': 'ST1SD', '1114': 'ST2SD', '1998': 'H1SD',
 
             // Sony Sports Ten Direct TV Channel Feeds
             'ten1hd': 'STEN1', 'ten1': 'STEN1', 'sony_ten1_hd': 'STEN1', 'ten1_ios': 'STEN1', '162': 'STEN1', 'sten1': 'STEN1', 'sony1': 'STEN1', 't1hd': 'STEN1',
@@ -227,8 +227,10 @@
         };
 
         var FALLBACK_MAP = {
-            'SE1HD': ['SE1', '460', 'select1', 'ssselect1'],
-            'SE2HD': ['SE2', '461', 'select2', 'ssselect2'],
+            'ST1HD': ['SE1HD', '460', 'select1', 'ssselect1', 'st1hd', 'st1sd', '1123'],
+            'SE1HD': ['ST1HD', '460', 'select1', 'ssselect1', 'st1hd', 'st1sd', '1123'],
+            'ST2HD': ['SE2HD', '461', 'select2', 'ssselect2', 'st2hd', 'st2sd', '1114'],
+            'SE2HD': ['ST2HD', '461', 'select2', 'ssselect2', 'st2hd', 'st2sd', '1114'],
             'STEN1': ['162', '3531', 'sony1', 'sten1', 'ten1-hd', 'ten1'],
             'STEN2': ['891', '3532', 'sony2', 'sten2', 'ten2-hd', 'ten2'],
             'STEN3': ['892', '3533', 'sony3', 'sten3', 'ten3-hd', 'ten3'],
@@ -336,6 +338,7 @@
             '1389': { kid: 'e4e8647eaf0659ac85f61765a5abcdc1', key: 'd749c9b27505beb0e1a8b6c30ca65de6' },
             'star3': { kid: 'e4e8647eaf0659ac85f61765a5abcdc1', key: 'd749c9b27505beb0e1a8b6c30ca65de6' },
 
+            'st1hd': { kid: 'cc04426ac28359a7b620934ddbbecb7c', key: '0074c460557b1f21a60fa0aada550e3a' },
             'se1hd': { kid: 'cc04426ac28359a7b620934ddbbecb7c', key: '0074c460557b1f21a60fa0aada550e3a' },
             'select1': { kid: 'cc04426ac28359a7b620934ddbbecb7c', key: '0074c460557b1f21a60fa0aada550e3a' },
             'select_1': { kid: 'cc04426ac28359a7b620934ddbbecb7c', key: '0074c460557b1f21a60fa0aada550e3a' },
@@ -346,6 +349,7 @@
             'se1': { kid: 'df07fac4675a597f92cbe2edbffb7c23', key: '0d6b8e6559306e043bf26c7c8ffce7ae' },
             '1123': { kid: 'df07fac4675a597f92cbe2edbffb7c23', key: '0d6b8e6559306e043bf26c7c8ffce7ae' },
 
+            'st2hd': { kid: '2c443dffefb256a5b7a1364cc4af3529', key: '1d78f35200eb5977a95de669788cf128' },
             'se2hd': { kid: '2c443dffefb256a5b7a1364cc4af3529', key: '1d78f35200eb5977a95de669788cf128' },
             'select2': { kid: '2c443dffefb256a5b7a1364cc4af3529', key: '1d78f35200eb5977a95de669788cf128' },
             'select_2': { kid: '2c443dffefb256a5b7a1364cc4af3529', key: '1d78f35200eb5977a95de669788cf128' },
@@ -568,6 +572,8 @@
                         if ((normId === '155' || normId.includes('ten5') || normId === 'sten5' || workerKey === 'sten5') && (cId === 'sten5' || cNm.includes('sports 5') || cNm.includes('ten 5'))) return true;
                         if ((normId.includes('hindi') || normId === 'h1hd' || workerKey === 'ss1h') && (cId === 'h1hd' || cNm.includes('hindi'))) return true;
                         if ((normId.includes('eng') || normId === 'e1hd' || workerKey === 'ss1') && (cId === 'e1hd' || (cNm.includes('sports 1') && !cNm.includes('hindi')))) return true;
+                        if ((normId === 'st1hd' || normId === 'se1hd' || normId === 'select1' || normId === 'ssselect1' || normId === '460' || workerKey === 'select1' || workerKey === 'ssselect1') && (cId === 'st1hd' || (cNm.includes('select') && (cNm.includes('1') || cNm.includes('one')) && cNm.includes('hd')))) return true;
+                        if ((normId === 'st2hd' || normId === 'se2hd' || normId === 'select2' || normId === 'ssselect2' || normId === '461' || workerKey === 'select2' || workerKey === 'ssselect2') && (cId === 'st2hd' || (cNm.includes('select') && (cNm.includes('2') || cNm.includes('two')) && cNm.includes('hd')))) return true;
                         return false;
                     });
                     if (found && found.cookie && isCookieValid(found.cookie, found.cookie_expire)) {
@@ -588,6 +594,8 @@
                         if (workerKey === 'ss1tel' && (zId === '3278' || zId === '1651' || (zNm.includes('star') && zNm.includes('telugu') && !zNm.includes(' 2 ')))) return true;
                         if (workerKey === 'ss2tel' && (zId === '3274' || zId === '2852' || (zNm.includes('star') && zNm.includes('telugu') && zNm.includes('2')))) return true;
                         if (zId === normId || (workerKey && zId === workerKey)) return true;
+                        if ((normId.includes('select1') || normId === 'se1hd' || normId === 'st1hd' || normId === '460') && (zId === '460' || (zNm.includes('select') && zNm.includes('1')))) return true;
+                        if ((normId.includes('select2') || normId === 'se2hd' || normId === 'st2hd' || normId === '461') && (zId === '461' || (zNm.includes('select') && zNm.includes('2')))) return true;
                         return false;
                     });
                     if (zFound && zFound.cookie && isCookieValid(zFound.cookie, zFound.cookie_expire)) {

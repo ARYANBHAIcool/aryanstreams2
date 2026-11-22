@@ -62,10 +62,10 @@ const JIO_MAP = {
     '1141': ['E2SD', 'star2eng', '1141'],
     '1985': ['H2SD', 'star2hindi', '1985'],
     '1389': ['SS3', 'ss3', '1389'],
-    '460':  ['SE1HD', 'select1', 'ssselect1', '460'],
-    '1123': ['SE1', '1123'],
-    '461':  ['SE2HD', 'select2', 'ssselect2', '461'],
-    '1114': ['SE2', '1114'],
+    '460':  ['ST1HD', 'SE1HD', 'select1', 'ssselect1', '460', 'starselect1'],
+    '1123': ['ST1SD', 'SE1', '1123'],
+    '461':  ['ST2HD', 'SE2HD', 'select2', 'ssselect2', '461', 'starselect2'],
+    '1114': ['ST2SD', 'SE2', '1114'],
     '3277': ['T1HD', 'star1tamil', 'ss1tam', '3277'],
     '1124': ['T1SD', '1124'],
     '3278': ['TE1HD', 'star1telugu', 'ss1tel', '3278', 'TU1HD', 'tu1hd'],
@@ -427,14 +427,31 @@ async function syncSports() {
                 let refreshedCookiesCount = 0;
                 // Sync fresh tokens from sonujson (Star Sports Select 1/2 HD & SD, etc.)
                 try {
-                    console.log('Fetching live backup sports tokens from https://sonujson-v5.pages.dev/Data/sports.json ...');
-                    const sonuRaw = await fetchEndpoint('https://sonujson-v5.pages.dev/Data/sports.json');
+                    console.log('Fetching live backup sports tokens from https://sonujson-v7.pages.dev/Data/sports.json ...');
+                    let sonuRaw = '';
+                    try {
+                        sonuRaw = await fetchEndpoint('https://sonujson-v7.pages.dev/Data/sports.json');
+                    } catch(e) {
+                        sonuRaw = await fetchEndpoint('https://sonujson-v5.pages.dev/Data/sports.json');
+                    }
                     const sonuParsed = JSON.parse(sonuRaw);
                     const sonuChannels = sonuParsed.channels || [];
                     const sonuMap = new Map();
                     sonuChannels.forEach(c => {
-                        if (c.id) sonuMap.set(c.id.toLowerCase(), c);
+                        const lowId = (c.id || '').toLowerCase();
+                        if (lowId) sonuMap.set(lowId, c);
                         if (c.channel_id) sonuMap.set(String(c.channel_id).toLowerCase(), c);
+                        if (lowId === 'st1hd') {
+                            sonuMap.set('se1hd', c);
+                            sonuMap.set('select1', c);
+                            sonuMap.set('ssselect1', c);
+                            sonuMap.set('460', c);
+                        } else if (lowId === 'st2hd') {
+                            sonuMap.set('se2hd', c);
+                            sonuMap.set('select2', c);
+                            sonuMap.set('ssselect2', c);
+                            sonuMap.set('461', c);
+                        }
                     });
 
                     for (const ch of channels) {
@@ -454,7 +471,7 @@ async function syncSports() {
                                 refreshedCookiesCount++;
                             }
                             if (match.stream_url) {
-                                ch.stream_url = match.stream_url;
+                                ch.stream_url = match.stream_url.replace('.com//', '.com/');
                             }
                             if (match.sonuxs && match.sonuxs.length > 0) {
                                 ch.sonuxs = match.sonuxs;

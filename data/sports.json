@@ -1,5 +1,5 @@
 {
-  "last_updated": "11/22/2026, 9:09:24 PM IST",
+  "last_updated": "11/22/2026, 9:36:17 PM IST",
   "source": "https://sportlink-playlist.pages.dev/zio.m3u",
   "channels": [
     {
@@ -12952,24 +12952,55 @@
       "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Ten3_HD.png"
     },
     {
+      "id": "ST1HD",
+      "name": "Star Sports Select 1 HD",
+      "channel_id": "460",
+      "aliases": [
+        "ST1HD",
+        "SE1HD",
+        "select1",
+        "ssselect1",
+        "460",
+        "starselect1"
+      ],
+      "stream_url": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_Select_HD_1_BTS/WDVLive/index.mpd",
+      "key_id": "cc04426ac28359a7b620934ddbbecb7c",
+      "key": "0074c460557b1f21a60fa0aada550e3a",
+      "sonuxs": [
+        "8fc8499852ea5182b2a9307bd921cea1:c0ff2fbd59e26d6633f98af470c4d7b6",
+        "272c9b98274250f1b0bae9e19612275a:0fbbb12efcf16e2817b3c881847b2abf",
+        "fe38155e1cee53778db627b35bd2d20b:13d7c44c0e3fee8d9186a0491207629c",
+        "337fe34bbf2152c1bfe5ea8787072cd4:4efacd3a5af887dea393f0b957d266b6",
+        "cc04426ac28359a7b620934ddbbecb7c:0074c460557b1f21a60fa0aada550e3a"
+      ],
+      "cookie": "__hdnea__=st=1795356815~exp=1795378415~acl=/bpk-tv/Star_Sports_Select_HD_1_BTS/WDVLive/*~hmac=d5df8ee879df9322c3b6227b9481fcf9788a21ce623698fc6a41786011c9f8b4",
+      "cookie_expire": 1795378415,
+      "logo": "https://img.media.jio.com/tvpimages/96/65/302113_1749664252703_l_medium.jpg"
+    },
+    {
       "id": "SE1HD",
       "name": "Star Sports Select 1 HD",
       "channel_id": "460",
       "aliases": [
+        "ST1HD",
         "SE1HD",
         "select1",
         "ssselect1",
-        "460"
+        "460",
+        "starselect1"
       ],
-      "stream_url": "https://jiotvpllive.cdn.jio.com//bpk-tv/Star_Sports_Select_HD_1_BTS/WDVLive/index.mpd",
+      "stream_url": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_Select_HD_1_BTS/WDVLive/index.mpd",
       "key_id": "cc04426ac28359a7b620934ddbbecb7c",
       "key": "0074c460557b1f21a60fa0aada550e3a",
       "sonuxs": [
-        "cc04426ac28359a7b620934ddbbecb7c:0074c460557b1f21a60fa0aada550e3a",
-        "8fc8499852ea5182b2a9307bd921cea1:c0ff2fbd59e26d6633f98af470c4d7b6"
+        "8fc8499852ea5182b2a9307bd921cea1:c0ff2fbd59e26d6633f98af470c4d7b6",
+        "272c9b98274250f1b0bae9e19612275a:0fbbb12efcf16e2817b3c881847b2abf",
+        "fe38155e1cee53778db627b35bd2d20b:13d7c44c0e3fee8d9186a0491207629c",
+        "337fe34bbf2152c1bfe5ea8787072cd4:4efacd3a5af887dea393f0b957d266b6",
+        "cc04426ac28359a7b620934ddbbecb7c:0074c460557b1f21a60fa0aada550e3a"
       ],
-      "cookie": "",
-      "cookie_expire": 0,
+      "cookie": "__hdnea__=st=1795356815~exp=1795378415~acl=/bpk-tv/Star_Sports_Select_HD_1_BTS/WDVLive/*~hmac=d5df8ee879df9322c3b6227b9481fcf9788a21ce623698fc6a41786011c9f8b4",
+      "cookie_expire": 1795378415,
       "logo": "https://img.media.jio.com/tvpimages/96/65/302113_1749664252703_l_medium.jpg"
     },
     {
@@ -12977,20 +13008,25 @@
       "name": "Star Sports Select 1 HD",
       "channel_id": "460",
       "aliases": [
+        "ST1HD",
         "SE1HD",
         "select1",
         "ssselect1",
-        "460"
+        "460",
+        "starselect1"
       ],
-      "stream_url": "https://jiotvpllive.cdn.jio.com//bpk-tv/Star_Sports_Select_HD_1_BTS/WDVLive/index.mpd",
+      "stream_url": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_Select_HD_1_BTS/WDVLive/index.mpd",
       "key_id": "cc04426ac28359a7b620934ddbbecb7c",
       "key": "0074c460557b1f21a60fa0aada550e3a",
       "sonuxs": [
-        "cc04426ac28359a7b620934ddbbecb7c:0074c460557b1f21a60fa0aada550e3a",
-        "8fc8499852ea5182b2a9307bd921cea1:c0ff2fbd59e26d6633f98af470c4d7b6"
+        "8fc8499852ea5182b2a9307bd921cea1:c0ff2fbd59e26d6633f98af470c4d7b6",
+        "272c9b98274250f1b0bae9e19612275a:0fbbb12efcf16e2817b3c881847b2abf",
+        "fe38155e1cee53778db627b35bd2d20b:13d7c44c0e3fee8d9186a0491207629c",
+        "337fe34bbf2152c1bfe5ea8787072cd4:4efacd3a5af887dea393f0b957d266b6",
+        "cc04426ac28359a7b620934ddbbecb7c:0074c460557b1f21a60fa0aada550e3a"
       ],
-      "cookie": "",
-      "cookie_expire": 0,
+      "cookie": "__hdnea__=st=1795356815~exp=1795378415~acl=/bpk-tv/Star_Sports_Select_HD_1_BTS/WDVLive/*~hmac=d5df8ee879df9322c3b6227b9481fcf9788a21ce623698fc6a41786011c9f8b4",
+      "cookie_expire": 1795378415,
       "logo": "https://img.media.jio.com/tvpimages/96/65/302113_1749664252703_l_medium.jpg"
     },
     {
@@ -12998,20 +13034,25 @@
       "name": "Star Sports Select 1 HD",
       "channel_id": "460",
       "aliases": [
+        "ST1HD",
         "SE1HD",
         "select1",
         "ssselect1",
-        "460"
+        "460",
+        "starselect1"
       ],
-      "stream_url": "https://jiotvpllive.cdn.jio.com//bpk-tv/Star_Sports_Select_HD_1_BTS/WDVLive/index.mpd",
+      "stream_url": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_Select_HD_1_BTS/WDVLive/index.mpd",
       "key_id": "cc04426ac28359a7b620934ddbbecb7c",
       "key": "0074c460557b1f21a60fa0aada550e3a",
       "sonuxs": [
-        "cc04426ac28359a7b620934ddbbecb7c:0074c460557b1f21a60fa0aada550e3a",
-        "8fc8499852ea5182b2a9307bd921cea1:c0ff2fbd59e26d6633f98af470c4d7b6"
+        "8fc8499852ea5182b2a9307bd921cea1:c0ff2fbd59e26d6633f98af470c4d7b6",
+        "272c9b98274250f1b0bae9e19612275a:0fbbb12efcf16e2817b3c881847b2abf",
+        "fe38155e1cee53778db627b35bd2d20b:13d7c44c0e3fee8d9186a0491207629c",
+        "337fe34bbf2152c1bfe5ea8787072cd4:4efacd3a5af887dea393f0b957d266b6",
+        "cc04426ac28359a7b620934ddbbecb7c:0074c460557b1f21a60fa0aada550e3a"
       ],
-      "cookie": "",
-      "cookie_expire": 0,
+      "cookie": "__hdnea__=st=1795356815~exp=1795378415~acl=/bpk-tv/Star_Sports_Select_HD_1_BTS/WDVLive/*~hmac=d5df8ee879df9322c3b6227b9481fcf9788a21ce623698fc6a41786011c9f8b4",
+      "cookie_expire": 1795378415,
       "logo": "https://img.media.jio.com/tvpimages/96/65/302113_1749664252703_l_medium.jpg"
     },
     {
@@ -13019,27 +13060,59 @@
       "name": "Star Sports Select 1 HD",
       "channel_id": "460",
       "aliases": [
+        "ST1HD",
         "SE1HD",
         "select1",
         "ssselect1",
-        "460"
+        "460",
+        "starselect1"
       ],
-      "stream_url": "https://jiotvpllive.cdn.jio.com//bpk-tv/Star_Sports_Select_HD_1_BTS/WDVLive/index.mpd",
+      "stream_url": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_Select_HD_1_BTS/WDVLive/index.mpd",
       "key_id": "cc04426ac28359a7b620934ddbbecb7c",
       "key": "0074c460557b1f21a60fa0aada550e3a",
       "sonuxs": [
-        "cc04426ac28359a7b620934ddbbecb7c:0074c460557b1f21a60fa0aada550e3a",
-        "8fc8499852ea5182b2a9307bd921cea1:c0ff2fbd59e26d6633f98af470c4d7b6"
+        "8fc8499852ea5182b2a9307bd921cea1:c0ff2fbd59e26d6633f98af470c4d7b6",
+        "272c9b98274250f1b0bae9e19612275a:0fbbb12efcf16e2817b3c881847b2abf",
+        "fe38155e1cee53778db627b35bd2d20b:13d7c44c0e3fee8d9186a0491207629c",
+        "337fe34bbf2152c1bfe5ea8787072cd4:4efacd3a5af887dea393f0b957d266b6",
+        "cc04426ac28359a7b620934ddbbecb7c:0074c460557b1f21a60fa0aada550e3a"
       ],
-      "cookie": "",
-      "cookie_expire": 0,
+      "cookie": "__hdnea__=st=1795356815~exp=1795378415~acl=/bpk-tv/Star_Sports_Select_HD_1_BTS/WDVLive/*~hmac=d5df8ee879df9322c3b6227b9481fcf9788a21ce623698fc6a41786011c9f8b4",
+      "cookie_expire": 1795378415,
       "logo": "https://img.media.jio.com/tvpimages/96/65/302113_1749664252703_l_medium.jpg"
     },
     {
-      "id": "SE1",
+      "id": "starselect1",
+      "name": "Star Sports Select 1 HD",
+      "channel_id": "460",
+      "aliases": [
+        "ST1HD",
+        "SE1HD",
+        "select1",
+        "ssselect1",
+        "460",
+        "starselect1"
+      ],
+      "stream_url": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_Select_HD_1_BTS/WDVLive/index.mpd",
+      "key_id": "cc04426ac28359a7b620934ddbbecb7c",
+      "key": "0074c460557b1f21a60fa0aada550e3a",
+      "sonuxs": [
+        "8fc8499852ea5182b2a9307bd921cea1:c0ff2fbd59e26d6633f98af470c4d7b6",
+        "272c9b98274250f1b0bae9e19612275a:0fbbb12efcf16e2817b3c881847b2abf",
+        "fe38155e1cee53778db627b35bd2d20b:13d7c44c0e3fee8d9186a0491207629c",
+        "337fe34bbf2152c1bfe5ea8787072cd4:4efacd3a5af887dea393f0b957d266b6",
+        "cc04426ac28359a7b620934ddbbecb7c:0074c460557b1f21a60fa0aada550e3a"
+      ],
+      "cookie": "__hdnea__=st=1795356815~exp=1795378415~acl=/bpk-tv/Star_Sports_Select_HD_1_BTS/WDVLive/*~hmac=d5df8ee879df9322c3b6227b9481fcf9788a21ce623698fc6a41786011c9f8b4",
+      "cookie_expire": 1795378415,
+      "logo": "https://img.media.jio.com/tvpimages/96/65/302113_1749664252703_l_medium.jpg"
+    },
+    {
+      "id": "ST1SD",
       "name": "Star Sports Select 1",
       "channel_id": "1123",
       "aliases": [
+        "ST1SD",
         "SE1",
         "1123"
       ],
@@ -13053,8 +13126,31 @@
         "215579a9533d5eb1974eff2778f34853:7ea41017954ec6a5317e8b7ba94bcab5",
         "e59df2d0e3545c9aae4889fb2aa2a3c4:e1e9fac754f6c9c772f7a05536aff920"
       ],
-      "cookie": "",
-      "cookie_expire": 0,
+      "cookie": "__hdnea__=st=1795356804~exp=1795378404~acl=/bpk-tv/Star_Sports_Select_1_BTS/WDVLive/*~hmac=ab3fc2c794f412a6dd12286383a9f043754a6b501c095d9b297ca186a78dec89",
+      "cookie_expire": 1795378404,
+      "logo": "https://img.media.jio.com/tvpimages/13/82/301994_1753199405995_l_medium.jpg"
+    },
+    {
+      "id": "SE1",
+      "name": "Star Sports Select 1",
+      "channel_id": "1123",
+      "aliases": [
+        "ST1SD",
+        "SE1",
+        "1123"
+      ],
+      "stream_url": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_Select_1_BTS/WDVLive/index.mpd",
+      "key_id": "df07fac4675a597f92cbe2edbffb7c23",
+      "key": "0d6b8e6559306e043bf26c7c8ffce7ae",
+      "sonuxs": [
+        "df07fac4675a597f92cbe2edbffb7c23:0d6b8e6559306e043bf26c7c8ffce7ae",
+        "2fc7c3483e9c55649ef931c45f07c23a:fe4b825679c963bd512fdc915ca1285c",
+        "00ff99896b8255da8e2aa9c5f34ab032:a23957bf29cd2e732c74bb97854a3df4",
+        "215579a9533d5eb1974eff2778f34853:7ea41017954ec6a5317e8b7ba94bcab5",
+        "e59df2d0e3545c9aae4889fb2aa2a3c4:e1e9fac754f6c9c772f7a05536aff920"
+      ],
+      "cookie": "__hdnea__=st=1795356804~exp=1795378404~acl=/bpk-tv/Star_Sports_Select_1_BTS/WDVLive/*~hmac=ab3fc2c794f412a6dd12286383a9f043754a6b501c095d9b297ca186a78dec89",
+      "cookie_expire": 1795378404,
       "logo": "https://img.media.jio.com/tvpimages/13/82/301994_1753199405995_l_medium.jpg"
     },
     {
@@ -13062,6 +13158,7 @@
       "name": "Star Sports Select 1",
       "channel_id": "1123",
       "aliases": [
+        "ST1SD",
         "SE1",
         "1123"
       ],
@@ -13075,29 +13172,70 @@
         "215579a9533d5eb1974eff2778f34853:7ea41017954ec6a5317e8b7ba94bcab5",
         "e59df2d0e3545c9aae4889fb2aa2a3c4:e1e9fac754f6c9c772f7a05536aff920"
       ],
-      "cookie": "",
-      "cookie_expire": 0,
+      "cookie": "__hdnea__=st=1795356804~exp=1795378404~acl=/bpk-tv/Star_Sports_Select_1_BTS/WDVLive/*~hmac=ab3fc2c794f412a6dd12286383a9f043754a6b501c095d9b297ca186a78dec89",
+      "cookie_expire": 1795378404,
       "logo": "https://img.media.jio.com/tvpimages/13/82/301994_1753199405995_l_medium.jpg"
+    },
+    {
+      "id": "ST2HD",
+      "name": "Star Sports Select 2 HD",
+      "channel_id": "461",
+      "aliases": [
+        "ST2HD",
+        "SE2HD",
+        "select2",
+        "ssselect2",
+        "461",
+        "starselect2"
+      ],
+      "stream_url": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_Select_HD_2_BTS/WDVLive/index.mpd",
+      "key_id": "2c443dffefb256a5b7a1364cc4af3529",
+      "key": "1d78f35200eb5977a95de669788cf128",
+      "sonuxs": [
+        "6017d0514d425fa38f6e80ba6dcc852f:0018944b00adf2078f62386f30c68b74",
+        "635c740da1cc6d220e356a9b32388a34:0a6c7162aa9174ca4f48914924313465",
+        "26a953325a18595be75d2a9655a12afa:44d33860be354f77554aa422fd6d44dd",
+        "3db73fcd1d50da37cf7519f663d6bc07:80ba58c928ced9f69d0546529a9a1672",
+        "573b359b03bcbde109a9b239cd4297cf:6491a65fe527e0919553e1d1abd75e7a",
+        "25fbb2a932b25e9aacae947b2f873d3c:ac6a6a416b9d26be6819e80c2fe5d39f",
+        "cb4b21e0cad15e00ba3819fb91660fec:fe6480d2894746ba5799a3c2847e5589",
+        "2c443dffefb256a5b7a1364cc4af3529:1d78f35200eb5977a95de669788cf128",
+        "928d9058c0a8550fb6ba315124a76cd5:46811be73195049a23b731bd9344cad4",
+        "e5c47cf992a75f98b4e1a4d262de61e8:441f225881f816c6bedece0e86ef80e7"
+      ],
+      "cookie": "__hdnea__=st=1795356833~exp=1795378433~acl=/bpk-tv/Star_Sports_Select_HD_2_BTS/WDVLive/*~hmac=0246d1a26a4683adee50dea78a096390cdc935122da1eb9a67eacfc00df4afef",
+      "cookie_expire": 1795378433,
+      "logo": "https://img.media.jio.com/tvpimages/98/79/302114_1749665414817_l_medium.jpg"
     },
     {
       "id": "SE2HD",
       "name": "Star Sports Select 2 HD",
       "channel_id": "461",
       "aliases": [
+        "ST2HD",
         "SE2HD",
         "select2",
         "ssselect2",
-        "461"
+        "461",
+        "starselect2"
       ],
-      "stream_url": "https://jiotvpllive.cdn.jio.com//bpk-tv/Star_Sports_Select_HD_2_BTS/WDVLive/index.mpd",
+      "stream_url": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_Select_HD_2_BTS/WDVLive/index.mpd",
       "key_id": "2c443dffefb256a5b7a1364cc4af3529",
       "key": "1d78f35200eb5977a95de669788cf128",
       "sonuxs": [
+        "6017d0514d425fa38f6e80ba6dcc852f:0018944b00adf2078f62386f30c68b74",
+        "635c740da1cc6d220e356a9b32388a34:0a6c7162aa9174ca4f48914924313465",
+        "26a953325a18595be75d2a9655a12afa:44d33860be354f77554aa422fd6d44dd",
+        "3db73fcd1d50da37cf7519f663d6bc07:80ba58c928ced9f69d0546529a9a1672",
+        "573b359b03bcbde109a9b239cd4297cf:6491a65fe527e0919553e1d1abd75e7a",
+        "25fbb2a932b25e9aacae947b2f873d3c:ac6a6a416b9d26be6819e80c2fe5d39f",
+        "cb4b21e0cad15e00ba3819fb91660fec:fe6480d2894746ba5799a3c2847e5589",
         "2c443dffefb256a5b7a1364cc4af3529:1d78f35200eb5977a95de669788cf128",
-        "25fbb2a932b25e9aacae947b2f873d3c:ac6a6a416b9d26be6819e80c2fe5d39f"
+        "928d9058c0a8550fb6ba315124a76cd5:46811be73195049a23b731bd9344cad4",
+        "e5c47cf992a75f98b4e1a4d262de61e8:441f225881f816c6bedece0e86ef80e7"
       ],
-      "cookie": "",
-      "cookie_expire": 0,
+      "cookie": "__hdnea__=st=1795356833~exp=1795378433~acl=/bpk-tv/Star_Sports_Select_HD_2_BTS/WDVLive/*~hmac=0246d1a26a4683adee50dea78a096390cdc935122da1eb9a67eacfc00df4afef",
+      "cookie_expire": 1795378433,
       "logo": "https://img.media.jio.com/tvpimages/98/79/302114_1749665414817_l_medium.jpg"
     },
     {
@@ -13105,20 +13243,30 @@
       "name": "Star Sports Select 2 HD",
       "channel_id": "461",
       "aliases": [
+        "ST2HD",
         "SE2HD",
         "select2",
         "ssselect2",
-        "461"
+        "461",
+        "starselect2"
       ],
-      "stream_url": "https://jiotvpllive.cdn.jio.com//bpk-tv/Star_Sports_Select_HD_2_BTS/WDVLive/index.mpd",
+      "stream_url": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_Select_HD_2_BTS/WDVLive/index.mpd",
       "key_id": "2c443dffefb256a5b7a1364cc4af3529",
       "key": "1d78f35200eb5977a95de669788cf128",
       "sonuxs": [
+        "6017d0514d425fa38f6e80ba6dcc852f:0018944b00adf2078f62386f30c68b74",
+        "635c740da1cc6d220e356a9b32388a34:0a6c7162aa9174ca4f48914924313465",
+        "26a953325a18595be75d2a9655a12afa:44d33860be354f77554aa422fd6d44dd",
+        "3db73fcd1d50da37cf7519f663d6bc07:80ba58c928ced9f69d0546529a9a1672",
+        "573b359b03bcbde109a9b239cd4297cf:6491a65fe527e0919553e1d1abd75e7a",
+        "25fbb2a932b25e9aacae947b2f873d3c:ac6a6a416b9d26be6819e80c2fe5d39f",
+        "cb4b21e0cad15e00ba3819fb91660fec:fe6480d2894746ba5799a3c2847e5589",
         "2c443dffefb256a5b7a1364cc4af3529:1d78f35200eb5977a95de669788cf128",
-        "25fbb2a932b25e9aacae947b2f873d3c:ac6a6a416b9d26be6819e80c2fe5d39f"
+        "928d9058c0a8550fb6ba315124a76cd5:46811be73195049a23b731bd9344cad4",
+        "e5c47cf992a75f98b4e1a4d262de61e8:441f225881f816c6bedece0e86ef80e7"
       ],
-      "cookie": "",
-      "cookie_expire": 0,
+      "cookie": "__hdnea__=st=1795356833~exp=1795378433~acl=/bpk-tv/Star_Sports_Select_HD_2_BTS/WDVLive/*~hmac=0246d1a26a4683adee50dea78a096390cdc935122da1eb9a67eacfc00df4afef",
+      "cookie_expire": 1795378433,
       "logo": "https://img.media.jio.com/tvpimages/98/79/302114_1749665414817_l_medium.jpg"
     },
     {
@@ -13126,20 +13274,30 @@
       "name": "Star Sports Select 2 HD",
       "channel_id": "461",
       "aliases": [
+        "ST2HD",
         "SE2HD",
         "select2",
         "ssselect2",
-        "461"
+        "461",
+        "starselect2"
       ],
-      "stream_url": "https://jiotvpllive.cdn.jio.com//bpk-tv/Star_Sports_Select_HD_2_BTS/WDVLive/index.mpd",
+      "stream_url": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_Select_HD_2_BTS/WDVLive/index.mpd",
       "key_id": "2c443dffefb256a5b7a1364cc4af3529",
       "key": "1d78f35200eb5977a95de669788cf128",
       "sonuxs": [
+        "6017d0514d425fa38f6e80ba6dcc852f:0018944b00adf2078f62386f30c68b74",
+        "635c740da1cc6d220e356a9b32388a34:0a6c7162aa9174ca4f48914924313465",
+        "26a953325a18595be75d2a9655a12afa:44d33860be354f77554aa422fd6d44dd",
+        "3db73fcd1d50da37cf7519f663d6bc07:80ba58c928ced9f69d0546529a9a1672",
+        "573b359b03bcbde109a9b239cd4297cf:6491a65fe527e0919553e1d1abd75e7a",
+        "25fbb2a932b25e9aacae947b2f873d3c:ac6a6a416b9d26be6819e80c2fe5d39f",
+        "cb4b21e0cad15e00ba3819fb91660fec:fe6480d2894746ba5799a3c2847e5589",
         "2c443dffefb256a5b7a1364cc4af3529:1d78f35200eb5977a95de669788cf128",
-        "25fbb2a932b25e9aacae947b2f873d3c:ac6a6a416b9d26be6819e80c2fe5d39f"
+        "928d9058c0a8550fb6ba315124a76cd5:46811be73195049a23b731bd9344cad4",
+        "e5c47cf992a75f98b4e1a4d262de61e8:441f225881f816c6bedece0e86ef80e7"
       ],
-      "cookie": "",
-      "cookie_expire": 0,
+      "cookie": "__hdnea__=st=1795356833~exp=1795378433~acl=/bpk-tv/Star_Sports_Select_HD_2_BTS/WDVLive/*~hmac=0246d1a26a4683adee50dea78a096390cdc935122da1eb9a67eacfc00df4afef",
+      "cookie_expire": 1795378433,
       "logo": "https://img.media.jio.com/tvpimages/98/79/302114_1749665414817_l_medium.jpg"
     },
     {
@@ -13147,27 +13305,69 @@
       "name": "Star Sports Select 2 HD",
       "channel_id": "461",
       "aliases": [
+        "ST2HD",
         "SE2HD",
         "select2",
         "ssselect2",
-        "461"
+        "461",
+        "starselect2"
       ],
-      "stream_url": "https://jiotvpllive.cdn.jio.com//bpk-tv/Star_Sports_Select_HD_2_BTS/WDVLive/index.mpd",
+      "stream_url": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_Select_HD_2_BTS/WDVLive/index.mpd",
       "key_id": "2c443dffefb256a5b7a1364cc4af3529",
       "key": "1d78f35200eb5977a95de669788cf128",
       "sonuxs": [
+        "6017d0514d425fa38f6e80ba6dcc852f:0018944b00adf2078f62386f30c68b74",
+        "635c740da1cc6d220e356a9b32388a34:0a6c7162aa9174ca4f48914924313465",
+        "26a953325a18595be75d2a9655a12afa:44d33860be354f77554aa422fd6d44dd",
+        "3db73fcd1d50da37cf7519f663d6bc07:80ba58c928ced9f69d0546529a9a1672",
+        "573b359b03bcbde109a9b239cd4297cf:6491a65fe527e0919553e1d1abd75e7a",
+        "25fbb2a932b25e9aacae947b2f873d3c:ac6a6a416b9d26be6819e80c2fe5d39f",
+        "cb4b21e0cad15e00ba3819fb91660fec:fe6480d2894746ba5799a3c2847e5589",
         "2c443dffefb256a5b7a1364cc4af3529:1d78f35200eb5977a95de669788cf128",
-        "25fbb2a932b25e9aacae947b2f873d3c:ac6a6a416b9d26be6819e80c2fe5d39f"
+        "928d9058c0a8550fb6ba315124a76cd5:46811be73195049a23b731bd9344cad4",
+        "e5c47cf992a75f98b4e1a4d262de61e8:441f225881f816c6bedece0e86ef80e7"
       ],
-      "cookie": "",
-      "cookie_expire": 0,
+      "cookie": "__hdnea__=st=1795356833~exp=1795378433~acl=/bpk-tv/Star_Sports_Select_HD_2_BTS/WDVLive/*~hmac=0246d1a26a4683adee50dea78a096390cdc935122da1eb9a67eacfc00df4afef",
+      "cookie_expire": 1795378433,
       "logo": "https://img.media.jio.com/tvpimages/98/79/302114_1749665414817_l_medium.jpg"
     },
     {
-      "id": "SE2",
+      "id": "starselect2",
+      "name": "Star Sports Select 2 HD",
+      "channel_id": "461",
+      "aliases": [
+        "ST2HD",
+        "SE2HD",
+        "select2",
+        "ssselect2",
+        "461",
+        "starselect2"
+      ],
+      "stream_url": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_Select_HD_2_BTS/WDVLive/index.mpd",
+      "key_id": "2c443dffefb256a5b7a1364cc4af3529",
+      "key": "1d78f35200eb5977a95de669788cf128",
+      "sonuxs": [
+        "6017d0514d425fa38f6e80ba6dcc852f:0018944b00adf2078f62386f30c68b74",
+        "635c740da1cc6d220e356a9b32388a34:0a6c7162aa9174ca4f48914924313465",
+        "26a953325a18595be75d2a9655a12afa:44d33860be354f77554aa422fd6d44dd",
+        "3db73fcd1d50da37cf7519f663d6bc07:80ba58c928ced9f69d0546529a9a1672",
+        "573b359b03bcbde109a9b239cd4297cf:6491a65fe527e0919553e1d1abd75e7a",
+        "25fbb2a932b25e9aacae947b2f873d3c:ac6a6a416b9d26be6819e80c2fe5d39f",
+        "cb4b21e0cad15e00ba3819fb91660fec:fe6480d2894746ba5799a3c2847e5589",
+        "2c443dffefb256a5b7a1364cc4af3529:1d78f35200eb5977a95de669788cf128",
+        "928d9058c0a8550fb6ba315124a76cd5:46811be73195049a23b731bd9344cad4",
+        "e5c47cf992a75f98b4e1a4d262de61e8:441f225881f816c6bedece0e86ef80e7"
+      ],
+      "cookie": "__hdnea__=st=1795356833~exp=1795378433~acl=/bpk-tv/Star_Sports_Select_HD_2_BTS/WDVLive/*~hmac=0246d1a26a4683adee50dea78a096390cdc935122da1eb9a67eacfc00df4afef",
+      "cookie_expire": 1795378433,
+      "logo": "https://img.media.jio.com/tvpimages/98/79/302114_1749665414817_l_medium.jpg"
+    },
+    {
+      "id": "ST2SD",
       "name": "Star Sports Select 2",
       "channel_id": "1114",
       "aliases": [
+        "ST2SD",
         "SE2",
         "1114"
       ],
@@ -13181,8 +13381,31 @@
         "2af0f67137b15f5aabcaa3f2661ba59d:f3a33dbc38942246a89ff471d0062c66",
         "c18272dca01056fb83d6ef0cfd0a93ad:52b8bf00ebe06d6e7cdcd221faed846a"
       ],
-      "cookie": "",
-      "cookie_expire": 0,
+      "cookie": "__hdnea__=st=1795356825~exp=1795378425~acl=/bpk-tv/Star_Sports_Select_2_BTS/WDVLive/*~hmac=0d86eb2df3c32f55092f0bebd51fe11b29f0eaf4fd8ad8be8173108f715dca61",
+      "cookie_expire": 1795378425,
+      "logo": "https://img.media.jio.com/tvpimages/98/48/301989_1749664474734_p.jpg"
+    },
+    {
+      "id": "SE2",
+      "name": "Star Sports Select 2",
+      "channel_id": "1114",
+      "aliases": [
+        "ST2SD",
+        "SE2",
+        "1114"
+      ],
+      "stream_url": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_Select_2_BTS/WDVLive/index.mpd",
+      "key_id": "2b307daa57a75698acfac3e85d4ff8c5",
+      "key": "d3c17909d061caa2e0a9c75e195ae3d4",
+      "sonuxs": [
+        "2b307daa57a75698acfac3e85d4ff8c5:d3c17909d061caa2e0a9c75e195ae3d4",
+        "22531ef1b5805a5cb5afc03f33468fac:3dfc474db4086f173d342f20cdc8e04c",
+        "0fde10db386c58aaa92f5932092f0039:db555aaa769ad60c24dc1ef9005a056b",
+        "2af0f67137b15f5aabcaa3f2661ba59d:f3a33dbc38942246a89ff471d0062c66",
+        "c18272dca01056fb83d6ef0cfd0a93ad:52b8bf00ebe06d6e7cdcd221faed846a"
+      ],
+      "cookie": "__hdnea__=st=1795356825~exp=1795378425~acl=/bpk-tv/Star_Sports_Select_2_BTS/WDVLive/*~hmac=0d86eb2df3c32f55092f0bebd51fe11b29f0eaf4fd8ad8be8173108f715dca61",
+      "cookie_expire": 1795378425,
       "logo": "https://img.media.jio.com/tvpimages/98/48/301989_1749664474734_p.jpg"
     },
     {
@@ -13190,6 +13413,7 @@
       "name": "Star Sports Select 2",
       "channel_id": "1114",
       "aliases": [
+        "ST2SD",
         "SE2",
         "1114"
       ],
@@ -13203,8 +13427,8 @@
         "2af0f67137b15f5aabcaa3f2661ba59d:f3a33dbc38942246a89ff471d0062c66",
         "c18272dca01056fb83d6ef0cfd0a93ad:52b8bf00ebe06d6e7cdcd221faed846a"
       ],
-      "cookie": "",
-      "cookie_expire": 0,
+      "cookie": "__hdnea__=st=1795356825~exp=1795378425~acl=/bpk-tv/Star_Sports_Select_2_BTS/WDVLive/*~hmac=0d86eb2df3c32f55092f0bebd51fe11b29f0eaf4fd8ad8be8173108f715dca61",
+      "cookie_expire": 1795378425,
       "logo": "https://img.media.jio.com/tvpimages/98/48/301989_1749664474734_p.jpg"
     },
     {
