@@ -1,181 +1,181 @@
 {
-  "last_updated": "11/22/2026, 9:09:24 PM IST",
+  "last_updated": "11/22/2026, 11:25:23 PM IST",
   "source": "https://raw.githubusercontent.com/sportlive18/Sonyliv-Playlist-Autoupdate/main/sonyliv.json",
   "channels": [
     {
       "id": "ten1-hd",
       "name": "Sony Sports 1 HD",
-      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011747/TEN1HD/master.m3u8?hdnea=exp=1795404428~acl=/*~id=56406284310445549282276598723166~hmac=fb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011747%2FTEN1HD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011747%2FTEN1HD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726"
+      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011747/TEN1HD/master.m3u8?hdnea=exp=1795412364~acl=/*~id=65877790673102822550194712371871~hmac=ea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011747%2FTEN1HD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011747%2FTEN1HD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4"
     },
     {
       "id": "ten1",
       "name": "Sony Sports 1",
-      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011739/TEN1SD/master.m3u8?hdnea=exp=1795404428~acl=/*~id=56406284310445549282276598723166~hmac=fb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011739%2FTEN1SD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011739%2FTEN1SD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726"
+      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011739/TEN1SD/master.m3u8?hdnea=exp=1795412364~acl=/*~id=65877790673102822550194712371871~hmac=ea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011739%2FTEN1SD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011739%2FTEN1SD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4"
     },
     {
       "id": "ten2-hd",
       "name": "Sony Sports 2 HD",
-      "raw_url": "https://dishmt.slivcdn.com/hls/live/2020434/TEN2HD/master.m3u8?hdnea=exp=1795404428~acl=/*~id=56406284310445549282276598723166~hmac=fb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020434%2FTEN2HD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020434%2FTEN2HD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726"
+      "raw_url": "https://dishmt.slivcdn.com/hls/live/2020434/TEN2HD/master.m3u8?hdnea=exp=1795412364~acl=/*~id=65877790673102822550194712371871~hmac=ea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020434%2FTEN2HD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020434%2FTEN2HD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4"
     },
     {
       "id": "ten2",
       "name": "Sony Sports 2",
-      "raw_url": "https://dishmt.slivcdn.com/hls/live/2020590/TEN2SD/master.m3u8?hdnea=exp=1795404428~acl=/*~id=56406284310445549282276598723166~hmac=fb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020590%2FTEN2SD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020590%2FTEN2SD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726"
+      "raw_url": "https://dishmt.slivcdn.com/hls/live/2020590/TEN2SD/master.m3u8?hdnea=exp=1795412364~acl=/*~id=65877790673102822550194712371871~hmac=ea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020590%2FTEN2SD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020590%2FTEN2SD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4"
     },
     {
       "id": "ten3-hd",
       "name": "Sony Sports 3 Hindi HD",
-      "raw_url": "https://dishmt.slivcdn.com/hls/live/2020591/TEN3HD/master.m3u8?hdnea=exp=1795404428~acl=/*~id=56406284310445549282276598723166~hmac=fb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020591%2FTEN3HD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020591%2FTEN3HD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726"
+      "raw_url": "https://dishmt.slivcdn.com/hls/live/2020591/TEN3HD/master.m3u8?hdnea=exp=1795412364~acl=/*~id=65877790673102822550194712371871~hmac=ea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020591%2FTEN3HD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020591%2FTEN3HD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4"
     },
     {
       "id": "ten3",
       "name": "Sony Sports 3 Hindi",
-      "raw_url": "https://dishmt.slivcdn.com/hls/live/2020592/TEN3SD/master.m3u8?hdnea=exp=1795404428~acl=/*~id=56406284310445549282276598723166~hmac=fb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020592%2FTEN3SD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020592%2FTEN3SD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726"
+      "raw_url": "https://dishmt.slivcdn.com/hls/live/2020592/TEN3SD/master.m3u8?hdnea=exp=1795412364~acl=/*~id=65877790673102822550194712371871~hmac=ea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020592%2FTEN3SD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020592%2FTEN3SD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4"
     },
     {
       "id": "ten4-hd",
       "name": "Sony Sports 4 HD",
-      "raw_url": "https://dishmt.slivcdn.com/hls/live/2020589/ten4hd/master.m3u8?hdnea=exp=1795404428~acl=/*~id=56406284310445549282276598723166~hmac=fb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020589%2Ften4hd%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020589%2Ften4hd%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726"
+      "raw_url": "https://dishmt.slivcdn.com/hls/live/2020589/ten4hd/master.m3u8?hdnea=exp=1795412364~acl=/*~id=65877790673102822550194712371871~hmac=ea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020589%2Ften4hd%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020589%2Ften4hd%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4"
     },
     {
       "id": "ten4",
       "name": "Sony Sports 4 Telugu",
-      "raw_url": "https://dishmt.slivcdn.com/hls/live/2020589/ten4hd/master.m3u8?hdnea=exp=1795404428~acl=/*~id=56406284310445549282276598723166~hmac=fb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020589%2Ften4hd%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020589%2Ften4hd%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726"
+      "raw_url": "https://dishmt.slivcdn.com/hls/live/2020589/ten4hd/master.m3u8?hdnea=exp=1795412364~acl=/*~id=65877790673102822550194712371871~hmac=ea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020589%2Ften4hd%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020589%2Ften4hd%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4"
     },
     {
       "id": "ten4-tamil",
       "name": "Sony Sports 4 Tamil",
-      "raw_url": "https://dishmt.slivcdn.com/hls/live/2020437/ten4sd/master.m3u8?hdnea=exp=1795404428~acl=/*~id=56406284310445549282276598723166~hmac=fb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020437%2Ften4sd%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020437%2Ften4sd%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726"
+      "raw_url": "https://dishmt.slivcdn.com/hls/live/2020437/ten4sd/master.m3u8?hdnea=exp=1795412364~acl=/*~id=65877790673102822550194712371871~hmac=ea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020437%2Ften4sd%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020437%2Ften4sd%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4"
     },
     {
       "id": "ten5-hd",
       "name": "Sony Sports 5 HD",
-      "raw_url": "https://dishmt.slivcdn.com/hls/live/2020593/SONYSIXHD/master.m3u8?hdnea=exp=1795404428~acl=/*~id=56406284310445549282276598723166~hmac=fb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020593%2FSONYSIXHD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020593%2FSONYSIXHD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726"
+      "raw_url": "https://dishmt.slivcdn.com/hls/live/2020593/SONYSIXHD/master.m3u8?hdnea=exp=1795412364~acl=/*~id=65877790673102822550194712371871~hmac=ea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020593%2FSONYSIXHD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020593%2FSONYSIXHD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4"
     },
     {
       "id": "ten5",
       "name": "Sony Sports 5",
-      "raw_url": "https://dishmt.slivcdn.com/hls/live/2020594/SONYSIXSD/master.m3u8?hdnea=exp=1795404428~acl=/*~id=56406284310445549282276598723166~hmac=fb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020594%2FSONYSIXSD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020594%2FSONYSIXSD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726"
+      "raw_url": "https://dishmt.slivcdn.com/hls/live/2020594/SONYSIXSD/master.m3u8?hdnea=exp=1795412364~acl=/*~id=65877790673102822550194712371871~hmac=ea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020594%2FSONYSIXSD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2020594%2FSONYSIXSD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4"
     },
     {
       "id": "set-hd",
       "name": "Sony Entertainment Television HD",
-      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011671/SETHD/master.m3u8?hdnea=exp=1795404428~acl=/*~id=56406284310445549282276598723166~hmac=fb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011671%2FSETHD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011671%2FSETHD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726"
+      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011671/SETHD/master.m3u8?hdnea=exp=1795412364~acl=/*~id=65877790673102822550194712371871~hmac=ea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011671%2FSETHD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011671%2FSETHD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4"
     },
     {
       "id": "set",
       "name": "Sony Entertainment Television",
-      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011671/SETHD/master.m3u8?hdnea=exp=1795404428~acl=/*~id=56406284310445549282276598723166~hmac=fb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011671%2FSETHD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011671%2FSETHD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726"
+      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011671/SETHD/master.m3u8?hdnea=exp=1795412364~acl=/*~id=65877790673102822550194712371871~hmac=ea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011671%2FSETHD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011671%2FSETHD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4"
     },
     {
       "id": "sab-hd",
       "name": "Sony SAB HD",
-      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011749/SABHD/master.m3u8?hdnea=exp=1795404428~acl=/*~id=56406284310445549282276598723166~hmac=fb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011749%2FSABHD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011749%2FSABHD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726"
+      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011749/SABHD/master.m3u8?hdnea=exp=1795412364~acl=/*~id=65877790673102822550194712371871~hmac=ea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011749%2FSABHD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011749%2FSABHD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4"
     },
     {
       "id": "sab",
       "name": "Sony SAB",
-      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011749/SABHD/master.m3u8?hdnea=exp=1795404428~acl=/*~id=56406284310445549282276598723166~hmac=fb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011749%2FSABHD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011749%2FSABHD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726"
+      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011749/SABHD/master.m3u8?hdnea=exp=1795412364~acl=/*~id=65877790673102822550194712371871~hmac=ea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011749%2FSABHD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011749%2FSABHD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4"
     },
     {
       "id": "max-hd",
       "name": "Sony MAX HD",
-      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011670/SonyMaxhd/master.m3u8?hdnea=exp=1795404428~acl=/*~id=56406284310445549282276598723166~hmac=fb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011670%2FSonyMaxhd%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011670%2FSonyMaxhd%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726"
+      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011670/SonyMaxhd/master.m3u8?hdnea=exp=1795412364~acl=/*~id=65877790673102822550194712371871~hmac=ea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011670%2FSonyMaxhd%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011670%2FSonyMaxhd%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4"
     },
     {
       "id": "max",
       "name": "Sony MAX",
-      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011745/SonyMaxSD/master.m3u8?hdnea=exp=1795404428~acl=/*~id=56406284310445549282276598723166~hmac=fb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011745%2FSonyMaxSD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011745%2FSonyMaxSD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726"
+      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011745/SonyMaxSD/master.m3u8?hdnea=exp=1795412364~acl=/*~id=65877790673102822550194712371871~hmac=ea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011745%2FSonyMaxSD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011745%2FSonyMaxSD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4"
     },
     {
       "id": "max2",
       "name": "Sony MAX 2",
-      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011908/MAX2/master.m3u8?hdnea=exp=1795404428~acl=/*~id=56406284310445549282276598723166~hmac=fb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011908%2FMAX2%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011908%2FMAX2%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726"
+      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011908/MAX2/master.m3u8?hdnea=exp=1795412364~acl=/*~id=65877790673102822550194712371871~hmac=ea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011908%2FMAX2%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011908%2FMAX2%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4"
     },
     {
       "id": "pix-hd",
       "name": "Sony PIX HD",
-      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011748/PIXHD/master.m3u8?hdnea=exp=1795404428~acl=/*~id=56406284310445549282276598723166~hmac=fb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011748%2FPIXHD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011748%2FPIXHD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726"
+      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011748/PIXHD/master.m3u8?hdnea=exp=1795412364~acl=/*~id=65877790673102822550194712371871~hmac=ea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011748%2FPIXHD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011748%2FPIXHD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4"
     },
     {
       "id": "earth-hd",
       "name": "Sony BBC Earth HD",
-      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011907/SonyBBCEarthHD/master.m3u8?hdnea=exp=1795404428~acl=/*~id=56406284310445549282276598723166~hmac=fb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011907%2FSonyBBCEarthHD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011907%2FSonyBBCEarthHD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726"
+      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011907/SonyBBCEarthHD/master.m3u8?hdnea=exp=1795412364~acl=/*~id=65877790673102822550194712371871~hmac=ea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011907%2FSonyBBCEarthHD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011907%2FSonyBBCEarthHD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4"
     },
     {
       "id": "pal",
       "name": "Sony PAL",
-      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011741/SonyPalSD/master.m3u8?hdnea=exp=1795404428~acl=/*~id=56406284310445549282276598723166~hmac=fb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011741%2FSonyPalSD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011741%2FSonyPalSD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726"
+      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011741/SonyPalSD/master.m3u8?hdnea=exp=1795412364~acl=/*~id=65877790673102822550194712371871~hmac=ea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011741%2FSonyPalSD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011741%2FSonyPalSD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4"
     },
     {
       "id": "wah",
       "name": "Sony WAH",
-      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011906/SonyWah/master.m3u8?hdnea=exp=1795404428~acl=/*~id=56406284310445549282276598723166~hmac=fb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011906%2FSonyWah%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011906%2FSonyWah%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726"
+      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011906/SonyWah/master.m3u8?hdnea=exp=1795412364~acl=/*~id=65877790673102822550194712371871~hmac=ea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011906%2FSonyWah%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011906%2FSonyWah%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4"
     },
     {
       "id": "yay",
       "name": "Sony YAY !!",
-      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011746/SonyYaySD/master.m3u8?hdnea=exp=1795404428~acl=/*~id=56406284310445549282276598723166~hmac=fb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011746%2FSonyYaySD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011746%2FSonyYaySD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726"
+      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011746/SonyYaySD/master.m3u8?hdnea=exp=1795412364~acl=/*~id=65877790673102822550194712371871~hmac=ea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011746%2FSonyYaySD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011746%2FSonyYaySD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4"
     },
     {
       "id": "marathi",
       "name": "Sony Marathi !!",
-      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011740/SonyMarathi/master.m3u8?hdnea=exp=1795404428~acl=/*~id=56406284310445549282276598723166~hmac=fb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011740%2FSonyMarathi%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011740%2FSonyMarathi%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726"
+      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011740/SonyMarathi/master.m3u8?hdnea=exp=1795412364~acl=/*~id=65877790673102822550194712371871~hmac=ea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011740%2FSonyMarathi%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011740%2FSonyMarathi%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4"
     },
     {
       "id": "aath",
       "name": "Sony AATH",
-      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011641/SonyAathSD/master.m3u8?hdnea=exp=1795404428~acl=/*~id=56406284310445549282276598723166~hmac=fb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011641%2FSonyAathSD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726",
-      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011641%2FSonyAathSD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795404428~acl%3D%2F*~id%3D56406284310445549282276598723166~hmac%3Dfb170d9afa537f443e585349cd56a3762feca1071c54b6cbbc0916d78564d726"
+      "raw_url": "https://dishmt.slivcdn.com/hls/live/2011641/SonyAathSD/master.m3u8?hdnea=exp=1795412364~acl=/*~id=65877790673102822550194712371871~hmac=ea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "proxied_url": "https://asp1.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011641%2FSonyAathSD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4",
+      "backup_proxied_url": "https://stream-through-spark.lovable.app/api/proxy?u=https%3A%2F%2Fdishmt.slivcdn.com%2Fhls%2Flive%2F2011641%2FSonyAathSD%2Fmaster.m3u8%3Fhdnea%3Dexp%3D1795412364~acl%3D%2F*~id%3D65877790673102822550194712371871~hmac%3Dea5bb2e7da461b1e95bec5b86443af49ddf792ba919734526e920907c7c202e4"
     }
   ]
 }
