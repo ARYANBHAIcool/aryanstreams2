@@ -1,111 +1,13 @@
 {
-  "last_updated": "11/24/2026, 5:43:48 PM IST",
+  "last_updated": "11/25/2026, 4:06:33 AM IST",
   "source": "AryanStreams Official Feed",
   "events": [
-    {
-      "id": 2854,
-      "title": "India A vs UAE",
-      "slug": "India-A-vs-UAE",
-      "cat": "Cricket",
-      "status": "live",
-      "event": {
-        "name": "Men's Asia Cup Rising Stars",
-        "category": "Cricket",
-        "type": "",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn2rCtrI68Agu71aIWID9YxzlqXN-3c88k4cwPQQhwEA&s=10",
-        "teamA": "India A",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/187765/image",
-        "teamB": "UAE",
-        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-f8WXHBnZ_I--KDLmDvYm3nSTtxI9z9hepaQhpPg_RQ&s=10",
-        "startTimeIST": "2026-11-24 11:30:00 IST",
-        "endTimeIST": ""
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "WILLOW - AQ",
-          "type": "mpd",
-          "link": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/po7s7fvgjq/out/v1/5c412831b960410cb880428166b74dee/cenc.mpd",
-          "api": "531497de47944ade5410fe5852905698:574547fdae92793f4630b65dade01761"
-        },
-        {
-          "id": 2,
-          "title": "PRIME MULTI AUDIO",
-          "type": "mpd",
-          "link": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/zenfbe10ry/out/v1/b0b56246975f46b9aec8db7586e25a61/cenc.mpd",
-          "api": "04fada1ca01dd6c5f607f8fe0888a692:9f3089dd8bedd300f801277ce8510bc8"
-        },
-        {
-          "id": 3,
-          "title": "STARZPLAY FHD",
-          "type": "mpd",
-          "link": "https://d1ifzl5cnhi7bu.cloudfront.net/out/v1/45ba30e075ad455a8767d3f33e67ea3d/index.mpd",
-          "api": "0ae4f162eec3e6f2b580a5bf0f4a64d4:03483335db81cba5bbcf51b6d31196d9"
-        },
-        {
-          "id": 4,
-          "title": "SONYLIV ENG - AQ",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119931/cricodi_2411/ENG/std_lrh-800300010.m3u8?hdnea=exp=1795540931~acl=/*~id=42533442359826935436253248685876~hmac=87ea8943906f9a403a1ee7d1dd9ff17f83fd0eb43341967a8f9707fc56d22b8b",
-          "api": ""
-        },
-        {
-          "id": 5,
-          "title": "TAMASHA AQ",
-          "type": "m3u8",
-          "link": "https://cdn06khi-n.tamashaweb.com:8087/appcast/ACC-men-AC26-b-abr/playlist.m3u8",
-          "api": ""
-        },
-        {
-          "id": 6,
-          "title": "WILLOW S2 - AQ",
-          "type": "mpd",
-          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/po7s7fvgjq/out/v1/5c412831b960410cb880428166b74dee/cenc.mpd",
-          "api": "531497de47944ade5410fe5852905698:574547fdae92793f4630b65dade01761"
-        },
-        {
-          "id": 7,
-          "title": "SONYLIV HIN - AQ",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119921/cricodi_2411/HIN/std_lrh-800300010.m3u8?hdnea=exp=1795540931~acl=/*~id=42533442359826935436253248685876~hmac=87ea8943906f9a403a1ee7d1dd9ff17f83fd0eb43341967a8f9707fc56d22b8b",
-          "api": ""
-        },
-        {
-          "id": 8,
-          "title": "SONYLIV TAM - AQ",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119951/cricodi_2411/TAM/std_lrh-800300010.m3u8?hdnea=exp=1795540931~acl=/*~id=42533442359826935436253248685876~hmac=87ea8943906f9a403a1ee7d1dd9ff17f83fd0eb43341967a8f9707fc56d22b8b",
-          "api": ""
-        },
-        {
-          "id": 9,
-          "title": "SONYLIV TEL - AQ",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119941/cricodi_2411/TEL/std_lrh-800300010.m3u8?hdnea=exp=1795540931~acl=/*~id=42533442359826935436253248685876~hmac=87ea8943906f9a403a1ee7d1dd9ff17f83fd0eb43341967a8f9707fc56d22b8b",
-          "api": ""
-        },
-        {
-          "id": 10,
-          "title": "SONYLIV KAN - AQ",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119782/cricodi_2411/KAN/std_lrh-800300010.m3u8?hdnea=exp=1795540931~acl=/*~id=42533442359826935436253248685876~hmac=87ea8943906f9a403a1ee7d1dd9ff17f83fd0eb43341967a8f9707fc56d22b8b",
-          "api": ""
-        },
-        {
-          "id": 11,
-          "title": "PTV SPORTS HD",
-          "type": "m3u8",
-          "link": "https://live.msnetworks.net/ptv-sports/master.m3u8",
-          "api": ""
-        }
-      ]
-    },
     {
       "id": 1218,
       "title": "South Africa vs Bangladesh",
       "slug": "South-Africa-vs-Bangladesh",
       "cat": "Cricket",
-      "status": "live",
+      "status": "upcoming",
       "event": {
         "name": "ICC World Test Championship",
         "category": "Cricket",
@@ -115,7 +17,7 @@
         "teamAFlag": "https://img.sofascore.com/api/v1/team/187747/image",
         "teamB": "Bangladesh",
         "teamBFlag": "https://img.sofascore.com/api/v1/team/187744/image",
-        "startTimeIST": "2026-11-24 13:30:00 IST",
+        "startTimeIST": "2026-11-25 13:30:00 IST",
         "endTimeIST": ""
       },
       "streams": [
@@ -142,199 +44,59 @@
         },
         {
           "id": 4,
+          "title": "TAMASHA PRO AQ",
+          "type": "m3u8",
+          "link": "https://cdn03lhr-n.tamashaweb.com:8087/appcast/BANvsSAF-SVOD-abr/playlist.m3u8",
+          "api": ""
+        },
+        {
+          "id": 5,
           "title": "EURO SPORTS - AQ",
           "type": "mpd",
           "link": "https://wbd.skandha.tv/EuroSport_HD/EuroSport_HD.isml/.mpd",
           "api": "12ed56d780abcfebcd23aa27e4ac5015:6784567890abcfebcd23aa27e4ac2814"
         },
         {
-          "id": 5,
+          "id": 6,
           "title": "SKY CRICKET - AQ",
           "type": "m3u8",
           "link": "https://bl.rutube.ru/livestream/7c13a51576b9ff2601f08f5d57dd5169/index.m3u8?s=uiXES2ePt7xTpQnbJxn7Dg&e=2074684474&scheme=https",
           "api": ""
         },
         {
-          "id": 6,
+          "id": 7,
           "title": "WILLOW S2 - AQ",
           "type": "mpd",
           "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/faxkswwplm/out/v1/6360aca9a29e49108a0d7c44fce32af7/cenc.mpd",
           "api": "2c0a5ca2bcc67426156a65d85d53f5ae:02b0a91443f3b8682dd08912875eeb61"
         },
         {
-          "id": 7,
+          "id": 8,
           "title": "FANCODE - SD",
           "type": "mpd",
           "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash-sd/enc/eayjamsonn/out/v1/6c25cddab58043a6ace0ac64d97983f0/cenc-sd.mpd?",
           "api": "5318e462b9e0677487cb87837f0bbdb1:4fa0fb973b95738306005f2e8591bf8e"
         },
         {
-          "id": 8,
+          "id": 9,
           "title": "A SPORTS - AQ",
           "type": "m3u8",
           "link": "https://live.msnetworks.net/a-sports/master.m3u8",
           "api": ""
         },
         {
-          "id": 9,
+          "id": 10,
           "title": "A SPORTS HD",
           "type": "m3u8",
           "link": "https://tvsen6.aynaott.com/zv68oqPDu7MZZwmHhRxt/tracks-v1a1/mono.ts.m3u8",
           "api": ""
         },
         {
-          "id": 10,
+          "id": 11,
           "title": "T SPORTS HD",
           "type": "m3u8",
           "link": "https://playztv-apps.pages.dev/ptv-sports/index.m3u8",
           "api": ""
-        }
-      ]
-    },
-    {
-      "id": 3103,
-      "title": "Pakistan A vs Nepal",
-      "slug": "Pakistan-A-vs-Nepal",
-      "cat": "Cricket",
-      "status": "live",
-      "event": {
-        "name": "Asia Cup Rising Stars",
-        "category": "Cricket",
-        "type": "",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn2rCtrI68Agu71aIWID9YxzlqXN-3c88k4cwPQQhwEA&s=10",
-        "teamA": "Pakistan A",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/213104/image",
-        "teamB": "Nepal",
-        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsQBkn_ivaBSXmyE1lnMzIkvPX7BMXMj-BuVRGJQPqYA&s=10",
-        "startTimeIST": "2026-11-24 15:30:00 IST",
-        "endTimeIST": ""
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "WILLOW - AQ",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/1zdpsgfa6p/out/v1/0be3672943164ddc9df8372d522c3842/cenc.mpd",
-          "api": "ac685b471a4e1d6c4be3fe7429595d9d:db72f4347277225954d7170f0ec6992f"
-        },
-        {
-          "id": 2,
-          "title": "PRIME VIDEO",
-          "type": "mpd",
-          "link": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/vfrlbe7fbg/out/v1/639c9067b4a84f7bb2f537e92b3dc7ab/cenc.mpd",
-          "api": "4dd3868a0b6eee01223b50a94b43587c:9aafad044ccd8f63a413f0e28561e8b3"
-        },
-        {
-          "id": 3,
-          "title": "TAMASHA AQ",
-          "type": "m3u8",
-          "link": "https://cdn06khi-n.tamashaweb.com:8087/appcast/ACC-men-AC26-abr/playlist.m3u8",
-          "api": ""
-        },
-        {
-          "id": 4,
-          "title": "WILLOW S2 - AQ",
-          "type": "mpd",
-          "link": "https://abfjk4haaaaaaaamkitc5445rybm6.bia-cf.live.pv-cdn.net/iad-nitro/live/clients/dash/enc/1zdpsgfa6p/out/v1/0be3672943164ddc9df8372d522c3842/cenc.mpd",
-          "api": "ac685b471a4e1d6c4be3fe7429595d9d:db72f4347277225954d7170f0ec6992f"
-        },
-        {
-          "id": 5,
-          "title": "SONYLIV ENG - AQ",
-          "type": "m3u8",
-          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2120299/Criclive2411/ENG/std_lrh-800300010.m3u8?hdnea=exp=1795556164~acl=/*~id=83143876600458032276763961949467~hmac=72e5a14c6606af548705e64a24f227a39ca0b5d7ea777f56f844b153cd3ef9a6",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 1997,
-      "title": "Italia T10 2026",
-      "slug": "Italia-T10-vs-Italia-T",
-      "cat": "Cricket",
-      "status": "live",
-      "event": {
-        "name": "Italia T10 2026",
-        "category": "Cricket",
-        "type": "",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBTK9sfDCFhv5T2jEH3nkh9cPngwVXMaQFV9uNCn66zg&s=10",
-        "teamA": "Italia T10",
-        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBTK9sfDCFhv5T2jEH3nkh9cPngwVXMaQFV9uNCn66zg&s=10",
-        "teamB": "Italia T10",
-        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBTK9sfDCFhv5T2jEH3nkh9cPngwVXMaQFV9uNCn66zg&s=10",
-        "startTimeIST": "2026-11-24 16:30:00 IST",
-        "endTimeIST": ""
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "PLAYZ TV LIVE",
-          "type": "m3u8",
-          "link": "https://amssandbrix.sandbrix.live/sandbrix/streams/mk139q1Mi9bHznBA775016895861.m3u8",
-          "api": ""
-        },
-        {
-          "id": 2,
-          "title": "UNBEATEN FHD",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/igtio3ifkx/out/v1/3e305fd8d7eb4c489e80a71513206a7d/cenc.mpd",
-          "api": "5d6c647cd1b56550bd34349b68ec8c82:09f952780ba5b30bc222439aaa3ac09b"
-        }
-      ]
-    },
-    {
-      "id": 1884,
-      "title": "International League T20",
-      "slug": "ILT-T20-vs-ILT-T",
-      "cat": "Cricket",
-      "status": "upcoming",
-      "event": {
-        "name": "International League T20",
-        "category": "Cricket",
-        "type": "",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLPb2DPj3zNmfruRqU6BXsmrMIYosxxZA0efvdkBZ_4Q&s=10",
-        "teamA": "ILT T20",
-        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLPb2DPj3zNmfruRqU6BXsmrMIYosxxZA0efvdkBZ_4Q&s=10",
-        "teamB": "ILT T20",
-        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLPb2DPj3zNmfruRqU6BXsmrMIYosxxZA0efvdkBZ_4Q&s=10",
-        "startTimeIST": "2026-11-24 20:00:00 IST",
-        "endTimeIST": ""
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "WILLOW - AQ",
-          "type": "mpd",
-          "link": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/bcjujmrzz8/out/v1/96349312752b430f8b8b3733b0841b41/cenc.mpd",
-          "api": "64dc1d4bb91d3450b9d4ae4a0726d637:ce8b3415503515323800502c4cd46037"
-        },
-        {
-          "id": 2,
-          "title": "FANCODE - AQ",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/b3b3fkmrbl/out/v1/1084d5c9a97a4c5b9f9554c88f486646/cenc.mpd",
-          "api": "82dfca238e8c4b430a3269db71965db9:a00b28caf4ac628e77a553d440c0ddca"
-        },
-        {
-          "id": 3,
-          "title": "TNT SPORTS - AQ",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/rhf2dwosdt/out/v1/ee550d2a68d846c797e6ce4de2e8b76d/cenc.mpd",
-          "api": "69a5aa835a061ce64a630d1046727e40:d02feac8a999bd06bf4059bf33411749"
-        },
-        {
-          "id": 4,
-          "title": "ZEE ZEST IN",
-          "type": "mpd",
-          "link": "https://d1iwj24qiokrul.cloudfront.net/live/media/Zee_Zest_SD/dash/Zee_Zest_SD.mpd",
-          "api": "ffa2f9e64ca542f9a13f6ebc11292468:ac0b546c754884618e5b2c2c986e4735"
-        },
-        {
-          "id": 5,
-          "title": "UNITE8 SPORTS IN",
-          "type": "mpd",
-          "link": "https://d1iwj24qiokrul.cloudfront.net/live/media/Unite8_Sports_1_HD/dash/Unite8_Sports_1_HD.mpd",
-          "api": "d5859726f4804398b37aa6eb9d571a4f:11c43967054ad1765d919f854889912f"
         }
       ]
     },
@@ -354,6 +116,131 @@
         "teamB": "Brisbane Heat Women",
         "teamBFlag": "https://img.sofascore.com/api/v1/team/274884/image",
         "startTimeIST": "2026-11-25 13:40:00 IST",
+        "endTimeIST": ""
+      },
+      "streams": []
+    },
+    {
+      "id": 1997,
+      "title": "Italia T10 2026",
+      "slug": "Italia-T10-vs-Italia-T",
+      "cat": "Cricket",
+      "status": "upcoming",
+      "event": {
+        "name": "Italia T10 2026",
+        "category": "Cricket",
+        "type": "",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBTK9sfDCFhv5T2jEH3nkh9cPngwVXMaQFV9uNCn66zg&s=10",
+        "teamA": "Italia T10",
+        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBTK9sfDCFhv5T2jEH3nkh9cPngwVXMaQFV9uNCn66zg&s=10",
+        "teamB": "Italia T10",
+        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBTK9sfDCFhv5T2jEH3nkh9cPngwVXMaQFV9uNCn66zg&s=10",
+        "startTimeIST": "2026-11-25 16:30:00 IST",
+        "endTimeIST": ""
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "UNBEATEN FHD",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/igtio3ifkx/out/v1/3e305fd8d7eb4c489e80a71513206a7d/cenc.mpd",
+          "api": "5d6c647cd1b56550bd34349b68ec8c82:09f952780ba5b30bc222439aaa3ac09b"
+        },
+        {
+          "id": 2,
+          "title": "PLAYZ TV LIVE",
+          "type": "m3u8",
+          "link": "https://amssandbrix.sandbrix.live/sandbrix/streams/mk139q1Mi9bHznBA775016895861.m3u8",
+          "api": ""
+        },
+        {
+          "id": 3,
+          "title": "TAMASHA PRO AQ",
+          "type": "m3u8",
+          "link": "https://cdn03lhr-n.tamashaweb.com:8087/appcast/t10-italia-SVOD-abr/playlist.m3u8",
+          "api": ""
+        }
+      ]
+    },
+    {
+      "id": 1884,
+      "title": "International League T20",
+      "slug": "ILT-T20-vs-ILT-T",
+      "cat": "Cricket",
+      "status": "upcoming",
+      "event": {
+        "name": "International League T20",
+        "category": "Cricket",
+        "type": "",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLPb2DPj3zNmfruRqU6BXsmrMIYosxxZA0efvdkBZ_4Q&s=10",
+        "teamA": "ILT T20",
+        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLPb2DPj3zNmfruRqU6BXsmrMIYosxxZA0efvdkBZ_4Q&s=10",
+        "teamB": "ILT T20",
+        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLPb2DPj3zNmfruRqU6BXsmrMIYosxxZA0efvdkBZ_4Q&s=10",
+        "startTimeIST": "2026-11-25 20:00:00 IST",
+        "endTimeIST": ""
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW - AQ",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/gfshrnrosi/out/v1/38ade1f0001545678654acfccb674b40/cenc.mpd",
+          "api": "7dcfc23b4712a8031fa154bfb07917e7:fd7078d53cb394fed87690a2d408385e"
+        },
+        {
+          "id": 2,
+          "title": "FANCODE - AQ",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/b3b3fkmrbl/out/v1/1084d5c9a97a4c5b9f9554c88f486646/cenc.mpd",
+          "api": "82dfca238e8c4b430a3269db71965db9:a00b28caf4ac628e77a553d440c0ddca"
+        },
+        {
+          "id": 3,
+          "title": "TNT SPORTS - AQ",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/rhf2dwosdt/out/v1/ee550d2a68d846c797e6ce4de2e8b76d/cenc.mpd",
+          "api": "69a5aa835a061ce64a630d1046727e40:d02feac8a999bd06bf4059bf33411749"
+        },
+        {
+          "id": 4,
+          "title": "TAMASHA PRO AQ",
+          "type": "m3u8",
+          "link": "https://cdn03lhr-n.tamashaweb.com:8087/appcast/ILT-S05-SVOD-abr/playlist.m3u8",
+          "api": ""
+        },
+        {
+          "id": 5,
+          "title": "ZEE ZEST IN",
+          "type": "mpd",
+          "link": "https://d1iwj24qiokrul.cloudfront.net/live/media/Zee_Zest_SD/dash/Zee_Zest_SD.mpd",
+          "api": "ffa2f9e64ca542f9a13f6ebc11292468:ac0b546c754884618e5b2c2c986e4735"
+        },
+        {
+          "id": 6,
+          "title": "UNITE8 SPORTS IN",
+          "type": "mpd",
+          "link": "https://d1iwj24qiokrul.cloudfront.net/live/media/Unite8_Sports_1_HD/dash/Unite8_Sports_1_HD.mpd",
+          "api": "d5859726f4804398b37aa6eb9d571a4f:11c43967054ad1765d919f854889912f"
+        }
+      ]
+    },
+    {
+      "id": 3872,
+      "title": "India A vs Sri Lanka A",
+      "slug": "India-A-vs-Sri-Lanka-A",
+      "cat": "Cricket",
+      "status": "upcoming",
+      "event": {
+        "name": "Men's Asia Cup Rising Stars",
+        "category": "Cricket",
+        "type": "",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn2rCtrI68Agu71aIWID9YxzlqXN-3c88k4cwPQQhwEA&s=10",
+        "teamA": "India A",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/187765/image",
+        "teamB": "Sri Lanka A",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/187756/image",
+        "startTimeIST": "2026-11-26 15:30:00 IST",
         "endTimeIST": ""
       },
       "streams": []
@@ -457,19 +344,24 @@
       ]
     },
     {
-      "id": "B0HR6PG192",
-      "title": "ACC Mens Asia Cup Rising Stars 2026 - 11th Match - India A vs United Arab Emirates",
-      "slug": "acc-mens-asia-cup-rising-stars-2026-11th-match-india-a-vs-united-arab-emirates",
-      "cat": "Live Events",
-      "status": "live",
+      "id": 3874,
+      "title": "Bangladesh A vs India A",
+      "slug": "Bangladesh-A-vs-India-A",
+      "cat": "Cricket",
+      "status": "upcoming",
       "event": {
-        "name": "ACC Mens Asia Cup Rising Stars 2026 - 11th Match - India A vs United Arab Emirates",
+        "name": "Asia Cup Rising Stars",
         "category": "Cricket",
-        "teamA": "Team A",
-        "teamB": "Team B",
-        "startTimeIST": ""
+        "type": "",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn2rCtrI68Agu71aIWID9YxzlqXN-3c88k4cwPQQhwEA&s=10",
+        "teamA": "Bangladesh A",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/187809/image",
+        "teamB": "India A",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/187765/image",
+        "startTimeIST": "2026-11-27 15:30:00 IST",
+        "endTimeIST": ""
       },
-      "dashStreams": []
+      "streams": []
     },
     {
       "id": "B0HMNQS3S4",
