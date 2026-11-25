@@ -1,113 +1,13 @@
 {
-  "last_updated": "11/25/2026, 10:31:59 AM IST",
+  "last_updated": "11/25/2026, 9:17:14 PM IST",
   "source": "AryanStreams Official Feed",
   "events": [
-    {
-      "id": 3776,
-      "title": "San Jose Earthquakes vs Houston Dynamo",
-      "slug": "San-Jose-Earthquakes-vs-Houston-Dynamo",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "MLS",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/242/image/dark",
-        "teamA": "San Jose Earthquakes",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/21825/image",
-        "teamB": "Houston Dynamo",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/2508/image",
-        "startTimeIST": "2026-11-25 08:30:00 IST",
-        "endTimeIST": "2026-11-25 10:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 2537,
-      "title": "Melbourne Victory vs Thể Công - Viettel",
-      "slug": "Melbourne-Victory-vs-Thể-Công-Viettel",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "AFC Champions League Two",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/668/image/dark",
-        "teamA": "Melbourne Victory",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/5970/image",
-        "teamB": "Thể Công - Viettel",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/231270/image",
-        "startTimeIST": "2026-11-25 13:15:00 IST",
-        "endTimeIST": "2026-11-25 15:35:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 2538,
-      "title": "Gamba Osaka vs Port FC",
-      "slug": "Gamba-Osaka-vs-Port-FC",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "AFC Champions League Elite",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/463/image/dark",
-        "teamA": "Gamba Osaka",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/3138/image",
-        "teamB": "Port FC",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/40661/image",
-        "startTimeIST": "2026-11-25 15:30:00 IST",
-        "endTimeIST": "2026-11-25 17:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 2539,
-      "title": "Kashima Antlers vs Jeonbuk Hyundai Motors",
-      "slug": "Kashima-Antlers-vs-Jeonbuk-Hyundai-Motors",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "AFC Champions League Elite",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/463/image/dark",
-        "teamA": "Kashima Antlers",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/3134/image",
-        "teamB": "Jeonbuk Hyundai Motors",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/6908/image",
-        "startTimeIST": "2026-11-25 15:30:00 IST",
-        "endTimeIST": "2026-11-25 17:50:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 2540,
-      "title": "Persib Bandung vs FC Seoul",
-      "slug": "Persib-Bandung-vs-FC-Seoul",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "AFC Champions League Two",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/668/image/dark",
-        "teamA": "Persib Bandung",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/64289/image",
-        "teamB": "FC Seoul",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/7646/image",
-        "startTimeIST": "2026-11-25 17:45:00 IST",
-        "endTimeIST": "2026-11-25 20:05:00 IST"
-      },
-      "streams": []
-    },
     {
       "id": 3871,
       "title": "Sporting U19 vs Manchester United U19",
       "slug": "Sporting-U19-vs-Manchester-United-U19",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "ended",
       "event": {
         "name": "UEFA Youth League",
         "category": "Football",
@@ -120,74 +20,29 @@
         "startTimeIST": "2026-11-25 18:30:00 IST",
         "endTimeIST": "2026-11-25 20:50:00 IST"
       },
-      "streams": []
-    },
-    {
-      "id": 3881,
-      "title": "Haiti U17 vs Saudi Arabia U17",
-      "slug": "Haiti-U17-vs-Saudi-Arabia-U17",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "U17 World Championship",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/279/image/dark",
-        "teamA": "Haiti U17",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/190706/image",
-        "teamB": "Saudi Arabia U17",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/468403/image",
-        "startTimeIST": "2026-11-25 19:00:00 IST",
-        "endTimeIST": "2026-11-25 21:20:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 3882,
-      "title": "Uruguay U17 vs France U17",
-      "slug": "Uruguay-U17-vs-France-U17",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "U17 World Championship",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/279/image/dark",
-        "teamA": "Uruguay U17",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/37322/image",
-        "teamB": "France U17",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/22474/image",
-        "startTimeIST": "2026-11-25 19:00:00 IST",
-        "endTimeIST": "2026-11-25 21:20:00 IST"
-      },
-      "streams": []
-    },
-    {
-      "id": 2541,
-      "title": "Nasaf Qarshi vs Al Khaldiya",
-      "slug": "Nasaf-Qarshi-vs-Al-Khaldiya",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "AFC Champions League Two",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/668/image/dark",
-        "teamA": "Nasaf Qarshi",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/34017/image",
-        "teamB": "Al Khaldiya",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/371631/image",
-        "startTimeIST": "2026-11-25 19:15:00 IST",
-        "endTimeIST": "2026-11-25 21:35:00 IST"
-      },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "TNT SPORTS - AQ",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/puehlftk5j/out/v1/f7f0da1ee112481ca0024e6d4dd97f4a/cenc.mpd",
+          "api": "f3df7843080ae743bf865dc5fdf64c68:567c863bc12eb74788ea74888c042e1b"
+        },
+        {
+          "id": 2,
+          "title": "SONYLIV ENG - AQ",
+          "type": "m3u8",
+          "link": "https://sonyeventsglobal.akamaized.net/hls/live/2120303/footlive2511/ENG/std_lrh-800300010.m3u8?hdnea=exp=1795656830~acl=/*~id=54580525332449956328218595756401~hmac=d35e2db7dbd01e3da0c733f4fca78c1f7c414b4d273da1b6dcecce5dd3173393",
+          "api": ""
+        }
+      ]
     },
     {
       "id": 3883,
       "title": "Greece U17 vs Qatar U17",
       "slug": "Greece-U17-vs-Qatar-U17",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "U17 World Championship",
         "category": "Football",
@@ -200,14 +55,22 @@
         "startTimeIST": "2026-11-25 20:00:00 IST",
         "endTimeIST": "2026-11-25 22:20:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "PlayZ TV Live",
+          "type": "m3u8",
+          "link": "https://live3979.zundrixmediapipeline.com/live/channel13.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": 3884,
       "title": "Panama U17 vs Egypt U17",
       "slug": "Panama-U17-vs-Egypt-U17",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "U17 World Championship",
         "category": "Football",
@@ -220,34 +83,22 @@
         "startTimeIST": "2026-11-25 20:00:00 IST",
         "endTimeIST": "2026-11-25 22:20:00 IST"
       },
-      "streams": []
-    },
-    {
-      "id": 3885,
-      "title": "Primeiro de Agosto vs Kabuscorp SCP",
-      "slug": "Primeiro-de-Agosto-vs-Kabuscorp-SCP",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "Girabola",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/2308/image/dark",
-        "teamA": "Primeiro de Agosto",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/134318/image",
-        "teamB": "Kabuscorp SCP",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/134310/image",
-        "startTimeIST": "2026-11-25 20:00:00 IST",
-        "endTimeIST": "2026-11-25 22:20:00 IST"
-      },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "PlayZ TV Live",
+          "type": "m3u8",
+          "link": "https://live3979.zundrixmediapipeline.com/live/channel20.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": 3886,
       "title": "Australia U17 vs Mozambique U17",
       "slug": "Australia-U17-vs-Mozambique-U17",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "U17 World Championship",
         "category": "Football",
@@ -260,14 +111,22 @@
         "startTimeIST": "2026-11-25 21:00:00 IST",
         "endTimeIST": "2026-11-25 23:20:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "PlayZ TV Live",
+          "type": "m3u8",
+          "link": "https://live3979.zundrixmediapipeline.com/live/channel21.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": 3887,
       "title": "Denmark U17 vs Argentina U17",
       "slug": "Denmark-U17-vs-Argentina-U17",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "U17 World Championship",
         "category": "Football",
@@ -280,7 +139,22 @@
         "startTimeIST": "2026-11-25 21:00:00 IST",
         "endTimeIST": "2026-11-25 23:20:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "FOX SPORTS FHD",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/awxnrqkbo5/out/v1/716529a4091947b0877e6cb80dbd6ccb/cenc.mpd",
+          "api": "09453ce820d65fbc675de3185f9e454c:98cff9600995fa381c76fdacf3c7edae"
+        },
+        {
+          "id": 2,
+          "title": "D SPORTS+ FHD",
+          "type": "mpd",
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/gru-nitro/live/clients/dash/enc/ud6bnhthpj/out/v1/2639a2f4480f4269953de466d5f46463/cenc.mpd",
+          "api": "83f81c4cc1443991543de4e22eea7586:ddfd7ca653d6f35543d8edb3c688e20f"
+        }
+      ]
     },
     {
       "id": 3876,
@@ -423,6 +297,66 @@
       "streams": []
     },
     {
+      "id": 3899,
+      "title": "Bolton Wanderers vs West Bromwich Albion",
+      "slug": "Bolton-Wanderers-vs-West-Bromwich-Albion",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "Championship",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18/image/dark",
+        "teamA": "Bolton Wanderers",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/5/image",
+        "teamB": "West Bromwich Albion",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/8/image",
+        "startTimeIST": "2026-11-26 01:15:00 IST",
+        "endTimeIST": "2026-11-26 03:35:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": 3900,
+      "title": "Burnley vs Birmingham City",
+      "slug": "Burnley-vs-Birmingham-City",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "Championship",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18/image/dark",
+        "teamA": "Burnley",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/6/image",
+        "teamB": "Birmingham City",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/9/image",
+        "startTimeIST": "2026-11-26 01:15:00 IST",
+        "endTimeIST": "2026-11-26 03:35:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": 3901,
+      "title": "Watford vs Blackburn Rovers",
+      "slug": "Watford-vs-Blackburn-Rovers",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "Championship",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18/image/dark",
+        "teamA": "Watford",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/24/image",
+        "teamB": "Blackburn Rovers",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/46/image",
+        "startTimeIST": "2026-11-26 01:15:00 IST",
+        "endTimeIST": "2026-11-26 03:35:00 IST"
+      },
+      "streams": []
+    },
+    {
       "id": 2552,
       "title": "Atlético Madrid vs Viking FK",
       "slug": "Atlético-Madrid-vs-Viking-FK",
@@ -557,6 +491,26 @@
         "teamAFlag": "https://img.sofascore.com/api/v1/team/3001/image",
         "teamB": "Manchester United",
         "teamBFlag": "https://img.sofascore.com/api/v1/team/35/image",
+        "startTimeIST": "2026-11-26 01:30:00 IST",
+        "endTimeIST": "2026-11-26 03:50:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": 3902,
+      "title": "Stoke City vs Millwall",
+      "slug": "Stoke-City-vs-Millwall",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "Championship",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/18/image/dark",
+        "teamA": "Stoke City",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/29/image",
+        "teamB": "Millwall",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/25/image",
         "startTimeIST": "2026-11-26 01:30:00 IST",
         "endTimeIST": "2026-11-26 03:50:00 IST"
       },
