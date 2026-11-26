@@ -1,35 +1,7 @@
 {
-  "last_updated": "11/26/2026, 5:35:53 AM IST",
+  "last_updated": "11/26/2026, 2:07:05 PM IST",
   "source": "AryanStreams Official Feed",
   "events": [
-    {
-      "id": 3888,
-      "title": "Atlético Mineiro vs Corinthians",
-      "slug": "Atlético-Mineiro-vs-Corinthians",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "Campeonato Brasileiro Série A",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/325/image/dark",
-        "teamA": "Atlético Mineiro",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/1977/image",
-        "teamB": "Corinthians",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/1957/image",
-        "startTimeIST": "2026-11-26 04:30:00 IST",
-        "endTimeIST": "2026-11-26 06:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "PlayZ TV Live",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/nelfyucw9a/out/v1/6ffb2c365ad14f88b154591beb43d1f6/cenc.mpd",
-          "api": "56b79c1782b30e6b6fc973b0e8fd4104:fa38aaa865a57eda7c77444697ba8ed3"
-        }
-      ]
-    },
     {
       "id": 3933,
       "title": "Gangwon FC vs Kitchee SC",

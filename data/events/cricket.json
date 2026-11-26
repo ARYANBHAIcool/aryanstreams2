@@ -1,41 +1,13 @@
 {
-  "last_updated": "11/26/2026, 5:35:53 AM IST",
+  "last_updated": "11/26/2026, 2:07:05 PM IST",
   "source": "AryanStreams Official Feed",
   "events": [
-    {
-      "id": 3928,
-      "title": "South Australia vs Victoria",
-      "slug": "South-Australia-vs-Victoria",
-      "cat": "Cricket",
-      "status": "live",
-      "event": {
-        "name": "Sheffield Shield",
-        "category": "Cricket",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11160/image/dark",
-        "teamA": "South Australia",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/187750/image",
-        "teamB": "Victoria",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/187749/image",
-        "startTimeIST": "2026-11-26 05:30:00 IST",
-        "endTimeIST": "2026-11-26 12:30:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "PlayZ TV Live",
-          "type": "m3u8",
-          "link": "https://host-64-235-250-99.contentfabric.io/qlibs/ilibBFVVnZD2HsyW1Rmi5atMjddq2NQ/q/hq__PLCmgVLEuGcA9KHAyJ5DuxTcdvkMh57av3fGiwdpu6zsZ1Q8x6QcjityUzzrDHeER89HgpbehEe/rep/playout/default/hls-aes128/playlist.m3u8?authorization=acssjc9GqKQhD4zgqPicqVYwswYaABaCB3jwPAVvkLx1EL32F2KP8DFeqn44MqnMRhyb3p6Wpqeusjeicq8xNzCTPcJ7BL1QnMsoqBMdBQQ2Rf5pqiKHyzRJXH7YqGAtwX5xUnwwkRXHzRnH5XGPPt754h4jDns8muXs4NJ8jNe7LrtbKsjbyqZrD4KBXZDdW8bd5snaakLojDTsTdN8bSFtRmptuLfjxcZnm6MeWtsooShecHSWN9gTEfftm9EpmSZoKg9ndKURd3nwe5eS6AvSJfEL6AyQQi9EcSTEoAYpfWFP8zt4VF9yLd7CrUoMyRvNRjeCUgYThtBdNjJuMHKhK66Y3sASuAYfxNC1dL7enmuk8pbWhJ5ZqvGjhcns48NfPqK485rCSiQyFMyRFJaoGABnJJzSYJnSZys4F1p4hvbQwF2SMoh5aRQJ9rcNF6R4HSrr1qVjesjFoGvcSV3reXYWao1J89yJ2hsZkvs6nQcCDrSVyEjHc4zsY4MDDsPYaB7tPFxVGZZmmojfu156r1pc8sjPb2yna1oMCexRoqyLxwWd8iytJ3jyBGrgxrxtz58NrDVaBWJik2a&sid=42BD64B32A81",
-          "api": ""
-        }
-      ]
-    },
     {
       "id": 3929,
       "title": "Western Australia vs Tasmania",
       "slug": "Western-Australia-vs-Tasmania",
       "cat": "Cricket",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Sheffield Shield",
         "category": "Cricket",
@@ -48,14 +20,29 @@
         "startTimeIST": "2026-11-26 08:00:00 IST",
         "endTimeIST": "2026-11-26 15:00:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "PlayZ TV Live",
+          "type": "m3u8",
+          "link": "https://host-64-235-250-99.contentfabric.io/qlibs/ilibBFVVnZD2HsyW1Rmi5atMjddq2NQ/q/hq__2CsGiSyVyhGwFCBZH4NTiXGnVdD6JsgfiLdMNoY5zJooSjkixSz2Xawj2sN6vkKzk9kp89wiN2ic/rep/playout/default/hls-aes128/playlist.m3u8?authorization=acssjc9GqKQhD4zgqPicqVYwswYaABaCB3jwPAVvkLx1EL32F2KP8DFeqn44MqnMRhyb3p6Wpqeusjeicq8xNzCTPcJ7BL1QnMsoqBMdBQQ2Rf5pqiKHyzRJXH7YqGAtwX5xUnwwkRXHzRnH5XGPPt754h4jDns8muXs4NJ8jNe7LrtbKsjbyqZrD4KBXZDdW8bd5snaakLojDTsTdN8bSFtRmptuLfjxcZnm6MeWtsooShecHSWN9gTEfftm9EpmSZoKg9ndKURd3nwe5eS6AvSJfEL6AyQQi9EcSTEoAYpfWFP8zt4VF9yLd7CrUoMyRvNRjeCUgYThtBdNjJuMHKhK66Y3sASuAYfxNC1dL7enmuk8pbWhJ5ZqvGjhcns48NfPqK485rCSiQyFMyRFJaoGABnJJzSYJnSZys4F1p4hvbQwF2SMoh5aRQJ9rcNF6R4HSrr1qVjesjFoGvcSV3reXYWao1J89yJ2hsZkvs6nQcCDrSVyEjHc4zsY4MDDsPYaB7tPFxVGZZmmojfu156r1pc8sjPb2yna1oMCexRoqyLxwWd8iytJ3jyBGrgxrxtz58NrDVaBWJik2a&sid=5BEDAA312E9E",
+          "api": ""
+        },
+        {
+          "id": 2,
+          "title": "FANCODE [IND]",
+          "type": "m3u8",
+          "link": "https://in-mc-vod.fancode.com/mumbai/4249675_english_hls_82f48bb70790158_1ta-di_h264/index.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": 3930,
       "title": "Sydney Sixers Women vs Melbourne Stars Women",
       "slug": "Sydney-Sixers-Women-vs-Melbourne-Stars-Women",
       "cat": "Cricket",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "Women's Big Bash League",
         "category": "Cricket",
@@ -68,7 +55,50 @@
         "startTimeIST": "2026-11-26 13:40:00 IST",
         "endTimeIST": ""
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW - AQ",
+          "type": "mpd",
+          "link": "https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/live/clients/dash/enc/v2yxukjfq7/out/v1/d093cf88ecf4409bb4826370dd3a6ae1/cenc.mpd",
+          "api": "3f5ea90db87fe08afdd98d45ed35b738:bb6170ee6b9e08576c32f534ee44c3e2"
+        },
+        {
+          "id": 2,
+          "title": "CRICKET AU AQ",
+          "type": "m3u8",
+          "link": "https://host-64-235-250-99.contentfabric.io/qlibs/ilibBFVVnZD2HsyW1Rmi5atMjddq2NQ/q/hq__dVZgXBpQHUsLeZTQjSwnub4hdL3wREy9jdqbC7q3uSBsSFZYDiZvrMC8iX1kEHPsYAeWrJsXbLF/rep/playout/default/hls-aes128/playlist.m3u8?authorization=acssjc9GqKQhD4zgqPicqVYwswYaABaCB3jwPAVvkLx1EL32F2KP8DFeqn44MqnMRhyb3p6Wpqeusjeicq8xNzCTPcJ7BL1QnMsoqBMdBQQ2Rf5pqiKHyzRJXH7YqGAtwX5xUnwwkRXHzRnH5XGPPt754h4jDns8muXs4NJ8jNe7LrtbKsjbyqZrD4KBXZDdW8bd5snaakLojDTsTdN8bSFtRmptuLfjxcZnm6MeWtsooShecHSWN9gTEfftm9EpmSZoKg9ndKURd3nwe5eS6AvSJfEL6AyQQi9EcSTEoAYpfWFP8zt4VF9yLd7CrUoMyRvNRjeCUgYThtBdNjJuMHKhK66Y3sASuAYfxNC1dL7enmuk8pbWhJ5ZqvGjhcns48NfPqK485rCSiQyFMyRFJaoGABnJJzSYJnSZys4F1p4hvbQwF2SMoh5aRQJ9rcNF6R4HSrr1qVjesjFoGvcSV3reXYWao1J89yJ2hsZkvs6nQcCDrSVyEjHc4zsY4MDDsPYaB7tPFxVGZZmmojfu156r1pc8sjPb2yna1oMCexRoqyLxwWd8iytJ3jyBGrgxrxtz58NrDVaBWJik2a&sid=FFE63BD8137F",
+          "api": ""
+        },
+        {
+          "id": 3,
+          "title": "TAPMAD - AQ",
+          "type": "m3u8",
+          "link": "https://tencent-cdn.tapmad.com/v1/01a14ab8af8915fc600b1e3e9683f0/01a14ab953dd1ea540a81c2b41b75f/main.m3u8",
+          "api": ""
+        },
+        {
+          "id": 4,
+          "title": "WILLOW HD",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/0bftapixow/out/v1/a435ed7a00f947deb4369b46d8f2fb70/cenc.mpd",
+          "api": "290e09c837da78d5cd961978d390515c:b748836c71e6a4ca68ef5b5652db6247"
+        },
+        {
+          "id": 5,
+          "title": "TAPMAD HD",
+          "type": "m3u8",
+          "link": "https://tencent-cdn.tapmad.com/v1/01a14ab8af8915fc600b1e3e9683f0/01a14ab953dd1ea540a81c2b41b75f/main.m3u8",
+          "api": ""
+        },
+        {
+          "id": 6,
+          "title": "FANCODE [IND]",
+          "type": "m3u8",
+          "link": "https://in-mc-vod.fancode.com/mumbai/4250420_english_hls_ac2784bf3e70568_1ta-di_h264/index.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": 3872,
@@ -341,13 +371,13 @@
       "streams": []
     },
     {
-      "id": "B0HN5TK1Q2",
-      "title": "Womens Big Bash League 2026 - 34th Match - Sydney Thunder Women vs Adelaide Strikers Women",
-      "slug": "womens-big-bash-league-2026-34th-match-sydney-thunder-women-vs-adelaide-strikers-women",
+      "id": "B0HMKWT91B",
+      "title": "Womens Big Bash League 2026 - 35th Match - Sydney Sixers Women vs Melbourne Stars Women",
+      "slug": "womens-big-bash-league-2026-35th-match-sydney-sixers-women-vs-melbourne-stars-women",
       "cat": "Live Events",
       "status": "live",
       "event": {
-        "name": "Womens Big Bash League 2026 - 34th Match - Sydney Thunder Women vs Adelaide Strikers Women",
+        "name": "Womens Big Bash League 2026 - 35th Match - Sydney Sixers Women vs Melbourne Stars Women",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",
