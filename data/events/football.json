@@ -1,48 +1,13 @@
 {
-  "last_updated": "11/27/2026, 7:27:30 AM IST",
+  "last_updated": "11/27/2026, 4:15:40 PM IST",
   "source": "AryanStreams Official Feed",
   "events": [
-    {
-      "id": 4001,
-      "title": "The - Golazo Show",
-      "slug": "The-Golazo-Show",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "The - Golazo Show",
-        "category": "Football",
-        "type": "",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf0OgZU9w1HJQZAizR01jaXii00guX9UNv-QR5cveBhQ&s=10",
-        "teamA": "Golazo Show",
-        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf0OgZU9w1HJQZAizR01jaXii00guX9UNv-QR5cveBhQ&s=10",
-        "teamB": "Golazo Show",
-        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf0OgZU9w1HJQZAizR01jaXii00guX9UNv-QR5cveBhQ&s=10",
-        "startTimeIST": "2026-11-26 23:10:00 IST",
-        "endTimeIST": ""
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "PARAMOUNT+",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/dfwewesw54/out/v1/522359f03dd5411fa96d4fb84375f0df/cenc.mpd",
-          "api": "629217a2952c541bed541053bebb6e79:78329d9e16fd79edd93ff9f7f9c758e8"
-        },
-        {
-          "id": 2,
-          "title": "CBS SPORTS GOLAZO AQ",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/5qz8wmdome/out/v1/b9323e853dce427eac214b77bd48a204/cenc.mpd",
-          "api": "d9623774ac5c8c351aafe97c5fe70267:5164e6d05164a2d65fa8fcc962aa4861"
-        }
-      ]
-    },
     {
       "id": 3993,
       "title": "Macarthur FC vs Melbourne City",
       "slug": "Macarthur-FC-vs-Melbourne-City",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "A-League Men",
         "category": "Football",
@@ -55,27 +20,43 @@
         "startTimeIST": "2026-11-27 14:10:00 IST",
         "endTimeIST": "2026-11-27 16:30:00 IST"
       },
-      "streams": []
-    },
-    {
-      "id": 4015,
-      "title": "Apolonia Fier U17 vs Elite Youth Academy U17",
-      "slug": "Apolonia-Fier-U17-vs-Elite-Youth-Academy-U17",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "U17 Abissnet Superiore",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/38703/image/dark",
-        "teamA": "Apolonia Fier U17",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/1292380/image",
-        "teamB": "Elite Youth Academy U17",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/1292387/image",
-        "startTimeIST": "2026-11-27 17:30:00 IST",
-        "endTimeIST": "2026-11-27 19:50:00 IST"
-      },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "TNT SPORTS - AQ",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/tdijwiga2k/out/v1/f5fde318678f4f7583bf27b7231bde1f/cenc.mpd?",
+          "api": "fa34fa8c90336dd528c7a23871cad1fe:552a78d1aeb74f1650d68255c5749408"
+        },
+        {
+          "id": 2,
+          "title": "SPORTDIGITAL FUSSBALL AQ",
+          "type": "mpd",
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/bom-nitro/live/dash/enc/ssdefyhkkr/out/v1/cf01290cb7f64525bdf861580a016ca8/cenc.mpd",
+          "api": "0ad4080cdff8c60b1233b22087f0b340:285f129c5eca01dd08a5d5a14ad801c8"
+        },
+        {
+          "id": 3,
+          "title": "SPOTV AQ",
+          "type": "mpd",
+          "link": "https://qp-pldt-live-grp-11-prod.akamaized.net/out/u/dr_spotvhd.mpd",
+          "api": "ec7ee27d83764e4b845c48cca31c8eef:9c0e4191203fccb0fde34ee29999129e"
+        },
+        {
+          "id": 4,
+          "title": "SD STREAM",
+          "type": "m3u8",
+          "link": "https://www.rtmpcdn.com/live/b9149b1d-db70-42f9-a0b9-1581ad9ee25e.m3u8",
+          "api": ""
+        },
+        {
+          "id": 5,
+          "title": "FANCODE [IND]",
+          "type": "m3u8",
+          "link": "https://in-mc-vod.fancode.com/mumbai/4249863_english_hls_eb299d9e9a55254_1ta-di_h264/index.m3u8",
+          "api": ""
+        }
+      ]
     },
     {
       "id": 4016,
@@ -94,6 +75,26 @@
         "teamBFlag": "https://img.sofascore.com/api/v1/team/167228/image",
         "startTimeIST": "2026-11-27 17:45:00 IST",
         "endTimeIST": "2026-11-27 20:05:00 IST"
+      },
+      "streams": []
+    },
+    {
+      "id": 4104,
+      "title": "Azam FC vs Al Ahli Tripoli",
+      "slug": "Azam-FC-vs-Al-Ahli-Tripoli",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "CAF Confederations Cup",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/1115/image/dark",
+        "teamA": "Azam FC",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/212411/image",
+        "teamB": "Al Ahli Tripoli",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/189124/image",
+        "startTimeIST": "2026-11-27 18:30:00 IST",
+        "endTimeIST": "2026-11-27 20:50:00 IST"
       },
       "streams": []
     },
