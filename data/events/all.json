@@ -1,77 +1,15 @@
 {
-  "last_updated": "11/28/2026, 8:03:36 AM IST",
+  "last_updated": "11/28/2026, 4:23:18 PM IST",
   "source": "AryanStreams Official Feed",
-  "football_count": 78,
+  "football_count": 77,
   "cricket_count": 10,
   "events": [
-    {
-      "id": 4029,
-      "title": "Columbus Crew vs Inter Miami CF",
-      "slug": "Columbus-Crew-vs-Inter-Miami-CF",
-      "cat": "Football",
-      "status": "live",
-      "event": {
-        "name": "MLS",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/242/image/dark",
-        "teamA": "Columbus Crew",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/2504/image",
-        "teamB": "Inter Miami CF",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/337602/image",
-        "startTimeIST": "2026-11-28 06:30:00 IST",
-        "endTimeIST": "2026-11-28 08:50:00 IST"
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "TSN SPORTS - AQ",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/w0rehjjrwe/out/v1/69a2a7041395406b970598f61680e7cf/cenc.mpd",
-          "api": "14eeabf30c14b7fbf3008c03099ce011:17d2ac8dbc5429bd70af3433aa12158d"
-        },
-        {
-          "id": 2,
-          "title": "FOX SPORTS - AQ",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/fsu3wl2rwb/out/v1/be61206c04e643349d53fb22301f3b50/cenc.mpd",
-          "api": "5466ebd70704bdeb657f0abf3c5ca4ef:bdd79b72d8e48ed483aa623cc38a8a16"
-        },
-        {
-          "id": 3,
-          "title": "FOX DEPORTES - AQ",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/vkpoljjpkj/out/v1/502bcf68b3514cd28a220e6f0a43816f/cenc.mpd",
-          "api": "d1a163914db8ffad2c3e94f979896a0d:9728800a3959aafdd5b0bcfbf3768811"
-        }
-      ]
-    },
-    {
-      "id": 4030,
-      "title": "Real Salt Lake vs Vancouver Whitecaps",
-      "slug": "Real-Salt-Lake-vs-Vancouver-Whitecaps",
-      "cat": "Football",
-      "status": "upcoming",
-      "event": {
-        "name": "MLS",
-        "category": "Football",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/242/image/dark",
-        "teamA": "Real Salt Lake",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/5133/image",
-        "teamB": "Vancouver Whitecaps",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/22010/image",
-        "startTimeIST": "2026-11-28 08:30:00 IST",
-        "endTimeIST": "2026-11-28 10:50:00 IST"
-      },
-      "streams": []
-    },
     {
       "id": 4367,
       "title": "Central Coast Mariners vs Auckland FC",
       "slug": "Central-Coast-Mariners-vs-Auckland-FC",
       "cat": "Football",
-      "status": "upcoming",
+      "status": "live",
       "event": {
         "name": "A-League Men",
         "category": "Football",
@@ -84,7 +22,15 @@
         "startTimeIST": "2026-11-28 14:10:00 IST",
         "endTimeIST": "2026-11-28 16:30:00 IST"
       },
-      "streams": []
+      "streams": [
+        {
+          "id": 1,
+          "title": "SPORTDIGITAL FUSSBALL AQ",
+          "type": "mpd",
+          "link": "https://otte.live.fly.ww.aiv-cdn.net/bom-nitro/live/dash/enc/ssdefyhkkr/out/v1/cf01290cb7f64525bdf861580a016ca8/cenc.mpd",
+          "api": "0ad4080cdff8c60b1233b22087f0b340:285f129c5eca01dd08a5d5a14ad801c8"
+        }
+      ]
     },
     {
       "id": 4031,
@@ -727,7 +673,7 @@
       "streams": []
     },
     {
-      "id": 5100,
+      "id": 5960,
       "title": "Angers vs RC Lens",
       "slug": "Angers-vs-RC-Lens",
       "cat": "Football",
@@ -747,7 +693,7 @@
       "streams": []
     },
     {
-      "id": 5109,
+      "id": 5969,
       "title": "Angers vs RC Lens",
       "slug": "Angers-vs-RC-Lens",
       "cat": "Football",
@@ -987,7 +933,7 @@
       "streams": []
     },
     {
-      "id": 5101,
+      "id": 5961,
       "title": "Le Mans vs LOSC Lille",
       "slug": "Le-Mans-vs-LOSC-Lille",
       "cat": "Football",
@@ -1007,7 +953,7 @@
       "streams": []
     },
     {
-      "id": 5110,
+      "id": 5970,
       "title": "Le Mans vs LOSC Lille",
       "slug": "Le-Mans-vs-LOSC-Lille",
       "cat": "Football",
@@ -1027,7 +973,7 @@
       "streams": []
     },
     {
-      "id": 5102,
+      "id": 5962,
       "title": "OGC Nice vs Troyes",
       "slug": "OGC-Nice-vs-Troyes",
       "cat": "Football",
@@ -1047,7 +993,7 @@
       "streams": []
     },
     {
-      "id": 5111,
+      "id": 5971,
       "title": "OGC Nice vs Troyes",
       "slug": "OGC-Nice-vs-Troyes",
       "cat": "Football",
@@ -1067,7 +1013,7 @@
       "streams": []
     },
     {
-      "id": 5103,
+      "id": 5963,
       "title": "Paris Saint-Germain vs Lorient",
       "slug": "Paris-Saint-Germain-vs-Lorient",
       "cat": "Football",
@@ -1087,7 +1033,7 @@
       "streams": []
     },
     {
-      "id": 5112,
+      "id": 5972,
       "title": "Paris Saint-Germain vs Lorient",
       "slug": "Paris-Saint-Germain-vs-Lorient",
       "cat": "Football",
@@ -1227,6 +1173,26 @@
       "streams": []
     },
     {
+      "id": 5500,
+      "title": "Atlas FC vs CD Toluca",
+      "slug": "Atlas-FC-vs-CD-Toluca",
+      "cat": "Football",
+      "status": "upcoming",
+      "event": {
+        "name": "Liga MX, Apertura",
+        "category": "Football",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11621/image/dark",
+        "teamA": "Atlas FC",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/1949/image",
+        "teamB": "CD Toluca",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/1931/image",
+        "startTimeIST": "2026-11-29 06:30:00 IST",
+        "endTimeIST": "2026-11-29 08:50:00 IST"
+      },
+      "streams": []
+    },
+    {
       "id": 4674,
       "title": "Los Angeles FC vs St.Louis City",
       "slug": "Los-Angeles-FC-vs-St.Louis-City",
@@ -1307,7 +1273,7 @@
       "streams": []
     },
     {
-      "id": 5104,
+      "id": 5964,
       "title": "Udinese vs Fiorentina",
       "slug": "Udinese-vs-Fiorentina",
       "cat": "Football",
@@ -1327,7 +1293,7 @@
       "streams": []
     },
     {
-      "id": 5113,
+      "id": 5973,
       "title": "Udinese vs Fiorentina",
       "slug": "Udinese-vs-Fiorentina",
       "cat": "Football",
@@ -1347,7 +1313,7 @@
       "streams": []
     },
     {
-      "id": 5105,
+      "id": 5965,
       "title": "Everton vs Liverpool FC",
       "slug": "Everton-vs-Liverpool-FC",
       "cat": "Football",
@@ -1367,7 +1333,7 @@
       "streams": []
     },
     {
-      "id": 5114,
+      "id": 5974,
       "title": "Everton vs Liverpool FC",
       "slug": "Everton-vs-Liverpool-FC",
       "cat": "Football",
@@ -1407,7 +1373,7 @@
       "streams": []
     },
     {
-      "id": 5106,
+      "id": 5966,
       "title": "1. FC Magdeburg vs Energie Cottbus",
       "slug": "1.-FC-Magdeburg-vs-Energie-Cottbus",
       "cat": "Football",
@@ -1427,7 +1393,7 @@
       "streams": []
     },
     {
-      "id": 5115,
+      "id": 5975,
       "title": "1. FC Magdeburg vs Energie Cottbus",
       "slug": "1.-FC-Magdeburg-vs-Energie-Cottbus",
       "cat": "Football",
@@ -1447,7 +1413,7 @@
       "streams": []
     },
     {
-      "id": 5107,
+      "id": 5967,
       "title": "Eintracht Braunschweig vs VfL Wolfsburg",
       "slug": "Eintracht-Braunschweig-vs-VfL-Wolfsburg",
       "cat": "Football",
@@ -1467,7 +1433,7 @@
       "streams": []
     },
     {
-      "id": 5116,
+      "id": 5976,
       "title": "Eintracht Braunschweig vs VfL Wolfsburg",
       "slug": "Eintracht-Braunschweig-vs-VfL-Wolfsburg",
       "cat": "Football",
@@ -1527,7 +1493,7 @@
       "streams": []
     },
     {
-      "id": 5108,
+      "id": 5968,
       "title": "Valencia vs Osasuna",
       "slug": "Valencia-vs-Osasuna",
       "cat": "Football",
@@ -1547,7 +1513,7 @@
       "streams": []
     },
     {
-      "id": 5117,
+      "id": 5977,
       "title": "Valencia vs Osasuna",
       "slug": "Valencia-vs-Osasuna",
       "cat": "Football",
@@ -1587,11 +1553,165 @@
       "streams": []
     },
     {
+      "id": 4097,
+      "title": "Sydney Thunder Women vs Sydney Sixers Women",
+      "slug": "Sydney-Thunder-Women-vs-Sydney-Sixers-Women",
+      "cat": "Cricket",
+      "status": "live",
+      "event": {
+        "name": "Women's Big Bash League",
+        "category": "Cricket",
+        "type": "",
+        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
+        "teamA": "Sydney Thunder Women",
+        "teamAFlag": "https://img.sofascore.com/api/v1/team/274889/image",
+        "teamB": "Sydney Sixers Women",
+        "teamBFlag": "https://img.sofascore.com/api/v1/team/274883/image",
+        "startTimeIST": "2026-11-28 13:40:00 IST",
+        "endTimeIST": ""
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW - AQ",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/vmx0zl2u76/out/v1/36c58b0cecc44790ac48987a20387786/cenc.mpd",
+          "api": "7e9184bb9fed0727a24a8954562d7eb6:54182ee50af7097cf46a8fa7c3cb7626"
+        },
+        {
+          "id": 2,
+          "title": "SKY CRICKET - AQ",
+          "type": "m3u8",
+          "link": "https://bl.rutube.ru/livestream/7c13a51576b9ff2601f08f5d57dd5169/index.m3u8?s=7bnkGmSODWhSvD7xUkjZYw&e=2075749396&scheme=https",
+          "api": ""
+        },
+        {
+          "id": 3,
+          "title": "WILLOW HD",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/0bftapixow/out/v1/a435ed7a00f947deb4369b46d8f2fb70/cenc.mpd",
+          "api": "290e09c837da78d5cd961978d390515c:b748836c71e6a4ca68ef5b5652db6247"
+        },
+        {
+          "id": 4,
+          "title": "TAPMAD - AQ",
+          "type": "m3u8",
+          "link": "https://tencent-cdn.tapmad.com/v1/01a14abbcff31ea540a81c2b41b760/01a14abc06421567ee931e109fa577/main.m3u8",
+          "api": ""
+        },
+        {
+          "id": 5,
+          "title": "FANCODE [IND]",
+          "type": "m3u8",
+          "link": "https://in-mc-vod.fancode.com/mumbai/4250424_english_hls_5f98ce686243433_1ta-di_h264/index.m3u8",
+          "api": ""
+        }
+      ]
+    },
+    {
+      "id": 1884,
+      "title": "International League T20",
+      "slug": "ILT-T20-vs-ILT-T",
+      "cat": "Cricket",
+      "status": "live",
+      "event": {
+        "name": "International League T20",
+        "category": "Cricket",
+        "type": "",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLPb2DPj3zNmfruRqU6BXsmrMIYosxxZA0efvdkBZ_4Q&s=10",
+        "teamA": "ILT T20",
+        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLPb2DPj3zNmfruRqU6BXsmrMIYosxxZA0efvdkBZ_4Q&s=10",
+        "teamB": "ILT T20",
+        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLPb2DPj3zNmfruRqU6BXsmrMIYosxxZA0efvdkBZ_4Q&s=10",
+        "startTimeIST": "2026-11-28 15:30:00 IST",
+        "endTimeIST": ""
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "WILLOW - AQ",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/72h1hddob2/out/v1/2f42cd5273e24fe2951db3b1d0dc6679/cenc.mpd",
+          "api": "93eeb44d1f28ed952f0122a4c9e213af:ad2fd224bbd23bb898ec346ebf1bd59f"
+        },
+        {
+          "id": 2,
+          "title": "TNT SPORTS - AQ",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/rhf2dwosdt/out/v1/ee550d2a68d846c797e6ce4de2e8b76d/cenc.mpd",
+          "api": "69a5aa835a061ce64a630d1046727e40:d02feac8a999bd06bf4059bf33411749"
+        },
+        {
+          "id": 3,
+          "title": "TAMASHA PRO AQ",
+          "type": "m3u8",
+          "link": "https://cdn03lhr-n.tamashaweb.com:8087/appcast/ILT-S05-SVOD-abr/playlist.m3u8",
+          "api": ""
+        },
+        {
+          "id": 4,
+          "title": "ZEE ZEST IN",
+          "type": "mpd",
+          "link": "https://d1iwj24qiokrul.cloudfront.net/live/media/Zee_Zest_SD/dash/Zee_Zest_SD.mpd",
+          "api": "ffa2f9e64ca542f9a13f6ebc11292468:ac0b546c754884618e5b2c2c986e4735"
+        },
+        {
+          "id": 5,
+          "title": "UNITE8 SPORTS IN",
+          "type": "mpd",
+          "link": "https://d1iwj24qiokrul.cloudfront.net/live/media/Unite8_Sports_1_HD/dash/Unite8_Sports_1_HD.mpd",
+          "api": "d5859726f4804398b37aa6eb9d571a4f:11c43967054ad1765d919f854889912f"
+        }
+      ]
+    },
+    {
+      "id": 5536,
+      "title": "Italia T10 2026",
+      "slug": "Italia-T10-vs-Italia-T",
+      "cat": "Cricket",
+      "status": "upcoming",
+      "event": {
+        "name": "Italia T10 2026",
+        "category": "Cricket",
+        "type": "",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBTK9sfDCFhv5T2jEH3nkh9cPngwVXMaQFV9uNCn66zg&s=10",
+        "teamA": "Italia T10",
+        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBTK9sfDCFhv5T2jEH3nkh9cPngwVXMaQFV9uNCn66zg&s=10",
+        "teamB": "Italia T10",
+        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBTK9sfDCFhv5T2jEH3nkh9cPngwVXMaQFV9uNCn66zg&s=10",
+        "startTimeIST": "2026-11-28 16:30:00 IST",
+        "endTimeIST": "2026-11-28 22:30:00 IST"
+      },
+      "streams": [
+        {
+          "id": 1,
+          "title": "UNBEATEN FHD",
+          "type": "mpd",
+          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/igtio3ifkx/out/v1/3e305fd8d7eb4c489e80a71513206a7d/cenc.mpd",
+          "api": "5d6c647cd1b56550bd34349b68ec8c82:09f952780ba5b30bc222439aaa3ac09b"
+        },
+        {
+          "id": 2,
+          "title": "PLAYZ TV LIVE",
+          "type": "m3u8",
+          "link": "https://amssandbrix.sandbrix.live/sandbrix/streams/mk139q1Mi9bHznBA775016895861.m3u8",
+          "api": ""
+        },
+        {
+          "id": 3,
+          "title": "TAMASHA PRO AQ",
+          "type": "m3u8",
+          "link": "https://cdn03lhr-n.tamashaweb.com:8087/appcast/t10-italia-SVOD-abr/playlist.m3u8",
+          "api": ""
+        }
+      ]
+    },
+    {
       "id": 1236,
       "title": "New Zealand vs India",
       "slug": "New-Zealand-vs-India",
       "cat": "Cricket",
-      "status": "live",
+      "status": "upcoming",
       "event": {
         "name": "ICC World Test Championship",
         "category": "Cricket",
@@ -1601,7 +1721,7 @@
         "teamAFlag": "https://img.sofascore.com/api/v1/team/187755/image",
         "teamB": "India",
         "teamBFlag": "https://img.sofascore.com/api/v1/team/187765/image",
-        "startTimeIST": "2026-11-28 03:30:00 IST",
+        "startTimeIST": "2026-11-29 03:30:00 IST",
         "endTimeIST": ""
       },
       "streams": [
@@ -1673,109 +1793,6 @@
           "title": "SONYLIV KAN - AQ",
           "type": "m3u8",
           "link": "https://sonyeventsglobal.akamaized.net/hls/live/2119782/cricodi_2711/KAN/std_lrh-800300010.m3u8?hdnea=exp=1795859073~acl=/*~id=84541746357047622259354396811637~hmac=5fc3f6f7912b214bf6e2f2512263bd5102f9db826ca2478451c781ebc55c17e3",
-          "api": ""
-        }
-      ]
-    },
-    {
-      "id": 4096,
-      "title": "Melbourne Renegades Women vs Melbourne Stars Women",
-      "slug": "Melbourne-Renegades-Women-vs-Melbourne-Stars-Women",
-      "cat": "Cricket",
-      "status": "upcoming",
-      "event": {
-        "name": "Women's Big Bash League",
-        "category": "Cricket",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
-        "teamA": "Melbourne Renegades Women",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/274887/image",
-        "teamB": "Melbourne Stars Women",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/274886/image",
-        "startTimeIST": "2026-11-28 10:10:00 IST",
-        "endTimeIST": ""
-      },
-      "streams": []
-    },
-    {
-      "id": 4097,
-      "title": "Sydney Thunder Women vs Sydney Sixers Women",
-      "slug": "Sydney-Thunder-Women-vs-Sydney-Sixers-Women",
-      "cat": "Cricket",
-      "status": "upcoming",
-      "event": {
-        "name": "Women's Big Bash League",
-        "category": "Cricket",
-        "type": "",
-        "logo": "https://img.sofascore.com/api/v1/unique-tournament/11163/image/dark",
-        "teamA": "Sydney Thunder Women",
-        "teamAFlag": "https://img.sofascore.com/api/v1/team/274889/image",
-        "teamB": "Sydney Sixers Women",
-        "teamBFlag": "https://img.sofascore.com/api/v1/team/274883/image",
-        "startTimeIST": "2026-11-28 13:40:00 IST",
-        "endTimeIST": ""
-      },
-      "streams": []
-    },
-    {
-      "id": 1884,
-      "title": "International League T20",
-      "slug": "ILT-T20-vs-ILT-T",
-      "cat": "Cricket",
-      "status": "upcoming",
-      "event": {
-        "name": "International League T20",
-        "category": "Cricket",
-        "type": "",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLPb2DPj3zNmfruRqU6BXsmrMIYosxxZA0efvdkBZ_4Q&s=10",
-        "teamA": "ILT T20",
-        "teamAFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLPb2DPj3zNmfruRqU6BXsmrMIYosxxZA0efvdkBZ_4Q&s=10",
-        "teamB": "ILT T20",
-        "teamBFlag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLPb2DPj3zNmfruRqU6BXsmrMIYosxxZA0efvdkBZ_4Q&s=10",
-        "startTimeIST": "2026-11-28 20:00:00 IST",
-        "endTimeIST": ""
-      },
-      "streams": [
-        {
-          "id": 1,
-          "title": "WILLOW - AQ",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/syx49vqdrr/out/v1/909eab72dfa945a08debe81846c5b78f/cenc.mpd",
-          "api": "76c58ac4712177bfd921342e3ff02a5e:343e96a54fc9a8649ab4448993ebad54"
-        },
-        {
-          "id": 2,
-          "title": "TNT SPORTS - AQ",
-          "type": "mpd",
-          "link": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/rhf2dwosdt/out/v1/ee550d2a68d846c797e6ce4de2e8b76d/cenc.mpd",
-          "api": "69a5aa835a061ce64a630d1046727e40:d02feac8a999bd06bf4059bf33411749"
-        },
-        {
-          "id": 3,
-          "title": "TAMASHA PRO AQ",
-          "type": "m3u8",
-          "link": "https://cdn03lhr-n.tamashaweb.com:8087/appcast/ILT-S05-SVOD-abr/playlist.m3u8",
-          "api": ""
-        },
-        {
-          "id": 4,
-          "title": "ZEE ZEST IN",
-          "type": "mpd",
-          "link": "https://d1iwj24qiokrul.cloudfront.net/live/media/Zee_Zest_SD/dash/Zee_Zest_SD.mpd",
-          "api": "ffa2f9e64ca542f9a13f6ebc11292468:ac0b546c754884618e5b2c2c986e4735"
-        },
-        {
-          "id": 5,
-          "title": "UNITE8 SPORTS IN",
-          "type": "mpd",
-          "link": "https://d1iwj24qiokrul.cloudfront.net/live/media/Unite8_Sports_1_HD/dash/Unite8_Sports_1_HD.mpd",
-          "api": "d5859726f4804398b37aa6eb9d571a4f:11c43967054ad1765d919f854889912f"
-        },
-        {
-          "id": 6,
-          "title": "FANCODE [IND]",
-          "type": "m3u8",
-          "link": "https://in-mc-vod.fancode.com/mumbai/4251056_english_hls_012c5e0d0159881_1ta-di_h264/index.m3u8",
           "api": ""
         }
       ]
@@ -1892,13 +1909,13 @@
       "streams": []
     },
     {
-      "id": "B0HMC669H2",
-      "title": "India tour of New Zealand 2026 - 2nd Test - New Zealand vs India",
-      "slug": "india-tour-of-new-zealand-2026-2nd-test-new-zealand-vs-india",
+      "id": "B0HLWGFBXD",
+      "title": "Womens Big Bash League 2026 - 38th Match - Sydney Thunder Women vs Sydney Sixers Women",
+      "slug": "womens-big-bash-league-2026-38th-match-sydney-thunder-women-vs-sydney-sixers-women",
       "cat": "Live Events",
       "status": "live",
       "event": {
-        "name": "India tour of New Zealand 2026 - 2nd Test - New Zealand vs India",
+        "name": "Womens Big Bash League 2026 - 38th Match - Sydney Thunder Women vs Sydney Sixers Women",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",
@@ -1907,13 +1924,13 @@
       "dashStreams": []
     },
     {
-      "id": "B0HL52VQCV",
-      "title": "Womens Big Bash League 2026 - 37th Match - Melbourne Renegades Women vs Melbourne Stars Women",
-      "slug": "womens-big-bash-league-2026-37th-match-melbourne-renegades-women-vs-melbourne-stars-women",
+      "id": "B0HMC669H2",
+      "title": "India tour of New Zealand 2026 - 2nd Test - New Zealand vs India",
+      "slug": "india-tour-of-new-zealand-2026-2nd-test-new-zealand-vs-india",
       "cat": "Live Events",
       "status": "live",
       "event": {
-        "name": "Womens Big Bash League 2026 - 37th Match - Melbourne Renegades Women vs Melbourne Stars Women",
+        "name": "India tour of New Zealand 2026 - 2nd Test - New Zealand vs India",
         "category": "Cricket",
         "teamA": "Team A",
         "teamB": "Team B",
